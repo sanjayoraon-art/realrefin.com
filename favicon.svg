@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Slate Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Vibrant Emerald Refinance Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <!-- Accent Cyan Gradient for Growth Arrow -->
+    <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#6ee7b7"/>
+    </linearGradient>
+
+    <!-- Drop Shadow for Dimensionality -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#10b981" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container (512x512) -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Internal Border -->
+  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="#334155" stroke-width="4" stroke-opacity="0.5"/>
+
+  <!-- Geometric RealRefin Icon Graphic: House Gable + Rising Equity Arrow + Refinance Arc -->
+  <g filter="url(#glow)">
+    
+    <!-- Left Pillar (Solid Architectural Foundation) -->
+    <path d="M 130 240 L 130 380 A 16 16 0 0 0 146 396 L 190 396 A 16 16 0 0 0 206 380 L 206 240 Z" fill="#ffffff" fill-opacity="0.95"/>
+
+    <!-- Dynamic Architectural Roof + Ascending Growth Line -->
+    <path d="M 106 248 L 246 118 A 16 16 0 0 1 268 118 L 406 248" fill="none" stroke="url(#emeraldGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Ascending Financial Growth Arrow (Refinance Velocity) -->
+    <path d="M 230 340 L 315 255 L 350 290 L 380 190 L 280 220 L 315 255 L 230 340 Z" fill="url(#arrowGrad)"/>
+
+    <!-- Circular Refinance Loop Arc (Continuous Equity Velocity) -->
+    <path d="M 330 384 A 120 120 0 0 1 200 410" fill="none" stroke="url(#emeraldGrad)" stroke-width="20" stroke-linecap="round" stroke-dasharray="1 1"/>
+
+    <!-- Central Foundation Accent Block -->
+    <rect x="236" y="270" width="40" height="126" rx="10" fill="#ffffff" fill-opacity="0.9"/>
+  </g>
+
+  <!-- Brand Spark Accent -->
+  <circle cx="390" cy="180" r="14" fill="#6ee7b7"/>
+</svg>

@@ -12,6 +12,20 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://realrefin.com/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Google Search Favicon & Mobile Touch Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
 
   <!-- Schema Markup: Organization & WebSite -->
   <script type="application/ld+json">
@@ -35,7 +49,12 @@
         "@id": "https://realrefin.com/#organization",
         "name": "RealRefin",
         "url": "https://realrefin.com/",
-        "logo": "https://realrefin.com/logo.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://realrefin.com/logo.png",
+          "width": 512,
+          "height": 512
+        },
         "sameAs": []
       }
     ]
@@ -667,7 +686,10 @@
 
   <!-- Navbar -->
   <header class="rr-nav">
-    <a href="/" class="rr-logo">Real<span>Refin</span>.com</a>
+    <a href="/" class="rr-logo">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
     <ul class="nav-links">
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
