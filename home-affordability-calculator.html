@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Affordability Calculator: How Much House Can I Afford? (US, UK, AU)</title>
+  <meta name="description" content="Free, real-time home affordability calculator for home buyers in the US, UK, and Australia. Calculate your maximum home purchase price based on salary, debts, down payment, interest rates, and the 28/36 DTI rule.">
+  <meta name="keywords" content="home affordability calculator, how much house can i afford, salary to house price calculator, mortgage affordability calculator, buying power calculator, dti calculator">
+  <link rel="canonical" href="https://realrefin.com/home-affordability-calculator">
+  
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:title" content="Home Affordability Calculator: How Much House Can I Actually Buy?">
+  <meta property="og:description" content="Calculate your true home buying power in seconds. Real-time monthly payment breakdown, DTI ratios, and maximum purchase price across $, £, and A$.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/home-affordability-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Google Search Favicon & Mobile Touch Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: FinancialApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/#affordability-calculator",
+        "name": "Home Affordability Calculator",
+        "url": "https://realrefin.com/home-affordability-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An interactive home affordability calculator computing maximum home purchase price, monthly PITI payment breakdown, front-end and back-end DTI borrowing power, and salary-to-house-price multipliers across US ($), UK (£), and Australia (A$)."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much should I put down for a house?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While putting down 20% eliminates Private Mortgage Insurance (PMI) in the US and Lenders Mortgage Insurance (LMI) in the UK and Australia, it is not mandatory. Many conventional loan programs permit down payments as low as 3% to 5%, FHA loans require 3.5%, and VA or USDA loans allow 0% down. However, a larger down payment reduces your monthly principal and interest payment, protects you from negative equity during market corrections, and secures more competitive interest rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does student loan debt affect how much house I can buy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Lenders look strictly at your total recurring monthly debt obligations when calculating your back-end Debt-to-Income (DTI) ratio. Every $100 you pay monthly toward student loans, car financing, or credit card minimums reduces the monthly mortgage debt service you can qualify for by $100, which can lower your overall home purchasing power by $15,000 to $20,000 at typical interest rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I buy a house at the absolute maximum of my budget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Generally, no. The maximum purchase price calculated by a bank or mortgage lender represents what you are legally allowed to borrow under maximum qualifying DTI ratios (often 36% to 43%+). It does not factor in lifestyle choices, childcare, retirement contributions, travel, or unexpected home maintenance. Financial advisors recommend aiming for 10% to 15% below your maximum lending ceiling to maintain an emergency savings buffer and avoid being house-poor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 28/36 rule in mortgage lending?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 28/36 rule is an institutional underwriting benchmark. It states that a household should spend no more than 28% of its gross monthly income on housing expenses (PITI: Principal, Interest, Taxes, and Insurance - the front-end ratio), and no more than 36% of its gross monthly income on all recurring debt obligations combined (housing plus car loans, student debt, and credit cards - the back-end ratio)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       1. FINTECH SAAS DESIGN SYSTEM
+       Primary: Deep Navy Blue & Bright Emerald Green
+    =========================================================== */
+    :root {
+      --primary-navy: #0f172a;       /* Dark slate base */
+      --secondary-navy: #1e293b;     /* Card background / accents */
+      --accent-emerald: #10b981;     /* Primary Emerald */
+      --accent-emerald-hover: #059669;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+      --text-white: #ffffff;
+      
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --border-focus: #10b981;
+      
+      --badge-success-bg: #ecfdf5;
+      --badge-success-text: #065f46;
+      --badge-warning-bg: #fffbeb;
+      --badge-warning-text: #92400e;
+      --badge-danger-bg: #fef2f2;
+      --badge-danger-text: #991b1b;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    @media (max-width: 768px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR CONTAINER & CARD
+    ----------------------------------------------------------- */
+    .calc-card-wrapper {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: var(--text-white);
+      padding: 2.25rem 2.5rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      position: relative;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+
+    .calc-header-banner p {
+      color: #94a3b8;
+      font-size: 1.025rem;
+      max-width: 820px;
+      line-height: 1.55;
+    }
+
+    /* 2-Column Desktop Grid */
+    .calc-grid-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 0;
+    }
+
+    @media (max-width: 992px) {
+      .calc-grid-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       LEFT COLUMN: USER INPUTS & SLIDERS
+    ----------------------------------------------------------- */
+    .calc-inputs-pane {
+      padding: 2.25rem;
+      border-right: 1px solid var(--border-color);
+      background-color: #ffffff;
+    }
+
+    @media (max-width: 992px) {
+      .calc-inputs-pane {
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        padding: 1.5rem;
+      }
+    }
+
+    /* Top Controls Bar: Currency & Term */
+    .top-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+
+    .control-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .pill-switch {
+      display: inline-flex;
+      background: #f1f5f9;
+      border-radius: var(--radius-md);
+      padding: 3px;
+      gap: 3px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .switch-btn {
+      border: none;
+      background: transparent;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .switch-btn:hover {
+      color: var(--text-main);
+    }
+
+    .switch-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Form Fields */
+    .input-field-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Tooltip */
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .tooltip-container:hover .tooltip-icon {
+      background: var(--accent-emerald);
+      color: #ffffff;
+    }
+
+    .tooltip-box {
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      background: var(--primary-navy);
+      color: #f8fafc;
+      text-align: left;
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.8rem;
+      font-size: 0.775rem;
+      font-weight: 400;
+      line-height: 1.45;
+      position: absolute;
+      z-index: 100;
+      bottom: 135%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: var(--shadow-lg);
+      transition: opacity 0.2s, visibility 0.2s;
+      pointer-events: none;
+    }
+
+    .tooltip-box::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: var(--primary-navy) transparent transparent transparent;
+    }
+
+    .tooltip-container:hover .tooltip-box {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Input Addon / Prefix */
+    .input-addon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix {
+      position: absolute;
+      left: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-suffix {
+      position: absolute;
+      right: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0.55rem 0.85rem 0.55rem 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .calc-input.has-suffix {
+      padding-right: 2.5rem;
+    }
+
+    .calc-input.no-prefix {
+      padding-left: 0.85rem;
+    }
+
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Dual Input & Slider Synchronization */
+    .range-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      outline: none;
+      margin-top: 0.6rem;
+      cursor: pointer;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: background 0.15s ease;
+    }
+
+    .range-slider::-webkit-slider-thumb:hover {
+      background: var(--accent-emerald-hover);
+    }
+
+    /* Advanced Optional Toggle */
+    .advanced-toggle-btn {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      transition: all 0.15s ease;
+    }
+
+    .advanced-toggle-btn:hover {
+      background: #f1f5f9;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+    }
+
+    .advanced-pane {
+      display: none;
+      padding: 1.25rem 0 0.5rem;
+      border-top: 1px solid #f1f5f9;
+      margin-top: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       RIGHT COLUMN: HIGH-IMPACT RESULTS CARD
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      background-color: #fafbfc;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 992px) {
+      .calc-results-pane {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Borrowing Power Health Gauge */
+    .borrowing-health-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.15rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .health-icon {
+      font-size: 1.35rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--badge-success-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .health-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.3;
+    }
+
+    .health-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      margin-top: 0.15rem;
+    }
+
+    /* Hero Metric: Maximum Home Purchase Price */
+    .primary-metric-card {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 1.75rem 1.5rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .primary-metric-card::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 90px;
+      height: 90px;
+      background: rgba(16, 185, 129, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .metric-subtitle {
+      font-size: 0.775rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #94a3b8;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .metric-huge-val {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0.4rem 0 0.2rem;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+
+    .metric-desc-pill {
+      display: inline-block;
+      font-size: 0.775rem;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      color: #e2e8f0;
+      margin-top: 0.35rem;
+    }
+
+    /* Monthly Payment Breakdown Box */
+    .payment-breakdown-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--secondary-navy);
+      margin-bottom: 0.85rem;
+    }
+
+    .total-monthly-amount {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Visual Segmented Progress Bar */
+    .segmented-bar-track {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .segment-pi {
+      height: 100%;
+      background: #10b981;
+      transition: width 0.3s ease;
+    }
+
+    .segment-tax {
+      height: 100%;
+      background: #3b82f6;
+      transition: width 0.3s ease;
+    }
+
+    .segment-ins {
+      height: 100%;
+      background: #f59e0b;
+      transition: width 0.3s ease;
+    }
+
+    .breakdown-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 0;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--text-muted);
+    }
+
+    .breakdown-item-row:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+    }
+
+    .breakdown-val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* Monthly Income Allocation Donut / Bar */
+    .allocation-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .allocation-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .allocation-track {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 0.6rem;
+    }
+
+    .alloc-housing {
+      height: 100%;
+      background: #10b981;
+      transition: width 0.3s ease;
+    }
+
+    .alloc-debt {
+      height: 100%;
+      background: #ef4444;
+      transition: width 0.3s ease;
+    }
+
+    .alloc-takehome {
+      height: 100%;
+      background: #94a3b8;
+      transition: width 0.3s ease;
+    }
+
+    .allocation-legend {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.725rem;
+      color: var(--text-muted);
+    }
+
+    /* Utilities */
+    .dashboard-actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+
+    .btn-action-util {
+      padding: 0.6rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-action-util:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-xl);
+      border-left: 4px solid var(--accent-emerald);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+
+    .toast-pill.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ===========================================================
+       2. ON-PAGE SEO ARTICLE & EDITORIAL STYLING
+    =========================================================== */
+    .seo-article {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-md);
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) {
+      .seo-article {
+        padding: 2rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .seo-article h1,
+    .seo-article h2,
+    .seo-article h3,
+    .seo-article h4 {
+      color: var(--primary-navy);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .seo-article h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .seo-article h2 {
+      font-size: 1.65rem;
+      margin-top: 3rem;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .seo-article h3 {
+      font-size: 1.25rem;
+      margin-top: 1.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-article p {
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-article ul, .seo-article ol {
+      margin: 1.25rem 0 1.5rem 1.5rem;
+    }
+
+    .seo-article li {
+      margin-bottom: 0.65rem;
+    }
+
+    .seo-callout {
+      background: #f0fdf4;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+      color: #14532d;
+    }
+
+    .seo-callout strong {
+      color: #064e3b;
+    }
+
+    .math-formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--primary-navy);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    .math-formula-caption {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .math-rendered {
+      font-size: 1.35rem;
+      color: #0f172a;
+      margin: 0.5rem 0;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+    }
+
+    .comparison-table td {
+      padding: 0.9rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .faq-accordion-group {
+      margin-top: 1.75rem;
+    }
+
+    .faq-item-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.9rem;
+      background: #ffffff;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .faq-item-card:hover {
+      border-color: #cbd5e1;
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      padding: 1.2rem 1.35rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: transparent;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-icon-arrow {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item-card.open .faq-icon-arrow {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer-pane {
+      display: none;
+      padding: 0 1.35rem 1.35rem;
+      color: #475569;
+      font-size: 0.985rem;
+      line-height: 1.75;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+    }
+
+    .faq-item-card.open .faq-answer-pane {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+
+    @media print {
+      body { background: #ffffff; color: #000; }
+      .rr-nav, .top-controls-bar, .dashboard-actions-row, .toast-pill, footer { display: none !important; }
+      .calc-card-wrapper { box-shadow: none; border: none; }
+      .calc-grid-layout { display: block; }
+      .calc-results-pane { border-top: 2px solid #000; margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- Navbar -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo" aria-label="RealRefin Home">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/home-affordability-calculator" class="active">Affordability</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- ========================================================
+       1. INTERACTIVE HOME AFFORDABILITY CALCULATOR
+  ======================================================== -->
+  <section class="calc-card-wrapper" id="calculator" aria-label="Home Affordability Calculator Tool">
+    
+    <!-- Header Banner -->
+    <div class="calc-header-banner">
+      <h1>Home Affordability Calculator: How Much House Can I Actually Buy?</h1>
+      <p>Estimate your maximum home purchase price and monthly mortgage debt capacity. Tailored for prospective home buyers in the US, UK, and Australia with dynamic 28/36 Debt-to-Income (DTI) underwriting and real-time interest rate sensitivity.</p>
+    </div>
+
+    <div class="calc-grid-layout">
+      
+      <!-- ====================================================
+           LEFT COLUMN: SLIDERS & USER INPUTS
+      ==================================================== -->
+      <div class="calc-inputs-pane">
+        
+        <!-- Controls Bar: Currency & Term -->
+        <div class="top-controls-bar">
+          <div>
+            <span class="control-label">Select Currency / Region</span>
+            <div class="pill-switch" role="group" aria-label="Currency Selector">
+              <button type="button" class="switch-btn curr-btn active" data-curr="USD" data-symbol="$" aria-label="US Dollars">
+                <span>🇺🇸</span> US ($)
+              </button>
+              <button type="button" class="switch-btn curr-btn" data-curr="GBP" data-symbol="£" aria-label="British Pounds">
+                <span>🇬🇧</span> UK (£)
+              </button>
+              <button type="button" class="switch-btn curr-btn" data-curr="AUD" data-symbol="A$" aria-label="Australian Dollars">
+                <span>🇦🇺</span> AU (A$)
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <span class="control-label">Mortgage Term</span>
+            <div class="pill-switch" role="group" aria-label="Loan Term Selector">
+              <button type="button" class="switch-btn term-btn active" data-term="30">30-Year Fixed</button>
+              <button type="button" class="switch-btn term-btn" data-term="15">15-Year Fixed</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input 1: Annual Household Income -->
+        <div class="input-field-group">
+          <div class="input-label-row">
+            <label class="input-label" for="annualIncome">
+              Annual Household Gross Income
+              <span class="tooltip-container" tabindex="0">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-box">Total pre-tax annual income from salaries, wages, verified bonuses, or self-employment before tax deductions.</span>
+              </span>
+            </label>
+            <span id="monthlyIncomeSubtext" style="font-size: 0.8rem; font-weight: 600; color: var(--accent-emerald-dark);">$9,167 / mo</span>
+          </div>
+          <div class="input-addon-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="annualIncome" class="calc-input" value="110000" min="10000" max="2000000" step="5000">
+          </div>
+          <input type="range" id="annualIncomeSlider" class="range-slider" min="30000" max="400000" step="5000" value="110000">
+        </div>
+
+        <!-- Input 2: Monthly Debt Payments -->
+        <div class="input-field-group">
+          <div class="input-label-row">
+            <label class="input-label" for="monthlyDebts">
+              Monthly Existing Debt Obligations
+              <span class="tooltip-container" tabindex="0">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-box">Total monthly recurring debt minimums: car loan installments, student loans, minimum credit card payments, or personal loans.</span>
+              </span>
+            </label>
+          </div>
+          <div class="input-addon-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="monthlyDebts" class="calc-input" value="500" min="0" max="20000" step="50">
+          </div>
+          <input type="range" id="monthlyDebtsSlider" class="range-slider" min="0" max="3000" step="50" value="500">
+        </div>
+
+        <!-- Input 3: Down Payment Available -->
+        <div class="input-field-group">
+          <div class="input-label-row">
+            <label class="input-label" for="downPayment">
+              Down Payment Cash Available
+              <span class="tooltip-container" tabindex="0">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-box">Total cash reserves available for the initial purchase deposit (excluding closing costs and moving reserves).</span>
+              </span>
+            </label>
+            <span id="downPaymentPercentSubtext" style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">~11.5% of purchase</span>
+          </div>
+          <div class="input-addon-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="downPayment" class="calc-input" value="45000" min="0" max="2000000" step="2500">
+          </div>
+          <input type="range" id="downPaymentSlider" class="range-slider" min="5000" max="250000" step="2500" value="45000">
+        </div>
+
+        <!-- Input 4: Estimated Mortgage Interest Rate -->
+        <div class="input-field-group">
+          <div class="input-label-row">
+            <label class="input-label" for="interestRate">
+              Estimated Mortgage Interest Rate
+              <span class="tooltip-container" tabindex="0">
+                <span class="tooltip-icon">?</span>
+                <span class="tooltip-box">Current annual fixed interest rate offered by mortgage lenders based on your credit score tier.</span>
+              </span>
+            </label>
+            <span id="rateDisplay" style="font-weight: 700; color: var(--accent-emerald-dark); font-size: 0.85rem;">6.50%</span>
+          </div>
+          <div class="input-addon-wrapper">
+            <input type="number" id="interestRate" class="calc-input has-suffix no-prefix" value="6.5" min="2.0" max="14.0" step="0.125">
+            <span class="input-suffix">%</span>
+          </div>
+          <input type="range" id="interestRateSlider" class="range-slider" min="3.0" max="10.0" step="0.125" value="6.5">
+        </div>
+
+        <!-- Advanced Collapsible Settings: Taxes, Insurance & DTI Customizer -->
+        <button type="button" class="advanced-toggle-btn" id="btnToggleAdvanced" aria-expanded="false">
+          <span>⚙️ Advanced Settings: Property Taxes, Insurance &amp; DTI Limits</span>
+          <span id="advancedArrowIcon">▾</span>
+        </button>
+
+        <div class="advanced-pane" id="advancedPane">
+          <div class="grid-2">
+            <div class="input-field-group">
+              <label class="input-label" for="propertyTaxRate">
+                Annual Property Tax Rate
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Estimated municipal property tax rate as a % of home purchase price (typically 0.8% - 1.8% in US; UK council tax equivalent).</span>
+                </span>
+              </label>
+              <div class="input-addon-wrapper">
+                <input type="number" id="propertyTaxRate" class="calc-input has-suffix no-prefix" value="1.1" min="0" max="4.0" step="0.1">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <label class="input-label" for="annualInsurance">
+                Annual Hazard Insurance
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Estimated annual hazard and homeowners insurance premium divided across 12 monthly escrow payments.</span>
+                </span>
+              </label>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="annualInsurance" class="calc-input" value="1200" min="0" max="10000" step="100">
+              </div>
+            </div>
+          </div>
+
+          <div class="input-field-group" style="margin-bottom: 0.5rem;">
+            <div class="input-label-row">
+              <label class="input-label" for="dtiLimit">
+                Underwriting DTI Limit (Back-End)
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Maximum total debt-to-income allowed by your loan program (36% standard conventional; 43% - 45% FHA/conforming ceiling).</span>
+                </span>
+              </label>
+              <span id="dtiLimitDisplay" style="font-weight: 700; color: var(--primary-navy); font-size: 0.85rem;">36% (Standard 28/36)</span>
+            </div>
+            <div class="input-addon-wrapper">
+              <input type="number" id="dtiLimit" class="calc-input has-suffix no-prefix" value="36" min="28" max="50" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+            <input type="range" id="dtiLimitSlider" class="range-slider" min="30" max="45" step="1" value="36">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====================================================
+           RIGHT COLUMN: HIGH-IMPACT RESULTS CARD
+      ==================================================== -->
+      <div class="calc-results-pane">
+        
+        <div>
+          <!-- Borrowing Power Health Gauge -->
+          <div class="borrowing-health-card" id="healthCard">
+            <div class="health-icon" id="healthIcon">🏡</div>
+            <div class="health-text">
+              <h4 id="healthTitle">Sustainable Buying Power</h4>
+              <p id="healthSubtitle">Comfortable DTI ratio conforming to conservative lending standards.</p>
+            </div>
+          </div>
+
+          <!-- Hero Metric: Maximum Home Purchase Price -->
+          <div class="primary-metric-card">
+            <div class="metric-subtitle">
+              <span>Maximum Home Purchase Price</span>
+              <span class="tooltip-container" tabindex="0">
+                <span class="tooltip-icon" style="background: rgba(255,255,255,0.2); color: #fff;">?</span>
+                <span class="tooltip-box">The absolute highest property price you can purchase by combining your maximum qualified loan with your down payment.</span>
+              </span>
+            </div>
+            <div class="metric-huge-val" id="resMaxHomePriceVal">$390,400</div>
+            <div class="metric-desc-pill" id="resMaxLoanSubtext">Max Loan: $345,400 + $45,000 Down</div>
+          </div>
+
+          <!-- Monthly Payment Breakdown Box (PITI) -->
+          <div class="payment-breakdown-card">
+            <div class="card-title-row">
+              <span>Estimated Monthly Housing Payment</span>
+              <span class="total-monthly-amount" id="resTotalMonthlyPayment">$2,543 / mo</span>
+            </div>
+
+            <!-- Segmented Color Track Bar -->
+            <div class="segmented-bar-track" aria-label="Monthly Payment Visual Segments">
+              <div class="segment-pi" id="barPi" style="width: 82%;" title="Principal & Interest"></div>
+              <div class="segment-tax" id="barTax" style="width: 14%;" title="Property Tax"></div>
+              <div class="segment-ins" id="barIns" style="width: 4%;" title="Home Insurance"></div>
+            </div>
+
+            <!-- Itemized Rows -->
+            <div class="breakdown-item-row">
+              <div>
+                <span class="breakdown-dot" style="background: #10b981;"></span>
+                <span>Principal &amp; Interest (<span id="resTermLabel">30-Yr</span>)</span>
+              </div>
+              <span class="breakdown-val" id="resPiVal">$2,183</span>
+            </div>
+
+            <div class="breakdown-item-row">
+              <div>
+                <span class="breakdown-dot" style="background: #3b82f6;"></span>
+                <span>Property Taxes (Escrow)</span>
+              </div>
+              <span class="breakdown-val" id="resTaxVal">$358</span>
+            </div>
+
+            <div class="breakdown-item-row">
+              <div>
+                <span class="breakdown-dot" style="background: #f59e0b;"></span>
+                <span>Homeowners Insurance</span>
+              </div>
+              <span class="breakdown-val" id="resInsVal">$100</span>
+            </div>
+          </div>
+
+          <!-- Monthly Income Allocation Bar -->
+          <div class="allocation-card">
+            <div class="allocation-header">
+              <span>Gross Income Allocation</span>
+              <span id="dtiUsageLabel">28.0% Housing DTI</span>
+            </div>
+            <div class="allocation-track" aria-label="Monthly Budget Allocation">
+              <div class="alloc-housing" id="allocHousingBar" style="width: 28%;"></div>
+              <div class="alloc-debt" id="allocDebtBar" style="width: 5.5%;"></div>
+              <div class="alloc-takehome" id="allocTakehomeBar" style="width: 66.5%;"></div>
+            </div>
+            <div class="allocation-legend">
+              <span style="color: #047857;">■ Housing: <strong id="allocHousingText">$2,543</strong></span>
+              <span style="color: #b91c1c;">■ Debts: <strong id="allocDebtText">$500</strong></span>
+              <span style="color: #475569;">■ Buffer: <strong id="allocBufferText">$6,124</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Footer Action Buttons -->
+        <div class="dashboard-actions-row">
+          <button type="button" class="btn-action-util" id="btnCopySummary">
+            <span>📋</span> Copy Estimate
+          </button>
+          <button type="button" class="btn-action-util" id="btnPrintEstimate">
+            <span>🖨️</span> Print / Save PDF
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Notification Toast -->
+  <div class="toast-pill" id="toastPill" role="status" aria-live="polite">Affordability estimate copied to clipboard!</div>
+
+  <!-- ========================================================
+       2. EDITORIAL SEO CONTENT (1000+ WORDS)
+  ======================================================== -->
+  <article class="seo-article">
+    
+    <header>
+      <h1>Home Affordability Calculator: How Much House Can I Actually Buy?</h1>
+      <p class="lead-text">
+        Purchasing a home is the most consequential financial commitment most households ever make. Yet millions of prospective home buyers in the United States, the United Kingdom, and Australia rely on oversimplified salary rules of thumb—such as the outdated <em>"multiply your income by 3"</em> heuristic—that fail to capture fluctuating mortgage interest rates, car payments, student loans, or regional property tax rates.
+      </p>
+      <p>
+        Use our <strong>free home affordability calculator</strong> to calculate your true borrowing power in real time. Built to compete directly with complex bank underwriting software, our tool evaluates your pre-tax income, existing monthly debt liabilities, down payment capital, and prevailing mortgage rates against institutional <strong>Debt-to-Income (DTI)</strong> guidelines.
+      </p>
+    </header>
+
+    <div class="seo-callout">
+      <strong>Core Underwriting Principle:</strong> Your mortgage buying power is not determined by what you believe you can afford; it is governed by what mortgage underwriters can mathematically verify under statutory DTI ratios. Understanding the <strong>28/36 rule</strong> empowers you to optimize your credit and debt profile before applying for pre-approval.
+    </div>
+
+    <!-- ----------------------------------------------------
+         SECTION 1: THE 28/36 RULE
+    ---------------------------------------------------- -->
+    <h2>How Do Lenders Calculate Home Affordability? (The 28/36 Rule)</h2>
+    <p>
+      When mortgage underwriters evaluate your loan application, they look beyond your gross annual salary to examine how much of that income is already committed to creditors. Institutional mortgage lenders in the United States, Fannie Mae, Freddie Mac, and conforming credit unions use two complementary financial ratios known collectively as the <strong>28/36 Rule</strong>:
+    </p>
+
+    <ul>
+      <li>
+        <strong>1. Front-End Debt-to-Income Ratio (The Housing Ratio - Max 28%):</strong> This ratio dictates that your total monthly housing expenses—including mortgage Principal, Interest, Property Taxes, and Homeowners Insurance (often abbreviated as <strong>PITI</strong>)—should not exceed <strong>28%</strong> of your gross monthly pre-tax income. If your household earns $10,000 per month, your maximum front-end housing allowance is:
+        $$\$10,000 \times 0.28 = \$2,800 \text{ per month}$$
+      </li>
+      <li>
+        <strong>2. Back-End Debt-to-Income Ratio (The Total Debt Ratio - Max 36% to 43%):</strong> This ratio measures your total debt burden. It states that your monthly housing payment <em>plus</em> all existing recurring debts (auto loans, student debt, credit card minimums, child support, or personal loans) should not exceed <strong>36%</strong> of your gross monthly income under conservative underwriting, or up to <strong>43%</strong> for Fannie Mae conforming loans and <strong>45% to 50%</strong> for government-backed FHA loans.
+      </li>
+    </ul>
+
+    <p>
+      The key takeaway for home buyers is that <strong>lenders always qualify you based on the lower (most restrictive) of the two limits</strong>. If you carry zero consumer debt, your front-end 28% ratio serves as your primary ceiling. However, if you carry substantial student or vehicle debt, your back-end ratio will choke your buying power, severely reducing the mortgage principal a bank will lend you.
+    </p>
+
+    <h3>Regional Differences: US vs. UK vs. Australia</h3>
+    <p>
+      While DTI ratios dominate American lending, mortgage qualification frameworks vary across international borders:
+    </p>
+    <ul>
+      <li>
+        <strong>United States:</strong> US lenders primarily utilize 30-year and 15-year fixed-rate mortgages qualified through automated underwriting systems (Fannie Mae Desktop Underwriter / Freddie Mac Loan Product Advisor). The back-end DTI cap ranges from 36% (conservative) to 43% (standard conventional) and up to 50% (FHA / VA).
+      </li>
+      <li>
+        <strong>United Kingdom:</strong> Known as the <em>Mortgage Affordability Assessment</em>, UK lenders regulated by the Financial Conduct Authority (FCA) traditionally apply an income multiple cap (typically <strong>4.0&times; to 4.5&times; single or joint household income</strong>). Furthermore, UK banks apply mandatory interest rate stress tests, assessing whether borrowers could still afford payments if mortgage rates rose by 300 basis points above the lender's Standard Variable Rate (SVR).
+      </li>
+      <li>
+        <strong>Australia:</strong> Governed by the Australian Prudential Regulation Authority (APRA), Australian banks evaluate borrowing capacity using the <em>Household Expenditure Measure (HEM)</em> and an enforced <strong>3.00% serviceability buffer</strong> above the contract mortgage interest rate. Australian buyers with higher living expenses or credit card limits (even if unpaid) face strictly curtailed borrowing ceilings.
+      </li>
+    </ul>
+
+    <!-- ----------------------------------------------------
+         SECTION 2: FORMULAS & NUMERICAL WALKTHROUGH
+    ---------------------------------------------------- -->
+    <h2>Formula &amp; Example: Calculating Your Buying Power</h2>
+    <p>
+      To understand how an annual salary translates into a maximum purchase price, solve through the reverse mortgage amortization equation:
+    </p>
+
+    <div class="math-formula-box">
+      <div class="math-formula-caption">Reverse Amortization Formula: Maximum Loan Principal</div>
+      <div class="math-rendered">
+        $$P = M_{PI} \times \left[ \frac{1 - (1 + r)^{-n}}{r} \right]$$
+      </div>
+      <p style="font-size: 0.875rem; color: #475569; margin-top: 0.5rem;">
+        Where $P$ = Maximum Loan Amount, $M_{PI}$ = Monthly Principal &amp; Interest budget, $r$ = Monthly interest rate ($\text{Annual Rate} / 12$), and $n$ = Total months ($\text{Years} \times 12$).
+      </p>
+    </div>
+
+    <p>
+      Once maximum mortgage principal ($P$) is established, compute your ultimate home purchase price by adding your available down payment:
+    </p>
+    <div class="math-formula-box">
+      <div class="math-formula-caption">Maximum Purchase Price Formula</div>
+      <div class="math-rendered">
+        $$\text{Max Home Purchase Price} = P + \text{Down Payment Available}$$
+      </div>
+    </div>
+
+    <h3>Salary to House Price Benchmark Table</h3>
+    <p>
+      The following comparison table demonstrates how different household income levels translate into home buying power under standard lending assumptions (6.5% interest rate, 30-year fixed term, $500/month existing debts, 1.1% property tax, and a 10% down payment):
+    </p>
+
+    <div class="table-responsive">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Annual Income</th>
+            <th>Monthly Gross Income</th>
+            <th>Max Monthly PITI Budget (28% Front)</th>
+            <th>Max Loan Amount</th>
+            <th>Down Payment (10%)</th>
+            <th>Estimated Max Purchase Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$60,000</strong></td>
+            <td>$5,000 / mo</td>
+            <td>$1,400 / mo</td>
+            <td>$178,500</td>
+            <td>$19,800</td>
+            <td><strong>$198,300</strong></td>
+          </tr>
+          <tr>
+            <td><strong>$80,000</strong></td>
+            <td>$6,667 / mo</td>
+            <td>$1,867 / mo</td>
+            <td>$238,000</td>
+            <td>$26,400</td>
+            <td><strong>$264,400</strong></td>
+          </tr>
+          <tr>
+            <td><strong>$100,000</strong></td>
+            <td>$8,333 / mo</td>
+            <td>$2,333 / mo</td>
+            <td>$297,500</td>
+            <td>$33,000</td>
+            <td><strong>$330,500</strong></td>
+          </tr>
+          <tr>
+            <td><strong>$120,000</strong></td>
+            <td>$10,000 / mo</td>
+            <td>$2,800 / mo</td>
+            <td>$357,000</td>
+            <td>$39,700</td>
+            <td><strong>$396,700</strong></td>
+          </tr>
+          <tr>
+            <td><strong>$150,000</strong></td>
+            <td>$12,500 / mo</td>
+            <td>$3,500 / mo</td>
+            <td>$446,300</td>
+            <td>$49,600</td>
+            <td><strong>$495,900</strong></td>
+          </tr>
+          <tr>
+            <td><strong>$200,000</strong></td>
+            <td>$16,667 / mo</td>
+            <td>$4,667 / mo</td>
+            <td>$595,100</td>
+            <td>$66,100</td>
+            <td><strong>$661,200</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ----------------------------------------------------
+         SECTION 3: HIDDEN COSTS OF HOMEOWNERSHIP
+    ---------------------------------------------------- -->
+    <h2>Hidden Costs of Homeownership Beyond the Mortgage</h2>
+    <p>
+      First-time home buyers frequently make the critical error of budgeting solely for principal and interest. In reality, the true cost of homeownership encompasses several auxiliary expenses that consume 20% to 35% of your total monthly housing outflow:
+    </p>
+
+    <ul>
+      <li>
+        <strong>1. Property Taxes (Municipal Rates):</strong> Property taxes are levied by local city, county, and school districts, ranging from 0.5% of assessed property value in low-tax jurisdictions (like Hawaii or Colorado) to upwards of 2.2% in states like New Jersey, Texas, and Illinois. On a $400,000 home, a 1.5% property tax rate adds $6,000 per year ($500 per month) directly to your escrow payment.
+      </li>
+      <li>
+        <strong>2. Homeowners Hazard Insurance:</strong> Required by all mortgage lenders to protect against fire, windstorm, and catastrophic property loss. Depending on regional weather exposure and flood zones, insurance premiums range from $900 to $3,500+ annually.
+      </li>
+      <li>
+        <strong>3. Private Mortgage Insurance (PMI / LMI):</strong> If your down payment is less than 20% of the purchase price, conventional lenders mandate Private Mortgage Insurance (or Lenders Mortgage Insurance in the UK and Australia) to protect the bank against default. PMI typically costs between 0.3% and 1.2% of the original loan balance annually until your equity surpasses 20%.
+      </li>
+      <li>
+        <strong>4. HOA Dues &amp; Strata Levies:</strong> Condominiums, townhomes, and master-planned communities charge mandatory Homeowners Association (HOA) dues covering landscaping, common area insurance, and exterior amenities. HOA fees must be included directly in your front-end DTI ratio, directly reducing your allowable loan amount.
+      </li>
+      <li>
+        <strong>5. The 1% Maintenance Rule:</strong> As a homeowner, you are responsible for roof replacements, water heater failures, plumbing leaks, and HVAC servicing. Seasoned real estate analysts recommend budgeting <strong>1% of your home's total value annually</strong> ($4,000 per year on a $400k home) into a dedicated liquid repair reserve.
+      </li>
+    </ul>
+
+    <!-- ----------------------------------------------------
+         SECTION 4: FREQUENTLY ASKED QUESTIONS
+    ---------------------------------------------------- -->
+    <h2>Frequently Asked Questions (Home Affordability FAQ)</h2>
+    <p>
+      Expert guidance addressing the most common concerns of prospective real estate buyers:
+    </p>
+
+    <div class="faq-accordion-group">
+      
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>How much should I put down for a house?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            While putting down 20% eliminates Private Mortgage Insurance (PMI) in the US and Lenders Mortgage Insurance (LMI) in the UK and Australia, it is not mandatory. Many conventional loan programs permit down payments as low as 3% to 5%, FHA loans require 3.5%, and VA or USDA loans allow 0% down. However, a larger down payment reduces your monthly principal and interest payment, protects you from negative equity during market corrections, and secures more competitive interest rates.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>Does student loan debt affect how much house I can buy?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Yes. Lenders look strictly at your total recurring monthly debt obligations when calculating your back-end Debt-to-Income (DTI) ratio. Every $100 you pay monthly toward student loans, car financing, or credit card minimums reduces the monthly mortgage debt service you can qualify for by $100, which can lower your overall home purchasing power by $15,000 to $20,000 at typical interest rates.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>Should I buy a house at the absolute maximum of my budget?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Generally, no. The maximum purchase price calculated by a bank or mortgage lender represents what you are legally allowed to borrow under maximum qualifying DTI ratios (often 36% to 43%+). It does not factor in lifestyle choices, childcare, retirement contributions, travel, or unexpected home maintenance. Financial advisors recommend aiming for 10% to 15% below your maximum lending ceiling to maintain an emergency savings buffer and avoid being house-poor.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>How does a 15-year fixed loan compare to a 30-year fixed loan in terms of buying power?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            A 15-year mortgage features lower interest rates (typically 0.50% to 0.75% lower) and saves tens of thousands in lifetime interest charges while building equity twice as fast. However, because the debt amortizes over half the duration, the monthly payments are approximately 35% higher. This compresses your purchasing power: a borrower qualified for a $450,000 home on a 30-year mortgage might only qualify for a $330,000 home on a 15-year term.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>What credit score do I need to qualify for the best mortgage interest rates?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            In the US, conventional conforming lenders offer their lowest Tier-1 interest rates to borrowers with a FICO credit score of <strong>760 or above</strong>. While you can qualify for conventional loans with a 620 score or FHA loans with a 580 score, borrowers in lower credit tiers pay higher risk-based pricing adjustments (LLPAs) and higher monthly PMI premiums, which significantly reduces overall borrowing power.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/home-affordability-calculator">Affordability Calculator</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All rights reserved. Institutional Real Estate Investment &amp; Debt Calculators.</p>
+    <p style="margin-top: 0.35rem; font-size: 0.8rem;">Disclaimer: Financial projections generated by this calculator are for illustrative and modeling purposes only. Always consult licensed mortgage brokers, CPAs, and legal counsel before executing real estate transactions.</p>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     3. PURE VANILLA JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // --------------------------------------------------------
+  // A. STATE
+  // --------------------------------------------------------
+  const state = {
+    currency: 'USD',
+    currencySymbol: '$',
+    termYears: 30
+  };
+
+  // --------------------------------------------------------
+  // B. DOM ELEMENTS
+  // --------------------------------------------------------
+  const annualIncomeInput = document.getElementById('annualIncome');
+  const annualIncomeSlider = document.getElementById('annualIncomeSlider');
+  const monthlyIncomeSubtext = document.getElementById('monthlyIncomeSubtext');
+
+  const monthlyDebtsInput = document.getElementById('monthlyDebts');
+  const monthlyDebtsSlider = document.getElementById('monthlyDebtsSlider');
+
+  const downPaymentInput = document.getElementById('downPayment');
+  const downPaymentSlider = document.getElementById('downPaymentSlider');
+  const downPaymentPercentSubtext = document.getElementById('downPaymentPercentSubtext');
+
+  const interestRateInput = document.getElementById('interestRate');
+  const interestRateSlider = document.getElementById('interestRateSlider');
+  const rateDisplay = document.getElementById('rateDisplay');
+
+  const propertyTaxRateInput = document.getElementById('propertyTaxRate');
+  const annualInsuranceInput = document.getElementById('annualInsurance');
+  const dtiLimitInput = document.getElementById('dtiLimit');
+  const dtiLimitSlider = document.getElementById('dtiLimitSlider');
+  const dtiLimitDisplay = document.getElementById('dtiLimitDisplay');
+
+  // Outputs
+  const resMaxHomePriceVal = document.getElementById('resMaxHomePriceVal');
+  const resMaxLoanSubtext = document.getElementById('resMaxLoanSubtext');
+  const resTotalMonthlyPayment = document.getElementById('resTotalMonthlyPayment');
+  const resTermLabel = document.getElementById('resTermLabel');
+  const resPiVal = document.getElementById('resPiVal');
+  const resTaxVal = document.getElementById('resTaxVal');
+  const resInsVal = document.getElementById('resInsVal');
+
+  // Health Card
+  const healthCard = document.getElementById('healthCard');
+  const healthIcon = document.getElementById('healthIcon');
+  const healthTitle = document.getElementById('healthTitle');
+  const healthSubtitle = document.getElementById('healthSubtitle');
+
+  // Segment Bars
+  const barPi = document.getElementById('barPi');
+  const barTax = document.getElementById('barTax');
+  const barIns = document.getElementById('barIns');
+
+  // Allocation Bar
+  const dtiUsageLabel = document.getElementById('dtiUsageLabel');
+  const allocHousingBar = document.getElementById('allocHousingBar');
+  const allocDebtBar = document.getElementById('allocDebtBar');
+  const allocTakehomeBar = document.getElementById('allocTakehomeBar');
+  const allocHousingText = document.getElementById('allocHousingText');
+  const allocDebtText = document.getElementById('allocDebtText');
+  const allocBufferText = document.getElementById('allocBufferText');
+
+  // Buttons & Controls
+  const currButtons = document.querySelectorAll('.curr-btn');
+  const termButtons = document.querySelectorAll('.term-btn');
+  const currSymbolSpans = document.querySelectorAll('.curr-symbol');
+  const btnToggleAdvanced = document.getElementById('btnToggleAdvanced');
+  const advancedPane = document.getElementById('advancedPane');
+  const advancedArrowIcon = document.getElementById('advancedArrowIcon');
+  const btnCopySummary = document.getElementById('btnCopySummary');
+  const btnPrintEstimate = document.getElementById('btnPrintEstimate');
+  const toastPill = document.getElementById('toastPill');
+
+  // --------------------------------------------------------
+  // C. NUMBER FORMATTING
+  // --------------------------------------------------------
+  function formatMoney(amount, showSymbol = true) {
+    const sym = showSymbol ? state.currencySymbol : '';
+    const rounded = Math.round(amount);
+    return `${sym}${rounded.toLocaleString('en-US')}`;
+  }
+
+  function formatDecimal(amount, decimals = 1) {
+    return (amount || 0).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+
+  // --------------------------------------------------------
+  // D. CORE AFFORDABILITY CALCULATION
+  // --------------------------------------------------------
+  function calculateAffordability() {
+    const annualIncome = Math.max(0, parseFloat(annualIncomeInput.value) || 0);
+    const monthlyDebts = Math.max(0, parseFloat(monthlyDebtsInput.value) || 0);
+    const downPayment = Math.max(0, parseFloat(downPaymentInput.value) || 0);
+    const annualRate = Math.max(0.1, parseFloat(interestRateInput.value) || 0);
+    const taxRatePercent = Math.max(0, parseFloat(propertyTaxRateInput.value) || 0);
+    const annualInsurance = Math.max(0, parseFloat(annualInsuranceInput.value) || 0);
+    const backEndDtiCap = Math.max(20, Math.min(60, parseFloat(dtiLimitInput.value) || 36));
+
+    // Keep sliders synchronized
+    annualIncomeSlider.value = annualIncome;
+    monthlyDebtsSlider.value = monthlyDebts;
+    downPaymentSlider.value = downPayment;
+    interestRateSlider.value = annualRate;
+    rateDisplay.textContent = `${formatDecimal(annualRate, 2)}%`;
+    dtiLimitSlider.value = backEndDtiCap;
+    dtiLimitDisplay.textContent = `${backEndDtiCap}% (${backEndDtiCap <= 36 ? 'Standard' : 'Aggressive'})`;
+
+    // 1. Gross Monthly Income
+    const grossMonthlyIncome = annualIncome / 12;
+    monthlyIncomeSubtext.textContent = `${formatMoney(grossMonthlyIncome)} / mo`;
+
+    // 2. DTI Limits:
+    // Front-end standard is 28% of gross income for housing
+    const maxHousingFrontEnd = grossMonthlyIncome * 0.28;
+    // Back-end limit: (Gross Income * backEndDtiCap%) - Existing Debts
+    const maxHousingBackEnd = Math.max(0, (grossMonthlyIncome * (backEndDtiCap / 100)) - monthlyDebts);
+
+    // Lender uses the lower (more restrictive) constraint
+    const maxMonthlyHousingBudget = Math.min(maxHousingFrontEnd, maxHousingBackEnd);
+
+    // 3. Subtract monthly insurance
+    const monthlyInsurance = annualInsurance / 12;
+    const availableForMortgageAndTax = Math.max(0, maxMonthlyHousingBudget - monthlyInsurance);
+
+    // 4. Reverse Loan Calculation
+    // Monthly P&I Factor per $1 of Loan Principal:
+    // M = P * [ r*(1+r)^n / ((1+r)^n - 1) ]
+    // Let factorK = [ r*(1+r)^n / ((1+r)^n - 1) ]
+    // Also, Property Tax per month = (Purchase Price * taxRate%) / 12
+    // Purchase Price = Loan + DownPayment
+    // Therefore: Monthly Tax = (Loan * taxRate%/12) + (DownPayment * taxRate%/12)
+    // Total Monthly = M_PI + Monthly Tax <= availableForMortgageAndTax
+    // Loan * (factorK + taxRate%/12) <= availableForMortgageAndTax - (DownPayment * taxRate%/12)
+    const n = state.termYears * 12;
+    const r = (annualRate / 100) / 12;
+    const compound = Math.pow(1 + r, n);
+    const factorK = (r * compound) / (compound - 1);
+    const monthlyTaxFactor = (taxRatePercent / 100) / 12;
+
+    const netAvailableBudget = Math.max(0, availableForMortgageAndTax - (downPayment * monthlyTaxFactor));
+    let maxLoanAmount = 0;
+    if ((factorK + monthlyTaxFactor) > 0 && netAvailableBudget > 0) {
+      maxLoanAmount = Math.max(0, netAvailableBudget / (factorK + monthlyTaxFactor));
+    }
+
+    // 5. Maximum Purchase Price
+    const maxHomePrice = maxLoanAmount + downPayment;
+
+    // Recalculate exact PITI components based on maxHomePrice and maxLoanAmount
+    let monthlyPI = 0;
+    if (maxLoanAmount > 0) {
+      monthlyPI = maxLoanAmount * factorK;
+    }
+    const monthlyPropertyTax = (maxHomePrice * (taxRatePercent / 100)) / 12;
+    const totalMonthlyPITI = monthlyPI + monthlyPropertyTax + monthlyInsurance;
+
+    // Down payment percentage subtext
+    if (maxHomePrice > 0) {
+      const dpPct = (downPayment / maxHomePrice) * 100;
+      downPaymentPercentSubtext.textContent = `${formatDecimal(dpPct, 1)}% of purchase price`;
+    } else {
+      downPaymentPercentSubtext.textContent = '0.0%';
+    }
+
+    // ------------------------------------------------------
+    // E. UPDATE DASHBOARD DISPLAY
+    // ------------------------------------------------------
+    resMaxHomePriceVal.textContent = formatMoney(maxHomePrice);
+    resMaxLoanSubtext.textContent = `Max Loan: ${formatMoney(maxLoanAmount)} + ${formatMoney(downPayment)} Down`;
+    resTotalMonthlyPayment.textContent = `${formatMoney(totalMonthlyPITI)} / mo`;
+    resTermLabel.textContent = `${state.termYears}-Yr`;
+    resPiVal.textContent = formatMoney(monthlyPI);
+    resTaxVal.textContent = formatMoney(monthlyPropertyTax);
+    resInsVal.textContent = formatMoney(monthlyInsurance);
+
+    // Segmented Bar widths
+    if (totalMonthlyPITI > 0) {
+      const pctPi = (monthlyPI / totalMonthlyPITI) * 100;
+      const pctTax = (monthlyPropertyTax / totalMonthlyPITI) * 100;
+      const pctIns = (monthlyInsurance / totalMonthlyPITI) * 100;
+      barPi.style.width = `${pctPi}%`;
+      barTax.style.width = `${pctTax}%`;
+      barIns.style.width = `${pctIns}%`;
+    }
+
+    // Allocation Bar Breakdown
+    if (grossMonthlyIncome > 0) {
+      const housingDti = (totalMonthlyPITI / grossMonthlyIncome) * 100;
+      const debtDti = (monthlyDebts / grossMonthlyIncome) * 100;
+      const bufferPct = Math.max(0, 100 - (housingDti + debtDti));
+
+      dtiUsageLabel.textContent = `${formatDecimal(housingDti, 1)}% Housing DTI | ${formatDecimal(housingDti + debtDti, 1)}% Total DTI`;
+      allocHousingBar.style.width = `${Math.min(100, housingDti)}%`;
+      allocDebtBar.style.width = `${Math.min(100, debtDti)}%`;
+      allocTakehomeBar.style.width = `${Math.min(100, bufferPct)}%`;
+
+      allocHousingText.textContent = formatMoney(totalMonthlyPITI);
+      allocDebtText.textContent = formatMoney(monthlyDebts);
+      const bufferDollars = Math.max(0, grossMonthlyIncome - totalMonthlyPITI - monthlyDebts);
+      allocBufferText.textContent = formatMoney(bufferDollars);
+    }
+
+    // Health Card Alert
+    updateHealthCard(grossMonthlyIncome, totalMonthlyPITI, monthlyDebts, backEndDtiCap);
+  }
+
+  // --------------------------------------------------------
+  // F. BORROWING HEALTH GAUGE
+  // --------------------------------------------------------
+  function updateHealthCard(grossIncome, piti, debts, backEndCap) {
+    if (grossIncome <= 0) return;
+    const totalDti = ((piti + debts) / grossIncome) * 100;
+    const housingDti = (piti / grossIncome) * 100;
+
+    if (totalDti <= 30) {
+      healthIcon.textContent = '🛡️';
+      healthIcon.style.background = '#ecfdf5';
+      healthTitle.textContent = 'Optimal Borrowing Power';
+      healthTitle.style.color = '#047857';
+      healthSubtitle.textContent = 'Excellent debt cushion. Very low risk of mortgage financial stress.';
+    } else if (totalDti <= 36) {
+      healthIcon.textContent = '🏡';
+      healthIcon.style.background = '#ecfdf5';
+      healthTitle.textContent = 'Sustainable Buying Power';
+      healthTitle.style.color = '#065f46';
+      healthSubtitle.textContent = 'Meets standard 28/36 conventional banking underwriting guidelines.';
+    } else if (totalDti <= 43) {
+      healthIcon.textContent = '⚖️';
+      healthIcon.style.background = '#fffbeb';
+      healthTitle.textContent = 'Moderate / Conforming Ceiling';
+      healthTitle.style.color = '#92400e';
+      healthSubtitle.textContent = 'Approaching maximum conventional lending limits. Budget discipline recommended.';
+    } else {
+      healthIcon.textContent = '⚠️';
+      healthIcon.style.background = '#fef2f2';
+      healthTitle.textContent = 'Stretched / High Debt Warning';
+      healthTitle.style.color = '#991b1b';
+      healthSubtitle.textContent = 'Requires FHA or non-conforming loan exceptions. High risk of becoming house-poor.';
+    }
+  }
+
+  // --------------------------------------------------------
+  // G. EVENT LISTENERS: INPUTS & SLIDERS
+  // --------------------------------------------------------
+  const allInputs = [
+    annualIncomeInput,
+    monthlyDebtsInput,
+    downPaymentInput,
+    interestRateInput,
+    propertyTaxRateInput,
+    annualInsuranceInput,
+    dtiLimitInput
+  ];
+
+  allInputs.forEach(input => {
+    input.addEventListener('input', calculateAffordability);
+    input.addEventListener('change', calculateAffordability);
+  });
+
+  annualIncomeSlider.addEventListener('input', function() {
+    annualIncomeInput.value = this.value;
+    calculateAffordability();
+  });
+
+  monthlyDebtsSlider.addEventListener('input', function() {
+    monthlyDebtsInput.value = this.value;
+    calculateAffordability();
+  });
+
+  downPaymentSlider.addEventListener('input', function() {
+    downPaymentInput.value = this.value;
+    calculateAffordability();
+  });
+
+  interestRateSlider.addEventListener('input', function() {
+    interestRateInput.value = this.value;
+    calculateAffordability();
+  });
+
+  dtiLimitSlider.addEventListener('input', function() {
+    dtiLimitInput.value = this.value;
+    calculateAffordability();
+  });
+
+  // Currency Switcher
+  currButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      currButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const curr = this.getAttribute('data-curr');
+      const symbol = this.getAttribute('data-symbol');
+      state.currency = curr;
+      state.currencySymbol = symbol;
+
+      currSymbolSpans.forEach(span => span.textContent = symbol);
+
+      // Localized norms
+      if (curr === 'GBP') {
+        annualIncomeInput.value = 75000;
+        monthlyDebtsInput.value = 350;
+        downPaymentInput.value = 30000;
+        annualInsuranceInput.value = 600;
+        propertyTaxRateInput.value = 0.8;
+      } else if (curr === 'AUD') {
+        annualIncomeInput.value = 140000;
+        monthlyDebtsInput.value = 650;
+        downPaymentInput.value = 70000;
+        annualInsuranceInput.value = 1600;
+        propertyTaxRateInput.value = 0.9;
+      } else {
+        annualIncomeInput.value = 110000;
+        monthlyDebtsInput.value = 500;
+        downPaymentInput.value = 45000;
+        annualInsuranceInput.value = 1200;
+        propertyTaxRateInput.value = 1.1;
+      }
+
+      calculateAffordability();
+    });
+  });
+
+  // Loan Term Switcher (30 vs 15)
+  termButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      termButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      state.termYears = parseInt(this.getAttribute('data-term'), 10) || 30;
+      calculateAffordability();
+    });
+  });
+
+  // Advanced Toggle
+  let isAdvancedOpen = false;
+  btnToggleAdvanced.addEventListener('click', function() {
+    isAdvancedOpen = !isAdvancedOpen;
+    advancedPane.style.display = isAdvancedOpen ? 'block' : 'none';
+    advancedArrowIcon.textContent = isAdvancedOpen ? '▴' : '▾';
+    this.setAttribute('aria-expanded', isAdvancedOpen ? 'true' : 'false');
+  });
+
+  // Copy & Print Utilities
+  function showToast(msg) {
+    toastPill.textContent = msg;
+    toastPill.classList.add('show');
+    setTimeout(() => toastPill.classList.remove('show'), 2800);
+  }
+
+  btnCopySummary.addEventListener('click', function() {
+    const income = annualIncomeInput.value;
+    const debts = monthlyDebtsInput.value;
+    const down = downPaymentInput.value;
+    const maxPrice = resMaxHomePriceVal.textContent;
+    const monthlyPay = resTotalMonthlyPayment.textContent;
+    const term = state.termYears;
+
+    const text = `--- RealRefin Home Affordability Estimate ---
+Annual Household Income: ${state.currencySymbol}${income}
+Monthly Recurring Debts: ${state.currencySymbol}${debts}
+Down Payment Available: ${state.currencySymbol}${down}
+Loan Term: ${term}-Year Fixed
+---------------------------------------------
+MAXIMUM HOME PURCHASE PRICE: ${maxPrice}
+Estimated Monthly Payment (PITI): ${monthlyPay}
+---------------------------------------------
+Calculate your buying power at https://realrefin.com/home-affordability-calculator`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => showToast('Estimate copied to clipboard!'));
+    } else {
+      showToast('Estimate ready to copy.');
+    }
+  });
+
+  btnPrintEstimate.addEventListener('click', function() {
+    window.print();
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item-card').forEach(card => {
+    const qBtn = card.querySelector('.faq-question-btn');
+    qBtn.addEventListener('click', () => {
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.faq-item-card').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        card.classList.add('open');
+        qBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Initial Calculation Run
+  calculateAffordability();
+
+})();
+</script>
+
+</body>
+</html>

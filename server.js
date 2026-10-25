@@ -19,6 +19,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/home-affordability-calculator</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/rental-yield-calculator</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,6 +93,8 @@ const FILE_MAP = {
   '/index.html': 'index.html',
   '/brrrr-calculator': 'brrrr-calculator.html',
   '/brrrr-calculator.html': 'brrrr-calculator.html',
+  '/home-affordability-calculator': 'home-affordability-calculator.html',
+  '/home-affordability-calculator.html': 'home-affordability-calculator.html',
   '/rental-yield-calculator': 'rental-yield-calculator.html',
   '/rental-yield-calculator.html': 'rental-yield-calculator.html',
   '/about': 'about.html',
