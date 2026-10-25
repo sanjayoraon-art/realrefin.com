@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VA IRRRL Calculator | Streamline Refinance & 36-Month Recoupment</title>
+  <meta name="description" content="Calculate your VA IRRRL Streamline Refinance savings, new monthly payment, and exact 36-month recoupment timeline. Free institutional calculator for US Veterans and Military Homeowners.">
+  <meta name="keywords" content="va irrrl calculator, va irrrl max loan amount calculator, va irrrl recoupment calculator, va irrrl closing costs calculator, va streamline refinance calculator, va mortgage refinance, net tangible benefit">
+  <link rel="canonical" href="https://realrefin.com/va-irrrl-calculator">
+  <meta property="og:title" content="VA IRRRL Calculator | Streamline Refinance & 36-Month Recoupment">
+  <meta property="og:description" content="Instant VA Streamline Refinance calculations. Check 50 bps tangible benefit and 36-month recoupment compliance under 38 U.S.C. § 3709.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/va-irrrl-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1A2B4C">
+
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/va-irrrl-calculator#app",
+        "name": "RealRefin VA IRRRL Streamline Refinance Calculator",
+        "url": "https://realrefin.com/va-irrrl-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional-grade VA IRRRL streamline refinance calculator that computes payment savings, new loan amount, funding fee, and verifies VA statutory 36-month recoupment and tangible benefit guidelines.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "VA IRRRL Calculator",
+            "item": "https://realrefin.com/va-irrrl-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the maximum loan amount for a VA IRRRL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under statutory VA guidelines (38 U.S.C. § 3709), the maximum loan amount for a VA IRRRL is limited strictly to the existing unpaid principal balance plus allowable closing costs, discount points, energy-efficient improvement costs (up to $6,000), and the VA Funding Fee. No cash out is permitted to the veteran, except for up to $500 for incidental closing adjustments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an appraisal or income verification for a VA IRRRL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Department of Veterans Affairs does not require a home appraisal, credit score check, or income/employment verification to guarantee an IRRRL. However, individual mortgage lenders may implement their own internal underwriting rules, known as 'lender overlays' (such as requiring a 620 minimum FICO score or verification of on-time mortgage payments)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can closing costs be rolled into the new VA IRRRL loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. One of the primary advantages of a VA IRRRL is that all allowable closing costs, discount points, and the VA Funding Fee can be financed directly into the new mortgage balance, allowing military homeowners to refinance with zero out-of-pocket expenses, provided the statutory 36-month recoupment test is satisfied."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who qualifies for a 0% VA Funding Fee exemption?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Veterans receiving VA compensation for a service-connected disability (even a 10% disability rating qualifies), active-duty service members awarded the Purple Heart, veterans entitled to disability compensation who receive military retirement pay instead, and eligible surviving spouses receiving Dependency and Indemnity Compensation (DIC) are 100% exempt from the VA Funding Fee."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the VA 36-month recoupment rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enacted under the Economic Growth, Regulatory Relief, and Consumer Protection Act (Public Law 115-174) and codified in 38 U.S.C. § 3709, the recoupment rule requires that all fees and closing costs incurred by the veteran to execute an IRRRL must be fully recovered through monthly principal and interest payment reductions within 36 months from loan closing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the seasoning requirement for a VA IRRRL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To be eligible for an IRRRL, the veteran's current VA loan must be seasoned for at least 210 calendar days from the date the first monthly payment was due, AND the veteran must have made at least 6 consecutive full monthly payments on the existing loan before the new refinance can close."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       1. FINTECH SAAS DESIGN SYSTEM - MILITARY NAVY & GOLD
+       Primary: Military Navy Blue (#1A2B4C)
+       Accents: Military Gold (#D4AF37) & High-Performance Emerald (#10B981)
+    =========================================================== */
+    :root {
+      --primary-navy: #1A2B4C;       /* Military Navy Blue */
+      --primary-navy-dark: #0F172A;  /* Deep Slate / Midnight Navy */
+      --secondary-navy: #243656;     /* Card highlight navy */
+      --navy-light-bg: #F1F5F9;      /* Subtle slate background */
+      
+      --accent-gold: #D4AF37;        /* Military Amber / Gold */
+      --accent-gold-hover: #B89726;  /* Deep Gold */
+      --accent-gold-light: #FFFBEB;  /* Light Gold Tint */
+      --accent-gold-border: #FDE68A;
+      
+      --accent-emerald: #10B981;     /* Verified Emerald */
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-danger: #EF4444;      /* Crimson Alert */
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+      
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-body: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #1A2B4C;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(26, 43, 76, 0.12), 0 8px 10px -6px rgba(26, 43, 76, 0.06);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       SITE NAVIGATION
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .rr-logo .flag-icon {
+      font-size: 1.25rem;
+      margin-left: 0.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-navy);
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid var(--accent-gold);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.9rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR CONTAINER & CARD
+    ----------------------------------------------------------- */
+    .calc-card-wrapper {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #0F172A 100%);
+      color: var(--text-white);
+      padding: 2.25rem 2.5rem;
+      border-bottom: 4px solid var(--accent-gold);
+      position: relative;
+    }
+
+    .military-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #FBBF24;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .military-badge-pill span {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #FBBF24;
+      border-radius: 50%;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+      color: #FFFFFF;
+    }
+
+    .calc-header-banner p {
+      color: #94A3B8;
+      font-size: 1.02rem;
+      max-width: 860px;
+      line-height: 1.55;
+    }
+
+    .header-trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.825rem;
+      color: #CBD5E1;
+      font-weight: 500;
+    }
+
+    .header-trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .header-trust-bar svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--accent-emerald);
+    }
+
+    @media (max-width: 768px) {
+      .calc-header-banner {
+        padding: 1.75rem 1.5rem;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.65rem;
+      }
+      .header-trust-bar {
+        gap: 0.75rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       TWO-COLUMN RESPONSIVE LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      min-height: 600px;
+    }
+
+    @media (max-width: 992px) {
+      .calc-grid-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       LEFT COLUMN: USER INPUTS & CONTROLS
+    ----------------------------------------------------------- */
+    .calc-inputs-pane {
+      padding: 2.5rem;
+      background: #FFFFFF;
+      border-right: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 992px) {
+      .calc-inputs-pane {
+        padding: 1.75rem 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    .input-group-section {
+      margin-bottom: 1.65rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Interactive Tooltip Icon */
+    .tooltip-container {
+      position: relative;
+      display: inline-flex;
+      cursor: help;
+    }
+
+    .tooltip-btn {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #E2E8F0;
+      color: var(--secondary-navy);
+      font-size: 0.7rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1;
+    }
+
+    .tooltip-btn:hover, .tooltip-btn:focus {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .tooltip-bubble {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      background: var(--primary-navy-dark);
+      color: #F8FAFC;
+      font-size: 0.775rem;
+      font-weight: 400;
+      line-height: 1.45;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+      z-index: 100;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      text-align: left;
+    }
+
+    .tooltip-bubble::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: var(--primary-navy-dark) transparent transparent transparent;
+    }
+
+    .tooltip-container:hover .tooltip-bubble,
+    .tooltip-container:focus-within .tooltip-bubble {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Custom Input Fields */
+    .input-field-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-affix {
+      position: absolute;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    .affix-prefix {
+      left: 1rem;
+    }
+
+    .affix-suffix {
+      right: 1rem;
+    }
+
+    .styled-input {
+      width: 100%;
+      height: 46px;
+      padding: 0.5rem 1rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .has-prefix {
+      padding-left: 2rem;
+    }
+
+    .has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    .styled-input:focus {
+      outline: none;
+      border-color: var(--primary-navy);
+      box-shadow: 0 0 0 3px rgba(26, 43, 76, 0.12);
+    }
+
+    /* Custom Select Dropdowns */
+    .styled-select {
+      width: 100%;
+      height: 46px;
+      padding: 0.5rem 2.25rem 0.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231A2B4C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 1rem center;
+      background-size: 16px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      appearance: none;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+
+    .styled-select:focus {
+      outline: none;
+      border-color: var(--primary-navy);
+      box-shadow: 0 0 0 3px rgba(26, 43, 76, 0.12);
+    }
+
+    /* Sliders */
+    .slider-container {
+      margin-top: 0.65rem;
+      position: relative;
+    }
+
+    .styled-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: #E2E8F0;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .styled-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary-navy);
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      transition: transform 0.1s ease, background 0.15s ease;
+    }
+
+    .styled-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--primary-navy);
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+
+    .styled-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: var(--accent-gold);
+    }
+
+    .slider-labels-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-subtle);
+      margin-top: 0.35rem;
+      font-weight: 500;
+    }
+
+    /* Segmented Loan Term Buttons */
+    .term-pill-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      background: #F1F5F9;
+      padding: 0.35rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .term-pill-btn {
+      padding: 0.6rem 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .term-pill-btn:hover {
+      color: var(--primary-navy);
+    }
+
+    .term-pill-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(26, 43, 76, 0.15);
+    }
+
+    /* Toggle Option Row */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      background: #F8FAFC;
+      border-radius: var(--radius-sm);
+      border: 1px dashed var(--border-color);
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    .radio-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .radio-label input[type="radio"] {
+      accent-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       RIGHT COLUMN: LIVE RESULTS DASHBOARD & PASS/FAIL CARD
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      background: #F8FAFC;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 992px) {
+      .calc-results-pane {
+        padding: 1.75rem 1.5rem;
+      }
+    }
+
+    /* Dynamic Tangible Benefit Status Badge */
+    .tangible-benefit-banner {
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tangible-benefit-banner.status-passed {
+      background: var(--accent-emerald-light);
+      border: 1.5px solid var(--accent-emerald-border);
+      color: #065F46;
+    }
+
+    .tangible-benefit-banner.status-warning {
+      background: var(--accent-gold-light);
+      border: 1.5px solid var(--accent-gold-border);
+      color: #92400E;
+    }
+
+    .tangible-benefit-banner.status-failed {
+      background: var(--accent-danger-light);
+      border: 1.5px solid var(--accent-danger-border);
+      color: #991B1B;
+    }
+
+    .status-icon-wrapper {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .status-passed .status-icon-wrapper {
+      background: #D1FAE5;
+      color: #047857;
+    }
+
+    .status-warning .status-icon-wrapper {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .status-failed .status-icon-wrapper {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    .status-details-col h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .status-details-col p {
+      font-size: 0.825rem;
+      line-height: 1.45;
+      opacity: 0.9;
+    }
+
+    /* Key Numbers Grid */
+    .key-results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (max-width: 500px) {
+      .key-results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .result-metric-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .result-metric-card.highlight-savings {
+      border-top: 4px solid var(--accent-emerald);
+      background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
+    }
+
+    .result-metric-card.highlight-payment {
+      border-top: 4px solid var(--primary-navy);
+    }
+
+    .metric-caption {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-value-huge {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .metric-value-huge.emerald {
+      color: var(--accent-emerald-dark);
+    }
+
+    .metric-sub {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      font-weight: 500;
+    }
+
+    /* Recoupment Gauge Card */
+    .recoupment-meter-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.75rem;
+    }
+
+    .meter-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.65rem;
+    }
+
+    .meter-title {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .meter-value-badge {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .meter-progress-track {
+      position: relative;
+      height: 14px;
+      background: #E2E8F0;
+      border-radius: 50px;
+      overflow: visible;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .meter-progress-fill {
+      height: 100%;
+      border-radius: 50px;
+      transition: width 0.4s ease, background 0.3s ease;
+      background: var(--accent-emerald);
+      max-width: 100%;
+    }
+
+    .meter-36mo-marker {
+      position: absolute;
+      left: 75%; /* 36 months out of 48 max scale = 75% */
+      top: -6px;
+      bottom: -6px;
+      width: 2px;
+      background: #475569;
+      z-index: 5;
+    }
+
+    .meter-marker-label {
+      position: absolute;
+      left: 75%;
+      top: -20px;
+      transform: translateX(-50%);
+      font-size: 0.675rem;
+      font-weight: 800;
+      color: #475569;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .meter-scale-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-subtle);
+      font-weight: 600;
+    }
+
+    .recoupment-explanation-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    /* Loan Breakdown Detail List */
+    .breakdown-table-wrapper {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .breakdown-row:last-child {
+      border-bottom: none;
+      padding-top: 0.75rem;
+      font-weight: 800;
+      font-size: 0.925rem;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-label {
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .breakdown-val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* Actions Row */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-action {
+      padding: 0.65rem 1rem;
+      font-size: 0.825rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      color: #FFFFFF;
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary-navy-dark);
+      color: #FFFFFF;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-xl);
+      border-left: 4px solid var(--accent-gold);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+
+    .toast-pill.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ===========================================================
+       2. EDITORIAL SEO GUIDE ARTICLE (1000+ WORDS)
+    =========================================================== */
+    .seo-article {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-md);
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.78;
+    }
+
+    @media (max-width: 768px) {
+      .seo-article {
+        padding: 2rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    .seo-article h1,
+    .seo-article h2,
+    .seo-article h3,
+    .seo-article h4 {
+      color: var(--primary-navy);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+
+    .seo-article h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .seo-article h2 {
+      font-size: 1.65rem;
+      margin-top: 3.25rem;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 2px solid #F1F5F9;
+    }
+
+    .seo-article h3 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-article p {
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-article ul, .seo-article ol {
+      margin: 1.25rem 0 1.5rem 1.5rem;
+    }
+
+    .seo-article li {
+      margin-bottom: 0.65rem;
+    }
+
+    .seo-lead-text {
+      font-size: 1.15rem;
+      color: #475569;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .seo-callout {
+      background: #F8FAFC;
+      border-left: 4px solid var(--primary-navy);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+      color: #1E293B;
+    }
+
+    .seo-callout.military-callout {
+      background: #FFFBEB;
+      border-left-color: var(--accent-gold);
+      color: #78350F;
+    }
+
+    .seo-callout strong {
+      color: var(--primary-navy);
+    }
+
+    .math-formula-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-left: 4px solid var(--primary-navy);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    .math-formula-caption {
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .math-rendered {
+      font-size: 1.35rem;
+      color: #0F172A;
+      margin: 0.5rem 0;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .seo-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .seo-table th {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      padding: 0.9rem 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .seo-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid #F1F5F9;
+      color: #334155;
+    }
+
+    .seo-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .seo-table tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+      overflow: hidden;
+    }
+
+    .faq-item-card:hover {
+      border-color: #CBD5E1;
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: inherit;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+      font-weight: 400;
+    }
+
+    .faq-answer-pane {
+      display: none;
+      padding: 0 1.5rem 1.35rem 1.5rem;
+      font-size: 0.975rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .faq-item-card.open .faq-answer-pane {
+      display: block;
+    }
+
+    .faq-item-card.open .faq-toggle-icon {
+      transform: rotate(45deg);
+      color: var(--accent-gold);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-navy);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       SITE NAVBAR
+  ======================================================== -->
+  <nav class="rr-nav" aria-label="Main Navigation">
+    <a href="/" class="rr-logo" aria-label="RealRefin Home">
+      Real<span>Refin</span> <span class="flag-icon" title="US Veteran FinTech">🇺🇸</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/va-irrrl-calculator" class="active">VA IRRRL Calculator</a></li>
+      <li><a href="/home-affordability-calculator">Affordability</a></li>
+      <li><a href="/brrrr-calculator">BRRRR</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========================================================
+       1. CALCULATOR TOOL: INTERFACE & CARD
+  ======================================================== -->
+  <main class="calc-card-wrapper" id="calculator">
+    
+    <!-- Hero Banner -->
+    <header class="calc-header-banner">
+      <div class="military-badge-pill">
+        <span></span> Department of Veterans Affairs • Streamline Program
+      </div>
+      <h1>VA IRRRL Calculator: Streamline Refinance & Recoupment</h1>
+      <p>
+        Calculate your exact rate reduction, new monthly principal and interest payment, and verify compliance with the statutory 36-month recoupment and 50 bps Net Tangible Benefit guidelines under 38 U.S.C. § 3709.
+      </p>
+
+      <div class="header-trust-bar">
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          No Appraisal Required
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          36-Month Recoupment Rule
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          0.5% or 0% Disability Exempt Fee
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Zero Out-of-Pocket Financing
+        </span>
+      </div>
+    </header>
+
+    <!-- 2-Column Grid -->
+    <div class="calc-grid-layout">
+      
+      <!-- LEFT COLUMN: INPUTS & SLIDERS -->
+      <section class="calc-inputs-pane" aria-label="Refinance Input Parameters">
+        
+        <!-- Input 1: Current Monthly Mortgage Payment -->
+        <div class="input-group-section">
+          <div class="input-label-row">
+            <label for="currentPaymentInput" class="input-label">
+              Current Monthly Payment (P&I)
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="Current Monthly Payment Info">i</button>
+                <span class="tooltip-bubble">Your current monthly Principal & Interest payment. Do not include property taxes, homeowner's insurance, or HOA fees.</span>
+              </span>
+            </label>
+            <span class="input-helper-badge">
+              <button type="button" id="btnAutoCalcPayment" style="background:none; border:none; color:var(--primary-navy); font-size:0.75rem; font-weight:700; text-decoration:underline; cursor:pointer;" title="Auto-estimate 30-year P&I payment based on current balance and rate">Auto-Estimate P&amp;I</button>
+            </span>
+          </div>
+          <div class="input-field-wrapper">
+            <span class="input-affix affix-prefix">$</span>
+            <input type="number" id="currentPaymentInput" class="styled-input has-prefix" value="2528" min="200" max="15000" step="10">
+          </div>
+          <div class="slider-container">
+            <input type="range" id="currentPaymentSlider" class="styled-slider" min="500" max="8000" step="25" value="2528" aria-label="Current Payment Slider">
+            <div class="slider-labels-row">
+              <span>$500/mo</span>
+              <span>$4,000/mo</span>
+              <span>$8,000/mo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input 2: Current Interest Rate -->
+        <div class="input-group-section">
+          <div class="input-label-row">
+            <label for="currentRateInput" class="input-label">
+              Current Interest Rate
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="Current Rate Info">i</button>
+                <span class="tooltip-bubble">The existing annual note rate on your current VA mortgage.</span>
+              </span>
+            </label>
+            <span class="input-helper-badge">Existing Note Rate</span>
+          </div>
+          <div class="input-field-wrapper">
+            <input type="number" id="currentRateInput" class="styled-input has-suffix" value="6.750" min="1.0" max="14.0" step="0.125">
+            <span class="input-affix affix-suffix">%</span>
+          </div>
+          <div class="slider-container">
+            <input type="range" id="currentRateSlider" class="styled-slider" min="2.5" max="10.0" step="0.125" value="6.75" aria-label="Current Interest Rate Slider">
+            <div class="slider-labels-row">
+              <span>2.5%</span>
+              <span>6.0%</span>
+              <span>10.0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input 3: Current Principal Balance -->
+        <div class="input-group-section">
+          <div class="input-label-row">
+            <label for="currentBalanceInput" class="input-label">
+              Current Principal Balance
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="Principal Balance Info">i</button>
+                <span class="tooltip-bubble">Your remaining unpaid loan balance as shown on your latest mortgage statement.</span>
+              </span>
+            </label>
+            <span class="input-helper-badge">Unpaid Payoff Balance</span>
+          </div>
+          <div class="input-field-wrapper">
+            <span class="input-affix affix-prefix">$</span>
+            <input type="number" id="currentBalanceInput" class="styled-input has-prefix" value="385000" min="25000" max="2500000" step="1000">
+          </div>
+          <div class="slider-container">
+            <input type="range" id="currentBalanceSlider" class="styled-slider" min="50000" max="1200000" step="5000" value="385000" aria-label="Principal Balance Slider">
+            <div class="slider-labels-row">
+              <span>$50,000</span>
+              <span>$600,000</span>
+              <span>$1,200,000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input 4: New Proposed Interest Rate -->
+        <div class="input-group-section">
+          <div class="input-label-row">
+            <label for="newRateInput" class="input-label">
+              New Proposed Interest Rate
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="New Proposed Rate Info">i</button>
+                <span class="tooltip-bubble">The new interest rate offered by the lender. Fixed-to-fixed loans require at least a 0.50% (50 basis points) reduction.</span>
+              </span>
+            </label>
+            <span class="input-helper-badge">Must reduce by &ge;0.50%</span>
+          </div>
+          <div class="input-field-wrapper">
+            <input type="number" id="newRateInput" class="styled-input has-suffix" value="5.750" min="1.0" max="14.0" step="0.125">
+            <span class="input-affix affix-suffix">%</span>
+          </div>
+          <div class="slider-container">
+            <input type="range" id="newRateSlider" class="styled-slider" min="2.5" max="10.0" step="0.125" value="5.75" aria-label="New Proposed Rate Slider">
+            <div class="slider-labels-row">
+              <span>2.5%</span>
+              <span>5.5%</span>
+              <span>10.0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input 5: VA Funding Fee -->
+        <div class="input-group-section">
+          <div class="input-label-row">
+            <label for="fundingFeeSelect" class="input-label">
+              VA Funding Fee Option
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="VA Funding Fee Info">i</button>
+                <span class="tooltip-bubble">Standard IRRRL funding fee is 0.50%. Veterans with 10%+ service-connected disability, Purple Heart recipients, and eligible surviving spouses are 100% exempt (0.00%).</span>
+              </span>
+            </label>
+            <span class="input-helper-badge">38 U.S.C. § 3729</span>
+          </div>
+          <select id="fundingFeeSelect" class="styled-select" aria-label="VA Funding Fee Selection">
+            <option value="0.005" selected>0.50% Standard Rate (Non-Exempt Veteran / Active Duty)</option>
+            <option value="0.000">0.00% Fully Exempt (Disability / Purple Heart / Surviving Spouse)</option>
+          </select>
+        </div>
+
+        <!-- Input 6: Total Closing Costs & Financing Mode -->
+        <div class="input-group-section">
+          <div class="input-label-row">
+            <label for="closingCostsInput" class="input-label">
+              Total Closing Costs
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="Closing Costs Info">i</button>
+                <span class="tooltip-bubble">Total lender fees, title, recording, and discount points. Excludes prepaid escrow impounds (taxes and insurance) per VA Circular 26-19-22.</span>
+              </span>
+            </label>
+            <span class="input-helper-badge">Excludes Escrow Prepaids</span>
+          </div>
+          <div class="input-field-wrapper">
+            <span class="input-affix affix-prefix">$</span>
+            <input type="number" id="closingCostsInput" class="styled-input has-prefix" value="4500" min="0" max="25000" step="100">
+          </div>
+          <div class="slider-container">
+            <input type="range" id="closingCostsSlider" class="styled-slider" min="0" max="15000" step="100" value="4500" aria-label="Closing Costs Slider">
+            <div class="slider-labels-row">
+              <span>$0 (No-Cost)</span>
+              <span>$7,500</span>
+              <span>$15,000</span>
+            </div>
+          </div>
+          <div class="toggle-row">
+            <span>Closing Cost Financing:</span>
+            <label class="radio-label">
+              <input type="radio" name="financeCostsToggle" value="roll" checked> Roll Into Loan
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="financeCostsToggle" value="pocket"> Out of Pocket
+            </label>
+          </div>
+        </div>
+
+        <!-- Input 7: New Loan Term -->
+        <div class="input-group-section" style="margin-bottom: 0.5rem;">
+          <div class="input-label-row">
+            <label class="input-label">
+              New Loan Term (Years)
+              <span class="tooltip-container">
+                <button type="button" class="tooltip-btn" aria-label="Loan Term Info">i</button>
+                <span class="tooltip-bubble">Per VA rules, the new term cannot exceed the original term of your existing loan by more than 10 years, and cannot exceed 30 years and 32 days.</span>
+              </span>
+            </label>
+            <span class="input-helper-badge" id="termYearsLabel">30-Year Fixed</span>
+          </div>
+          <div class="term-pill-group" role="group" aria-label="New Loan Term">
+            <button type="button" class="term-pill-btn" data-term="15">15 Years</button>
+            <button type="button" class="term-pill-btn" data-term="20">20 Years</button>
+            <button type="button" class="term-pill-btn active" data-term="30">30 Years</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: DYNAMIC RESULTS CARD & PASS/FAIL BADGES -->
+      <section class="calc-results-pane" aria-label="Refinance Eligibility & Calculation Dashboard">
+        
+        <div>
+          <!-- Dynamic Tangible Benefit Status Badge -->
+          <div class="tangible-benefit-banner status-passed" id="tangibleStatusBanner" role="status">
+            <div class="status-icon-wrapper" id="statusIcon">✓</div>
+            <div class="status-details-col">
+              <h4 id="statusTitle">PASSED: Eligible for VA IRRRL</h4>
+              <p id="statusDesc">Meets VA statutory guidelines under 38 U.S.C. § 3709 with a &ge;0.50% rate drop and recoupment period &le; 36 months.</p>
+            </div>
+          </div>
+
+          <!-- Hero Metrics Grid -->
+          <div class="key-results-grid">
+            
+            <!-- Result Metric 1: New Monthly Payment -->
+            <div class="result-metric-card highlight-payment">
+              <div class="metric-caption">New Monthly Payment (P&I)</div>
+              <div class="metric-value-huge" id="resNewPaymentVal">$2,284</div>
+              <div class="metric-sub" id="resPaymentSub">vs. $2,528 Current Payment</div>
+            </div>
+
+            <!-- Result Metric 2: Monthly Payment Savings -->
+            <div class="result-metric-card highlight-savings">
+              <div class="metric-caption">Monthly Payment Savings</div>
+              <div class="metric-value-huge emerald" id="resMonthlySavingsVal">+$244</div>
+              <div class="metric-sub" id="resAnnualSavingsSub">$2,928 Saved Annually</div>
+            </div>
+
+          </div>
+
+          <!-- Recoupment Progress Bar Gauge -->
+          <div class="recoupment-meter-card">
+            <div class="meter-header-row">
+              <span class="meter-title">Recoupment Timeline vs. 36-Month VA Cap</span>
+              <span class="meter-value-badge" id="resRecoupmentBadge">26.3 Months</span>
+            </div>
+
+            <div class="meter-progress-track">
+              <div class="meter-36mo-marker" title="36-Month Statutory Limit"></div>
+              <div class="meter-marker-label">36-Mo Limit</div>
+              <div class="meter-progress-fill" id="meterProgressFill" style="width: 55%;"></div>
+            </div>
+
+            <div class="meter-scale-footer">
+              <span>0 Mo</span>
+              <span>12 Mo</span>
+              <span>24 Mo</span>
+              <span>36 Mo (Cap)</span>
+              <span>48 Mo</span>
+            </div>
+
+            <p class="recoupment-explanation-text" id="resRecoupmentExplanation">
+              You will fully recover all closing costs in <strong>26.3 months</strong>. Because this is within the statutory 36-month ceiling, this streamline refinance is eligible for a VA loan guaranty.
+            </p>
+          </div>
+
+          <!-- Detailed Loan Breakdown Summary -->
+          <div class="breakdown-table-wrapper">
+            <div class="breakdown-row">
+              <span class="breakdown-label">Interest Rate Reduction</span>
+              <span class="breakdown-val" id="resRateReductionVal">-1.000% (-100 bps)</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">Current Unpaid Principal</span>
+              <span class="breakdown-val" id="resBaseBalanceVal">$385,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">VA Funding Fee Amount</span>
+              <span class="breakdown-val" id="resFundingFeeVal">$1,925 (0.50%)</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">Financed Closing Costs</span>
+              <span class="breakdown-val" id="resFinancedCostsVal">$4,500</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">Total Out-of-Pocket / Recoupable Fees</span>
+              <span class="breakdown-val" id="resTotalFeesVal">$6,425</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">5-Year Cumulative Savings</span>
+              <span class="breakdown-val" id="resFiveYearSavingsVal" style="color: var(--accent-emerald-dark);">+$14,640</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">New Total Loan Amount</span>
+              <span class="breakdown-val" id="resNewTotalLoanVal">$391,425</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Utility Action Buttons -->
+        <div class="actions-grid">
+          <button type="button" class="btn-action btn-action-primary" id="btnCopySummary">
+            📋 Copy Refinance Summary
+          </button>
+          <button type="button" class="btn-action" id="btnPrintReport">
+            🖨️ Print / Save PDF
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Notification Toast -->
+  <div class="toast-pill" id="toastPill" role="status" aria-live="polite">VA IRRRL Summary copied to clipboard!</div>
+
+  <!-- ========================================================
+       2. EDITORIAL SEO CONTENT (1000+ WORDS)
+  ======================================================== -->
+  <article class="seo-article">
+    
+    <header>
+      <h1>VA IRRRL Calculator: Estimate Your Rate Reduction &amp; Recoupment Period</h1>
+      <p class="seo-lead-text">
+        The Department of Veterans Affairs Interest Rate Reduction Refinance Loan (VA IRRRL)—commonly referred to as the <strong>VA Streamline Refinance</strong>—is universally recognized as one of the most powerful wealth-preservation mortgage vehicles in the United States. Designed exclusively for active-duty service members, military veterans, National Guard personnel, Reservists, and eligible surviving spouses who already hold an active VA-backed mortgage, the IRRRL provides a friction-free gateway to lower interest rates and reduced monthly housing payments.
+      </p>
+      <p>
+        Unlike conventional or FHA refinance programs, the VA IRRRL eliminates many of the traditional underwriting hurdles that impede civilian borrowers. In most cases, the VA requires <strong>no home appraisal</strong>, <strong>no formal income verification</strong>, <strong>no minimum debt-to-income (DTI) calculations</strong>, and <strong>zero out-of-pocket cash at closing</strong>. However, to safeguard military families against predatory lending, federal statutes enforce stringent mathematical tests—specifically the <strong>Net Tangible Benefit requirement</strong> and the strict <strong>36-Month Recoupment Rule</strong> under <strong>38 U.S.C. § 3709</strong>.
+      </p>
+    </header>
+
+    <div class="seo-callout military-callout">
+      <strong>Statutory Underwriting Protections:</strong> In accordance with Public Law 115-174 and VA Circular 26-19-22, a lender cannot legally issue a VA IRRRL unless the refinance demonstrates an authentic, measurable economic benefit to the veteran: the interest rate must decrease by at least 50 basis points (0.50%) on fixed-rate loans, and all closing costs and statutory funding fees must be fully recouped within 36 calendar months.
+    </div>
+
+    <!-- ----------------------------------------------------
+         SECTION 1: WHAT IS A VA IRRRL
+    ---------------------------------------------------- -->
+    <h2>What is a VA IRRRL (Streamline Refinance)?</h2>
+    <p>
+      A VA IRRRL (pronounced <em>"earl"</em>) is a specialized mortgage refinance instrument authorized under Title 38 of the United States Code. Its explicit congressional mandate is to streamline the refinancing process, allowing veteran homeowners to rapidly capitalize on falling market interest rates without enduring months of documentary red tape or paying thousands of dollars in upfront fees.
+    </p>
+
+    <h3>Core Advantages of the VA Streamline Refinance</h3>
+    <ul>
+      <li>
+        <strong>No Property Appraisal Required:</strong> The VA does not mandate an appraisal report to determine current home equity or fair market value. Even if local home values have depreciated and the homeowner has zero or negative equity (an underwater mortgage), the loan remains fully eligible for an IRRRL.
+      </li>
+      <li>
+        <strong>No Income or Employment Verification:</strong> Because the borrower has already demonstrated their ability to manage the underlying debt, the VA does not require W-2s, paystubs, tax transcripts, or complex debt-to-income ratio underwriting.
+      </li>
+      <li>
+        <strong>100% Financing of Closing Costs:</strong> All allowable origination charges, discount points, title fees, and the VA Funding Fee can be directly rolled into the new principal loan balance.
+      </li>
+      <li>
+        <strong>The "Previous Occupancy" Rule for Deployed &amp; Relocated Military:</strong> Under standard VA purchase loans, borrowers must certify their intent to occupy the subject property as their primary residence. However, the IRRRL program requires only that the veteran certify that they <em>previously occupied</em> the home as a primary residence. For active-duty military homeowners who have received <strong>Permanent Change of Station (PCS) orders</strong> and relocated to a new base, this provision is invaluable. You can refinance your former primary residence into a rock-bottom rate streamline loan even if it is currently leased out as an investment rental property!
+      </li>
+    </ul>
+
+    <!-- ----------------------------------------------------
+         SECTION 2: 36-MONTH RECOUPMENT RULE
+    ---------------------------------------------------- -->
+    <h2>The VA 36-Month Recoupment Rule Explained</h2>
+    <p>
+      Historically, aggressive mortgage lenders targeted military homeowners with misleading marketing, encouraging them to refinance every 6 to 12 months. Each transaction added thousands of dollars of fees to the veteran's mortgage balance—a deceptive practice known in the mortgage industry as <strong>"loan churning"</strong>.
+    </p>
+    <p>
+      To eradicate predatory loan churning, Congress passed the <em>Economic Growth, Regulatory Relief, and Consumer Protection Act of 2018</em> (Public Law 115-174), codified in <strong>38 U.S.C. § 3709</strong>. This landmark legislation established a mandatory statutory rule:
+    </p>
+
+    <div class="seo-callout">
+      <strong>The 36-Month Statutory Mandate:</strong> All fees, closing costs, discount points, and statutory charges incurred by the veteran to execute an IRRRL must be fully recovered through monthly payment reductions within <strong>36 calendar months</strong> from the date of loan closing.
+    </div>
+
+    <h3>What Fees Count Toward the 36-Month Recoupment Limit?</h3>
+    <p>
+      Per VA Circular 26-19-22 and VA Pamphlet 26-7 (Chapter 6), underwriters must rigorously categorize closing costs into <strong>allowable recoupment fees</strong> versus <strong>excluded prepaid items</strong>:
+    </p>
+
+    <div class="table-responsive">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>Expense Category</th>
+            <th>Included in 36-Mo Recoupment?</th>
+            <th>Regulatory Justification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Lender Origination Fee (1% Cap)</strong></td>
+            <td>YES</td>
+            <td>Direct administrative fee charged by the lender to execute the transaction.</td>
+          </tr>
+          <tr>
+            <td><strong>Discount Points</strong></td>
+            <td>YES</td>
+            <td>Upfront interest buy-down points paid to obtain a lower contract note rate.</td>
+          </tr>
+          <tr>
+            <td><strong>VA Funding Fee (0.50%)</strong></td>
+            <td>YES</td>
+            <td>Statutory fee paid to the Department of Veterans Affairs guaranty fund.</td>
+          </tr>
+          <tr>
+            <td><strong>Title Insurance, Closing &amp; Recording Fees</strong></td>
+            <td>YES</td>
+            <td>Mandatory settlement, settlement agent, and county recording charges.</td>
+          </tr>
+          <tr>
+            <td><strong>Prepaid Real Estate Property Taxes</strong></td>
+            <td>NO (Excluded)</td>
+            <td>Property taxes are an unavoidable ongoing housing expense, not a cost of refinancing.</td>
+          </tr>
+          <tr>
+            <td><strong>Homeowners / Hazard Insurance Escrows</strong></td>
+            <td>NO (Excluded)</td>
+            <td>Insurance reserves are recurring living costs that would be owed regardless of refinancing.</td>
+          </tr>
+          <tr>
+            <td><strong>Per Diem / Daily Interest</strong></td>
+            <td>NO (Excluded)</td>
+            <td>Interim interest covering the days between closing and the first scheduled payment date.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Notice the critical regulatory distinction: <strong>true escrow prepaids (property taxes and insurance impounds) are explicitly excluded from the 36-month recoupment test</strong>. When you refinance, your previous lender must refund your existing escrow balance to you via check or direct deposit within 30 to 45 business days. Because escrow funds are simply your own money transferring from one account to another, the VA does not penalize your recoupment calculation for funding a new escrow reserve.
+    </p>
+
+    <!-- ----------------------------------------------------
+         SECTION 3: GUIDELINES, RATES, FUNDING FEES, MAX LOANS
+    ---------------------------------------------------- -->
+    <h2>VA IRRRL Guidelines: Rates, Funding Fees, and Max Loan Amounts</h2>
+    <p>
+      Before applying for an IRRRL or running calculations through our streamline modeler, veteran homeowners must review the four foundational qualifying criteria:
+    </p>
+
+    <h3>1. Net Tangible Benefit (NTB) Rate Reductions</h3>
+    <p>
+      Federal law requires a measurable, tangible benefit before a VA lender can issue closing disclosures:
+    </p>
+    <ul>
+      <li><strong>Fixed-Rate to Fixed-Rate:</strong> The new note interest rate must decrease by a minimum of <strong>0.50% (50 basis points)</strong>. For example, if your current rate is 6.75%, your new rate cannot exceed 6.25%.</li>
+      <li><strong>Fixed-Rate to Adjustable-Rate (ARM):</strong> The new rate must decrease by a minimum of <strong>2.00% (200 basis points)</strong>.</li>
+      <li><strong>Adjustable-Rate (ARM) to Fixed-Rate:</strong> The new fixed rate may actually increase, provided the change is designed to lock in long-term financial stability and protect the borrower from volatile interest rate spikes.</li>
+    </ul>
+
+    <h3>2. VA Funding Fee Options &amp; Exemptions (38 U.S.C. § 3729)</h3>
+    <p>
+      The VA Funding Fee is a one-time statutory charge collected to sustain the VA Home Loan Guaranty fund and shield taxpayers from credit risk. Unlike standard VA purchase loans—where the funding fee ranges from 1.25% to 3.30%—the IRRRL fee is set at a flat <strong>0.50% of the loan amount</strong> for all non-exempt borrowers.
+    </p>
+    <p>
+      Furthermore, millions of veterans are entitled to a <strong>100% Funding Fee Exemption ($0 Fee)</strong>. You qualify for an exemption if you meet any of the following:
+    </p>
+    <ul>
+      <li>You receive VA disability compensation for a service-connected disability (even a minimum <strong>10% service-connected rating</strong> grants full fee waiver).</li>
+      <li>You are an active-duty service member who has been awarded the <strong>Purple Heart</strong>.</li>
+      <li>You are a military retiree entitled to receive disability compensation who receives retirement pay instead.</li>
+      <li>You are a surviving spouse of a veteran who died in service or from a service-connected disability, and you receive Dependency and Indemnity Compensation (DIC).</li>
+    </ul>
+
+    <h3>3. Loan Seasoning Requirements (The 210-Day / 6-Payment Rule)</h3>
+    <p>
+      Under federal law, you cannot refinance your VA loan the day after purchasing your home. To satisfy mandatory seasoning requirements:
+    </p>
+    <ul>
+      <li>At least <strong>210 calendar days</strong> must have elapsed between the due date of the first monthly mortgage payment on the loan being refinanced and the note date of the new IRRRL.</li>
+      <li>The borrower must have completed at least <strong>6 consecutive full monthly payments</strong> on the existing mortgage.</li>
+    </ul>
+
+    <h3>4. Maximum Loan Amount Rules</h3>
+    <p>
+      Thanks to the <em>Blue Water Navy Vietnam Veterans Act of 2019</em>, statutory county loan limits have been abolished for veterans with full VA loan entitlement. However, for an IRRRL, the maximum loan amount is mathematically bounded:
+    </p>
+    <div class="seo-callout">
+      <strong>Maximum IRRRL Formula:</strong> Existing Unpaid Principal Balance + Allowable Closing Costs + Discount Points + VA Funding Fee + up to $6,000 for allowable Energy Efficient Mortgages (EEM).
+    </div>
+    <p>
+      <strong>Zero Cash-Out Prohibition:</strong> Unlike a standard VA Cash-Out Refinance, the VA IRRRL strictly prohibits borrowers from receiving cash proceeds at settlement. The maximum cash back a veteran may receive at closing is <strong>$500</strong>, which is reserved strictly for minor mathematical reconciliation of daily per diem interest or payoff variances.
+    </p>
+
+    <!-- ----------------------------------------------------
+         SECTION 4: MATHEMATICAL FORMULAS & WORKED EXAMPLE
+    ---------------------------------------------------- -->
+    <h2>How to Calculate VA IRRRL Recoupment (With Formulas)</h2>
+    <p>
+      Understanding the exact mathematical underwriting model guarantees that your refinance application will pass through automated and manual underwriting without unexpected delays.
+    </p>
+
+    <div class="math-formula-box">
+      <div class="math-formula-caption">VA Recoupment Period Equation (Months)</div>
+      <div class="math-rendered">
+        $$\text{Recoupment Period (Months)} = \frac{\text{Allowable Closing Costs} + \text{VA Funding Fee}}{\text{Old Monthly P\&I Payment} - \text{New Monthly P\&I Payment}}$$
+      </div>
+    </div>
+
+    <p>
+      To compute the New Monthly Principal and Interest payment ($M$), lenders employ the standard institutional mortgage amortization formula:
+    </p>
+
+    <div class="math-formula-box">
+      <div class="math-formula-caption">Standard Monthly Amortization Formula</div>
+      <div class="math-rendered">
+        $$M = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$$
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+        Where $P$ is the New Total Loan Amount, $r$ is the monthly interest rate ($\text{annual rate} / 12 / 100$), and $n$ is the total number of repayment months ($\text{years} \times 12$).
+      </p>
+    </div>
+
+    <h3>Comprehensive Case Study: Refinancing a $385,000 Mortgage</h3>
+    <p>
+      Consider the following real-world scenario for Staff Sergeant Miller, stationed in San Antonio, Texas:
+    </p>
+    <ul>
+      <li><strong>Current Loan Balance:</strong> $385,000</li>
+      <li><strong>Current Note Rate:</strong> 6.750% (30-Year Fixed)</li>
+      <li><strong>Current Monthly P&amp;I Payment:</strong> $2,497.10</li>
+      <li><strong>New Proposed Note Rate:</strong> 5.750% (A full 1.00% reduction, surpassing the 0.50% NTB threshold)</li>
+      <li><strong>Lender Closing Costs:</strong> $4,200 (title, origination, recording)</li>
+      <li><strong>VA Funding Fee:</strong> 0.50% standard rate ($\$385,000 \times 0.005 = \$1,925$)</li>
+      <li><strong>Total Recoupable Closing Expenses:</strong> $\$4,200 + \$1,925 = \$6,125$</li>
+    </ul>
+
+    <p>
+      Staff Sergeant Miller elects to roll all closing expenses directly into the loan balance. The new total mortgage balance is:
+    </p>
+    $$\text{New Loan Balance} = \$385,000 + \$4,200 + \$1,925 = \$391,125$$
+
+    <p>
+      Using the 30-year amortization equation at 5.750%, the new monthly Principal and Interest payment is calculated:
+    </p>
+    $$\text{New Monthly Payment} = \$391,125 \times \frac{0.00479167(1.00479167)^{360}}{(1.00479167)^{360} - 1} = \$2,282.35$$
+
+    <p>
+      Next, we calculate the monthly cash-flow savings:
+    </p>
+    $$\text{Monthly Savings} = \$2,497.10 - \$2,282.35 = \$214.75 \text{ per month}$$
+
+    <p>
+      Finally, we calculate the statutory recoupment period:
+    </p>
+    $$\text{Recoupment Period} = \frac{\$6,125}{\$214.75} = \mathbf{28.52 \text{ Months}}$$
+
+    <div class="seo-callout">
+      <strong>Underwriting Verdict: APPROVED.</strong> Because 28.52 months is strictly less than the 36.00-month statutory ceiling, and the note rate dropped by 100 basis points (well above the required 50 bps threshold), the loan easily meets the VA Tangible Benefit requirements. Staff Sergeant Miller saves <strong>$2,577.00 annually</strong> in housing cash flow with zero cash required at the closing table.
+    </div>
+
+    <!-- ----------------------------------------------------
+         SECTION 5: FREQUENTLY ASKED QUESTIONS
+    ---------------------------------------------------- -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          What is the maximum loan amount for a VA IRRRL?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          Under statutory VA guidelines (38 U.S.C. § 3709), the maximum loan amount for an IRRRL is strictly limited to your existing unpaid principal mortgage balance, plus allowable closing costs, discount points, energy-efficient improvements (up to $6,000), and the VA Funding Fee. No cash-out is permitted, except for up to $500 for incidental closing reconciliations. County loan limits do not apply to veterans with full loan entitlement.
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          Do I need an appraisal or income verification for a VA IRRRL?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          The Department of Veterans Affairs does not mandate a home appraisal, credit score underwriting, or employment/income documentation. However, individual mortgage lenders frequently impose their own internal underwriting rules, known as "lender overlays." For example, while the VA does not require a minimum credit score, a specific bank might require a 620 FICO score or verify that you have had zero 30-day late mortgage payments over the past 12 months.
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          Can closing costs be rolled into the new VA IRRRL loan?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          Yes. A hallmark benefit of the VA Streamline program is that all allowable settlement charges, lender fees, title policies, and the VA Funding Fee can be financed directly into the new loan balance. This allows service members and veterans to execute the refinance with zero out-of-pocket costs, provided the total financed fees satisfy the 36-month recoupment rule.
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          Who qualifies for a 0% VA Funding Fee exemption?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          Veterans receiving VA compensation for a service-connected disability (a disability rating of 10% or higher is sufficient), active-duty service members awarded the Purple Heart, military retirees receiving retirement pay in lieu of disability compensation, and un-remarried surviving spouses receiving Dependency and Indemnity Compensation (DIC) are 100% exempt from paying the VA Funding Fee.
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          Can I refinance a rental property or investment home with a VA IRRRL?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          Yes! Under the VA IRRRL program, you are only required to certify that you <em>previously occupied</em> the home as your primary residence. If you purchased the home with a VA loan, lived in it, and subsequently relocated due to military Permanent Change of Station (PCS) orders or civilian job changes, you can still streamline refinance the mortgage at attractive residential primary rates, even if the property is currently leased to tenants.
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          What happens if my recoupment period is 37 months?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          If your calculated recoupment period exceeds 36.00 months, the loan violates federal law under 38 U.S.C. § 3709 and the Department of Veterans Affairs will not guarantee the loan. To make the loan compliant, the lender must either lower their closing costs, provide a lender credit to offset third-party fees, negotiate a lower interest rate, or reduce discount points until the recoupment timeline falls to 36 months or less.
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          Can I refinance from a 30-year loan into a 15-year loan with an IRRRL?
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          Yes, you can shorten your loan term (e.g., from a 30-year loan to a 15-year or 20-year term). However, shortening the term often causes the monthly payment to increase even as the interest rate drops. Per VA guidelines, if the monthly payment increases due to term compression, the veteran must undergo full credit, income, and residual income underwriting to prove repayment ability, and the new term cannot exceed the original term of the loan being refinanced by more than 10 years.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Institutional Disclaimer -->
+    <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+      <p>
+        <strong>Institutional Disclaimer &amp; Regulatory Disclosures:</strong> RealRefin.com is a financial modeling and educational software platform. RealRefin is not a mortgage lender, loan originator, or federal government agency, and is not affiliated with the Department of Veterans Affairs (VA) or the Department of Defense (DoD). VA loans are subject to borrower qualification and lender underwriting approval. Projections generated by this calculator are for illustrative purposes only. All calculations comply with 38 U.S.C. § 3709 and VA Circular 26-19-22 guidelines as of 2026.
+      </p>
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/va-irrrl-calculator">VA IRRRL Calculator</a></li>
+      <li><a href="/home-affordability-calculator">Affordability</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All rights reserved. Institutional Real Estate Investment &amp; Debt Calculators.</p>
+    <p style="margin-top: 0.35rem; font-size: 0.8rem;">Dedicated to empowering US Veterans, Active Duty Service Members, and Military Homeowners with transparent, institutional-grade financial modeling tools.</p>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     3. PURE VANILLA JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // --------------------------------------------------------
+  // A. DOM ELEMENT REFERENCES
+  // --------------------------------------------------------
+  const currentPaymentInput = document.getElementById('currentPaymentInput');
+  const currentPaymentSlider = document.getElementById('currentPaymentSlider');
+  const currentRateInput = document.getElementById('currentRateInput');
+  const currentRateSlider = document.getElementById('currentRateSlider');
+  const currentBalanceInput = document.getElementById('currentBalanceInput');
+  const currentBalanceSlider = document.getElementById('currentBalanceSlider');
+  const newRateInput = document.getElementById('newRateInput');
+  const newRateSlider = document.getElementById('newRateSlider');
+  const fundingFeeSelect = document.getElementById('fundingFeeSelect');
+  const closingCostsInput = document.getElementById('closingCostsInput');
+  const closingCostsSlider = document.getElementById('closingCostsSlider');
+  const termButtons = document.querySelectorAll('.term-pill-btn');
+  const termYearsLabel = document.getElementById('termYearsLabel');
+  const financeCostsRadios = document.querySelectorAll('input[name="financeCostsToggle"]');
+
+  // Results Elements
+  const tangibleStatusBanner = document.getElementById('tangibleStatusBanner');
+  const statusIcon = document.getElementById('statusIcon');
+  const statusTitle = document.getElementById('statusTitle');
+  const statusDesc = document.getElementById('statusDesc');
+
+  const resNewPaymentVal = document.getElementById('resNewPaymentVal');
+  const resPaymentSub = document.getElementById('resPaymentSub');
+  const resMonthlySavingsVal = document.getElementById('resMonthlySavingsVal');
+  const resAnnualSavingsSub = document.getElementById('resAnnualSavingsSub');
+
+  const resRecoupmentBadge = document.getElementById('resRecoupmentBadge');
+  const meterProgressFill = document.getElementById('meterProgressFill');
+  const resRecoupmentExplanation = document.getElementById('resRecoupmentExplanation');
+
+  const resRateReductionVal = document.getElementById('resRateReductionVal');
+  const resBaseBalanceVal = document.getElementById('resBaseBalanceVal');
+  const resFundingFeeVal = document.getElementById('resFundingFeeVal');
+  const resFinancedCostsVal = document.getElementById('resFinancedCostsVal');
+  const resTotalFeesVal = document.getElementById('resTotalFeesVal');
+  const resFiveYearSavingsVal = document.getElementById('resFiveYearSavingsVal');
+  const resNewTotalLoanVal = document.getElementById('resNewTotalLoanVal');
+
+  // Utilities
+  const btnCopySummary = document.getElementById('btnCopySummary');
+  const btnPrintReport = document.getElementById('btnPrintReport');
+  const toastPill = document.getElementById('toastPill');
+
+  // --------------------------------------------------------
+  // B. STATE MANAGEMENT
+  // --------------------------------------------------------
+  const state = {
+    termYears: 30,
+    financeCosts: 'roll' // 'roll' or 'pocket'
+  };
+
+  // --------------------------------------------------------
+  // C. NUMBER FORMATTING HELPERS
+  // --------------------------------------------------------
+  function formatMoney(amount) {
+    if (isNaN(amount) || !isFinite(amount)) return '$0';
+    return '$' + Math.round(amount).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, decimals = 2) {
+    if (isNaN(num) || !isFinite(num)) return '0.00';
+    return Number(num).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+
+  // --------------------------------------------------------
+  // D. AMORTIZATION PAYMENT CALCULATION
+  // Formula: M = P * [ r(1+r)^n ] / [ (1+r)^n - 1 ]
+  // --------------------------------------------------------
+  function calculateMonthlyPI(principal, annualRatePct, years) {
+    if (principal <= 0) return 0;
+    if (annualRatePct <= 0) return principal / (years * 12);
+
+    const r = (annualRatePct / 100) / 12;
+    const n = years * 12;
+    const factor = Math.pow(1 + r, n);
+    return principal * ( (r * factor) / (factor - 1) );
+  }
+
+  // --------------------------------------------------------
+  // E. PRIMARY CALCULATION ENGINE
+  // --------------------------------------------------------
+  function recalculateIRRRL() {
+    // 1. Gather & parse inputs
+    const currentPayment = parseFloat(currentPaymentInput.value) || 0;
+    const currentRate = parseFloat(currentRateInput.value) || 0;
+    const currentBalance = parseFloat(currentBalanceInput.value) || 0;
+    const newRate = parseFloat(newRateInput.value) || 0;
+    const fundingFeeRate = parseFloat(fundingFeeSelect.value) || 0;
+    const closingCosts = parseFloat(closingCostsInput.value) || 0;
+    const termYears = state.termYears;
+    const isRollingCosts = state.financeCosts === 'roll';
+
+    // 2. VA Funding Fee calculation
+    // Per VA guidelines, Funding Fee can be financed based on (Principal Balance + Rolled Closing Costs)
+    const financedBase = isRollingCosts ? (currentBalance + closingCosts) : currentBalance;
+    const vaFundingFeeAmount = financedBase * fundingFeeRate;
+
+    // 3. New Loan Amount
+    const financedClosingCosts = isRollingCosts ? closingCosts : 0;
+    const newLoanAmount = currentBalance + financedClosingCosts + vaFundingFeeAmount;
+
+    // 4. Total Out-of-Pocket / Recoupable Closing Fees
+    // Under VA Circular 26-19-22, total fees to recoup = closing costs + VA funding fee
+    const totalFeesToRecoup = closingCosts + vaFundingFeeAmount;
+
+    // 5. New Monthly Payment (P&I)
+    const newMonthlyPayment = calculateMonthlyPI(newLoanAmount, newRate, termYears);
+
+    // 6. Monthly Savings
+    const monthlySavings = currentPayment - newMonthlyPayment;
+    const annualSavings = monthlySavings * 12;
+
+    // 7. Recoupment Period (in Months)
+    let recoupmentMonths = Infinity;
+    if (monthlySavings > 0) {
+      recoupmentMonths = totalFeesToRecoup / monthlySavings;
+    }
+
+    // 8. VA Net Tangible Benefit Check
+    // Rule A: Rate reduction >= 0.50% (50 bps)
+    const rateReduction = currentRate - newRate;
+    const passesRateReduction = rateReduction >= 0.499; // Allow standard rounding tolerance
+
+    // Rule B: Recoupment period <= 36.0 months
+    const passesRecoupment = (recoupmentMonths <= 36.0) && (monthlySavings > 0);
+
+    // --------------------------------------------------------
+    // F. UPDATE DISPLAY RESULTS
+    // --------------------------------------------------------
+
+    // New Payment & Monthly Savings
+    resNewPaymentVal.textContent = formatMoney(newMonthlyPayment);
+    resPaymentSub.textContent = `vs. ${formatMoney(currentPayment)} Current Payment`;
+
+    if (monthlySavings > 0) {
+      resMonthlySavingsVal.textContent = `+${formatMoney(monthlySavings)}`;
+      resMonthlySavingsVal.className = 'metric-value-huge emerald';
+      resAnnualSavingsSub.textContent = `${formatMoney(annualSavings)} Saved Annually`;
+    } else {
+      resMonthlySavingsVal.textContent = `-${formatMoney(Math.abs(monthlySavings))}`;
+      resMonthlySavingsVal.className = 'metric-value-huge';
+      resMonthlySavingsVal.style.color = '#EF4444';
+      resAnnualSavingsSub.textContent = 'Payment increases (No Savings)';
+    }
+
+    // Rate reduction text
+    const bps = Math.round(rateReduction * 100);
+    resRateReductionVal.textContent = `${rateReduction >= 0 ? '-' : '+'}${formatDecimal(Math.abs(rateReduction), 3)}% (${bps} bps)`;
+
+    // Breakdown details
+    resBaseBalanceVal.textContent = formatMoney(currentBalance);
+    const feePctDisplay = (fundingFeeRate * 100).toFixed(2);
+    resFundingFeeVal.textContent = `${formatMoney(vaFundingFeeAmount)} (${feePctDisplay}%)`;
+    resFinancedCostsVal.textContent = isRollingCosts ? formatMoney(closingCosts) : '$0 (Paid Cash)';
+    resTotalFeesVal.textContent = formatMoney(totalFeesToRecoup);
+    resNewTotalLoanVal.textContent = formatMoney(newLoanAmount);
+
+    const fiveYearNetSavings = (monthlySavings * 60) - totalFeesToRecoup;
+    resFiveYearSavingsVal.textContent = `${fiveYearNetSavings >= 0 ? '+' : ''}${formatMoney(fiveYearNetSavings)}`;
+    resFiveYearSavingsVal.style.color = fiveYearNetSavings >= 0 ? 'var(--accent-emerald-dark)' : '#EF4444';
+
+    // --------------------------------------------------------
+    // G. UPDATE RECOUPMENT METER & STATUS BANNER
+    // --------------------------------------------------------
+    const maxScaleMonths = 48; // Meter track covers 0 to 48 months (36 is at 75%)
+
+    if (monthlySavings <= 0) {
+      // Payment does not decrease
+      resRecoupmentBadge.textContent = 'N/A';
+      resRecoupmentBadge.style.color = 'var(--accent-danger)';
+      meterProgressFill.style.width = '100%';
+      meterProgressFill.style.background = 'var(--accent-danger)';
+      resRecoupmentExplanation.innerHTML = '<strong>No payment reduction.</strong> Under VA rules, the new monthly principal and interest payment must decrease (unless refinancing an ARM to a fixed-rate loan).';
+
+      // Status Banner
+      tangibleStatusBanner.className = 'tangible-benefit-banner status-failed';
+      statusIcon.textContent = '✕';
+      statusTitle.textContent = 'FAILED: Payment Does Not Decrease';
+      statusDesc.textContent = 'The proposed loan increases your monthly mortgage payment. An IRRRL requires an authentic tangible economic benefit.';
+
+    } else if (!passesRateReduction) {
+      // Rate does not drop by 50 bps
+      const recoupText = isFinite(recoupmentMonths) ? `${formatDecimal(recoupmentMonths, 1)} Months` : 'N/A';
+      resRecoupmentBadge.textContent = recoupText;
+
+      const fillPct = Math.min(100, (recoupmentMonths / maxScaleMonths) * 100);
+      meterProgressFill.style.width = `${fillPct}%`;
+      meterProgressFill.style.background = passesRecoupment ? 'var(--accent-gold)' : 'var(--accent-danger)';
+
+      resRecoupmentExplanation.innerHTML = `Estimated recoupment is <strong>${recoupText}</strong>, but note rate drops by only <strong>${formatDecimal(rateReduction, 3)}%</strong> (below required 0.50%).`;
+
+      tangibleStatusBanner.className = 'tangible-benefit-banner status-warning';
+      statusIcon.textContent = '⚠️';
+      statusTitle.textContent = 'WARNING: Rate Reduction Less Than 0.50%';
+      statusDesc.textContent = `VA rules require at least a 0.50% (50 basis points) interest rate drop for Fixed-to-Fixed refinances. Current reduction is ${formatDecimal(rateReduction, 3)}%.`;
+
+    } else if (!passesRecoupment) {
+      // Rate is fine, but Recoupment > 36 months
+      const recoupText = `${formatDecimal(recoupmentMonths, 1)} Months`;
+      resRecoupmentBadge.textContent = recoupText;
+      resRecoupmentBadge.style.color = 'var(--accent-danger)';
+
+      const fillPct = Math.min(100, (recoupmentMonths / maxScaleMonths) * 100);
+      meterProgressFill.style.width = `${fillPct}%`;
+      meterProgressFill.style.background = 'var(--accent-danger)';
+
+      resRecoupmentExplanation.innerHTML = `Closing fees take <strong>${recoupText}</strong> to recover. This exceeds the statutory <strong>36-month limit</strong> mandated by 38 U.S.C. § 3709.`;
+
+      tangibleStatusBanner.className = 'tangible-benefit-banner status-failed';
+      statusIcon.textContent = '⚠️';
+      statusTitle.textContent = 'WARNING: Exceeds 36-Month Recoupment Limit';
+      statusDesc.textContent = `Total closing costs of ${formatMoney(totalFeesToRecoup)} take ${recoupText} to recover at $${formatMoney(monthlySavings)}/mo savings. Must be 36 months or less.`;
+
+    } else {
+      // PASSED: Rate drop >= 0.50% AND Recoupment <= 36 months
+      const recoupText = `${formatDecimal(recoupmentMonths, 1)} Months`;
+      resRecoupmentBadge.textContent = recoupText;
+      resRecoupmentBadge.style.color = 'var(--primary-navy)';
+
+      const fillPct = Math.min(100, (recoupmentMonths / maxScaleMonths) * 100);
+      meterProgressFill.style.width = `${fillPct}%`;
+
+      // Color gradation: Emerald if under 24 months, Gold if 24-36 months
+      if (recoupmentMonths <= 24) {
+        meterProgressFill.style.background = 'var(--accent-emerald)';
+      } else {
+        meterProgressFill.style.background = '#F59E0B'; // Amber
+      }
+
+      resRecoupmentExplanation.innerHTML = `You will fully recover all closing costs in <strong>${recoupText}</strong>. Because this is within the statutory 36-month ceiling, this streamline refinance is eligible for a VA loan guaranty.`;
+
+      tangibleStatusBanner.className = 'tangible-benefit-banner status-passed';
+      statusIcon.textContent = '✓';
+      statusTitle.textContent = 'PASSED: Eligible for VA IRRRL';
+      statusDesc.textContent = `Meets VA statutory guidelines under 38 U.S.C. § 3709 with a ${formatDecimal(rateReduction, 3)}% rate drop and ${recoupText} recoupment period.`;
+    }
+  }
+
+  // --------------------------------------------------------
+  // H. BI-DIRECTIONAL INPUT & SLIDER SYNC
+  // --------------------------------------------------------
+  function bindInputSliderPair(inputEl, sliderEl, isFloat = false) {
+    const handleInputChange = function() {
+      sliderEl.value = inputEl.value;
+      recalculateIRRRL();
+    };
+    const handleSliderChange = function() {
+      inputEl.value = isFloat ? parseFloat(sliderEl.value).toFixed(3) : sliderEl.value;
+      recalculateIRRRL();
+    };
+
+    inputEl.addEventListener('input', handleInputChange);
+    inputEl.addEventListener('change', handleInputChange);
+    sliderEl.addEventListener('input', handleSliderChange);
+    sliderEl.addEventListener('change', handleSliderChange);
+  }
+
+  bindInputSliderPair(currentPaymentInput, currentPaymentSlider, false);
+  bindInputSliderPair(currentRateInput, currentRateSlider, true);
+  bindInputSliderPair(currentBalanceInput, currentBalanceSlider, false);
+  bindInputSliderPair(newRateInput, newRateSlider, true);
+  bindInputSliderPair(closingCostsInput, closingCostsSlider, false);
+
+  fundingFeeSelect.addEventListener('change', recalculateIRRRL);
+
+  // Financing mode radio buttons
+  financeCostsRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        state.financeCosts = this.value;
+        recalculateIRRRL();
+      }
+    });
+  });
+
+  // Loan Term Segmented Buttons
+  termButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      termButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      state.termYears = parseInt(this.getAttribute('data-term'), 10) || 30;
+      termYearsLabel.textContent = `${state.termYears}-Year Fixed`;
+      recalculateIRRRL();
+    });
+  });
+
+  // Auto-Estimate Current Payment
+  const btnAutoCalcPayment = document.getElementById('btnAutoCalcPayment');
+  if (btnAutoCalcPayment) {
+    btnAutoCalcPayment.addEventListener('click', function() {
+      const balance = parseFloat(currentBalanceInput.value) || 0;
+      const rate = parseFloat(currentRateInput.value) || 0;
+      if (balance > 0 && rate > 0) {
+        const estimatedPI = Math.round(calculateMonthlyPI(balance, rate, 30));
+        currentPaymentInput.value = estimatedPI;
+        currentPaymentSlider.value = estimatedPI;
+        recalculateIRRRL();
+        showToast(`Estimated 30-yr payment: $${estimatedPI.toLocaleString()}/mo`);
+      }
+    });
+  }
+
+  // --------------------------------------------------------
+  // I. COPY & PRINT UTILITIES
+  // --------------------------------------------------------
+  function showToast(msg) {
+    toastPill.textContent = msg;
+    toastPill.classList.add('show');
+    setTimeout(() => toastPill.classList.remove('show'), 2800);
+  }
+
+  btnCopySummary.addEventListener('click', function() {
+    const balance = formatMoney(parseFloat(currentBalanceInput.value) || 0);
+    const currRate = parseFloat(currentRateInput.value) || 0;
+    const newRate = parseFloat(newRateInput.value) || 0;
+    const oldPay = formatMoney(parseFloat(currentPaymentInput.value) || 0);
+    const newPay = resNewPaymentVal.textContent;
+    const savings = resMonthlySavingsVal.textContent;
+    const recoup = resRecoupmentBadge.textContent;
+    const status = statusTitle.textContent;
+    const term = state.termYears;
+
+    const summaryText = `--- RealRefin VA IRRRL Streamline Refinance Summary ---
+Current Balance: ${balance}
+Interest Rate: ${currRate.toFixed(3)}% -> ${newRate.toFixed(3)}% (${state.termYears}-Year Fixed)
+Old Monthly Payment (P&I): ${oldPay}
+New Monthly Payment (P&I): ${newPay}
+Monthly Cash Flow Savings: ${savings}
+Statutory Recoupment Period: ${recoup} (VA Limit: 36 Months)
+VA Tangible Benefit Status: ${status}
+-------------------------------------------------------
+Estimate calculated at https://realrefin.com/va-irrrl-calculator`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(summaryText).then(() => {
+        showToast('VA IRRRL Summary copied to clipboard!');
+      }).catch(() => {
+        showToast('Summary ready to copy.');
+      });
+    } else {
+      showToast('Summary copied.');
+    }
+  });
+
+  btnPrintReport.addEventListener('click', function() {
+    window.print();
+  });
+
+  // --------------------------------------------------------
+  // J. FAQ ACCORDION INTERACTIVITY
+  // --------------------------------------------------------
+  document.querySelectorAll('.faq-item-card').forEach(card => {
+    const qBtn = card.querySelector('.faq-question-btn');
+    qBtn.addEventListener('click', () => {
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.faq-item-card').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        card.classList.add('open');
+        qBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Initial Calculation Run
+  recalculateIRRRL();
+
+})();
+</script>
+
+</body>
+</html>
