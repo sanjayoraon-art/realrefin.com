@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Yield Calculator | RealRefin Real Estate Tools</title>
+  <meta name="description" content="Calculate Gross and Net Rental Yield for US, UK, and Australian property investments. Free, real-time rental yield calculator with cash flow breakdown and market benchmarks.">
+
+  <!-- Schema Markup: Financial Application & FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/#calculator",
+        "name": "Rental Yield Calculator",
+        "url": "https://realrefin.com/rental-yield-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An interactive real estate investment calculator providing real-time Gross and Net Rental Yield, annual cash flow calculations, and multi-currency support (£, $, A$)."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does mortgage interest affect net rental yield?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Strictly speaking, Net Rental Yield measures the unleveraged operating performance of a property (Net Operating Income divided by Property Value). However, mortgage interest significantly impacts your net cash-on-cash return and taxable profit. In jurisdictions like the UK, Section 24 restrictions limit mortgage interest deductions, while in Australia, interest can be written off against income under negative gearing laws."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I calculate yield using weekly or monthly rent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on your regional market. In Australia and New Zealand, rental rates are traditionally quoted weekly. To calculate annual rent, multiply weekly rent by 52. In the United States and the United Kingdom, rents are quoted monthly, meaning annual rent is calculated as monthly rent multiplied by 12. Multiplying weekly rent by 4 to get monthly rent is inaccurate because a year has 52 weeks, not 48."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is rental yield or capital growth more important?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neither is universally superior; they serve distinct financial strategies. High rental yield properties provide immediate cash flow stability, debt coverage, and lower vulnerability to interest rate spikes. Capital growth properties build long-term equity and wealth through property appreciation, but often require the investor to subsidize monthly shortfalls during the initial years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Gross Rental Yield and Cap Rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gross rental yield only looks at gross rent relative to purchase price without deducting any expenses. Capitalization Rate (Cap Rate), widely used in the US commercial and multi-family sector, is identical in concept to Net Rental Yield: it evaluates Net Operating Income (gross income minus all operating expenses except mortgage debt service) divided by current property value."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       GLOBAL & RESET STYLES (FinTech Navy & Emerald Palette)
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-mint: #10b981;
+      --accent-mint-light: #d1fae5;
+      --accent-mint-hover: #059669;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-white: #ffffff;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --border-focus: #3b82f6;
+      --badge-good-bg: #ecfdf5;
+      --badge-good-text: #065f46;
+      --badge-avg-bg: #fffbeb;
+      --badge-avg-text: #92400e;
+      --badge-low-bg: #fef2f2;
+      --badge-low-text: #991b1b;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem;
+    }
+
+    /* Navbar */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 2rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .rr-logo span {
+      color: var(--accent-mint);
+    }
+
+    .rr-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR WRAPPER & GRID
+    ----------------------------------------------------------- */
+    .calc-card-wrapper {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      margin-bottom: 3.5rem;
+    }
+
+    .calc-header {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1a365d 100%);
+      color: var(--text-white);
+      padding: 2rem 2.5rem;
+      border-bottom: 4px solid var(--accent-mint);
+    }
+
+    .calc-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .calc-header p {
+      color: #94a3b8;
+      font-size: 0.975rem;
+    }
+
+    .calc-body-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0;
+    }
+
+    @media (max-width: 900px) {
+      .calc-body-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 900px) {
+      .calc-inputs-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.5rem;
+      }
+    }
+
+    .calc-results-pane {
+      background-color: #fafbfc;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 900px) {
+      .calc-results-pane {
+        padding: 1.5rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CONTROLS: CURRENCY & FREQUENCY TOGGLES
+    ----------------------------------------------------------- */
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .control-group-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .pill-switch {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 3px;
+      border-radius: 9999px;
+      border: 1px solid var(--border-color);
+    }
+
+    .pill-switch button {
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.45rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pill-switch button.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------------------------------------
+       INPUT FORMS & TOOLTIPS
+    ----------------------------------------------------------- */
+    .form-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .input-field-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.35rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Tooltip */
+    .tooltip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      color: #334155;
+      font-size: 0.65rem;
+      font-weight: bold;
+      cursor: help;
+      position: relative;
+    }
+
+    .tooltip-icon:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-navy);
+      color: #fff;
+      padding: 0.4rem 0.65rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 400;
+      white-space: normal;
+      width: 200px;
+      z-index: 50;
+      box-shadow: var(--shadow-md);
+      text-align: left;
+      line-height: 1.3;
+    }
+
+    .input-addon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix {
+      position: absolute;
+      left: 1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .calc-input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.25rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease-in-out;
+    }
+
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--accent-mint);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .expenses-accordion-toggle {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      margin: 1.5rem 0 1rem;
+      transition: background 0.2s ease;
+    }
+
+    .expenses-accordion-toggle:hover {
+      background: #f1f5f9;
+    }
+
+    .expenses-box {
+      background: #f8fafc;
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS DISPLAY PANE
+    ----------------------------------------------------------- */
+    .results-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card.highlight {
+      border: 2px solid var(--accent-mint);
+      background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+    }
+
+    .metric-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-value-huge {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+    }
+
+    .metric-card.highlight .metric-value-huge {
+      color: var(--accent-mint-hover);
+    }
+
+    /* Rating Indicator Pill */
+    .yield-rating-box {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .rating-badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .rating-badge.good { background: var(--badge-good-bg); color: var(--badge-good-text); border: 1px solid #a7f3d0; }
+    .rating-badge.average { background: var(--badge-avg-bg); color: var(--badge-avg-text); border: 1px solid #fde68a; }
+    .rating-badge.low { background: var(--badge-low-bg); color: var(--badge-low-text); border: 1px solid #fecaca; }
+
+    /* Summary Breakdown Table */
+    .summary-list {
+      list-style: none;
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.65rem 0;
+      font-size: 0.875rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .summary-item:last-child {
+      border-bottom: none;
+    }
+
+    .summary-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .summary-val {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .summary-val.positive {
+      color: var(--accent-mint-hover);
+    }
+
+    .summary-val.negative {
+      color: #ef4444;
+    }
+
+    .btn-reset {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      padding: 0.65rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-reset:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+    }
+
+    /* -----------------------------------------------------------
+       SEO ARTICLE CONTENT STYLES
+    ----------------------------------------------------------- */
+    .seo-content-article {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-article {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .seo-content-article h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-content-article h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 0.5rem;
+    }
+
+    .seo-content-article h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .seo-content-article p {
+      font-size: 1.025rem;
+      color: #334155;
+      margin-bottom: 1.25rem;
+      line-height: 1.75;
+    }
+
+    .seo-content-article ul, .seo-content-article ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .seo-content-article li {
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+    }
+
+    /* Formula Callout Boxes */
+    .formula-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-left: 4px solid var(--accent-mint);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .formula-title {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-math {
+      font-size: 1.15rem;
+      color: #047857;
+      font-weight: 700;
+    }
+
+    /* Benchmark Comparison Tables */
+    .data-table-wrapper {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+    }
+
+    .seo-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .seo-table th {
+      background-color: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+    }
+
+    .seo-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .seo-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .seo-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* FAQ Collapsible Component */
+    .faq-accordion {
+      margin-top: 1.5rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-question {
+      padding: 1.1rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover {
+      background-color: #f8fafc;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      padding: 0 1.25rem 1.25rem;
+      display: none;
+      color: #475569;
+      line-height: 1.7;
+      font-size: 0.975rem;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+      color: var(--accent-mint);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- Navbar -->
+  <header class="rr-nav">
+    <a href="#" class="rr-logo">Real<span>Refin</span>.com</a>
+    <div class="rr-tagline">Institutional Real Estate Investment Analytics</div>
+  </header>
+
+  <!-- ========================================================
+       1. INTERACTIVE RENTAL YIELD CALCULATOR
+  ======================================================== -->
+  <section class="calc-card-wrapper" id="calculator" aria-label="Rental Yield Calculator Tool">
+    
+    <!-- Top Header -->
+    <div class="calc-header">
+      <h2>Rental Yield Calculator</h2>
+      <p>Analyze Gross vs. Net Rental Yield and Cash Flow for UK, US, and Australian Real Estate.</p>
+    </div>
+
+    <div class="calc-body-grid">
+      
+      <!-- Left Side: User Inputs -->
+      <div class="calc-inputs-pane">
+        
+        <!-- Controls: Currency & Frequency -->
+        <div class="controls-row">
+          <div>
+            <span class="control-group-label">Select Currency / Region</span>
+            <div class="pill-switch" role="group" aria-label="Currency selection">
+              <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">US ($)</button>
+              <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">UK (£)</button>
+              <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">AU (A$)</button>
+            </div>
+          </div>
+
+          <div>
+            <span class="control-group-label">Rent Frequency</span>
+            <div class="pill-switch" role="group" aria-label="Rent collection frequency">
+              <button type="button" class="freq-btn active" data-freq="monthly">Monthly</button>
+              <button type="button" class="freq-btn" data-freq="weekly">Weekly</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1: Property & Rent Core Inputs -->
+        <div class="form-section-title">Property Details</div>
+
+        <div class="input-field-group">
+          <div class="input-label-row">
+            <label class="input-label" for="propertyPrice">
+              Property Purchase Price
+              <span class="tooltip-icon" data-tooltip="Total acquisition cost including agreed price, or current market valuation.">?</span>
+            </label>
+          </div>
+          <div class="input-addon-wrapper">
+            <span class="input-prefix" id="currSymbol1">$</span>
+            <input type="number" id="propertyPrice" class="calc-input" placeholder="350000" value="350000" min="0" step="5000">
+          </div>
+        </div>
+
+        <div class="input-field-group">
+          <div class="input-label-row">
+            <label class="input-label" for="rentAmount">
+              Expected <span id="rentFreqLabel">Monthly</span> Rent
+              <span class="tooltip-icon" data-tooltip="Expected gross rental payment received from tenants.">?</span>
+            </label>
+          </div>
+          <div class="input-addon-wrapper">
+            <span class="input-prefix" id="currSymbol2">$</span>
+            <input type="number" id="rentAmount" class="calc-input" placeholder="2200" value="2200" min="0" step="50">
+          </div>
+        </div>
+
+        <!-- Section 2: Operating Expenses for Net Yield -->
+        <button type="button" class="expenses-accordion-toggle" id="toggleExpensesBtn">
+          <span>⚙️ Annual Operating Expenses (For Net Yield)</span>
+          <span id="accordionArrow">▾</span>
+        </button>
+
+        <div class="expenses-box" id="expensesBox">
+          
+          <div class="input-field-group">
+            <div class="input-label-row">
+              <label class="input-label" for="expManagement">
+                Property Management / Letting Fees
+                <span class="tooltip-icon" data-tooltip="Annual fees paid to letting or management agencies (typically 8%-15% of rent).">?</span>
+              </label>
+            </div>
+            <div class="input-addon-wrapper">
+              <span class="input-prefix curr-prefix">$</span>
+              <input type="number" id="expManagement" class="calc-input" placeholder="2000" value="2112" min="0">
+            </div>
+          </div>
+
+          <div class="input-field-group">
+            <div class="input-label-row">
+              <label class="input-label" for="expTax">
+                Property Tax / Council Tax / Rates
+                <span class="tooltip-icon" data-tooltip="Annual local municipal taxes, council rates, or land taxes payable by owner.">?</span>
+              </label>
+            </div>
+            <div class="input-addon-wrapper">
+              <span class="input-prefix curr-prefix">$</span>
+              <input type="number" id="expTax" class="calc-input" placeholder="1800" value="2400" min="0">
+            </div>
+          </div>
+
+          <div class="input-field-group">
+            <div class="input-label-row">
+              <label class="input-label" for="expInsurance">
+                Building & Landlord Insurance
+                <span class="tooltip-icon" data-tooltip="Annual premiums for building structure, landlord liability, and rent guarantee policies.">?</span>
+              </label>
+            </div>
+            <div class="input-addon-wrapper">
+              <span class="input-prefix curr-prefix">$</span>
+              <input type="number" id="expInsurance" class="calc-input" placeholder="900" value="950" min="0">
+            </div>
+          </div>
+
+          <div class="input-field-group">
+            <div class="input-label-row">
+              <label class="input-label" for="expMaintenance">
+                Repairs, Maintenance & Service Charges
+                <span class="tooltip-icon" data-tooltip="Reserve fund for ongoing upkeep, strata/body corporate fees, or HOA dues.">?</span>
+              </label>
+            </div>
+            <div class="input-addon-wrapper">
+              <span class="input-prefix curr-prefix">$</span>
+              <input type="number" id="expMaintenance" class="calc-input" placeholder="1500" value="1500" min="0">
+            </div>
+          </div>
+
+          <div class="input-field-group">
+            <div class="input-label-row">
+              <label class="input-label" for="expOther">
+                Other Recurring Costs / Vacancy Allowance
+                <span class="tooltip-icon" data-tooltip="Contingencies such as gas safety checks, regulatory licenses, or estimated vacancy loss.">?</span>
+              </label>
+            </div>
+            <div class="input-addon-wrapper">
+              <span class="input-prefix curr-prefix">$</span>
+              <input type="number" id="expOther" class="calc-input" placeholder="500" value="600" min="0">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Side: Real-Time Results -->
+      <div class="calc-results-pane">
+        <div>
+          <!-- Metric Highlights -->
+          <div class="results-hero-grid">
+            
+            <div class="metric-card">
+              <div class="metric-title">Gross Rental Yield</div>
+              <div class="metric-value-huge" id="resGrossYield">7.54%</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Before Expenses</div>
+            </div>
+
+            <div class="metric-card highlight">
+              <div class="metric-title">Net Rental Yield</div>
+              <div class="metric-value-huge" id="resNetYield">5.38%</div>
+              <div style="font-size: 0.72rem; color: var(--accent-mint-hover); font-weight: 600; margin-top: 4px;">True Return</div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Rating Indicator -->
+          <div class="yield-rating-box" id="ratingContainer" style="background: var(--badge-good-bg);">
+            <div>
+              <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Investment Assessment</div>
+              <div id="ratingText" style="font-size: 0.95rem; font-weight: 700; color: var(--badge-good-text);">Solid Cash Flow Asset</div>
+            </div>
+            <span class="rating-badge good" id="ratingBadge">Good Yield</span>
+          </div>
+
+          <!-- Summary Breakdown List -->
+          <ul class="summary-list">
+            <li class="summary-item">
+              <span class="summary-label">Annual Gross Rent</span>
+              <span class="summary-val" id="resAnnualRent">$26,400</span>
+            </li>
+            <li class="summary-item">
+              <span class="summary-label">Total Annual Expenses</span>
+              <span class="summary-val" id="resTotalExpenses">$7,562</span>
+            </li>
+            <li class="summary-item">
+              <span class="summary-label">Net Operating Cash Flow (Annual)</span>
+              <span class="summary-val positive" id="resNetCashflow">$18,838</span>
+            </li>
+            <li class="summary-item">
+              <span class="summary-label">Net Operating Cash Flow (Monthly)</span>
+              <span class="summary-val" id="resMonthlyCashflow">$1,569.83</span>
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn-reset" id="resetBtn">↺ Reset to Default Values</button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. IN-DEPTH SEO WRITTEN GUIDE (1000+ Words)
+  ======================================================== -->
+  <article class="seo-content-article">
+    
+    <h1>Comprehensive Rental Yield Calculator for Property Investors</h1>
+    <p>
+      In residential and commercial property investment, intuition is no substitute for rigorous quantitative analysis. Whether you are acquiring a single-family buy-to-let in Manchester, underwriting a multi-family duplex in Texas, or purchasing a suburban apartment in Melbourne, understanding your exact rate of return is essential before committing capital.
+    </p>
+    <p>
+      The <strong>realrefin.com Rental Yield Calculator</strong> is engineered to give property investors, financial advisors, and homeowners instant clarity. It calculates both <strong>Gross Rental Yield</strong> and <strong>Net Rental Yield</strong> simultaneously across regional financial markets including the United States, United Kingdom, and Australia.
+    </p>
+
+    <!-- SECTION 1 -->
+    <h2>What is Rental Yield and Why Does It Matter?</h2>
+    <p>
+      <strong>Rental yield</strong> is a foundational real estate metric that quantifies the annual income generated by an investment property expressed as a percentage of the property’s total purchase price or current market value. 
+    </p>
+    <p>
+      While <em>capital growth</em> evaluates how much a property's market price appreciates over time, <em>rental yield</em> reveals how efficiently that property functions as an income-producing asset. Tracking your yield is critical for several key reasons:
+    </p>
+    <ul>
+      <li><strong>Cash Flow Solvency:</strong> Yield determines whether a property will cover its own operational overhead, mortgage interest payments, and property management fees without demanding ongoing out-of-pocket subsidies from the landlord.</li>
+      <li><strong>Objective Asset Comparison:</strong> Evaluating yield standardizes performance. It allows an investor to objectively compare a £200,000 terrace in Birmingham with an $800,000 apartment in Sydney or a $250,000 turnkey home in Ohio.</li>
+      <li><strong>Risk Mitigation:</strong> High-yield properties cushion portfolios against unexpected market shocks, tenant vacancies, repair spikes, or central bank interest rate hikes.</li>
+    </ul>
+
+    <!-- SECTION 2 -->
+    <h2>How to Calculate Rental Yield (With Formulas)</h2>
+    <p>
+      To measure property performance accurately, investors distinguish between two calculations: <strong>Gross Rental Yield</strong> and <strong>Net Rental Yield</strong>.
+    </p>
+
+    <h3>1. Gross Rental Yield Formula</h3>
+    <p>
+      Gross yield measures top-line revenue without accounting for operating costs, taxes, or management fees. It is ideal for rapid screening of real estate listings:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-title">Gross Rental Yield Formula</div>
+      <div class="formula-math">Gross Yield (%) = (Annual Rental Income / Property Purchase Price) × 100</div>
+    </div>
+
+    <p>
+      <em>Example:</em> You purchase an apartment for £250,000 and lease it for £1,250 per month (£15,000 annually).<br>
+      <strong>Gross Yield = (£15,000 / £250,000) × 100 = 6.00%</strong>
+    </p>
+
+    <h3>2. Net Rental Yield Formula</h3>
+    <p>
+      Net Rental Yield (equivalent to the unleveraged <em>Capitalization Rate</em> or <em>Cap Rate</em> in US commercial real estate) provides a realistic picture of your returns by deducting all unavoidable operating expenses:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-title">Net Rental Yield Formula</div>
+      <div class="formula-math">Net Yield (%) = [(Annual Rent - Annual Operating Expenses) / Property Purchase Price] × 100</div>
+    </div>
+
+    <p>
+      <em>Example:</em> Using the same £250,000 property, assume your annual holding costs are:
+    </p>
+    <ul>
+      <li>Property Letting Agent Fees: £1,500</li>
+      <li>Building Insurance: £350</li>
+      <li>Ground Rent & Service Charges: £1,200</li>
+      <li>Maintenance Reserve: £1,000</li>
+      <li><strong>Total Annual Expenses: £4,050</strong></li>
+    </ul>
+    <p>
+      Net Operating Income (NOI) = £15,000 - £4,050 = £10,950.<br>
+      <strong>Net Yield = (£10,950 / £250,000) × 100 = 4.38%</strong>
+    </p>
+
+    <!-- SECTION 3 -->
+    <h2>What is a Good Rental Yield in the UK, US, and Australia?</h2>
+    <p>
+      What qualifies as a "good" yield fluctuates depending on local interest rates, geographic demographics, and whether the market is geared toward cash flow or long-term capital appreciation.
+    </p>
+
+    <div class="data-table-wrapper">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Average Gross Yield</th>
+            <th>Strong / High Yield</th>
+            <th>Market Dynamics & Prime Target Locations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>United Kingdom (UK)</strong></td>
+            <td>4.5% – 6.0%</td>
+            <td>7.5% – 10.0%+</td>
+            <td>Higher yields are standard in Northern England and Scotland (e.g., Manchester, Liverpool, Glasgow). Prime Central London (PCL) typically exhibits lower yields (2.5% – 3.8%) due to high land valuations.</td>
+          </tr>
+          <tr>
+            <td><strong>United States (US)</strong></td>
+            <td>5.0% – 7.5%</td>
+            <td>8.5% – 12.0%+</td>
+            <td>The American Midwest and Sunbelt (e.g., Cleveland, Indianapolis, Memphis) offer high rental yields. Coastal gateway cities (e.g., New York City, San Francisco, Los Angeles) yield 3% – 5% but command long-term equity growth.</td>
+          </tr>
+          <tr>
+            <td><strong>Australia (AU)</strong></td>
+            <td>3.5% – 5.2%</td>
+            <td>6.0% – 8.5%+</td>
+            <td>High-density metropolitan centers like Sydney and Melbourne average modest gross yields (2.8% – 4.2%). Regional mining hubs and secondary capitals (e.g., Perth, Brisbane, Adelaide) deliver superior gross yields of 5.5% to 7.5%.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      As a general benchmark across real estate asset classes:
+    </p>
+    <ul>
+      <li><strong>Under 4.0% (Low Yield):</strong> Common in prime metropolitan trophy locations. Relies heavily on aggressive capital appreciation to justify negative or break-even holding cash flow.</li>
+      <li><strong>4.0% to 6.5% (Average to Solid):</strong> The baseline benchmark for stable suburban residential investments. Provides sufficient cash flow buffer under normal debt servicing costs.</li>
+      <li><strong>Above 7.0% (High / Excellent Yield):</strong> Superior operational cash flow. Typically found in regional towns, secondary commercial centers, multi-unit student properties (HMOs in the UK), or distressed asset turnarounds.</li>
+    </ul>
+
+    <!-- SECTION 4 -->
+    <h2>Gross Yield vs. Net Yield: Key Differences</h2>
+    <p>
+      The single most common pitfall for novice investors is relying entirely on gross yield when underwriting acquisitions. While gross yield looks attractive in marketing brochures, ignoring operating friction leads to cash flow deficits.
+    </p>
+
+    <div class="data-table-wrapper">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Gross Rental Yield</th>
+            <th>Net Rental Yield</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Formula Complexity</strong></td>
+            <td>Simple: Rent ÷ Property Value</td>
+            <td>Detailed: (Rent - All Operating Expenses) ÷ Property Value</td>
+          </tr>
+          <tr>
+            <td><strong>Expense Accounting</strong></td>
+            <td>Excludes all operational and holding costs</td>
+            <td>Deducts taxes, management, repairs, insurance & fees</td>
+          </tr>
+          <tr>
+            <td><strong>Accuracy</strong></td>
+            <td>Surface-level screening indicator</td>
+            <td>Realistic bottom-line performance indicator</td>
+          </tr>
+          <tr>
+            <td><strong>Best Use Case</strong></td>
+            <td>Filtering broad search listings in seconds</td>
+            <td>Detailed underwriting before submitting formal offers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Hidden Expenses That Erode Your Net Yield</h3>
+    <p>When computing Net Yield, ensure you audit these recurring costs:</p>
+    <ol>
+      <li><strong>Letting & Property Management Fees:</strong> Typically ranges between 8% and 15% of the collected rent depending on whether full management or tenant placement only is selected.</li>
+      <li><strong>Council Taxes / Municipal Property Tax:</strong> In the US, property taxes can consume 1% to 3% of the total home value each year. In the UK and Australia, check whether council tax or water charges fall on the landlord during vacancy periods.</li>
+      <li><strong>Strata / HOA / Service Charges:</strong> Apartments and condominiums carry building administration fees, elevator maintenance, and communal reserves which must be subtracted directly from gross returns.</li>
+      <li><strong>Structural Maintenance Reserve:</strong> Prudent underwriters set aside at least 1% of the property value or 10% of monthly rent annually for roof repairs, HVAC servicing, and plumbing upgrades.</li>
+      <li><strong>Vacancy Factor:</strong> Properties rarely remain occupied 100% of the time. Factoring in a 5% to 8% vacancy buffer (equal to 2 to 4 weeks vacant per year) safeguards cash flow integrity.</li>
+    </ol>
+
+    <!-- SECTION 5 -->
+    <h2>Proven Strategies to Increase Your Rental Yield</h2>
+    <p>
+      If your calculated net yield is below market expectations, consider these actionable value-add techniques:
+    </p>
+    <ul>
+      <li><strong>Strategic Cosmetic Renovations:</strong> Kitchen refreshes, modern bathroom tiling, and durable vinyl plank flooring provide the highest ROI per dollar spent and allow for immediate rent increases.</li>
+      <li><strong>Reconfiguring Floor Plans:</strong> In the UK, converting formal dining rooms or surplus living areas into additional bedrooms (creating a House in Multiple Occupation / HMO) can boost rental yield from 5% to 11%+.</li>
+      <li><strong>Furnished or Corporate Rentals:</strong> Furnished executive units command a 15% to 30% premium over unfurnished rentals, provided your market caters to corporate relocations or healthcare professionals.</li>
+      <li><strong>Long-Term Tenant Retention:</strong> Turnover is the number one destroyer of net yield. Offering minor rent concessions in exchange for multi-year lease agreements avoids advertising fees, deep-cleaning expenses, and lost rent during transition periods.</li>
+    </ul>
+
+    <!-- SECTION 6: FAQ -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-accordion" id="faqAccordion">
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How does mortgage interest affect net rental yield?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Strictly speaking, Net Rental Yield measures the unleveraged operating performance of a property (Net Operating Income divided by Property Value). However, mortgage interest significantly impacts your actual cash-on-cash return and taxable profit. In jurisdictions like the UK, Section 24 restrictions limit mortgage interest deductions for individual landlords, while in Australia, interest can be written off against other income under negative gearing laws.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Should I calculate yield using weekly or monthly rent?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          It depends on your regional market. In Australia and New Zealand, rental rates are traditionally quoted weekly. To calculate annual rent, multiply weekly rent by 52. In the United States and the United Kingdom, rents are quoted monthly, meaning annual rent is calculated as monthly rent multiplied by 12. Multiplying weekly rent by 4 to get monthly rent is inaccurate because a year has 52 weeks, not 48.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is rental yield or capital growth more important?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Neither is universally superior; they serve distinct financial strategies. High rental yield properties provide immediate cash flow stability, debt coverage, and lower vulnerability to interest rate spikes. Capital growth properties build long-term equity and wealth through property appreciation, but often require the investor to subsidize monthly shortfalls during the initial years.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the difference between Gross Rental Yield and Cap Rate?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Gross rental yield only looks at gross rent relative to purchase price without deducting any expenses. Capitalization Rate (Cap Rate), widely used in the US commercial and multi-family sector, is identical in concept to Net Rental Yield: it evaluates Net Operating Income (gross income minus all operating expenses except mortgage debt service) divided by current property value.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <footer>
+    <p>&copy; 2026 RealRefin.com. All rights reserved. Real Estate Investment Analysis Tools.</p>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     3. JAVASCRIPT ENGINE (Real-Time Calculation & UX)
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // State Management
+  const state = {
+    currencySymbol: '$',
+    frequency: 'monthly', // 'monthly' or 'weekly'
+    propertyPrice: 350000,
+    rentAmount: 2200,
+    expenses: {
+      management: 2112,
+      tax: 2400,
+      insurance: 950,
+      maintenance: 1500,
+      other: 600
+    }
+  };
+
+  // DOM Elements - Inputs
+  const propertyPriceInput = document.getElementById('propertyPrice');
+  const rentAmountInput = document.getElementById('rentAmount');
+  const expManagementInput = document.getElementById('expManagement');
+  const expTaxInput = document.getElementById('expTax');
+  const expInsuranceInput = document.getElementById('expInsurance');
+  const expMaintenanceInput = document.getElementById('expMaintenance');
+  const expOtherInput = document.getElementById('expOther');
+  
+  // DOM Elements - Displays
+  const resGrossYield = document.getElementById('resGrossYield');
+  const resNetYield = document.getElementById('resNetYield');
+  const resAnnualRent = document.getElementById('resAnnualRent');
+  const resTotalExpenses = document.getElementById('resTotalExpenses');
+  const resNetCashflow = document.getElementById('resNetCashflow');
+  const resMonthlyCashflow = document.getElementById('resMonthlyCashflow');
+  
+  // Indicators & Badges
+  const ratingBadge = document.getElementById('ratingBadge');
+  const ratingText = document.getElementById('ratingText');
+  const ratingContainer = document.getElementById('ratingContainer');
+
+  // Control Buttons
+  const currButtons = document.querySelectorAll('.curr-btn');
+  const freqButtons = document.querySelectorAll('.freq-btn');
+  const rentFreqLabel = document.getElementById('rentFreqLabel');
+  const currSymbols = document.querySelectorAll('.curr-prefix, #currSymbol1, #currSymbol2');
+  const resetBtn = document.getElementById('resetBtn');
+
+  // Accordion elements
+  const toggleExpensesBtn = document.getElementById('toggleExpensesBtn');
+  const expensesBox = document.getElementById('expensesBox');
+  const accordionArrow = document.getElementById('accordionArrow');
+
+  // Currency Formatter Helper
+  function formatCurrency(amount) {
+    const formatted = Math.abs(amount).toLocaleString('en-US', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2
+    });
+    return (amount < 0 ? '-' : '') + state.currencySymbol + formatted;
+  }
+
+  // Core Math Calculation
+  function calculateYields() {
+    // 1. Read Inputs
+    state.propertyPrice = parseFloat(propertyPriceInput.value) || 0;
+    state.rentAmount = parseFloat(rentAmountInput.value) || 0;
+    
+    state.expenses.management = parseFloat(expManagementInput.value) || 0;
+    state.expenses.tax = parseFloat(expTaxInput.value) || 0;
+    state.expenses.insurance = parseFloat(expInsuranceInput.value) || 0;
+    state.expenses.maintenance = parseFloat(expMaintenanceInput.value) || 0;
+    state.expenses.other = parseFloat(expOtherInput.value) || 0;
+
+    // 2. Annualize Rent
+    const annualRent = state.frequency === 'weekly' 
+      ? state.rentAmount * 52 
+      : state.rentAmount * 12;
+
+    // 3. Total Annual Expenses
+    const totalExpenses = Object.values(state.expenses).reduce((acc, curr) => acc + curr, 0);
+
+    // 4. Net Operating Cash Flow
+    const netCashflow = annualRent - totalExpenses;
+    const monthlyNetCashflow = netCashflow / 12;
+
+    // 5. Yield Percentages
+    let grossYield = 0;
+    let netYield = 0;
+
+    if (state.propertyPrice > 0) {
+      grossYield = (annualRent / state.propertyPrice) * 100;
+      netYield = (netCashflow / state.propertyPrice) * 100;
+    }
+
+    // 6. Update UI Metrics
+    resGrossYield.textContent = grossYield.toFixed(2) + '%';
+    resNetYield.textContent = netYield.toFixed(2) + '%';
+    resAnnualRent.textContent = formatCurrency(annualRent);
+    resTotalExpenses.textContent = formatCurrency(totalExpenses);
+    resNetCashflow.textContent = formatCurrency(netCashflow);
+    resMonthlyCashflow.textContent = formatCurrency(monthlyNetCashflow);
+
+    // Dynamic coloring on cashflow
+    if (netCashflow >= 0) {
+      resNetCashflow.className = 'summary-val positive';
+    } else {
+      resNetCashflow.className = 'summary-val negative';
+    }
+
+    // 7. Update Investment Assessment Indicator
+    updateRatingIndicator(netYield);
+  }
+
+  // Investment Assessment Indicator Logic
+  function updateRatingIndicator(netYield) {
+    ratingBadge.className = 'rating-badge';
+
+    if (netYield >= 6.0) {
+      ratingBadge.classList.add('good');
+      ratingBadge.textContent = 'High Yield';
+      ratingText.textContent = 'High Cash Flow Potential';
+      ratingText.style.color = '#065f46';
+      ratingContainer.style.background = '#ecfdf5';
+    } else if (netYield >= 4.0) {
+      ratingBadge.classList.add('average');
+      ratingBadge.textContent = 'Solid Yield';
+      ratingText.textContent = 'Stable Moderate Cash Flow';
+      ratingText.style.color = '#92400e';
+      ratingContainer.style.background = '#fffbeb';
+    } else {
+      ratingBadge.classList.add('low');
+      ratingBadge.textContent = 'Low Yield';
+      ratingText.textContent = 'Capital Growth Focus / Caution';
+      ratingText.style.color = '#991b1b';
+      ratingContainer.style.background = '#fef2f2';
+    }
+  }
+
+  // Currency Switcher Handler
+  currButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      currButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const symbol = this.getAttribute('data-symbol');
+      state.currencySymbol = symbol;
+
+      // Update all visible prefix markers
+      currSymbols.forEach(el => el.textContent = symbol);
+      calculateYields();
+    });
+  });
+
+  // Rent Frequency Switcher Handler
+  freqButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      freqButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const newFreq = this.getAttribute('data-freq');
+      const currentRent = parseFloat(rentAmountInput.value) || 0;
+
+      // Smooth conversion between weekly and monthly input values
+      if (state.frequency === 'monthly' && newFreq === 'weekly') {
+        rentAmountInput.value = Math.round((currentRent * 12) / 52);
+      } else if (state.frequency === 'weekly' && newFreq === 'monthly') {
+        rentAmountInput.value = Math.round((currentRent * 52) / 12);
+      }
+
+      state.frequency = newFreq;
+      rentFreqLabel.textContent = newFreq === 'weekly' ? 'Weekly' : 'Monthly';
+      calculateYields();
+    });
+  });
+
+  // Attach Real-Time Listeners to All Inputs
+  const allInputs = [
+    propertyPriceInput, 
+    rentAmountInput, 
+    expManagementInput, 
+    expTaxInput, 
+    expInsuranceInput, 
+    expMaintenanceInput, 
+    expOtherInput
+  ];
+
+  allInputs.forEach(input => {
+    input.addEventListener('input', calculateYields);
+  });
+
+  // Expenses Accordion Toggle
+  let isExpensesOpen = true;
+  toggleExpensesBtn.addEventListener('click', function() {
+    isExpensesOpen = !isExpensesOpen;
+    expensesBox.style.display = isExpensesOpen ? 'block' : 'none';
+    accordionArrow.textContent = isExpensesOpen ? '▾' : '▸';
+  });
+
+  // Reset Button
+  resetBtn.addEventListener('click', function() {
+    propertyPriceInput.value = 350000;
+    rentAmountInput.value = state.frequency === 'weekly' ? 500 : 2200;
+    expManagementInput.value = 2112;
+    expTaxInput.value = 2400;
+    expInsuranceInput.value = 950;
+    expMaintenanceInput.value = 1500;
+    expOtherInput.value = 600;
+    calculateYields();
+  });
+
+  // FAQ Accordion Toggle Interaction
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(f => f.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Run on initial page load
+  calculateYields();
+
+})();
+</script>
+
+</body>
+</html>
