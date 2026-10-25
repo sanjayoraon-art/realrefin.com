@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | RealRefin Real Estate Tools Support</title>
+  <meta name="description" content="Get in touch with the RealRefin.com team. Reach out for technical support, partnership inquiries, calculation feedback, or real estate tool requests.">
+  <link rel="canonical" href="https://realrefin.com/contact">
+
+  <style>
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2.5rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    @media (max-width: 768px) {
+      .rr-nav {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 3.5rem 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .contact-info-col h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-info-col p {
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ecfdf5;
+      color: var(--accent-emerald-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .info-details h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .info-details p, .info-details a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0;
+    }
+
+    .info-details a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Form Column */
+    .contact-form-col {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+    }
+
+    .contact-form-col h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      color: var(--text-main);
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: var(--primary-navy);
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-submit:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-success-msg {
+      display: none;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- Navbar -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span>.com</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="active">Contact</a></li>
+    </ul>
+  </header>
+
+  <main class="contact-layout">
+    <div class="contact-info-col">
+      <h1>Get in Touch</h1>
+      <p>
+        Have questions about our calculation formulas, suggestions for new property financial tools, or media inquiries? We are here to help.
+      </p>
+
+      <div class="info-card-list">
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div class="info-details">
+            <h4>General Support &amp; Feedback</h4>
+            <a href="mailto:support@realrefin.com">support@realrefin.com</a>
+            <p>Typical response time: Under 24 business hours</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🤝</div>
+          <div class="info-details">
+            <h4>Partnership &amp; Advertising</h4>
+            <a href="mailto:partners@realrefin.com">partners@realrefin.com</a>
+            <p>For mortgage lenders, brokers, and tech integrations</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🛡️</div>
+          <div class="info-details">
+            <h4>Data Privacy &amp; Legal</h4>
+            <a href="mailto:privacy@realrefin.com">privacy@realrefin.com</a>
+            <p>GDPR / CCPA inquiries and rights requests</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div class="info-details">
+            <h4>Operating Hours</h4>
+            <p>Monday – Friday: 9:00 AM – 6:00 PM (EST)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-col">
+      <h3>Send Us a Message</h3>
+      <form id="contactForm">
+        <div class="form-group">
+          <label class="form-label" for="contactName">Your Name *</label>
+          <input type="text" id="contactName" class="form-input" required placeholder="Jane Doe">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactEmail">Email Address *</label>
+          <input type="email" id="contactEmail" class="form-input" required placeholder="jane@example.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactSubject">Inquiry Subject *</label>
+          <select id="contactSubject" class="form-select" required>
+            <option value="">Please select a topic</option>
+            <option value="calculator-feedback">Calculator Feedback / Formula Question</option>
+            <option value="new-tool-request">Request a New Calculator Feature</option>
+            <option value="advertising">Advertising / Sponsor Inquiry</option>
+            <option value="technical-support">Technical Issue / Bug Report</option>
+            <option value="general">General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contactMessage">Message *</label>
+          <textarea id="contactMessage" class="form-textarea" required placeholder="How can we assist you with your real estate deal analysis?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btnSubmitForm">Send Message</button>
+        <div class="form-success-msg" id="formSuccessMsg">
+          ✓ Thank you! Your message has been received. Our team will get back to you within 24 hours.
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All rights reserved. Institutional Real Estate Investment Analytics.</p>
+  </footer>
+
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('btnSubmitForm');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.style.display = 'none';
+    document.getElementById('formSuccessMsg').style.display = 'block';
+  }, 600);
+});
+</script>
+
+</body>
+</html>
