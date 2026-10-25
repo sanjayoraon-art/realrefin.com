@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rental Yield Calculator | RealRefin Real Estate Tools</title>
-  <meta name="description" content="Calculate Gross and Net Rental Yield for US, UK, and Australian property investments. Free, real-time rental yield calculator with cash flow breakdown and market benchmarks.">
-  <meta name="google-site-verification" content="3LNH0rno_anS1SrnP9WEZjz5dHn3TzM56pqme92edxw" />
+  <title>Free BRRRR Method Calculator | Real Estate Deal Analyzer (US, UK, AU)</title>
+  <meta name="description" content="Free, real-time BRRRR method calculator for real estate investors in the US, UK, and Australia. Analyze Buy, Rehab, Rent, Refinance, Repeat deals with instant Cash-on-Cash return, cash-out refi, and equity velocity.">
+  <meta name="keywords" content="brrrr calculator, brrrr method calculator, free brrrr calculator, brrrr calculator excel, cash on cash return, refinance ltv, arv calculator, real estate investment calculator">
+  <link rel="canonical" href="https://realrefin.com/">
+  <meta property="og:title" content="Free BRRRR Method Calculator: Analyze Your Real Estate Deals Fast">
+  <meta property="og:description" content="Calculate cash-out refinance proceeds, total cash left in deal, monthly cash flow, and infinite cash-on-cash returns across $, £, and A$.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Schema Markup: Financial Application & FAQ -->
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication & FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://realrefin.com/#calculator",
-        "name": "Rental Yield Calculator",
-        "url": "https://realrefin.com/rental-yield-calculator",
+        "@id": "https://realrefin.com/#brrrr-calculator",
+        "name": "BRRRR Method Calculator",
+        "url": "https://realrefin.com/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript. Requires HTML5.",
@@ -25,7 +36,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An interactive real estate investment calculator providing real-time Gross and Net Rental Yield, annual cash flow calculations, and multi-currency support (£, $, A$)."
+        "description": "An institutional-grade BRRRR (Buy, Rehab, Rent, Refinance, Repeat) financial calculator providing real-time cash-out refinance modeling, equity creation, monthly cash flow, and infinite cash-on-cash return analysis across US ($), UK (£), and Australia (A$)."
       },
       {
         "@type": "FAQPage",
@@ -33,34 +44,42 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does mortgage interest affect net rental yield?",
+            "name": "What is a good Cash-on-Cash return for a BRRRR deal?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Strictly speaking, Net Rental Yield measures the unleveraged operating performance of a property (Net Operating Income divided by Property Value). However, mortgage interest significantly impacts your net cash-on-cash return and taxable profit. In jurisdictions like the UK, Section 24 restrictions limit mortgage interest deductions, while in Australia, interest can be written off against income under negative gearing laws."
+              "text": "In a textbook BRRRR deal, the ideal Cash-on-Cash (CoC) return is infinite—occurring when the cash-out refinance returns 100% or more of your initial capital out of pocket while preserving positive monthly net cash flow. If some capital remains in the asset, real estate investors generally consider a Cash-on-Cash return of 12% to 20%+ exceptional, compared to traditional turnkey rentals which yield 6% to 9%."
             }
           },
           {
             "@type": "Question",
-            "name": "Should I calculate yield using weekly or monthly rent?",
+            "name": "How long do I need to wait before refinancing a BRRRR property (Seasoning Period)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "It depends on your regional market. In Australia and New Zealand, rental rates are traditionally quoted weekly. To calculate annual rent, multiply weekly rent by 52. In the United States and the United Kingdom, rents are quoted monthly, meaning annual rent is calculated as monthly rent multiplied by 12. Multiplying weekly rent by 4 to get monthly rent is inaccurate because a year has 52 weeks, not 48."
+              "text": "In the United States, conventional Fannie Mae and Freddie Mac guidelines typically mandate a 6-to-12-month seasoning period before refinancing based on new appraised After Repair Value (ARV). However, non-QM DSCR lenders and portfolio banks frequently refinance with zero to 3 months of seasoning if documented rehabilitation improvements forced the appreciation. In the UK, most buy-to-let lenders enforce the 6-month rule (registered with HM Land Registry). In Australia, major banks often assess serviceability buffers after 6 months of ownership."
             }
           },
           {
             "@type": "Question",
-            "name": "Is rental yield or capital growth more important?",
+            "name": "Can I do BRRRR with no money down?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Neither is universally superior; they serve distinct financial strategies. High rental yield properties provide immediate cash flow stability, debt coverage, and lower vulnerability to interest rate spikes. Capital growth properties build long-term equity and wealth through property appreciation, but often require the investor to subsidize monthly shortfalls during the initial years."
+              "text": "Yes, investors execute 'zero-money-down' BRRRR deals by leveraging short-term debt instruments during Phase 1 (Buy & Rehab). Common funding mechanisms include private money lenders (PML), hard money loans offering 90% purchase / 100% rehab, gap funding, joint venture equity partners, and HELOCs on primary residences. When the property is refinanced into a long-term mortgage at 75% LTV, the proceeds pay off the private lender in full, leaving the investor with an income-producing asset funded with zero personal capital."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the difference between Gross Rental Yield and Cap Rate?",
+            "name": "What is the 70% Rule in BRRRR and how is Maximum Allowable Offer (MAO) calculated?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Gross rental yield only looks at gross rent relative to purchase price without deducting any expenses. Capitalization Rate (Cap Rate), widely used in the US commercial and multi-family sector, is identical in concept to Net Rental Yield: it evaluates Net Operating Income (gross income minus all operating expenses except mortgage debt service) divided by current property value."
+              "text": "The 70% Rule states that an investor should pay no more than 70% of the After Repair Value (ARV) minus estimated repair costs. The formula is: MAO = (ARV * 0.70) - Rehab Costs. This ensures sufficient equity buffer so that a standard 70% to 75% LTV refinance will fully refund acquisition capital, renovation expenses, and closing fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if the property appraises for less than my estimated ARV?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A low appraisal reduces your maximum new loan amount, which means less cash is extracted at refinance. Rather than achieving 100% capital recycling, some cash remains trapped in the property as illiquid equity. Investors mitigate appraisal risk by utilizing conservative comparable sales ('comps') within 0.5 miles sold in the last 90-180 days, preparing an appraisal binder with renovation receipts, and maintaining a capital contingency reserve."
             }
           }
         ]
@@ -70,38 +89,53 @@
   </script>
 
   <style>
-    /* -----------------------------------------------------------
-       GLOBAL & RESET STYLES (FinTech Navy & Emerald Palette)
-    ----------------------------------------------------------- */
+    /* ===========================================================
+       1. GLOBAL FINTECH SAAS PALETTE & CSS RESET
+       Primary: Emerald Green & Dark Slate Blue / Navy
+    =========================================================== */
     :root {
-      --primary-navy: #0f172a;
-      --secondary-navy: #1e293b;
-      --accent-mint: #10b981;
-      --accent-mint-light: #d1fae5;
-      --accent-mint-hover: #059669;
-      --text-main: #1e293b;
+      --primary-navy: #0f172a;       /* Dark slate base */
+      --secondary-navy: #1e293b;     /* Card background / accents */
+      --dark-slate-deep: #090e17;
+      --accent-emerald: #10b981;     /* Primary Emerald */
+      --accent-emerald-hover: #059669;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      
+      --text-main: #0f172a;
       --text-muted: #64748b;
+      --text-subtle: #94a3b8;
       --text-white: #ffffff;
+      
       --bg-light: #f8fafc;
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
-      --border-focus: #3b82f6;
-      --badge-good-bg: #ecfdf5;
-      --badge-good-text: #065f46;
-      --badge-avg-bg: #fffbeb;
-      --badge-avg-text: #92400e;
-      --badge-low-bg: #fef2f2;
-      --badge-low-text: #991b1b;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
-      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+      --border-focus: #10b981;
+      
+      --badge-success-bg: #ecfdf5;
+      --badge-success-text: #065f46;
+      --badge-warning-bg: #fffbeb;
+      --badge-warning-text: #92400e;
+      --badge-danger-bg: #fef2f2;
+      --badge-danger-text: #991b1b;
+      --badge-info-bg: #f0fdf4;
+      --badge-info-text: #166534;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
-      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -113,46 +147,58 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .rr-container {
-      max-width: 1160px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2.5rem 1.25rem;
+      padding: 2rem 1.25rem 4rem;
     }
 
-    /* Navbar */
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
     .rr-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 0 2rem;
+      padding: 0.85rem 0 1.75rem;
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 2rem;
     }
 
     .rr-logo {
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: var(--primary-navy);
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.35rem;
+      letter-spacing: -0.03em;
     }
 
     .rr-logo span {
-      color: var(--accent-mint);
+      color: var(--accent-emerald);
     }
 
     .rr-tagline {
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       color: var(--text-muted);
       font-weight: 500;
     }
 
+    @media (max-width: 640px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+
     /* -----------------------------------------------------------
-       CALCULATOR WRAPPER & GRID
+       CALCULATOR CONTAINER & CARD
     ----------------------------------------------------------- */
     .calc-card-wrapper {
       background: var(--card-bg);
@@ -160,128 +206,242 @@
       box-shadow: var(--shadow-xl);
       border: 1px solid var(--border-color);
       overflow: hidden;
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
     }
 
-    .calc-header {
-      background: linear-gradient(135deg, var(--primary-navy) 0%, #1a365d 100%);
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
       color: var(--text-white);
-      padding: 2rem 2.5rem;
-      border-bottom: 4px solid var(--accent-mint);
+      padding: 2.25rem 2.5rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      position: relative;
     }
 
-    .calc-header h2 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+    .calc-header-banner h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
       margin-bottom: 0.5rem;
+      line-height: 1.25;
+      color: #ffffff;
     }
 
-    .calc-header p {
+    .calc-header-banner p {
       color: #94a3b8;
-      font-size: 0.975rem;
+      font-size: 1.025rem;
+      max-width: 820px;
+      line-height: 1.55;
     }
 
-    .calc-body-grid {
+    .calc-grid-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 0;
     }
 
-    @media (max-width: 900px) {
-      .calc-body-grid {
+    @media (max-width: 992px) {
+      .calc-grid-layout {
         grid-template-columns: 1fr;
       }
     }
 
+    /* -----------------------------------------------------------
+       INPUTS PANE (LEFT)
+    ----------------------------------------------------------- */
     .calc-inputs-pane {
-      padding: 2.5rem;
+      padding: 2.25rem;
       border-right: 1px solid var(--border-color);
+      background-color: #ffffff;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 992px) {
       .calc-inputs-pane {
         border-right: none;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 2px solid var(--border-color);
         padding: 1.5rem;
       }
     }
 
-    .calc-results-pane {
-      background-color: #fafbfc;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    @media (max-width: 900px) {
-      .calc-results-pane {
-        padding: 1.5rem;
-      }
-    }
-
-    /* -----------------------------------------------------------
-       CONTROLS: CURRENCY & FREQUENCY TOGGLES
-    ----------------------------------------------------------- */
-    .controls-row {
+    /* Top Controls Row: Currency Toggle */
+    .top-controls-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
-      margin-bottom: 2rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
     }
 
-    .control-group-label {
-      display: block;
-      font-size: 0.75rem;
+    .control-label {
+      font-size: 0.775rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: var(--text-muted);
+      display: block;
       margin-bottom: 0.4rem;
     }
 
-    .pill-switch {
+    .currency-switcher {
       display: inline-flex;
       background: #f1f5f9;
+      border-radius: var(--radius-md);
       padding: 3px;
-      border-radius: 9999px;
-      border: 1px solid var(--border-color);
+      gap: 3px;
+      border: 1px solid #e2e8f0;
     }
 
-    .pill-switch button {
-      background: transparent;
+    .curr-btn {
       border: none;
-      outline: none;
-      padding: 0.45rem 1rem;
-      font-size: 0.875rem;
+      background: transparent;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-muted);
-      border-radius: 9999px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
     }
 
-    .pill-switch button.active {
+    .curr-btn:hover {
+      color: var(--text-main);
+    }
+
+    .curr-btn.active {
       background: var(--primary-navy);
-      color: var(--text-white);
+      color: #ffffff;
       box-shadow: var(--shadow-sm);
     }
 
-    /* -----------------------------------------------------------
-       INPUT FORMS & TOOLTIPS
-    ----------------------------------------------------------- */
-    .form-section-title {
-      font-size: 1.05rem;
+    /* Multi-Step Tab Navigation */
+    .step-tabs-header {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+      background: #f8fafc;
+      padding: 0.35rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .step-tab {
+      flex: 1;
+      text-align: center;
+      padding: 0.75rem 0.5rem;
+      font-size: 0.85rem;
       font-weight: 700;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .step-tab:hover {
       color: var(--primary-navy);
-      margin-bottom: 1rem;
+      background: #f1f5f9;
+    }
+
+    .step-tab.active {
+      background: var(--card-bg);
+      color: var(--accent-emerald-dark);
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+
+    .step-badge-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-tab.active .step-badge-num {
+      background: var(--accent-emerald);
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      .step-tab {
+        font-size: 0.75rem;
+        padding: 0.6rem 0.25rem;
+      }
+      .step-tab span.tab-title-text {
+        display: none;
+      }
+      .step-tab span.tab-title-short {
+        display: inline;
+      }
+    }
+    @media (min-width: 601px) {
+      .step-tab span.tab-title-short {
+        display: none;
+      }
+    }
+
+    /* Phase Content Panes */
+    .phase-content {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .phase-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .phase-title-row {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .phase-title-row h3 {
+      font-size: 1.15rem;
+      color: var(--primary-navy);
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+
+    .phase-title-row p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Form Inputs */
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
     }
 
     .input-field-group {
@@ -292,54 +452,86 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.45rem;
     }
 
     .input-label {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--text-main);
+      color: var(--secondary-navy);
       display: flex;
       align-items: center;
       gap: 0.35rem;
     }
 
-    /* Tooltip */
+    /* Tooltip Implementation */
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
     .tooltip-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 16px;
-      height: 16px;
+      width: 17px;
+      height: 17px;
       border-radius: 50%;
-      background: #cbd5e1;
-      color: #334155;
-      font-size: 0.65rem;
-      font-weight: bold;
-      cursor: help;
-      position: relative;
+      background: #e2e8f0;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-weight: 700;
+      line-height: 1;
+      transition: all 0.15s ease;
     }
 
-    .tooltip-icon:hover::after {
-      content: attr(data-tooltip);
+    .tooltip-container:hover .tooltip-icon,
+    .tooltip-container:focus .tooltip-icon {
+      background: var(--accent-emerald);
+      color: #ffffff;
+    }
+
+    .tooltip-box {
+      visibility: hidden;
+      opacity: 0;
+      width: 250px;
+      background: var(--primary-navy);
+      color: #f8fafc;
+      text-align: left;
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.8rem;
+      font-size: 0.775rem;
+      font-weight: 400;
+      line-height: 1.45;
       position: absolute;
-      bottom: 125%;
+      z-index: 100;
+      bottom: 135%;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--primary-navy);
-      color: #fff;
-      padding: 0.4rem 0.65rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.75rem;
-      font-weight: 400;
-      white-space: normal;
-      width: 200px;
-      z-index: 50;
-      box-shadow: var(--shadow-md);
-      text-align: left;
-      line-height: 1.3;
+      box-shadow: var(--shadow-lg);
+      transition: opacity 0.2s, visibility 0.2s;
+      pointer-events: none;
     }
 
+    .tooltip-box::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: var(--primary-navy) transparent transparent transparent;
+    }
+
+    .tooltip-container:hover .tooltip-box,
+    .tooltip-container:focus-within .tooltip-box {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Input Addon / Prefix Styling */
     .input-addon-wrapper {
       position: relative;
       display: flex;
@@ -348,369 +540,690 @@
 
     .input-prefix {
       position: absolute;
-      left: 1rem;
-      font-size: 0.95rem;
+      left: 0.85rem;
       font-weight: 600;
       color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-suffix {
+      position: absolute;
+      right: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.85rem;
       pointer-events: none;
     }
 
     .calc-input {
       width: 100%;
-      padding: 0.75rem 1rem 0.75rem 2.25rem;
+      height: 44px;
+      padding: 0.55rem 0.85rem 0.55rem 2rem;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-main);
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .calc-input.has-suffix {
+      padding-right: 2.5rem;
+    }
+
+    .calc-input.no-prefix {
+      padding-left: 0.85rem;
     }
 
     .calc-input:focus {
       outline: none;
-      border-color: var(--accent-mint);
+      border-color: var(--border-focus);
       box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
     }
 
-    .expenses-accordion-toggle {
+    /* Slider styling for LTV */
+    .slider-container {
+      margin-top: 0.4rem;
+    }
+
+    .range-slider {
       width: 100%;
-      background: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      padding: 0.75rem 1rem;
-      border-radius: var(--radius-md);
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      outline: none;
+      margin: 0.5rem 0;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: background 0.15s ease;
+    }
+
+    .range-slider::-webkit-slider-thumb:hover {
+      background: var(--accent-emerald-hover);
+    }
+
+    /* Step Navigation Buttons */
+    .step-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .btn-step-nav {
+      padding: 0.65rem 1.25rem;
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-radius: var(--radius-md);
       cursor: pointer;
-      margin: 1.5rem 0 1rem;
-      transition: background 0.2s ease;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    .expenses-accordion-toggle:hover {
+    .btn-step-prev {
       background: #f1f5f9;
+      color: var(--secondary-navy);
+      border-color: var(--border-color);
     }
 
-    .expenses-box {
-      background: #f8fafc;
-      padding: 1.25rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-color);
-      display: block;
+    .btn-step-prev:hover {
+      background: #e2e8f0;
     }
 
-    /* -----------------------------------------------------------
-       RESULTS DISPLAY PANE
-    ----------------------------------------------------------- */
-    .results-hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+    .btn-step-next {
+      background: var(--primary-navy);
+      color: #ffffff;
+      margin-left: auto;
     }
 
-    .metric-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      text-align: center;
-      position: relative;
+    .btn-step-next:hover {
+      background: var(--secondary-navy);
       box-shadow: var(--shadow-sm);
     }
 
-    .metric-card.highlight {
-      border: 2px solid var(--accent-mint);
-      background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+    /* -----------------------------------------------------------
+       RESULTS PANE (RIGHT) - HIGH CONTRAST FINTECH DASHBOARD
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      background-color: #fafbfc;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .metric-title {
+    @media (max-width: 992px) {
+      .calc-results-pane {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Deal Verdict Badge Banner */
+    .deal-verdict-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      transition: all 0.25s ease;
+    }
+
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--badge-success-bg);
+      flex-shrink: 0;
+    }
+
+    .verdict-text-group h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.3;
+    }
+
+    .verdict-text-group p {
       font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      margin-top: 0.15rem;
+    }
+
+    /* Highlight Summary Cards */
+    .primary-metric-card {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .primary-metric-card::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 90px;
+      height: 90px;
+      background: rgba(16, 185, 129, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .metric-subtitle {
+      font-size: 0.775rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #94a3b8;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .metric-huge-val {
+      font-size: 2.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0.4rem 0 0.2rem;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+
+    .metric-huge-val.profit-text {
+      color: #34d399; /* Bright mint emerald */
+      font-size: 1.65rem;
+    }
+
+    .metric-desc-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      color: #e2e8f0;
+      margin-top: 0.35rem;
+    }
+
+    /* 3-Grid Key Metric Cards */
+    .metrics-summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sub-metric-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sub-metric-label {
+      font-size: 0.725rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       color: var(--text-muted);
       margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    .metric-value-huge {
-      font-size: 2rem;
+    .sub-metric-val {
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--primary-navy);
-      letter-spacing: -0.03em;
+      letter-spacing: -0.015em;
     }
 
-    .metric-card.highlight .metric-value-huge {
-      color: var(--accent-mint-hover);
+    .sub-metric-val.emerald {
+      color: var(--accent-emerald-dark);
     }
 
-    /* Rating Indicator Pill */
-    .yield-rating-box {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
+    .sub-metric-val.negative {
+      color: #dc2626;
+    }
+
+    .sub-metric-note {
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Capital Recovery Visual Bar */
+    .capital-bar-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
+      padding: 1.1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .capital-bar-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+      transition: width 0.4s ease;
+    }
+
+    .capital-bar-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Detailed Breakdown Accordion */
+    .breakdown-toggle-btn {
+      width: 100%;
+      background: #ffffff;
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.3s ease;
+      transition: all 0.15s ease;
+      margin-bottom: 0.85rem;
     }
 
-    .rating-badge {
-      padding: 0.35rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .breakdown-toggle-btn:hover {
+      background: #f8fafc;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
     }
 
-    .rating-badge.good { background: var(--badge-good-bg); color: var(--badge-good-text); border: 1px solid #a7f3d0; }
-    .rating-badge.average { background: var(--badge-avg-bg); color: var(--badge-avg-text); border: 1px solid #fde68a; }
-    .rating-badge.low { background: var(--badge-low-bg); color: var(--badge-low-text); border: 1px solid #fecaca; }
-
-    /* Summary Breakdown Table */
-    .summary-list {
-      list-style: none;
+    .breakdown-table-wrapper {
+      display: none;
       background: #ffffff;
-      border-radius: var(--radius-md);
       border: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-      margin-bottom: 1.5rem;
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
     }
 
-    .summary-item {
+    .breakdown-row {
       display: flex;
       justify-content: space-between;
-      padding: 0.65rem 0;
-      font-size: 0.875rem;
+      padding: 0.45rem 0;
+      font-size: 0.825rem;
       border-bottom: 1px solid #f1f5f9;
+      color: var(--text-muted);
     }
 
-    .summary-item:last-child {
+    .breakdown-row:last-child {
       border-bottom: none;
     }
 
-    .summary-label {
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .summary-val {
+    .breakdown-row.highlight {
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--primary-navy);
+      border-top: 1px solid #e2e8f0;
+      padding-top: 0.6rem;
+      margin-top: 0.25rem;
     }
 
-    .summary-val.positive {
-      color: var(--accent-mint-hover);
+    .breakdown-row span:last-child {
+      font-weight: 600;
+      color: var(--primary-navy);
     }
 
-    .summary-val.negative {
-      color: #ef4444;
+    /* Dashboard Actions: Copy, Print, Reset */
+    .dashboard-actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
     }
 
-    .btn-reset {
-      width: 100%;
-      background: transparent;
-      border: 1px solid #cbd5e1;
-      padding: 0.65rem;
+    .btn-action-util {
+      padding: 0.6rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .btn-action-util:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    /* Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
       border-radius: var(--radius-md);
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
+      box-shadow: var(--shadow-xl);
+      border-left: 4px solid var(--accent-emerald);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
     }
 
-    .btn-reset:hover {
-      background: #f1f5f9;
-      color: var(--text-main);
+    .toast-pill.show {
+      transform: translateY(0);
+      opacity: 1;
     }
 
-    /* -----------------------------------------------------------
-       SEO ARTICLE CONTENT STYLES
-    ----------------------------------------------------------- */
-    .seo-content-article {
+    /* ===========================================================
+       2. ON-PAGE SEO ARTICLE & EDITORIAL STYLING
+    =========================================================== */
+    .seo-article {
       background: #ffffff;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-color);
       padding: 3.5rem 3rem;
-      box-shadow: var(--shadow-sm);
-    }
-
-    @media (max-width: 768px) {
-      .seo-content-article {
-        padding: 2rem 1.25rem;
-      }
-    }
-
-    .seo-content-article h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      color: var(--primary-navy);
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 1.25rem;
-    }
-
-    .seo-content-article h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-navy);
-      letter-spacing: -0.02em;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #f1f5f9;
-      padding-bottom: 0.5rem;
-    }
-
-    .seo-content-article h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--secondary-navy);
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .seo-content-article p {
-      font-size: 1.025rem;
+      box-shadow: var(--shadow-md);
       color: #334155;
-      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
       line-height: 1.75;
     }
 
-    .seo-content-article ul, .seo-content-article ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: #334155;
+    @media (max-width: 768px) {
+      .seo-article {
+        padding: 2rem 1.5rem;
+        font-size: 1rem;
+      }
     }
 
-    .seo-content-article li {
-      margin-bottom: 0.5rem;
-      line-height: 1.65;
-    }
-
-    /* Formula Callout Boxes */
-    .formula-card {
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      border-left: 4px solid var(--accent-mint);
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .formula-title {
-      font-family: var(--font-family);
-      font-weight: 700;
-      font-size: 0.95rem;
+    .seo-article h1,
+    .seo-article h2,
+    .seo-article h3,
+    .seo-article h4 {
       color: var(--primary-navy);
-      margin-bottom: 0.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
-    .formula-math {
-      font-size: 1.15rem;
-      color: #047857;
-      font-weight: 700;
+    .seo-article h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
     }
 
-    /* Benchmark Comparison Tables */
-    .data-table-wrapper {
-      overflow-x: auto;
+    .seo-article h2 {
+      font-size: 1.65rem;
+      margin-top: 3rem;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .seo-article h3 {
+      font-size: 1.25rem;
+      margin-top: 1.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-article p {
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-article ul, .seo-article ol {
+      margin: 1.25rem 0 1.5rem 1.5rem;
+    }
+
+    .seo-article li {
+      margin-bottom: 0.65rem;
+    }
+
+    .seo-callout {
+      background: #f0fdf4;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
       margin: 1.75rem 0;
+      color: #14532d;
     }
 
-    .seo-table {
+    .seo-callout strong {
+      color: #064e3b;
+    }
+
+    /* Math Box Container */
+    .math-formula-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--primary-navy);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    .math-formula-caption {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .math-rendered {
+      font-size: 1.35rem;
+      color: #0f172a;
+      margin: 0.5rem 0;
+    }
+
+    /* Comparison Table for Excel vs Online */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .comparison-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
       font-size: 0.95rem;
     }
 
-    .seo-table th {
-      background-color: var(--primary-navy);
+    .comparison-table th {
+      background: var(--primary-navy);
       color: #ffffff;
-      padding: 0.85rem 1rem;
-      font-weight: 600;
+      padding: 1rem 1.25rem;
+      font-weight: 700;
     }
 
-    .seo-table td {
-      padding: 0.85rem 1rem;
+    .comparison-table td {
+      padding: 0.9rem 1.25rem;
       border-bottom: 1px solid var(--border-color);
       color: #334155;
     }
 
-    .seo-table tr:nth-child(even) {
-      background-color: #f8fafc;
+    .comparison-table tr:nth-child(even) td {
+      background: #f8fafc;
     }
 
-    .seo-table tr:hover {
-      background-color: #f1f5f9;
+    .comparison-table tr:hover td {
+      background: #f1f5f9;
     }
 
     /* FAQ Collapsible Component */
-    .faq-accordion {
-      margin-top: 1.5rem;
+    .faq-accordion-group {
+      margin-top: 1.75rem;
     }
 
-    .faq-item {
+    .faq-item-card {
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      margin-bottom: 0.85rem;
-      overflow: hidden;
+      margin-bottom: 0.9rem;
       background: #ffffff;
+      overflow: hidden;
+      transition: all 0.2s ease;
     }
 
-    .faq-question {
-      padding: 1.1rem 1.25rem;
+    .faq-item-card:hover {
+      border-color: #cbd5e1;
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      padding: 1.2rem 1.35rem;
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--primary-navy);
+      background: transparent;
+      border: none;
+      text-align: left;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      user-select: none;
-      transition: background 0.15s ease;
+      gap: 1rem;
+      font-family: inherit;
     }
 
-    .faq-question:hover {
-      background-color: #f8fafc;
-    }
-
-    .faq-toggle-icon {
-      font-size: 1.25rem;
-      font-weight: 400;
+    .faq-icon-arrow {
+      font-size: 1.2rem;
       color: var(--text-muted);
-      transition: transform 0.2s ease;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
     }
 
-    .faq-answer {
-      padding: 0 1.25rem 1.25rem;
-      display: none;
-      color: #475569;
-      line-height: 1.7;
-      font-size: 0.975rem;
-    }
-
-    .faq-item.active .faq-toggle-icon {
+    .faq-item-card.open .faq-icon-arrow {
       transform: rotate(45deg);
-      color: var(--accent-mint);
+      color: var(--accent-emerald);
     }
 
-    .faq-item.active .faq-answer {
+    .faq-answer-pane {
+      display: none;
+      padding: 0 1.35rem 1.35rem;
+      color: #475569;
+      font-size: 0.985rem;
+      line-height: 1.75;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+    }
+
+    .faq-item-card.open .faq-answer-pane {
       display: block;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      margin-top: 3rem;
-      padding: 1.5rem 0;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
       color: var(--text-muted);
       font-size: 0.875rem;
-      border-top: 1px solid var(--border-color);
+    }
+
+    footer a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: var(--accent-emerald);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+        color: #000000;
+      }
+      .rr-nav, .top-controls-bar, .step-tabs-header, .step-actions-row, .dashboard-actions-row, .toast-pill, footer {
+        display: none !important;
+      }
+      .calc-card-wrapper {
+        box-shadow: none;
+        border: none;
+      }
+      .calc-grid-layout {
+        display: block;
+      }
+      .phase-content {
+        display: block !important;
+        margin-bottom: 2rem;
+      }
+      .calc-results-pane {
+        border-top: 2px solid #000000;
+        margin-top: 2rem;
+      }
     }
   </style>
 </head>
@@ -718,436 +1231,845 @@
 
 <div class="rr-container">
 
-  <!-- Navbar -->
+  <!-- Navigation Bar -->
   <header class="rr-nav">
-    <a href="#" class="rr-logo">Real<span>Refin</span>.com</a>
-    <div class="rr-tagline">Institutional Real Estate Investment Analytics</div>
+    <a href="https://realrefin.com/" class="rr-logo" aria-label="RealRefin Home">
+      Real<span>Refin</span>.com
+    </a>
+    <div class="rr-tagline">Institutional Real Estate Investment Analytics &amp; Debt Modeling</div>
   </header>
 
   <!-- ========================================================
-       1. INTERACTIVE RENTAL YIELD CALCULATOR
+       1. INTERACTIVE BRRRR METHOD CALCULATOR
   ======================================================== -->
-  <section class="calc-card-wrapper" id="calculator" aria-label="Rental Yield Calculator Tool">
+  <section class="calc-card-wrapper" id="calculator" aria-label="BRRRR Method Calculator Tool">
     
-    <!-- Top Header -->
-    <div class="calc-header">
-      <h2>Rental Yield Calculator</h2>
-      <p>Analyze Gross vs. Net Rental Yield and Cash Flow for UK, US, and Australian Real Estate.</p>
+    <!-- Header Banner -->
+    <div class="calc-header-banner">
+      <h1>Free BRRRR Method Calculator: Analyze Your Real Estate Deals Fast</h1>
+      <p>Model Buy, Rehab, Rent, Refinance, and Repeat transactions with institutional precision. Calculate cash left in the deal, refinance cash-out capital, monthly net cash flow, and infinite cash-on-cash returns across the US, UK, and Australia.</p>
     </div>
 
-    <div class="calc-body-grid">
+    <div class="calc-grid-layout">
       
-      <!-- Left Side: User Inputs -->
+      <!-- ====================================================
+           LEFT COLUMN: MULTI-STEP INPUTS PANE
+      ==================================================== -->
       <div class="calc-inputs-pane">
         
-        <!-- Controls: Currency & Frequency -->
-        <div class="controls-row">
+        <!-- Top Controls: Currency & Regional Localization -->
+        <div class="top-controls-bar">
           <div>
-            <span class="control-group-label">Select Currency / Region</span>
-            <div class="pill-switch" role="group" aria-label="Currency selection">
-              <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">US ($)</button>
-              <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">UK (£)</button>
-              <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">AU (A$)</button>
+            <span class="control-label">Select Currency / Region</span>
+            <div class="currency-switcher" role="group" aria-label="Currency and Regional Selector">
+              <button type="button" class="curr-btn active" data-curr="USD" data-symbol="$" aria-label="US Dollars">
+                <span>🇺🇸</span> US ($)
+              </button>
+              <button type="button" class="curr-btn" data-curr="GBP" data-symbol="£" aria-label="British Pounds">
+                <span>🇬🇧</span> UK (£)
+              </button>
+              <button type="button" class="curr-btn" data-curr="AUD" data-symbol="A$" aria-label="Australian Dollars">
+                <span>🇦🇺</span> AU (A$)
+              </button>
             </div>
           </div>
 
           <div>
-            <span class="control-group-label">Rent Frequency</span>
-            <div class="pill-switch" role="group" aria-label="Rent collection frequency">
-              <button type="button" class="freq-btn active" data-freq="monthly">Monthly</button>
-              <button type="button" class="freq-btn" data-freq="weekly">Weekly</button>
-            </div>
+            <span class="control-label">Quick Presets</span>
+            <button type="button" id="btnPresetExample" class="curr-btn" style="border: 1px solid #cbd5e1; background: #ffffff;">
+              ✨ Load Example Deal
+            </button>
           </div>
         </div>
 
-        <!-- Section 1: Property & Rent Core Inputs -->
-        <div class="form-section-title">Property Details</div>
+        <!-- Multi-Step / Accordion Navigation Tabs -->
+        <div class="step-tabs-header" role="tablist" aria-label="BRRRR Phases">
+          <button type="button" class="step-tab active" data-target="phase1" role="tab" aria-selected="true" id="tab-phase1">
+            <span class="step-badge-num">1</span>
+            <span class="tab-title-text">Buy &amp; Rehab</span>
+            <span class="tab-title-short">Buy</span>
+          </button>
+          <button type="button" class="step-tab" data-target="phase2" role="tab" aria-selected="false" id="tab-phase2">
+            <span class="step-badge-num">2</span>
+            <span class="tab-title-text">Refinance</span>
+            <span class="tab-title-short">Refi</span>
+          </button>
+          <button type="button" class="step-tab" data-target="phase3" role="tab" aria-selected="false" id="tab-phase3">
+            <span class="step-badge-num">3</span>
+            <span class="tab-title-text">Rent &amp; Expenses</span>
+            <span class="tab-title-short">Rent</span>
+          </button>
+        </div>
 
-        <div class="input-field-group">
-          <div class="input-label-row">
-            <label class="input-label" for="propertyPrice">
-              Property Purchase Price
-              <span class="tooltip-icon" data-tooltip="Total acquisition cost including agreed price, or current market valuation.">?</span>
-            </label>
+        <!-- ----------------------------------------------------
+             PHASE 1: BUY & REHAB
+        ---------------------------------------------------- -->
+        <div class="phase-content active" id="phase1" role="tabpanel" aria-labelledby="tab-phase1">
+          <div class="phase-title-row">
+            <h3>🔨 Phase 1: Property Acquisition &amp; Rehabilitation</h3>
+            <p>Input your purchase price, renovation budget, and target After Repair Value (ARV).</p>
           </div>
-          <div class="input-addon-wrapper">
-            <span class="input-prefix" id="currSymbol1">$</span>
-            <input type="number" id="propertyPrice" class="calc-input" placeholder="350000" value="350000" min="0" step="5000">
+
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="purchasePrice">
+                  Purchase Price
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Agreed contract acquisition price of the distressed or off-market property before renovation.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="purchasePrice" class="calc-input" value="150000" min="0" step="5000" placeholder="150000">
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="arvValue">
+                  Estimated ARV
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">After Repair Value (ARV): Appraised fair market value of the property once all rehabilitation and upgrades are 100% completed.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="arvValue" class="calc-input" value="250000" min="0" step="5000" placeholder="250000">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="rehabCosts">
+                  Rehab &amp; Renovation Costs
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Total estimated capital expenditures (CapEx), labor, materials, municipal permits, and contractor fees needed to force appreciation.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="rehabCosts" class="calc-input" value="45000" min="0" step="1000" placeholder="45000">
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="purchaseClosingCosts">
+                  Purchase Closing Costs
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Title / escrow fees, legal solicitor conveyancing, survey costs, transfer taxes, or UK stamp duty / AU stamp duty.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="purchaseClosingCosts" class="calc-input" value="4000" min="0" step="500" placeholder="4000">
+              </div>
+            </div>
+          </div>
+
+          <div class="step-actions-row">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Step 1 of 3</span>
+            <button type="button" class="btn-step-nav btn-step-next" data-goto="phase2">
+              Next: Refinance Phase →
+            </button>
           </div>
         </div>
 
-        <div class="input-field-group">
-          <div class="input-label-row">
-            <label class="input-label" for="rentAmount">
-              Expected <span id="rentFreqLabel">Monthly</span> Rent
-              <span class="tooltip-icon" data-tooltip="Expected gross rental payment received from tenants.">?</span>
-            </label>
+        <!-- ----------------------------------------------------
+             PHASE 2: REFINANCE
+        ---------------------------------------------------- -->
+        <div class="phase-content" id="phase2" role="tabpanel" aria-labelledby="tab-phase2">
+          <div class="phase-title-row">
+            <h3>🔄 Phase 2: Cash-Out Refinance Financing</h3>
+            <p>Configure your post-rehabilitation takeout debt based on the newly appraised ARV.</p>
           </div>
-          <div class="input-addon-wrapper">
-            <span class="input-prefix" id="currSymbol2">$</span>
-            <input type="number" id="rentAmount" class="calc-input" placeholder="2200" value="2200" min="0" step="50">
+
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="refinanceLtv">
+                  Refinance LTV %
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Loan-to-Value (LTV): The percentage of the new appraised ARV the long-term mortgage lender will advance (commonly 70% to 80%).</span>
+                  </span>
+                </label>
+                <span id="ltvDisplay" style="font-weight: 700; color: var(--accent-emerald-dark); font-size: 0.85rem;">75%</span>
+              </div>
+              <div class="input-addon-wrapper">
+                <input type="number" id="refinanceLtv" class="calc-input has-suffix no-prefix" value="75" min="50" max="95" step="1">
+                <span class="input-suffix">%</span>
+              </div>
+              <div class="slider-container">
+                <input type="range" id="refinanceLtvSlider" class="range-slider" min="50" max="85" step="1" value="75">
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="interestRate">
+                  Refinance Interest Rate
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Annual fixed interest rate for the permanent commercial DSCR, buy-to-let (UK), or investment mortgage.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <input type="number" id="interestRate" class="calc-input has-suffix no-prefix" value="6.5" min="1" max="18" step="0.125" placeholder="6.5">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="loanTermYears">
+                  Loan Term
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Mortgage amortization duration in years. 30 years is standard in the US; 25-30 years in the UK &amp; Australia.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <input type="number" id="loanTermYears" class="calc-input has-suffix no-prefix" value="30" min="5" max="40" step="5" placeholder="30">
+                <span class="input-suffix">Years</span>
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="refinanceClosingCosts">
+                  Refinance Closing Costs
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Lender origination points, underwriting fees, commercial appraisal cost, and title settlement for the new loan.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="refinanceClosingCosts" class="calc-input" value="3500" min="0" step="250" placeholder="3500">
+              </div>
+            </div>
+          </div>
+
+          <div class="step-actions-row">
+            <button type="button" class="btn-step-nav btn-step-prev" data-goto="phase1">
+              ← Back to Phase 1
+            </button>
+            <button type="button" class="btn-step-nav btn-step-next" data-goto="phase3">
+              Next: Rent &amp; Cash Flow →
+            </button>
           </div>
         </div>
 
-        <!-- Section 2: Operating Expenses for Net Yield -->
-        <button type="button" class="expenses-accordion-toggle" id="toggleExpensesBtn">
-          <span>⚙️ Annual Operating Expenses (For Net Yield)</span>
-          <span id="accordionArrow">▾</span>
-        </button>
-
-        <div class="expenses-box" id="expensesBox">
-          
-          <div class="input-field-group">
-            <div class="input-label-row">
-              <label class="input-label" for="expManagement">
-                Property Management / Letting Fees
-                <span class="tooltip-icon" data-tooltip="Annual fees paid to letting or management agencies (typically 8%-15% of rent).">?</span>
-              </label>
-            </div>
-            <div class="input-addon-wrapper">
-              <span class="input-prefix curr-prefix">$</span>
-              <input type="number" id="expManagement" class="calc-input" placeholder="2000" value="2112" min="0">
-            </div>
+        <!-- ----------------------------------------------------
+             PHASE 3: RENT & EXPENSES
+        ---------------------------------------------------- -->
+        <div class="phase-content" id="phase3" role="tabpanel" aria-labelledby="tab-phase3">
+          <div class="phase-title-row">
+            <h3>🏠 Phase 3: Rental Operations &amp; Cash Flow</h3>
+            <p>Model monthly lease income, property taxes, insurance, and realistic maintenance &amp; vacancy reserves.</p>
           </div>
 
           <div class="input-field-group">
             <div class="input-label-row">
-              <label class="input-label" for="expTax">
-                Property Tax / Council Tax / Rates
-                <span class="tooltip-icon" data-tooltip="Annual local municipal taxes, council rates, or land taxes payable by owner.">?</span>
+              <label class="input-label" for="monthlyRent">
+                Gross Monthly Rent
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Anticipated gross contractual monthly rent received from tenants based on local market comps.</span>
+                </span>
               </label>
             </div>
             <div class="input-addon-wrapper">
-              <span class="input-prefix curr-prefix">$</span>
-              <input type="number" id="expTax" class="calc-input" placeholder="1800" value="2400" min="0">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="monthlyRent" class="calc-input" value="2200" min="0" step="50" placeholder="2200">
             </div>
           </div>
 
-          <div class="input-field-group">
-            <div class="input-label-row">
-              <label class="input-label" for="expInsurance">
-                Building & Landlord Insurance
-                <span class="tooltip-icon" data-tooltip="Annual premiums for building structure, landlord liability, and rent guarantee policies.">?</span>
-              </label>
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="monthlyTaxes">
+                  Monthly Property Taxes
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Local real estate municipal property tax, UK council tax (if landlord paid), or AU council rates prorated per month.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="monthlyTaxes" class="calc-input" value="220" min="0" step="20" placeholder="220">
+              </div>
             </div>
-            <div class="input-addon-wrapper">
-              <span class="input-prefix curr-prefix">$</span>
-              <input type="number" id="expInsurance" class="calc-input" placeholder="900" value="950" min="0">
+
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="monthlyInsurance">
+                  Monthly Hazard Insurance
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Landlord hazard, building structure, and premises liability insurance policy premiums divided by 12.</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="monthlyInsurance" class="calc-input" value="110" min="0" step="10" placeholder="110">
+              </div>
             </div>
           </div>
 
-          <div class="input-field-group">
-            <div class="input-label-row">
-              <label class="input-label" for="expMaintenance">
-                Repairs, Maintenance & Service Charges
-                <span class="tooltip-icon" data-tooltip="Reserve fund for ongoing upkeep, strata/body corporate fees, or HOA dues.">?</span>
-              </label>
+          <div class="form-grid-2">
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="maintenancePercent">
+                  Maintenance &amp; Repairs %
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Monthly escrow reserve set aside for plumbing, HVAC, appliances, and turnover touch-ups (typically 5% to 8% of rent).</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <input type="number" id="maintenancePercent" class="calc-input has-suffix no-prefix" value="5" min="0" max="25" step="1" placeholder="5">
+                <span class="input-suffix">%</span>
+              </div>
             </div>
-            <div class="input-addon-wrapper">
-              <span class="input-prefix curr-prefix">$</span>
-              <input type="number" id="expMaintenance" class="calc-input" placeholder="1500" value="1500" min="0">
+
+            <div class="input-field-group">
+              <div class="input-label-row">
+                <label class="input-label" for="vacancyPercent">
+                  Vacancy Allowance %
+                  <span class="tooltip-container" tabindex="0">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-box">Allowance for unoccupied tenant transition intervals (typically 4% to 8% in high-demand rental markets).</span>
+                  </span>
+                </label>
+              </div>
+              <div class="input-addon-wrapper">
+                <input type="number" id="vacancyPercent" class="calc-input has-suffix no-prefix" value="5" min="0" max="25" step="1" placeholder="5">
+                <span class="input-suffix">%</span>
+              </div>
             </div>
           </div>
 
-          <div class="input-field-group">
-            <div class="input-label-row">
-              <label class="input-label" for="expOther">
-                Other Recurring Costs / Vacancy Allowance
-                <span class="tooltip-icon" data-tooltip="Contingencies such as gas safety checks, regulatory licenses, or estimated vacancy loss.">?</span>
-              </label>
-            </div>
-            <div class="input-addon-wrapper">
-              <span class="input-prefix curr-prefix">$</span>
-              <input type="number" id="expOther" class="calc-input" placeholder="500" value="600" min="0">
-            </div>
+          <div class="step-actions-row">
+            <button type="button" class="btn-step-nav btn-step-prev" data-goto="phase2">
+              ← Back to Phase 2
+            </button>
+            <span style="font-size: 0.8rem; color: var(--accent-emerald-dark); font-weight: 700;">✓ Live Dynamic Results Active</span>
           </div>
-
         </div>
 
       </div>
 
-      <!-- Right Side: Real-Time Results -->
+      <!-- ====================================================
+           RIGHT COLUMN: HIGH-CONTRAST RESULTS DASHBOARD
+      ==================================================== -->
       <div class="calc-results-pane">
+        
         <div>
-          <!-- Metric Highlights -->
-          <div class="results-hero-grid">
+          <!-- Visual Deal Health Badge -->
+          <div class="deal-verdict-card" id="verdictCard">
+            <div class="verdict-badge" id="verdictIcon">🚀</div>
+            <div class="verdict-text-group">
+              <h4 id="verdictTitle">Great BRRRR Deal!</h4>
+              <p id="verdictSubtitle">High Cash-on-Cash Return with minimal capital trapped in the asset.</p>
+            </div>
+          </div>
+
+          <!-- Highlight Card: Cash Left in Deal -->
+          <div class="primary-metric-card">
+            <div class="metric-subtitle">
+              <span>Total Cash Left in Deal</span>
+              <span class="tooltip-container" tabindex="0">
+                <span class="tooltip-icon" style="background: rgba(255,255,255,0.2); color: #fff;">?</span>
+                <span class="tooltip-box">Total Out-of-Pocket Initial Cash minus Net Cash Out from Refinance. If negative, you pulled out more than 100% of your initial cash!</span>
+              </span>
+            </div>
+            <div class="metric-huge-val" id="resCashLeftVal">$15,000</div>
+            <div class="metric-desc-pill" id="resCashLeftNote">7.5% of total capital remaining</div>
+          </div>
+
+          <!-- 2x2 Core Metrics Grid -->
+          <div class="metrics-summary-grid">
             
-            <div class="metric-card">
-              <div class="metric-title">Gross Rental Yield</div>
-              <div class="metric-value-huge" id="resGrossYield">7.54%</div>
-              <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Before Expenses</div>
+            <div class="sub-metric-box">
+              <div class="sub-metric-label">
+                <span>Cash-Out Refinance</span>
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Gross new mortgage amount ($ARV * LTV%) less refinance closing costs returned to your bank account.</span>
+                </span>
+              </div>
+              <div class="sub-metric-val emerald" id="resCashOutVal">$184,000</div>
+              <div class="sub-metric-note" id="resNewLoanSubnote">New Loan: $187,500</div>
             </div>
 
-            <div class="metric-card highlight">
-              <div class="metric-title">Net Rental Yield</div>
-              <div class="metric-value-huge" id="resNetYield">5.38%</div>
-              <div style="font-size: 0.72rem; color: var(--accent-mint-hover); font-weight: 600; margin-top: 4px;">True Return</div>
+            <div class="sub-metric-box">
+              <div class="sub-metric-label">
+                <span>Monthly Cash Flow</span>
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Monthly Gross Rent minus Debt Service (P&amp;I), Taxes, Hazard Insurance, and Maintenance/Vacancy Reserves.</span>
+                </span>
+              </div>
+              <div class="sub-metric-val emerald" id="resMonthlyCashFlowVal">+$464.88</div>
+              <div class="sub-metric-note" id="resAnnualFlowSubnote">Annual: +$5,579 / yr</div>
+            </div>
+
+            <div class="sub-metric-box">
+              <div class="sub-metric-label">
+                <span>Cash-on-Cash Return</span>
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Annual Net Cash Flow divided by Total Cash Left in Deal. If $0 is left in the deal, return is mathematically infinite!</span>
+                </span>
+              </div>
+              <div class="sub-metric-val emerald" id="resCocVal">37.2%</div>
+              <div class="sub-metric-note">Target: &gt; 12.0%</div>
+            </div>
+
+            <div class="sub-metric-box">
+              <div class="sub-metric-label">
+                <span>Equity Created</span>
+                <span class="tooltip-container" tabindex="0">
+                  <span class="tooltip-icon">?</span>
+                  <span class="tooltip-box">Immediate net balance-sheet equity remaining in the property (ARV minus New Mortgage Loan).</span>
+                </span>
+              </div>
+              <div class="sub-metric-val" id="resEquityVal">$62,500</div>
+              <div class="sub-metric-note" id="resEquityPercentSubnote">25.0% Equity Retained</div>
             </div>
 
           </div>
 
-          <!-- Dynamic Rating Indicator -->
-          <div class="yield-rating-box" id="ratingContainer" style="background: var(--badge-good-bg);">
-            <div>
-              <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Investment Assessment</div>
-              <div id="ratingText" style="font-size: 0.95rem; font-weight: 700; color: var(--badge-good-text);">Solid Cash Flow Asset</div>
+          <!-- Capital Recovery Visual Bar -->
+          <div class="capital-bar-section">
+            <div class="capital-bar-header">
+              <span>Capital Recycling Velocity</span>
+              <span id="capitalBarPercent">92.5% Recovered</span>
             </div>
-            <span class="rating-badge good" id="ratingBadge">Good Yield</span>
+            <div class="progress-track" aria-label="Capital Recovery Progress Track">
+              <div class="progress-fill" id="capitalBarFill" style="width: 92.5%;"></div>
+            </div>
+            <div class="capital-bar-footer">
+              <span id="capitalBarInitialText">Invested: $199,000</span>
+              <span id="capitalBarReturnedText">Net Refi: $184,000</span>
+            </div>
           </div>
 
-          <!-- Summary Breakdown List -->
-          <ul class="summary-list">
-            <li class="summary-item">
-              <span class="summary-label">Annual Gross Rent</span>
-              <span class="summary-val" id="resAnnualRent">$26,400</span>
-            </li>
-            <li class="summary-item">
-              <span class="summary-label">Total Annual Expenses</span>
-              <span class="summary-val" id="resTotalExpenses">$7,562</span>
-            </li>
-            <li class="summary-item">
-              <span class="summary-label">Net Operating Cash Flow (Annual)</span>
-              <span class="summary-val positive" id="resNetCashflow">$18,838</span>
-            </li>
-            <li class="summary-item">
-              <span class="summary-label">Net Operating Cash Flow (Monthly)</span>
-              <span class="summary-val" id="resMonthlyCashflow">$1,569.83</span>
-            </li>
-          </ul>
+          <!-- Collapsible Breakdown Accordion -->
+          <button type="button" class="breakdown-toggle-btn" id="btnToggleBreakdown" aria-expanded="false">
+            <span>📊 View Complete Deal Amortization Breakdown</span>
+            <span id="breakdownArrowIcon">▾</span>
+          </button>
+
+          <div class="breakdown-table-wrapper" id="breakdownTablePane">
+            <div class="breakdown-row">
+              <span>Purchase Price</span>
+              <span id="bkPurchasePrice">$150,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Rehab &amp; Upgrades</span>
+              <span id="bkRehabCosts">$45,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Purchase Closing Costs</span>
+              <span id="bkPurchaseClosing">$4,000</span>
+            </div>
+            <div class="breakdown-row highlight">
+              <span>Total Initial Cash Invested</span>
+              <span id="bkTotalInitialCash">$199,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>After Repair Value (ARV)</span>
+              <span id="bkArv">$250,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>New Loan Amount (<span id="bkLtvPct">75</span>% LTV)</span>
+              <span id="bkNewLoan">$187,500</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Refinance Closing Costs</span>
+              <span id="bkRefiClosing">$3,500</span>
+            </div>
+            <div class="breakdown-row highlight">
+              <span>Net Refinance Cash Extracted</span>
+              <span id="bkNetRefiCash">$184,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Monthly Debt Service (P&amp;I)</span>
+              <span id="bkMonthlyPi">$1,185.12</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Property Taxes &amp; Insurance</span>
+              <span id="bkMonthlyTi">$330.00</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Maintenance &amp; Vacancy (<span id="bkReservesPct">10</span>%)</span>
+              <span id="bkMonthlyReserves">$220.00</span>
+            </div>
+            <div class="breakdown-row highlight">
+              <span>Total Monthly Operating Expenses</span>
+              <span id="bkTotalExpenses">$1,735.12</span>
+            </div>
+          </div>
         </div>
 
-        <button type="button" class="btn-reset" id="resetBtn">↺ Reset to Default Values</button>
+        <!-- Dashboard Footer Action Buttons -->
+        <div class="dashboard-actions-row">
+          <button type="button" class="btn-action-util" id="btnCopySummary">
+            <span>📋</span> Copy Deal Summary
+          </button>
+          <button type="button" class="btn-action-util" id="btnPrintDeal">
+            <span>🖨️</span> Print / Save PDF
+          </button>
+        </div>
 
       </div>
 
     </div>
   </section>
 
+  <!-- Notification Toast -->
+  <div class="toast-pill" id="toastPill" role="status" aria-live="polite">Deal summary copied to clipboard!</div>
+
   <!-- ========================================================
-       2. IN-DEPTH SEO WRITTEN GUIDE (1000+ Words)
+       2. EDITORIAL SEO CONTENT (1000+ WORDS)
   ======================================================== -->
-  <article class="seo-content-article">
+  <article class="seo-article">
     
-    <h1>Comprehensive Rental Yield Calculator for Property Investors</h1>
+    <header>
+      <h1>Free BRRRR Method Calculator: Analyze Your Real Estate Deals Fast</h1>
+      <p class="lead-text">
+        The <strong>BRRRR method</strong> (Buy, Rehab, Rent, Refinance, Repeat) has revolutionized modern property investing by transforming static, illiquid down payments into a dynamic, velocity-driven wealth engine. Rather than saving for years to accumulate a single 20% to 25% deposit, sophisticated real estate investors in the United States, the United Kingdom, and Australia systematically recycle the exact same pot of capital across dozens of residential properties.
+      </p>
+      <p>
+        Use our <strong>free BRRRR method calculator</strong> to stress-test your acquisitions in real time. Model purchase costs, forced equity through rehabilitation, long-term debt takeout underwriting, operating expense reserves, and the ultimate real estate milestone: achieving an <em>infinite Cash-on-Cash return</em> with 100% of your initial out-of-pocket capital returned to your bank account.
+      </p>
+    </header>
+
+    <div class="seo-callout">
+      <strong>Core Principle of Wealth Velocity:</strong> Traditional buy-and-hold investing traps your capital indefinitely inside a single house. The BRRRR strategy manufactures equity through value-add renovations, borrows against that created value at institutional commercial rates, and extracts all invested cash tax-free so you can deploy it immediately into your next acquisition.
+    </div>
+
+    <!-- ----------------------------------------------------
+         SECTION 1: WHAT IS THE BRRRR STRATEGY
+    ---------------------------------------------------- -->
+    <h2>What is the BRRRR Strategy in Real Estate?</h2>
     <p>
-      In residential and commercial property investment, intuition is no substitute for rigorous quantitative analysis. Whether you are acquiring a single-family buy-to-let in Manchester, underwriting a multi-family duplex in Texas, or purchasing a suburban apartment in Melbourne, understanding your exact rate of return is essential before committing capital.
-    </p>
-    <p>
-      The <strong>realrefin.com Rental Yield Calculator</strong> is engineered to give property investors, financial advisors, and homeowners instant clarity. It calculates both <strong>Gross Rental Yield</strong> and <strong>Net Rental Yield</strong> simultaneously across regional financial markets including the United States, United Kingdom, and Australia.
+      Coined within institutional and grassroots real estate communities, the BRRRR framework breaks the property investment lifecycle into five sequential, highly calculated phases. When executed with financial discipline, it mitigates acquisition risk and eliminates deposit bottlenecks:
     </p>
 
-    <!-- SECTION 1 -->
-    <h2>What is Rental Yield and Why Does It Matter?</h2>
-    <p>
-      <strong>Rental yield</strong> is a foundational real estate metric that quantifies the annual income generated by an investment property expressed as a percentage of the property’s total purchase price or current market value. 
-    </p>
-    <p>
-      While <em>capital growth</em> evaluates how much a property's market price appreciates over time, <em>rental yield</em> reveals how efficiently that property functions as an income-producing asset. Tracking your yield is critical for several key reasons:
-    </p>
     <ul>
-      <li><strong>Cash Flow Solvency:</strong> Yield determines whether a property will cover its own operational overhead, mortgage interest payments, and property management fees without demanding ongoing out-of-pocket subsidies from the landlord.</li>
-      <li><strong>Objective Asset Comparison:</strong> Evaluating yield standardizes performance. It allows an investor to objectively compare a £200,000 terrace in Birmingham with an $800,000 apartment in Sydney or a $250,000 turnkey home in Ohio.</li>
-      <li><strong>Risk Mitigation:</strong> High-yield properties cushion portfolios against unexpected market shocks, tenant vacancies, repair spikes, or central bank interest rate hikes.</li>
+      <li>
+        <strong>1. Buy (Acquisition at a Deep Discount):</strong> The foundation of any successful BRRRR deal is purchasing an undervalued, dated, or structurally sound distressed property below market price. Investors source these through off-market direct-to-vendor marketing, estate liquidations, foreclosures, REO bank auctions, or UK property auctions. Paying market retail price destroys BRRRR economics; your profit is secured on the day you buy.
+      </li>
+      <li>
+        <strong>2. Rehab (Strategic Value-Add Renovation):</strong> Unlike cosmetic house-flipping aimed at luxury buyers, BRRRR rehabilitation focuses strictly on durable, high-ROI renovations that maximize the post-renovation appraisal (After Repair Value or ARV) and tenant durability. Key upgrades include open-plan kitchen modernizations, bathroom overhauls, energy efficiency enhancements (crucial for UK EPC ratings), adding extra bedrooms within existing square footage, and exterior curb appeal.
+      </li>
+      <li>
+        <strong>3. Rent (Stabilizing with Creditworthy Tenants):</strong> Once construction wraps, the property must be leased to qualified tenants at fair market rent. Having an active lease agreement and steady cash flow is mandatory because mortgage underwriters (specifically US DSCR lenders and UK Buy-to-Let providers) evaluate debt coverage based on actual or market-rate lease income before approving refinance applications.
+      </li>
+      <li>
+        <strong>4. Refinance (Cash-Out Equity Extraction):</strong> This is the pivotal engine of the BRRRR strategy. After satisfying the lender's mandatory seasoning period (typically 6 months), you replace your initial acquisition funding (cash, bridge loan, or hard money) with a long-term amortizing mortgage based on the new, higher ARV. A 75% Loan-to-Value (LTV) cash-out mortgage pays off initial debts and returns your initial out-of-pocket rehab and purchase cash back to you tax-free.
+      </li>
+      <li>
+        <strong>5. Repeat (Compounding Your Wealth Engine):</strong> With 100% of your initial capital refunded to your liquid bank account, plus an income-generating asset delivering positive monthly cash flow in your portfolio, you rinse and repeat the process on the next property without requiring new savings.
+      </li>
     </ul>
 
-    <!-- SECTION 2 -->
-    <h2>How to Calculate Rental Yield (With Formulas)</h2>
+    <h3>Regional Nuances: US vs. UK vs. Australia</h3>
     <p>
-      To measure property performance accurately, investors distinguish between two calculations: <strong>Gross Rental Yield</strong> and <strong>Net Rental Yield</strong>.
-    </p>
-
-    <h3>1. Gross Rental Yield Formula</h3>
-    <p>
-      Gross yield measures top-line revenue without accounting for operating costs, taxes, or management fees. It is ideal for rapid screening of real estate listings:
-    </p>
-
-    <div class="formula-card">
-      <div class="formula-title">Gross Rental Yield Formula</div>
-      <div class="formula-math">Gross Yield (%) = (Annual Rental Income / Property Purchase Price) × 100</div>
-    </div>
-
-    <p>
-      <em>Example:</em> You purchase an apartment for £250,000 and lease it for £1,250 per month (£15,000 annually).<br>
-      <strong>Gross Yield = (£15,000 / £250,000) × 100 = 6.00%</strong>
-    </p>
-
-    <h3>2. Net Rental Yield Formula</h3>
-    <p>
-      Net Rental Yield (equivalent to the unleveraged <em>Capitalization Rate</em> or <em>Cap Rate</em> in US commercial real estate) provides a realistic picture of your returns by deducting all unavoidable operating expenses:
-    </p>
-
-    <div class="formula-card">
-      <div class="formula-title">Net Rental Yield Formula</div>
-      <div class="formula-math">Net Yield (%) = [(Annual Rent - Annual Operating Expenses) / Property Purchase Price] × 100</div>
-    </div>
-
-    <p>
-      <em>Example:</em> Using the same £250,000 property, assume your annual holding costs are:
+      While the arithmetic of equity extraction remains constant worldwide, real estate frameworks differ significantly across international borders:
     </p>
     <ul>
-      <li>Property Letting Agent Fees: £1,500</li>
-      <li>Building Insurance: £350</li>
-      <li>Ground Rent & Service Charges: £1,200</li>
-      <li>Maintenance Reserve: £1,000</li>
-      <li><strong>Total Annual Expenses: £4,050</strong></li>
-    </ul>
-    <p>
-      Net Operating Income (NOI) = £15,000 - £4,050 = £10,950.<br>
-      <strong>Net Yield = (£10,950 / £250,000) × 100 = 4.38%</strong>
-    </p>
-
-    <!-- SECTION 3 -->
-    <h2>What is a Good Rental Yield in the UK, US, and Australia?</h2>
-    <p>
-      What qualifies as a "good" yield fluctuates depending on local interest rates, geographic demographics, and whether the market is geared toward cash flow or long-term capital appreciation.
-    </p>
-
-    <div class="data-table-wrapper">
-      <table class="seo-table">
-        <thead>
-          <tr>
-            <th>Country</th>
-            <th>Average Gross Yield</th>
-            <th>Strong / High Yield</th>
-            <th>Market Dynamics & Prime Target Locations</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>United Kingdom (UK)</strong></td>
-            <td>4.5% – 6.0%</td>
-            <td>7.5% – 10.0%+</td>
-            <td>Higher yields are standard in Northern England and Scotland (e.g., Manchester, Liverpool, Glasgow). Prime Central London (PCL) typically exhibits lower yields (2.5% – 3.8%) due to high land valuations.</td>
-          </tr>
-          <tr>
-            <td><strong>United States (US)</strong></td>
-            <td>5.0% – 7.5%</td>
-            <td>8.5% – 12.0%+</td>
-            <td>The American Midwest and Sunbelt (e.g., Cleveland, Indianapolis, Memphis) offer high rental yields. Coastal gateway cities (e.g., New York City, San Francisco, Los Angeles) yield 3% – 5% but command long-term equity growth.</td>
-          </tr>
-          <tr>
-            <td><strong>Australia (AU)</strong></td>
-            <td>3.5% – 5.2%</td>
-            <td>6.0% – 8.5%+</td>
-            <td>High-density metropolitan centers like Sydney and Melbourne average modest gross yields (2.8% – 4.2%). Regional mining hubs and secondary capitals (e.g., Perth, Brisbane, Adelaide) deliver superior gross yields of 5.5% to 7.5%.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p>
-      As a general benchmark across real estate asset classes:
-    </p>
-    <ul>
-      <li><strong>Under 4.0% (Low Yield):</strong> Common in prime metropolitan trophy locations. Relies heavily on aggressive capital appreciation to justify negative or break-even holding cash flow.</li>
-      <li><strong>4.0% to 6.5% (Average to Solid):</strong> The baseline benchmark for stable suburban residential investments. Provides sufficient cash flow buffer under normal debt servicing costs.</li>
-      <li><strong>Above 7.0% (High / Excellent Yield):</strong> Superior operational cash flow. Typically found in regional towns, secondary commercial centers, multi-unit student properties (HMOs in the UK), or distressed asset turnarounds.</li>
+      <li>
+        <strong>United States:</strong> BRRRR investors extensively utilize non-QM <em>Debt Service Coverage Ratio (DSCR)</em> loans. These commercial loans do not verify personal W-2 income or tax returns; instead, they underwrite purely on property cash flow (DSCR $\ge 1.20$). US lenders routinely provide 30-year fixed-rate cash-out refinances at 75% to 80% LTV, offering unbeatable interest-rate predictability.
+      </li>
+      <li>
+        <strong>United Kingdom:</strong> Known locally as "Buy, Refurbish, Refinance, Rent" (BRRR), UK property professionals frequently acquire assets via <em>bridging loans</em> and hold title within a Special Purpose Vehicle (SPV) Limited Company to retain full mortgage interest deductibility under Section 24 tax rules. UK mortgage lenders enforce the Prudential Regulation Authority (PRA) stress tests, requiring rental income to cover 125% to 145% of nominal mortgage interest.
+      </li>
+      <li>
+        <strong>Australia:</strong> Australian investors execute BRRRR through <em>equity release refinancing</em>. Due to strict Australian Prudential Regulation Authority (APRA) serviceability buffers (assessing borrowers at 3.0% above the actual mortgage rate), investors often optimize between interest-only facilities, tax-effective negative gearing offsets, and value-add subdivisions or granny flat additions.
+      </li>
     </ul>
 
-    <!-- SECTION 4 -->
-    <h2>Gross Yield vs. Net Yield: Key Differences</h2>
+    <!-- ----------------------------------------------------
+         SECTION 2: HOW TO CALCULATE BRRRR ROI (WITH FORMULAS)
+    ---------------------------------------------------- -->
+    <h2>How to Calculate BRRRR Return on Investment (With Formulas)</h2>
     <p>
-      The single most common pitfall for novice investors is relying entirely on gross yield when underwriting acquisitions. While gross yield looks attractive in marketing brochures, ignoring operating friction leads to cash flow deficits.
+      Accurate financial modeling differentiates amateur landlords from institutional real estate syndicators. In a standard turnkey buy-to-let investment, Cash-on-Cash (CoC) return measures the annual cash yield on an illiquid down payment. In a BRRRR transaction, however, our denominator—<strong>Total Cash Left in the Deal</strong>—shrinks dramatically post-refinance.
     </p>
 
-    <div class="data-table-wrapper">
-      <table class="seo-table">
-        <thead>
-          <tr>
-            <th>Characteristic</th>
-            <th>Gross Rental Yield</th>
-            <th>Net Rental Yield</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Formula Complexity</strong></td>
-            <td>Simple: Rent ÷ Property Value</td>
-            <td>Detailed: (Rent - All Operating Expenses) ÷ Property Value</td>
-          </tr>
-          <tr>
-            <td><strong>Expense Accounting</strong></td>
-            <td>Excludes all operational and holding costs</td>
-            <td>Deducts taxes, management, repairs, insurance & fees</td>
-          </tr>
-          <tr>
-            <td><strong>Accuracy</strong></td>
-            <td>Surface-level screening indicator</td>
-            <td>Realistic bottom-line performance indicator</td>
-          </tr>
-          <tr>
-            <td><strong>Best Use Case</strong></td>
-            <td>Filtering broad search listings in seconds</td>
-            <td>Detailed underwriting before submitting formal offers</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="math-formula-box">
+      <div class="math-formula-caption">Primary Formula: BRRRR Cash-on-Cash Return on Investment</div>
+      <div class="math-rendered">
+        $$CoC\ Return = \left( \frac{\text{Annual Net Cash Flow}}{\text{Total Cash Left in the Deal}} \right) \times 100$$
+      </div>
+      <p style="font-size: 0.875rem; color: #475569; margin-top: 0.5rem;">
+        Where Annual Net Cash Flow = (Monthly Gross Rent - Monthly Operating Expenses - Debt Service) &times; 12
+      </p>
     </div>
 
-    <h3>Hidden Expenses That Erode Your Net Yield</h3>
-    <p>When computing Net Yield, ensure you audit these recurring costs:</p>
+    <h3>Step-by-Step Mathematical Derivation</h3>
+    <p>To compute your exact financial returns, solve through the following standard real estate equations:</p>
+
     <ol>
-      <li><strong>Letting & Property Management Fees:</strong> Typically ranges between 8% and 15% of the collected rent depending on whether full management or tenant placement only is selected.</li>
-      <li><strong>Council Taxes / Municipal Property Tax:</strong> In the US, property taxes can consume 1% to 3% of the total home value each year. In the UK and Australia, check whether council tax or water charges fall on the landlord during vacancy periods.</li>
-      <li><strong>Strata / HOA / Service Charges:</strong> Apartments and condominiums carry building administration fees, elevator maintenance, and communal reserves which must be subtracted directly from gross returns.</li>
-      <li><strong>Structural Maintenance Reserve:</strong> Prudent underwriters set aside at least 1% of the property value or 10% of monthly rent annually for roof repairs, HVAC servicing, and plumbing upgrades.</li>
-      <li><strong>Vacancy Factor:</strong> Properties rarely remain occupied 100% of the time. Factoring in a 5% to 8% vacancy buffer (equal to 2 to 4 weeks vacant per year) safeguards cash flow integrity.</li>
+      <li>
+        <strong>Total Initial Cash Out-of-Pocket:</strong>
+        $$\text{Initial Investment} = \text{Purchase Price} + \text{Rehab Budget} + \text{Purchase Closing Costs}$$
+      </li>
+      <li>
+        <strong>New Refinance Loan Amount:</strong>
+        $$\text{New Mortgage} = \text{Appraised ARV} \times \left( \frac{\text{Refinance LTV \%}}{100} \right)$$
+      </li>
+      <li>
+        <strong>Net Refinance Cash Returned to Investor:</strong>
+        $$\text{Net Refinance Proceeds} = \text{New Mortgage} - \text{Refinance Closing Fees}$$
+      </li>
+      <li>
+        <strong>Total Capital Left Trapped in Deal:</strong>
+        $$\text{Cash Left in Deal} = \text{Initial Investment} - \text{Net Refinance Proceeds}$$
+      </li>
+      <li>
+        <strong>The "Infinite Return" Phenomenon:</strong>
+        If $\text{Net Refinance Proceeds} \ge \text{Initial Investment}$, then $\text{Cash Left in Deal} \le \$0$. Because your remaining invested capital is zero while your annual net cash flow remains positive, your mathematical rate of return is <strong>infinite ($\infty$)</strong>. You possess an asset generating perpetual dividend yields on house money.
+      </li>
+      <li>
+        <strong>Monthly Debt Amortization Formula:</strong>
+        Monthly Principal and Interest (P&amp;I) is calculated using the standard institutional annuity formula:
+        $$M = P \left[ \frac{r(1 + r)^n}{(1 + r)^n - 1} \right]$$
+        Where $P$ = New Loan Principal, $r$ = monthly interest rate ($\text{Annual Rate} / 12$), and $n$ = total monthly payments ($\text{Loan Term in Years} \times 12$).
+      </li>
     </ol>
 
-    <!-- SECTION 5 -->
-    <h2>Proven Strategies to Increase Your Rental Yield</h2>
+    <h3>Real-World Numerical Case Study: The Power of a Perfect BRRRR</h3>
     <p>
-      If your calculated net yield is below market expectations, consider these actionable value-add techniques:
+      Consider an investor purchasing an unlivable 3-bedroom single-family house in an expanding suburban corridor:
     </p>
-    <ul>
-      <li><strong>Strategic Cosmetic Renovations:</strong> Kitchen refreshes, modern bathroom tiling, and durable vinyl plank flooring provide the highest ROI per dollar spent and allow for immediate rent increases.</li>
-      <li><strong>Reconfiguring Floor Plans:</strong> In the UK, converting formal dining rooms or surplus living areas into additional bedrooms (creating a House in Multiple Occupation / HMO) can boost rental yield from 5% to 11%+.</li>
-      <li><strong>Furnished or Corporate Rentals:</strong> Furnished executive units command a 15% to 30% premium over unfurnished rentals, provided your market caters to corporate relocations or healthcare professionals.</li>
-      <li><strong>Long-Term Tenant Retention:</strong> Turnover is the number one destroyer of net yield. Offering minor rent concessions in exchange for multi-year lease agreements avoids advertising fees, deep-cleaning expenses, and lost rent during transition periods.</li>
-    </ul>
 
-    <!-- SECTION 6: FAQ -->
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    
-    <div class="faq-accordion" id="faqAccordion">
+    <div class="table-responsive">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Deal Stage</th>
+            <th>Financial Metric</th>
+            <th>Traditional Turnkey (25% Down)</th>
+            <th>BRRRR Value-Add Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Acquisition</strong></td>
+            <td>Purchase Price</td>
+            <td>$250,000 (Turnkey)</td>
+            <td>$150,000 (Distressed)</td>
+          </tr>
+          <tr>
+            <td><strong>Renovation</strong></td>
+            <td>Rehab &amp; Remodel Costs</td>
+            <td>$0</td>
+            <td>$45,000</td>
+          </tr>
+          <tr>
+            <td><strong>Closing</strong></td>
+            <td>Purchase Settlement Fees</td>
+            <td>$5,000</td>
+            <td>$4,000</td>
+          </tr>
+          <tr>
+            <td><strong>Capital Deployed</strong></td>
+            <td>Total Initial Cash Invested</td>
+            <td>$67,500 (25% Deposit + Fees)</td>
+            <td>$199,000 (Acquisition + Rehab)</td>
+          </tr>
+          <tr>
+            <td><strong>Valuation</strong></td>
+            <td>After Repair Value (ARV)</td>
+            <td>$250,000</td>
+            <td>$250,000 (Appraised)</td>
+          </tr>
+          <tr>
+            <td><strong>Refinance</strong></td>
+            <td>75% LTV Cash-Out Loan</td>
+            <td>N/A (Original Loan)</td>
+            <td>$187,500 ($184k Net Proceeds)</td>
+          </tr>
+          <tr>
+            <td><strong>Capital Trapped</strong></td>
+            <td>Net Cash Left in Deal</td>
+            <td><strong>$67,500</strong> (Permanently Trapped)</td>
+            <td><strong>$15,000</strong> (92.5% Extracted)</td>
+          </tr>
+          <tr>
+            <td><strong>Operations</strong></td>
+            <td>Net Monthly Cash Flow</td>
+            <td>+$320 / month ($3,840 / yr)</td>
+            <td>+$465 / month ($5,580 / yr)</td>
+          </tr>
+          <tr>
+            <td><strong>Performance</strong></td>
+            <td><strong>Cash-on-Cash Return</strong></td>
+            <td><strong>5.68%</strong></td>
+            <td><strong>37.20%</strong> (6.5&times; Higher Yield!)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      In this real-world comparison, the turnkey investor permanently parked <strong>$67,500</strong> to achieve a modest 5.68% yield. The BRRRR investor pulled <strong>$184,000</strong> back out at closing, leaving just $15,000 in the asset while capturing a <strong>37.2% Cash-on-Cash return</strong> and retaining <strong>$62,500 in instant balance-sheet equity</strong>.
+    </p>
+
+    <!-- ----------------------------------------------------
+         SECTION 3: ONLINE TOOL VS BRRRR EXCEL SPREADSHEET
+    ---------------------------------------------------- -->
+    <h2>Why Use an Online Calculator Instead of a BRRRR Excel Spreadsheet?</h2>
+    <p>
+      For decades, real estate investors relied on downloading complex, cluttered <strong>brrrr calculator excel</strong> templates and Google Sheets workbooks. While spreadsheets were once the gold standard, modern investors analyzing deals on the move face substantial technical friction when relying on static XLS files:
+    </p>
+
+    <div class="table-responsive">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Comparison Vector</th>
+            <th>Static BRRRR Excel Spreadsheet</th>
+            <th>RealRefin Online BRRRR Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mobile Field Accessibility</strong></td>
+            <td>Clunky pinching and zooming on smartphones during physical walkthroughs; broken spreadsheet macros.</td>
+            <td>100% responsive, touch-optimized FinTech interface designed for instant field analysis on iOS and Android.</td>
+          </tr>
+          <tr>
+            <td><strong>Calculation Speed</strong></td>
+            <td>Requires manual cell overrides; formula breakages when inserting new rows or expense categories.</td>
+            <td>Zero-latency, live reactive updates as you type or slide LTV toggles in real time.</td>
+          </tr>
+          <tr>
+            <td><strong>Multi-Currency Support</strong></td>
+            <td>Hardcoded in USD ($) or requiring complex currency conversion macro modifications.</td>
+            <td>One-click toggle between US ($), UK (£), and Australia (A$) with regionalized expense defaults.</td>
+          </tr>
+          <tr>
+            <td><strong>Debt Amortization Engine</strong></td>
+            <td>Often relies on simplified linear approximations that miscalculate compounding interest payments.</td>
+            <td>Rigorous institutional monthly mortgage amortization formula with exact principal &amp; interest math.</td>
+          </tr>
+          <tr>
+            <td><strong>Sharing &amp; Presentation</strong></td>
+            <td>Cluttered sheets with unformatted cells that look unprofessional when pitching private money lenders.</td>
+            <td>One-click deal summary clipboard copying and print-ready PDF reports tailored for debt underwriters.</td>
+          </tr>
+          <tr>
+            <td><strong>Software Requirements</strong></td>
+            <td>Requires paid Microsoft Office 365 license or third-party spreadsheet viewer app.</td>
+            <td>100% free forever; runs instantly in any modern web browser with zero download or registration.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      When walking a prospective fixer-upper with a general contractor, time is your greatest competitive advantage. Bidding against competing investors requires computing your <strong>Maximum Allowable Offer (MAO)</strong> in under 60 seconds. Our online calculator eliminates the risk of broken spreadsheet formulas and provides instant clarity before you submit an offer.
+    </p>
+
+    <!-- ----------------------------------------------------
+         SECTION 4: FREQUENTLY ASKED QUESTIONS
+    ---------------------------------------------------- -->
+    <h2>Frequently Asked Questions (BRRRR Investor FAQ)</h2>
+    <p>
+      Common inquiries regarding deal analysis, refinancing guidelines, and capital optimization:
+    </p>
+
+    <div class="faq-accordion-group">
       
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>How does mortgage interest affect net rental yield?</span>
-          <span class="faq-toggle-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Strictly speaking, Net Rental Yield measures the unleveraged operating performance of a property (Net Operating Income divided by Property Value). However, mortgage interest significantly impacts your actual cash-on-cash return and taxable profit. In jurisdictions like the UK, Section 24 restrictions limit mortgage interest deductions for individual landlords, while in Australia, interest can be written off against other income under negative gearing laws.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Should I calculate yield using weekly or monthly rent?</span>
-          <span class="faq-toggle-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          It depends on your regional market. In Australia and New Zealand, rental rates are traditionally quoted weekly. To calculate annual rent, multiply weekly rent by 52. In the United States and the United Kingdom, rents are quoted monthly, meaning annual rent is calculated as monthly rent multiplied by 12. Multiplying weekly rent by 4 to get monthly rent is inaccurate because a year has 52 weeks, not 48.
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>What is a good Cash-on-Cash return for a BRRRR deal?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            In an ideal BRRRR deal, your Cash-on-Cash (CoC) return is <strong>infinite</strong>. This occurs when your net cash-out refinance proceeds equal or exceed 100% of your total initial acquisition, rehab, and closing costs, leaving $0 of your personal savings trapped in the asset. When some capital remains in the property, most institutional real estate investors target a minimum CoC return of <strong>12% to 20%+</strong>, substantially outperforming standard turnkey rental yields of 5% to 8%.
+          </p>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Is rental yield or capital growth more important?</span>
-          <span class="faq-toggle-icon">+</span>
-        </div>
-        <div class="faq-answer">
-          Neither is universally superior; they serve distinct financial strategies. High rental yield properties provide immediate cash flow stability, debt coverage, and lower vulnerability to interest rate spikes. Capital growth properties build long-term equity and wealth through property appreciation, but often require the investor to subsidize monthly shortfalls during the initial years.
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>How long do I need to wait before refinancing a BRRRR property (Seasoning Period)?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            The seasoning period refers to how long an investor must hold title before a mortgage lender permits a cash-out refinance based on the <em>new appraised ARV</em> rather than the original purchase price. Under Fannie Mae and Freddie Mac conventional guidelines in the US, seasoning is traditionally 6 to 12 months. However, commercial portfolio lenders and DSCR lenders regularly refinance with <strong>zero to 3 months of seasoning</strong> if you provide documented renovation invoices proving forced appreciation. In the UK, most buy-to-let lenders mandate the strict 6-month Land Registry ownership rule. In Australia, major commercial lenders typically review equity release after 6 months.
+          </p>
         </div>
       </div>
 
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>What is the difference between Gross Rental Yield and Cap Rate?</span>
-          <span class="faq-toggle-icon">+</span>
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>Can I do BRRRR with no money down?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            Yes. Accomplished investors frequently execute "zero-money-down" BRRRR projects by deploying short-term third-party debt for Phase 1. Common strategies include partnering with private money lenders (PML) who fund 100% of purchase and rehab in exchange for 8% to 12% annualized interest or equity splits, securing hard money loans that advance 90% of purchase and 100% of rehab, utilizing home equity lines of credit (HELOC) on primary residences, or structuring joint ventures. When the property appraises at ARV and you close the 75% LTV refinance, the new loan pays off the private lender in full.
+          </p>
         </div>
-        <div class="faq-answer">
-          Gross rental yield only looks at gross rent relative to purchase price without deducting any expenses. Capitalization Rate (Cap Rate), widely used in the US commercial and multi-family sector, is identical in concept to Net Rental Yield: it evaluates Net Operating Income (gross income minus all operating expenses except mortgage debt service) divided by current property value.
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>What is the 70% rule, and how does it apply to the BRRRR method?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            The 70% rule is a quick underwriting benchmark used during property acquisitions. It dictates that your Maximum Allowable Offer (MAO) should equal 70% of the property's estimated ARV minus repair costs:
+          </p>
+          <p style="text-align: center; font-weight: 700; color: var(--primary-navy); margin: 0.5rem 0;">
+            $$MAO = (ARV \times 0.70) - \text{Rehab Costs}$$
+          </p>
+          <p>
+            Adhering to this formula ensures that when you execute a subsequent 70% to 75% LTV cash-out refinance, the incoming mortgage proceeds will completely recoup your initial purchase price, renovation expenses, and transaction fees.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item-card">
+        <button type="button" class="faq-question-btn" aria-expanded="false">
+          <span>What happens if the property appraises for less than my estimated ARV?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer-pane">
+          <p>
+            A low appraisal reduces the maximum loan amount your refinance lender will approve. For instance, if you anticipated an ARV of $250,000 (allowing a $187,500 loan at 75% LTV) but the appraiser values the property at $220,000, your maximum loan drops to $165,000. You will experience a "capital shortfall," meaning you cannot pull all of your cash out and some equity remains trapped. You can protect against appraisal shortfalls by building a 10% contingency buffer into rehab budgets, studying closed comps sold within 0.5 miles over the last 90 days, and creating an appraiser packet showcasing all receipts, permits, and contractor scopes of work.
+          </p>
         </div>
       </div>
 
@@ -1155,241 +2077,556 @@
 
   </article>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 RealRefin.com. All rights reserved. Real Estate Investment Analysis Tools.</p>
+    <p>&copy; 2026 RealRefin.com. All rights reserved. Institutional Real Estate Investment Calculators &amp; Financial Engineering Tools.</p>
+    <p style="margin-top: 0.35rem; font-size: 0.8rem;">Disclaimer: Financial projections generated by this calculator are for illustrative and modeling purposes only. Always consult licensed mortgage brokers, CPAs, and legal counsel before executing real estate transactions.</p>
   </footer>
 
 </div>
 
 <!-- ========================================================
-     3. JAVASCRIPT ENGINE (Real-Time Calculation & UX)
+     3. PURE VANILLA JAVASCRIPT ENGINE
 ======================================================== -->
 <script>
 (function() {
   'use strict';
 
-  // State Management
+  // --------------------------------------------------------
+  // A. APPLICATION STATE
+  // --------------------------------------------------------
   const state = {
+    currency: 'USD',
     currencySymbol: '$',
-    frequency: 'monthly', // 'monthly' or 'weekly'
-    propertyPrice: 350000,
-    rentAmount: 2200,
-    expenses: {
-      management: 2112,
-      tax: 2400,
-      insurance: 950,
-      maintenance: 1500,
-      other: 600
-    }
+    activePhase: 'phase1'
   };
 
-  // DOM Elements - Inputs
-  const propertyPriceInput = document.getElementById('propertyPrice');
-  const rentAmountInput = document.getElementById('rentAmount');
-  const expManagementInput = document.getElementById('expManagement');
-  const expTaxInput = document.getElementById('expTax');
-  const expInsuranceInput = document.getElementById('expInsurance');
-  const expMaintenanceInput = document.getElementById('expMaintenance');
-  const expOtherInput = document.getElementById('expOther');
+  // --------------------------------------------------------
+  // B. DOM ELEMENT REFERENCES
+  // --------------------------------------------------------
+  // Inputs
+  const purchasePriceInput = document.getElementById('purchasePrice');
+  const arvValueInput = document.getElementById('arvValue');
+  const rehabCostsInput = document.getElementById('rehabCosts');
+  const purchaseClosingCostsInput = document.getElementById('purchaseClosingCosts');
   
-  // DOM Elements - Displays
-  const resGrossYield = document.getElementById('resGrossYield');
-  const resNetYield = document.getElementById('resNetYield');
-  const resAnnualRent = document.getElementById('resAnnualRent');
-  const resTotalExpenses = document.getElementById('resTotalExpenses');
-  const resNetCashflow = document.getElementById('resNetCashflow');
-  const resMonthlyCashflow = document.getElementById('resMonthlyCashflow');
+  const refinanceLtvInput = document.getElementById('refinanceLtv');
+  const refinanceLtvSlider = document.getElementById('refinanceLtvSlider');
+  const ltvDisplay = document.getElementById('ltvDisplay');
+  const interestRateInput = document.getElementById('interestRate');
+  const loanTermYearsInput = document.getElementById('loanTermYears');
+  const refinanceClosingCostsInput = document.getElementById('refinanceClosingCosts');
   
-  // Indicators & Badges
-  const ratingBadge = document.getElementById('ratingBadge');
-  const ratingText = document.getElementById('ratingText');
-  const ratingContainer = document.getElementById('ratingContainer');
+  const monthlyRentInput = document.getElementById('monthlyRent');
+  const monthlyTaxesInput = document.getElementById('monthlyTaxes');
+  const monthlyInsuranceInput = document.getElementById('monthlyInsurance');
+  const maintenancePercentInput = document.getElementById('maintenancePercent');
+  const vacancyPercentInput = document.getElementById('vacancyPercent');
 
-  // Control Buttons
-  const currButtons = document.querySelectorAll('.curr-btn');
-  const freqButtons = document.querySelectorAll('.freq-btn');
-  const rentFreqLabel = document.getElementById('rentFreqLabel');
-  const currSymbols = document.querySelectorAll('.curr-prefix, #currSymbol1, #currSymbol2');
-  const resetBtn = document.getElementById('resetBtn');
+  // Outputs: Primary Dashboard
+  const resCashLeftVal = document.getElementById('resCashLeftVal');
+  const resCashLeftNote = document.getElementById('resCashLeftNote');
+  const resCashOutVal = document.getElementById('resCashOutVal');
+  const resNewLoanSubnote = document.getElementById('resNewLoanSubnote');
+  const resMonthlyCashFlowVal = document.getElementById('resMonthlyCashFlowVal');
+  const resAnnualFlowSubnote = document.getElementById('resAnnualFlowSubnote');
+  const resCocVal = document.getElementById('resCocVal');
+  const resEquityVal = document.getElementById('resEquityVal');
+  const resEquityPercentSubnote = document.getElementById('resEquityPercentSubnote');
 
-  // Accordion elements
-  const toggleExpensesBtn = document.getElementById('toggleExpensesBtn');
-  const expensesBox = document.getElementById('expensesBox');
-  const accordionArrow = document.getElementById('accordionArrow');
+  // Deal Verdict
+  const verdictCard = document.getElementById('verdictCard');
+  const verdictIcon = document.getElementById('verdictIcon');
+  const verdictTitle = document.getElementById('verdictTitle');
+  const verdictSubtitle = document.getElementById('verdictSubtitle');
 
-  // Currency Formatter Helper
-  function formatCurrency(amount) {
-    const formatted = Math.abs(amount).toLocaleString('en-US', {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2
+  // Capital Bar
+  const capitalBarFill = document.getElementById('capitalBarFill');
+  const capitalBarPercent = document.getElementById('capitalBarPercent');
+  const capitalBarInitialText = document.getElementById('capitalBarInitialText');
+  const capitalBarReturnedText = document.getElementById('capitalBarReturnedText');
+
+  // Breakdown Table Elements
+  const bkPurchasePrice = document.getElementById('bkPurchasePrice');
+  const bkRehabCosts = document.getElementById('bkRehabCosts');
+  const bkPurchaseClosing = document.getElementById('bkPurchaseClosing');
+  const bkTotalInitialCash = document.getElementById('bkTotalInitialCash');
+  const bkArv = document.getElementById('bkArv');
+  const bkLtvPct = document.getElementById('bkLtvPct');
+  const bkNewLoan = document.getElementById('bkNewLoan');
+  const bkRefiClosing = document.getElementById('bkRefiClosing');
+  const bkNetRefiCash = document.getElementById('bkNetRefiCash');
+  const bkMonthlyPi = document.getElementById('bkMonthlyPi');
+  const bkMonthlyTi = document.getElementById('bkMonthlyTi');
+  const bkReservesPct = document.getElementById('bkReservesPct');
+  const bkMonthlyReserves = document.getElementById('bkMonthlyReserves');
+  const bkTotalExpenses = document.getElementById('bkTotalExpenses');
+
+  // Controls & Buttons
+  const currButtons = document.querySelectorAll('.curr-btn[data-curr]');
+  const currSymbolSpans = document.querySelectorAll('.curr-symbol');
+  const stepTabs = document.querySelectorAll('.step-tab');
+  const phasePanes = document.querySelectorAll('.phase-content');
+  const btnPresetExample = document.getElementById('btnPresetExample');
+  const btnToggleBreakdown = document.getElementById('btnToggleBreakdown');
+  const breakdownTablePane = document.getElementById('breakdownTablePane');
+  const breakdownArrowIcon = document.getElementById('breakdownArrowIcon');
+  const btnCopySummary = document.getElementById('btnCopySummary');
+  const btnPrintDeal = document.getElementById('btnPrintDeal');
+  const toastPill = document.getElementById('toastPill');
+
+  // --------------------------------------------------------
+  // C. NUMBER FORMATTING HELPERS
+  // --------------------------------------------------------
+  function formatMoney(amount, showSymbol = true) {
+    const sym = showSymbol ? state.currencySymbol : '';
+    const rounded = Math.round(amount);
+    const absStr = Math.abs(rounded).toLocaleString('en-US');
+    if (rounded < 0) {
+      return `-${sym}${absStr}`;
+    }
+    return `${sym}${absStr}`;
+  }
+
+  function formatDecimal(amount, decimals = 2) {
+    return (amount || 0).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
     });
-    return (amount < 0 ? '-' : '') + state.currencySymbol + formatted;
   }
 
-  // Core Math Calculation
-  function calculateYields() {
-    // 1. Read Inputs
-    state.propertyPrice = parseFloat(propertyPriceInput.value) || 0;
-    state.rentAmount = parseFloat(rentAmountInput.value) || 0;
+  // --------------------------------------------------------
+  // D. CORE BRRRR FINANCIAL CALCULATION ENGINE
+  // --------------------------------------------------------
+  function calculateBRRRR() {
+    // 1. Gather & parse inputs with safe fallbacks
+    const purchasePrice = Math.max(0, parseFloat(purchasePriceInput.value) || 0);
+    const arv = Math.max(0, parseFloat(arvValueInput.value) || 0);
+    const rehab = Math.max(0, parseFloat(rehabCostsInput.value) || 0);
+    const purchaseClosing = Math.max(0, parseFloat(purchaseClosingCostsInput.value) || 0);
+
+    const ltv = Math.min(100, Math.max(0, parseFloat(refinanceLtvInput.value) || 0));
+    const annualRate = Math.max(0, parseFloat(interestRateInput.value) || 0);
+    const loanYears = Math.max(1, parseFloat(loanTermYearsInput.value) || 30);
+    const refiClosing = Math.max(0, parseFloat(refinanceClosingCostsInput.value) || 0);
+
+    const monthlyRent = Math.max(0, parseFloat(monthlyRentInput.value) || 0);
+    const monthlyTaxes = Math.max(0, parseFloat(monthlyTaxesInput.value) || 0);
+    const monthlyInsurance = Math.max(0, parseFloat(monthlyInsuranceInput.value) || 0);
+    const maintPct = Math.max(0, parseFloat(maintenancePercentInput.value) || 0);
+    const vacPct = Math.max(0, parseFloat(vacancyPercentInput.value) || 0);
+
+    // Keep slider & number inputs synchronized
+    refinanceLtvSlider.value = ltv;
+    ltvDisplay.textContent = `${ltv}%`;
+
+    // 2. Financial Formulas
+    // Formula 1: Total Initial Investment
+    const totalInitialInvestment = purchasePrice + rehab + purchaseClosing;
+
+    // Formula 2: New Loan Amount (ARV * Refinance LTV %)
+    const newLoanAmount = arv * (ltv / 100);
+
+    // Formula 3: Cash Out Refinance Proceeds (Net of refi closing costs)
+    const netRefinanceProceeds = Math.max(0, newLoanAmount - refiClosing);
+
+    // Formula 4: Cash Left in Deal
+    // Cash Left in Deal = Total Initial Out-of-Pocket Cash - Net Refinance Proceeds
+    const cashLeftInDeal = totalInitialInvestment - netRefinanceProceeds;
+
+    // Balance-Sheet Equity Created
+    const equityCreated = Math.max(0, arv - newLoanAmount);
+    const equityPercent = arv > 0 ? (equityCreated / arv) * 100 : 0;
+
+    // Formula 5: Monthly Mortgage Payment (Amortization formula)
+    let monthlyMortgage = 0;
+    if (newLoanAmount > 0 && loanYears > 0) {
+      if (annualRate > 0) {
+        const monthlyRate = (annualRate / 100) / 12;
+        const totalPayments = loanYears * 12;
+        const compoundFactor = Math.pow(1 + monthlyRate, totalPayments);
+        monthlyMortgage = newLoanAmount * (monthlyRate * compoundFactor) / (compoundFactor - 1);
+      } else {
+        monthlyMortgage = newLoanAmount / (loanYears * 12);
+      }
+    }
+
+    // Formula 6: Total Monthly Operating Expenses
+    const monthlyMaintenance = monthlyRent * (maintPct / 100);
+    const monthlyVacancy = monthlyRent * (vacPct / 100);
+    const totalMonthlyReserves = monthlyMaintenance + monthlyVacancy;
+    const totalMonthlyExpenses = monthlyMortgage + monthlyTaxes + monthlyInsurance + totalMonthlyReserves;
+
+    // Formula 7: Monthly Net Cash Flow
+    const monthlyNetCashFlow = monthlyRent - totalMonthlyExpenses;
+    const annualNetCashFlow = monthlyNetCashFlow * 12;
+
+    // Formula 8: Cash-on-Cash Return (CoC %)
+    let cocReturn = 0;
+    let isInfiniteCoc = false;
+
+    if (cashLeftInDeal <= 0) {
+      if (annualNetCashFlow > 0) {
+        isInfiniteCoc = true;
+      } else {
+        cocReturn = 0;
+      }
+    } else {
+      cocReturn = (annualNetCashFlow / cashLeftInDeal) * 100;
+    }
+
+    // ------------------------------------------------------
+    // E. UPDATE DASHBOARD DISPLAY
+    // ------------------------------------------------------
+    // 1. Total Cash Left in Deal
+    if (cashLeftInDeal < 0) {
+      const profitAmount = Math.abs(cashLeftInDeal);
+      resCashLeftVal.textContent = `100% Cash Recovered + ${formatMoney(profitAmount)} Profit!`;
+      resCashLeftVal.className = 'metric-huge-val profit-text';
+      resCashLeftNote.textContent = '🎉 All initial capital returned plus extra cash out!';
+    } else if (cashLeftInDeal === 0) {
+      resCashLeftVal.textContent = `${state.currencySymbol}0 (100% Recouped)`;
+      resCashLeftVal.className = 'metric-huge-val profit-text';
+      resCashLeftNote.textContent = '🎯 Zero personal capital left in the asset!';
+    } else {
+      resCashLeftVal.textContent = formatMoney(cashLeftInDeal);
+      resCashLeftVal.className = 'metric-huge-val';
+      const pctOfInitial = totalInitialInvestment > 0 ? (cashLeftInDeal / totalInitialInvestment) * 100 : 0;
+      resCashLeftNote.textContent = `${formatDecimal(pctOfInitial, 1)}% of initial capital remaining`;
+    }
+
+    // 2. Cash-Out Refinance
+    resCashOutVal.textContent = formatMoney(netRefinanceProceeds);
+    resNewLoanSubnote.textContent = `Gross Loan: ${formatMoney(newLoanAmount)}`;
+
+    // 3. Monthly Net Cash Flow
+    const flowSign = monthlyNetCashFlow >= 0 ? '+' : '';
+    resMonthlyCashFlowVal.textContent = `${flowSign}${state.currencySymbol}${formatDecimal(monthlyNetCashFlow, 2)}`;
+    resMonthlyCashFlowVal.className = monthlyNetCashFlow >= 0 ? 'sub-metric-val emerald' : 'sub-metric-val negative';
     
-    state.expenses.management = parseFloat(expManagementInput.value) || 0;
-    state.expenses.tax = parseFloat(expTaxInput.value) || 0;
-    state.expenses.insurance = parseFloat(expInsuranceInput.value) || 0;
-    state.expenses.maintenance = parseFloat(expMaintenanceInput.value) || 0;
-    state.expenses.other = parseFloat(expOtherInput.value) || 0;
+    const annualSign = annualNetCashFlow >= 0 ? '+' : '';
+    resAnnualFlowSubnote.textContent = `Annual: ${annualSign}${formatMoney(annualNetCashFlow)} / yr`;
 
-    // 2. Annualize Rent
-    const annualRent = state.frequency === 'weekly' 
-      ? state.rentAmount * 52 
-      : state.rentAmount * 12;
-
-    // 3. Total Annual Expenses
-    const totalExpenses = Object.values(state.expenses).reduce((acc, curr) => acc + curr, 0);
-
-    // 4. Net Operating Cash Flow
-    const netCashflow = annualRent - totalExpenses;
-    const monthlyNetCashflow = netCashflow / 12;
-
-    // 5. Yield Percentages
-    let grossYield = 0;
-    let netYield = 0;
-
-    if (state.propertyPrice > 0) {
-      grossYield = (annualRent / state.propertyPrice) * 100;
-      netYield = (netCashflow / state.propertyPrice) * 100;
-    }
-
-    // 6. Update UI Metrics
-    resGrossYield.textContent = grossYield.toFixed(2) + '%';
-    resNetYield.textContent = netYield.toFixed(2) + '%';
-    resAnnualRent.textContent = formatCurrency(annualRent);
-    resTotalExpenses.textContent = formatCurrency(totalExpenses);
-    resNetCashflow.textContent = formatCurrency(netCashflow);
-    resMonthlyCashflow.textContent = formatCurrency(monthlyNetCashflow);
-
-    // Dynamic coloring on cashflow
-    if (netCashflow >= 0) {
-      resNetCashflow.className = 'summary-val positive';
+    // 4. Cash-on-Cash Return
+    if (isInfiniteCoc) {
+      resCocVal.textContent = 'Infinite (100%+)';
+      resCocVal.className = 'sub-metric-val emerald';
+    } else if (cashLeftInDeal <= 0 && annualNetCashFlow <= 0) {
+      resCocVal.textContent = '0.0%';
+      resCocVal.className = 'sub-metric-val';
     } else {
-      resNetCashflow.className = 'summary-val negative';
+      resCocVal.textContent = `${formatDecimal(cocReturn, 1)}%`;
+      resCocVal.className = cocReturn >= 12 ? 'sub-metric-val emerald' : (cocReturn >= 0 ? 'sub-metric-val' : 'sub-metric-val negative');
     }
 
-    // 7. Update Investment Assessment Indicator
-    updateRatingIndicator(netYield);
+    // 5. Equity Created
+    resEquityVal.textContent = formatMoney(equityCreated);
+    resEquityPercentSubnote.textContent = `${formatDecimal(equityPercent, 1)}% Equity Retained`;
+
+    // 6. Capital Recycling Visual Bar
+    let recoveryPct = totalInitialInvestment > 0 ? (netRefinanceProceeds / totalInitialInvestment) * 100 : 0;
+    const cappedBarPct = Math.min(100, Math.max(0, recoveryPct));
+    capitalBarFill.style.width = `${cappedBarPct}%`;
+    capitalBarPercent.textContent = `${formatDecimal(recoveryPct, 1)}% Recovered`;
+    capitalBarInitialText.textContent = `Invested: ${formatMoney(totalInitialInvestment)}`;
+    capitalBarReturnedText.textContent = `Net Refi: ${formatMoney(netRefinanceProceeds)}`;
+
+    // 7. Dynamic Deal Health Verdict Badges
+    updateVerdictBadge(cashLeftInDeal, cocReturn, isInfiniteCoc, monthlyNetCashFlow, arv);
+
+    // 8. Update Detailed Breakdown Table
+    bkPurchasePrice.textContent = formatMoney(purchasePrice);
+    bkRehabCosts.textContent = formatMoney(rehab);
+    bkPurchaseClosing.textContent = formatMoney(purchaseClosing);
+    bkTotalInitialCash.textContent = formatMoney(totalInitialInvestment);
+    bkArv.textContent = formatMoney(arv);
+    bkLtvPct.textContent = ltv;
+    bkNewLoan.textContent = formatMoney(newLoanAmount);
+    bkRefiClosing.textContent = formatMoney(refiClosing);
+    bkNetRefiCash.textContent = formatMoney(netRefinanceProceeds);
+    bkMonthlyPi.textContent = `${state.currencySymbol}${formatDecimal(monthlyMortgage, 2)}`;
+    bkMonthlyTi.textContent = `${state.currencySymbol}${formatDecimal(monthlyTaxes + monthlyInsurance, 2)}`;
+    bkReservesPct.textContent = maintPct + vacPct;
+    bkMonthlyReserves.textContent = `${state.currencySymbol}${formatDecimal(totalMonthlyReserves, 2)}`;
+    bkTotalExpenses.textContent = `${state.currencySymbol}${formatDecimal(totalMonthlyExpenses, 2)}`;
   }
 
-  // Investment Assessment Indicator Logic
-  function updateRatingIndicator(netYield) {
-    ratingBadge.className = 'rating-badge';
-
-    if (netYield >= 6.0) {
-      ratingBadge.classList.add('good');
-      ratingBadge.textContent = 'High Yield';
-      ratingText.textContent = 'High Cash Flow Potential';
-      ratingText.style.color = '#065f46';
-      ratingContainer.style.background = '#ecfdf5';
-    } else if (netYield >= 4.0) {
-      ratingBadge.classList.add('average');
-      ratingBadge.textContent = 'Solid Yield';
-      ratingText.textContent = 'Stable Moderate Cash Flow';
-      ratingText.style.color = '#92400e';
-      ratingContainer.style.background = '#fffbeb';
+  // --------------------------------------------------------
+  // F. VERDICT BADGE CONTROLLER
+  // --------------------------------------------------------
+  function updateVerdictBadge(cashLeft, coc, isInfinite, monthlyFlow, arv) {
+    if (monthlyFlow < 0) {
+      verdictIcon.textContent = '🚨';
+      verdictIcon.style.background = '#fef2f2';
+      verdictTitle.textContent = 'Negative Cash Flow Warning';
+      verdictTitle.style.color = '#991b1b';
+      verdictSubtitle.textContent = 'Rental income is insufficient to cover new debt service and operational reserves.';
+    } else if (isInfinite || cashLeft <= 0) {
+      verdictIcon.textContent = '🏆';
+      verdictIcon.style.background = '#ecfdf5';
+      verdictTitle.textContent = 'Perfect BRRRR Deal!';
+      verdictTitle.style.color = '#047857';
+      verdictSubtitle.textContent = '100% of out-of-pocket capital recovered with positive ongoing cash flow! Infinite return.';
+    } else if (coc >= 12 && cashLeft <= (arv * 0.15)) {
+      verdictIcon.textContent = '🌟';
+      verdictIcon.style.background = '#ecfdf5';
+      verdictTitle.textContent = 'Great BRRRR Deal!';
+      verdictTitle.style.color = '#065f46';
+      verdictSubtitle.textContent = `High Cash-on-Cash return of ${formatDecimal(coc, 1)}% with minimal cash trapped in the asset.`;
+    } else if (coc >= 8) {
+      verdictIcon.textContent = '👍';
+      verdictIcon.style.background = '#f0fdf4';
+      verdictTitle.textContent = 'Solid BRRRR Investment';
+      verdictTitle.style.color = '#15803d';
+      verdictSubtitle.textContent = 'Strong operational cash flow and steady equity retention meeting institutional standards.';
     } else {
-      ratingBadge.classList.add('low');
-      ratingBadge.textContent = 'Low Yield';
-      ratingText.textContent = 'Capital Growth Focus / Caution';
-      ratingText.style.color = '#991b1b';
-      ratingContainer.style.background = '#fef2f2';
+      verdictIcon.textContent = '⚠️';
+      verdictIcon.style.background = '#fffbeb';
+      verdictTitle.textContent = 'Capital Trapped / Low Yield';
+      verdictTitle.style.color = '#92400e';
+      verdictSubtitle.textContent = 'Substantial capital remains locked in the property. Consider negotiating purchase price down.';
     }
   }
 
-  // Currency Switcher Handler
+  // --------------------------------------------------------
+  // G. MULTI-STEP TAB NAVIGATION LOGIC
+  // --------------------------------------------------------
+  function switchPhase(targetPhaseId) {
+    state.activePhase = targetPhaseId;
+    
+    // Update tab button styles
+    stepTabs.forEach(tab => {
+      const isTarget = tab.getAttribute('data-target') === targetPhaseId;
+      tab.classList.toggle('active', isTarget);
+      tab.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+    });
+
+    // Update phase content visibility
+    phasePanes.forEach(pane => {
+      const isTarget = pane.id === targetPhaseId;
+      pane.classList.toggle('active', isTarget);
+    });
+  }
+
+  stepTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const target = this.getAttribute('data-target');
+      switchPhase(target);
+    });
+  });
+
+  document.querySelectorAll('[data-goto]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const target = this.getAttribute('data-goto');
+      switchPhase(target);
+    });
+  });
+
+  // --------------------------------------------------------
+  // H. CURRENCY TOGGLE LOGIC (US $, UK £, AU A$)
+  // --------------------------------------------------------
   currButtons.forEach(btn => {
     btn.addEventListener('click', function() {
       currButtons.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
 
+      const curr = this.getAttribute('data-curr');
       const symbol = this.getAttribute('data-symbol');
+      state.currency = curr;
       state.currencySymbol = symbol;
 
-      // Update all visible prefix markers
-      currSymbols.forEach(el => el.textContent = symbol);
-      calculateYields();
+      // Update all symbol text nodes in inputs
+      currSymbolSpans.forEach(span => {
+        span.textContent = symbol;
+      });
+
+      calculateBRRRR();
     });
   });
 
-  // Rent Frequency Switcher Handler
-  freqButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      freqButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-
-      const newFreq = this.getAttribute('data-freq');
-      const currentRent = parseFloat(rentAmountInput.value) || 0;
-
-      // Smooth conversion between weekly and monthly input values
-      if (state.frequency === 'monthly' && newFreq === 'weekly') {
-        rentAmountInput.value = Math.round((currentRent * 12) / 52);
-      } else if (state.frequency === 'weekly' && newFreq === 'monthly') {
-        rentAmountInput.value = Math.round((currentRent * 52) / 12);
-      }
-
-      state.frequency = newFreq;
-      rentFreqLabel.textContent = newFreq === 'weekly' ? 'Weekly' : 'Monthly';
-      calculateYields();
-    });
+  // --------------------------------------------------------
+  // I. PRESET DEAL EXAMPLES (US, UK, AU)
+  // --------------------------------------------------------
+  btnPresetExample.addEventListener('click', function() {
+    if (state.currency === 'GBP') {
+      purchasePriceInput.value = 130000;
+      arvValueInput.value = 215000;
+      rehabCostsInput.value = 35000;
+      purchaseClosingCostsInput.value = 3500;
+      refinanceLtvInput.value = 75;
+      refinanceLtvSlider.value = 75;
+      interestRateInput.value = 5.8;
+      loanTermYearsInput.value = 25;
+      refinanceClosingCostsInput.value = 2500;
+      monthlyRentInput.value = 1450;
+      monthlyTaxesInput.value = 140;
+      monthlyInsuranceInput.value = 55;
+      maintenancePercentInput.value = 5;
+      vacancyPercentInput.value = 5;
+    } else if (state.currency === 'AUD') {
+      purchasePriceInput.value = 460000;
+      arvValueInput.value = 680000;
+      rehabCostsInput.value = 65000;
+      purchaseClosingCostsInput.value = 12000;
+      refinanceLtvInput.value = 80;
+      refinanceLtvSlider.value = 80;
+      interestRateInput.value = 6.2;
+      loanTermYearsInput.value = 30;
+      refinanceClosingCostsInput.value = 3000;
+      monthlyRentInput.value = 3200;
+      monthlyTaxesInput.value = 280;
+      monthlyInsuranceInput.value = 130;
+      maintenancePercentInput.value = 5;
+      vacancyPercentInput.value = 5;
+    } else {
+      // Default US Deal
+      purchasePriceInput.value = 150000;
+      arvValueInput.value = 250000;
+      rehabCostsInput.value = 45000;
+      purchaseClosingCostsInput.value = 4000;
+      refinanceLtvInput.value = 75;
+      refinanceLtvSlider.value = 75;
+      interestRateInput.value = 6.5;
+      loanTermYearsInput.value = 30;
+      refinanceClosingCostsInput.value = 3500;
+      monthlyRentInput.value = 2200;
+      monthlyTaxesInput.value = 220;
+      monthlyInsuranceInput.value = 110;
+      maintenancePercentInput.value = 5;
+      vacancyPercentInput.value = 5;
+    }
+    calculateBRRRR();
+    showToast('Example deal loaded successfully!');
   });
 
-  // Attach Real-Time Listeners to All Inputs
-  const allInputs = [
-    propertyPriceInput, 
-    rentAmountInput, 
-    expManagementInput, 
-    expTaxInput, 
-    expInsuranceInput, 
-    expMaintenanceInput, 
-    expOtherInput
+  // --------------------------------------------------------
+  // J. EVENT LISTENERS: REAL-TIME INPUTS & SLIDERS
+  // --------------------------------------------------------
+  const allNumericInputs = [
+    purchasePriceInput,
+    arvValueInput,
+    rehabCostsInput,
+    purchaseClosingCostsInput,
+    refinanceLtvInput,
+    interestRateInput,
+    loanTermYearsInput,
+    refinanceClosingCostsInput,
+    monthlyRentInput,
+    monthlyTaxesInput,
+    monthlyInsuranceInput,
+    maintenancePercentInput,
+    vacancyPercentInput
   ];
 
-  allInputs.forEach(input => {
-    input.addEventListener('input', calculateYields);
+  allNumericInputs.forEach(input => {
+    input.addEventListener('input', calculateBRRRR);
+    input.addEventListener('change', calculateBRRRR);
   });
 
-  // Expenses Accordion Toggle
-  let isExpensesOpen = true;
-  toggleExpensesBtn.addEventListener('click', function() {
-    isExpensesOpen = !isExpensesOpen;
-    expensesBox.style.display = isExpensesOpen ? 'block' : 'none';
-    accordionArrow.textContent = isExpensesOpen ? '▾' : '▸';
+  // Synchronize LTV slider
+  refinanceLtvSlider.addEventListener('input', function() {
+    refinanceLtvInput.value = this.value;
+    calculateBRRRR();
   });
 
-  // Reset Button
-  resetBtn.addEventListener('click', function() {
-    propertyPriceInput.value = 350000;
-    rentAmountInput.value = state.frequency === 'weekly' ? 500 : 2200;
-    expManagementInput.value = 2112;
-    expTaxInput.value = 2400;
-    expInsuranceInput.value = 950;
-    expMaintenanceInput.value = 1500;
-    expOtherInput.value = 600;
-    calculateYields();
+  // --------------------------------------------------------
+  // K. BREAKDOWN ACCORDION TOGGLE
+  // --------------------------------------------------------
+  let isBreakdownOpen = false;
+  btnToggleBreakdown.addEventListener('click', function() {
+    isBreakdownOpen = !isBreakdownOpen;
+    breakdownTablePane.style.display = isBreakdownOpen ? 'block' : 'none';
+    breakdownArrowIcon.textContent = isBreakdownOpen ? '▴' : '▾';
+    this.setAttribute('aria-expanded', isBreakdownOpen ? 'true' : 'false');
   });
 
-  // FAQ Accordion Toggle Interaction
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(f => f.classList.remove('active'));
-      if (!isActive) {
-        item.classList.add('active');
+  // --------------------------------------------------------
+  // L. UTILITY ACTIONS: COPY & PRINT
+  // --------------------------------------------------------
+  function showToast(msg) {
+    toastPill.textContent = msg;
+    toastPill.classList.add('show');
+    setTimeout(() => {
+      toastPill.classList.remove('show');
+    }, 2800);
+  }
+
+  btnCopySummary.addEventListener('click', function() {
+    const pPrice = purchasePriceInput.value;
+    const arv = arvValueInput.value;
+    const rehab = rehabCostsInput.value;
+    const cashLeft = resCashLeftVal.textContent;
+    const refiOut = resCashOutVal.textContent;
+    const cashFlow = resMonthlyCashFlowVal.textContent;
+    const coc = resCocVal.textContent;
+    const equity = resEquityVal.textContent;
+
+    const summaryText = `--- RealRefin.com BRRRR Deal Analysis ---
+Purchase Price: ${state.currencySymbol}${pPrice}
+ARV: ${state.currencySymbol}${arv}
+Rehab Budget: ${state.currencySymbol}${rehab}
+----------------------------------------
+Total Cash Left in Deal: ${cashLeft}
+Net Cash-Out Refinance: ${refiOut}
+Monthly Net Cash Flow: ${cashFlow}
+Cash-on-Cash Return: ${coc}
+Balance-Sheet Equity Created: ${equity}
+----------------------------------------
+Analyzed via https://realrefin.com/`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(summaryText).then(() => {
+        showToast('Deal summary copied to clipboard!');
+      }).catch(() => {
+        fallbackCopy(summaryText);
+      });
+    } else {
+      fallbackCopy(summaryText);
+    }
+  });
+
+  function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      showToast('Deal summary copied to clipboard!');
+    } catch (err) {
+      showToast('Could not copy text.');
+    }
+    document.body.removeChild(textArea);
+  }
+
+  btnPrintDeal.addEventListener('click', function() {
+    window.print();
+  });
+
+  // --------------------------------------------------------
+  // M. FAQ ACCORDION INTERACTION
+  // --------------------------------------------------------
+  const faqCards = document.querySelectorAll('.faq-item-card');
+  faqCards.forEach(card => {
+    const questionBtn = card.querySelector('.faq-question-btn');
+    questionBtn.addEventListener('click', () => {
+      const isOpen = card.classList.contains('open');
+      // Optional: close other open accordions
+      faqCards.forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        card.classList.add('open');
+        questionBtn.setAttribute('aria-expanded', 'true');
       }
     });
   });
 
-  // Run on initial page load
-  calculateYields();
+  // --------------------------------------------------------
+  // N. INITIAL BOOTSTRAP
+  // --------------------------------------------------------
+  calculateBRRRR();
 
 })();
 </script>
