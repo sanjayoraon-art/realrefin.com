@@ -1,5 +1,9 @@
 {
-  "cleanUrls": true,
+  "functions": {
+    "server.js": {
+      "includeFiles": "**"
+    }
+  },
   "headers": [
     {
       "source": "/sitemap.xml",
@@ -10,7 +14,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "public, max-age=3600, s-maxage=86400"
         }
       ]
     },
@@ -23,7 +27,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "public, max-age=3600, s-maxage=86400"
         }
       ]
     }
