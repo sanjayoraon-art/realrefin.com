@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/subto-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/creative-financing-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -139,6 +145,8 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/subto-calculator': 'subto-calculator.html',
+  '/subto-calculator.html': 'subto-calculator.html',
   '/creative-financing-calculator': 'creative-financing-calculator.html',
   '/creative-financing-calculator.html': 'creative-financing-calculator.html',
   '/creative-finance-calculator': 'creative-financing-calculator.html',

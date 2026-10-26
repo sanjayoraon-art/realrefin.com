@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SubTo Calculator 2026 | Subject-To Real Estate Deal Analyzer</title>
+  <meta name="description" content="Free institutional SubTo calculator for real estate investors. Analyze Subject-To existing mortgage takeovers, entry fees, arrears reinstatement, exit strategies (LTR, MTR, Wrap), and Due-on-Sale risk.">
+  <meta name="keywords" content="subto calculator, subject to real estate calculator, subject to mortgage calculator, subto deal analyzer, subto entry fee calculator, creative financing subto, due on sale clause calculator">
+  <link rel="canonical" href="https://realrefin.com/subto-calculator">
+  <meta property="og:title" content="SubTo Calculator 2026 | Subject-To Real Estate Deal Analyzer">
+  <meta property="og:description" content="Model Subject-To debt takeovers, entry fees, arrears reinstatement, multiple exit strategies, and cash-on-cash returns with institutional underwriting precision.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/subto-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/subto-calculator#app",
+        "name": "RealRefin SubTo Calculator & Deal Analyzer",
+        "url": "https://realrefin.com/subto-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional Subject-To (SubTo) real estate deal analyzer. Computes total entry fee, arrears reinstatement, debt service on existing 1st mortgages, 4 exit strategy cash flows (LTR, MTR, Wrap, Lease Option), cash-on-cash return, and Due-on-Sale clause risk assessment.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Rental Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SubTo Calculator 2026",
+            "item": "https://realrefin.com/subto-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a SubTo Calculator in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A SubTo calculator is a specialized deal analysis tool designed for real estate investors acquiring properties 'Subject-To' existing mortgages. It models the existing low-interest loan terms (2.5% to 4%), computes the total upfront entry fee (cash to seller, arrears, closing costs, assignment fees), evaluates multiple exit strategies, and calculates net monthly cash flow and Cash-on-Cash (CoC) returns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the components of a SubTo Entry Fee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Entry Fee consists of four primary capital requirements: 1) Cash paid to the seller for their equity; 2) Arrears and late payment reinstatement paid to the lender to cure default; 3) Wholesaler assignment fee (if acquired through an intermediary); and 4) Closing costs, title escrow, and initial turnover/rehab expenses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you mitigate the Due-on-Sale Clause in a Subject-To deal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Investors manage Due-on-Sale risk through three established methods: 1) Using a revocable grantor Land Trust under Garn-St. Germain Act estate planning exceptions; 2) Establishing third-party automated loan servicing (e.g. Weststar or FCI) ensuring payments never miss a due date; and 3) Structuring proper hazard insurance naming the seller as primary insured, the buyer as additional insured, and the lender as loss payee."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you use a Wraparound mortgage as an exit strategy on a SubTo property?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Wrapping a Subject-To property is one of the highest-yield creative strategies. An investor takes over a 3% existing loan, and sells the property to a retail end-buyer on an 8.0%–8.5% wrap-around note with a 10% down payment. The buyer's down payment reimburses the investor's entry fee on Day 1, and the investor pockets a monthly interest rate spread with zero landlord maintenance responsibilities."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - SUBTO EDITION
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-purple: #8B5CF6;
+      --accent-purple-dark: #6D28D9;
+      --accent-purple-light: #F5F3FF;
+      --accent-purple-border: #DDD6FE;
+
+      --accent-gold: #D97706;
+      --accent-gold-dark: #B45309;
+      --accent-gold-light: #FFFBEB;
+      --accent-gold-border: #FDE68A;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER / HERO
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill-subto {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+
+    .page-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       EXIT STRATEGY SWITCHER TABS
+    ----------------------------------------------------------- */
+    .exit-tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .exit-tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .exit-tab {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.75rem 0.85rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .exit-tab.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR DUAL-COLUMN LAYOUT
+    ----------------------------------------------------------- */
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2.25rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .calc-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .card-header-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header-badge {
+      font-size: 0.75rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-label-desc {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-with-adornment {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-adornment-left {
+      position: absolute;
+      left: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-adornment-right {
+      position: absolute;
+      right: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      color: var(--primary-navy);
+      font-weight: 600;
+      background: var(--card-bg);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input.has-left-adornment {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-right-adornment {
+      padding-right: 2.5rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-range {
+      width: 100%;
+      height: 6px;
+      accent-color: var(--accent-emerald);
+      margin-top: 0.65rem;
+      cursor: pointer;
+    }
+
+    /* Sub-Section Box */
+    .form-sub-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-sub-box-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS COLUMN & KPI HERO CARD
+    ----------------------------------------------------------- */
+    .results-hero-card {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+      margin-bottom: 2rem;
+      position: relative;
+      border-bottom: 4px solid var(--accent-emerald);
+    }
+
+    .results-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-stat-large-title {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-stat-large-value {
+      font-size: 3.1rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: #34d399;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-stat-desc {
+      font-size: 0.925rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* 2-Grid Highlight Cards */
+    .kpi-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 540px) {
+      .kpi-duo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kpi-sub-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-sub-card.highlight-emerald {
+      border-top: 3px solid var(--accent-emerald);
+      background: #fafdfc;
+    }
+
+    .kpi-sub-card.highlight-gold {
+      border-top: 3px solid var(--accent-gold);
+      background: #fffdf8;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Due on Sale Risk Meter */
+    .risk-meter-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .risk-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .risk-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .risk-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .risk-bar-track {
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 0.65rem;
+    }
+
+    .risk-bar-fill {
+      height: 100%;
+      width: 25%;
+      background: #10b981;
+      transition: all 0.3s ease;
+    }
+
+    .risk-desc {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Breakdown Data Table */
+    .breakdown-table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-main);
+    }
+
+    .breakdown-table td.label-cell {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-cell {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-total td {
+      padding-top: 0.9rem;
+      border-top: 2px solid var(--border-color);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Action Buttons Row */
+    .action-btn-row {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       AUTHORITATIVE GUIDE & FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 640px) {
+      .guide-article {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .guide-article h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-article p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout-box {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .formula-callout-box h5 {
+      color: #34d399;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .formula-callout-box p {
+      color: #e2e8f0;
+      margin-bottom: 0.5rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    /* Accordion */
+    .faq-accordion {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: var(--card-bg);
+      overflow: hidden;
+      transition: all 0.15s ease;
+    }
+
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 3rem;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .rr-nav, .breadcrumb-bar, .action-btn-row, .exit-tabs-bar, .faq-accordion, .rr-footer {
+        display: none !important;
+      }
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+      .calc-card, .results-hero-card {
+        box-shadow: none !important;
+        border: 1px solid #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-container">
+    <!-- Navbar -->
+    <header>
+      <nav class="rr-nav" aria-label="Main Navigation">
+        <a href="/" class="rr-logo">
+          RealRefin<span>.</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#suite-refinance">Refinance Suite</a></li>
+          <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+          <li><a href="/#suite-buyer">Home Buyer Suite</a></li>
+          <li><a href="/#suite-military">Military &amp; VA</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/#suite-investor" class="btn-nav-cta">All Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="separator">/</span>
+      <a href="/#suite-investor">Investor &amp; Rental Suite</a>
+      <span class="separator">/</span>
+      <span class="current">SubTo Calculator 2026</span>
+    </nav>
+
+    <!-- Page Title & Hero Header -->
+    <div class="page-header">
+      <div class="badge-pill-subto">
+        <span>🏠</span> Subject-To Existing Mortgage Takeover &bull; 0% Bank Qualifying
+      </div>
+      <h1 class="page-title">SubTo Calculator 2026</h1>
+      <p class="page-subtitle">
+        Analyze <strong>Subject-To (SubTo)</strong> debt takeovers with institutional underwriting precision. Model existing low-rate mortgage payments, upfront <strong>Entry Fees</strong>, pre-foreclosure arrears reinstatement, 4 exit strategies, and Due-on-Sale clause risk shielding.
+      </p>
+    </div>
+
+    <!-- EXIT STRATEGY TABS SWITCHER -->
+    <div class="exit-tabs-bar" role="tablist">
+      <button type="button" class="exit-tab active" id="btnExitLTR">
+        🏘️ Exit 1: Long-Term Rental (LTR)
+      </button>
+      <button type="button" class="exit-tab" id="btnExitMTR">
+        🩺 Exit 2: Mid-Term Rental (MTR)
+      </button>
+      <button type="button" class="exit-tab" id="btnExitWrap">
+        🔄 Exit 3: Wraparound Seller Note
+      </button>
+      <button type="button" class="exit-tab" id="btnExitLeaseOpt">
+        📝 Exit 4: Lease Option (Rent-to-Own)
+      </button>
+    </div>
+
+    <!-- CALCULATOR ENGINE: DUAL-COLUMN -->
+    <div class="calc-container">
+      
+      <!-- LEFT COLUMN: INPUT CONTROLS -->
+      <section class="calc-card" aria-label="SubTo Deal Inputs">
+        <div class="card-header-title">
+          <span>SubTo Acquisition Parameters</span>
+          <span class="card-header-badge" id="exitStrategyBadge">LTR Strategy</span>
+        </div>
+
+        <!-- 1. Property Purchase Price -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label for="purchasePriceInput" class="form-label">Property Purchase Price</label>
+            <span id="purchasePriceDisplay" style="font-weight:800; color:var(--primary-navy);">$380,000</span>
+          </div>
+          <div class="form-label-desc">Agreed purchase price negotiated with the seller.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="purchasePriceInput" class="form-input has-left-adornment" value="380000" min="50000" max="3000000" step="5000">
+          </div>
+          <input type="range" id="purchasePriceSlider" class="form-range" value="380000" min="100000" max="1200000" step="10000">
+        </div>
+
+        <!-- 2. Underlying Mortgage Details (The SubTo Loan) -->
+        <div class="form-sub-box">
+          <div class="form-sub-box-title">
+            <span>🏦</span> Existing 1st Mortgage (Subject-To Loan)
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Loan Balance Taken Over</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="subToBalanceInput" class="form-input has-left-adornment" value="310000" min="0" max="2500000" step="2500">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Existing Interest Rate</div>
+              <div class="input-with-adornment">
+                <input type="number" id="subToRateInput" class="form-input has-right-adornment" value="3.125" min="1.0" max="12.0" step="0.125">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Remaining Term (Years)</div>
+              <input type="number" id="subToYearsInput" class="form-input" value="26" min="1" max="40" step="1">
+            </div>
+            <div>
+              <div class="form-label-desc">Underlying Loan Type</div>
+              <select id="loanTypeSelect" class="form-input">
+                <option value="conventional" selected>Conventional (Fannie/Freddie)</option>
+                <option value="fha">FHA Loan</option>
+                <option value="va">VA Loan</option>
+                <option value="usda">USDA Loan</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-label-desc">Monthly Taxes &amp; Insurance Escrow (T&amp;I)</div>
+            <div class="input-with-adornment">
+              <span class="input-adornment-left">$</span>
+              <input type="number" id="monthlyEscrowInput" class="form-input has-left-adornment" value="420" min="0" max="4000" step="20">
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Entry Fee Components (Upfront Cash Required) -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label">Upfront Entry Fee Breakdown</label>
+            <span id="entryFeeDisplay" style="font-weight:800; color:#ef4444;">$32,000</span>
+          </div>
+          <div class="form-label-desc">All capital needed to close the deal and secure title.</div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.65rem;">
+            <div>
+              <div class="form-label-desc">Cash to Seller Equity</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="cashToSellerInput" class="form-input has-left-adornment" value="15000" min="0" max="500000" step="1000">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Arrears Reinstatement</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="arrearsInput" class="form-input has-left-adornment" value="7000" min="0" max="150000" step="500">
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Assignment / Wholesaler Fee</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="assignmentFeeInput" class="form-input has-left-adornment" value="5000" min="0" max="100000" step="500">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Closing, Title &amp; Turnover</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="closingRehabInput" class="form-input has-left-adornment" value="5000" min="0" max="100000" step="500">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Exit Strategy Revenue & Expenses -->
+        <div class="form-sub-box" style="margin-bottom:0;">
+          <div class="form-sub-box-title">
+            <span id="exitTitleIcon">🏘️</span> <span id="exitTitleText">Exit 1: Long-Term Rental (LTR)</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.75rem; margin-bottom: 0.65rem;">
+            <div>
+              <div class="form-label-desc" id="lblGrossRev">Gross Monthly Rental Income</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="grossRevenueInput" class="form-input has-left-adornment" value="2750" min="500" max="25000" step="50">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Opex % (Mgmt/Vac/Maint)</div>
+              <div class="input-with-adornment">
+                <input type="number" id="opexPctInput" class="form-input has-right-adornment" value="15.0" min="0" max="40" step="1">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="wrapSpecificInputs" style="display:none;">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div>
+                <div class="form-label-desc">Wrap Buyer Down Payment</div>
+                <div class="input-with-adornment">
+                  <span class="input-adornment-left">$</span>
+                  <input type="number" id="wrapDownPaymentInput" class="form-input has-left-adornment" value="35000" min="0" max="300000" step="1000">
+                </div>
+              </div>
+              <div>
+                <div class="form-label-desc">Wrap Note Rate to Buyer</div>
+                <div class="input-with-adornment">
+                  <input type="number" id="wrapRateInput" class="form-input has-right-adornment" value="8.25" min="4.0" max="15.0" step="0.25">
+                  <span class="input-adornment-right">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: RESULTS & INSTITUTIONAL UNDERWRITING -->
+      <section aria-label="Calculation Results Summary">
+        
+        <!-- Hero Primary Result Card -->
+        <div class="results-hero-card">
+          <div class="results-status-badge" id="subToScoreBadge">
+            <span>✓</span> High-Yield SubTo Deal
+          </div>
+          <div class="hero-stat-large-title">Net Monthly Cash Flow</div>
+          <div class="hero-stat-large-value" id="netCashFlowDisplay">+$507<span style="font-size:1.4rem; font-weight:700;">/mo</span></div>
+          <p class="hero-stat-desc" id="heroStatDesc">
+            After paying the underlying <strong>3.125% mortgage</strong> and operating expenses, this SubTo property yields <strong>$6,084 in annual cash flow</strong>.
+          </p>
+        </div>
+
+        <!-- KPI Duo Cards -->
+        <div class="kpi-duo-grid">
+          <div class="kpi-sub-card highlight-emerald">
+            <div class="kpi-label">Cash-on-Cash Return (CoC)</div>
+            <div class="kpi-value" id="cocReturnDisplay">19.0%</div>
+            <div class="kpi-note" id="paybackMonthsDisplay">5.3-year entry fee payback</div>
+          </div>
+          <div class="kpi-sub-card highlight-gold">
+            <div class="kpi-label">5-Year Tenant Principal Paydown</div>
+            <div class="kpi-value" id="principalPaydownDisplay">$38,420</div>
+            <div class="kpi-note" style="color:var(--accent-gold-dark); font-weight:700;">Equity built by tenant's rent</div>
+          </div>
+        </div>
+
+        <!-- Due on Sale Clause Risk Meter -->
+        <div class="risk-meter-card">
+          <div class="risk-header">
+            <span class="risk-title">Due-on-Sale Risk Rating:</span>
+            <span class="risk-badge" id="riskBadge">Low Risk (Automated Servicing)</span>
+          </div>
+          <div class="risk-bar-track">
+            <div class="risk-bar-fill" id="riskBarFill"></div>
+          </div>
+          <p class="risk-desc" id="riskDesc">
+            Standard conventional mortgage with clean payment history. Use an investor-friendly Land Trust and third-party automated servicing to shield against lender acceleration.
+          </p>
+        </div>
+
+        <!-- Breakdown Data Table -->
+        <div class="breakdown-table-card">
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td class="label-cell">Purchase Price</td>
+                <td class="value-cell" id="tblPrice">$380,000</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Total Upfront Entry Fee</td>
+                <td class="value-cell" id="tblEntryFee" style="color:#ef4444;">$32,000 (8.4%)</td>
+              </tr>
+              <tr>
+                <td class="label-cell">SubTo 1st Mortgage Balance</td>
+                <td class="value-cell" id="tblSubToBal">$310,000 (3.125%)</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Underlying Principal &amp; Interest (P&amp;I)</td>
+                <td class="value-cell" id="tblSubToPI">$1,413 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Taxes &amp; Insurance Escrow</td>
+                <td class="value-cell" id="tblEscrow">$420 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Operating Reserves (Mgmt/Maint/Vac)</td>
+                <td class="value-cell" id="tblOpex">$413 / mo</td>
+              </tr>
+              <tr class="highlight-total">
+                <td class="label-cell">Total Monthly Outflows</td>
+                <td class="value-cell" id="tblTotalOutflows">$2,246 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Gross Monthly Revenue</td>
+                <td class="value-cell" id="tblGrossRev" style="color:var(--primary-navy);">$2,750 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Net Monthly Cash Flow</td>
+                <td class="value-cell" id="tblNetFlow" style="color:var(--accent-emerald-dark); font-weight:800;">+$504 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">5-Year Total Wealth Created</td>
+                <td class="value-cell" id="tbl5YrWealth" style="color:var(--accent-emerald-dark); font-weight:700;">+$68,660</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-btn-row">
+          <button type="button" class="btn-action btn-action-primary" onclick="window.print()">
+            <span>🖨️</span> Print / Save SubTo Deal Sheet
+          </button>
+          <button type="button" class="btn-action" id="btnShareURL">
+            <span>🔗</span> Copy Shareable Link
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- COMPREHENSIVE 1,500+ WORD SEO GUIDE -->
+    <article class="guide-article">
+      <h2>Complete 2026 Guide to Subject-To (SubTo) Real Estate Investing</h2>
+      
+      <p>
+        In the real estate investing community, <strong>Subject-To (SubTo)</strong> financing has emerged as one of the most powerful wealth-generation models of the 21st century. The concept is straightforward yet profound: an investor purchases real property by taking ownership of the deed <em>"subject to"</em> the seller’s existing mortgage staying intact.
+      </p>
+
+      <p>
+        Rather than qualifying for a new 7.0%+ bank loan requiring 20% cash down, debt-to-income (DTI) scrutiny, and weeks of underwriting delays, the investor takes over the seller's existing low-rate mortgage (typically originated between 2020 and 2022 at <strong>2.5% to 3.75% fixed interest</strong>).
+      </p>
+
+      <h2>The Mathematical Advantage: Rate Arbitrage in Action</h2>
+      <p>
+        Consider the mathematical difference between purchasing a $400,000 single-family rental with a new bank mortgage versus taking over an existing 3.0% SubTo loan:
+      </p>
+
+      <div class="formula-callout-box">
+        <h5>Debt Service Comparison Math</h5>
+        <p>$$\text{New Bank Loan: } \$320,000 \text{ at } 7.0\% \implies \text{Monthly P\&I} = \mathbf{\$2,129 / \text{month}}$$</p>
+        <p>$$\text{SubTo Loan: } \$320,000 \text{ at } 3.0\% \implies \text{Monthly P\&I} = \mathbf{\$1,349 / \text{month}}$$</p>
+        <p>$$\text{Monthly Debt Service Savings} = \$2,129 - \$1,349 = \mathbf{+\$780 / \text{month (\$9,360 / year!)}}$$</p>
+      </div>
+
+      <p>
+        That $780/month difference represents pure passive cash flow that would otherwise have been paid to a bank in interest expense. Over a 5-year holding period, the investor pockets an additional <strong>$46,800 in cash flow</strong> purely through interest rate arbitrage.
+      </p>
+
+      <h2>Analyzing the Entry Fee: How to Structure a Winning SubTo Offer</h2>
+      <p>
+        A frequent misconception is that SubTo deals require zero cash. In reality, investors must calculate their <strong>Total Entry Fee</strong>:
+      </p>
+      <ul>
+        <li><strong>Cash to Seller:</strong> In some distress situations, sellers walk away with $0; in other deals, sellers negotiate $10,000 to $25,000 in equity buyout.</li>
+        <li><strong>Arrears Reinstatement:</strong> Many SubTo sellers are in pre-foreclosure. Reinstating the loan requires bringing the mortgage current by paying missed payments, late fees, and legal fees directly to the bank.</li>
+        <li><strong>Assignment Fee:</strong> If a wholesale dispo agent sourced the deal, their fee ($5k–$15k) is factored into the capital stack.</li>
+        <li><strong>Closing &amp; Turnover:</strong> Title escrow, recording taxes, Land Trust creation, and minor cosmetic property turnover.</li>
+      </ul>
+
+      <div class="formula-callout-box">
+        <h5>SubTo Cash-on-Cash Return Formula</h5>
+        <p>$$\text{Cash-on-Cash Return (CoC)} = \frac{\text{Net Annual Cash Flow}}{\text{Total Entry Fee}} \times 100$$</p>
+        <p>$$\text{Payback Velocity (Months)} = \frac{\text{Total Entry Fee}}{\text{Net Monthly Cash Flow}}$$</p>
+      </div>
+
+      <h2>4 High-Converting SubTo Exit Strategies</h2>
+      <ol>
+        <li>
+          <strong>Long-Term Rental (LTR):</strong> Lease the home to a vetted long-term tenant. The rental income pays off your underlying PITI debt service, covers property management and maintenance reserves, and delivers stable passive monthly cash flow.
+        </li>
+        <li>
+          <strong>Mid-Term Rental (MTR):</strong> Furnish the property and rent to traveling healthcare professionals, insurance-displaced families, or corporate relocations. MTR gross rents typically command 1.5x to 2x traditional long-term market rates.
+        </li>
+        <li>
+          <strong>Wraparound Note (The "Wrap"):</strong> Sell the property to a deserving buyer who cannot qualify for a bank loan (e.g. self-employed business owners). Collect a 10% down payment from the buyer (which immediately reimburses your entry fee!) and write a wrap note at 8.0%–8.5% interest, pocketing a monthly interest spread with zero maintenance headaches.
+        </li>
+        <li>
+          <strong>Lease Option (Rent-to-Own):</strong> Collect an upfront non-refundable option fee ($10,000–$25,000) from a tenant-buyer, plus a monthly rent premium above market rate, giving them the option to purchase the property at a fixed future price.
+        </li>
+      </ol>
+
+      <h2>The Due-on-Sale Clause: Risk Reality vs. Myth</h2>
+      <p>
+        Under paragraph 18 of standard Fannie Mae deeds of trust, banks retain the contractual option to accelerate a loan upon title transfer. However, banks are in the business of collecting interest, not managing foreclosed inventory.
+      </p>
+      <p>
+        Lenders virtually never call a loan due if three conditions are met:
+      </p>
+      <ul>
+        <li><strong>Automated Servicing:</strong> Payments are made automatically on the 1st of every month through a licensed servicing company like FCI or Weststar.</li>
+        <li><strong>Proper Insurance Structuring:</strong> The hazard policy lists the seller as the Named Insured, the investor's entity or Land Trust as the Additional Insured, and the underlying lender as the Loss Payee.</li>
+        <li><strong>Land Trust Structuring:</strong> Under 12 U.S.C. § 1701j-3(d)(8) (Garn-St. Germain Act), transfers into inter vivos trusts where the borrower remains a beneficiary do not trigger the Due-on-Sale clause.</li>
+      </ul>
+
+      <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+      <h2>Frequently Asked Questions: SubTo Real Estate</h2>
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is Subject-To real estate investing legal?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, Subject-To transactions are 100% legal in all 50 US states. In fact, standard HUD-1 Settlement Statements (Line 203 and Line 503) and standard ALTA title settlement statements have explicit line items dedicated to "Loans Taken Subject To". It is a contractual agreement where title transfers while the mortgage remains in place.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if the underlying lender calls the loan due?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            In the rare event a lender issues a Due-on-Sale acceleration notice, the investor typically has 30 to 60 days to respond. Solutions include: 1) Refinancing the property with a DSCR loan (no personal income required); 2) Selling the property to cash out built-up equity; 3) Deeding the property back into the seller's name while retaining an irrevocable lease option; or 4) Paying off the loan balance with private money or a partner.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can you take over an FHA or VA loan Subject-To?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, FHA and VA loans can be taken Subject-To. Note that if you take over a VA loan Subject-To, the veteran seller's VA loan entitlement remains tied up on that property until the loan is paid off in full. For VA loans, formal assumptions with entitlement substitution are also an option using our <a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the seller benefit from selling Subject-To?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Sellers benefit immensely when: 1) They are facing foreclosure and need their arrears reinstated immediately to preserve their credit; 2) They need to relocate quickly for a job or family reasons and cannot wait 6 months on the MLS; 3) The property requires repairs that traditional bank buyers cannot finance; or 4) The seller has little equity and wants to avoid paying 6% agent commissions.
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="rr-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="rr-logo" style="margin-bottom:0.85rem;">
+            RealRefin<span>.</span>
+          </a>
+          <p style="margin-bottom:1rem; line-height:1.6;">
+            Institutional real estate investment and debt structuring calculators. Built for mortgage originators, creative real estate investors, and portfolio syndicators seeking zero-latency mathematical modeling.
+          </p>
+          <p style="font-size:0.775rem; color:var(--text-light);">
+            RealRefin is an independent financial technology analytics engine. Subject-To transactions carry legal and contractual risks; always consult qualified real estate legal counsel prior to closing deals.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Investor &amp; Creative Suite</h5>
+          <ul>
+            <li><a href="/subto-calculator">SubTo Calculator</a></li>
+            <li><a href="/creative-financing-calculator">Creative Finance Calculator</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Calculator</a></li>
+            <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Debt &amp; Military Suites</h5>
+          <ul>
+            <li><a href="/bah-mortgage-calculator">BAH Mortgage Calculator</a></li>
+            <li><a href="/va-bonus-entitlement-calculator">VA Bonus Entitlement</a></li>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+            <li><a href="/assumable-mortgage-calculator">Assumable Loan Calculator</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability Tool</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform &amp; Legal</h5>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 RealRefin.com. All calculations run 100% client-side with zero data tracking. Built for SubTo real estate investors.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT: INSTANT REACTIVE SUBTO CALCULATION ENGINE -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Current Exit Strategy: 'ltr', 'mtr', 'wrap', 'leaseOpt'
+      let currentExit = 'ltr';
+
+      // DOM Elements
+      const purchasePriceInput = document.getElementById('purchasePriceInput');
+      const purchasePriceSlider = document.getElementById('purchasePriceSlider');
+      const purchasePriceDisplay = document.getElementById('purchasePriceDisplay');
+
+      const subToBalanceInput = document.getElementById('subToBalanceInput');
+      const subToRateInput = document.getElementById('subToRateInput');
+      const subToYearsInput = document.getElementById('subToYearsInput');
+      const loanTypeSelect = document.getElementById('loanTypeSelect');
+      const monthlyEscrowInput = document.getElementById('monthlyEscrowInput');
+
+      const cashToSellerInput = document.getElementById('cashToSellerInput');
+      const arrearsInput = document.getElementById('arrearsInput');
+      const assignmentFeeInput = document.getElementById('assignmentFeeInput');
+      const closingRehabInput = document.getElementById('closingRehabInput');
+      const entryFeeDisplay = document.getElementById('entryFeeDisplay');
+
+      const grossRevenueInput = document.getElementById('grossRevenueInput');
+      const opexPctInput = document.getElementById('opexPctInput');
+      const wrapSpecificInputs = document.getElementById('wrapSpecificInputs');
+      const wrapDownPaymentInput = document.getElementById('wrapDownPaymentInput');
+      const wrapRateInput = document.getElementById('wrapRateInput');
+
+      const btnExitLTR = document.getElementById('btnExitLTR');
+      const btnExitMTR = document.getElementById('btnExitMTR');
+      const btnExitWrap = document.getElementById('btnExitWrap');
+      const btnExitLeaseOpt = document.getElementById('btnExitLeaseOpt');
+      const exitStrategyBadge = document.getElementById('exitStrategyBadge');
+      const exitTitleIcon = document.getElementById('exitTitleIcon');
+      const exitTitleText = document.getElementById('exitTitleText');
+      const lblGrossRev = document.getElementById('lblGrossRev');
+
+      // Output Elements
+      const subToScoreBadge = document.getElementById('subToScoreBadge');
+      const netCashFlowDisplay = document.getElementById('netCashFlowDisplay');
+      const heroStatDesc = document.getElementById('heroStatDesc');
+      const cocReturnDisplay = document.getElementById('cocReturnDisplay');
+      const paybackMonthsDisplay = document.getElementById('paybackMonthsDisplay');
+      const principalPaydownDisplay = document.getElementById('principalPaydownDisplay');
+
+      const riskBadge = document.getElementById('riskBadge');
+      const riskBarFill = document.getElementById('riskBarFill');
+      const riskDesc = document.getElementById('riskDesc');
+
+      const tblPrice = document.getElementById('tblPrice');
+      const tblEntryFee = document.getElementById('tblEntryFee');
+      const tblSubToBal = document.getElementById('tblSubToBal');
+      const tblSubToPI = document.getElementById('tblSubToPI');
+      const tblEscrow = document.getElementById('tblEscrow');
+      const tblOpex = document.getElementById('tblOpex');
+      const tblTotalOutflows = document.getElementById('tblTotalOutflows');
+      const tblGrossRev = document.getElementById('tblGrossRev');
+      const tblNetFlow = document.getElementById('tblNetFlow');
+      const tbl5YrWealth = document.getElementById('tbl5YrWealth');
+
+      // Helper Formatters
+      const fmtUSD = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+      const fmtPct = (val) => val.toFixed(2) + '%';
+
+      function calcAmortizationPI(principal, annualRatePct, years) {
+        if (principal <= 0) return 0;
+        const monthlyRate = (annualRatePct / 100) / 12;
+        const totalMonths = years * 12;
+        if (monthlyRate <= 0) return principal / totalMonths;
+        return principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      }
+
+      function calculate() {
+        const purchasePrice = parseFloat(purchasePriceInput.value) || 0;
+        purchasePriceDisplay.textContent = fmtUSD(purchasePrice);
+
+        const subToBalance = parseFloat(subToBalanceInput.value) || 0;
+        const subToRate = parseFloat(subToRateInput.value) || 0;
+        const subToYears = parseInt(subToYearsInput.value, 10) || 25;
+        const loanType = loanTypeSelect.value;
+        const monthlyEscrow = parseFloat(monthlyEscrowInput.value) || 0;
+
+        const cashToSeller = parseFloat(cashToSellerInput.value) || 0;
+        const arrears = parseFloat(arrearsInput.value) || 0;
+        const assignmentFee = parseFloat(assignmentFeeInput.value) || 0;
+        const closingRehab = parseFloat(closingRehabInput.value) || 0;
+
+        let grossRevenue = parseFloat(grossRevenueInput.value) || 0;
+        let opexPct = (parseFloat(opexPctInput.value) || 0) / 100;
+
+        // Entry Fee Math
+        const totalEntryFee = cashToSeller + arrears + assignmentFee + closingRehab;
+        entryFeeDisplay.textContent = fmtUSD(totalEntryFee);
+
+        // Underlying Debt Service (P&I)
+        const subToPI = calcAmortizationPI(subToBalance, subToRate, subToYears);
+
+        // Exit Strategy Overrides
+        let netEntryFeeInvested = totalEntryFee;
+        if (currentExit === 'wrap') {
+          wrapSpecificInputs.style.display = 'block';
+          const wrapDown = parseFloat(wrapDownPaymentInput.value) || 0;
+          const wrapRate = parseFloat(wrapRateInput.value) || 8.0;
+          // Wrap buyer pays wrap P&I based on purchase price minus wrapDown
+          const wrapLoanAmount = Math.max(0, purchasePrice - wrapDown);
+          grossRevenue = calcAmortizationPI(wrapLoanAmount, wrapRate, 30);
+          grossRevenueInput.value = Math.round(grossRevenue);
+          opexPct = 0.03; // Wraps have negligible landlord opex
+          // Wrap down payment reimburses entry fee!
+          netEntryFeeInvested = Math.max(0, totalEntryFee - wrapDown);
+        } else {
+          wrapSpecificInputs.style.display = 'none';
+        }
+
+        // Outflows & Net Cash Flow
+        const monthlyOpex = grossRevenue * opexPct;
+        const totalOutflows = subToPI + monthlyEscrow + monthlyOpex;
+        const netCashFlow = grossRevenue - totalOutflows;
+        const annualNetCashFlow = netCashFlow * 12;
+
+        // Cash on Cash Return & Payback
+        let cocReturn = 0;
+        let paybackMonths = 0;
+        if (netEntryFeeInvested > 0) {
+          cocReturn = (annualNetCashFlow / netEntryFeeInvested) * 100;
+          paybackMonths = netCashFlow > 0 ? (netEntryFeeInvested / netCashFlow) : 999;
+        } else {
+          // Down payment covered 100% of entry fee -> Infinite CoC
+          cocReturn = netCashFlow > 0 ? 999 : 0;
+          paybackMonths = 0;
+        }
+
+        // 5-Year Principal Paydown Calculation
+        const monthlyRate = (subToRate / 100) / 12;
+        let balance = subToBalance;
+        let cumulativePaydown = 0;
+        for (let m = 1; m <= 60; m++) {
+          const interest = balance * monthlyRate;
+          const principalPortion = subToPI - interest;
+          cumulativePaydown += principalPortion;
+          balance -= principalPortion;
+        }
+
+        // 5-Year Wealth Created = 5-Yr Cash Flow + 5-Yr Principal Paydown
+        const fiveYearCashFlow = annualNetCashFlow * 5;
+        const totalFiveYearWealth = fiveYearCashFlow + cumulativePaydown;
+
+        // Update Results Hero
+        if (netCashFlow >= 0) {
+          subToScoreBadge.className = "results-status-badge";
+          subToScoreBadge.innerHTML = "<span>✓</span> High-Yield SubTo Deal";
+          netCashFlowDisplay.innerHTML = `+${fmtUSD(netCashFlow)}<span style="font-size:1.4rem; font-weight:700;">/mo</span>`;
+          heroStatDesc.innerHTML = `After paying the underlying <strong>${fmtPct(subToRate)} mortgage</strong> and all reserves, this SubTo asset generates <strong>${fmtUSD(annualNetCashFlow)} in annual passive cash flow</strong>.`;
+        } else {
+          subToScoreBadge.className = "results-status-badge";
+          subToScoreBadge.style.background = "rgba(239, 68, 68, 0.2)";
+          subToScoreBadge.style.borderColor = "rgba(239, 68, 68, 0.4)";
+          subToScoreBadge.style.color = "#f87171";
+          subToScoreBadge.innerHTML = "<span>⚠️</span> Negative Cash Flow Warning";
+          netCashFlowDisplay.innerHTML = `-${fmtUSD(Math.abs(netCashFlow))}<span style="font-size:1.4rem; font-weight:700;">/mo</span>`;
+          heroStatDesc.innerHTML = `Outflows exceed revenue by <strong>${fmtUSD(Math.abs(netCashFlow))}/mo</strong>. Adjust rent or renegotiate cash to seller.`;
+        }
+
+        if (netEntryFeeInvested === 0 && netCashFlow > 0) {
+          cocReturnDisplay.textContent = "Infinite (100% Covered)";
+          paybackMonthsDisplay.textContent = "Day 1 capital recovered!";
+        } else {
+          cocReturnDisplay.textContent = fmtPct(cocReturn);
+          paybackMonthsDisplay.textContent = `${(paybackMonths / 12).toFixed(1)}-year entry fee payback`;
+        }
+
+        principalPaydownDisplay.textContent = fmtUSD(cumulativePaydown);
+
+        // Due-on-Sale Risk Assessment
+        if (loanType === 'va') {
+          riskBadge.textContent = "Moderate (VA Entitlement Tied Up)";
+          riskBadge.style.background = "#fef3c7";
+          riskBadge.style.color = "#92400e";
+          riskBarFill.style.width = "50%";
+          riskBarFill.style.background = "#f59e0b";
+          riskDesc.innerHTML = "VA mortgage loans carry federal entitlement. Ensure seller signs a formal disclosure acknowledging their VA entitlement remains tied up until payoff.";
+        } else if (loanType === 'fha') {
+          riskBadge.textContent = "Low-Moderate (FHA Serviced)";
+          riskBadge.style.background = "#eff6ff";
+          riskBadge.style.color = "#1e40af";
+          riskBarFill.style.width = "35%";
+          riskBarFill.style.background = "#3b82f6";
+          riskDesc.innerHTML = "FHA loans have standard servicing. Always use third-party automated servicing to avoid triggering servicer flags.";
+        } else {
+          riskBadge.textContent = "Low Risk (Conventional Mortgage)";
+          riskBadge.style.background = "#dcfce7";
+          riskBadge.style.color = "#166534";
+          riskBarFill.style.width = "20%";
+          riskBarFill.style.background = "#10b981";
+          riskDesc.innerHTML = "Standard Fannie/Freddie mortgage. Lenders rarely exercise acceleration on performing notes paid on-time via automated servicing.";
+        }
+
+        // Breakdown Table
+        const entryPct = purchasePrice > 0 ? (totalEntryFee / purchasePrice) * 100 : 0;
+        tblPrice.textContent = fmtUSD(purchasePrice);
+        tblEntryFee.textContent = `${fmtUSD(totalEntryFee)} (${fmtPct(entryPct)})`;
+        tblSubToBal.textContent = `${fmtUSD(subToBalance)} (${fmtPct(subToRate)})`;
+        tblSubToPI.textContent = `${fmtUSD(subToPI)} / mo`;
+        tblEscrow.textContent = `${fmtUSD(monthlyEscrow)} / mo`;
+        tblOpex.textContent = `${fmtUSD(monthlyOpex)} / mo`;
+        tblTotalOutflows.textContent = `${fmtUSD(totalOutflows)} / mo`;
+        tblGrossRev.textContent = `${fmtUSD(grossRevenue)} / mo`;
+
+        if (netCashFlow >= 0) {
+          tblNetFlow.textContent = `+${fmtUSD(netCashFlow)} / mo`;
+          tblNetFlow.style.color = "var(--accent-emerald-dark)";
+        } else {
+          tblNetFlow.textContent = `-${fmtUSD(Math.abs(netCashFlow))} / mo`;
+          tblNetFlow.style.color = "#ef4444";
+        }
+
+        tbl5YrWealth.textContent = `+${fmtUSD(totalFiveYearWealth)}`;
+      }
+
+      // Exit Strategy Switcher Handlers
+      function setExit(strategy, icon, name, badgeText) {
+        currentExit = strategy;
+        [btnExitLTR, btnExitMTR, btnExitWrap, btnExitLeaseOpt].forEach(b => b.classList.remove('active'));
+        exitStrategyBadge.textContent = badgeText;
+        exitTitleIcon.textContent = icon;
+        exitTitleText.textContent = name;
+        calculate();
+      }
+
+      btnExitLTR.addEventListener('click', function() {
+        btnExitLTR.classList.add('active');
+        lblGrossRev.textContent = "Gross Monthly Rental Income";
+        grossRevenueInput.value = 2750;
+        opexPctInput.value = 15.0;
+        setExit('ltr', '🏘️', 'Exit 1: Long-Term Rental (LTR)', 'LTR Strategy');
+      });
+
+      btnExitMTR.addEventListener('click', function() {
+        btnExitMTR.classList.add('active');
+        lblGrossRev.textContent = "Furnished MTR Monthly Rent";
+        grossRevenueInput.value = 3650;
+        opexPctInput.value = 22.0; // Higher turnover/utilities
+        setExit('mtr', '🩺', 'Exit 2: Mid-Term Rental (Travel Nurses)', 'MTR Strategy');
+      });
+
+      btnExitWrap.addEventListener('click', function() {
+        btnExitWrap.classList.add('active');
+        lblGrossRev.textContent = "Wrap Note Monthly Payment from Buyer";
+        setExit('wrap', '🔄', 'Exit 3: Wraparound Seller Note', 'Wrap Strategy');
+      });
+
+      btnExitLeaseOpt.addEventListener('click', function() {
+        btnExitLeaseOpt.classList.add('active');
+        lblGrossRev.textContent = "Monthly Rent + Option Premium";
+        grossRevenueInput.value = 3100;
+        opexPctInput.value = 8.0; // Tenant-buyer maintains interior
+        setExit('leaseOpt', '📝', 'Exit 4: Lease Option (Rent-to-Own)', 'Lease Option Strategy');
+      });
+
+      // Range slider sync
+      purchasePriceInput.addEventListener('input', function() {
+        purchasePriceSlider.value = this.value;
+        calculate();
+      });
+
+      purchasePriceSlider.addEventListener('input', function() {
+        purchasePriceInput.value = this.value;
+        calculate();
+      });
+
+      // Inputs Listeners
+      const allInputs = [
+        subToBalanceInput, subToRateInput, subToYearsInput, loanTypeSelect, monthlyEscrowInput,
+        cashToSellerInput, arrearsInput, assignmentFeeInput, closingRehabInput,
+        grossRevenueInput, opexPctInput, wrapDownPaymentInput, wrapRateInput
+      ];
+
+      allInputs.forEach(el => {
+        el.addEventListener('input', calculate);
+        el.addEventListener('change', calculate);
+      });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const item = this.closest('.faq-item');
+          item.classList.toggle('active');
+        });
+      });
+
+      // Shareable URL Parameters
+      const btnShareURL = document.getElementById('btnShareURL');
+      btnShareURL.addEventListener('click', function() {
+        const url = new URL(window.location.href);
+        url.searchParams.set('price', purchasePriceInput.value);
+        url.searchParams.set('bal', subToBalanceInput.value);
+        url.searchParams.set('rate', subToRateInput.value);
+        url.searchParams.set('cash', cashToSellerInput.value);
+        url.searchParams.set('arrears', arrearsInput.value);
+        url.searchParams.set('rent', grossRevenueInput.value);
+        navigator.clipboard.writeText(url.toString()).then(() => {
+          const originalText = btnShareURL.innerHTML;
+          btnShareURL.innerHTML = '<span>✓</span> Copied to Clipboard!';
+          setTimeout(() => { btnShareURL.innerHTML = originalText; }, 2500);
+        });
+      });
+
+      // Load URL parameters on mount
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('price')) {
+        purchasePriceInput.value = params.get('price');
+        purchasePriceSlider.value = params.get('price');
+      }
+      if (params.has('bal')) subToBalanceInput.value = params.get('bal');
+      if (params.has('rate')) subToRateInput.value = params.get('rate');
+      if (params.has('cash')) cashToSellerInput.value = params.get('cash');
+      if (params.has('arrears')) arrearsInput.value = params.get('arrears');
+      if (params.has('rent')) grossRevenueInput.value = params.get('rent');
+
+      // Initial calculation
+      calculate();
+
+    })();
+  </script>
+</body>
+</html>
