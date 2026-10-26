@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/pmi-removal-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/subto-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -145,6 +151,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/pmi-removal-calculator': 'pmi-removal-calculator.html',
+  '/pmi-removal-calculator.html': 'pmi-removal-calculator.html',
+  '/remove-pmi-calculator': 'pmi-removal-calculator.html',
+  '/remove-pmi-calculator.html': 'pmi-removal-calculator.html',
+  '/removing-pmi-calculator': 'pmi-removal-calculator.html',
+  '/removing-pmi-calculator.html': 'pmi-removal-calculator.html',
+  '/pmi-calculator-removal': 'pmi-removal-calculator.html',
+  '/pmi-calculator-removal.html': 'pmi-removal-calculator.html',
   '/subto-calculator': 'subto-calculator.html',
   '/subto-calculator.html': 'subto-calculator.html',
   '/creative-financing-calculator': 'creative-financing-calculator.html',
