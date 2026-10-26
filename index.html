@@ -220,6 +220,12 @@
       padding: 1.5rem 1.25rem 4rem;
     }
 
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+    }
+
     /* -----------------------------------------------------------
        NAVBAR
     ----------------------------------------------------------- */
@@ -431,6 +437,30 @@
       gap: 1.5rem;
       padding-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    @media (max-width: 480px) {
+      .hero-trust-bar {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .trust-stat h4 {
+        font-size: 1.3rem;
+      }
+      .trust-stat p {
+        font-size: 0.725rem;
+      }
+      .hero-banner {
+        padding: 2.25rem 1.25rem 2rem;
+      }
+      .hero-search-input {
+        font-size: 16px !important;
+        height: 50px;
+      }
+      .suite-pill-link {
+        font-size: 0.8rem;
+        padding: 0.45rem 0.85rem;
+      }
     }
 
     .trust-stat h4 {

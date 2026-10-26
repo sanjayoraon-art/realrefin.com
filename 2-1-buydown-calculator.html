@@ -1074,6 +1074,42 @@
       text-align: center;
       font-size: 0.85rem;
     }
+
+    /* Mobile Usability Optimization */
+    @media (max-width: 768px) {
+      input, select, textarea, .input-control {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+      .calc-header-banner {
+        padding: 1.5rem 1.15rem !important;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.7rem !important;
+        line-height: 1.25 !important;
+      }
+      .calc-header-banner p {
+        font-size: 0.95rem !important;
+      }
+      .card-body, .calc-pane {
+        padding: 1.15rem 0.9rem !important;
+      }
+      .buydown-tabs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+      }
+      .guide-section {
+        padding: 1.75rem 1rem !important;
+      }
+      .guide-section h2 {
+        font-size: 1.45rem !important;
+      }
+    }
   </style>
 </head>
 <body>
