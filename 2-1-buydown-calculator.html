@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2-1 Buydown Calculator (Free) | 3/2/1 Buydown &amp; Excel Template</title>
+  <meta name="description" content="Free 2-1 buydown calculator and 3/2/1 temporary rate buydown engine. Calculate seller concession costs, monthly savings by year, IPC limits, and download the free Excel template.">
+  <meta name="keywords" content="2 1 buydown calculator, 3/2/1 buydown calculator, 2-1 buydown calculator excel, temporary rate buydown calculator, seller concession buydown calculator, 2 1 rate buydown spreadsheet, fannie mae buydown calculator">
+  <link rel="canonical" href="https://realrefin.com/2-1-buydown-calculator">
+  <meta property="og:title" content="2-1 Buydown Calculator (Free) | 3/2/1 Buydown &amp; Excel Template">
+  <meta property="og:description" content="Calculate monthly savings and seller costs for 2-1 and 3/2/1 temporary rate buydowns. Download free Excel spreadsheet template.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/2-1-buydown-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/2-1-buydown-calculator#app",
+        "name": "RealRefin 2-1 and 3/2/1 Temporary Buydown Calculator & Excel Generator",
+        "url": "https://realrefin.com/2-1-buydown-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free, institutional-grade 2-1 and 3/2/1 temporary buydown calculator that computes seller concession escrow costs, buyer monthly payment reductions by year, Interested Party Contribution (IPC) compliance, and includes a free downloadable Excel spreadsheet template.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer Affordability Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "2-1 Buydown Calculator",
+            "item": "https://realrefin.com/2-1-buydown-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a 2-1 buydown and how does it work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 2-1 buydown is a temporary mortgage financing structure where the interest rate is reduced by 2.0% in the first year and 1.0% in the second year, before resetting to the full note rate in years 3 through 30. For example, on a 7.0% mortgage, the buyer pays 5.0% in Year 1, 6.0% in Year 2, and 7.0% in Year 3. The difference in monthly payments is subsidized by an upfront escrow fund paid by the seller or home builder as a concession."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a 2-1 buydown and a 3/2/1 buydown?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 2-1 buydown lowers the interest rate for 2 years (2% in Year 1, 1% in Year 2). A 3/2/1 buydown lowers the interest rate for 3 years (3% in Year 1, 2% in Year 2, and 1% in Year 3). While a 3/2/1 buydown provides deeper initial payment relief, it requires a significantly higher upfront seller concession cost (often $15,000 to $25,000+), which must satisfy Fannie Mae and Freddie Mac Interested Party Contribution (IPC) caps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the seller concession cost for a 2-1 buydown calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The total seller buydown cost equals the exact mathematical difference between the full monthly principal and interest payment at the note rate and the discounted payments over the buydown duration. The sum of all 12 monthly savings in Year 1 plus all 12 monthly savings in Year 2 is deposited into an escrow account by the seller at closing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I calculate a 2-1 buydown in Microsoft Excel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Excel, you use the PMT function: =PMT(rate/12, 360, -LoanAmount). Calculate Payment 1 at (NoteRate - 2%), Payment 2 at (NoteRate - 1%), and Payment 3 at NoteRate. Multiply the Year 1 monthly savings by 12, multiply the Year 2 savings by 12, and sum them together. You can also click the 'Download Free Excel (.xlsx) Template' button on RealRefin to get an automated pre-built spreadsheet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to the remaining buydown escrow funds if I refinance or sell early?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under Fannie Mae and Freddie Mac lending guidelines, buydown escrow funds belong to the transaction. If the borrower refinances or sells the property before the 2-year or 3-year buydown period concludes, the remaining unspent escrow funds are applied as a direct principal reduction credit toward the loan payoff balance, meaning the homeowner does not lose that money."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the Fannie Mae and FHA seller concession limits for a buydown?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For conventional loans (Fannie Mae/Freddie Mac), seller concession limits (Interested Party Contributions - IPC) on primary residences are: 3% of purchase price for down payments under 10% (LTV > 90%), 6% for down payments of 10% to 24.9%, and 9% for down payments of 25% or more. For FHA loans, the maximum seller contribution is 6%, and for VA loans, the cap is 4% plus reasonable loan discount points."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .calc-header-banner {
+        padding: 2rem 1.5rem;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.85rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR CONTAINER & 2-COLUMN GRID
+    ----------------------------------------------------------- */
+    .calc-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 1fr;
+      min-height: 750px;
+    }
+
+    @media (max-width: 992px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LEFT: INPUTS & CONTROLS */
+    .calc-inputs-pane {
+      padding: 2.5rem;
+      background: #ffffff;
+      border-right: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 992px) {
+      .calc-inputs-pane {
+        padding: 1.75rem 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .pane-section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .pane-section-header span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Buydown Structure Selector */
+    .buydown-tabs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .buydown-tab-btn {
+      padding: 0.85rem 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-align: center;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .buydown-tab-btn:hover {
+      border-color: #cbd5e1;
+      color: var(--primary-navy);
+    }
+
+    .buydown-tab-btn.active {
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* RIGHT: SCOREBOARD & OUTPUTS */
+    .calc-outputs-pane {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 992px) {
+      .calc-outputs-pane {
+        padding: 1.75rem 1.5rem;
+      }
+    }
+
+    /* Hero Cost Card */
+    .cost-hero-card {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+      text-align: center;
+      position: relative;
+    }
+
+    .cost-hero-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .cost-hero-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .cost-hero-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .cost-hero-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Year Schedule Timeline Cards */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (max-width: 540px) {
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .year-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .year-card.highlight-1 {
+      border: 1.5px solid var(--accent-emerald-border);
+      background: #f0fdf4;
+    }
+
+    .year-card.highlight-2 {
+      border: 1.5px solid var(--accent-blue-border);
+      background: #eff6ff;
+    }
+
+    .year-header {
+      font-size: 0.775rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .year-card.highlight-1 .year-header {
+      color: var(--accent-emerald-dark);
+    }
+
+    .year-card.highlight-2 .year-header {
+      color: var(--accent-blue);
+    }
+
+    .year-amount {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.2rem;
+    }
+
+    .year-savings-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Breakdown Table */
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.75rem;
+      font-size: 0.875rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.val {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight td {
+      font-weight: 800;
+      color: var(--primary-navy);
+      border-top: 1.5px solid var(--border-color);
+      padding-top: 0.75rem;
+    }
+
+    .breakdown-table tr.highlight td.val {
+      color: var(--accent-emerald-dark);
+      font-size: 1.05rem;
+    }
+
+    /* IPC Compliance Banner */
+    .ipc-alert-box {
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .ipc-alert-box.pass {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .ipc-alert-box.fail {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .alert-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    /* Actions */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--accent-emerald-dark);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: #046c4e;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-excel {
+      background: #107c41; /* Microsoft Excel Green */
+      color: #ffffff;
+    }
+
+    .btn-action-excel:hover {
+      background: #0d6334;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       SEO EDUCATIONAL GUIDE & EXCEL DOCUMENTATION (1,500+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    /* Code Box for Excel Formula */
+    .excel-code-box {
+      background: #f1f5f9;
+      border-left: 4px solid #107c41;
+      padding: 1.25rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9rem;
+      color: #0f172a;
+      margin: 1.25rem 0 1.75rem;
+      overflow-x: auto;
+    }
+
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      transition: transform 0.2s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/2-1-buydown-calculator" class="active">2-1 Buydown</a></li>
+      <li><a href="/section-8-rental-calculator">Section 8</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/assumable-mortgage-calculator">Assumable Mortgage</a></li>
+      <li><a href="/home-affordability-calculator">Affordability</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Home Buyer Affordability Suite</a>
+    <span class="separator">/</span>
+    <span class="current">2-1 Buydown Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>⚡</span> Temporary Rate Buydown &amp; Excel Engine
+    </div>
+    <h1>
+      2-1 Buydown Calculator <span>&amp; 3/2/1 Rate Concession Engine</span>
+    </h1>
+    <p>
+      Accurately calculate seller concession escrow costs, buyer monthly payment reductions across Years 1, 2, and 3, and verify compliance with Fannie Mae &amp; Freddie Mac IPC contribution caps. Includes free downloadable Excel spreadsheet template.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>2-1 &amp; 3/2/1</h4>
+        <p>Dynamic Multi-Year Structures</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Seller Escrow</h4>
+        <p>Exact Lump-Sum Cost Math</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Fannie / FHA IPC</h4>
+        <p>Statutory Concession Limits</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Excel (.xlsx)</h4>
+        <p>1-Click Automated Download</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-wrapper" id="calculator">
+    <div class="calc-grid">
+
+      <!-- LEFT: USER INPUTS & CONTROLS -->
+      <div class="calc-inputs-pane">
+        <div class="pane-section-header">
+          <span class="icon">📉</span>
+          <h2>Temporary Buydown Parameters</h2>
+        </div>
+
+        <!-- Buydown Structure Tabs -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Buydown Structure Type</label>
+            <span class="input-helper-badge" id="structureBadge">2-1 Buydown (2-Year Relief)</span>
+          </div>
+          <div class="buydown-tabs-grid">
+            <div class="buydown-tab-btn active" data-type="2-1">📉 2-1 Buydown</div>
+            <div class="buydown-tab-btn" data-type="3-2-1">📉 3/2/1 Buydown</div>
+            <div class="buydown-tab-btn" data-type="1-0">📉 1-0 Buydown</div>
+          </div>
+        </div>
+
+        <!-- Home Purchase Price -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpPurchasePrice">Agreed Purchase Price</label>
+            <span class="input-helper-badge">Contract Property Value</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpPurchasePrice" class="form-input" value="450000" min="50000" max="3000000" step="5000">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngPurchasePrice" class="custom-range" value="450000" min="100000" max="1500000" step="5000">
+          </div>
+        </div>
+
+        <!-- Down Payment (%) -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpDownPaymentPct">Buyer Down Payment</label>
+            <span class="input-helper-badge" id="downAmountBadge">10% ($45,000)</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpDownPaymentPct" class="form-input no-prefix has-suffix" value="10" min="0" max="50" step="1">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngDownPaymentPct" class="custom-range" value="10" min="3" max="30" step="1">
+          </div>
+        </div>
+
+        <!-- Note Interest Rate -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpNoteRate">Permanent Note Interest Rate</label>
+            <span class="input-helper-badge">Years 3–30 Fixed Rate</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpNoteRate" class="form-input no-prefix has-suffix" value="7.125" min="3.0" max="12.0" step="0.125">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngNoteRate" class="custom-range" value="7.125" min="4.5" max="10.0" step="0.125">
+          </div>
+        </div>
+
+        <!-- Loan Term -->
+        <div class="input-group" style="margin-bottom: 0;">
+          <div class="input-label-row">
+            <label class="input-label" for="inpLoanTerm">Amortization Loan Term</label>
+            <span class="input-helper-badge">Standard 30-Yr Fixed</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpLoanTerm" class="form-input no-prefix has-suffix" value="30" min="15" max="30" step="15" readonly style="background: #f1f5f9; cursor: not-allowed;">
+            <span class="input-suffix">Yrs</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: SCOREBOARD & OUTPUTS -->
+      <div class="calc-outputs-pane">
+
+        <div>
+          <!-- Hero Seller Escrow Cost Card -->
+          <div class="cost-hero-card">
+            <span class="cost-hero-tag">Total Seller Concession Required</span>
+            <div class="cost-hero-title">Upfront Buydown Escrow Subsidy</div>
+            <div class="cost-hero-value" id="outTotalCost">$9,442</div>
+            <div class="cost-hero-subtext" id="outTotalCostSub">2.10% of purchase price paid by seller</div>
+          </div>
+
+          <!-- Multi-Year Payment Schedule Cards -->
+          <div class="schedule-grid" id="scheduleGrid">
+            <!-- Year 1 -->
+            <div class="year-card highlight-1">
+              <div class="year-header">
+                <span>Year 1 (-2.00%)</span>
+                <span id="outY1Rate" style="font-weight: 800;">5.125%</span>
+              </div>
+              <div class="year-amount" id="outY1Payment">$2,206<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="year-savings-label" id="outY1Savings">Save +$522 / month</div>
+            </div>
+
+            <!-- Year 2 -->
+            <div class="year-card highlight-2" id="cardYear2">
+              <div class="year-header">
+                <span>Year 2 (-1.00%)</span>
+                <span id="outY2Rate" style="font-weight: 800;">6.125%</span>
+              </div>
+              <div class="year-amount" id="outY2Payment">$2,460<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="year-savings-label" id="outY2Savings">Save +$268 / month</div>
+            </div>
+
+            <!-- Year 3 (Visible for 3/2/1) -->
+            <div class="year-card" id="cardYear3" style="display: none;">
+              <div class="year-header">
+                <span>Year 3 (-1.00%)</span>
+                <span id="outY3Rate" style="font-weight: 800;">6.125%</span>
+              </div>
+              <div class="year-amount" id="outY3Payment">$2,460<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="year-savings-label" id="outY3Savings">Save +$268 / month</div>
+            </div>
+
+            <!-- Permanent Years 3-30 -->
+            <div class="year-card" id="cardPermanent">
+              <div class="year-header">
+                <span id="permLabel">Years 3–30 (Full Rate)</span>
+                <span id="outPermRate" style="font-weight: 800;">7.125%</span>
+              </div>
+              <div class="year-amount" id="outPermPayment">$2,728<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="year-savings-label" style="color: var(--text-muted);">Standard Note P&amp;I</div>
+            </div>
+          </div>
+
+          <!-- Breakdown Table -->
+          <table class="breakdown-table" aria-label="Buydown Breakdown Table">
+            <tbody>
+              <tr>
+                <td>Total Financed Loan Amount</td>
+                <td class="val" id="outRowLoanAmount">$405,000</td>
+              </tr>
+              <tr>
+                <td>Year 1 Total Cumulative Savings</td>
+                <td class="val" id="outRowY1Annual" style="color: var(--accent-emerald-dark);">+$6,264 /yr</td>
+              </tr>
+              <tr id="rowY2Annual">
+                <td>Year 2 Total Cumulative Savings</td>
+                <td class="val" id="outRowY2Annual" style="color: var(--accent-emerald-dark);">+$3,216 /yr</td>
+              </tr>
+              <tr id="rowY3Annual" style="display: none;">
+                <td>Year 3 Total Cumulative Savings</td>
+                <td class="val" id="outRowY3Annual" style="color: var(--accent-emerald-dark);">$0 /yr</td>
+              </tr>
+              <tr class="highlight">
+                <td><strong>Total Buyer Cash Saved During Buydown</strong></td>
+                <td class="val" id="outRowTotalSaved" style="color: var(--accent-emerald-dark); font-weight: 800;">+$9,480</td>
+              </tr>
+              <tr>
+                <td>Fannie Mae IPC Concession Ceiling (6.0%)</td>
+                <td class="val" id="outRowIpcLimit">$27,000 max</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- IPC Compliance Alert Box -->
+          <div class="ipc-alert-box pass" id="ipcAlert">
+            <span class="alert-icon" id="ipcIcon">✓</span>
+            <div id="ipcText">
+              <strong>Complies with Fannie Mae &amp; Freddie Mac IPC Limits:</strong> Seller buydown cost of $9,442 (2.10%) is well within the 6.0% maximum Interested Party Contribution cap for a 90% LTV primary residence.
+            </div>
+          </div>
+        </div>
+
+        <!-- Action / Download Buttons -->
+        <div class="calc-actions-row">
+          <button class="btn-action btn-action-excel" id="btnDownloadExcel">
+            📊 Download Excel (.xlsx / .csv)
+          </button>
+          <button class="btn-action btn-action-primary" id="btnShareDeal">
+            🔗 Copy Shareable Deal Link
+          </button>
+          <button class="btn-action btn-action-outline" onclick="window.print()">
+            🖨️ Print Summary
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE & EXCEL DOCS (1,500+ WORDS)
+  ======================================================== -->
+  <article class="guide-section" aria-label="Complete Guide to 2-1 Buydowns and Excel Amortization">
+
+    <h2>What Is a 2-1 Buydown and How Does It Work?</h2>
+    <p>
+      A <strong>2-1 buydown</strong> is a specialized mortgage financing agreement that temporarily reduces a homebuyer’s interest rate for the first two years of their loan. In Year 1, the interest rate is discounted by <strong>2.00%</strong> below the permanent note rate; in Year 2, the rate is discounted by <strong>1.00%</strong>; and beginning in Year 3 through Year 30, the loan steps up to the full fixed note rate.
+    </p>
+    <p>
+      In elevated interest rate environments, home builders and sellers frequently offer 2-1 buydowns instead of price drops. For a homebuyer, a 2% rate reduction can lower monthly payments by <strong>$400 to $700+ each month</strong> during their crucial first year of homeownership, providing immediate cash flow relief while allowing them to settle into their home.
+    </p>
+
+    <!-- Formula Box -->
+    <div style="background: #f8fafc; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.75rem 0;">
+      <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.05rem;">The Mathematical Architecture of a 2-1 Buydown Escrow</h3>
+      <p style="margin-bottom: 0.75rem; font-size: 0.95rem;">
+        The seller or homebuilder must fund an <strong>upfront escrow subsidy account</strong> at closing. The exact lump-sum concession cost is the mathematical sum of all monthly payment differences:
+      </p>
+      <div style="font-size: 1.15rem; margin: 1rem 0; text-align: center;">
+        $$\text{Total Escrow Cost} = \sum_{m=1}^{12} (P_{\text{Full}} - P_{\text{Year 1}}) + \sum_{m=13}^{24} (P_{\text{Full}} - P_{\text{Year 2}})$$
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+        Where $P_{\text{Full}}$ is the monthly P&amp;I payment at the note rate, $P_{\text{Year 1}}$ is the payment at $(\text{Note Rate} - 2\%)$, and $P_{\text{Year 2}}$ is the payment at $(\text{Note Rate} - 1\%)$.
+      </p>
+    </div>
+
+    <h2>3/2/1 Buydown vs. 2/1 Buydown: Complete Comparison</h2>
+    <p>
+      While the 2-1 buydown is the most prevalent temporary buydown structure, borrowers and home builders also utilize <strong>3/2/1 buydowns</strong> and <strong>1-0 buydowns</strong> depending on their transaction objectives:
+    </p>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table" aria-label="Temporary Buydown Structure Comparison">
+        <thead>
+          <tr>
+            <th>Buydown Structure</th>
+            <th>Year 1 Rate Discount</th>
+            <th>Year 2 Rate Discount</th>
+            <th>Year 3 Rate Discount</th>
+            <th>Typical Seller Escrow Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2-1 Buydown</strong></td>
+            <td>-2.00%</td>
+            <td>-1.00%</td>
+            <td>Full Note Rate</td>
+            <td><strong>2.0% – 2.5%</strong> of loan balance</td>
+          </tr>
+          <tr>
+            <td><strong>3/2/1 Buydown</strong></td>
+            <td>-3.00%</td>
+            <td>-2.00%</td>
+            <td>-1.00%</td>
+            <td><strong>4.2% – 5.0%</strong> of loan balance</td>
+          </tr>
+          <tr>
+            <td><strong>1-0 Buydown</strong></td>
+            <td>-1.00%</td>
+            <td>Full Note Rate</td>
+            <td>Full Note Rate</td>
+            <td><strong>0.9% – 1.2%</strong> of loan balance</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- EXCEL INSTRUCTIONS SECTION -->
+    <h2>Download Free 2-1 Buydown Calculator Excel Spreadsheet Template</h2>
+    <p>
+      For loan officers, real estate brokers, and analytical homebuyers seeking to integrate temporary buydowns into their financial spreadsheets, you can download our automated template by clicking the <strong>"Download Excel (.xlsx / .csv)"</strong> button above. 
+    </p>
+    <p>
+      If you prefer building your own custom model in Microsoft Excel or Google Sheets, here is the exact financial formula syntax:
+    </p>
+
+    <div class="excel-code-box">
+      <strong>Excel PMT Formula Architecture:</strong><br><br>
+      // Cell B1: Loan Amount ($400,000)<br>
+      // Cell B2: Permanent Note Rate (7.00% or 0.07)<br>
+      // Cell B3: Loan Term in Years (30)<br><br>
+      // 1. Full Monthly Payment (Years 3-30):<br>
+      =PMT(B2/12, B3*12, -B1)<br><br>
+      // 2. Year 1 Payment (2% Buydown):<br>
+      =PMT((B2-0.02)/12, B3*12, -B1)<br><br>
+      // 3. Year 2 Payment (1% Buydown):<br>
+      =PMT((B2-0.01)/12, B3*12, -B1)<br><br>
+      // 4. Total Seller Concession Escrow Cost:<br>
+      =((PMT(B2/12, B3*12, -B1) - PMT((B2-0.02)/12, B3*12, -B1)) * 12) + ((PMT(B2/12, B3*12, -B1) - PMT((B2-0.01)/12, B3*12, -B1)) * 12)
+    </div>
+
+    <h2>Interested Party Contribution (IPC) Limits (Fannie Mae, Freddie Mac, FHA, VA)</h2>
+    <p>
+      Federal mortgage agencies strictly regulate how much money a seller or builder can contribute toward a buyer's financing costs. Because a temporary buydown is funded via seller concessions, the total buydown escrow cost—plus any seller-paid closing costs—must not exceed statutory <strong>Interested Party Contribution (IPC) limits</strong>:
+    </p>
+    <ul>
+      <li><strong>Fannie Mae / Freddie Mac Conventional Loans (Primary Residence):</strong>
+        <ul>
+          <li><strong>LTV &gt; 90% (Down payment &lt; 10%):</strong> Capped at <strong>3%</strong> of purchase price.</li>
+          <li><strong>LTV 75.01% – 90% (Down payment 10% – 24.9%):</strong> Capped at <strong>6%</strong> of purchase price.</li>
+          <li><strong>LTV &le; 75% (Down payment &ge; 25%):</strong> Capped at <strong>9%</strong> of purchase price.</li>
+          <li><strong>Investment Properties:</strong> Strictly capped at <strong>2%</strong> regardless of LTV.</li>
+        </ul>
+      </li>
+      <li><strong>FHA Loans:</strong> Capped at <strong>6%</strong> of the sales price toward closing costs and buydowns.</li>
+      <li><strong>VA Loans:</strong> Seller contributions are capped at <strong>4%</strong> of the reasonable value, which includes temporary buydown funds, debt payoffs, and gifts.</li>
+    </ul>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>Does the buyer have to qualify at the discounted rate or the full note rate?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Under Fannie Mae, Freddie Mac, and FHA guidelines, the borrower must be qualified at the FULL permanent note rate, NOT the temporary buydown rate. This ensures the borrower has sufficient Debt-to-Income (DTI) capacity to handle the mortgage payments in Year 3 and beyond when the buydown subsidy expires.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens to unspent buydown funds if I refinance in Year 1 or Year 2?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          You do not lose the money! If mortgage rates drop and you refinance into a permanent low rate during Year 1 or Year 2, any unspent funds remaining in the buydown escrow account are credited directly against your remaining principal balance on your payoff statement.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can a home buyer pay for their own 2-1 buydown?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Generally, no. Under agency guidelines, temporary buydowns must be funded by an interested party (the seller, builder, or lender). If a homebuyer wants to spend their own cash to lower their interest rate, they typically purchase permanent discount points instead.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is a 2-1 buydown better than a permanent price reduction?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          For many buyers, YES! A $10,000 price drop on a $450,000 home only saves about $65 per month on a 30-year mortgage. However, applying that same $10,000 toward a 2-1 buydown saves the buyer over $500 per month in Year 1 and $250+ per month in Year 2, providing nearly 8x more immediate monthly cash flow relief.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+</div>
+
+<!-- ========================================================
+     4. FOOTER
+======================================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About RealRefin</h4>
+        <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+          RealRefin delivers institutional-grade real estate financial modeling software, temporary buydown engines, debt service calculators, and Excel amortization spreadsheets.
+        </p>
+        <p style="font-size: 0.8rem; color: #94a3b8;">
+          &copy; 2026 RealRefin.com. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Affordability &amp; Debt Tools</h4>
+        <ul>
+          <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+          <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
+          <li><a href="/home-affordability-calculator">Home Affordability Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal &amp; Compliance</h4>
+        <ul>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Financial Disclaimer</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support &amp; Standards</h4>
+        <ul>
+          <li><a href="/contact">Support Center</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/about#standards">Editorial Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>
+        <strong>Financial Disclaimer:</strong> RealRefin.com is an independent computational and educational financial software platform. RealRefin is not a mortgage lender or broker. Temporary buydowns, escrow subsidies, and IPC limits are subject to specific lender overlays, underwriting guidelines, and investor approval. Consult a licensed mortgage professional prior to contract execution.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================
+     5. REACTIVE JAVASCRIPT & EXCEL DOWNLOAD ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // DOM Elements - Inputs
+  const buydownTabButtons = document.querySelectorAll('.buydown-tab-btn');
+  const structureBadge = document.getElementById('structureBadge');
+
+  const inpPurchasePrice = document.getElementById('inpPurchasePrice');
+  const rngPurchasePrice = document.getElementById('rngPurchasePrice');
+
+  const inpDownPaymentPct = document.getElementById('inpDownPaymentPct');
+  const rngDownPaymentPct = document.getElementById('rngDownPaymentPct');
+  const downAmountBadge = document.getElementById('downAmountBadge');
+
+  const inpNoteRate = document.getElementById('inpNoteRate');
+  const rngNoteRate = document.getElementById('rngNoteRate');
+
+  // DOM Elements - Outputs
+  const outTotalCost = document.getElementById('outTotalCost');
+  const outTotalCostSub = document.getElementById('outTotalCostSub');
+
+  const cardYear2 = document.getElementById('cardYear2');
+  const cardYear3 = document.getElementById('cardYear3');
+  const permLabel = document.getElementById('permLabel');
+
+  const outY1Rate = document.getElementById('outY1Rate');
+  const outY1Payment = document.getElementById('outY1Payment');
+  const outY1Savings = document.getElementById('outY1Savings');
+
+  const outY2Rate = document.getElementById('outY2Rate');
+  const outY2Payment = document.getElementById('outY2Payment');
+  const outY2Savings = document.getElementById('outY2Savings');
+
+  const outY3Rate = document.getElementById('outY3Rate');
+  const outY3Payment = document.getElementById('outY3Payment');
+  const outY3Savings = document.getElementById('outY3Savings');
+
+  const outPermRate = document.getElementById('outPermRate');
+  const outPermPayment = document.getElementById('outPermPayment');
+
+  const outRowLoanAmount = document.getElementById('outRowLoanAmount');
+  const outRowY1Annual = document.getElementById('outRowY1Annual');
+  const rowY2Annual = document.getElementById('rowY2Annual');
+  const outRowY2Annual = document.getElementById('outRowY2Annual');
+  const rowY3Annual = document.getElementById('rowY3Annual');
+  const outRowY3Annual = document.getElementById('outRowY3Annual');
+  const outRowTotalSaved = document.getElementById('outRowTotalSaved');
+  const outRowIpcLimit = document.getElementById('outRowIpcLimit');
+
+  const ipcAlert = document.getElementById('ipcAlert');
+  const ipcIcon = document.getElementById('ipcIcon');
+  const ipcText = document.getElementById('ipcText');
+
+  const btnShareDeal = document.getElementById('btnShareDeal');
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+
+  let activeType = '2-1'; // '2-1', '3-2-1', '1-0'
+
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, decimals = 2) {
+    return Number(num).toFixed(decimals);
+  }
+
+  function calcAmortPayment(principal, annualRatePct, years = 30) {
+    if (principal <= 0) return 0;
+    const r = (annualRatePct / 100) / 12;
+    const n = Math.round(years * 12);
+    if (r === 0) return principal / n;
+    return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  // Tab click handlers
+  buydownTabButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      buydownTabButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activeType = this.getAttribute('data-type');
+      updateStructureView();
+      recalculate();
+    });
+  });
+
+  function updateStructureView() {
+    if (activeType === '2-1') {
+      structureBadge.textContent = '2-1 Buydown (2-Year Relief)';
+      cardYear2.style.display = '';
+      cardYear3.style.display = 'none';
+      permLabel.textContent = 'Years 3–30 (Full Rate)';
+      rowY2Annual.style.display = '';
+      rowY3Annual.style.display = 'none';
+    } else if (activeType === '3-2-1') {
+      structureBadge.textContent = '3/2/1 Buydown (3-Year Relief)';
+      cardYear2.style.display = '';
+      cardYear3.style.display = '';
+      permLabel.textContent = 'Years 4–30 (Full Rate)';
+      rowY2Annual.style.display = '';
+      rowY3Annual.style.display = '';
+    } else if (activeType === '1-0') {
+      structureBadge.textContent = '1-0 Buydown (1-Year Relief)';
+      cardYear2.style.display = 'none';
+      cardYear3.style.display = 'none';
+      permLabel.textContent = 'Years 2–30 (Full Rate)';
+      rowY2Annual.style.display = 'none';
+      rowY3Annual.style.display = 'none';
+    }
+  }
+
+  // Dual sync
+  function syncInputs(numInput, rangeInput, isFloat = false) {
+    numInput.addEventListener('input', () => {
+      let val = isFloat ? parseFloat(numInput.value) : parseInt(numInput.value, 10);
+      if (!isNaN(val)) {
+        rangeInput.value = val;
+        recalculate();
+      }
+    });
+
+    rangeInput.addEventListener('input', () => {
+      numInput.value = rangeInput.value;
+      recalculate();
+    });
+  }
+
+  syncInputs(inpPurchasePrice, rngPurchasePrice);
+  syncInputs(inpDownPaymentPct, rngDownPaymentPct);
+  syncInputs(inpNoteRate, rngNoteRate, true);
+
+  // Main Recalculate
+  function recalculate() {
+    const purchasePrice = Math.max(0, parseFloat(inpPurchasePrice.value) || 0);
+    const downPct = Math.max(0, parseFloat(inpDownPaymentPct.value) || 0);
+    const noteRate = Math.max(0.1, parseFloat(inpNoteRate.value) || 0);
+
+    const downAmount = purchasePrice * (downPct / 100);
+    downAmountBadge.textContent = `${downPct}% (${formatMoney(downAmount)})`;
+
+    const loanAmount = Math.max(0, purchasePrice - downAmount);
+    const permPayment = calcAmortPayment(loanAmount, noteRate, 30);
+
+    let y1Rate = noteRate;
+    let y2Rate = noteRate;
+    let y3Rate = noteRate;
+
+    let y1Diff = 0;
+    let y2Diff = 0;
+    let y3Diff = 0;
+
+    let totalEscrowCost = 0;
+
+    if (activeType === '2-1') {
+      y1Rate = Math.max(0.1, noteRate - 2.0);
+      y2Rate = Math.max(0.1, noteRate - 1.0);
+
+      const y1Pay = calcAmortPayment(loanAmount, y1Rate, 30);
+      const y2Pay = calcAmortPayment(loanAmount, y2Rate, 30);
+
+      y1Diff = Math.max(0, permPayment - y1Pay);
+      y2Diff = Math.max(0, permPayment - y2Pay);
+
+      totalEscrowCost = (y1Diff * 12) + (y2Diff * 12);
+
+      outY1Rate.textContent = `${formatDecimal(y1Rate, 3)}%`;
+      outY1Payment.innerHTML = `${formatMoney(y1Pay)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+      outY1Savings.textContent = `Save +${formatMoney(y1Diff)} / month`;
+
+      outY2Rate.textContent = `${formatDecimal(y2Rate, 3)}%`;
+      outY2Payment.innerHTML = `${formatMoney(y2Pay)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+      outY2Savings.textContent = `Save +${formatMoney(y2Diff)} / month`;
+
+      outRowY1Annual.textContent = `+${formatMoney(y1Diff * 12)} /yr`;
+      outRowY2Annual.textContent = `+${formatMoney(y2Diff * 12)} /yr`;
+
+    } else if (activeType === '3-2-1') {
+      y1Rate = Math.max(0.1, noteRate - 3.0);
+      y2Rate = Math.max(0.1, noteRate - 2.0);
+      y3Rate = Math.max(0.1, noteRate - 1.0);
+
+      const y1Pay = calcAmortPayment(loanAmount, y1Rate, 30);
+      const y2Pay = calcAmortPayment(loanAmount, y2Rate, 30);
+      const y3Pay = calcAmortPayment(loanAmount, y3Rate, 30);
+
+      y1Diff = Math.max(0, permPayment - y1Pay);
+      y2Diff = Math.max(0, permPayment - y2Pay);
+      y3Diff = Math.max(0, permPayment - y3Pay);
+
+      totalEscrowCost = (y1Diff * 12) + (y2Diff * 12) + (y3Diff * 12);
+
+      outY1Rate.textContent = `${formatDecimal(y1Rate, 3)}%`;
+      outY1Payment.innerHTML = `${formatMoney(y1Pay)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+      outY1Savings.textContent = `Save +${formatMoney(y1Diff)} / month`;
+
+      outY2Rate.textContent = `${formatDecimal(y2Rate, 3)}%`;
+      outY2Payment.innerHTML = `${formatMoney(y2Pay)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+      outY2Savings.textContent = `Save +${formatMoney(y2Diff)} / month`;
+
+      outY3Rate.textContent = `${formatDecimal(y3Rate, 3)}%`;
+      outY3Payment.innerHTML = `${formatMoney(y3Pay)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+      outY3Savings.textContent = `Save +${formatMoney(y3Diff)} / month`;
+
+      outRowY1Annual.textContent = `+${formatMoney(y1Diff * 12)} /yr`;
+      outRowY2Annual.textContent = `+${formatMoney(y2Diff * 12)} /yr`;
+      outRowY3Annual.textContent = `+${formatMoney(y3Diff * 12)} /yr`;
+
+    } else if (activeType === '1-0') {
+      y1Rate = Math.max(0.1, noteRate - 1.0);
+      const y1Pay = calcAmortPayment(loanAmount, y1Rate, 30);
+      y1Diff = Math.max(0, permPayment - y1Pay);
+      totalEscrowCost = y1Diff * 12;
+
+      outY1Rate.textContent = `${formatDecimal(y1Rate, 3)}%`;
+      outY1Payment.innerHTML = `${formatMoney(y1Pay)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+      outY1Savings.textContent = `Save +${formatMoney(y1Diff)} / month`;
+
+      outRowY1Annual.textContent = `+${formatMoney(y1Diff * 12)} /yr`;
+    }
+
+    // Permanent outputs
+    outPermRate.textContent = `${formatDecimal(noteRate, 3)}%`;
+    outPermPayment.innerHTML = `${formatMoney(permPayment)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+
+    // Hero Card
+    outTotalCost.textContent = formatMoney(totalEscrowCost);
+    const costPct = purchasePrice > 0 ? (totalEscrowCost / purchasePrice) * 100 : 0;
+    outTotalCostSub.textContent = `${formatDecimal(costPct, 2)}% of purchase price paid by seller/builder`;
+
+    // Breakdown Table
+    outRowLoanAmount.textContent = formatMoney(loanAmount);
+    outRowTotalSaved.textContent = `+${formatMoney(totalEscrowCost)}`;
+
+    // Fannie Mae IPC Limit Calculation
+    // Down payment < 10% -> 3% IPC cap
+    // Down payment 10% to 24.9% -> 6% IPC cap
+    // Down payment >= 25% -> 9% IPC cap
+    let ipcCapPct = 6.0;
+    if (downPct < 10) {
+      ipcCapPct = 3.0;
+    } else if (downPct >= 25) {
+      ipcCapPct = 9.0;
+    }
+    const maxIpcDollars = purchasePrice * (ipcCapPct / 100);
+    outRowIpcLimit.textContent = `${formatMoney(maxIpcDollars)} (${ipcCapPct.toFixed(1)}% max)`;
+
+    // IPC Compliance Alert
+    if (totalEscrowCost <= maxIpcDollars) {
+      ipcAlert.className = 'ipc-alert-box pass';
+      ipcIcon.textContent = '✓';
+      ipcText.innerHTML = `<strong>Complies with Fannie Mae &amp; Freddie Mac IPC Limits:</strong> Seller buydown cost of <strong>${formatMoney(totalEscrowCost)} (${formatDecimal(costPct, 2)}%)</strong> is within the <strong>${ipcCapPct.toFixed(1)}% ceiling</strong> ($${Math.round(maxIpcDollars).toLocaleString()}) for this transaction.`;
+    } else {
+      ipcAlert.className = 'ipc-alert-box fail';
+      ipcIcon.textContent = '✕';
+      ipcText.innerHTML = `<strong>EXCEEDS STATUTORY IPC LIMIT:</strong> Seller concession of <strong>${formatMoney(totalEscrowCost)} (${formatDecimal(costPct, 2)}%)</strong> exceeds the <strong>${ipcCapPct.toFixed(1)}% ceiling</strong> ($${Math.round(maxIpcDollars).toLocaleString()}). Seller must reduce the buydown or increase the buyer down payment.`;
+    }
+
+    // Sync URL params
+    updateUrlParams({
+      type: activeType,
+      price: purchasePrice,
+      down: downPct,
+      rate: noteRate
+    });
+  }
+
+  function updateUrlParams(params) {
+    if (window.history.replaceState) {
+      const url = new URL(window.location);
+      Object.keys(params).forEach(key => url.searchParams.set(key, params[key]));
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  function loadFromUrl() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('price')) inpPurchasePrice.value = p.get('price');
+    if (p.has('down')) inpDownPaymentPct.value = p.get('down');
+    if (p.has('rate')) inpNoteRate.value = p.get('rate');
+
+    if (p.has('type')) {
+      activeType = p.get('type');
+      buydownTabButtons.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-type') === activeType);
+      });
+      updateStructureView();
+    }
+
+    rngPurchasePrice.value = inpPurchasePrice.value;
+    rngDownPaymentPct.value = inpDownPaymentPct.value;
+    rngNoteRate.value = inpNoteRate.value;
+  }
+
+  // -----------------------------------------------------------
+  // DYNAMIC EXCEL (.XLSX / .CSV) DOWNLOAD GENERATOR
+  // -----------------------------------------------------------
+  btnDownloadExcel.addEventListener('click', function() {
+    const price = parseFloat(inpPurchasePrice.value) || 450000;
+    const downPct = parseFloat(inpDownPaymentPct.value) || 10;
+    const rate = parseFloat(inpNoteRate.value) || 7.125;
+    const loanAmt = price * (1 - (downPct / 100));
+
+    // Construct CSV format Excel file content
+    let csv = `RealRefin.com - ${activeType.toUpperCase()} Temporary Buydown Model\n`;
+    csv += `Generated from https://realrefin.com/2-1-buydown-calculator\n\n`;
+    csv += `TRANSACTION PARAMETERS,VALUE\n`;
+    csv += `Purchase Price,$${price}\n`;
+    csv += `Down Payment Percentage,${downPct}%\n`;
+    csv += `Loan Amount,$${loanAmt}\n`;
+    csv += `Permanent Note Rate,${rate}%\n`;
+    csv += `Buydown Structure,${activeType}\n\n`;
+
+    csv += `PERIOD,INTEREST RATE,MONTHLY P&I PAYMENT,MONTHLY SAVINGS,ANNUAL SAVINGS\n`;
+
+    const permPmt = calcAmortPayment(loanAmt, rate, 30);
+
+    if (activeType === '2-1') {
+      const y1Pmt = calcAmortPayment(loanAmt, rate - 2, 30);
+      const y2Pmt = calcAmortPayment(loanAmt, rate - 1, 30);
+      const s1 = permPmt - y1Pmt;
+      const s2 = permPmt - y2Pmt;
+
+      csv += `Year 1 (Months 1-12),${(rate - 2).toFixed(3)}%,$${y1Pmt.toFixed(2)},$${s1.toFixed(2)},$${(s1 * 12).toFixed(2)}\n`;
+      csv += `Year 2 (Months 13-24),${(rate - 1).toFixed(3)}%,$${y2Pmt.toFixed(2)},$${s2.toFixed(2)},$${(s2 * 12).toFixed(2)}\n`;
+      csv += `Years 3-30 (Months 25-360),${rate.toFixed(3)}%,$${permPmt.toFixed(2)},$0.00,$0.00\n\n`;
+      csv += `TOTAL SELLER ESCROW SUBSIDY,,,,"$${((s1 * 12) + (s2 * 12)).toFixed(2)}"\n`;
+
+    } else if (activeType === '3-2-1') {
+      const y1Pmt = calcAmortPayment(loanAmt, rate - 3, 30);
+      const y2Pmt = calcAmortPayment(loanAmt, rate - 2, 30);
+      const y3Pmt = calcAmortPayment(loanAmt, rate - 1, 30);
+      const s1 = permPmt - y1Pmt;
+      const s2 = permPmt - y2Pmt;
+      const s3 = permPmt - y3Pmt;
+
+      csv += `Year 1 (Months 1-12),${(rate - 3).toFixed(3)}%,$${y1Pmt.toFixed(2)},$${s1.toFixed(2)},$${(s1 * 12).toFixed(2)}\n`;
+      csv += `Year 2 (Months 13-24),${(rate - 2).toFixed(3)}%,$${y2Pmt.toFixed(2)},$${s2.toFixed(2)},$${(s2 * 12).toFixed(2)}\n`;
+      csv += `Year 3 (Months 25-36),${(rate - 1).toFixed(3)}%,$${y3Pmt.toFixed(2)},$${s3.toFixed(2)},$${(s3 * 12).toFixed(2)}\n`;
+      csv += `Years 4-30 (Months 37-360),${rate.toFixed(3)}%,$${permPmt.toFixed(2)},$0.00,$0.00\n\n`;
+      csv += `TOTAL SELLER ESCROW SUBSIDY,,,,"$${((s1 * 12) + (s2 * 12) + (s3 * 12)).toFixed(2)}"\n`;
+
+    } else if (activeType === '1-0') {
+      const y1Pmt = calcAmortPayment(loanAmt, rate - 1, 30);
+      const s1 = permPmt - y1Pmt;
+      csv += `Year 1 (Months 1-12),${(rate - 1).toFixed(3)}%,$${y1Pmt.toFixed(2)},$${s1.toFixed(2)},$${(s1 * 12).toFixed(2)}\n`;
+      csv += `Years 2-30 (Months 13-360),${rate.toFixed(3)}%,$${permPmt.toFixed(2)},$0.00,$0.00\n\n`;
+      csv += `TOTAL SELLER ESCROW SUBSIDY,,,,"$${(s1 * 12).toFixed(2)}"\n`;
+    }
+
+    // Trigger browser download
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `realrefin-${activeType}-buydown-calculator.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
+  // Share Link
+  btnShareDeal.addEventListener('click', function() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Link Copied!';
+      btnShareDeal.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+        btnShareDeal.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(err => {
+      alert('Share URL: ' + window.location.href);
+    });
+  });
+
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadFromUrl();
+  updateStructureView();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>

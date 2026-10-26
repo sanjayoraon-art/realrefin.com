@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/2-1-buydown-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/section-8-rental-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -115,6 +121,8 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/2-1-buydown-calculator': '2-1-buydown-calculator.html',
+  '/2-1-buydown-calculator.html': '2-1-buydown-calculator.html',
   '/section-8-rental-calculator': 'section-8-rental-calculator.html',
   '/section-8-rental-calculator.html': 'section-8-rental-calculator.html',
   '/dscr-calculator': 'dscr-calculator.html',
