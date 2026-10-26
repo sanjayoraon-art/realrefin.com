@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assumable Mortgage Calculator (Free) | FHA, VA & Blended Rate Savings</title>
+  <meta name="description" content="Free assumable mortgage calculator. Calculate exact monthly savings, equity gap, blended interest rate, and closing costs when assuming a 2%-4% FHA, VA, or USDA loan vs today's rates.">
+  <meta name="keywords" content="assumable mortgage calculator, free assumable mortgage calculator, fha assumable loan calculator, va assumable mortgage calculator, blended rate assumable mortgage calculator, mortgage assumption savings calculator, cost to assume a mortgage calculator, loan assumption gap calculator">
+  <link rel="canonical" href="https://realrefin.com/assumable-mortgage-calculator">
+  <meta property="og:title" content="Assumable Mortgage Calculator (Free) | FHA, VA & Blended Rate Savings">
+  <meta property="og:description" content="Calculate monthly savings, equity gap, and blended interest rate when assuming a low-rate FHA or VA loan. Free institutional-grade calculator by RealRefin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/assumable-mortgage-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for clean mathematical formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/assumable-mortgage-calculator#app",
+        "name": "RealRefin Free Assumable Mortgage Calculator",
+        "url": "https://realrefin.com/assumable-mortgage-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free, institutional-grade assumable mortgage calculator that computes equity gaps, blended interest rates with second mortgages/HELOCs, monthly payment savings, and lifetime interest reductions for FHA, VA, and USDA loan assumptions.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Refinance & Mortgage Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Assumable Mortgage Calculator",
+            "item": "https://realrefin.com/assumable-mortgage-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an assumable mortgage and how does it work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An assumable mortgage allows a home buyer to take over the seller's existing mortgage terms, including its remaining balance, repayment term, and locked-in interest rate. If a seller locked in a 3.0% interest rate during 2020-2021, a qualified buyer can assume that exact 3.0% rate instead of taking out a new loan at current 6%-7%+ market rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 'equity gap' in an assumable mortgage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The equity gap is the difference between the agreed purchase price of the home and the seller's remaining loan balance. For example, if a home is selling for $450,000 and the seller owes $300,000 on their assumable mortgage, the buyer must cover the $150,000 equity gap using cash savings, a second mortgage, a home equity line of credit (HELOC), or seller financing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a blended interest rate work on an assumed loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a buyer takes out a second mortgage or HELOC to cover part of the equity gap, the blended rate is the weighted average interest rate of both loans. For example, combining a $300,000 first mortgage at 3.0% with a $100,000 second mortgage at 8.5% creates a blended effective rate of approximately 4.38%, which is still significantly lower than a single new market-rate mortgage at 6.85%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which types of mortgages are legally assumable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "All government-backed mortgages—including FHA (Federal Housing Administration), VA (Department of Veterans Affairs), and USDA (US Department of Agriculture) loans—are legally assumable by law under the Garn-St. Germain Depository Institutions Act of 1982. Most conventional loans (Fannie Mae and Freddie Mac) contain strict due-on-sale clauses and cannot be assumed except under limited family transfer exceptions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a non-veteran assume a VA loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, anyone with acceptable credit and income can assume a VA loan, even civilians with no military service. However, if a civilian assumes a VA loan, the veteran seller's VA loan entitlement remains locked in that property until the loan is paid in full. To preserve their entitlement, the veteran must ensure the buyer is also an eligible veteran willing to substitute their own VA entitlement (Substitution of Entitlement)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What fees are associated with assuming a mortgage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Assumption fees are strictly regulated by federal agencies. For FHA loans, the loan servicer processing fee is capped at $900. For VA loans, the lender processing fee is capped at $300 plus reasonable underwriting charges, along with a statutory 0.50% VA Funding Fee paid to the Department of Veterans Affairs. Standard title insurance, escrow fees, and recording charges also apply."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does the mortgage assumption process take to close?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mortgage assumptions typically take between 45 to 90 days to close, which is longer than a standard 30-day conventional purchase. The buyer must be fully underwritten and approved by the seller's specific mortgage servicer (e.g., Freedom Mortgage, Pennymac, Mr. Cooper) to ensure proper release of liability for the seller."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & SLATE
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;       /* Midnight Slate */
+      --secondary-navy: #1E293B;     /* Card Navy Accent */
+      --accent-emerald: #10B981;     /* Primary Fintech Green */
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HEADER HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 900px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 820px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .calc-header-banner {
+        padding: 2rem 1.5rem;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.85rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR CONTAINER & 2-COLUMN GRID
+    ----------------------------------------------------------- */
+    .calc-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      min-height: 700px;
+    }
+
+    @media (max-width: 992px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LEFT PANE: USER INPUTS */
+    .calc-inputs-pane {
+      padding: 2.5rem;
+      background: #ffffff;
+      border-right: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 992px) {
+      .calc-inputs-pane {
+        padding: 1.75rem 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .pane-section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .pane-section-header span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Program Toggle Tabs */
+    .program-tabs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-align: center;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: #cbd5e1;
+      color: var(--primary-navy);
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Gap Financing Toggle Box */
+    .gap-toggle-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .gap-toggle-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .switch-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Custom Toggle Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider-round {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1;
+      transition: 0.2s;
+      border-radius: 34px;
+    }
+
+    .slider-round:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.2s;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    input:checked + .slider-round {
+      background-color: var(--accent-emerald);
+    }
+
+    input:checked + .slider-round:before {
+      transform: translateX(22px);
+    }
+
+    .gap-fields-collapsible {
+      display: none;
+      margin-top: 1.15rem;
+      padding-top: 1.15rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .gap-fields-collapsible.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RIGHT PANE: REAL-TIME OUTPUT SCOREBOARD */
+    .calc-outputs-pane {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 992px) {
+      .calc-outputs-pane {
+        padding: 1.75rem 1.5rem;
+      }
+    }
+
+    /* Hero Metric Box */
+    .hero-metric-card {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-metric-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .hero-metric-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-metric-value {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-metric-subtext {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Side-by-Side Comparison Grid */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (max-width: 540px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .compare-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .compare-card.assumed {
+      border: 1.5px solid var(--accent-emerald-border);
+      background: #f0fdf4;
+    }
+
+    .compare-card.market {
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+    }
+
+    .compare-header {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .compare-card.assumed .compare-header {
+      color: var(--accent-emerald-dark);
+    }
+
+    .compare-card.market .compare-header {
+      color: var(--text-muted);
+    }
+
+    .compare-amount {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .compare-rate {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Detail Itemized Breakdown Table */
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.75rem;
+      font-size: 0.875rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.val {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight td {
+      font-weight: 800;
+      color: var(--primary-navy);
+      border-top: 1.5px solid var(--border-color);
+      padding-top: 0.75rem;
+    }
+
+    .breakdown-table tr.highlight td.val {
+      color: var(--accent-emerald-dark);
+      font-size: 1.05rem;
+    }
+
+    /* Program Specific Alert Banner */
+    .program-alert-box {
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .program-alert-box.va {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+
+    .program-alert-box.fha {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+
+    .program-alert-box.usda {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .alert-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    /* Action Buttons Group */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (1,500+ WORDS)
+     ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    /* Comparison Table in Guide */
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion Section */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      transition: transform 0.2s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/assumable-mortgage-calculator" class="active">Assumable Mortgage</a></li>
+      <li><a href="/va-irrrl-calculator">VA IRRRL</a></li>
+      <li><a href="/home-affordability-calculator">Affordability</a></li>
+      <li><a href="/brrrr-calculator">BRRRR</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Refinance &amp; Mortgage Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Assumable Mortgage Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO HEADER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>⚡</span> 100% Free Institutional Fintech Engine
+    </div>
+    <h1>
+      Assumable Mortgage Calculator <span>&amp; Blended Rate Engine</span>
+    </h1>
+    <p>
+      Evaluate the true financial savings of assuming an existing 2%–4% FHA, VA, or USDA home loan. Calculate your exact equity gap, blended interest rate with secondary financing, monthly payment reductions, and lifetime interest savings.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>$0 Origination</h4>
+        <p>Zero Loan Markup Fees</p>
+      </div>
+      <div class="trust-stat">
+        <h4>FHA, VA, USDA</h4>
+        <p>Statutory Federal Compliance</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Blended Rate</h4>
+        <p>Dynamic 2nd Lien &amp; HELOC Math</p>
+      </div>
+      <div class="trust-stat">
+        <h4>100% Private</h4>
+        <p>Zero-Latency Client-Side Engine</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-wrapper" id="calculator">
+    <div class="calc-grid">
+
+      <!-- LEFT: USER INPUT CONTROLS -->
+      <div class="calc-inputs-pane">
+        <div class="pane-section-header">
+          <span class="icon">⚙️</span>
+          <h2>Loan Assumption Parameters</h2>
+        </div>
+
+        <!-- Loan Program Type Selector -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Assumable Loan Program</label>
+            <span class="input-helper-badge" id="programBadge">HUD FHA § 203(b)</span>
+          </div>
+          <div class="program-tabs-grid">
+            <div class="tab-btn active" data-program="fha">🏢 FHA Loan</div>
+            <div class="tab-btn" data-program="va">🎖️ VA Loan</div>
+            <div class="tab-btn" data-program="usda">🌾 USDA Loan</div>
+          </div>
+        </div>
+
+        <!-- Agreed Purchase Price -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpPurchasePrice">Agreed Purchase Price</label>
+            <span class="input-helper-badge">Current Home Valuation</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpPurchasePrice" class="form-input" value="450000" min="50000" max="3000000" step="5000">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngPurchasePrice" class="custom-range" value="450000" min="100000" max="1500000" step="5000">
+          </div>
+        </div>
+
+        <!-- Seller's Assumed Loan Balance -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpAssumedBalance">Seller's Remaining Loan Balance</label>
+            <span class="input-helper-badge">From Servicer Payoff Statement</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpAssumedBalance" class="form-input" value="300000" min="20000" max="2500000" step="5000">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngAssumedBalance" class="custom-range" value="300000" min="50000" max="1200000" step="5000">
+          </div>
+        </div>
+
+        <!-- Assumed Fixed Interest Rate -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpAssumedRate">Seller's Locked Interest Rate</label>
+            <span class="input-helper-badge">Historical Low Rate Note</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpAssumedRate" class="form-input no-prefix has-suffix" value="3.125" min="1.5" max="8.0" step="0.125">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngAssumedRate" class="custom-range" value="3.125" min="1.75" max="6.0" step="0.125">
+          </div>
+        </div>
+
+        <!-- Remaining Term on Assumed Loan -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpAssumedTerm">Remaining Term on Assumed Loan</label>
+            <span class="input-helper-badge" id="termYearsBadge">26 Years (312 Mos)</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpAssumedTerm" class="form-input no-prefix has-suffix" value="26" min="5" max="30" step="1">
+            <span class="input-suffix">Yrs</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngAssumedTerm" class="custom-range" value="26" min="5" max="30" step="1">
+          </div>
+        </div>
+
+        <!-- Secondary Financing / Gap Coverage Switch -->
+        <div class="gap-toggle-box">
+          <div class="gap-toggle-header">
+            <label class="switch-label" for="chkSecondLien">
+              <span>💳</span> Use 2nd Mortgage / HELOC for Gap
+            </label>
+            <label class="switch">
+              <input type="checkbox" id="chkSecondLien" checked>
+              <span class="slider-round"></span>
+            </label>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">
+            Toggle ON if you plan to finance a portion of the equity gap with a second lien, piggyback loan, or home equity line of credit.
+          </p>
+
+          <!-- Collapsible 2nd Lien Controls -->
+          <div class="gap-fields-collapsible active" id="gapCollapsiblePane">
+            <div class="input-group" style="margin-bottom: 1.25rem;">
+              <div class="input-label-row">
+                <label class="input-label" for="inpCashDown">Buyer's Upfront Cash Down</label>
+                <span class="input-helper-badge">Paid at Closing</span>
+              </div>
+              <div class="input-control-box">
+                <span class="input-prefix">$</span>
+                <input type="number" id="inpCashDown" class="form-input" value="50000" min="0" max="1500000" step="5000">
+              </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 1.25rem;">
+              <div class="input-label-row">
+                <label class="input-label" for="inpSecondRate">2nd Mortgage / HELOC Interest Rate</label>
+                <span class="input-helper-badge">Market Gap Note</span>
+              </div>
+              <div class="input-control-box">
+                <input type="number" id="inpSecondRate" class="form-input no-prefix has-suffix" value="8.50" min="4.0" max="18.0" step="0.25">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+              <div class="input-label-row">
+                <label class="input-label" for="inpSecondTerm">2nd Mortgage Amortization Term</label>
+                <span class="input-helper-badge">Years</span>
+              </div>
+              <div class="input-control-box">
+                <input type="number" id="inpSecondTerm" class="form-input no-prefix has-suffix" value="15" min="5" max="30" step="1">
+                <span class="input-suffix">Yrs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benchmark Comparison Market Rate -->
+        <div class="input-group" style="margin-bottom: 0;">
+          <div class="input-label-row">
+            <label class="input-label" for="inpMarketRate">Current Benchmark Market Rate</label>
+            <span class="input-helper-badge">Today's Standard 30-Yr Fixed</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpMarketRate" class="form-input no-prefix has-suffix" value="6.875" min="4.0" max="12.0" step="0.125">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngMarketRate" class="custom-range" value="6.875" min="4.5" max="9.5" step="0.125">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: REAL-TIME SCOREBOARD & ANALYTICS -->
+      <div class="calc-outputs-pane">
+
+        <div>
+          <!-- Hero Savings Card -->
+          <div class="hero-metric-card">
+            <span class="hero-metric-tag">Real-Time Monthly Advantage</span>
+            <div class="hero-metric-title">Net Monthly Payment Savings</div>
+            <div class="hero-metric-value" id="outMonthlySavings">+$748</div>
+            <div class="hero-metric-subtext" id="outAnnualSavings">$8,976 saved per year in cash flow</div>
+          </div>
+
+          <!-- Side-by-Side Cards Grid -->
+          <div class="comparison-grid">
+            <!-- Assumed Loan Package -->
+            <div class="compare-card assumed">
+              <div class="compare-header">
+                <span>✓</span> Assumed Structure
+              </div>
+              <div class="compare-amount" id="outAssumedTotalPayment">$2,382<span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="compare-rate" id="outBlendedRateBadge">Effective Blended Rate: <strong>4.48%</strong></div>
+            </div>
+
+            <!-- Traditional Market Loan -->
+            <div class="compare-card market">
+              <div class="compare-header">
+                <span>✕</span> Brand New 30-Yr Loan
+              </div>
+              <div class="compare-amount" id="outMarketPayment">$3,130<span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="compare-rate">At Market Rate: <strong>6.875%</strong></div>
+            </div>
+          </div>
+
+          <!-- Itemized Financial Breakdown -->
+          <table class="breakdown-table" aria-label="Assumed Mortgage Calculation Breakdown">
+            <tbody>
+              <tr>
+                <td>Total Purchase Price</td>
+                <td class="val" id="outRowPurchase">$450,000</td>
+              </tr>
+              <tr>
+                <td>Seller's 1st Loan Principal Assumed</td>
+                <td class="val" id="outRowAssumedBalance">$300,000</td>
+              </tr>
+              <tr>
+                <td><strong>Total Equity Gap to Cover</strong></td>
+                <td class="val" id="outRowEquityGap" style="color: var(--accent-blue); font-weight: 800;">$150,000</td>
+              </tr>
+              <tr id="rowCashDown">
+                <td>Buyer Cash Contribution</td>
+                <td class="val" id="outRowCash">$50,000</td>
+              </tr>
+              <tr id="rowSecondLien">
+                <td>2nd Mortgage / HELOC Financed</td>
+                <td class="val" id="outRowSecond">$100,000</td>
+              </tr>
+              <tr>
+                <td>1st Assumed Loan Monthly P&amp;I</td>
+                <td class="val" id="outRowPayment1">$1,396 /mo</td>
+              </tr>
+              <tr id="rowPayment2">
+                <td>2nd Mortgage Monthly P&amp;I</td>
+                <td class="val" id="outRowPayment2">$986 /mo</td>
+              </tr>
+              <tr>
+                <td>Estimated Assumption &amp; Servicer Fee</td>
+                <td class="val" id="outRowServicerFee">$900</td>
+              </tr>
+              <tr class="highlight">
+                <td>5-Year Cumulative Savings</td>
+                <td class="val" id="outRow5YrSavings">+$44,880</td>
+              </tr>
+              <tr class="highlight">
+                <td>Total Lifetime Interest Saved</td>
+                <td class="val" id="outRowLifetimeSavings">+$146,215</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Dynamic Program Legal Alert Banner -->
+          <div class="program-alert-box fha" id="alertBox">
+            <span class="alert-icon">ℹ️</span>
+            <div id="alertText">
+              <strong>FHA Assumption Rules (HUD Handbook 4000.1):</strong> FHA loan assumptions require full credit and debt-to-income approval through the seller's mortgage servicer. The lender assumption processing fee is statutorily capped at $900.
+            </div>
+          </div>
+        </div>
+
+        <!-- Action / Share Buttons -->
+        <div class="calc-actions-row">
+          <button class="btn-action btn-action-primary" id="btnShareDeal">
+            🔗 Copy Shareable Deal Link
+          </button>
+          <button class="btn-action btn-action-outline" onclick="window.print()">
+            🖨️ Print / Save PDF Memo
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE (1,500+ WORDS)
+  ======================================================== -->
+  <article class="guide-section" aria-label="Comprehensive Guide to Assumable Mortgages">
+
+    <h2>What Is an Assumable Mortgage and How Does It Work?</h2>
+    <p>
+      An <strong>assumable mortgage</strong> is a specialized real estate financing agreement that allows a qualified homebuyer to take over ("assume") the seller’s existing mortgage terms, rather than obtaining a brand-new home loan at prevailing market rates. When assuming a mortgage, the buyer steps directly into the seller's shoes, inheriting the exact remaining loan balance, repayment schedule, and most importantly, the <strong>historically low fixed interest rate</strong> locked in by the seller.
+    </p>
+    <p>
+      Between 2020 and 2021, millions of American homeowners locked in 30-year fixed mortgage rates between <strong>2.50% and 3.50%</strong>. As prevailing market interest rates surged past 6.50% to 7.00%+, assumable mortgages transformed into one of the most powerful affordability instruments in modern real estate. Assuming an existing 3% mortgage can lower a buyer's monthly mortgage payment by <strong>$500 to $1,200+ each month</strong>, equating to hundreds of thousands of dollars in lifetime interest savings.
+    </p>
+
+    <!-- Formula Box -->
+    <div style="background: #f8fafc; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.75rem 0;">
+      <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.05rem;">The Mathematical Architecture of an Assumed Mortgage</h3>
+      <p style="margin-bottom: 0.75rem; font-size: 0.95rem;">
+        The fundamental hurdle in any mortgage assumption is the <strong>Equity Gap</strong>, defined as the spread between the agreed-upon contract purchase price and the seller's outstanding principal balance:
+      </p>
+      <div style="font-size: 1.15rem; margin: 1rem 0; text-align: center;">
+        $$\text{Equity Gap} = \text{Purchase Price} - \text{Remaining Loan Balance}$$
+      </div>
+      <p style="margin-bottom: 0.75rem; font-size: 0.95rem;">
+        When secondary debt (such as a second mortgage or HELOC) is utilized to finance that equity gap, the buyer's true cost of capital is determined by the <strong>Weighted Blended Interest Rate</strong>:
+      </p>
+      <div style="font-size: 1.15rem; margin: 1rem 0; text-align: center;">
+        $$\text{Blended Rate} = \frac{(B_1 \times R_1) + (B_2 \times R_2)}{B_1 + B_2}$$
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+        Where $B_1$ is the 1st assumed balance, $R_1$ is the assumed note rate, $B_2$ is the 2nd lien balance, and $R_2$ is the 2nd lien rate.
+      </p>
+    </div>
+
+    <h2>Which Mortgages Are Legally Assumable? (FHA vs. VA vs. USDA vs. Conventional)</h2>
+    <p>
+      Under the federal <em>Garn-St. Germain Depository Institutions Act of 1982</em>, mortgage lenders are generally authorized to enforce "due-on-sale" acceleration clauses whenever real property is transferred. However, federal statutory law explicitly exempts government-backed loan programs from due-on-sale enforcement, making them legally assumable by law:
+    </p>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table" aria-label="Assumable Mortgage Program Comparison">
+        <thead>
+          <tr>
+            <th>Loan Program</th>
+            <th>Legal Assumability</th>
+            <th>Servicer Processing Fee</th>
+            <th>Buyer Qualification Requirements</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>FHA Loans</strong><br>(Federal Housing Admin)</td>
+            <td>✅ 100% Assumable<br>(HUD Handbook 4000.1)</td>
+            <td>Capped at <strong>$900</strong></td>
+            <td>Standard FHA credit qualification (typically 580+ FICO, max 43%-50% DTI). Anyone can assume; owner-occupancy required.</td>
+          </tr>
+          <tr>
+            <td><strong>VA Loans</strong><br>(Veterans Affairs)</td>
+            <td>✅ 100% Assumable<br>(38 U.S.C. § 3714)</td>
+            <td>Capped at <strong>$300</strong> + 0.50% VA Funding Fee</td>
+            <td>Veterans AND civilians can assume. Non-veterans must meet credit/DTI underwriting, but seller entitlement remains locked.</td>
+          </tr>
+          <tr>
+            <td><strong>USDA Loans</strong><br>(Rural Development)</td>
+            <td>✅ 100% Assumable<br>(RD Instruction 1951-F)</td>
+            <td>Regulated Transfer Fee</td>
+            <td>Buyer must meet USDA household income limits and the property must remain within designated rural zones.</td>
+          </tr>
+          <tr>
+            <td><strong>Conventional Loans</strong><br>(Fannie Mae / Freddie Mac)</td>
+            <td>❌ Strictly Non-Assumable<br>(Due-on-Sale Clause)</td>
+            <td>N/A</td>
+            <td>Enforces immediate acceleration of entire debt upon title transfer, except for narrow inheritance/divorce transfers.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Crucial Factors Every Buyer and Seller Must Know</h2>
+
+    <h3>1. Solving the "Equity Gap" Challenge</h3>
+    <p>
+      Because home values have appreciated substantially over recent years, the seller's remaining debt balance is almost always lower than the current market value. For instance, if a home is selling for <strong>$450,000</strong> and the seller owes <strong>$300,000</strong>, the buyer faces a <strong>$150,000 equity gap</strong>. Buyers typically resolve this in one of three ways:
+    </p>
+    <ul>
+      <li><strong>Cash Liquidity:</strong> Bringing the entire $150,000 gap in cash savings, equity from a previous home sale, or gift funds.</li>
+      <li><strong>Second Mortgage / Piggyback Loan:</strong> Putting down $30,000 to $50,000 in cash and taking out a 2nd lien mortgage or HELOC for the remaining $100,000 gap at current market rates.</li>
+      <li><strong>Seller Financing:</strong> The seller agrees to hold a 2nd promissory note for the equity gap, receiving monthly interest payments from the buyer.</li>
+    </ul>
+
+    <h3>2. VA Loans: The Entitlement Substitution Trap</h3>
+    <p>
+      One of the most widely misunderstood aspects of VA loan assumptions is <strong>Entitlement Restoration</strong> under <em>38 U.S.C. § 3702</em>. While a civilian can legally assume a VA loan, the military veteran seller's VA loan entitlement remains tied up in that property until the loan is completely paid off. 
+    </p>
+    <p>
+      If the veteran seller plans to use their VA loan benefit to purchase another home at their next duty station, they should strictly sell to an <strong>eligible veteran buyer</strong> who agrees to execute a formal <em>Substitution of Entitlement</em> (VA Form 26-8106), swapping their own military entitlement into the loan and freeing the seller's entitlement in full.
+    </p>
+
+    <h3>3. The Mandatory "Release of Liability"</h3>
+    <p>
+      Under no circumstances should a seller allow an assumption without obtaining a formal, legally binding <strong>Release of Liability</strong> (HUD Form 92210.1 for FHA loans, or VA Form 26-6381 for VA loans) directly from their mortgage servicer. Without an executed release of liability, the seller remains legally on the hook if the buyer ever defaults or misses a monthly payment.
+    </p>
+
+    <h2>Step-by-Step Guide: How to Complete a Mortgage Assumption</h2>
+    <ol>
+      <li><strong>Confirm Loan Eligibility:</strong> Review the seller's original note and security instrument to verify whether the mortgage is government-backed (FHA Case Number or VA Loan ID).</li>
+      <li><strong>Request the Servicer Assumption Package:</strong> Contact the loan servicer (e.g., Freedom Mortgage, Pennymac, Mr. Cooper, Rocket) to request the official formal assumption package.</li>
+      <li><strong>Structure the Equity Gap Financing:</strong> Model your numbers using our free <strong>Assumable Mortgage Calculator</strong> to verify your blended rate, cash to close, and monthly savings.</li>
+      <li><strong>Buyer Underwriting Submission:</strong> The buyer submits tax returns, W-2s, bank statements, and credit authorization to the servicer's assumption underwriting department.</li>
+      <li><strong>Execute Closing &amp; Release of Liability:</strong> Sign closing documents through a reputable title and escrow company, ensuring the formal Release of Liability is signed and recorded.</li>
+    </ol>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>What is the difference between an assumable mortgage and a traditional purchase?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          In a traditional home purchase, the buyer applies for a brand-new mortgage at today's market interest rates, and the seller's existing loan is paid off in full at closing. In a mortgage assumption, the buyer takes over the seller's existing mortgage note directly, inheriting its remaining balance, repayment timeline, and low interest rate without originating new primary debt.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Does assuming a mortgage require a home appraisal?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Generally, no! Because the loan servicer is not originating new primary debt, most servicers do not require a formal interior home appraisal for standard FHA or VA loan assumptions. This can save the buyer between $500 and $900 in appraisal fees and eliminates the risk of an appraisal shortfall on the primary loan.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long does it take for a servicer to approve an assumption?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          While a standard conventional mortgage closes in 30 to 45 days, mortgage assumptions typically require between 45 to 90 days. Because loan servicers do not earn substantial origination commissions on assumptions, their assumption departments often operate with smaller teams. Working with an experienced real estate agent and closing coordinator is crucial to keep the timeline on track.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I get a second mortgage or HELOC to cover the equity gap?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Many credit unions, regional banks, and specialized mortgage lenders provide "piggyback second mortgages" or home equity lines of credit specifically designed for assumable transactions. The second loan sits in second-lien position behind the assumed low-rate first mortgage.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens to the seller's credit score during an assumption?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Once the servicer issues the formal Release of Liability and the closing is finalized, the mortgage debt is removed from the seller's debt-to-income profile and credit report. The seller is 100% protected against future buyer late payments or defaults.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+</div>
+
+<!-- ========================================================
+     4. FOOTER
+======================================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About RealRefin</h4>
+        <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+          RealRefin delivers institutional-grade real estate financial modeling software, debt analytics, and loan assumption calculators for property investors and homebuyers across the US, UK, and Australia.
+        </p>
+        <p style="font-size: 0.8rem; color: #94a3b8;">
+          &copy; 2026 RealRefin.com. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mortgage &amp; Debt Tools</h4>
+        <ul>
+          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
+          <li><a href="/va-irrrl-calculator">VA IRRRL Streamline Calculator</a></li>
+          <li><a href="/home-affordability-calculator">Home Affordability Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Equity Recycling</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal &amp; Compliance</h4>
+        <ul>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Financial Disclaimer</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Support</h4>
+        <ul>
+          <li><a href="/contact">Support Center</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Partner with RealRefin</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>
+        <strong>Financial Disclaimer:</strong> RealRefin.com is an independent financial modeling and educational technology provider. RealRefin is not a mortgage lender, broker, loan servicer, or government agency. All financial calculations, blended rates, and equity gaps are estimates intended for educational and modeling purposes only. Consult a licensed mortgage professional prior to entering any binding legal agreement.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================
+     5. REACTIVE JAVASCRIPT CALCULATION ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // DOM Elements - Inputs
+  const inpPurchasePrice = document.getElementById('inpPurchasePrice');
+  const rngPurchasePrice = document.getElementById('rngPurchasePrice');
+
+  const inpAssumedBalance = document.getElementById('inpAssumedBalance');
+  const rngAssumedBalance = document.getElementById('rngAssumedBalance');
+
+  const inpAssumedRate = document.getElementById('inpAssumedRate');
+  const rngAssumedRate = document.getElementById('rngAssumedRate');
+
+  const inpAssumedTerm = document.getElementById('inpAssumedTerm');
+  const rngAssumedTerm = document.getElementById('rngAssumedTerm');
+  const termYearsBadge = document.getElementById('termYearsBadge');
+
+  const chkSecondLien = document.getElementById('chkSecondLien');
+  const gapCollapsiblePane = document.getElementById('gapCollapsiblePane');
+
+  const inpCashDown = document.getElementById('inpCashDown');
+  const inpSecondRate = document.getElementById('inpSecondRate');
+  const inpSecondTerm = document.getElementById('inpSecondTerm');
+
+  const inpMarketRate = document.getElementById('inpMarketRate');
+  const rngMarketRate = document.getElementById('rngMarketRate');
+
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const programBadge = document.getElementById('programBadge');
+  const alertBox = document.getElementById('alertBox');
+  const alertText = document.getElementById('alertText');
+
+  // DOM Elements - Outputs
+  const outMonthlySavings = document.getElementById('outMonthlySavings');
+  const outAnnualSavings = document.getElementById('outAnnualSavings');
+  const outAssumedTotalPayment = document.getElementById('outAssumedTotalPayment');
+  const outBlendedRateBadge = document.getElementById('outBlendedRateBadge');
+  const outMarketPayment = document.getElementById('outMarketPayment');
+
+  const outRowPurchase = document.getElementById('outRowPurchase');
+  const outRowAssumedBalance = document.getElementById('outRowAssumedBalance');
+  const outRowEquityGap = document.getElementById('outRowEquityGap');
+  const rowCashDown = document.getElementById('rowCashDown');
+  const outRowCash = document.getElementById('outRowCash');
+  const rowSecondLien = document.getElementById('rowSecondLien');
+  const outRowSecond = document.getElementById('outRowSecond');
+  const outRowPayment1 = document.getElementById('outRowPayment1');
+  const rowPayment2 = document.getElementById('rowPayment2');
+  const outRowPayment2 = document.getElementById('outRowPayment2');
+  const outRowServicerFee = document.getElementById('outRowServicerFee');
+  const outRow5YrSavings = document.getElementById('outRow5YrSavings');
+  const outRowLifetimeSavings = document.getElementById('outRowLifetimeSavings');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  let activeProgram = 'fha';
+
+  // Helper formatting functions
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, decimals = 2) {
+    return Number(num).toFixed(decimals);
+  }
+
+  // Monthly Amortizing P&I Formula
+  function calcMonthlyPayment(principal, annualRatePct, years) {
+    if (principal <= 0) return 0;
+    const r = (annualRatePct / 100) / 12;
+    const n = Math.round(years * 12);
+    if (r === 0) return principal / n;
+    return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  // Program Tab Click Handlers
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activeProgram = this.getAttribute('data-program');
+      updateProgramTheme();
+      recalculate();
+    });
+  });
+
+  function updateProgramTheme() {
+    if (activeProgram === 'fha') {
+      programBadge.textContent = 'HUD FHA § 203(b)';
+      alertBox.className = 'program-alert-box fha';
+      alertText.innerHTML = '<strong>FHA Assumption Rules (HUD Handbook 4000.1):</strong> FHA loan assumptions require credit and income qualification through the loan servicer. Lender processing fees are statutorily capped at $900.';
+      outRowServicerFee.textContent = '$900 (FHA Max)';
+    } else if (activeProgram === 'va') {
+      programBadge.textContent = 'VA 38 U.S.C. § 3714';
+      alertBox.className = 'program-alert-box va';
+      alertText.innerHTML = '<strong>VA Entitlement Advisory:</strong> Veterans and civilians can assume a VA loan. However, if a civilian assumes the mortgage, the seller\'s VA entitlement remains tied up until full payoff unless an eligible veteran substitutes entitlement.';
+      outRowServicerFee.textContent = '$300 + 0.50% VA Fee';
+    } else if (activeProgram === 'usda') {
+      programBadge.textContent = 'USDA Rural Housing RD 1951-F';
+      alertBox.className = 'program-alert-box usda';
+      alertText.innerHTML = '<strong>USDA Assumption Rules:</strong> Property must remain in designated rural zones, and the buyer\'s household income must not exceed local moderate USDA income ceilings.';
+      outRowServicerFee.textContent = 'Regulated Transfer Fee';
+    }
+  }
+
+  // 2nd Lien Collapsible toggle
+  chkSecondLien.addEventListener('change', function() {
+    if (this.checked) {
+      gapCollapsiblePane.classList.add('active');
+    } else {
+      gapCollapsiblePane.classList.remove('active');
+    }
+    recalculate();
+  });
+
+  // Dual Sync: Input & Range Sliders
+  function setupDualSync(inputEl, rangeEl, isFloat = false) {
+    inputEl.addEventListener('input', () => {
+      let val = isFloat ? parseFloat(inputEl.value) : parseInt(inputEl.value, 10);
+      if (!isNaN(val)) {
+        rangeEl.value = val;
+        recalculate();
+      }
+    });
+
+    rangeEl.addEventListener('input', () => {
+      inputEl.value = rangeEl.value;
+      recalculate();
+    });
+  }
+
+  setupDualSync(inpPurchasePrice, rngPurchasePrice);
+  setupDualSync(inpAssumedBalance, rngAssumedBalance);
+  setupDualSync(inpAssumedRate, rngAssumedRate, true);
+  setupDualSync(inpAssumedTerm, rngAssumedTerm);
+  setupDualSync(inpMarketRate, rngMarketRate, true);
+
+  inpCashDown.addEventListener('input', recalculate);
+  inpSecondRate.addEventListener('input', recalculate);
+  inpSecondTerm.addEventListener('input', recalculate);
+
+  // Main Recalculate Logic
+  function recalculate() {
+    const purchasePrice = Math.max(0, parseFloat(inpPurchasePrice.value) || 0);
+    const assumedBalance = Math.min(purchasePrice, Math.max(0, parseFloat(inpAssumedBalance.value) || 0));
+    const assumedRate = Math.max(0.1, parseFloat(inpAssumedRate.value) || 0);
+    const assumedTerm = Math.max(1, parseFloat(inpAssumedTerm.value) || 1);
+    const marketRate = Math.max(0.1, parseFloat(inpMarketRate.value) || 0);
+
+    termYearsBadge.textContent = `${assumedTerm} Years (${Math.round(assumedTerm * 12)} Mos)`;
+
+    // Equity Gap Calculation
+    const equityGap = Math.max(0, purchasePrice - assumedBalance);
+
+    let cashDown = 0;
+    let secondLienAmount = 0;
+    let secondRate = 0;
+    let secondTerm = 15;
+    let payment2 = 0;
+
+    const isUsingSecondLien = chkSecondLien.checked;
+
+    if (isUsingSecondLien) {
+      cashDown = Math.max(0, parseFloat(inpCashDown.value) || 0);
+      secondLienAmount = Math.max(0, equityGap - cashDown);
+      secondRate = Math.max(0.1, parseFloat(inpSecondRate.value) || 0);
+      secondTerm = Math.max(1, parseFloat(inpSecondTerm.value) || 1);
+      payment2 = calcMonthlyPayment(secondLienAmount, secondRate, secondTerm);
+
+      rowCashDown.style.display = '';
+      rowSecondLien.style.display = '';
+      rowPayment2.style.display = '';
+    } else {
+      cashDown = equityGap;
+      secondLienAmount = 0;
+      rowCashDown.style.display = '';
+      rowSecondLien.style.display = 'none';
+      rowPayment2.style.display = 'none';
+    }
+
+    // 1st Assumed Payment
+    const payment1 = calcMonthlyPayment(assumedBalance, assumedRate, assumedTerm);
+    const totalAssumedMonthly = payment1 + payment2;
+
+    // Benchmark: Traditional 30-Year Loan for the SAME financed debt
+    const totalDebtFinanced = assumedBalance + secondLienAmount;
+    const marketPayment = calcMonthlyPayment(totalDebtFinanced, marketRate, 30);
+
+    // Monthly Savings
+    const monthlySavings = marketPayment - totalAssumedMonthly;
+    const annualSavings = monthlySavings * 12;
+
+    // Blended Rate Calculation
+    let blendedRate = assumedRate;
+    if (secondLienAmount > 0 && totalDebtFinanced > 0) {
+      blendedRate = ((assumedBalance * assumedRate) + (secondLienAmount * secondRate)) / totalDebtFinanced;
+    }
+
+    // Update Display Cards
+    if (monthlySavings >= 0) {
+      outMonthlySavings.textContent = `+${formatMoney(monthlySavings)}`;
+      outMonthlySavings.style.color = 'var(--accent-emerald-dark)';
+      outAnnualSavings.textContent = `${formatMoney(annualSavings)} saved per year in cash flow`;
+    } else {
+      outMonthlySavings.textContent = `-${formatMoney(Math.abs(monthlySavings))}`;
+      outMonthlySavings.style.color = 'var(--accent-danger)';
+      outAnnualSavings.textContent = `Payment is higher than market benchmark`;
+    }
+
+    outAssumedTotalPayment.innerHTML = `${formatMoney(totalAssumedMonthly)}<span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+    outBlendedRateBadge.innerHTML = `Effective Blended Rate: <strong>${formatDecimal(blendedRate, 2)}%</strong>`;
+    outMarketPayment.innerHTML = `${formatMoney(marketPayment)}<span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+
+    // Table Rows
+    outRowPurchase.textContent = formatMoney(purchasePrice);
+    outRowAssumedBalance.textContent = formatMoney(assumedBalance);
+    outRowEquityGap.textContent = formatMoney(equityGap);
+    outRowCash.textContent = formatMoney(cashDown);
+    outRowSecond.textContent = formatMoney(secondLienAmount);
+    outRowPayment1.textContent = `${formatMoney(payment1)} /mo`;
+    outRowPayment2.textContent = `${formatMoney(payment2)} /mo`;
+
+    // Cumulative Savings
+    const fiveYearSavings = (monthlySavings * 60);
+    outRow5YrSavings.textContent = `${fiveYearSavings >= 0 ? '+' : ''}${formatMoney(fiveYearSavings)}`;
+    outRow5YrSavings.style.color = fiveYearSavings >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-danger)';
+
+    // Rough Lifetime Interest Estimate (Total payments on assumed vs market)
+    const totalAssumedCost = (payment1 * assumedTerm * 12) + (payment2 * secondTerm * 12);
+    const totalMarketCost = (marketPayment * 30 * 12);
+    const lifetimeSavings = Math.max(0, totalMarketCost - totalAssumedCost);
+    outRowLifetimeSavings.textContent = `+${formatMoney(lifetimeSavings)}`;
+
+    // Update URL query parameters for shareable deal states
+    updateUrlParams({
+      price: purchasePrice,
+      bal: assumedBalance,
+      rate: assumedRate,
+      term: assumedTerm,
+      prog: activeProgram,
+      gap2: isUsingSecondLien ? 1 : 0,
+      cash: cashDown,
+      r2: secondRate,
+      t2: secondTerm,
+      mkt: marketRate
+    });
+  }
+
+  // URL Query Sync for Shareable Deals
+  function updateUrlParams(params) {
+    if (window.history.replaceState) {
+      const url = new URL(window.location);
+      Object.keys(params).forEach(key => url.searchParams.set(key, params[key]));
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  // Load from URL params if present
+  function loadFromUrl() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('price')) inpPurchasePrice.value = p.get('price');
+    if (p.has('bal')) inpAssumedBalance.value = p.get('bal');
+    if (p.has('rate')) inpAssumedRate.value = p.get('rate');
+    if (p.has('term')) inpAssumedTerm.value = p.get('term');
+    if (p.has('cash')) inpCashDown.value = p.get('cash');
+    if (p.has('r2')) inpSecondRate.value = p.get('r2');
+    if (p.has('t2')) inpSecondTerm.value = p.get('t2');
+    if (p.has('mkt')) inpMarketRate.value = p.get('mkt');
+    if (p.has('gap2')) {
+      chkSecondLien.checked = p.get('gap2') === '1';
+      gapCollapsiblePane.classList.toggle('active', chkSecondLien.checked);
+    }
+    if (p.has('prog')) {
+      const prog = p.get('prog');
+      const targetTab = document.querySelector(`.tab-btn[data-program="${prog}"]`);
+      if (targetTab) {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        targetTab.classList.add('active');
+        activeProgram = prog;
+        updateProgramTheme();
+      }
+    }
+
+    // Sync sliders
+    rngPurchasePrice.value = inpPurchasePrice.value;
+    rngAssumedBalance.value = inpAssumedBalance.value;
+    rngAssumedRate.value = inpAssumedRate.value;
+    rngAssumedTerm.value = inpAssumedTerm.value;
+    rngMarketRate.value = inpMarketRate.value;
+  }
+
+  // Share Deal Copy Link Button
+  btnShareDeal.addEventListener('click', function() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Link Copied to Clipboard!';
+      btnShareDeal.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+        btnShareDeal.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(err => {
+      alert('Share URL: ' + window.location.href);
+    });
+  });
+
+  // FAQ Accordion Toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Initial Run
+  loadFromUrl();
+  updateProgramTheme();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>

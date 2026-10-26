@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/assumable-mortgage-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/brrrr-calculator</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -97,6 +103,8 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/assumable-mortgage-calculator': 'assumable-mortgage-calculator.html',
+  '/assumable-mortgage-calculator.html': 'assumable-mortgage-calculator.html',
   '/brrrr-calculator': 'brrrr-calculator.html',
   '/brrrr-calculator.html': 'brrrr-calculator.html',
   '/home-affordability-calculator': 'home-affordability-calculator.html',
