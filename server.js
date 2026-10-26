@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/section-8-rental-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/dscr-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -109,6 +115,8 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/section-8-rental-calculator': 'section-8-rental-calculator.html',
+  '/section-8-rental-calculator.html': 'section-8-rental-calculator.html',
   '/dscr-calculator': 'dscr-calculator.html',
   '/dscr-calculator.html': 'dscr-calculator.html',
   '/assumable-mortgage-calculator': 'assumable-mortgage-calculator.html',

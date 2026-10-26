@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 8 Rental Calculator | Assistance, Eligibility & HUD Voucher Engine</title>
+  <meta name="description" content="Free Section 8 rental calculator, voucher assistance estimator, and tenant eligibility calculator. Model HUD payment standards, tenant 30% rent share, HAP government subsidies, and landlord cash flow.">
+  <meta name="keywords" content="section 8 rental calculator, section 8 rental assistance calculator, section 8 rental eligibility calculator, hud payment standard calculator, housing choice voucher calculator, section 8 landlord cash flow, fair market rent calculator, tenant rent share calculator">
+  <link rel="canonical" href="https://realrefin.com/section-8-rental-calculator">
+  <meta property="og:title" content="Section 8 Rental Calculator | Assistance, Eligibility & HUD Voucher Engine">
+  <meta property="og:description" content="Calculate Section 8 voucher rent shares, government HAP subsidies, tenant eligibility, and landlord cash flow. Free institutional calculator by RealRefin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/section-8-rental-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/section-8-rental-calculator#app",
+        "name": "RealRefin Section 8 Rental Assistance & Eligibility Calculator",
+        "url": "https://realrefin.com/section-8-rental-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free, institutional-grade Section 8 rental calculator that computes HUD Housing Choice Voucher assistance payments (HAP), tenant 30% rent shares, maximum 40% initial rent burden limits, income eligibility tiers, and landlord cash flow.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Rental Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Section 8 Rental Calculator",
+            "item": "https://realrefin.com/section-8-rental-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a Section 8 rental assistance calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Section 8 rental assistance calculator determines the distribution of rent payments between the tenant and the local Public Housing Authority (PHA). Under federal HUD guidelines, the tenant generally pays 30% of their adjusted monthly income toward rent and utilities (the Total Tenant Payment or TTP). The government pays the remaining balance directly to the landlord as the Housing Assistance Payment (HAP), up to the local PHA Payment Standard."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the income eligibility limits for Section 8 vouchers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Section 8 rental eligibility is based on local Area Median Income (AMI) determined annually by HUD. In general, a family's income must not exceed 50% of the median income for the county or metropolitan area (Very Low Income). By law, 75% of all new vouchers issued by a Public Housing Authority must go to applicants whose incomes do not exceed 30% of the area median income (Extremely Low Income)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the HUD 40% maximum rent burden rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a voucher holder chooses a unit where the gross rent (contract rent plus utility allowance) exceeds the PHA's official Payment Standard, the tenant must pay the difference. However, HUD regulations strictly dictate that at initial lease-up, the tenant cannot pay more than 40% of their adjusted monthly income toward their share of gross rent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do real estate investors and landlords invest in Section 8 housing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Real estate investors target Section 8 properties because 70% to 100% of the rental income is guaranteed and direct-deposited by the federal government on the 1st of every month, virtually eliminating rent collection risk. Furthermore, Section 8 tenants have significantly lower turnover, with an average tenancy of 7 to 8 years compared to 1 to 2 years for market-rate rentals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a Utility Allowance in Section 8 underwriting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Utility Allowance is an estimate set by the local Public Housing Authority of the monthly cost of tenant-paid utilities (electricity, gas, water, sewer, trash). When calculating tenant rent, the utility allowance is deducted from the tenant's Total Tenant Payment so that their combined housing costs remain at or below 30% of their income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if a property fails a Section 8 Housing Quality Standards (HQS) inspection?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Before Section 8 tenancy commences and during mandatory annual reviews, the property must pass an HQS inspection verifying safety, sanitation, and operability (working smoke/CO detectors, no peeling lead paint, functional heating/plumbing). If the unit fails, the landlord is typically granted 24 hours for emergency violations or 30 days for routine repairs to remedy the deficiencies before HAP payments are abated."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .calc-header-banner {
+        padding: 2rem 1.5rem;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.85rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR CONTAINER & 2-COLUMN GRID
+    ----------------------------------------------------------- */
+    .calc-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 1fr;
+      min-height: 750px;
+    }
+
+    @media (max-width: 992px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LEFT: INPUTS & CONTROLS */
+    .calc-inputs-pane {
+      padding: 2.5rem;
+      background: #ffffff;
+      border-right: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 992px) {
+      .calc-inputs-pane {
+        padding: 1.75rem 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .pane-section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .pane-section-header span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Dual Mode Switcher */
+    .user-mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .user-mode-btn {
+      padding: 0.85rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-align: center;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .user-mode-btn:hover {
+      border-color: #cbd5e1;
+      color: var(--primary-navy);
+    }
+
+    .user-mode-btn.active {
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Bedroom Count Tabs */
+    .bedroom-tabs-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .bed-tab {
+      padding: 0.65rem 0.25rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .bed-tab:hover {
+      border-color: #cbd5e1;
+      color: var(--primary-navy);
+    }
+
+    .bed-tab.active {
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* RIGHT: SCOREBOARD & OUTPUTS */
+    .calc-outputs-pane {
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 992px) {
+      .calc-outputs-pane {
+        padding: 1.75rem 1.5rem;
+      }
+    }
+
+    /* Hero Subsidy Card */
+    .subsidy-card {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+      text-align: center;
+      position: relative;
+    }
+
+    .subsidy-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .subsidy-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .subsidy-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .subsidy-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Rent Share Split Cards */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (max-width: 540px) {
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .split-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .split-card.gov {
+      border: 1.5px solid var(--accent-emerald-border);
+      background: #f0fdf4;
+    }
+
+    .split-card.tenant {
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+    }
+
+    .split-header {
+      font-size: 0.775rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .split-card.gov .split-header {
+      color: var(--accent-emerald-dark);
+    }
+
+    .split-card.tenant .split-header {
+      color: var(--primary-navy);
+    }
+
+    .split-amount {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .split-pct {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Breakdown Table */
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.75rem;
+      font-size: 0.875rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.val {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight td {
+      font-weight: 800;
+      color: var(--primary-navy);
+      border-top: 1.5px solid var(--border-color);
+      padding-top: 0.75rem;
+    }
+
+    .breakdown-table tr.highlight td.val {
+      color: var(--accent-emerald-dark);
+      font-size: 1.05rem;
+    }
+
+    /* Status Alert Banner */
+    .status-alert-box {
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .status-alert-box.pass {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .status-alert-box.warn {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+
+    .status-alert-box.fail {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .alert-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    /* Actions */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       SEO GUIDE & FAQ (1,500+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s ease;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      transition: transform 0.2s ease;
+      color: var(--text-muted);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/section-8-rental-calculator" class="active">Section 8 Calculator</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/assumable-mortgage-calculator">Assumable Mortgage</a></li>
+      <li><a href="/va-irrrl-calculator">VA IRRRL</a></li>
+      <li><a href="/brrrr-calculator">BRRRR</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Investor &amp; Rental Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Section 8 Rental Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>⚡</span> HUD Housing Choice Voucher (HCV) Engine
+    </div>
+    <h1>
+      Section 8 Rental Calculator <span>&amp; Eligibility Engine</span>
+    </h1>
+    <p>
+      Accurately calculate Section 8 rental assistance payments (HAP), tenant 30% rent shares, maximum 40% initial rent burdens, and local HUD Fair Market Rent (FMR) standards. Engineered for real estate investors, landlords, and voucher recipients.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>100% Guaranteed</h4>
+        <p>Direct Deposit Government HAP</p>
+      </div>
+      <div class="trust-stat">
+        <h4>30% - 40% Rule</h4>
+        <p>Statutory HUD Tenant Limits</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Utility Allowance</h4>
+        <p>Itemized PHA Deduction Logic</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Landlord Cash Flow</h4>
+        <p>Cap Rate &amp; Net Yield Underwriting</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-wrapper" id="calculator">
+    <div class="calc-grid">
+
+      <!-- LEFT: USER CONTROLS & INPUTS -->
+      <div class="calc-inputs-pane">
+        <div class="pane-section-header">
+          <span class="icon">🏛️</span>
+          <h2>Voucher &amp; Housing Parameters</h2>
+        </div>
+
+        <!-- Mode Selector: Landlord ROI vs Tenant Assistance -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Underwriting Perspective</label>
+            <span class="input-helper-badge" id="perspectiveBadge">Landlord / Real Estate Investor</span>
+          </div>
+          <div class="user-mode-grid">
+            <div class="user-mode-btn active" data-perspective="landlord">🏢 Landlord / Investor Mode</div>
+            <div class="user-mode-btn" data-perspective="tenant">👨‍👩‍👧‍👦 Tenant / Family Mode</div>
+          </div>
+        </div>
+
+        <!-- Bedroom Count Selector -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Voucher Bedroom Voucher Size</label>
+            <span class="input-helper-badge" id="bedCountBadge">2 Bedrooms</span>
+          </div>
+          <div class="bedroom-tabs-grid">
+            <div class="bed-tab" data-beds="0">Studio</div>
+            <div class="bed-tab" data-beds="1">1 BR</div>
+            <div class="bed-tab active" data-beds="2">2 BR</div>
+            <div class="bed-tab" data-beds="3">3 BR</div>
+            <div class="bed-tab" data-beds="4">4 BR</div>
+          </div>
+        </div>
+
+        <!-- HUD Payment Standard / Fair Market Rent (FMR) -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpPaymentStandard">Local PHA Payment Standard (FMR)</label>
+            <span class="input-helper-badge">From Housing Authority Chart</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpPaymentStandard" class="form-input" value="1800" min="400" max="6000" step="25">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngPaymentStandard" class="custom-range" value="1800" min="600" max="4000" step="25">
+          </div>
+        </div>
+
+        <!-- Proposed Contract Rent to Landlord -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpContractRent">Proposed Contract Rent to Landlord</label>
+            <span class="input-helper-badge">Agreed Lease Amount</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpContractRent" class="form-input" value="1750" min="400" max="6000" step="25">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngContractRent" class="custom-range" value="1750" min="600" max="4000" step="25">
+          </div>
+        </div>
+
+        <!-- Tenant Monthly Adjusted Income -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpTenantIncome">Tenant Adjusted Monthly Income</label>
+            <span class="input-helper-badge">After HUD Allowances</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpTenantIncome" class="form-input" value="1200" min="0" max="10000" step="50">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngTenantIncome" class="custom-range" value="1200" min="0" max="5000" step="50">
+          </div>
+        </div>
+
+        <!-- Utility Allowance Deduction -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpUtilityAllowance">PHA Utility Allowance</label>
+            <span class="input-helper-badge">Tenant-Paid Gas/Electric</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpUtilityAllowance" class="form-input" value="150" min="0" max="600" step="10">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngUtilityAllowance" class="custom-range" value="150" min="0" max="400" step="10">
+          </div>
+        </div>
+
+        <!-- Collapsible Landlord Financing Section -->
+        <div id="landlordFinancingPane" style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.15rem; margin-bottom: 1.75rem;">
+          <h4 style="font-size: 0.875rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">
+            Landlord Property &amp; Debt Underwriting
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 0.85rem;">
+            <div>
+              <label style="font-size: 0.775rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Monthly Mortgage (PITIA)</label>
+              <div class="input-control-box">
+                <span class="input-prefix">$</span>
+                <input type="number" id="inpMortgagePITI" class="form-input" style="height: 42px; font-size: 0.95rem;" value="950" min="0" step="25">
+              </div>
+            </div>
+            <div>
+              <label style="font-size: 0.775rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Maintenance &amp; Reserve</label>
+              <div class="input-control-box">
+                <span class="input-prefix">$</span>
+                <input type="number" id="inpMaintenance" class="form-input" style="height: 42px; font-size: 0.95rem;" value="150" min="0" step="25">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: REAL-TIME SCOREBOARD & SPLIT ANALYTICS -->
+      <div class="calc-outputs-pane">
+
+        <div>
+          <!-- Hero HAP Subsidy Card -->
+          <div class="subsidy-card">
+            <span class="subsidy-tag">Guaranteed Government Payment</span>
+            <div class="subsidy-title">Monthly Housing Assistance Payment (HAP)</div>
+            <div class="subsidy-value" id="outHAPPayment">$1,540</div>
+            <div class="subsidy-subtext" id="outHAPSub">88% of total rent direct-deposited by HUD</div>
+          </div>
+
+          <!-- Side-by-Side Rent Split Cards -->
+          <div class="split-grid">
+            <div class="split-card gov">
+              <div class="split-header">
+                <span>🏛️</span> Public Housing Authority
+              </div>
+              <div class="split-amount" id="outSplitGov">$1,540<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="split-pct" id="outGovPct">Government Share: 88.0%</div>
+            </div>
+
+            <div class="split-card tenant">
+              <div class="split-header">
+                <span>👤</span> Tenant Out-of-Pocket
+              </div>
+              <div class="split-amount" id="outSplitTenant">$210<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span></div>
+              <div class="split-pct" id="outTenantPct">Tenant Share: 12.0%</div>
+            </div>
+          </div>
+
+          <!-- Detailed Itemized Breakdown Table -->
+          <table class="breakdown-table" aria-label="Section 8 Payment Breakdown Table">
+            <tbody>
+              <tr>
+                <td>Contract Rent to Landlord</td>
+                <td class="val" id="outRowContractRent">$1,750 /mo</td>
+              </tr>
+              <tr>
+                <td>Utility Allowance Deduction</td>
+                <td class="val" id="outRowUtility">-$150 /mo</td>
+              </tr>
+              <tr>
+                <td>Gross Rent of Unit (Contract + Utilities)</td>
+                <td class="val" id="outRowGrossRent">$1,900 /mo</td>
+              </tr>
+              <tr>
+                <td>PHA Payment Standard Ceiling</td>
+                <td class="val" id="outRowStandard">$1,800 /mo</td>
+              </tr>
+              <tr>
+                <td>Total Tenant Payment (30% Adjusted Income)</td>
+                <td class="val" id="outRowTTP">$360 /mo</td>
+              </tr>
+              <tr>
+                <td>Tenant Rent Burden % of Monthly Income</td>
+                <td class="val" id="outRowBurdenPct" style="color: var(--accent-emerald-dark); font-weight: 800;">17.5% (Max 40%)</td>
+              </tr>
+              <tr class="highlight" id="rowLandlordCashFlow">
+                <td><strong>Landlord Net Monthly Cash Flow</strong></td>
+                <td class="val" id="outRowLandlordCashFlow" style="color: var(--accent-emerald-dark); font-weight: 800;">+$650 /mo</td>
+              </tr>
+              <tr class="highlight">
+                <td>Annual Guaranteed Government Inflow</td>
+                <td class="val" id="outRowAnnualHAP">$18,480 /yr</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Dynamic Status Banner -->
+          <div class="status-alert-box pass" id="statusAlert">
+            <span class="alert-icon" id="statusIcon">✓</span>
+            <div id="statusText">
+              <strong>Approved Under HUD 40% Rule:</strong> Tenant rent burden is 17.5%, comfortably beneath the statutory 40% initial rent ceiling. The lease is eligible for PHA voucher approval.
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="calc-actions-row">
+          <button class="btn-action btn-action-primary" id="btnShareDeal">
+            🔗 Copy Shareable Calculation
+          </button>
+          <button class="btn-action btn-action-outline" onclick="window.print()">
+            🖨️ Print Section 8 Summary
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE (1,500+ WORDS)
+  ======================================================== -->
+  <article class="guide-section" aria-label="Complete Guide to Section 8 Rental Assistance and Eligibility">
+
+    <h2>What Is Section 8 and How Does the Housing Choice Voucher Program Work?</h2>
+    <p>
+      The <strong>Housing Choice Voucher (HCV) program</strong>, authorized under Section 8 of the <em>U.S. Housing Act of 1937</em> and overseen by the U.S. Department of Housing and Urban Development (HUD), is the federal government’s major initiative for assisting very low-income families, the elderly, and disabled individuals to afford decent, safe, and sanitary housing in the private market. 
+    </p>
+    <p>
+      Unlike public housing developments where tenants are assigned to government-owned projects, Housing Choice Vouchers are tenant-based. This empowers voucher holders to select single-family homes, townhouses, and private apartments on the open market, provided the property meets basic Housing Quality Standards (HQS) and the landlord agrees to participate in the program.
+    </p>
+
+    <!-- Mathematical Formula Box -->
+    <div style="background: #f8fafc; border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.75rem 0;">
+      <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.05rem;">The Mathematical Architecture of Section 8 Rent Splits</h3>
+      <p style="margin-bottom: 0.75rem; font-size: 0.95rem;">
+        The foundation of Section 8 rent calculations rests upon the <strong>Total Tenant Payment (TTP)</strong>, which is federally mandated at the greatest of:
+      </p>
+      <ul>
+        <li><strong>30% of the family's monthly adjusted income</strong>;</li>
+        <li>10% of the family's gross monthly income; or</li>
+        <li>The local PHA’s minimum rent (typically $50).</li>
+      </ul>
+      <div style="font-size: 1.15rem; margin: 1rem 0; text-align: center;">
+        $$\text{Total Tenant Payment (TTP)} = \text{Adjusted Monthly Income} \times 30\%$$
+      </div>
+      <p style="margin-bottom: 0.75rem; font-size: 0.95rem;">
+        The federal government pays the <strong>Housing Assistance Payment (HAP)</strong> directly to the landlord every month via automated ACH electronic transfer:
+      </p>
+      <div style="font-size: 1.15rem; margin: 1rem 0; text-align: center;">
+        $$\text{HAP (Government Direct Deposit)} = \min(\text{Gross Rent}, \text{Payment Standard}) - \text{TTP}$$
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+        Where $\text{Gross Rent} = \text{Contract Rent} + \text{Utility Allowance}$.
+      </p>
+    </div>
+
+    <h2>Section 8 Rental Assistance: Payment Standards and the 40% Rent Burden Rule</h2>
+    <p>
+      Every local Public Housing Authority establishes a <strong>Payment Standard</strong> schedule based on HUD’s annually published Fair Market Rents (FMR) or Small Area Fair Market Rents (SAFMR). The payment standard reflects the cost of moderately-priced, decent rental housing in that specific metropolitan area or ZIP code.
+    </p>
+    <p>
+      A voucher holder is permitted to select a rental unit where the gross rent exceeds the PHA’s Payment Standard. However, federal law strictly imposes the <strong>40% Maximum Initial Rent Burden Cap</strong>:
+    </p>
+    <blockquote>
+      <em>At initial lease-up in a new unit, the tenant's out-of-pocket rent and utility payment cannot exceed 40% of their adjusted monthly income. If the gross rent is too high and pushes the tenant's share past 40%, the local housing authority is legally prohibited from approving the lease.</em>
+    </blockquote>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table" aria-label="Section 8 Income Eligibility Tiers">
+        <thead>
+          <tr>
+            <th>Income Eligibility Tier</th>
+            <th>HUD Definition (% of Area Median Income)</th>
+            <th>PHA Statutory Allocation Mandate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Extremely Low Income (ELI)</strong></td>
+            <td>Income &le; <strong>30% of Area Median Income (AMI)</strong></td>
+            <td>By law, at least <strong>75%</strong> of all newly issued vouchers each year must be reserved for this tier.</td>
+          </tr>
+          <tr>
+            <td><strong>Very Low Income (VLI)</strong></td>
+            <td>Income &le; <strong>50% of Area Median Income (AMI)</strong></td>
+            <td>Standard eligibility threshold for most families entering the Section 8 waitlist.</td>
+          </tr>
+          <tr>
+            <td><strong>Low Income (LI)</strong></td>
+            <td>Income &le; <strong>80% of Area Median Income (AMI)</strong></td>
+            <td>Only eligible under special exceptions (such as families continuously assisted under 1937 Act programs).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why Real Estate Investors Target Section 8 Rentals in 2026</h2>
+    <p>
+      While historical landlord perception surrounding subsidized housing was characterized by administrative stigma, institutional real estate investors have increasingly recognized Section 8 as one of the highest risk-adjusted cash-flowing asset classes in residential property:
+    </p>
+    <ul>
+      <li><strong>Recession-Resistant Direct Deposit:</strong> Between 70% and 100% of the gross contract rent is guaranteed and direct-deposited electronically by the United States government on the 1st of every calendar month, completely insulated from macroeconomic recessions or tenant job losses.</li>
+      <li><strong>Unparalleled Tenant Retention:</strong> The national average tenancy for market-rate rental apartments is 1.5 to 2 years. In contrast, Section 8 voucher tenants remain in place for an average of <strong>7 to 8 years</strong>, virtually eliminating costly turnover, repainting, and leasing commissions.</li>
+      <li><strong>Annual Automated Rent Adjustments:</strong> Landlords can request annual contract rent increases pegged to HUD’s Small Area Fair Market Rent upward revisions.</li>
+      <li><strong>Strict Tenant Accountability:</strong> Voucher recipients risk permanent forfeiture of their coveted housing voucher if they violate lease agreements, fail to pay their tenant share, or damage the property, creating a powerful incentive for property preservation.</li>
+    </ul>
+
+    <h2>Passing the Section 8 HQS Inspection: Landlord Checklist</h2>
+    <ol>
+      <li><strong>Window &amp; Door Security:</strong> All accessible ground-level windows and exterior doors must have functioning locks and no broken panes.</li>
+      <li><strong>Life Safety Detectors:</strong> Dual smoke detectors on every floor level and outside sleeping quarters; carbon monoxide detectors installed per state building codes.</li>
+      <li><strong>No Peeling or Chipping Paint:</strong> For homes built before 1978, strict lead paint regulations apply; zero peeling, chipping, or flaking paint inside or out.</li>
+      <li><strong>Water Heater &amp; HVAC Operability:</strong> Water heater pressure relief discharge pipe installed within 6 inches of the floor; heating system fully functional and capable of maintaining 68°F.</li>
+      <li><strong>Electrical Safety:</strong> Zero exposed wiring, all outlets and switch plates intact, and GFCI outlets functional in kitchens and bathrooms.</li>
+    </ol>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>Can a landlord charge a security deposit on a Section 8 rental?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Section 8 landlords are fully entitled to collect a standard security deposit from the tenant, subject to state and local landlord-tenant laws. The housing authority does not typically pay the security deposit (though local non-profits or rapid rehousing grants often assist voucher families with deposit funds).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the difference between FMR and SAFMR?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Fair Market Rents (FMR) are metropolitan-wide averages, which historically disadvantaged landlords in desirable neighborhoods. Small Area Fair Market Rents (SAFMR) are calculated at the individual 5-digit ZIP code level. In higher-opportunity neighborhoods, SAFMRs allow landlords to collect significantly higher rental payments (often 120% to 150% of the metro FMR).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can a tenant pay extra rent "under the table" to the landlord?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          ABSOLUTELY NOT. Charging or accepting unauthorized side payments beyond the PHA-approved contract rent is a federal crime known as program fraud. Both the landlord and tenant can face federal felony prosecution, fines, and permanent disbarment from HUD programs.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long does it take for a landlord to receive the first HAP check?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          After the unit passes the initial HQS inspection and the lease/HAP contract is executed, the first direct deposit payment typically takes 30 to 45 days due to PHA accounting batches. However, the initial payment is retroactive to the official lease start date, and all subsequent monthly payments arrive automatically on the 1st of each month.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can a landlord evict a Section 8 tenant?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes. A Section 8 tenant can be evicted for serious or repeated lease violations, failure to pay their portion of rent, illegal drug activity, or property destruction. The eviction follows standard state court judicial procedures, with a copy of the notice provided to the housing authority.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+</div>
+
+<!-- ========================================================
+     4. FOOTER
+======================================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>About RealRefin</h4>
+        <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+          RealRefin provides institutional-grade real estate underwriting tools, HUD Housing Choice Voucher calculators, debt service modeling, and equity velocity calculators.
+        </p>
+        <p style="font-size: 0.8rem; color: #94a3b8;">
+          &copy; 2026 RealRefin.com. All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Investor &amp; Rental Tools</h4>
+        <ul>
+          <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Method Calculator</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal &amp; Compliance</h4>
+        <ul>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/disclaimer">Financial Disclaimer</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support &amp; Standards</h4>
+        <ul>
+          <li><a href="/contact">Support Center</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/about#standards">Editorial Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>
+        <strong>Financial Disclaimer:</strong> RealRefin.com is an independent educational and financial computation technology provider. RealRefin is not affiliated with the U.S. Department of Housing and Urban Development (HUD) or any municipal Public Housing Authority. All Section 8 HAP payments, voucher allocations, and rent splits are estimates. Consult your local housing authority for certified payment standards.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================
+     5. REACTIVE JAVASCRIPT UNDERWRITING ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // DOM Elements - Inputs
+  const userModeButtons = document.querySelectorAll('.user-mode-btn');
+  const perspectiveBadge = document.getElementById('perspectiveBadge');
+  const landlordFinancingPane = document.getElementById('landlordFinancingPane');
+  const rowLandlordCashFlow = document.getElementById('rowLandlordCashFlow');
+
+  const bedTabs = document.querySelectorAll('.bed-tab');
+  const bedCountBadge = document.getElementById('bedCountBadge');
+
+  const inpPaymentStandard = document.getElementById('inpPaymentStandard');
+  const rngPaymentStandard = document.getElementById('rngPaymentStandard');
+
+  const inpContractRent = document.getElementById('inpContractRent');
+  const rngContractRent = document.getElementById('rngContractRent');
+
+  const inpTenantIncome = document.getElementById('inpTenantIncome');
+  const rngTenantIncome = document.getElementById('rngTenantIncome');
+
+  const inpUtilityAllowance = document.getElementById('inpUtilityAllowance');
+  const rngUtilityAllowance = document.getElementById('rngUtilityAllowance');
+
+  const inpMortgagePITI = document.getElementById('inpMortgagePITI');
+  const inpMaintenance = document.getElementById('inpMaintenance');
+
+  // DOM Elements - Outputs
+  const outHAPPayment = document.getElementById('outHAPPayment');
+  const outHAPSub = document.getElementById('outHAPSub');
+  const outSplitGov = document.getElementById('outSplitGov');
+  const outGovPct = document.getElementById('outGovPct');
+  const outSplitTenant = document.getElementById('outSplitTenant');
+  const outTenantPct = document.getElementById('outTenantPct');
+
+  const outRowContractRent = document.getElementById('outRowContractRent');
+  const outRowUtility = document.getElementById('outRowUtility');
+  const outRowGrossRent = document.getElementById('outRowGrossRent');
+  const outRowStandard = document.getElementById('outRowStandard');
+  const outRowTTP = document.getElementById('outRowTTP');
+  const outRowBurdenPct = document.getElementById('outRowBurdenPct');
+  const outRowLandlordCashFlow = document.getElementById('outRowLandlordCashFlow');
+  const outRowAnnualHAP = document.getElementById('outRowAnnualHAP');
+
+  const statusAlert = document.getElementById('statusAlert');
+  const statusIcon = document.getElementById('statusIcon');
+  const statusText = document.getElementById('statusText');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  let activePerspective = 'landlord';
+  let activeBeds = 2;
+
+  // Typical FMR defaults by bedroom count
+  const fmrDefaults = {
+    0: 1350,
+    1: 1550,
+    2: 1800,
+    3: 2350,
+    4: 2750
+  };
+
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, decimals = 1) {
+    return Number(num).toFixed(decimals);
+  }
+
+  // Perspective Toggle
+  userModeButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      userModeButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activePerspective = this.getAttribute('data-perspective');
+
+      if (activePerspective === 'landlord') {
+        perspectiveBadge.textContent = 'Landlord / Real Estate Investor';
+        landlordFinancingPane.style.display = '';
+        rowLandlordCashFlow.style.display = '';
+      } else {
+        perspectiveBadge.textContent = 'Tenant / Voucher Recipient';
+        landlordFinancingPane.style.display = 'none';
+        rowLandlordCashFlow.style.display = 'none';
+      }
+      recalculate();
+    });
+  });
+
+  // Bedroom Count Tabs
+  bedTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      bedTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      activeBeds = parseInt(this.getAttribute('data-beds'), 10);
+      bedCountBadge.textContent = activeBeds === 0 ? 'Studio' : `${activeBeds} Bedrooms`;
+
+      // Pre-populate with typical FMR if standard rent was not heavily customized
+      const standard = fmrDefaults[activeBeds] || 1800;
+      inpPaymentStandard.value = standard;
+      rngPaymentStandard.value = standard;
+      inpContractRent.value = Math.round(standard * 0.97);
+      rngContractRent.value = Math.round(standard * 0.97);
+
+      recalculate();
+    });
+  });
+
+  // Input & Slider Sync
+  function syncInputs(numInput, rangeInput) {
+    numInput.addEventListener('input', () => {
+      let val = parseInt(numInput.value, 10);
+      if (!isNaN(val)) {
+        rangeInput.value = val;
+        recalculate();
+      }
+    });
+
+    rangeInput.addEventListener('input', () => {
+      numInput.value = rangeInput.value;
+      recalculate();
+    });
+  }
+
+  syncInputs(inpPaymentStandard, rngPaymentStandard);
+  syncInputs(inpContractRent, rngContractRent);
+  syncInputs(inpTenantIncome, rngTenantIncome);
+  syncInputs(inpUtilityAllowance, rngUtilityAllowance);
+
+  inpMortgagePITI.addEventListener('input', recalculate);
+  inpMaintenance.addEventListener('input', recalculate);
+
+  // Main Recalculate Logic
+  function recalculate() {
+    const paymentStandard = Math.max(0, parseFloat(inpPaymentStandard.value) || 0);
+    const contractRent = Math.max(0, parseFloat(inpContractRent.value) || 0);
+    const tenantIncome = Math.max(0, parseFloat(inpTenantIncome.value) || 0);
+    const utilityAllowance = Math.max(0, parseFloat(inpUtilityAllowance.value) || 0);
+
+    const mortgagePITI = Math.max(0, parseFloat(inpMortgagePITI.value) || 0);
+    const maintenance = Math.max(0, parseFloat(inpMaintenance.value) || 0);
+
+    // 1. Gross Rent = Contract Rent + Utility Allowance
+    const grossRent = contractRent + utilityAllowance;
+
+    // 2. Total Tenant Payment (TTP) = 30% of Monthly Adjusted Income
+    const ttp = tenantIncome * 0.30;
+
+    // 3. Housing Assistance Payment (HAP)
+    // Formula: HAP = min(Gross Rent, Payment Standard) - TTP
+    const lowerOfRentOrStandard = Math.min(grossRent, paymentStandard);
+    let hap = Math.max(0, lowerOfRentOrStandard - ttp);
+
+    // HAP cannot exceed the Contract Rent paid to the landlord
+    hap = Math.min(hap, contractRent);
+
+    // 4. Tenant Actual Rent Share to Landlord
+    // Tenant pays Contract Rent minus HAP
+    let tenantRentShare = Math.max(0, contractRent - hap);
+
+    // Total Tenant Out-of-Pocket Housing Cost = Tenant Rent Share + Utility Allowance
+    const tenantTotalHousingCost = tenantRentShare + utilityAllowance;
+
+    // 5. Rent Burden Calculation (% of tenant income)
+    const rentBurdenPct = tenantIncome > 0 ? (tenantTotalHousingCost / tenantIncome) * 100 : 0;
+
+    // 6. Landlord Cash Flow
+    const landlordGross = contractRent;
+    const landlordExpenses = mortgagePITI + maintenance;
+    const landlordNetCashFlow = landlordGross - landlordExpenses;
+    const annualHAP = hap * 12;
+
+    // Percentage of Rent Paid by Government
+    const govPct = contractRent > 0 ? (hap / contractRent) * 100 : 0;
+    const tenantPct = 100 - govPct;
+
+    // Update Output Scorecard
+    outHAPPayment.textContent = formatMoney(hap);
+    outHAPSub.textContent = `${formatDecimal(govPct, 1)}% of total rent direct-deposited by HUD`;
+
+    outSplitGov.innerHTML = `${formatMoney(hap)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+    outGovPct.textContent = `Government Share: ${formatDecimal(govPct, 1)}%`;
+
+    outSplitTenant.innerHTML = `${formatMoney(tenantRentShare)}<span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted);">/mo</span>`;
+    outTenantPct.textContent = `Tenant Share: ${formatDecimal(tenantPct, 1)}%`;
+
+    // Breakdown Table
+    outRowContractRent.textContent = `${formatMoney(contractRent)} /mo`;
+    outRowUtility.textContent = `-$${Math.round(utilityAllowance)} /mo`;
+    outRowGrossRent.textContent = `${formatMoney(grossRent)} /mo`;
+    outRowStandard.textContent = `${formatMoney(paymentStandard)} /mo`;
+    outRowTTP.textContent = `${formatMoney(ttp)} /mo`;
+    outRowBurdenPct.textContent = `${formatDecimal(rentBurdenPct, 1)}% (Max 40% initial)`;
+    outRowLandlordCashFlow.textContent = `${landlordNetCashFlow >= 0 ? '+' : ''}${formatMoney(landlordNetCashFlow)} /mo`;
+    outRowLandlordCashFlow.style.color = landlordNetCashFlow >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-danger)';
+    outRowAnnualHAP.textContent = `${formatMoney(annualHAP)} /yr`;
+
+    // HUD 40% Rent Burden Compliance Rule
+    if (rentBurdenPct <= 40.0) {
+      statusAlert.className = 'status-alert-box pass';
+      statusIcon.textContent = '✓';
+      statusText.innerHTML = `<strong>Approved Under HUD 40% Rule:</strong> Tenant rent burden is <strong>${formatDecimal(rentBurdenPct, 1)}%</strong>, comfortably beneath the statutory 40% initial rent ceiling. The lease is eligible for PHA voucher approval.`;
+      outRowBurdenPct.style.color = 'var(--accent-emerald-dark)';
+    } else {
+      statusAlert.className = 'status-alert-box fail';
+      statusIcon.textContent = '✕';
+      statusText.innerHTML = `<strong>VIOLATION: Exceeds 40% Initial Rent Burden:</strong> Tenant housing burden is <strong>${formatDecimal(rentBurdenPct, 1)}%</strong> of income. HUD prohibits PHA approval of new leases exceeding 40% burden. Contract rent must be lowered to ${formatMoney(paymentStandard)}.`;
+      outRowBurdenPct.style.color = 'var(--accent-danger)';
+    }
+
+    // Sync URL parameters
+    updateUrlParams({
+      persp: activePerspective,
+      beds: activeBeds,
+      std: paymentStandard,
+      rent: contractRent,
+      inc: tenantIncome,
+      util: utilityAllowance,
+      piti: mortgagePITI,
+      maint: maintenance
+    });
+  }
+
+  function updateUrlParams(params) {
+    if (window.history.replaceState) {
+      const url = new URL(window.location);
+      Object.keys(params).forEach(key => url.searchParams.set(key, params[key]));
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  function loadFromUrl() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('std')) inpPaymentStandard.value = p.get('std');
+    if (p.has('rent')) inpContractRent.value = p.get('rent');
+    if (p.has('inc')) inpTenantIncome.value = p.get('inc');
+    if (p.has('util')) inpUtilityAllowance.value = p.get('util');
+    if (p.has('piti')) inpMortgagePITI.value = p.get('piti');
+    if (p.has('maint')) inpMaintenance.value = p.get('maint');
+
+    if (p.has('persp')) {
+      activePerspective = p.get('persp');
+      userModeButtons.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-perspective') === activePerspective);
+      });
+      if (activePerspective === 'tenant') {
+        perspectiveBadge.textContent = 'Tenant / Voucher Recipient';
+        landlordFinancingPane.style.display = 'none';
+        rowLandlordCashFlow.style.display = 'none';
+      }
+    }
+
+    if (p.has('beds')) {
+      activeBeds = parseInt(p.get('beds'), 10);
+      bedTabs.forEach(t => {
+        t.classList.toggle('active', parseInt(t.getAttribute('data-beds'), 10) === activeBeds);
+      });
+      bedCountBadge.textContent = activeBeds === 0 ? 'Studio' : `${activeBeds} Bedrooms`;
+    }
+
+    rngPaymentStandard.value = inpPaymentStandard.value;
+    rngContractRent.value = inpContractRent.value;
+    rngTenantIncome.value = inpTenantIncome.value;
+    rngUtilityAllowance.value = inpUtilityAllowance.value;
+  }
+
+  // Share Link
+  btnShareDeal.addEventListener('click', function() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Calculation Copied to Clipboard!';
+      btnShareDeal.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+        btnShareDeal.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(err => {
+      alert('Share URL: ' + window.location.href);
+    });
+  });
+
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadFromUrl();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>
