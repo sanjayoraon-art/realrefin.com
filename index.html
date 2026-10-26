@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RealRefin | Institutional Real Estate Investment & Debt Calculators</title>
-  <meta name="description" content="Free, institutional-grade real estate financial calculators for US, UK, and Australian property investors. Analyze BRRRR deals, rental yield, cap rates, cash-out refinancing, and DSCR debt in real-time.">
-  <meta name="keywords" content="real estate investment calculator, brrrr calculator, rental yield calculator, cash out refinance calculator, cap rate calculator, dscr calculator, realrefin">
+  <title>RealRefin | Institutional Real Estate Investment &amp; Debt Calculators</title>
+  <meta name="description" content="Free, institutional-grade real estate financial calculators for US, UK, and Australian property investors. Analyze DSCR loans, 2-1 buydowns, Section 8 rents, assumable mortgages, VA IRRRL, and BRRRR equity velocity.">
+  <meta name="keywords" content="real estate investment calculator, dscr loan calculator, 2 1 buydown calculator, section 8 rental calculator, assumable mortgage calculator, va irrrl calculator, brrrr calculator, rental yield calculator, cash out refinance calculator">
   <link rel="canonical" href="https://realrefin.com/">
-  <meta property="og:title" content="RealRefin | Institutional Real Estate Investment & Debt Calculators">
-  <meta property="og:description" content="Smarter real estate investment decisions in seconds. Free real-time BRRRR, rental yield, debt amortization, and equity recycling tools.">
+  <meta property="og:title" content="RealRefin | Institutional Real Estate Investment &amp; Debt Calculators">
+  <meta property="og:description" content="Smarter real estate investment decisions in seconds. 4 specialized financial suites: Refinance, Investor & Rental, Home Buyer Affordability, and Military & VA Loans.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://realrefin.com/">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#10b981">
 
-  <!-- Schema Markup: Organization & WebSite -->
+  <!-- Schema Markup: WebSite, Organization & CollectionPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,7 +37,7 @@
         "@id": "https://realrefin.com/#website",
         "url": "https://realrefin.com/",
         "name": "RealRefin",
-        "description": "Institutional-Grade Real Estate Financial Modeling Software and Calculators",
+        "description": "Institutional-Grade Real Estate Financial Modeling Software and Debt Analytics",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://realrefin.com/?q={search_term_string}",
@@ -54,8 +54,64 @@
           "url": "https://realrefin.com/logo.png",
           "width": 512,
           "height": 512
-        },
-        "sameAs": []
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://realrefin.com/#collection",
+        "url": "https://realrefin.com/",
+        "name": "RealRefin Financial Suites Directory",
+        "description": "Directory of specialized financial modeling tools spanning Refinance, Investor & Rental, Home Buyer Affordability, and Military VA Loans.",
+        "hasPart": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Assumable Mortgage Calculator",
+            "url": "https://realrefin.com/assumable-mortgage-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "2-1 Buydown Calculator",
+            "url": "https://realrefin.com/2-1-buydown-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "DSCR Loan Calculator",
+            "url": "https://realrefin.com/dscr-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Section 8 Rental Calculator",
+            "url": "https://realrefin.com/section-8-rental-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "VA IRRRL Calculator",
+            "url": "https://realrefin.com/va-irrrl-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Home Affordability Calculator",
+            "url": "https://realrefin.com/home-affordability-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "BRRRR Method Calculator",
+            "url": "https://realrefin.com/brrrr-calculator",
+            "applicationCategory": "FinanceApplication"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Rental Yield Calculator",
+            "url": "https://realrefin.com/rental-yield-calculator",
+            "applicationCategory": "FinanceApplication"
+          }
+        ]
       }
     ]
   }
@@ -63,7 +119,7 @@
 
   <style>
     /* ===========================================================
-       REALREFIN FINTECH DESIGN SYSTEM
+       REALREFIN FINTECH DESIGN SYSTEM - 2026 EDITION
     =========================================================== */
     :root {
       --primary-navy: #0f172a;       /* Dark slate base */
@@ -72,6 +128,13 @@
       --accent-emerald-hover: #059669;
       --accent-emerald-dark: #047857;
       --accent-emerald-light: #ecfdf5;
+      
+      --accent-blue: #2563eb;
+      --accent-blue-light: #eff6ff;
+      --accent-indigo: #4f46e5;
+      --accent-indigo-light: #eef2ff;
+      --accent-gold: #d4af37;
+      --accent-gold-light: #fffbeb;
       
       --text-main: #0f172a;
       --text-muted: #64748b;
@@ -134,7 +197,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.45rem;
       letter-spacing: -0.03em;
     }
 
@@ -145,14 +208,14 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 1.5rem;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.925rem;
       font-weight: 600;
       transition: color 0.15s ease;
     }
@@ -174,7 +237,7 @@
       box-shadow: var(--shadow-sm);
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 920px) {
       .rr-nav {
         flex-direction: column;
         align-items: flex-start;
@@ -182,7 +245,7 @@
       }
       .nav-links {
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.9rem;
       }
     }
 
@@ -194,7 +257,7 @@
       color: #ffffff;
       border-radius: var(--radius-xl);
       padding: 4.5rem 3rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-xl);
@@ -224,12 +287,12 @@
     }
 
     .hero-title {
-      font-size: 3rem;
+      font-size: 3.1rem;
       font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
+      letter-spacing: -0.035em;
+      line-height: 1.18;
       margin-bottom: 1.25rem;
-      max-width: 880px;
+      max-width: 900px;
     }
 
     @media (max-width: 640px) {
@@ -247,60 +310,83 @@
     .hero-lead {
       font-size: 1.15rem;
       color: #94a3b8;
-      max-width: 780px;
-      line-height: 1.6;
+      max-width: 820px;
+      line-height: 1.65;
       margin-bottom: 2.25rem;
     }
 
-    .hero-cta-group {
+    /* Live Search Launcher in Hero */
+    .hero-search-wrap {
+      max-width: 720px;
+      position: relative;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-search-input {
+      width: 100%;
+      height: 56px;
+      padding: 0 1.25rem 0 3.25rem;
+      background: #ffffff;
+      border: 2px solid transparent;
+      border-radius: var(--radius-md);
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .hero-search-input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
+    }
+
+    .hero-search-icon {
+      position: absolute;
+      left: 1.15rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* 4 Suite Quick Navigation Pills */
+    .hero-suite-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
     }
 
-    .btn-hero-primary {
-      background: var(--accent-emerald);
-      color: #ffffff;
-      padding: 0.85rem 1.75rem;
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: var(--radius-md);
-      transition: all 0.2s ease;
+    .suite-pill-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
-    }
-
-    .btn-hero-primary:hover {
-      background: var(--accent-emerald-hover);
-      transform: translateY(-1px);
-    }
-
-    .btn-hero-secondary {
+      gap: 0.45rem;
       background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.85rem 1.75rem;
-      font-size: 1.05rem;
+      color: #ffffff;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.875rem;
       font-weight: 600;
       text-decoration: none;
-      border-radius: var(--radius-md);
-      transition: all 0.2s ease;
+      border-radius: 50px;
+      transition: all 0.15s ease;
     }
 
-    .btn-hero-secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
+    .suite-pill-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.4);
     }
 
-    /* Trust Highlights Strip */
+    /* Live Trust Bar */
     .hero-trust-bar {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1.5rem;
-      margin-top: 3.5rem;
       padding-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
@@ -308,7 +394,7 @@
     .trust-stat h4 {
       font-size: 1.6rem;
       font-weight: 800;
-      color: #ffffff;
+      color: #34d399;
       letter-spacing: -0.02em;
     }
 
@@ -321,39 +407,137 @@
     }
 
     /* -----------------------------------------------------------
-       MULTI-TOOL DIRECTORY SECTION
+       INTERACTIVE SUITE FILTER TABS
     ----------------------------------------------------------- */
-    .section-header {
-      text-align: center;
+    .filter-sticky-container {
       margin-bottom: 3rem;
     }
 
-    .section-badge {
-      display: inline-block;
-      font-size: 0.775rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-emerald-dark);
-      background: #ecfdf5;
-      padding: 0.35rem 0.8rem;
-      border-radius: 20px;
-      margin-bottom: 0.6rem;
+    .suite-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      scrollbar-width: none;
     }
 
-    .section-title {
-      font-size: 2.25rem;
+    .suite-filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-tab {
+      padding: 0.75rem 1.35rem;
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+
+    .filter-tab:hover {
+      color: var(--primary-navy);
+    }
+
+    .filter-tab.active {
+      color: var(--accent-emerald-dark);
+      border-bottom-color: var(--accent-emerald);
+    }
+
+    .filter-tab span.count-pill {
+      font-size: 0.725rem;
+      background: #e2e8f0;
+      color: var(--secondary-navy);
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+      font-weight: 800;
+    }
+
+    .filter-tab.active span.count-pill {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+    }
+
+    /* -----------------------------------------------------------
+       SUITE CATEGORY SECTIONS & HEADERS
+    ----------------------------------------------------------- */
+    .suite-block {
+      margin-bottom: 4.5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .suite-header-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1.5px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .suite-title-group h2 {
+      font-size: 1.85rem;
       font-weight: 800;
       color: var(--primary-navy);
       letter-spacing: -0.025em;
-      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.35rem;
     }
 
-    .section-subtext {
-      font-size: 1.05rem;
+    .suite-title-group p {
+      font-size: 1rem;
       color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto;
+      max-width: 760px;
+    }
+
+    .suite-badge-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Suite Accents */
+    .suite-refinance .suite-badge-tag {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border: 1px solid var(--accent-emerald-border);
+    }
+
+    .suite-investor .suite-badge-tag {
+      background: var(--accent-blue-light);
+      color: var(--accent-blue);
+      border: 1px solid #bfdbfe;
+    }
+
+    .suite-buyer .suite-badge-tag {
+      background: var(--accent-indigo-light);
+      color: var(--accent-indigo);
+      border: 1px solid #c7d2fe;
+    }
+
+    .suite-military .suite-badge-tag {
+      background: var(--accent-gold-light);
+      color: #92400e;
+      border: 1px solid #fde68a;
     }
 
     /* Tool Cards Grid */
@@ -361,7 +545,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2rem;
-      margin-bottom: 4.5rem;
     }
 
     .tool-card {
@@ -549,7 +732,7 @@
     }
 
     /* -----------------------------------------------------------
-       FAQ ACCORDION
+       FAQ SECTION
     ----------------------------------------------------------- */
     .faq-wrapper {
       max-width: 900px;
@@ -560,42 +743,45 @@
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
       overflow: hidden;
     }
 
     .faq-q-btn {
       width: 100%;
-      padding: 1.2rem 1.35rem;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--primary-navy);
-      background: transparent;
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
       border: none;
-      text-align: left;
-      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      text-align: left;
       font-family: inherit;
     }
 
+    .faq-q-btn:hover {
+      background: #f8fafc;
+    }
+
     .faq-arrow {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--text-muted);
       transition: transform 0.2s ease;
     }
 
     .faq-card.open .faq-arrow {
       transform: rotate(45deg);
-      color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
     }
 
     .faq-a-pane {
       display: none;
-      padding: 0 1.35rem 1.35rem;
-      color: #475569;
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.7;
       border-top: 1px solid #f1f5f9;
@@ -607,7 +793,7 @@
     }
 
     /* -----------------------------------------------------------
-       FOOTER (GOOGLE ADS COMPLIANT)
+       FOOTER
     ----------------------------------------------------------- */
     footer {
       background: #ffffff;
@@ -674,17 +860,15 @@
       text-align: center;
       font-size: 0.85rem;
     }
-
-    .footer-bottom-bar p {
-      margin-bottom: 0.5rem;
-    }
   </style>
 </head>
 <body>
 
 <div class="rr-container">
 
-  <!-- Navbar -->
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
   <header class="rr-nav">
     <a href="/" class="rr-logo">
       <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
@@ -692,48 +876,50 @@
     </a>
     <ul class="nav-links">
       <li><a href="/" class="active">Home</a></li>
-      <li><a href="/2-1-buydown-calculator">2-1 Buydown</a></li>
-      <li><a href="/section-8-rental-calculator">Section 8</a></li>
-      <li><a href="/dscr-calculator">DSCR Calculator</a></li>
-      <li><a href="/assumable-mortgage-calculator">Assumable Mortgage</a></li>
-      <li><a href="/va-irrrl-calculator">VA IRRRL Calculator</a></li>
-      <li><a href="/home-affordability-calculator">Affordability</a></li>
-      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
-      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="#suite-refinance">Refinance</a></li>
+      <li><a href="#suite-investor">Investors</a></li>
+      <li><a href="#suite-buyer">Buyers</a></li>
+      <li><a href="#suite-military">Military &amp; VA</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/2-1-buydown-calculator" class="btn-nav-cta">2-1 Buydown →</a></li>
+      <li><a href="#suites-directory" class="btn-nav-cta">Explore 4 Suites →</a></li>
     </ul>
   </header>
 
   <!-- ========================================================
-       1. HERO BANNER
+       1. HERO BANNER & SEARCH LAUNCHER
   ======================================================== -->
   <section class="hero-banner">
     <div class="hero-badge-pill">
-      <span>⚡</span> Institutional Real Estate Financial Modeling
+      <span>⚡</span> Institutional Real Estate Financial Modeling Software
     </div>
     <h1 class="hero-title">
-      Smarter Real Estate Investment Decisions <span>in Seconds</span>
+      Smarter Real Estate Investment &amp; Debt Decisions <span>in Seconds</span>
     </h1>
     <p class="hero-lead">
-      Underwrite property acquisitions, debt restructuring, and equity velocity with institutional precision. Free, real-time calculators engineered for investors in the United States, United Kingdom, and Australia.
+      Underwrite property acquisitions, debt restructuring, and equity velocity with institutional precision. Free, real-time calculators organized across 4 specialized financial suites for investors in the United States, United Kingdom, and Australia.
     </p>
 
-    <div class="hero-cta-group">
-      <a href="/va-irrrl-calculator" class="btn-hero-primary" style="background: linear-gradient(135deg, #1A2B4C 0%, #0F172A 100%); border: 1.5px solid #d4af37; box-shadow: 0 4px 14px rgba(26, 43, 76, 0.35);">
-        🎖️ VA IRRRL Calculator
-      </a>
-      <a href="/home-affordability-calculator" class="btn-hero-secondary">
-        🏡 Home Affordability
-      </a>
-      <a href="/brrrr-calculator" class="btn-hero-secondary">
-        🚀 BRRRR Calculator
-      </a>
+    <!-- Quick Search Launcher -->
+    <div class="hero-search-wrap">
+      <span class="hero-search-icon">🔍</span>
+      <input type="text" id="toolSearchInput" class="hero-search-input" placeholder="Search any calculator (e.g. DSCR, 2-1 Buydown, Section 8, Assumable, VA IRRRL, BRRRR)..." autocomplete="off">
+    </div>
+
+    <!-- 4 Suite Quick Navigation Pills -->
+    <div class="hero-suite-pills">
+      <a href="#suite-refinance" class="suite-pill-link">🔄 1. Refinance &amp; Mortgage (3)</a>
+      <a href="#suite-investor" class="suite-pill-link">🏢 2. Investor &amp; Rental (4)</a>
+      <a href="#suite-buyer" class="suite-pill-link">🏡 3. Home Buyer Affordability (2)</a>
+      <a href="#suite-military" class="suite-pill-link">🎖️ 4. Military &amp; VA Loans (2)</a>
     </div>
 
     <!-- Live Trust Bar -->
     <div class="hero-trust-bar">
+      <div class="trust-stat">
+        <h4>8 Engines</h4>
+        <p>Specialized Modeling Tools</p>
+      </div>
       <div class="trust-stat">
         <h4>3 Regions</h4>
         <p>USD ($), GBP (£), AUD (A$)</p>
@@ -744,37 +930,77 @@
       </div>
       <div class="trust-stat">
         <h4>0.0s Latency</h4>
-        <p>Real-Time Dynamic Updates</p>
-      </div>
-      <div class="trust-stat">
-        <h4>Free Forever</h4>
-        <p>No Paywalls or Sign-Ups</p>
+        <p>Real-Time Dynamic Calculations</p>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       2. MULTI-TOOL DIRECTORY
+       2. SUITE FILTER TABS BAR
   ======================================================== -->
-  <section id="tools" aria-label="Real Estate Calculators Directory">
-    <div class="section-header">
-      <div class="section-badge">Calculators &amp; Engines</div>
-      <h2 class="section-title">Institutional Real Estate Toolkit</h2>
-      <p class="section-subtext">
-        Select a specialized analytical engine below to model your property acquisition, debt takeout, or ongoing operational cash flow.
-      </p>
+  <div class="filter-sticky-container" id="suites-directory">
+    <div class="suite-filter-bar">
+      <button class="filter-tab active" data-filter="all">
+        🌐 All Suites <span class="count-pill">8</span>
+      </button>
+      <button class="filter-tab" data-filter="suite-refinance">
+        🔄 1. Refinance &amp; Mortgage <span class="count-pill">3</span>
+      </button>
+      <button class="filter-tab" data-filter="suite-investor">
+        🏢 2. Investor &amp; Rental <span class="count-pill">4</span>
+      </button>
+      <button class="filter-tab" data-filter="suite-buyer">
+        🏡 3. Home Buyer Affordability <span class="count-pill">2</span>
+      </button>
+      <button class="filter-tab" data-filter="suite-military">
+        🎖️ 4. Military &amp; VA Loans <span class="count-pill">2</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       SUITE 1: REFINANCE & MORTGAGE SUITE
+  ======================================================== -->
+  <section class="suite-block suite-refinance" id="suite-refinance" aria-label="Refinance & Mortgage Suite">
+    <div class="suite-header-wrap">
+      <div class="suite-title-group">
+        <h2><span>🔄</span> Suite 1: Refinance &amp; Mortgage Suite</h2>
+        <p>
+          Lower monthly debt payments, model second-lien equity extraction, assume 2%–4% fixed mortgages, and structure seller-paid rate concessions.
+        </p>
+      </div>
+      <span class="suite-badge-tag">3 Specialized Tools</span>
     </div>
 
     <div class="tools-grid">
-      
+
+      <!-- Tool: Assumable Mortgage Calculator -->
+      <div class="tool-card featured" data-keywords="assumable mortgage blended rate equity gap fha va loan takeover" style="border: 2px solid var(--accent-emerald);">
+        <span class="tool-featured-tag" style="background: var(--accent-emerald);">🔥 2%-4% Rates | High Demand</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #047857;">🔑</div>
+          <h3>Assumable Mortgage Calculator</h3>
+          <p>
+            Evaluate taking over a seller's low 2%–4% fixed-rate FHA, VA, or USDA mortgage. Calculate your exact equity gap, second lien / HELOC blended rate, and lifetime interest savings.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Equity Gap Financing &amp; Cash to Close Math</li>
+            <li><span>✓</span> Weighted Blended Interest Rate Calculator</li>
+            <li><span>✓</span> FHA ($900 fee cap) &amp; VA Statutory Compliance</li>
+            <li><span>✓</span> Side-by-Side Savings Scoreboard &amp; Deal Sharing</li>
+          </ul>
+        </div>
+        <a href="/assumable-mortgage-calculator" class="btn-tool-launch" style="background: var(--accent-emerald-dark);">Launch Assumable Tool →</a>
+      </div>
+
       <!-- Tool: 2-1 Buydown & Excel Generator -->
-      <div class="tool-card featured" style="border: 2px solid #10b981;">
-        <span class="tool-featured-tag" style="background: #10b981;">📉 Rate Concessions | Free Excel Template</span>
+      <div class="tool-card featured" data-keywords="2 1 buydown 3 2 1 buydown temporary rate buydown excel seller concession" style="border: 2px solid #10b981;">
+        <span class="tool-featured-tag" style="background: #10b981;">📉 Rate Concessions | Free Excel</span>
         <div>
           <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #10b981;">📊</div>
-          <h3>2-1 &amp; 3/2/1 Temporary Buydown Calculator</h3>
+          <h3>2-1 &amp; 3/2/1 Buydown Calculator</h3>
           <p>
-            Calculate upfront seller concession escrow costs, buyer monthly payment savings across Years 1, 2, and 3, and verify statutory Fannie Mae/FHA IPC limits. Download free Excel (.xlsx) schedule.
+            Calculate upfront seller concession escrow costs, buyer monthly payment savings across Years 1, 2, and 3, and verify statutory Fannie Mae/FHA IPC limits. Download free Excel schedule.
           </p>
           <ul class="tool-feature-list">
             <li><span>✓</span> 2-1, 3/2/1, and 1-0 Dynamic Buydown Structures</li>
@@ -786,140 +1012,8 @@
         <a href="/2-1-buydown-calculator" class="btn-tool-launch" style="background: #047857;">Calculate 2-1 Buydown →</a>
       </div>
 
-      <!-- Tool: Section 8 Rental Calculator -->
-      <div class="tool-card featured" style="border: 2px solid #059669;">
-        <span class="tool-featured-tag" style="background: #059669;">🏛️ HUD Housing Choice | Guaranteed Rent</span>
-        <div>
-          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #059669;">🏘️</div>
-          <h3>Section 8 Rental Assistance &amp; Eligibility Calculator</h3>
-          <p>
-            Calculate Housing Assistance Payments (HAP), tenant 30% rent shares, HUD Payment Standards (FMR), utility allowances, and the 40% maximum initial rent burden rule for voucher holders and landlords.
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> Direct Government HAP vs. Tenant Rent Split</li>
-            <li><span>✓</span> HUD 40% Maximum Initial Rent Burden Verification</li>
-            <li><span>✓</span> Studio to 4-Bedroom PHA Payment Standard Benchmarks</li>
-            <li><span>✓</span> Landlord Guaranteed Cash Flow &amp; Net Yield Underwriting</li>
-          </ul>
-        </div>
-        <a href="/section-8-rental-calculator" class="btn-tool-launch" style="background: #059669;">Calculate Section 8 Rent →</a>
-      </div>
-
-      <!-- Tool: DSCR Loan & Commercial Underwriting Calculator -->
-      <div class="tool-card featured" style="border: 2px solid #2563eb;">
-        <span class="tool-featured-tag" style="background: #2563eb;">🏢 Commercial &amp; Non-QM | 1.25x Ratio</span>
-        <div>
-          <div class="tool-icon-wrapper" style="background: #eff6ff; color: #2563eb;">📊</div>
-          <h3>DSCR Loan &amp; Commercial Underwriting Calculator</h3>
-          <p>
-            Underwrite residential Non-QM debt and commercial mortgage acquisitions. Model Debt Service Coverage Ratio (DSCR), Net Operating Income (NOI), interest-only loans, and max supportable debt.
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> Interest-Only vs. Full Amortizing Debt Service Math</li>
-            <li><span>✓</span> 1-4 Unit Residential Non-QM &amp; Commercial Multifamily</li>
-            <li><span>✓</span> 1.25x Institutional Benchmark Underwriting Gauge</li>
-            <li><span>✓</span> Reverse-Calculates Maximum Supportable Loan Amount</li>
-          </ul>
-        </div>
-        <a href="/dscr-calculator" class="btn-tool-launch" style="background: #2563eb;">Launch DSCR Engine →</a>
-      </div>
-
-      <!-- Tool: Assumable Mortgage Calculator -->
-      <div class="tool-card featured" style="border: 2px solid var(--accent-emerald);">
-        <span class="tool-featured-tag" style="background: var(--accent-emerald);">🔥 High Demand | 2%-4% Rates</span>
-        <div>
-          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #047857;">🔑</div>
-          <h3>Assumable Mortgage &amp; Blended Rate Calculator</h3>
-          <p>
-            Evaluate taking over a seller's low 2%–4% fixed-rate FHA, VA, or USDA mortgage. Calculate your exact equity gap, second lien / HELOC blended rate, and lifetime interest savings.
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> Equity Gap Financing &amp; Cash to Close Math</li>
-            <li><span>✓</span> Weighted Blended Interest Rate Calculator</li>
-            <li><span>✓</span> FHA ($900 cap) vs VA (0.50% fee) Statutory Compliance</li>
-            <li><span>✓</span> Side-by-Side Savings Scoreboard &amp; Deal Sharing</li>
-          </ul>
-        </div>
-        <a href="/assumable-mortgage-calculator" class="btn-tool-launch" style="background: var(--accent-emerald-dark);">Launch Assumable Tool →</a>
-      </div>
-
-      <!-- Tool 1: VA IRRRL Calculator -->
-      <div class="tool-card featured" style="border: 2px solid #d4af37;">
-        <span class="tool-featured-tag" style="background: linear-gradient(135deg, #1A2B4C 0%, #0F172A 100%); border: 1px solid #d4af37; color: #fde68a;">🎖️ Military &amp; Veterans</span>
-        <div>
-          <div class="tool-icon-wrapper" style="background: #FFFBEB; color: #b45309; border: 1px solid #fde68a;">🏛️</div>
-          <h3>VA IRRRL Streamline Refinance Calculator</h3>
-          <p>
-            Estimate your rate reduction, monthly principal &amp; interest savings, and verify strict compliance with the statutory 36-month recoupment and 50 bps Net Tangible Benefit rules under 38 U.S.C. § 3709.
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> 36-Month Recoupment Progress Meter vs. VA Cap</li>
-            <li><span>✓</span> 50 bps Net Tangible Benefit Compliance Check</li>
-            <li><span>✓</span> 0.50% Standard vs. 0.00% Disability-Exempt Funding Fee</li>
-            <li><span>✓</span> 15, 20 &amp; 30-Year Fixed Term Comparisons</li>
-          </ul>
-        </div>
-        <a href="/va-irrrl-calculator" class="btn-tool-launch" style="background: #1A2B4C; border: 1px solid #d4af37; color: #ffffff;">Calculate VA IRRRL →</a>
-      </div>
-
-      <!-- Tool 2: Home Affordability Calculator -->
-      <div class="tool-card featured">
-        <span class="tool-featured-tag" style="background: #2563eb;">New Tool</span>
-        <div>
-          <div class="tool-icon-wrapper" style="background: #eff6ff; color: #2563eb;">🏡</div>
-          <h3>Home Affordability Calculator</h3>
-          <p>
-            Find out exactly how much home you can afford. Model salary, monthly debts, down payments, and mortgage interest rates using the institutional 28/36 DTI ratio rule across US ($), UK (£), and Australia (A$).
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> Reverse Mortgage Amortization Logic</li>
-            <li><span>✓</span> Front-End (28%) &amp; Back-End (36%) DTI Limits</li>
-            <li><span>✓</span> PITI Monthly Payment Breakdown</li>
-            <li><span>✓</span> 15-Year vs. 30-Year Loan Comparison</li>
-          </ul>
-        </div>
-        <a href="/home-affordability-calculator" class="btn-tool-launch" style="background: #2563eb;">Calculate Buying Power →</a>
-      </div>
-
-      <!-- Tool 2: BRRRR Calculator -->
-      <div class="tool-card">
-        <span class="tool-featured-tag">Most Popular</span>
-        <div>
-          <div class="tool-icon-wrapper">🔄</div>
-          <h3>BRRRR Method Calculator</h3>
-          <p>
-            Model Buy, Rehab, Rent, Refinance, and Repeat transactions. Accurately calculate cash left in the deal, takeout debt proceeds, and identify infinite Cash-on-Cash (CoC) return opportunities.
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> 3-Phase Multi-Step Underwriting</li>
-            <li><span>✓</span> Amortizing Cash-Out Refi Math</li>
-            <li><span>✓</span> Multi-Currency ($ / £ / A$)</li>
-            <li><span>✓</span> 100% Capital Recovery Badges</li>
-          </ul>
-        </div>
-        <a href="/brrrr-calculator" class="btn-tool-launch">Launch BRRRR Tool →</a>
-      </div>
-
-      <!-- Tool 2: Rental Yield Calculator -->
-      <div class="tool-card">
-        <div>
-          <div class="tool-icon-wrapper">📈</div>
-          <h3>Rental Yield &amp; Cap Rate Calculator</h3>
-          <p>
-            Evaluate Gross vs. Net Rental Yield and Capitalization Rates (Cap Rate). Deduct localized property taxes, letting fees, maintenance reserves, and insurance premiums.
-          </p>
-          <ul class="tool-feature-list">
-            <li><span>✓</span> Weekly vs. Monthly Rent Conversion</li>
-            <li><span>✓</span> Net Operating Income (NOI) Breakdown</li>
-            <li><span>✓</span> National Benchmark Scorecards</li>
-            <li><span>✓</span> UK Council Tax &amp; AU Rates Modeling</li>
-          </ul>
-        </div>
-        <a href="/rental-yield-calculator" class="btn-tool-launch">Calculate Rental Yield →</a>
-      </div>
-
-      <!-- Tool 3: Cash-Out Refinance Engine -->
-      <div class="tool-card">
+      <!-- Tool: Cash-Out Refinance Analyzer -->
+      <div class="tool-card" data-keywords="cash out refinance equity extraction arv ltv debt service">
         <div>
           <div class="tool-icon-wrapper">🏦</div>
           <h3>Cash-Out Refinance Analyzer</h3>
@@ -940,14 +1034,220 @@
   </section>
 
   <!-- ========================================================
-       3. WHY REALREFIN SECTION
+       SUITE 2: INVESTOR & RENTAL SUITE
+  ======================================================== -->
+  <section class="suite-block suite-investor" id="suite-investor" aria-label="Investor & Rental Suite">
+    <div class="suite-header-wrap">
+      <div class="suite-title-group">
+        <h2><span>🏢</span> Suite 2: Investor &amp; Rental Suite</h2>
+        <p>
+          Underwrite commercial and Non-QM real estate debt, analyze government-guaranteed Section 8 cash flows, and execute rapid BRRRR equity velocity.
+        </p>
+      </div>
+      <span class="suite-badge-tag">4 Specialized Tools</span>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- Tool: DSCR Loan Calculator -->
+      <div class="tool-card featured" data-keywords="dscr loan calculator commercial underwriting interest only non-qm noi" style="border: 2px solid #2563eb;">
+        <span class="tool-featured-tag" style="background: #2563eb;">🏢 Commercial &amp; Non-QM | 1.25x Ratio</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #eff6ff; color: #2563eb;">📊</div>
+          <h3>DSCR Loan &amp; Commercial Underwriting</h3>
+          <p>
+            Underwrite residential Non-QM debt and commercial mortgage acquisitions. Model Debt Service Coverage Ratio (DSCR), Net Operating Income (NOI), interest-only loans, and max supportable debt.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Interest-Only vs. Full Amortizing Debt Service Math</li>
+            <li><span>✓</span> 1-4 Unit Residential Non-QM &amp; Commercial Multifamily</li>
+            <li><span>✓</span> 1.25x Institutional Benchmark Underwriting Gauge</li>
+            <li><span>✓</span> Reverse-Calculates Maximum Supportable Loan Amount</li>
+          </ul>
+        </div>
+        <a href="/dscr-calculator" class="btn-tool-launch" style="background: #2563eb;">Launch DSCR Engine →</a>
+      </div>
+
+      <!-- Tool: Section 8 Rental Calculator -->
+      <div class="tool-card featured" data-keywords="section 8 rental calculator assistance eligibility hud fmr voucher" style="border: 2px solid #059669;">
+        <span class="tool-featured-tag" style="background: #059669;">🏛️ Guaranteed Rent | HUD Voucher</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #059669;">🏘️</div>
+          <h3>Section 8 Rental Assistance &amp; Eligibility</h3>
+          <p>
+            Calculate Housing Assistance Payments (HAP), tenant 30% rent shares, HUD Payment Standards (FMR), utility allowances, and the 40% maximum initial rent burden rule for landlords and voucher holders.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Direct Government HAP vs. Tenant Rent Split</li>
+            <li><span>✓</span> HUD 40% Maximum Initial Rent Burden Verification</li>
+            <li><span>✓</span> Studio to 4-Bedroom PHA Payment Standard Benchmarks</li>
+            <li><span>✓</span> Landlord Guaranteed Cash Flow &amp; Net Yield Underwriting</li>
+          </ul>
+        </div>
+        <a href="/section-8-rental-calculator" class="btn-tool-launch" style="background: #059669;">Calculate Section 8 Rent →</a>
+      </div>
+
+      <!-- Tool: BRRRR Method Calculator -->
+      <div class="tool-card" data-keywords="brrrr method calculator buy rehab rent refinance repeat coc return">
+        <span class="tool-featured-tag">Most Popular</span>
+        <div>
+          <div class="tool-icon-wrapper">🔄</div>
+          <h3>BRRRR Method Calculator</h3>
+          <p>
+            Model Buy, Rehab, Rent, Refinance, and Repeat transactions. Accurately calculate cash left in the deal, takeout debt proceeds, and identify infinite Cash-on-Cash (CoC) return opportunities.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> 3-Phase Multi-Step Underwriting</li>
+            <li><span>✓</span> Amortizing Cash-Out Refi Math</li>
+            <li><span>✓</span> Multi-Currency ($ / £ / A$)</li>
+            <li><span>✓</span> 100% Capital Recovery Badges</li>
+          </ul>
+        </div>
+        <a href="/brrrr-calculator" class="btn-tool-launch">Launch BRRRR Tool →</a>
+      </div>
+
+      <!-- Tool: Rental Yield Calculator -->
+      <div class="tool-card" data-keywords="rental yield cap rate gross net noi property tax let fees">
+        <div>
+          <div class="tool-icon-wrapper">📈</div>
+          <h3>Rental Yield &amp; Cap Rate Calculator</h3>
+          <p>
+            Evaluate Gross vs. Net Rental Yield and Capitalization Rates (Cap Rate). Deduct localized property taxes, letting fees, maintenance reserves, and insurance premiums.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Weekly vs. Monthly Rent Conversion</li>
+            <li><span>✓</span> Net Operating Income (NOI) Breakdown</li>
+            <li><span>✓</span> National Benchmark Scorecards</li>
+            <li><span>✓</span> UK Council Tax &amp; AU Rates Modeling</li>
+          </ul>
+        </div>
+        <a href="/rental-yield-calculator" class="btn-tool-launch">Calculate Rental Yield →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SUITE 3: HOME BUYER AFFORDABILITY SUITE
+  ======================================================== -->
+  <section class="suite-block suite-buyer" id="suite-buyer" aria-label="Home Buyer Affordability Suite">
+    <div class="suite-header-wrap">
+      <div class="suite-title-group">
+        <h2><span>🏡</span> Suite 3: Home Buyer Affordability Suite</h2>
+        <p>
+          Discover your true home purchasing power using banking-grade DTI ratios, and unlock temporary rate buydowns that ease your first 2 years of mortgage payments.
+        </p>
+      </div>
+      <span class="suite-badge-tag">2 Specialized Tools</span>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- Tool: Home Affordability Calculator -->
+      <div class="tool-card featured" data-keywords="home affordability calculator buying power 28 36 dti piti salary debt" style="border: 2px solid var(--accent-indigo);">
+        <span class="tool-featured-tag" style="background: var(--accent-indigo);">🏡 28/36 DTI Rule</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #eef2ff; color: var(--accent-indigo);">🏡</div>
+          <h3>Home Affordability Calculator</h3>
+          <p>
+            Find out exactly how much home you can afford. Model salary, monthly debts, down payments, and mortgage interest rates using the institutional 28/36 DTI ratio rule across US ($), UK (£), and Australia (A$).
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Reverse Mortgage Amortization Logic</li>
+            <li><span>✓</span> Front-End (28%) &amp; Back-End (36%) DTI Limits</li>
+            <li><span>✓</span> PITI Monthly Payment Breakdown</li>
+            <li><span>✓</span> 15-Year vs. 30-Year Loan Comparison</li>
+          </ul>
+        </div>
+        <a href="/home-affordability-calculator" class="btn-tool-launch" style="background: var(--accent-indigo);">Calculate Buying Power →</a>
+      </div>
+
+      <!-- Tool: 2-1 Buydown Relief -->
+      <div class="tool-card" data-keywords="2-1 buydown payment relief first time home buyer monthly savings">
+        <div>
+          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #10b981;">📉</div>
+          <h3>2-1 Temporary Buydown Relief</h3>
+          <p>
+            Save up to $700 per month during your initial two years of homeownership with seller-funded temporary interest rate buydowns. Calculate your exact Year 1 and Year 2 monthly savings.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Year 1 (-2.00%) &amp; Year 2 (-1.00%) Payment Reductions</li>
+            <li><span>✓</span> Seller Concession Funding Validation</li>
+            <li><span>✓</span> Free Automated Excel Amortization Download</li>
+            <li><span>✓</span> Avoid Price War Overbidding</li>
+          </ul>
+        </div>
+        <a href="/2-1-buydown-calculator" class="btn-tool-launch">Model Buyer Relief →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SUITE 4: MILITARY & VA LOANS SUITE
+  ======================================================== -->
+  <section class="suite-block suite-military" id="suite-military" aria-label="Military & VA Loans Suite">
+    <div class="suite-header-wrap">
+      <div class="suite-title-group">
+        <h2><span>🎖️</span> Suite 4: Military &amp; VA Loans Suite</h2>
+        <p>
+          Underwrite VA Streamline IRRRL refinances to satisfy statutory 36-month recoupment rules, and model VA loan assumptions with entitlement preservation.
+        </p>
+      </div>
+      <span class="suite-badge-tag">2 Specialized Tools</span>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- Tool: VA IRRRL Calculator -->
+      <div class="tool-card featured" data-keywords="va irrrl calculator streamline refinance 36 month recoupment 50 bps tangible benefit funding fee" style="border: 2px solid #d4af37;">
+        <span class="tool-featured-tag" style="background: linear-gradient(135deg, #1A2B4C 0%, #0F172A 100%); border: 1px solid #d4af37; color: #fde68a;">🎖️ 38 U.S.C. § 3709 Compliance</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #FFFBEB; color: #b45309; border: 1px solid #fde68a;">🏛️</div>
+          <h3>VA IRRRL Streamline Refinance Calculator</h3>
+          <p>
+            Estimate your rate reduction, monthly principal &amp; interest savings, and verify strict compliance with the statutory 36-month recoupment and 50 bps Net Tangible Benefit rules under 38 U.S.C. § 3709.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> 36-Month Recoupment Progress Meter vs. VA Cap</li>
+            <li><span>✓</span> 50 bps Net Tangible Benefit Compliance Check</li>
+            <li><span>✓</span> 0.50% Standard vs. 0.00% Disability-Exempt Funding Fee</li>
+            <li><span>✓</span> 15, 20 &amp; 30-Year Fixed Term Comparisons</li>
+          </ul>
+        </div>
+        <a href="/va-irrrl-calculator" class="btn-tool-launch" style="background: #1A2B4C; border: 1px solid #d4af37; color: #ffffff;">Calculate VA IRRRL →</a>
+      </div>
+
+      <!-- Tool: VA Assumable Loan Engine -->
+      <div class="tool-card" data-keywords="va assumable loan calculator entitlement substitution veteran transfer">
+        <div>
+          <div class="tool-icon-wrapper" style="background: #FFFBEB; color: #b45309;">🎖️</div>
+          <h3>VA Loan Assumption &amp; Entitlement Engine</h3>
+          <p>
+            Model the assumption of an existing VA mortgage with a low 2.5%–3.5% interest rate. Includes the statutory $300 servicer fee cap, 0.50% VA funding fee, and military entitlement substitution advisories.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Military Substitution of Entitlement Verification</li>
+            <li><span>✓</span> Civilian vs. Veteran Assumption Protection</li>
+            <li><span>✓</span> Secondary Financing &amp; Blended Rate Modeling</li>
+            <li><span>✓</span> Avoid Losing Veteran Bonus Entitlement</li>
+          </ul>
+        </div>
+        <a href="/assumable-mortgage-calculator?prog=va" class="btn-tool-launch" style="background: #1A2B4C; color: #ffffff;">Check VA Assumption →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       3. WHY REALREFIN FEATURE HIGHLIGHTS
   ======================================================== -->
   <section class="features-band">
-    <div class="section-header" style="margin-bottom: 1.5rem;">
+    <div class="section-header" style="margin-bottom: 1.5rem; text-align: center;">
       <div class="section-badge">Platform Advantages</div>
       <h2 class="section-title">Engineered for Accuracy and Speed</h2>
       <p class="section-subtext">
-        Why institutional syndicators and independent real estate flippers are abandoning bloated Excel spreadsheets for RealRefin.
+        Why institutional syndicators, brokers, and active property investors are abandoning bloated Excel spreadsheets for RealRefin.
       </p>
     </div>
 
@@ -955,7 +1255,7 @@
       <div class="feat-item">
         <div class="feat-icon-badge">📱</div>
         <h4>Instant Mobile Underwriting</h4>
-        <p>Walk properties with contractors and analyze Maximum Allowable Offers (MAO) in under 60 seconds on any smartphone. No pinching, zooming, or broken spreadsheet cells.</p>
+        <p>Walk properties with contractors and analyze Maximum Allowable Offers (MAO) or DSCR metrics in under 60 seconds on any smartphone. No pinching, zooming, or broken spreadsheet cells.</p>
       </div>
 
       <div class="feat-item">
@@ -967,16 +1267,16 @@
       <div class="feat-item">
         <div class="feat-icon-badge">⚖️</div>
         <h4>Banking Standard Accuracy</h4>
-        <p>Built with institutional compounding annuity debt formulas conforming to Fannie Mae, the UK Prudential Regulation Authority (PRA), and Australian APRA guidelines.</p>
+        <p>Built with institutional compounding annuity debt formulas conforming to Fannie Mae, HUD Section 8, the UK Prudential Regulation Authority (PRA), and Australian APRA guidelines.</p>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       4. REGIONAL UNDERWRITING COMPARISON
+       4. REGIONAL UNDERWRITING COMPARISON (US, UK, AU)
   ======================================================== -->
   <section style="margin-bottom: 4.5rem;">
-    <div class="section-header">
+    <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
       <div class="section-badge">Cross-Border Economics</div>
       <h2 class="section-title">International Real Estate Underwriting</h2>
       <p class="section-subtext">
@@ -1026,10 +1326,10 @@
        5. FREQUENTLY ASKED QUESTIONS
   ======================================================== -->
   <section class="faq-wrapper">
-    <div class="section-header">
+    <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
       <div class="section-badge">Investor Support</div>
       <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-subtext">Common inquiries regarding our platform, calculations, and data privacy.</p>
+      <p class="section-subtext">Common inquiries regarding our platform, calculation engines, and data privacy.</p>
     </div>
 
     <div class="faq-card">
@@ -1068,7 +1368,7 @@
         <span class="faq-arrow">+</span>
       </button>
       <div class="faq-a-pane">
-        Yes. Each tool provides a "Copy Deal Summary" button to quickly paste formatted summaries into emails or WhatsApp, as well as a "Print / Save PDF" button formatted for commercial debt underwriters.
+        Yes! Each tool provides a "Copy Deal Summary" or "Copy Shareable Link" button, as well as a "Print / Save PDF" option. Tools like the 2-1 Buydown also include a 1-click automated Excel spreadsheet (.csv/.xlsx) download.
       </div>
     </div>
   </section>
@@ -1076,7 +1376,7 @@
 </div>
 
 <!-- ========================================================
-     6. FOOTER (GOOGLE ADS COMPLIANT)
+     6. FOOTER
 ======================================================== -->
 <footer>
   <div class="footer-inner">
@@ -1095,28 +1395,25 @@
 
       <!-- Quick Tools -->
       <div class="footer-col">
-        <h4>Financial Tools</h4>
+        <h4>Financial Suites</h4>
         <ul>
-          <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
-          <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
-          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
-          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
-          <li><a href="/va-irrrl-calculator">VA IRRRL Calculator</a></li>
-          <li><a href="/home-affordability-calculator">Home Affordability</a></li>
-          <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
-          <li><a href="/rental-yield-calculator">Rental Yield Calculator</a></li>
-          <li><a href="/brrrr-calculator#phase2">Cash-Out Refinance</a></li>
+          <li><a href="#suite-refinance">1. Refinance &amp; Mortgage</a></li>
+          <li><a href="#suite-investor">2. Investor &amp; Rental</a></li>
+          <li><a href="#suite-buyer">3. Home Buyer Affordability</a></li>
+          <li><a href="#suite-military">4. Military &amp; VA Loans</a></li>
         </ul>
       </div>
 
-      <!-- Company -->
+      <!-- Individual Tools -->
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Popular Calculators</h4>
         <ul>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact Support</a></li>
-          <li><a href="/about#standards">Editorial Standards</a></li>
-          <li><a href="/contact">Partner with Us</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+          <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
+          <li><a href="/va-irrrl-calculator">VA IRRRL Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
         </ul>
       </div>
 
@@ -1128,6 +1425,8 @@
           <li><a href="/terms-of-service">Terms of Service</a></li>
           <li><a href="/disclaimer">Financial Disclaimer</a></li>
           <li><a href="/cookie-policy">Cookie Policy</a></li>
+          <li><a href="/about">About RealRefin</a></li>
+          <li><a href="/contact">Contact Support</a></li>
         </ul>
       </div>
 
@@ -1143,17 +1442,87 @@
   </div>
 </footer>
 
+<!-- ========================================================
+     7. INTERACTIVE JAVASCRIPT: FILTER TABS, SEARCH & ACCORDION
+======================================================== -->
 <script>
-// FAQ Accordion Interaction
-document.querySelectorAll('.faq-card').forEach(card => {
-  const btn = card.querySelector('.faq-q-btn');
-  btn.addEventListener('click', () => {
-    const isOpen = card.classList.contains('open');
-    document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
-    if (!isOpen) {
-      card.classList.add('open');
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  'use strict';
+
+  // 1. Suite Filter Tabs
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const suiteBlocks = document.querySelectorAll('.suite-block');
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+
+      const filterValue = this.getAttribute('data-filter');
+
+      suiteBlocks.forEach(block => {
+        if (filterValue === 'all' || block.id === filterValue) {
+          block.style.display = '';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    });
   });
+
+  // 2. Real-Time Tool Search Filter
+  const searchInput = document.getElementById('toolSearchInput');
+  const allToolCards = document.querySelectorAll('.tool-card');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+
+      if (query === '') {
+        // Reset view: show based on current active tab
+        const activeTab = document.querySelector('.filter-tab.active');
+        const activeFilter = activeTab ? activeTab.getAttribute('data-filter') : 'all';
+        suiteBlocks.forEach(block => {
+          block.style.display = (activeFilter === 'all' || block.id === activeFilter) ? '' : 'none';
+        });
+        allToolCards.forEach(card => card.style.display = '');
+        return;
+      }
+
+      // During active search, show all suites so matching cards can be found
+      suiteBlocks.forEach(block => {
+        let hasMatch = false;
+        const cardsInSuite = block.querySelectorAll('.tool-card');
+
+        cardsInSuite.forEach(card => {
+          const cardText = (card.innerText || '').toLowerCase();
+          const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+
+          if (cardText.includes(query) || cardKeywords.includes(query)) {
+            card.style.display = '';
+            hasMatch = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        block.style.display = hasMatch ? '' : 'none';
+      });
+    });
+  }
+
+  // 3. FAQ Accordion Interaction
+  document.querySelectorAll('.faq-card').forEach(card => {
+    const btn = card.querySelector('.faq-q-btn');
+    btn.addEventListener('click', () => {
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+      if (!isOpen) {
+        card.classList.add('open');
+      }
+    });
+  });
+
 });
 </script>
 
