@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Finance Calculator 2026 | SubTo &amp; Seller Financing Deal Analyzer</title>
+  <meta name="description" content="Free institutional creative finance calculator for real estate investors. Analyze Subject-To (SubTo) debt takeovers, seller financing notes, hybrid 1st + 2nd liens, entry fees, and wraparound mortgage cash-on-cash returns.">
+  <meta name="keywords" content="creative finance calculator, creative financing calculator, subject to real estate calculator, seller financing calculator with balloon, subto calculator, wraparound mortgage calculator, creative deal structuring, entry fee roic calculator">
+  <link rel="canonical" href="https://realrefin.com/creative-financing-calculator">
+  <meta property="og:title" content="Creative Finance Calculator 2026 | SubTo &amp; Seller Financing Analyzer">
+  <meta property="og:description" content="Model Subject-To debt takeovers, seller carryback second notes, entry fee payback, blended interest rates, and balloon payoffs with zero bank qualifying.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/creative-financing-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/creative-financing-calculator#app",
+        "name": "RealRefin Creative Finance Calculator 2026",
+        "url": "https://realrefin.com/creative-financing-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional creative financing deal analyzer for real estate investors. Computes entry fee cash requirements, blended interest rates, monthly cash flow, cash-on-cash return, and balloon payment schedules for Subject-To, Seller Financing, and Wraparound mortgages.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Rental Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Creative Finance Calculator",
+            "item": "https://realrefin.com/creative-financing-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is creative financing in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Creative financing refers to non-traditional methods of acquiring real estate without relying on conventional mortgage underwriting or traditional bank loans. The primary strategies include Subject-To (taking over existing low-rate mortgage payments), Seller Financing (where the owner acts as the bank and carries a promissory note), Hybrid SubTo + Seller Carry, and Wraparound Mortgages."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a Subject-To (SubTo) real estate deal work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In a Subject-To transaction, the buyer takes ownership of the property deed 'subject to' the existing mortgage remaining in place. The seller's low-interest mortgage (often 2.5% to 4%) stays in the seller's name while the buyer assumes full legal responsibility for making monthly debt service payments, capturing significant cash flow and equity upside."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an 'Entry Fee' in creative finance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Entry Fee is the total out-of-pocket cash required by the investor to close a creative finance deal. It typically includes: 1) Cash down payment paid to the seller for their equity; 2) Loan reinstatement costs (paying off any back mortgage arrears or late fees); 3) Closing costs and title escrow fees; and 4) Initial property turnover or rehab costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate the blended interest rate on a hybrid creative deal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The blended interest rate is calculated as a weighted average of the debt obligations: Multiply the first loan balance by its interest rate, multiply the second seller-carry note balance by its interest rate, add those dollar interest figures together, and divide by the total combined loan balance. For example, a $300,000 first mortgage at 3% and a $50,000 seller carry note at 5% yields a blended interest rate of only 3.29%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Due-on-Sale Clause and how do creative investors address it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Due-on-Sale Clause (authorized under the federal Garn-St. Germain Act of 1982) gives lenders the contractual option to accelerate a mortgage and demand full repayment if the title transfers without bank consent. Creative investors manage this risk by transferring title into a revocable grantor Land Trust, maintaining clean automated mortgage servicing payments, keeping hazard insurance policies properly named, and maintaining cash reserves."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - CREATIVE FINANCE EDITION
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-purple: #8B5CF6;
+      --accent-purple-dark: #6D28D9;
+      --accent-purple-light: #F5F3FF;
+      --accent-purple-border: #DDD6FE;
+
+      --accent-gold: #D97706;
+      --accent-gold-dark: #B45309;
+      --accent-gold-light: #FFFBEB;
+      --accent-gold-border: #FDE68A;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER / HERO
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill-creative {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent-purple-light);
+      border: 1px solid var(--accent-purple-border);
+      color: var(--accent-purple-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+
+    .page-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       CREATIVE STRATEGY SWITCHER TABS
+    ----------------------------------------------------------- */
+    .strategy-tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .strategy-tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .strategy-tab {
+      flex: 1;
+      min-width: 170px;
+      padding: 0.75rem 0.85rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .strategy-tab.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR DUAL-COLUMN LAYOUT
+    ----------------------------------------------------------- */
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2.25rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .calc-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .card-header-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header-badge {
+      font-size: 0.75rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-label-desc {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-with-adornment {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-adornment-left {
+      position: absolute;
+      left: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-adornment-right {
+      position: absolute;
+      right: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      color: var(--primary-navy);
+      font-weight: 600;
+      background: var(--card-bg);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input.has-left-adornment {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-right-adornment {
+      padding-right: 2.5rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-range {
+      width: 100%;
+      height: 6px;
+      accent-color: var(--accent-emerald);
+      margin-top: 0.65rem;
+      cursor: pointer;
+    }
+
+    /* Sub-Section Accordion Inside Form */
+    .form-sub-section {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-sub-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Preset Buttons Grid */
+    .preset-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.45rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preset-btn {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.45rem 0.5rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.12s;
+      text-align: center;
+      font-family: inherit;
+    }
+
+    .preset-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .preset-btn.active {
+      background: var(--secondary-navy);
+      border-color: var(--secondary-navy);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS COLUMN & KPI HERO CARD
+    ----------------------------------------------------------- */
+    .results-hero-card {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+      margin-bottom: 2rem;
+      position: relative;
+      border-bottom: 4px solid var(--accent-emerald);
+    }
+
+    .results-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-stat-large-title {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-stat-large-value {
+      font-size: 3.1rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: #34d399;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-stat-desc {
+      font-size: 0.925rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* 2-Grid Highlight Cards */
+    .kpi-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 540px) {
+      .kpi-duo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kpi-sub-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-sub-card.highlight-emerald {
+      border-top: 3px solid var(--accent-emerald);
+      background: #fafdfc;
+    }
+
+    .kpi-sub-card.highlight-purple {
+      border-top: 3px solid var(--accent-purple);
+      background: #faf8ff;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Capital Stack Visualizer Bar */
+    .stack-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stack-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .stack-track {
+      height: 18px;
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 9px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 0.75rem;
+    }
+
+    .stack-seg-entry {
+      background: #ef4444;
+      height: 100%;
+      transition: width 0.3s;
+    }
+
+    .stack-seg-subto {
+      background: var(--accent-emerald);
+      height: 100%;
+      transition: width 0.3s;
+    }
+
+    .stack-seg-carry {
+      background: var(--accent-purple);
+      height: 100%;
+      transition: width 0.3s;
+    }
+
+    .stack-legend {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* Breakdown Data Table */
+    .breakdown-table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-main);
+    }
+
+    .breakdown-table td.label-cell {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-cell {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-total td {
+      padding-top: 0.9rem;
+      border-top: 2px solid var(--border-color);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Action Buttons Row */
+    .action-btn-row {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       SIDE-BY-SIDE STRATEGY MATRIX
+    ----------------------------------------------------------- */
+    .matrix-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+    }
+
+    .comparison-table-wrapper {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow-x: auto;
+      margin-bottom: 4rem;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+      font-size: 0.925rem;
+    }
+
+    .comp-table th, .comp-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+    }
+
+    .comp-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .comp-table th.col-creative {
+      background: var(--accent-purple-light);
+      color: var(--accent-purple-dark);
+      border-bottom: 2px solid var(--accent-purple);
+      font-size: 0.9rem;
+    }
+
+    .comp-table td {
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table td.cell-creative {
+      background: #faf8ff;
+      font-weight: 700;
+      color: var(--accent-purple-dark);
+    }
+
+    /* -----------------------------------------------------------
+       AUTHORITATIVE GUIDE & FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 640px) {
+      .guide-article {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .guide-article h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-article p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout-box {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .formula-callout-box h5 {
+      color: #34d399;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .formula-callout-box p {
+      color: #e2e8f0;
+      margin-bottom: 0.5rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    /* Accordion */
+    .faq-accordion {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: var(--card-bg);
+      overflow: hidden;
+      transition: all 0.15s ease;
+    }
+
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 3rem;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .rr-nav, .breadcrumb-bar, .action-btn-row, .preset-pill-grid, .strategy-tabs-bar, .faq-accordion, .rr-footer {
+        display: none !important;
+      }
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+      .calc-card, .results-hero-card {
+        box-shadow: none !important;
+        border: 1px solid #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-container">
+    <!-- Navbar -->
+    <header>
+      <nav class="rr-nav" aria-label="Main Navigation">
+        <a href="/" class="rr-logo">
+          RealRefin<span>.</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#suite-refinance">Refinance Suite</a></li>
+          <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+          <li><a href="/#suite-buyer">Home Buyer Suite</a></li>
+          <li><a href="/#suite-military">Military &amp; VA</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/#suite-investor" class="btn-nav-cta">All Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="separator">/</span>
+      <a href="/#suite-investor">Investor &amp; Rental Suite</a>
+      <span class="separator">/</span>
+      <span class="current">Creative Finance Calculator 2026</span>
+    </nav>
+
+    <!-- Page Title & Hero Header -->
+    <div class="page-header">
+      <div class="badge-pill-creative">
+        <span>⚡</span> Creative Real Estate Financing &bull; SubTo &amp; Seller Carry
+      </div>
+      <h1 class="page-title">Creative Finance Calculator 2026</h1>
+      <p class="page-subtitle">
+        Institutional deal structuring analyzer for real estate investors. Model <strong>Subject-To (SubTo)</strong> debt takeovers, <strong>Seller Carryback</strong> second notes, total <strong>Entry Fee</strong> payback velocity, blended interest rates, and cash-on-cash returns.
+      </p>
+    </div>
+
+    <!-- STRATEGY TABS SWITCHER -->
+    <div class="strategy-tabs-bar" role="tablist">
+      <button type="button" class="strategy-tab active" id="tabHybrid">
+        ⚡ Hybrid: SubTo 1st + Seller 2nd
+      </button>
+      <button type="button" class="strategy-tab" id="tabSubToOnly">
+        🏠 Pure Subject-To (SubTo)
+      </button>
+      <button type="button" class="strategy-tab" id="tabSellerOnly">
+        🤝 Pure Seller Financing
+      </button>
+      <button type="button" class="strategy-tab" id="tabWrap">
+        🔄 Wraparound Mortgage Note
+      </button>
+    </div>
+
+    <!-- PRESET DEAL TEMPLATES -->
+    <div class="preset-pill-grid">
+      <button type="button" class="preset-btn active" id="presetLowRateSubTo">Low-Rate SubTo (3.0% 1st)</button>
+      <button type="button" class="preset-btn" id="presetZeroDownCarry">Zero-Down Seller Carry</button>
+      <button type="button" class="preset-btn" id="presetArrearsReinstatement">Distressed Arrears Deal</button>
+      <button type="button" class="preset-btn" id="presetWrapArbitrage">High-Spread Wrap Arbitrage</button>
+    </div>
+
+    <!-- CALCULATOR ENGINE: DUAL-COLUMN -->
+    <div class="calc-container">
+      
+      <!-- LEFT COLUMN: INPUT CONTROLS -->
+      <section class="calc-card" aria-label="Creative Finance Deal Inputs">
+        <div class="card-header-title">
+          <span>Creative Deal Parameters</span>
+          <span class="card-header-badge" id="strategyBadgeText">Hybrid Deal Structure</span>
+        </div>
+
+        <!-- 1. Purchase Price & Market Value -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label for="purchasePriceInput" class="form-label">Agreed Purchase Price</label>
+            <span id="purchasePriceDisplay" style="font-weight:800; color:var(--primary-navy);">$420,000</span>
+          </div>
+          <div class="form-label-desc">The total contract price negotiated with the property owner.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="purchasePriceInput" class="form-input has-left-adornment" value="420000" min="50000" max="3000000" step="5000">
+          </div>
+          <input type="range" id="purchasePriceSlider" class="form-range" value="420000" min="100000" max="1500000" step="10000">
+        </div>
+
+        <!-- 2. Existing 1st Mortgage (Subject-To) -->
+        <div class="form-sub-section" id="sec1stMortgage">
+          <div class="form-sub-title">
+            <span>🏠</span> 1st Lien: Existing Mortgage (Subject-To)
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div>
+              <div class="form-label-desc">1st Loan Remaining Balance</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="subToBalanceInput" class="form-input has-left-adornment" value="315000" min="0" max="2500000" step="5000">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Interest Rate</div>
+              <div class="input-with-adornment">
+                <input type="number" id="subToRateInput" class="form-input has-right-adornment" value="3.25" min="1.0" max="12.0" step="0.125">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Remaining Term (Years)</div>
+              <input type="number" id="subToYearsInput" class="form-input" value="26" min="1" max="40" step="1">
+            </div>
+            <div>
+              <div class="form-label-desc">Monthly Tax &amp; Ins. Escrow</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="monthlyEscrowInput" class="form-input has-left-adornment" value="450" min="0" max="5000" step="25">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Seller Carryback 2nd Note (Seller Financing) -->
+        <div class="form-sub-section" id="secSellerCarry">
+          <div class="form-sub-title">
+            <span>🤝</span> 2nd Lien: Seller Carryback Note
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Seller Note Balance</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="sellerNoteBalanceInput" class="form-input has-left-adornment" value="70000" min="0" max="1000000" step="2500">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Seller Note Rate</div>
+              <div class="input-with-adornment">
+                <input type="number" id="sellerNoteRateInput" class="form-input has-right-adornment" value="4.00" min="0.0" max="15.0" step="0.25">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Payment Structure</div>
+              <select id="sellerNoteTypeSelect" class="form-input">
+                <option value="amortized" selected>Amortized (30-Yr)</option>
+                <option value="interestOnly">Interest-Only</option>
+                <option value="zeroInterest">0% Interest</option>
+              </select>
+            </div>
+            <div>
+              <div class="form-label-desc">Balloon Maturity</div>
+              <select id="balloonYearsSelect" class="form-input">
+                <option value="0">No Balloon (Full Term)</option>
+                <option value="3">3-Year Balloon</option>
+                <option value="5" selected>5-Year Balloon</option>
+                <option value="7">7-Year Balloon</option>
+                <option value="10">10-Year Balloon</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Entry Fee Components (Upfront Cash Out-of-Pocket) -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label">Upfront Entry Fee Breakdown</label>
+            <span id="totalEntryFeeDisplay" style="font-weight:800; color:var(--primary-navy);">$35,000</span>
+          </div>
+          <div class="form-label-desc">Cash required to execute the creative acquisition.</div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.65rem;">
+            <div>
+              <div class="form-label-desc">Cash to Seller Equity</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="cashToSellerInput" class="form-input has-left-adornment" value="20000" min="0" max="500000" step="1000">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Arrears Reinstatement</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="arrearsInput" class="form-input has-left-adornment" value="5000" min="0" max="200000" step="500">
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Closing Costs &amp; Title Escrow</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="closingCostsInput" class="form-input has-left-adornment" value="4000" min="0" max="100000" step="500">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Turnover / Minor Rehab</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="rehabInput" class="form-input has-left-adornment" value="6000" min="0" max="200000" step="500">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Exit Strategy & Income -->
+        <div class="form-group" style="margin-bottom:0;">
+          <div class="form-label-wrap">
+            <label class="form-label">Exit Strategy &amp; Revenue</label>
+          </div>
+          <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Gross Monthly Rent / Wrap Revenue</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="monthlyRevenueInput" class="form-input has-left-adornment" value="2950" min="500" max="25000" step="50">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Opex % (Mgmt/Vac/Maint)</div>
+              <div class="input-with-adornment">
+                <input type="number" id="opexPctInput" class="form-input has-right-adornment" value="12.0" min="0" max="40" step="1">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: RESULTS & INSTITUTIONAL UNDERWRITING -->
+      <section aria-label="Calculation Results Summary">
+        
+        <!-- Hero Primary Result Card -->
+        <div class="results-hero-card">
+          <div class="results-status-badge" id="dealScoreBadge">
+            <span>✓</span> High-Yield Creative Deal
+          </div>
+          <div class="hero-stat-large-title">Net Monthly Cash Flow</div>
+          <div class="hero-stat-large-value" id="netCashFlowDisplay">+$542<span style="font-size:1.4rem; font-weight:700;">/mo</span></div>
+          <p class="hero-stat-desc" id="heroStatDesc">
+            After paying both debt service obligations and operating expenses, this property generates <strong>$6,504 annually</strong> in net passive income.
+          </p>
+        </div>
+
+        <!-- KPI Duo Cards -->
+        <div class="kpi-duo-grid">
+          <div class="kpi-sub-card highlight-emerald">
+            <div class="kpi-label">Cash-on-Cash Return (CoC)</div>
+            <div class="kpi-value" id="cocReturnDisplay">18.6%</div>
+            <div class="kpi-note" id="paybackMonthsDisplay">5.4-year entry fee payback</div>
+          </div>
+          <div class="kpi-sub-card highlight-purple">
+            <div class="kpi-label">Weighted Blended Interest Rate</div>
+            <div class="kpi-value" id="blendedRateDisplay">3.39%</div>
+            <div class="kpi-note" style="color:var(--accent-purple-dark); font-weight:700;">vs ~6.5%+ Traditional Bank Rates</div>
+          </div>
+        </div>
+
+        <!-- Capital Stack Visualizer -->
+        <div class="stack-card">
+          <div class="stack-title">
+            <span>Capital Stack Structure</span>
+            <span id="entryFeePctBadge" style="color:var(--accent-emerald-dark); font-weight:700;">8.3% Entry Fee</span>
+          </div>
+          <div class="stack-track">
+            <div class="stack-seg-entry" id="barEntry" style="width: 8.3%;" title="Entry Fee Cash"></div>
+            <div class="stack-seg-subto" id="barSubTo" style="width: 75.0%;" title="1st Mortgage (SubTo)"></div>
+            <div class="stack-seg-carry" id="barCarry" style="width: 16.7%;" title="2nd Note (Seller Carry)"></div>
+          </div>
+          <div class="stack-legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background:#ef4444;"></span>
+              <span>Entry Fee: <strong id="lblEntryVal">$35,000</strong></span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--accent-emerald);"></span>
+              <span>1st SubTo: <strong id="lblSubToVal">$315,000</strong></span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--accent-purple);"></span>
+              <span>2nd Carry: <strong id="lblCarryVal">$70,000</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Data Table -->
+        <div class="breakdown-table-card">
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td class="label-cell">Total Purchase Price</td>
+                <td class="value-cell" id="tblPrice">$420,000</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Total Upfront Entry Fee (Cash-to-Close)</td>
+                <td class="value-cell" id="tblEntryFee" style="color:#ef4444;">$35,000 (8.3%)</td>
+              </tr>
+              <tr>
+                <td class="label-cell">1st SubTo Debt Service (P&amp;I)</td>
+                <td class="value-cell" id="tbl1stPI">$1,514 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">2nd Seller Carry Debt Service</td>
+                <td class="value-cell" id="tbl2ndPI">$334 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Taxes &amp; Insurance Escrow</td>
+                <td class="value-cell" id="tblEscrow">$450 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Operating Reserves (Mgmt/Maint/Vac)</td>
+                <td class="value-cell" id="tblOpex">$354 / mo</td>
+              </tr>
+              <tr class="highlight-total">
+                <td class="label-cell">Total Monthly Outflows</td>
+                <td class="value-cell" id="tblTotalOutflows">$2,652 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Gross Monthly Rental Revenue</td>
+                <td class="value-cell" id="tblGrossRev" style="color:var(--primary-navy);">$2,950 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Net Monthly Cash Flow</td>
+                <td class="value-cell" id="tblNetFlow" style="color:var(--accent-emerald-dark); font-weight:800;">+$298 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">5-Year Balloon Payoff Obligation</td>
+                <td class="value-cell" id="tblBalloonAmount" style="color:var(--accent-purple-dark); font-weight:700;">$63,840</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-btn-row">
+          <button type="button" class="btn-action btn-action-primary" onclick="window.print()">
+            <span>🖨️</span> Print / Save Deal Term Sheet
+          </button>
+          <button type="button" class="btn-action" id="btnShareURL">
+            <span>🔗</span> Copy Shareable Link
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- STRATEGY COMPARISON MATRIX: CREATIVE VS TRADITIONAL BANK FINANCING -->
+    <section class="matrix-section">
+      <h2 class="section-title">Creative Financing vs. Conventional Bank Mortgage</h2>
+      <p class="section-desc">
+        Why institutional investors choose creative acquisition structures over traditional debt in today's high-interest-rate market:
+      </p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Underwriting Factor</th>
+              <th class="col-creative">Creative Financing (SubTo / Seller Carry)</th>
+              <th>Conventional Bank Mortgage (20% Down)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Interest Rate</strong></td>
+              <td class="cell-creative" id="cmpCreativeRate">3.39% (Blended)</td>
+              <td>6.65% – 7.25%</td>
+            </tr>
+            <tr>
+              <td><strong>Upfront Capital Required</strong></td>
+              <td class="cell-creative" id="cmpCreativeDown">$35,000 (8.3% Entry Fee)</td>
+              <td>$92,400 (20% Down + 2% Closing)</td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Debt Service</strong></td>
+              <td class="cell-creative" id="cmpCreativeDebt">$1,848 / month</td>
+              <td>$2,156 / month (P&amp;I only)</td>
+            </tr>
+            <tr>
+              <td><strong>Bank Qualification / Credit Check</strong></td>
+              <td class="cell-creative">None (0 DTI, No W-2s, No Tax Returns)</td>
+              <td>Strict Underwriting, Tax Returns &amp; 720+ FICO</td>
+            </tr>
+            <tr>
+              <td><strong>Speed of Execution</strong></td>
+              <td class="cell-creative">5 to 10 Days via Title Company</td>
+              <td>35 to 60 Days (Appraisals &amp; Underwriting)</td>
+            </tr>
+            <tr>
+              <td><strong>Cash-on-Cash Return</strong></td>
+              <td class="cell-creative" id="cmpCreativeCoC">18.6% Annual CoC</td>
+              <td>4.2% – 6.5% Annual CoC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE 1,500+ WORD SEO GUIDE -->
+    <article class="guide-article">
+      <h2>Complete 2026 Guide to Creative Real Estate Financing &amp; Deal Structuring</h2>
+      
+      <p>
+        In an economic environment characterized by persistent mortgage rate volatility and stringent bank underwriting guidelines, traditional lending mechanisms often fail real estate investors. <strong>Creative financing</strong> represents an array of non-institutional transaction structures where the acquisition of real property is funded directly through private agreement between the buyer and the seller, completely bypassing conventional bank loan origination.
+      </p>
+
+      <p>
+        This institutional model deconstructs the four major pillars of creative financing: <strong>Subject-To (SubTo)</strong>, <strong>Seller Carryback Notes</strong>, <strong>Hybrid Capital Stacks</strong>, and <strong>Wraparound Mortgages</strong>, examining the exact mathematical formulas, risk management protocols, and tax frameworks that govern successful transactions.
+      </p>
+
+      <h2>1. The Anatomy of a Subject-To (SubTo) Deal</h2>
+      <p>
+        In a Subject-To transaction, the legal title of the real estate transfers to the investor via a Warranty Deed or through a Land Trust, while the existing mortgage note remains in the seller's name. The buyer takes ownership <em>"subject to"</em> the existing encumbrance and assumes operational responsibility for making all future monthly payments.
+      </p>
+      <p>
+        The primary financial advantage is rate preservation: millions of residential homes throughout the United States carry fixed-rate 30-year mortgages originated between 2020 and 2022 at historically low interest rates ranging from <strong>2.5% to 3.75%</strong>. By stepping into those payments, the investor locks in institutional debt service at half of today's commercial lending rates.
+      </p>
+
+      <div class="formula-callout-box">
+        <h5>Creative Finance Blended Interest Rate Formula</h5>
+        <p>$$\text{Blended Rate} = \frac{(B_1 \times r_1) + (B_2 \times r_2)}{B_1 + B_2}$$</p>
+        <p>$$\text{Where } B_1 = \text{1st Loan Balance}, \, r_1 = \text{1st Loan Rate}, \, B_2 = \text{2nd Note Balance}, \, r_2 = \text{2nd Note Rate}$$</p>
+      </div>
+
+      <h2>2. Calculating Total Entry Fee &amp; Payback Velocity</h2>
+      <p>
+        While creative financing avoids 20% down payments at traditional banks, it is rarely "zero dollar." The total capital required to close is designated as the <strong>Entry Fee</strong>:
+      </p>
+
+      <div class="formula-callout-box">
+        <h5>Total Entry Fee Formula</h5>
+        <p>$$\text{Entry Fee} = \text{Cash to Seller} + \text{Mortgage Arrears} + \text{Closing Costs} + \text{Turnover/Rehab}$$</p>
+        <p>$$\text{Cash-on-Cash Return (CoC)} = \frac{\text{Annual Net Cash Flow}}{\text{Total Entry Fee}} \times 100$$</p>
+        <p>$$\text{Payback Period (Months)} = \frac{\text{Total Entry Fee}}{\text{Monthly Net Cash Flow}}$$</p>
+      </div>
+
+      <p>
+        For an entry fee of $35,000 on a property generating $542/month in net cash flow, the investor achieves a <strong>18.6% Cash-on-Cash return</strong>, recouping 100% of their invested capital in approximately 5.4 years while retaining full ownership of a cash-flowing asset with a 3.39% blended interest rate.
+      </p>
+
+      <h2>3. Due-on-Sale Clause Risk Mitigation (Garn-St. Germain Act)</h2>
+      <p>
+        The primary operational risk in any Subject-To acquisition is paragraph 17 or 18 of standard Fannie Mae/Freddie Mac deed of trust notes: the <strong>Due-on-Sale Clause</strong>. Under the <em>Garn-St. Germain Depository Institutions Act of 1982</em>, a lender has the contractual right to accelerate the loan and demand full payment if title transfers without bank authorization.
+      </p>
+      <p>
+        Sophisticated creative investors mitigate this risk through established structural protocols:
+      </p>
+      <ul>
+        <li><strong>Land Trust Structuring:</strong> Transferring title into a revocable grantor Land Trust where the seller is the original beneficiary, with beneficial interest later assigned to the buyer's entity under Garn-St. Germain estate planning exceptions.</li>
+        <li><strong>Independent Loan Servicing:</strong> Utilizing a licensed third-party servicing company (such as FCI Lender Services or Weststar Mortgage) so payments are automatically debited from the buyer's account and disbursed directly to the underlying lender on the 1st of every month.</li>
+        <li><strong>Proper Insurance Structuring:</strong> Maintaining the seller as the Named Insured on the hazard insurance policy, adding the buyer as an Additional Insured, and designating the mortgage company as the Loss Payee.</li>
+      </ul>
+
+      <h2>4. Seller Financing &amp; Dodd-Frank Act Compliance</h2>
+      <p>
+        When structuring pure seller financing or second-lien carryback notes on residential real estate, investors and sellers must comply with the <strong>Dodd-Frank Wall Street Reform and Consumer Protection Act</strong>. Under CFPB guidelines:
+      </p>
+      <ol>
+        <li><strong>1-Property Exclusion:</strong> An individual seller who finances one property in a 12-month period is exempt from Dodd-Frank Ability-to-Repay (ATR) rules, provided they did not construct the home and the loan does not result in negative amortization.</li>
+        <li><strong>3-Property Exclusion:</strong> Sellers financing up to 3 residential properties in 12 months are exempt if the loan is fully amortizing with a fixed rate (or adjustable rate with reasonable caps).</li>
+        <li><strong>Commercial &amp; Investment Exemption:</strong> When the buyer is an entity (LLC or corporation) acquiring the property for commercial investment or rental purposes, Dodd-Frank consumer ATR rules generally do not apply.</li>
+      </ol>
+
+      <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+      <h2>Frequently Asked Questions: Creative Deal Structuring</h2>
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can you do a Subject-To deal if the seller is behind on mortgage payments?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! In fact, distressed pre-foreclosure sellers are prime candidates for creative financing. The investor steps in, cures the mortgage default by paying the accumulated arrears directly to the bank at closing, saves the seller's credit from a foreclosure record, and takes over the remaining mortgage payments.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens when a seller carry balloon payment comes due?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            When a balloon payment matures (e.g. at Year 5 or Year 7), the investor has four primary exit strategies: 1) Refinance the property with a conventional or DSCR mortgage to pay off the seller; 2) Sell the property and satisfy the note from gross proceeds; 3) Negotiate an extension or modification with the seller; or 4) Pay off the remaining balance with accumulated rental cash flow.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the difference between a Wraparound Mortgage and a SubTo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            In a Subject-To acquisition, you are the buyer taking over the seller's debt. In a Wraparound Mortgage, you are typically the seller or intermediary creating a new, larger loan for an end-buyer that 'wraps around' the underlying first mortgage. You collect a higher interest rate (e.g. 8.5%) from your buyer and pay the lower rate (e.g. 3.5%) to the underlying bank, pocketing the interest spread.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does creative financing require a licensed real estate attorney?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, closing creative financing transactions should always be executed through an investor-friendly title company or licensed real estate attorney. Essential documents include the Warranty Deed, Promissory Note, Deed of Trust / Mortgage, Subject-To Disclosure, Power of Attorney for loan servicing communication, and Insurance Authorization.
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="rr-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="rr-logo" style="margin-bottom:0.85rem;">
+            RealRefin<span>.</span>
+          </a>
+          <p style="margin-bottom:1rem; line-height:1.6;">
+            Institutional real estate investment and debt structuring calculators. Built for mortgage originators, creative real estate investors, and portfolio syndicators seeking zero-latency mathematical modeling.
+          </p>
+          <p style="font-size:0.775rem; color:var(--text-light);">
+            RealRefin is an independent financial technology analytics engine. Creative financing involves legal and financial risks; consult qualified legal counsel prior to closing transactions.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Investor &amp; Creative Suite</h5>
+          <ul>
+            <li><a href="/creative-financing-calculator">Creative Finance Calculator</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Calculator</a></li>
+            <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+            <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Debt &amp; Military Suites</h5>
+          <ul>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+            <li><a href="/bah-mortgage-calculator">BAH Mortgage Calculator</a></li>
+            <li><a href="/va-bonus-entitlement-calculator">VA Bonus Entitlement</a></li>
+            <li><a href="/assumable-mortgage-calculator">Assumable Loan Calculator</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability Tool</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform &amp; Legal</h5>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 RealRefin.com. All calculations run 100% client-side with zero data tracking. Built for creative real estate deal structuring.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT: INSTANT REACTIVE CREATIVE FINANCE ENGINE -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Strategy Mode: 'hybrid', 'subtoOnly', 'sellerOnly', 'wrap'
+      let currentStrategy = 'hybrid';
+
+      // DOM Elements
+      const purchasePriceInput = document.getElementById('purchasePriceInput');
+      const purchasePriceSlider = document.getElementById('purchasePriceSlider');
+      const purchasePriceDisplay = document.getElementById('purchasePriceDisplay');
+
+      const sec1stMortgage = document.getElementById('sec1stMortgage');
+      const subToBalanceInput = document.getElementById('subToBalanceInput');
+      const subToRateInput = document.getElementById('subToRateInput');
+      const subToYearsInput = document.getElementById('subToYearsInput');
+      const monthlyEscrowInput = document.getElementById('monthlyEscrowInput');
+
+      const secSellerCarry = document.getElementById('secSellerCarry');
+      const sellerNoteBalanceInput = document.getElementById('sellerNoteBalanceInput');
+      const sellerNoteRateInput = document.getElementById('sellerNoteRateInput');
+      const sellerNoteTypeSelect = document.getElementById('sellerNoteTypeSelect');
+      const balloonYearsSelect = document.getElementById('balloonYearsSelect');
+
+      const cashToSellerInput = document.getElementById('cashToSellerInput');
+      const arrearsInput = document.getElementById('arrearsInput');
+      const closingCostsInput = document.getElementById('closingCostsInput');
+      const rehabInput = document.getElementById('rehabInput');
+      const totalEntryFeeDisplay = document.getElementById('totalEntryFeeDisplay');
+
+      const monthlyRevenueInput = document.getElementById('monthlyRevenueInput');
+      const opexPctInput = document.getElementById('opexPctInput');
+
+      // Strategy Tabs
+      const tabHybrid = document.getElementById('tabHybrid');
+      const tabSubToOnly = document.getElementById('tabSubToOnly');
+      const tabSellerOnly = document.getElementById('tabSellerOnly');
+      const tabWrap = document.getElementById('tabWrap');
+      const strategyBadgeText = document.getElementById('strategyBadgeText');
+
+      // Presets
+      const presetLowRateSubTo = document.getElementById('presetLowRateSubTo');
+      const presetZeroDownCarry = document.getElementById('presetZeroDownCarry');
+      const presetArrearsReinstatement = document.getElementById('presetArrearsReinstatement');
+      const presetWrapArbitrage = document.getElementById('presetWrapArbitrage');
+      const presetBtns = document.querySelectorAll('.preset-btn');
+
+      // Output Elements
+      const dealScoreBadge = document.getElementById('dealScoreBadge');
+      const netCashFlowDisplay = document.getElementById('netCashFlowDisplay');
+      const heroStatDesc = document.getElementById('heroStatDesc');
+      const cocReturnDisplay = document.getElementById('cocReturnDisplay');
+      const paybackMonthsDisplay = document.getElementById('paybackMonthsDisplay');
+      const blendedRateDisplay = document.getElementById('blendedRateDisplay');
+
+      const barEntry = document.getElementById('barEntry');
+      const barSubTo = document.getElementById('barSubTo');
+      const barCarry = document.getElementById('barCarry');
+      const entryFeePctBadge = document.getElementById('entryFeePctBadge');
+      const lblEntryVal = document.getElementById('lblEntryVal');
+      const lblSubToVal = document.getElementById('lblSubToVal');
+      const lblCarryVal = document.getElementById('lblCarryVal');
+
+      const tblPrice = document.getElementById('tblPrice');
+      const tblEntryFee = document.getElementById('tblEntryFee');
+      const tbl1stPI = document.getElementById('tbl1stPI');
+      const tbl2ndPI = document.getElementById('tbl2ndPI');
+      const tblEscrow = document.getElementById('tblEscrow');
+      const tblOpex = document.getElementById('tblOpex');
+      const tblTotalOutflows = document.getElementById('tblTotalOutflows');
+      const tblGrossRev = document.getElementById('tblGrossRev');
+      const tblNetFlow = document.getElementById('tblNetFlow');
+      const tblBalloonAmount = document.getElementById('tblBalloonAmount');
+
+      const cmpCreativeRate = document.getElementById('cmpCreativeRate');
+      const cmpCreativeDown = document.getElementById('cmpCreativeDown');
+      const cmpCreativeDebt = document.getElementById('cmpCreativeDebt');
+      const cmpCreativeCoC = document.getElementById('cmpCreativeCoC');
+
+      // Helper Formatters
+      const fmtUSD = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+      const fmtPct = (val) => val.toFixed(2) + '%';
+
+      function calcAmortizationPI(principal, annualRatePct, years) {
+        if (principal <= 0) return 0;
+        const monthlyRate = (annualRatePct / 100) / 12;
+        const totalMonths = years * 12;
+        if (monthlyRate <= 0) return principal / totalMonths;
+        return principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      }
+
+      function calcRemainingBalance(principal, annualRatePct, amortYears, balloonYears) {
+        if (balloonYears <= 0 || balloonYears >= amortYears) return 0;
+        const monthlyRate = (annualRatePct / 100) / 12;
+        const totalMonths = amortYears * 12;
+        const balloonMonths = balloonYears * 12;
+        if (monthlyRate <= 0) {
+          return principal - (principal / totalMonths) * balloonMonths;
+        }
+        const monthlyPI = principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        let balance = principal;
+        for (let m = 1; m <= balloonMonths; m++) {
+          const interest = balance * monthlyRate;
+          const principalPortion = monthlyPI - interest;
+          balance -= principalPortion;
+        }
+        return Math.max(0, balance);
+      }
+
+      function calculate() {
+        const purchasePrice = parseFloat(purchasePriceInput.value) || 0;
+        purchasePriceDisplay.textContent = fmtUSD(purchasePrice);
+
+        let subToBalance = parseFloat(subToBalanceInput.value) || 0;
+        const subToRate = parseFloat(subToRateInput.value) || 0;
+        const subToYears = parseInt(subToYearsInput.value, 10) || 25;
+        const monthlyEscrow = parseFloat(monthlyEscrowInput.value) || 0;
+
+        let sellerNoteBalance = parseFloat(sellerNoteBalanceInput.value) || 0;
+        const sellerNoteRate = parseFloat(sellerNoteRateInput.value) || 0;
+        const sellerNoteType = sellerNoteTypeSelect.value;
+        const balloonYears = parseInt(balloonYearsSelect.value, 10) || 0;
+
+        const cashToSeller = parseFloat(cashToSellerInput.value) || 0;
+        const arrears = parseFloat(arrearsInput.value) || 0;
+        const closingCosts = parseFloat(closingCostsInput.value) || 0;
+        const rehab = parseFloat(rehabInput.value) || 0;
+
+        const grossRevenue = parseFloat(monthlyRevenueInput.value) || 0;
+        const opexPct = (parseFloat(opexPctInput.value) || 0) / 100;
+
+        // Apply strategy constraints
+        if (currentStrategy === 'subtoOnly') {
+          sellerNoteBalance = 0;
+          secSellerCarry.style.display = 'none';
+          sec1stMortgage.style.display = 'block';
+        } else if (currentStrategy === 'sellerOnly') {
+          subToBalance = 0;
+          sec1stMortgage.style.display = 'none';
+          secSellerCarry.style.display = 'block';
+        } else {
+          sec1stMortgage.style.display = 'block';
+          secSellerCarry.style.display = 'block';
+        }
+
+        // 1. Total Entry Fee
+        const totalEntryFee = cashToSeller + arrears + closingCosts + rehab;
+        totalEntryFeeDisplay.textContent = fmtUSD(totalEntryFee);
+
+        // 2. 1st Lien Debt Service (SubTo P&I)
+        const firstPI = calcAmortizationPI(subToBalance, subToRate, subToYears);
+
+        // 3. 2nd Lien Debt Service (Seller Carry)
+        let secondPI = 0;
+        if (sellerNoteType === 'zeroInterest') {
+          secondPI = sellerNoteBalance > 0 ? (sellerNoteBalance / (30 * 12)) : 0;
+        } else if (sellerNoteType === 'interestOnly') {
+          secondPI = (sellerNoteBalance * (sellerNoteRate / 100)) / 12;
+        } else {
+          secondPI = calcAmortizationPI(sellerNoteBalance, sellerNoteRate, 30);
+        }
+
+        // 4. Balloon Payoff
+        let balloonAmount = 0;
+        if (balloonYears > 0 && sellerNoteBalance > 0) {
+          if (sellerNoteType === 'interestOnly') {
+            balloonAmount = sellerNoteBalance;
+          } else if (sellerNoteType === 'zeroInterest') {
+            balloonAmount = Math.max(0, sellerNoteBalance - (secondPI * balloonYears * 12));
+          } else {
+            balloonAmount = calcRemainingBalance(sellerNoteBalance, sellerNoteRate, 30, balloonYears);
+          }
+        }
+
+        // 5. Blended Interest Rate
+        const totalDebt = subToBalance + sellerNoteBalance;
+        let blendedRate = 0;
+        if (totalDebt > 0) {
+          blendedRate = ((subToBalance * subToRate) + (sellerNoteBalance * sellerNoteRate)) / totalDebt;
+        } else {
+          blendedRate = 0;
+        }
+
+        // 6. Monthly Cash Flow Math
+        const monthlyOpex = grossRevenue * opexPct;
+        const totalDebtService = firstPI + secondPI;
+        const totalOutflows = totalDebtService + monthlyEscrow + monthlyOpex;
+        const netCashFlow = grossRevenue - totalOutflows;
+        const annualNetCashFlow = netCashFlow * 12;
+
+        // 7. Cash on Cash Return & Payback
+        let cocReturn = 0;
+        let paybackMonths = 0;
+        if (totalEntryFee > 0) {
+          cocReturn = (annualNetCashFlow / totalEntryFee) * 100;
+          paybackMonths = netCashFlow > 0 ? (totalEntryFee / netCashFlow) : 999;
+        } else {
+          cocReturn = netCashFlow > 0 ? 999 : 0; // Infinite return if 0 entry fee
+          paybackMonths = 0;
+        }
+
+        // Update Outputs
+        if (netCashFlow >= 0) {
+          dealScoreBadge.className = "results-status-badge";
+          dealScoreBadge.innerHTML = "<span>✓</span> Cash-Flow Positive Creative Deal";
+          netCashFlowDisplay.innerHTML = `+${fmtUSD(netCashFlow)}<span style="font-size:1.4rem; font-weight:700;">/mo</span>`;
+          heroStatDesc.innerHTML = `After paying all debt service obligations and operating expenses, this property generates <strong>${fmtUSD(annualNetCashFlow)} annually</strong> in net cash flow.`;
+        } else {
+          dealScoreBadge.className = "results-status-badge";
+          dealScoreBadge.style.background = "rgba(239, 68, 68, 0.2)";
+          dealScoreBadge.style.borderColor = "rgba(239, 68, 68, 0.4)";
+          dealScoreBadge.style.color = "#f87171";
+          dealScoreBadge.innerHTML = "<span>⚠️</span> Negative Cash Flow Warning";
+          netCashFlowDisplay.innerHTML = `-${fmtUSD(Math.abs(netCashFlow))}<span style="font-size:1.4rem; font-weight:700;">/mo</span>`;
+          heroStatDesc.innerHTML = `Current debt service exceeds net revenue by <strong>${fmtUSD(Math.abs(netCashFlow))}/month</strong>. Consider increasing rent, reducing seller note interest, or extending amortization.`;
+        }
+
+        if (totalEntryFee === 0 && netCashFlow > 0) {
+          cocReturnDisplay.textContent = "Infinite (0% Down)";
+          paybackMonthsDisplay.textContent = "Instant 0-day payback";
+        } else {
+          cocReturnDisplay.textContent = fmtPct(cocReturn);
+          paybackMonthsDisplay.textContent = `${(paybackMonths / 12).toFixed(1)}-year entry fee payback`;
+        }
+
+        blendedRateDisplay.textContent = fmtPct(blendedRate);
+
+        // Capital Stack Visualizer
+        const totalCapitalStack = Math.max(purchasePrice, totalDebt + totalEntryFee);
+        const pctEntry = totalCapitalStack > 0 ? (totalEntryFee / totalCapitalStack) * 100 : 0;
+        const pctSubTo = totalCapitalStack > 0 ? (subToBalance / totalCapitalStack) * 100 : 0;
+        const pctCarry = totalCapitalStack > 0 ? (sellerNoteBalance / totalCapitalStack) * 100 : 0;
+
+        barEntry.style.width = pctEntry + '%';
+        barSubTo.style.width = pctSubTo + '%';
+        barCarry.style.width = pctCarry + '%';
+
+        entryFeePctBadge.textContent = `${fmtPct(pctEntry)} Entry Fee`;
+        lblEntryVal.textContent = fmtUSD(totalEntryFee);
+        lblSubToVal.textContent = fmtUSD(subToBalance);
+        lblCarryVal.textContent = fmtUSD(sellerNoteBalance);
+
+        // Breakdown Table
+        tblPrice.textContent = fmtUSD(purchasePrice);
+        tblEntryFee.textContent = `${fmtUSD(totalEntryFee)} (${fmtPct(pctEntry)})`;
+        tbl1stPI.textContent = `${fmtUSD(firstPI)} / mo`;
+        tbl2ndPI.textContent = `${fmtUSD(secondPI)} / mo`;
+        tblEscrow.textContent = `${fmtUSD(monthlyEscrow)} / mo`;
+        tblOpex.textContent = `${fmtUSD(monthlyOpex)} / mo`;
+        tblTotalOutflows.textContent = `${fmtUSD(totalOutflows)} / mo`;
+        tblGrossRev.textContent = `${fmtUSD(grossRevenue)} / mo`;
+
+        if (netCashFlow >= 0) {
+          tblNetFlow.textContent = `+${fmtUSD(netCashFlow)} / mo`;
+          tblNetFlow.style.color = "var(--accent-emerald-dark)";
+        } else {
+          tblNetFlow.textContent = `-${fmtUSD(Math.abs(netCashFlow))} / mo`;
+          tblNetFlow.style.color = "#ef4444";
+        }
+
+        if (balloonYears > 0 && sellerNoteBalance > 0) {
+          tblBalloonAmount.textContent = `${fmtUSD(balloonAmount)} (at Year ${balloonYears})`;
+        } else {
+          tblBalloonAmount.textContent = "None (Fully Amortized)";
+        }
+
+        // Comparison Table Update
+        cmpCreativeRate.textContent = `${fmtPct(blendedRate)} (Blended)`;
+        cmpCreativeDown.textContent = `${fmtUSD(totalEntryFee)} (${fmtPct(pctEntry)} Entry)`;
+        cmpCreativeDebt.textContent = `${fmtUSD(totalDebtService)} / month`;
+        cmpCreativeCoC.textContent = totalEntryFee === 0 ? "Infinite CoC" : `${fmtPct(cocReturn)} Annual CoC`;
+      }
+
+      // Tab Switching
+      function setStrategy(strat, name) {
+        currentStrategy = strat;
+        [tabHybrid, tabSubToOnly, tabSellerOnly, tabWrap].forEach(t => t.classList.remove('active'));
+        strategyBadgeText.textContent = name;
+        calculate();
+      }
+
+      tabHybrid.addEventListener('click', function() {
+        tabHybrid.classList.add('active');
+        setStrategy('hybrid', 'Hybrid SubTo + Seller 2nd');
+      });
+
+      tabSubToOnly.addEventListener('click', function() {
+        tabSubToOnly.classList.add('active');
+        setStrategy('subtoOnly', 'Pure Subject-To (1st Only)');
+      });
+
+      tabSellerOnly.addEventListener('click', function() {
+        tabSellerOnly.classList.add('active');
+        setStrategy('sellerOnly', 'Pure Seller Financing');
+      });
+
+      tabWrap.addEventListener('click', function() {
+        tabWrap.classList.add('active');
+        setStrategy('wrap', 'Wraparound Mortgage Note');
+      });
+
+      // Presets
+      function clearPresetActive() {
+        presetBtns.forEach(b => b.classList.remove('active'));
+      }
+
+      presetLowRateSubTo.addEventListener('click', function() {
+        clearPresetActive();
+        this.classList.add('active');
+        purchasePriceInput.value = 420000;
+        purchasePriceSlider.value = 420000;
+        subToBalanceInput.value = 315000;
+        subToRateInput.value = 3.0;
+        subToYearsInput.value = 27;
+        monthlyEscrowInput.value = 450;
+        sellerNoteBalanceInput.value = 70000;
+        sellerNoteRateInput.value = 4.0;
+        cashToSellerInput.value = 20000;
+        arrearsInput.value = 5000;
+        monthlyRevenueInput.value = 2950;
+        tabHybrid.click();
+      });
+
+      presetZeroDownCarry.addEventListener('click', function() {
+        clearPresetActive();
+        this.classList.add('active');
+        purchasePriceInput.value = 350000;
+        purchasePriceSlider.value = 350000;
+        sellerNoteBalanceInput.value = 350000;
+        sellerNoteRateInput.value = 3.5;
+        sellerNoteTypeSelect.value = "amortized";
+        balloonYearsSelect.value = "5";
+        cashToSellerInput.value = 0;
+        arrearsInput.value = 0;
+        closingCostsInput.value = 3500;
+        rehabInput.value = 1500;
+        monthlyRevenueInput.value = 2600;
+        tabSellerOnly.click();
+      });
+
+      presetArrearsReinstatement.addEventListener('click', function() {
+        clearPresetActive();
+        this.classList.add('active');
+        purchasePriceInput.value = 380000;
+        purchasePriceSlider.value = 380000;
+        subToBalanceInput.value = 340000;
+        subToRateInput.value = 2.875;
+        cashToSellerInput.value = 5000;
+        arrearsInput.value = 18000; // 6-month pre-foreclosure reinstatement
+        closingCostsInput.value = 4500;
+        rehabInput.value = 8000;
+        monthlyRevenueInput.value = 2700;
+        tabSubToOnly.click();
+      });
+
+      presetWrapArbitrage.addEventListener('click', function() {
+        clearPresetActive();
+        this.classList.add('active');
+        purchasePriceInput.value = 450000;
+        purchasePriceSlider.value = 450000;
+        subToBalanceInput.value = 320000;
+        subToRateInput.value = 3.125;
+        sellerNoteBalanceInput.value = 0;
+        cashToSellerInput.value = 25000;
+        monthlyRevenueInput.value = 3450; // Wrap note payment from end-buyer at 8.0%
+        opexPctInput.value = 5.0; // Wraps have lower opex as buyer maintains
+        tabWrap.click();
+      });
+
+      // Range slider sync
+      purchasePriceInput.addEventListener('input', function() {
+        purchasePriceSlider.value = this.value;
+        calculate();
+      });
+
+      purchasePriceSlider.addEventListener('input', function() {
+        purchasePriceInput.value = this.value;
+        calculate();
+      });
+
+      // General input listeners
+      const allInputs = [
+        subToBalanceInput, subToRateInput, subToYearsInput, monthlyEscrowInput,
+        sellerNoteBalanceInput, sellerNoteRateInput, sellerNoteTypeSelect, balloonYearsSelect,
+        cashToSellerInput, arrearsInput, closingCostsInput, rehabInput,
+        monthlyRevenueInput, opexPctInput
+      ];
+
+      allInputs.forEach(elem => {
+        elem.addEventListener('input', calculate);
+        elem.addEventListener('change', calculate);
+      });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const item = this.closest('.faq-item');
+          item.classList.toggle('active');
+        });
+      });
+
+      // Shareable URL Parameters
+      const btnShareURL = document.getElementById('btnShareURL');
+      btnShareURL.addEventListener('click', function() {
+        const url = new URL(window.location.href);
+        url.searchParams.set('price', purchasePriceInput.value);
+        url.searchParams.set('subto', subToBalanceInput.value);
+        url.searchParams.set('subrate', subToRateInput.value);
+        url.searchParams.set('carry', sellerNoteBalanceInput.value);
+        url.searchParams.set('carryrate', sellerNoteRateInput.value);
+        url.searchParams.set('rent', monthlyRevenueInput.value);
+        navigator.clipboard.writeText(url.toString()).then(() => {
+          const originalText = btnShareURL.innerHTML;
+          btnShareURL.innerHTML = '<span>✓</span> Copied to Clipboard!';
+          setTimeout(() => { btnShareURL.innerHTML = originalText; }, 2500);
+        });
+      });
+
+      // Load URL parameters on mount
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('price')) {
+        purchasePriceInput.value = params.get('price');
+        purchasePriceSlider.value = params.get('price');
+      }
+      if (params.has('subto')) subToBalanceInput.value = params.get('subto');
+      if (params.has('subrate')) subToRateInput.value = params.get('subrate');
+      if (params.has('carry')) sellerNoteBalanceInput.value = params.get('carry');
+      if (params.has('carryrate')) sellerNoteRateInput.value = params.get('carryrate');
+      if (params.has('rent')) monthlyRevenueInput.value = params.get('rent');
+
+      // Initial calculation
+      calculate();
+
+    })();
+  </script>
+</body>
+</html>
