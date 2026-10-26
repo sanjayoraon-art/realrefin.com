@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VA Loan Bonus Entitlement Calculator 2026 | Tier 2 VA Calculator</title>
+  <meta name="description" content="Calculate your 2026 VA Bonus Entitlement (Tier 2), maximum $0-down purchase price with an active VA loan, required down payment on second homes, and funding fee under 38 U.S.C. § 3703.">
+  <meta name="keywords" content="va loan bonus entitlement calculator, va bonus entitlement calculator 2026, va tier 2 entitlement calculator, va second home entitlement calculator, va secondary entitlement calculator, va partial entitlement down payment calculator, how much va bonus entitlement do i have">
+  <link rel="canonical" href="https://realrefin.com/va-bonus-entitlement-calculator">
+  <meta property="og:title" content="VA Loan Bonus Entitlement Calculator 2026 | RealRefin">
+  <meta property="og:description" content="Free institutional-grade VA Tier 2 Bonus Entitlement Calculator. Compute zero-down purchasing power, partial entitlement down payments, and 2026 FHFA county limit thresholds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/va-bonus-entitlement-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/va-bonus-entitlement-calculator#app",
+        "name": "RealRefin VA Loan Bonus Entitlement Calculator 2026",
+        "url": "https://realrefin.com/va-bonus-entitlement-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional-grade VA bonus entitlement (Tier 2) calculator for military home buyers and veterans. Computes remaining entitlement, zero-down borrowing capacity, down payment shortfall, and 2026 VA funding fees.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Military & VA Loans Suite",
+            "item": "https://realrefin.com/#suite-military"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "VA Bonus Entitlement Calculator 2026",
+            "item": "https://realrefin.com/va-bonus-entitlement-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is VA Bonus Entitlement (Tier 2 Entitlement)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VA Bonus Entitlement (also known as Tier 2 or Secondary Entitlement) is additional federal loan guaranty available to eligible veterans under 38 U.S.C. § 3703. While basic entitlement is capped at $36,000 (25% of $144,000), bonus entitlement covers loans exceeding $144,000 up to the local FHFA Conforming County Loan Limit ($806,495+ in 2026). It allows veterans who already have an active VA loan to purchase a second primary residence with little to no down payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is VA Bonus Entitlement calculated when I already have an active VA loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The formula involves four steps: 1) Multiply your target county loan limit by 25% to find the maximum potential guaranty. 2) Subtract the entitlement dollar amount already charged on your Certificate of Eligibility (COE) to get your Remaining Bonus Entitlement. 3) Multiply remaining entitlement by 4 to determine your Maximum $0-Down Purchase Price. 4) If your target purchase price exceeds that threshold, your required cash down payment is exactly 25% of the excess purchase price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I have two active VA home loans at the same time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Veterans can hold two active VA loans simultaneously using bonus entitlement. Common scenarios include receiving Permanent Change of Station (PCS) military relocation orders, upsizing due to family growth while retaining the original property as a rental, or moving to a new primary residence while satisfying VA primary occupancy rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 2026 FHFA Conforming Loan Limit for VA loans?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For 2026, the standard baseline FHFA conforming loan limit for a 1-unit property across most of the United States is $806,495. In high-cost designated counties (such as Honolulu, San Francisco, Northern Virginia/DC metro, and parts of Colorado and Alaska), the conforming limit extends up to $1,209,742 (150% of the baseline limit)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is Tier 2 VA loan entitlement restricted to loans over $144,000?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under federal statute (38 U.S.C. § 3703(a)(1)(C)), basic entitlement ($36,000) guarantees 25% of loans up to $144,000. By law, Tier 2 / bonus entitlement only triggers on the portion of loan amounts that exceed $144,000. If a veteran with partial entitlement seeks a mortgage under $144,000, secondary entitlement cannot be applied."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to pay the VA Funding Fee when using bonus entitlement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, unless exempt. Veterans with remaining entitlement purchasing a second home generally pay the 'Subsequent Use' funding fee rate (3.30% with 0% down, 1.50% with 5% to 9.9% down, or 1.25% with 10%+ down). However, veterans with a service-connected disability rating of 10% or greater, Purple Heart recipients, and qualifying surviving spouses are 100% exempt from the VA funding fee ($0 fee)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - MILITARY & VA EDITION
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-gold: #D97706;
+      --accent-gold-dark: #B45309;
+      --accent-gold-light: #FFFBEB;
+      --accent-gold-border: #FDE68A;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER / HERO
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .badge-pill-military {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent-gold-light);
+      border: 1px solid var(--accent-gold-border);
+      color: var(--accent-gold-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+
+    .page-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR DUAL-COLUMN LAYOUT
+    ----------------------------------------------------------- */
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2.25rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .calc-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .card-header-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header-badge {
+      font-size: 0.75rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Form Groups & Controls */
+    .form-group {
+      margin-bottom: 1.6rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-label-desc {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-with-adornment {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-adornment-left {
+      position: absolute;
+      left: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-adornment-right {
+      position: absolute;
+      right: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      color: var(--primary-navy);
+      font-weight: 600;
+      background: var(--card-bg);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input.has-left-adornment {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-right-adornment {
+      padding-right: 2.5rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-range {
+      width: 100%;
+      height: 6px;
+      accent-color: var(--accent-emerald);
+      margin-top: 0.65rem;
+      cursor: pointer;
+    }
+
+    /* Preset Buttons Grid */
+    .preset-pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .preset-btn {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.775rem;
+      font-weight: 600;
+      padding: 0.45rem 0.5rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.12s;
+      text-align: center;
+      font-family: inherit;
+    }
+
+    .preset-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .preset-btn.active {
+      background: var(--secondary-navy);
+      border-color: var(--secondary-navy);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Helper box */
+    .helper-callout {
+      background: #f1f5f9;
+      border-left: 3px solid var(--accent-blue);
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    .helper-callout a {
+      color: var(--accent-blue);
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* Radio / Option Selectors */
+    .option-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .option-cards-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-card-label {
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.65rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: var(--card-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .option-card-label:hover {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald-light);
+    }
+
+    .option-card-label input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .option-card-label.selected {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald-light);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    .option-title {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .option-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* Checkbox Row */
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      margin-top: 0.5rem;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent-emerald);
+      cursor: pointer;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS COLUMN & KPI CARDS
+    ----------------------------------------------------------- */
+    .results-hero-card {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+      margin-bottom: 2rem;
+      position: relative;
+      border-bottom: 4px solid var(--accent-emerald);
+    }
+
+    .results-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+
+    .results-status-badge.has-downpayment {
+      background: rgba(217, 119, 6, 0.2);
+      border-color: rgba(217, 119, 6, 0.4);
+      color: #fbbf24;
+    }
+
+    .hero-stat-large-title {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-stat-large-value {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: #34d399;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-stat-large-value.gold-text {
+      color: #fbbf24;
+    }
+
+    .hero-stat-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* 2-Grid Highlight Cards */
+    .kpi-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 540px) {
+      .kpi-duo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kpi-sub-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-sub-card.highlight-emerald {
+      border-top: 3px solid var(--accent-emerald);
+      background: #fafdfc;
+    }
+
+    .kpi-sub-card.highlight-amber {
+      border-top: 3px solid var(--accent-gold);
+      background: #fffdf8;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Entitlement Utilization Visualizer Bar */
+    .entitlement-bar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .entitlement-bar-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .visualizer-track {
+      height: 18px;
+      width: 100%;
+      background: #e2e8f0;
+      border-radius: 9px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 0.75rem;
+    }
+
+    .bar-used {
+      background: #ef4444;
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+
+    .bar-remaining {
+      background: var(--accent-emerald);
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+
+    .visualizer-legend {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* Breakdown Data Table */
+    .breakdown-table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-main);
+    }
+
+    .breakdown-table td.label-cell {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-cell {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-total td {
+      padding-top: 0.9rem;
+      border-top: 2px solid var(--border-color);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Action Buttons Row */
+    .action-btn-row {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       SIDE-BY-SIDE COMPARISON: VA BONUS VS CONVENTIONAL VS FHA
+    ----------------------------------------------------------- */
+    .comparison-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin-bottom: 1.75rem;
+    }
+
+    .comparison-table-wrapper {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow-x: auto;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+      font-size: 0.925rem;
+    }
+
+    .comp-table th, .comp-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+    }
+
+    .comp-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .comp-table th.col-va {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border-bottom: 2px solid var(--accent-emerald);
+      font-size: 0.9rem;
+    }
+
+    .comp-table td {
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table td.cell-va {
+      background: #f0fdf4;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* -----------------------------------------------------------
+       SCENARIO MATRIX TABLE
+    ----------------------------------------------------------- */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .scenario-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .scenario-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .scenario-badge {
+      font-size: 0.725rem;
+      background: #e2e8f0;
+      color: var(--secondary-navy);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .scenario-detail-list {
+      list-style: none;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .scenario-detail-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .scenario-detail-list li:last-child {
+      border-bottom: none;
+    }
+
+    .scenario-detail-list li span.val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       COE DECODER INFOGRAPHIC
+    ----------------------------------------------------------- */
+    .coe-box {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .coe-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .coe-box-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .coe-step-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .coe-step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .coe-step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--primary-navy);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .coe-step-card h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .coe-step-card p {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* -----------------------------------------------------------
+       AUTHORITATIVE GUIDE & FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 640px) {
+      .guide-article {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .guide-article h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-article p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout-box {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .formula-callout-box h5 {
+      color: #34d399;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .formula-callout-box p {
+      color: #e2e8f0;
+      margin-bottom: 0.5rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    /* Accordion */
+    .faq-accordion {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: var(--card-bg);
+      overflow: hidden;
+      transition: all 0.15s ease;
+    }
+
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 3rem;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .rr-nav, .breadcrumb-bar, .action-btn-row, .preset-pill-grid, .faq-accordion, .rr-footer {
+        display: none !important;
+      }
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+      .calc-card, .results-hero-card {
+        box-shadow: none !important;
+        border: 1px solid #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-container">
+    <!-- Navbar -->
+    <header>
+      <nav class="rr-nav" aria-label="Main Navigation">
+        <a href="/" class="rr-logo">
+          RealRefin<span>.</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#suite-refinance">Refinance Suite</a></li>
+          <li><a href="/#suite-investor">Investor Suite</a></li>
+          <li><a href="/#suite-buyer">Home Buyer Suite</a></li>
+          <li><a href="/#suite-military" class="active">Military &amp; VA</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/#suite-military" class="btn-nav-cta">All Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="separator">/</span>
+      <a href="/#suite-military">Military &amp; VA Loans Suite</a>
+      <span class="separator">/</span>
+      <span class="current">VA Bonus Entitlement Calculator 2026</span>
+    </nav>
+
+    <!-- Page Title & Hero Header -->
+    <div class="page-header">
+      <div class="badge-pill-military">
+        <span>⭐</span> Official VA Statutory Guidelines &bull; 38 U.S.C. § 3703
+      </div>
+      <h1 class="page-title">VA Loan Bonus Entitlement Calculator 2026</h1>
+      <p class="page-subtitle">
+        Calculate your remaining <strong>Tier 2 Secondary Entitlement</strong>, maximum <strong>$0-down purchase price</strong> on a second home with an existing active VA loan, down payment shortfall requirements, and 2026 FHFA conforming county limits.
+      </p>
+    </div>
+
+    <!-- CALCULATOR ENGINE: DUAL-COLUMN -->
+    <div class="calc-container">
+      
+      <!-- LEFT COLUMN: INPUT CONTROLS -->
+      <section class="calc-card" aria-label="VA Bonus Entitlement Input Form">
+        <div class="card-header-title">
+          <span>Loan &amp; Entitlement Parameters</span>
+          <span class="card-header-badge">2026 FHFA Limits</span>
+        </div>
+
+        <!-- 1. Target Home Purchase Price -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label for="purchasePriceInput" class="form-label">Target Home Purchase Price</label>
+            <span id="purchasePriceDisplay" style="font-weight:800; color:var(--primary-navy);">$650,000</span>
+          </div>
+          <div class="form-label-desc">The sales contract price for the new home you want to purchase.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="purchasePriceInput" class="form-input has-left-adornment" value="650000" min="50000" max="3000000" step="5000">
+          </div>
+          <input type="range" id="purchasePriceSlider" class="form-range" value="650000" min="100000" max="2000000" step="10000">
+        </div>
+
+        <!-- 2. Target Property County Loan Limit -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label for="countyLimitInput" class="form-label">County Conforming Loan Limit</label>
+            <span id="countyLimitDisplay" style="font-weight:800; color:var(--primary-navy);">$806,495</span>
+          </div>
+          <div class="form-label-desc">FHFA Conforming limit for the county where the new property is located.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="countyLimitInput" class="form-input has-left-adornment" value="806495" min="700000" max="1500000" step="500">
+          </div>
+          <!-- Presets -->
+          <div class="preset-pill-grid">
+            <button type="button" class="preset-btn active" data-limit="806495">Standard US ($806,495)</button>
+            <button type="button" class="preset-btn" data-limit="1077550">San Diego ($1,077,550)</button>
+            <button type="button" class="preset-btn" data-limit="1149825">Honolulu / DC ($1,149,825)</button>
+            <button type="button" class="preset-btn" data-limit="1209742">High-Cost Max ($1,209,742)</button>
+          </div>
+        </div>
+
+        <!-- 3. Entitlement Currently Tied Up (Used) -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label for="entitlementUsedInput" class="form-label">Entitlement Already Used / Charged</label>
+            <span id="entitlementUsedDisplay" style="font-weight:800; color:var(--primary-navy);">$75,000</span>
+          </div>
+          <div class="form-label-desc">Found in Box 12 of your COE, or 25% of your original prior VA loan amount.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="entitlementUsedInput" class="form-input has-left-adornment" value="75000" min="0" max="300000" step="1000">
+          </div>
+          <input type="range" id="entitlementUsedSlider" class="form-range" value="75000" min="0" max="250000" step="2500">
+          <div class="helper-callout">
+            💡 <strong>Quick helper:</strong> If your previous VA loan was $300,000, your entitlement charged is 25% = <strong>$75,000</strong>.
+          </div>
+        </div>
+
+        <!-- 4. Mortgage Terms -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.6rem;">
+          <div>
+            <label for="interestRateInput" class="form-label">Interest Rate</label>
+            <div class="input-with-adornment" style="margin-top:0.4rem;">
+              <input type="number" id="interestRateInput" class="form-input has-right-adornment" value="6.25" min="2.0" max="15.0" step="0.125">
+              <span class="input-adornment-right">%</span>
+            </div>
+          </div>
+          <div>
+            <label for="loanTermSelect" class="form-label">Loan Term</label>
+            <select id="loanTermSelect" class="form-input" style="margin-top:0.4rem;">
+              <option value="30" selected>30-Year Fixed</option>
+              <option value="15">15-Year Fixed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 5. VA Funding Fee Category -->
+        <div class="form-group">
+          <label class="form-label" style="margin-bottom:0.5rem;">VA Funding Fee Status</label>
+          <div class="option-cards-row">
+            <label class="option-card-label selected" id="optSubsequent">
+              <input type="radio" name="fundingFeeStatus" value="subsequent" checked>
+              <span class="option-title">Subsequent Use</span>
+              <span class="option-sub">3.30% ($0 down)</span>
+            </label>
+            <label class="option-card-label" id="optFirst">
+              <input type="radio" name="fundingFeeStatus" value="first">
+              <span class="option-title">First-Time Use</span>
+              <span class="option-sub">2.15% ($0 down)</span>
+            </label>
+            <label class="option-card-label" id="optExempt">
+              <input type="radio" name="fundingFeeStatus" value="exempt">
+              <span class="option-title">Exempt ($0)</span>
+              <span class="option-sub">10%+ Disability / Purple Heart</span>
+            </label>
+          </div>
+          <label class="checkbox-row" style="margin-top:0.85rem;">
+            <input type="checkbox" id="financeFeeCheckbox" checked>
+            <span>Roll VA Funding Fee into loan balance (Finance fee)</span>
+          </label>
+        </div>
+
+        <!-- 6. Taxes, Insurance & HOA -->
+        <div class="form-group" style="margin-bottom:0;">
+          <div class="form-label-wrap">
+            <label class="form-label">Property Taxes &amp; Insurance</label>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div>
+              <div class="form-label-desc">Annual Taxes</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="annualTaxInput" class="form-input has-left-adornment" value="7800" min="0" max="50000" step="100">
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Annual Home Insurance</div>
+              <div class="input-with-adornment">
+                <span class="input-adornment-left">$</span>
+                <input type="number" id="annualInsuranceInput" class="form-input has-left-adornment" value="1600" min="0" max="20000" step="100">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: RESULTS & INSTITUTIONAL ANALYSIS -->
+      <section aria-label="Calculation Results Summary">
+        
+        <!-- Hero Primary Result Card -->
+        <div class="results-hero-card">
+          <div class="results-status-badge" id="statusBadge">
+            <span>✓</span> 100% Zero Down Payment Approved
+          </div>
+          <div class="hero-stat-large-title">Maximum $0-Down Purchase Price</div>
+          <div class="hero-stat-large-value" id="maxZeroDownDisplay">$506,495</div>
+          <p class="hero-stat-desc" id="statusDescription">
+            With your remaining Tier 2 entitlement, you can purchase a second home up to <strong>$506,495</strong> with <strong>$0 down payment</strong>.
+          </p>
+        </div>
+
+        <!-- KPI Duo Cards -->
+        <div class="kpi-duo-grid">
+          <div class="kpi-sub-card highlight-amber" id="downPaymentCard">
+            <div class="kpi-label">Required Cash Down Payment</div>
+            <div class="kpi-value" id="requiredDownDisplay">$35,876</div>
+            <div class="kpi-note" id="downPctDisplay">5.52% of purchase price</div>
+          </div>
+          <div class="kpi-sub-card highlight-emerald">
+            <div class="kpi-label">Total Monthly Housing Outlay</div>
+            <div class="kpi-value" id="monthlyPaymentDisplay">$4,498<span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">/mo</span></div>
+            <div class="kpi-note" style="color:var(--accent-emerald-dark); font-weight:700;">Includes $0 Monthly PMI</div>
+          </div>
+        </div>
+
+        <!-- Entitlement Utilization Bar -->
+        <div class="entitlement-bar-card">
+          <div class="entitlement-bar-title">
+            <span>Guaranty Capacity Utilization</span>
+            <span id="entitlementPctDisplay" style="color:var(--accent-emerald-dark);">62.8% Available</span>
+          </div>
+          <div class="visualizer-track">
+            <div class="bar-used" id="barUsed" style="width: 37.2%;" title="Used Entitlement"></div>
+            <div class="bar-remaining" id="barRemaining" style="width: 62.8%;" title="Remaining Available Entitlement"></div>
+          </div>
+          <div class="visualizer-legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background:#ef4444;"></span>
+              <span>Used Entitlement: <strong id="usedLegend">$75,000</strong></span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:var(--accent-emerald);"></span>
+              <span>Remaining Bonus: <strong id="remainingLegend">$126,624</strong></span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:#94a3b8;"></span>
+              <span>County 25% Cap: <strong id="countyCapLegend">$201,624</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Data Table -->
+        <div class="breakdown-table-card">
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td class="label-cell">Target Purchase Price</td>
+                <td class="value-cell" id="tblPurchasePrice">$650,000</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Maximum $0-Down Threshold</td>
+                <td class="value-cell" id="tblZeroDownThreshold">$506,495</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Excess Over Zero-Down Threshold</td>
+                <td class="value-cell" id="tblExcessAmount">$143,505</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Required Down Payment (25% of excess)</td>
+                <td class="value-cell" id="tblDownPayment" style="color:var(--accent-gold-dark);">$35,876</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Base VA Mortgage Amount</td>
+                <td class="value-cell" id="tblBaseLoan">$614,124</td>
+              </tr>
+              <tr>
+                <td class="label-cell">VA Funding Fee (<span id="tblFeeRate">1.50%</span>)</td>
+                <td class="value-cell" id="tblFeeAmount">$9,212</td>
+              </tr>
+              <tr class="highlight-total">
+                <td class="label-cell">Total Financed VA Loan Balance</td>
+                <td class="value-cell" id="tblTotalLoan">$623,336</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Total VA Guaranty + Down Payment</td>
+                <td class="value-cell" id="tblTotalGuaranty">$162,500 (25.0%)</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Principal &amp; Interest (P&amp;I)</td>
+                <td class="value-cell" id="tblPI">$3,842 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Property Taxes &amp; Insurance Escrow</td>
+                <td class="value-cell" id="tblTI">$783 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Private Mortgage Insurance (PMI)</td>
+                <td class="value-cell" style="color:var(--accent-emerald-dark);">$0.00 / mo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-btn-row">
+          <button type="button" class="btn-action btn-action-primary" onclick="window.print()">
+            <span>🖨️</span> Print / Save Entitlement Report
+          </button>
+          <button type="button" class="btn-action" id="btnShareURL">
+            <span>🔗</span> Copy Shareable Link
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- COMPARISON MATRIX: VA BONUS VS CONVENTIONAL VS FHA -->
+    <section class="comparison-section">
+      <h2 class="section-title">VA Bonus Entitlement vs Conventional &amp; FHA</h2>
+      <p class="section-desc">
+        Comparing your options for purchasing a second home while keeping your first VA loan active. See how much cash and monthly outlay you save using your remaining VA entitlement.
+      </p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Loan Program</th>
+              <th class="col-va">VA Bonus Entitlement (Tier 2)</th>
+              <th>Conventional Loan</th>
+              <th>FHA Loan (3.5% Down)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Down Payment Required</strong></td>
+              <td class="cell-va" id="cmpVADown">$35,876 (5.5%)</td>
+              <td id="cmpConvDown">$32,500 (5.0%)</td>
+              <td id="cmpFHADown">$22,750 (3.5%)</td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Mortgage Insurance (PMI / MIP)</strong></td>
+              <td class="cell-va">$0.00 (No PMI Ever)</td>
+              <td id="cmpConvPMI">~$280 / month</td>
+              <td id="cmpFHAMIP">~$285 / month (For Life of Loan)</td>
+            </tr>
+            <tr>
+              <td><strong>Total Monthly Outlay</strong></td>
+              <td class="cell-va" id="cmpVAMonthly">$4,498 / mo</td>
+              <td id="cmpConvMonthly">$4,795 / mo</td>
+              <td id="cmpFHAMonthly">$4,860 / mo</td>
+            </tr>
+            <tr>
+              <td><strong>5-Year Mortgage Insurance Paid</strong></td>
+              <td class="cell-va">$0</td>
+              <td id="cmpConv5YrPMI">~$16,800</td>
+              <td id="cmpFHA5YrPMI">~$17,100</td>
+            </tr>
+            <tr>
+              <td><strong>Underwriting Guideline</strong></td>
+              <td class="cell-va">38 U.S.C. § 3703</td>
+              <td>Fannie Mae / Freddie Mac</td>
+              <td>HUD Handbook 4000.1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- COE DECODER INFOGRAPHIC GUIDE -->
+    <section class="coe-box">
+      <div class="coe-box-header">
+        <span style="font-size:1.85rem;">📄</span>
+        <div>
+          <h3>How to Read Your VA Certificate of Eligibility (COE)</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Veterans can download their official COE in 60 seconds from the VA.gov portal or through their mortgage lender.</p>
+        </div>
+      </div>
+
+      <div class="coe-step-list">
+        <div class="coe-step-card">
+          <div class="coe-step-num">1</div>
+          <h5>Login to VA.gov</h5>
+          <p>Navigate to <em>Housing Assistance &rarr; Home Loans &rarr; Request a Certificate of Eligibility (COE)</em> using Login.gov or ID.me.</p>
+        </div>
+        <div class="coe-step-card">
+          <div class="coe-step-num">2</div>
+          <h5>Locate Box 12: Entitlement Charged</h5>
+          <p>Box 12 displays prior VA loans and lists the exact dollar figure under <strong>"Entitlement Charged"</strong> (e.g., $65,000 or $75,000).</p>
+        </div>
+        <div class="coe-step-card">
+          <div class="coe-step-num">3</div>
+          <h5>Input Figure into Calculator</h5>
+          <p>Enter the Box 12 dollar value into the <em>"Entitlement Already Used"</em> field above to immediately display your zero-down limit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE 1,500+ WORD SEO GUIDE -->
+    <article class="guide-article">
+      <h2>Complete 2026 Guide to VA Bonus Entitlement (Tier 2 Entitlement)</h2>
+      
+      <p>
+        A frequent misconception among active-duty service members, military veterans, and even seasoned real estate agents is that a VA home loan can only be used once in a lifetime, or that a veteran cannot own two properties simultaneously with zero down payment. Under federal statutory guidelines established by <strong>38 U.S.C. § 3703</strong> and modified by the <strong>Blue Water Navy Vietnam Veterans Act of 2019</strong>, eligible borrowers can access <em>Bonus Entitlement</em>—formally designated by the Department of Veterans Affairs as <strong>Tier 2 Entitlement</strong> or <strong>Secondary Entitlement</strong>.
+      </p>
+
+      <p>
+        This institutional financial model breaks down the mechanical math, federal thresholds, and loan underwriting standards that govern how remaining secondary entitlement calculates purchasing power when an existing VA loan remains active on another property.
+      </p>
+
+      <h2>Basic Entitlement vs. Bonus (Tier 2) Entitlement: What Is the Difference?</h2>
+      <p>
+        Every eligible veteran begins with two tiers of loan entitlement:
+      </p>
+      <ul>
+        <li>
+          <strong>Basic Entitlement (Tier 1):</strong> Capped by statute at <strong>$36,000</strong>. When the VA loan program was originated under the Servicemen's Readjustment Act of 1944, home prices were lower. The $36,000 figure corresponds to a 25% guaranty on a $144,000 home ($144,000 \times 0.25 = $36,000).
+        </li>
+        <li>
+          <strong>Bonus Entitlement (Tier 2 / Secondary):</strong> Designed to keep pace with escalating home prices, Tier 2 entitlement bridges the gap between $144,000 and the local FHFA Conforming County Loan Limit ($806,495 in standard 2026 counties, or up to $1,209,742 in high-cost metro markets).
+        </li>
+      </ul>
+
+      <div class="formula-callout-box">
+        <h5>Official Statutory Entitlement Formula</h5>
+        <p>$$\text{Maximum County Guaranty} = \text{FHFA County Loan Limit} \times 0.25$$</p>
+        <p>$$\text{Remaining Bonus Entitlement} = \text{Maximum County Guaranty} - \text{Entitlement Already Charged}$$</p>
+        <p>$$\text{Maximum \$0-Down Purchase Price} = \text{Remaining Bonus Entitlement} \times 4$$</p>
+      </div>
+
+      <h2>How to Calculate Required Down Payment When Exceeding Zero-Down Threshold</h2>
+      <p>
+        Private mortgage lenders who originate VA-guaranteed mortgages require that the combination of the <strong>VA Guaranty</strong> plus the <strong>Borrower's Cash Down Payment</strong> equals at least <strong>25% of the total purchase price</strong>.
+      </p>
+      <p>
+        When a veteran purchases a property that costs more than their maximum zero-down limit, they are not disqualified. Instead, they simply cover 25% of the excess purchase price as a down payment:
+      </p>
+
+      <div class="formula-callout-box">
+        <h5>Down Payment Shortfall Formula</h5>
+        <p>$$\text{Guaranty Required by Lender} = \text{New Purchase Price} \times 0.25$$</p>
+        <p>$$\text{Guaranty Deficit} = \max\left(0, \, \text{Guaranty Required} - \text{Remaining Bonus Entitlement}\right)$$</p>
+        <p>$$\text{Required Cash Down Payment} = \text{Guaranty Deficit} = 0.25 \times \left(\text{Purchase Price} - \text{Max \$0-Down Price}\right)$$</p>
+      </div>
+
+      <h3>Realistic Numerical Example</h3>
+      <p>
+        Consider an active-duty Army Major stationed at Fort Carson who bought a home in El Paso for $300,000 using a VA loan. Their Certificate of Eligibility (COE) has <strong>$75,000</strong> in entitlement charged ($300,000 \times 25\%$).
+      </p>
+      <p>
+        Upon receiving Permanent Change of Station (PCS) relocation orders to Colorado Springs, they decide to rent out the El Paso home (cash-flowing $400/month) rather than sell it. In Colorado Springs (standard county conforming limit: <strong>$806,495</strong>), they want to purchase a new single-family residence for <strong>$650,000</strong>:
+      </p>
+      <ol>
+        <li><strong>County Guaranty Capacity:</strong> $\$806,495 \times 0.25 = \$201,623.75$</li>
+        <li><strong>Remaining Bonus Entitlement:</strong> $\$201,623.75 - \$75,000 = \$126,623.75$</li>
+        <li><strong>Maximum $0-Down Purchase Price:</strong> $\$126,623.75 \times 4 = \$506,495$</li>
+        <li><strong>Excess Price Over Zero-Down Cap:</strong> $\$650,000 - \$506,495 = \$143,505$</li>
+        <li><strong>Required Down Payment:</strong> $\$143,505 \times 0.25 = \mathbf{\$35,876.25}$ (only <strong>5.52%</strong> down)</li>
+      </ol>
+      <p>
+        By leveraging their bonus entitlement, the veteran purchases a $650,000 home putting only 5.52% down, secures competitive VA interest rates, and pays <strong>$0 in monthly private mortgage insurance (PMI)</strong>, saving roughly $3,360 annually compared to a conventional 5% down loan.
+      </p>
+
+      <h2>Can You Have Two Active VA Loans Simultaneously?</h2>
+      <p>
+        Yes. Federal underwriting guidelines explicitly allow a veteran to maintain two active VA loans concurrently under specific conditions:
+      </p>
+      <ul>
+        <li><strong>Military PCS Relocation Orders:</strong> Active duty personnel re-assigned to a new duty station more than 50 miles away can retain their departure home and buy a new primary residence with remaining bonus entitlement.</li>
+        <li><strong>Departure Residence Rental Conversion:</strong> The veteran may lease their first property. Most VA lenders allow 75% of the gross lease agreement rent to offset the existing mortgage payment on the borrower's debt-to-income (DTI) ratio.</li>
+        <li><strong>Primary Residence Intent:</strong> The new property purchased with Tier 2 entitlement must be occupied by the veteran (or spouse if active duty deployed) as their primary residence within 60 days of closing.</li>
+      </ul>
+
+      <h2>Restoring Your Entitlement: One-Time Restoration &amp; Refinancing</h2>
+      <p>
+        If you want to clear your entitlement charged on your COE, you have three primary routes:
+      </p>
+      <ol>
+        <li><strong>Sell the Prior Property and Pay Off the VA Loan:</strong> When the home is sold and the existing VA mortgage is satisfied in full, your full basic and bonus entitlement is completely restored automatically.</li>
+        <li><strong>Refinance the VA Loan into a Conventional Mortgage:</strong> If you have sufficient equity in your departure home, you can execute a conventional rate-and-term refinance to pay off the VA loan balance. Once paid off, you can submit <em>VA Form 26-1872 (Request for Restoration of Entitlement)</em>.</li>
+        <li><strong>One-Time Restoration of Entitlement:</strong> Under 38 U.S.C. § 3702(b), veterans are granted a unique, one-time lifetime exception allowing them to restore their full entitlement even if they retain ownership of the property, provided the underlying VA loan balance has been paid in full (e.g., paid off with cash or an unrelated private loan).</li>
+      </ol>
+
+      <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+      <h2>Frequently Asked Questions: VA Bonus Entitlement</h2>
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if the county loan limit is higher in the new city?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Bonus entitlement calculations always use the FHFA Conforming County Loan Limit of the county where the <em>new property being purchased</em> is located. If you move from a low-cost standard county ($806,495 limit) to a designated high-cost county like San Diego ($1,077,550 limit) or Honolulu ($1,149,825 limit), your 25% guaranty ceiling expands significantly, giving you much higher zero-down purchasing power.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can a civilian buyer assume my VA loan without tying up my entitlement?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            If a civilian (non-veteran) assumes your VA loan, your entitlement remains tied up on that property until the loan is paid off in full. However, if an eligible fellow veteran assumes your loan and agrees to execute a formal <strong>Substitution of Entitlement</strong>, your full entitlement is restored immediately. Use our <a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a> to analyze the blended rate and equity gap.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the minimum loan amount to use Tier 2 bonus entitlement?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Under 38 U.S.C. § 3703(a)(1)(C), bonus entitlement can only be utilized on loan amounts exceeding $144,000. For loans of $144,000 or less, only basic entitlement ($36,000) applies. If a veteran's basic entitlement has already been exhausted, they cannot use secondary entitlement for a home priced under $144,000.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the 2026 VA Funding Fee work for a second VA loan?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            For veterans who have previously used their VA loan benefit and are not exempt due to a service-connected disability, the funding fee falls into the "Subsequent Use" schedule: 3.30% for 0% down, 1.50% for 5% to 9.99% down, and 1.25% for 10% or more down. Veterans with a 10%+ VA disability rating pay $0.00 funding fee regardless of how many times they use the benefit.
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="rr-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="rr-logo" style="margin-bottom:0.85rem;">
+            RealRefin<span>.</span>
+          </a>
+          <p style="margin-bottom:1rem; line-height:1.6;">
+            Institutional real estate investment and debt structuring calculators. Built for mortgage originators, real estate investors, and veterans seeking zero-latency mathematical modeling.
+          </p>
+          <p style="font-size:0.775rem; color:var(--text-light);">
+            RealRefin is an independent financial technology analytics engine and is not affiliated with the U.S. Department of Veterans Affairs, HUD, Fannie Mae, or Freddie Mac.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Military &amp; VA Suite</h5>
+          <ul>
+            <li><a href="/va-bonus-entitlement-calculator">VA Bonus Entitlement Calculator</a></li>
+            <li><a href="/va-irrrl-calculator">VA IRRRL Streamline Refinance</a></li>
+            <li><a href="/assumable-mortgage-calculator">VA Assumable Loan Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Financial Suites</h5>
+          <ul>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+            <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Calculator</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability Tool</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform &amp; Legal</h5>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 RealRefin.com. All calculations run 100% client-side with zero data tracking. Updated for 2026 FHFA Conforming Limits.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT: INSTANT REACTIVE CALCULATION ENGINE -->
+  <script>
+    (function() {
+      'use strict';
+
+      // DOM Elements
+      const purchasePriceInput = document.getElementById('purchasePriceInput');
+      const purchasePriceSlider = document.getElementById('purchasePriceSlider');
+      const purchasePriceDisplay = document.getElementById('purchasePriceDisplay');
+
+      const countyLimitInput = document.getElementById('countyLimitInput');
+      const countyLimitDisplay = document.getElementById('countyLimitDisplay');
+
+      const entitlementUsedInput = document.getElementById('entitlementUsedInput');
+      const entitlementUsedSlider = document.getElementById('entitlementUsedSlider');
+      const entitlementUsedDisplay = document.getElementById('entitlementUsedDisplay');
+
+      const interestRateInput = document.getElementById('interestRateInput');
+      const loanTermSelect = document.getElementById('loanTermSelect');
+
+      const financeFeeCheckbox = document.getElementById('financeFeeCheckbox');
+      const annualTaxInput = document.getElementById('annualTaxInput');
+      const annualInsuranceInput = document.getElementById('annualInsuranceInput');
+
+      // Presets
+      const presetBtns = document.querySelectorAll('.preset-btn');
+      const fundingFeeRadios = document.querySelectorAll('input[name="fundingFeeStatus"]');
+      const optionLabels = document.querySelectorAll('.option-card-label');
+
+      // Output Elements
+      const maxZeroDownDisplay = document.getElementById('maxZeroDownDisplay');
+      const statusBadge = document.getElementById('statusBadge');
+      const statusDescription = document.getElementById('statusDescription');
+
+      const requiredDownDisplay = document.getElementById('requiredDownDisplay');
+      const downPctDisplay = document.getElementById('downPctDisplay');
+      const monthlyPaymentDisplay = document.getElementById('monthlyPaymentDisplay');
+
+      const barUsed = document.getElementById('barUsed');
+      const barRemaining = document.getElementById('barRemaining');
+      const entitlementPctDisplay = document.getElementById('entitlementPctDisplay');
+      const usedLegend = document.getElementById('usedLegend');
+      const remainingLegend = document.getElementById('remainingLegend');
+      const countyCapLegend = document.getElementById('countyCapLegend');
+
+      const tblPurchasePrice = document.getElementById('tblPurchasePrice');
+      const tblZeroDownThreshold = document.getElementById('tblZeroDownThreshold');
+      const tblExcessAmount = document.getElementById('tblExcessAmount');
+      const tblDownPayment = document.getElementById('tblDownPayment');
+      const tblBaseLoan = document.getElementById('tblBaseLoan');
+      const tblFeeRate = document.getElementById('tblFeeRate');
+      const tblFeeAmount = document.getElementById('tblFeeAmount');
+      const tblTotalLoan = document.getElementById('tblTotalLoan');
+      const tblTotalGuaranty = document.getElementById('tblTotalGuaranty');
+      const tblPI = document.getElementById('tblPI');
+      const tblTI = document.getElementById('tblTI');
+
+      // Comparison Elements
+      const cmpVADown = document.getElementById('cmpVADown');
+      const cmpConvDown = document.getElementById('cmpConvDown');
+      const cmpFHADown = document.getElementById('cmpFHADown');
+      const cmpConvPMI = document.getElementById('cmpConvPMI');
+      const cmpFHAMIP = document.getElementById('cmpFHAMIP');
+      const cmpVAMonthly = document.getElementById('cmpVAMonthly');
+      const cmpConvMonthly = document.getElementById('cmpConvMonthly');
+      const cmpFHAMonthly = document.getElementById('cmpFHAMonthly');
+      const cmpConv5YrPMI = document.getElementById('cmpConv5YrPMI');
+      const cmpFHA5YrPMI = document.getElementById('cmpFHA5YrPMI');
+
+      // Helper Formatters
+      const fmtUSD = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+      const fmtPct = (val) => val.toFixed(2) + '%';
+
+      function getSelectedFundingFeeTier() {
+        const checked = document.querySelector('input[name="fundingFeeStatus"]:checked');
+        return checked ? checked.value : 'subsequent';
+      }
+
+      function calculate() {
+        const purchasePrice = parseFloat(purchasePriceInput.value) || 0;
+        const countyLimit = parseFloat(countyLimitInput.value) || 806495;
+        const entitlementUsed = parseFloat(entitlementUsedInput.value) || 0;
+        const interestRate = parseFloat(interestRateInput.value) || 0;
+        const loanTerm = parseInt(loanTermSelect.value, 10) || 30;
+        const feeTier = getSelectedFundingFeeTier();
+        const financeFee = financeFeeCheckbox.checked;
+        const annualTax = parseFloat(annualTaxInput.value) || 0;
+        const annualInsurance = parseFloat(annualInsuranceInput.value) || 0;
+
+        // Display labels sync
+        purchasePriceDisplay.textContent = fmtUSD(purchasePrice);
+        countyLimitDisplay.textContent = fmtUSD(countyLimit);
+        entitlementUsedDisplay.textContent = fmtUSD(entitlementUsed);
+
+        // Core Mathematical Formulas
+        // 1. County 25% Maximum Guaranty Capacity
+        const countyGuarantyCap = countyLimit * 0.25;
+
+        // 2. Remaining Available Bonus Entitlement
+        const remainingBonus = Math.max(0, countyGuarantyCap - entitlementUsed);
+
+        // 3. Max $0 Down Purchase Price Threshold
+        const maxZeroDownPrice = remainingBonus * 4;
+
+        // 4. Down Payment Calculation
+        let requiredDownPayment = 0;
+        let excessPrice = 0;
+
+        if (purchasePrice <= maxZeroDownPrice) {
+          requiredDownPayment = 0;
+          excessPrice = 0;
+        } else {
+          excessPrice = purchasePrice - maxZeroDownPrice;
+          requiredDownPayment = excessPrice * 0.25;
+        }
+
+        const downPaymentPct = purchasePrice > 0 ? (requiredDownPayment / purchasePrice) * 100 : 0;
+        const baseLoanAmount = Math.max(0, purchasePrice - requiredDownPayment);
+
+        // 5. Total Effective Guaranty
+        const effectiveGuaranty = remainingBonus + requiredDownPayment;
+        const effectiveGuarantyPct = purchasePrice > 0 ? (effectiveGuaranty / purchasePrice) * 100 : 25;
+
+        // 6. VA Funding Fee Calculation (2026 Schedule)
+        let fundingFeeRate = 0;
+        if (feeTier === 'exempt') {
+          fundingFeeRate = 0;
+        } else if (feeTier === 'first') {
+          if (downPaymentPct >= 10) fundingFeeRate = 0.0125;
+          else if (downPaymentPct >= 5) fundingFeeRate = 0.0150;
+          else fundingFeeRate = 0.0215;
+        } else { // Subsequent Use
+          if (downPaymentPct >= 10) fundingFeeRate = 0.0125;
+          else if (downPaymentPct >= 5) fundingFeeRate = 0.0150;
+          else fundingFeeRate = 0.0330;
+        }
+
+        const fundingFeeAmount = baseLoanAmount * fundingFeeRate;
+        const totalLoanAmount = financeFee ? (baseLoanAmount + fundingFeeAmount) : baseLoanAmount;
+
+        // 7. Monthly Payment Math
+        const monthlyRate = (interestRate / 100) / 12;
+        const totalMonths = loanTerm * 12;
+        let monthlyPI = 0;
+        if (monthlyRate > 0) {
+          monthlyPI = totalLoanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        } else {
+          monthlyPI = totalLoanAmount / totalMonths;
+        }
+
+        const monthlyTI = (annualTax + annualInsurance) / 12;
+        const totalMonthlyPayment = monthlyPI + monthlyTI;
+
+        // Update Visual Outputs
+        maxZeroDownDisplay.textContent = fmtUSD(maxZeroDownPrice);
+        requiredDownDisplay.textContent = fmtUSD(requiredDownPayment);
+        downPctDisplay.textContent = `${fmtPct(downPaymentPct)} of purchase price`;
+        monthlyPaymentDisplay.innerHTML = `${fmtUSD(totalMonthlyPayment)}<span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">/mo</span>`;
+
+        if (requiredDownPayment === 0) {
+          statusBadge.className = 'results-status-badge';
+          statusBadge.innerHTML = '<span>✓</span> 100% Zero Down Payment Approved';
+          statusDescription.innerHTML = `Your remaining Tier 2 entitlement fully covers the required 25% guaranty. You can purchase this home for <strong>${fmtUSD(purchasePrice)}</strong> with <strong>$0 out-of-pocket down payment</strong>.`;
+        } else {
+          statusBadge.className = 'results-status-badge has-downpayment';
+          statusBadge.innerHTML = '<span>⚠️</span> Partial Down Payment Required';
+          statusDescription.innerHTML = `Purchase price exceeds your $0-down threshold of <strong>${fmtUSD(maxZeroDownPrice)}</strong>. Under 38 U.S.C. § 3703, you only need to cover 25% of the excess (<strong>${fmtUSD(requiredDownPayment)}</strong>), giving you <strong>${fmtPct(100 - downPaymentPct)} financing</strong>.`;
+        }
+
+        // Entitlement Bar
+        const usedPct = countyGuarantyCap > 0 ? Math.min(100, (entitlementUsed / countyGuarantyCap) * 100) : 0;
+        const remPct = Math.max(0, 100 - usedPct);
+        barUsed.style.width = usedPct + '%';
+        barRemaining.style.width = remPct + '%';
+        entitlementPctDisplay.textContent = `${fmtPct(remPct)} Available`;
+        usedLegend.textContent = fmtUSD(entitlementUsed);
+        remainingLegend.textContent = fmtUSD(remainingBonus);
+        countyCapLegend.textContent = fmtUSD(countyGuarantyCap);
+
+        // Breakdown Table
+        tblPurchasePrice.textContent = fmtUSD(purchasePrice);
+        tblZeroDownThreshold.textContent = fmtUSD(maxZeroDownPrice);
+        tblExcessAmount.textContent = fmtUSD(excessPrice);
+        tblDownPayment.textContent = fmtUSD(requiredDownPayment);
+        tblBaseLoan.textContent = fmtUSD(baseLoanAmount);
+        tblFeeRate.textContent = fmtPct(fundingFeeRate * 100);
+        tblFeeAmount.textContent = fmtUSD(fundingFeeAmount);
+        tblTotalLoan.textContent = fmtUSD(totalLoanAmount);
+        tblTotalGuaranty.textContent = `${fmtUSD(effectiveGuaranty)} (${fmtPct(effectiveGuarantyPct)})`;
+        tblPI.textContent = `${fmtUSD(monthlyPI)} / mo`;
+        tblTI.textContent = `${fmtUSD(monthlyTI)} / mo`;
+
+        // Side-by-Side Comparison
+        // Conventional: 5% down ($32.5k on $650k), PMI ~0.55%/yr
+        const convDown = purchasePrice * 0.05;
+        const convLoan = purchasePrice - convDown;
+        let convPI = 0;
+        if (monthlyRate > 0) {
+          convPI = convLoan * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        }
+        const convPMIMonthly = (convLoan * 0.0055) / 12;
+        const convTotalMonthly = convPI + convPMIMonthly + monthlyTI;
+
+        // FHA: 3.5% down, 1.75% upfront MIP (financed), 0.55% annual MIP
+        const fhaDown = purchasePrice * 0.035;
+        const fhaBaseLoan = purchasePrice - fhaDown;
+        const fhaTotalLoan = fhaBaseLoan * 1.0175; // roll in upfront MIP
+        let fhaPI = 0;
+        if (monthlyRate > 0) {
+          fhaPI = fhaTotalLoan * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        }
+        const fhaMIPMonthly = (fhaBaseLoan * 0.0055) / 12;
+        const fhaTotalMonthly = fhaPI + fhaMIPMonthly + monthlyTI;
+
+        cmpVADown.textContent = `${fmtUSD(requiredDownPayment)} (${fmtPct(downPaymentPct)})`;
+        cmpConvDown.textContent = `${fmtUSD(convDown)} (5.0%)`;
+        cmpFHADown.textContent = `${fmtUSD(fhaDown)} (3.5%)`;
+
+        cmpConvPMI.textContent = `~${fmtUSD(convPMIMonthly)} / month`;
+        cmpFHAMIP.textContent = `~${fmtUSD(fhaMIPMonthly)} / month (Lifetime)`;
+
+        cmpVAMonthly.textContent = `${fmtUSD(totalMonthlyPayment)} / mo`;
+        cmpConvMonthly.textContent = `${fmtUSD(convTotalMonthly)} / mo`;
+        cmpFHAMonthly.textContent = `${fmtUSD(fhaTotalMonthly)} / mo`;
+
+        cmpConv5YrPMI.textContent = `~${fmtUSD(convPMIMonthly * 60)}`;
+        cmpFHA5YrPMI.textContent = `~${fmtUSD(fhaMIPMonthly * 60)}`;
+      }
+
+      // Event Listeners for Live Interactivity
+      purchasePriceInput.addEventListener('input', function() {
+        purchasePriceSlider.value = this.value;
+        calculate();
+      });
+
+      purchasePriceSlider.addEventListener('input', function() {
+        purchasePriceInput.value = this.value;
+        calculate();
+      });
+
+      countyLimitInput.addEventListener('input', function() {
+        presetBtns.forEach(btn => btn.classList.remove('active'));
+        calculate();
+      });
+
+      entitlementUsedInput.addEventListener('input', function() {
+        entitlementUsedSlider.value = this.value;
+        calculate();
+      });
+
+      entitlementUsedSlider.addEventListener('input', function() {
+        entitlementUsedInput.value = this.value;
+        calculate();
+      });
+
+      interestRateInput.addEventListener('input', calculate);
+      loanTermSelect.addEventListener('change', calculate);
+      financeFeeCheckbox.addEventListener('change', calculate);
+      annualTaxInput.addEventListener('input', calculate);
+      annualInsuranceInput.addEventListener('input', calculate);
+
+      // County Limit Presets
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          presetBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          countyLimitInput.value = this.dataset.limit;
+          calculate();
+        });
+      });
+
+      // Funding Fee Card Selectors
+      fundingFeeRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          optionLabels.forEach(lbl => lbl.classList.remove('selected'));
+          this.closest('.option-card-label').classList.add('selected');
+          calculate();
+        });
+      });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const item = this.closest('.faq-item');
+          item.classList.toggle('active');
+        });
+      });
+
+      // Shareable URL Parameters
+      const btnShareURL = document.getElementById('btnShareURL');
+      btnShareURL.addEventListener('click', function() {
+        const url = new URL(window.location.href);
+        url.searchParams.set('price', purchasePriceInput.value);
+        url.searchParams.set('county', countyLimitInput.value);
+        url.searchParams.set('used', entitlementUsedInput.value);
+        url.searchParams.set('rate', interestRateInput.value);
+        navigator.clipboard.writeText(url.toString()).then(() => {
+          const originalText = btnShareURL.innerHTML;
+          btnShareURL.innerHTML = '<span>✓</span> Copied to Clipboard!';
+          setTimeout(() => { btnShareURL.innerHTML = originalText; }, 2500);
+        });
+      });
+
+      // Load URL params on mount if present
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('price')) {
+        purchasePriceInput.value = params.get('price');
+        purchasePriceSlider.value = params.get('price');
+      }
+      if (params.has('county')) {
+        countyLimitInput.value = params.get('county');
+      }
+      if (params.has('used')) {
+        entitlementUsedInput.value = params.get('used');
+        entitlementUsedSlider.value = params.get('used');
+      }
+      if (params.has('rate')) {
+        interestRateInput.value = params.get('rate');
+      }
+
+      // Initial calculation run
+      calculate();
+
+    })();
+  </script>
+</body>
+</html>
