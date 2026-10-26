@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAH Mortgage Calculator 2026 | Military Housing Allowance to Home Price</title>
+  <meta name="description" content="Calculate how much house your military Basic Allowance for Housing (BAH) can afford with $0 down payment. Reverse-solve purchase price from monthly BAH, model VA loan payments, and calculate 3-year PCS tour equity.">
+  <meta name="keywords" content="bah mortgage calculator, bah affordability calculator, military bah mortgage calculator, how much house can i afford with bah, va loan bah calculator, bah home loan calculator, basic allowance for housing mortgage calculator 2026, military housing allowance home loan">
+  <link rel="canonical" href="https://realrefin.com/bah-mortgage-calculator">
+  <meta property="og:title" content="BAH Mortgage Calculator 2026 | Military Housing Allowance to Home Price">
+  <meta property="og:description" content="Free institutional military BAH mortgage calculator. Convert your monthly DoD housing allowance into maximum home purchasing power with zero down payment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/bah-mortgage-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for crisp mathematical LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/bah-mortgage-calculator#app",
+        "name": "RealRefin BAH Mortgage Calculator 2026",
+        "url": "https://realrefin.com/bah-mortgage-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional military BAH mortgage calculator for US active-duty service members. Reverse-solves maximum affordable purchase price from monthly Basic Allowance for Housing, estimates VA loan payments with zero PMI, and calculates 36-month PCS tour equity accumulation.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Military & VA Loans Suite",
+            "item": "https://realrefin.com/#suite-military"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "BAH Mortgage Calculator 2026",
+            "item": "https://realrefin.com/bah-mortgage-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a BAH Mortgage Calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A BAH mortgage calculator takes your monthly Basic Allowance for Housing (BAH) and reverse-calculates the maximum home purchase price you can afford with a $0 down VA loan, factoring in principal, interest, local property taxes, homeowners insurance, and the VA funding fee, so that your monthly mortgage payment exactly equals or stays within your military housing allowance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use my BAH to pay for a mortgage instead of renting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Active-duty military service members can use their monthly BAH to pay their mortgage on an off-base primary residence. Because BAH is deposited directly into your bank account tax-free, you have complete discretion over whether to spend it on rent, on-base privatized housing, or on building equity by purchasing a home with a VA mortgage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do mortgage lenders calculate BAH for debt-to-income (DTI) qualification?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because BAH is 100% exempt from federal, state, and local income taxes, mortgage lenders 'gross up' your BAH by 125% (adding 25%) when computing your qualifying gross income for VA, conventional, and FHA underwriting. For example, a $2,800 monthly BAH allowance counts as $3,500 in gross qualifying income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to my house and mortgage when I receive PCS relocation orders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When you receive Permanent Change of Station (PCS) orders, you generally have three options: 1) Keep the home and convert it to a rental property, using market rent to offset the mortgage and cash-flow monthly profit; 2) Sell the property to realize the equity built up during your tour; or 3) Allow a qualified buyer to assume your low-rate VA loan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does BAH cover property taxes and homeowners insurance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BAH is paid as a flat monthly lump sum. When you obtain a mortgage, your monthly housing payment (PITI: Principal, Interest, Taxes, and Insurance) is paid from this allowance. Our calculator factors in standard county property taxes and hazard insurance so your entire PITI escrow is accounted for within your BAH target."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - MILITARY BAH EDITION
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-gold: #D97706;
+      --accent-gold-dark: #B45309;
+      --accent-gold-light: #FFFBEB;
+      --accent-gold-border: #FDE68A;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER / HERO
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill-military {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent-gold-light);
+      border: 1px solid var(--accent-gold-border);
+      color: var(--accent-gold-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+
+    .page-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       MODE SELECTOR SWITCHER
+    ----------------------------------------------------------- */
+    .mode-switcher-wrap {
+      display: flex;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 2rem;
+      max-width: 650px;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .mode-btn.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR DUAL-COLUMN LAYOUT
+    ----------------------------------------------------------- */
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2.25rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .calc-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .card-header-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header-badge {
+      font-size: 0.75rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Form Controls */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-label-desc {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-with-adornment {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-adornment-left {
+      position: absolute;
+      left: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-adornment-right {
+      position: absolute;
+      right: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      color: var(--primary-navy);
+      font-weight: 600;
+      background: var(--card-bg);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input.has-left-adornment {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-right-adornment {
+      padding-right: 2.5rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-range {
+      width: 100%;
+      height: 6px;
+      accent-color: var(--accent-emerald);
+      margin-top: 0.65rem;
+      cursor: pointer;
+    }
+
+    /* Military Base Station Quick Presets */
+    .base-presets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+
+    .base-preset-btn {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.45rem 0.5rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.12s;
+      text-align: center;
+      font-family: inherit;
+    }
+
+    .base-preset-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .base-preset-btn.active {
+      background: var(--secondary-navy);
+      border-color: var(--secondary-navy);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Radio / Option Selectors */
+    .option-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      .option-cards-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-card-label {
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: var(--card-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .option-card-label:hover {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald-light);
+    }
+
+    .option-card-label input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .option-card-label.selected {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald-light);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    .option-title {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .option-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .helper-callout {
+      background: #f1f5f9;
+      border-left: 3px solid var(--accent-blue);
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS COLUMN & KPI HERO CARD
+    ----------------------------------------------------------- */
+    .results-hero-card {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+      margin-bottom: 2rem;
+      position: relative;
+      border-bottom: 4px solid var(--accent-emerald);
+    }
+
+    .results-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-stat-large-title {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-stat-large-value {
+      font-size: 3.1rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: #34d399;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-stat-desc {
+      font-size: 0.925rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* 2-Grid Highlight Cards */
+    .kpi-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 540px) {
+      .kpi-duo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kpi-sub-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-sub-card.highlight-emerald {
+      border-top: 3px solid var(--accent-emerald);
+      background: #fafdfc;
+    }
+
+    .kpi-sub-card.highlight-gold {
+      border-top: 3px solid var(--accent-gold);
+      background: #fffdf8;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Breakdown Data Table */
+    .breakdown-table-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.65rem 0;
+      color: var(--text-main);
+    }
+
+    .breakdown-table td.label-cell {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-cell {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-total td {
+      padding-top: 0.9rem;
+      border-top: 2px solid var(--border-color);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Action Buttons Row */
+    .action-btn-row {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 160px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--primary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-action.btn-action-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       3-YEAR PCS TOUR EQUITY WEALTH ACCUMULATION
+    ----------------------------------------------------------- */
+    .pcs-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+    }
+
+    .pcs-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .pcs-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--primary-navy);
+    }
+
+    .pcs-card.highlight-emerald {
+      border-top-color: var(--accent-emerald);
+      background: #fafdfc;
+    }
+
+    .pcs-card.highlight-gold {
+      border-top-color: var(--accent-gold);
+      background: #fffdf8;
+    }
+
+    .pcs-card-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .pcs-card-val {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .pcs-card-desc {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       BUYING WITH BAH VS RENTING OFF-BASE TABLE
+    ----------------------------------------------------------- */
+    .comparison-table-wrapper {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow-x: auto;
+      margin-bottom: 4rem;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+      font-size: 0.925rem;
+    }
+
+    .comp-table th, .comp-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+    }
+
+    .comp-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .comp-table th.col-buy {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border-bottom: 2px solid var(--accent-emerald);
+      font-size: 0.9rem;
+    }
+
+    .comp-table td {
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table td.cell-buy {
+      background: #f0fdf4;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* -----------------------------------------------------------
+       AUTHORITATIVE GUIDE & FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 640px) {
+      .guide-article {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .guide-article h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-article p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #334155;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout-box {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    .formula-callout-box h5 {
+      color: #34d399;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .formula-callout-box p {
+      color: #e2e8f0;
+      margin-bottom: 0.5rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    /* Accordion */
+    .faq-accordion {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: var(--card-bg);
+      overflow: hidden;
+      transition: all 0.15s ease;
+    }
+
+    .faq-question {
+      padding: 1.2rem 1.5rem;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 3rem;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .rr-nav, .breadcrumb-bar, .action-btn-row, .base-presets-grid, .mode-switcher-wrap, .faq-accordion, .rr-footer {
+        display: none !important;
+      }
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+      .calc-card, .results-hero-card {
+        box-shadow: none !important;
+        border: 1px solid #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-container">
+    <!-- Navbar -->
+    <header>
+      <nav class="rr-nav" aria-label="Main Navigation">
+        <a href="/" class="rr-logo">
+          RealRefin<span>.</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#suite-refinance">Refinance Suite</a></li>
+          <li><a href="/#suite-investor">Investor Suite</a></li>
+          <li><a href="/#suite-buyer">Home Buyer Suite</a></li>
+          <li><a href="/#suite-military" class="active">Military &amp; VA</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/#suite-military" class="btn-nav-cta">All Calculators</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="separator">/</span>
+      <a href="/#suite-military">Military &amp; VA Loans Suite</a>
+      <span class="separator">/</span>
+      <span class="current">BAH Mortgage Calculator 2026</span>
+    </nav>
+
+    <!-- Page Title & Hero Header -->
+    <div class="page-header">
+      <div class="badge-pill-military">
+        <span>🎖️</span> Department of Defense Basic Allowance for Housing &bull; VA Loan Engine
+      </div>
+      <h1 class="page-title">BAH Mortgage Calculator 2026</h1>
+      <p class="page-subtitle">
+        Calculate exactly how much home your monthly <strong>Basic Allowance for Housing (BAH)</strong> can buy with <strong>$0 out-of-pocket down payment</strong>, reverse-solve maximum purchase prices, and model 3-year PCS tour equity wealth accumulation.
+      </p>
+    </div>
+
+    <!-- CALCULATION MODE SWITCHER -->
+    <div class="mode-switcher-wrap" role="tablist">
+      <button type="button" class="mode-btn active" id="btnModeReverse" role="tab" aria-selected="true">
+        🏠 Mode 1: How Much House Can My BAH Buy?
+      </button>
+      <button type="button" class="mode-btn" id="btnModeSpecific" role="tab" aria-selected="false">
+        🎯 Mode 2: Test Specific Home Price vs BAH
+      </button>
+    </div>
+
+    <!-- CALCULATOR ENGINE: DUAL-COLUMN -->
+    <div class="calc-container">
+      
+      <!-- LEFT COLUMN: INPUT CONTROLS -->
+      <section class="calc-card" aria-label="BAH Mortgage Calculator Inputs">
+        <div class="card-header-title">
+          <span id="formTitle">Housing Allowance &amp; Mortgage Terms</span>
+          <span class="card-header-badge">DoD 2026 Rates</span>
+        </div>
+
+        <!-- Mode 1 Primary Input: Monthly BAH Allowance -->
+        <div class="form-group" id="grpBahInput">
+          <div class="form-label-wrap">
+            <label for="bahInput" class="form-label">Monthly BAH Allowance</label>
+            <span id="bahDisplay" style="font-weight:800; color:var(--primary-navy);">$2,850 / mo</span>
+          </div>
+          <div class="form-label-desc">Your monthly tax-free Basic Allowance for Housing from your LES.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="bahInput" class="form-input has-left-adornment" value="2850" min="800" max="8000" step="25">
+          </div>
+          <input type="range" id="bahSlider" class="form-range" value="2850" min="1000" max="6000" step="50">
+          
+          <!-- Military Duty Station Quick Presets -->
+          <div style="font-size:0.75rem; font-weight:700; color:var(--text-muted); margin-top:0.75rem; text-transform:uppercase; letter-spacing:0.05em;">
+            Quick Station Presets (E-6 with Dependents):
+          </div>
+          <div class="base-presets-grid">
+            <button type="button" class="base-preset-btn active" data-bah="2850">Fort Liberty ($2,142)</button>
+            <button type="button" class="base-preset-btn" data-bah="2560">Norfolk / VA Beach ($2,460)</button>
+            <button type="button" class="base-preset-btn" data-bah="3880">San Diego ($3,880)</button>
+            <button type="button" class="base-preset-btn" data-bah="2800">JBLM Tacoma ($2,780)</button>
+            <button type="button" class="base-preset-btn" data-bah="2550">Colorado Springs ($2,550)</button>
+            <button type="button" class="base-preset-btn" data-bah="3400">NCR / Pentagon ($3,390)</button>
+          </div>
+        </div>
+
+        <!-- Mode 2 Specific Purchase Price Input (Hidden by default in Mode 1) -->
+        <div class="form-group" id="grpTargetPrice" style="display:none;">
+          <div class="form-label-wrap">
+            <label for="targetPriceInput" class="form-label">Target Home Purchase Price</label>
+            <span id="targetPriceDisplay" style="font-weight:800; color:var(--primary-navy);">$425,000</span>
+          </div>
+          <div class="form-label-desc">The sales contract price for the property you are considering.</div>
+          <div class="input-with-adornment">
+            <span class="input-adornment-left">$</span>
+            <input type="number" id="targetPriceInput" class="form-input has-left-adornment" value="425000" min="100000" max="2000000" step="5000">
+          </div>
+          <input type="range" id="targetPriceSlider" class="form-range" value="425000" min="150000" max="1200000" step="10000">
+        </div>
+
+        <!-- Mortgage Terms: Rate & Term -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <label for="interestRateInput" class="form-label">Mortgage Rate</label>
+            <div class="input-with-adornment" style="margin-top:0.4rem;">
+              <input type="number" id="interestRateInput" class="form-input has-right-adornment" value="6.25" min="2.0" max="15.0" step="0.125">
+              <span class="input-adornment-right">%</span>
+            </div>
+          </div>
+          <div>
+            <label for="loanTermSelect" class="form-label">Loan Term</label>
+            <select id="loanTermSelect" class="form-input" style="margin-top:0.4rem;">
+              <option value="30" selected>30-Year VA Fixed</option>
+              <option value="15">15-Year VA Fixed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Down Payment & VA Funding Fee -->
+        <div class="form-group">
+          <label class="form-label" style="margin-bottom:0.45rem;">VA Loan Down Payment &amp; Funding Fee</label>
+          <div class="option-cards-row">
+            <label class="option-card-label selected" id="optFirstUse">
+              <input type="radio" name="fundingFeeStatus" value="first" checked>
+              <span class="option-title">First-Time Use</span>
+              <span class="option-sub">2.15% (0% Down)</span>
+            </label>
+            <label class="option-card-label" id="optSubsequent">
+              <input type="radio" name="fundingFeeStatus" value="subsequent">
+              <span class="option-title">Subsequent Use</span>
+              <span class="option-sub">3.30% (0% Down)</span>
+            </label>
+            <label class="option-card-label" id="optExempt">
+              <input type="radio" name="fundingFeeStatus" value="exempt">
+              <span class="option-title">10%+ Disability</span>
+              <span class="option-sub">0.00% ($0 Fee)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Property Taxes, Home Insurance & HOA -->
+        <div class="form-group" style="margin-bottom:0;">
+          <div class="form-label-wrap">
+            <label class="form-label">Taxes, Insurance &amp; HOA</label>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom:0.75rem;">
+            <div>
+              <div class="form-label-desc">Annual Property Tax Rate</div>
+              <div class="input-with-adornment">
+                <input type="number" id="taxRateInput" class="form-input has-right-adornment" value="1.20" min="0" max="5.0" step="0.05">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+            <div>
+              <div class="form-label-desc">Annual Hazard Insurance</div>
+              <div class="input-with-adornment">
+                <input type="number" id="insuranceRateInput" class="form-input has-right-adornment" value="0.35" min="0" max="3.0" step="0.05">
+                <span class="input-adornment-right">%</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="form-label-desc">Monthly HOA Dues (if condo/PUD)</div>
+            <div class="input-with-adornment">
+              <span class="input-adornment-left">$</span>
+              <input type="number" id="monthlyHoaInput" class="form-input has-left-adornment" value="0" min="0" max="1500" step="10">
+            </div>
+          </div>
+        </div>
+
+        <div class="helper-callout">
+          💡 <strong>VA Gross-Up Advantage:</strong> Because BAH is 100% tax-free, lenders gross it up by 125% (<span id="grossUpDisplay" style="font-weight:700; color:var(--primary-navy);">$3,563/mo</span>) when qualifying your debt-to-income (DTI) ratio.
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: RESULTS & INSTITUTIONAL ANALYSIS -->
+      <section aria-label="Calculation Results Summary">
+        
+        <!-- Hero Primary Result Card -->
+        <div class="results-hero-card">
+          <div class="results-status-badge" id="heroBadge">
+            <span>✓</span> 100% BAH Fully Covered
+          </div>
+          <div class="hero-stat-large-title" id="heroStatTitle">Maximum Affordable Home Purchase Price</div>
+          <div class="hero-stat-large-value" id="heroStatValue">$375,900</div>
+          <p class="hero-stat-desc" id="heroStatDesc">
+            With your <strong>$2,850/mo</strong> BAH, you can buy a <strong>$375,900 home</strong> with <strong>$0 down payment</strong> without spending a single dollar of your base pay on housing.
+          </p>
+        </div>
+
+        <!-- KPI Duo Cards -->
+        <div class="kpi-duo-grid">
+          <div class="kpi-sub-card highlight-emerald" id="kpiCard1">
+            <div class="kpi-label" id="kpi1Label">Total Monthly PITI Payment</div>
+            <div class="kpi-value" id="kpi1Value">$2,850<span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">/mo</span></div>
+            <div class="kpi-note" id="kpi1Note" style="color:var(--accent-emerald-dark); font-weight:700;">Exactly Matches 100% of BAH</div>
+          </div>
+          <div class="kpi-sub-card highlight-gold" id="kpiCard2">
+            <div class="kpi-label" id="kpi2Label">3-Year PCS Tour Principal Paydown</div>
+            <div class="kpi-value" id="kpi2Value">$19,650</div>
+            <div class="kpi-note" id="kpi2Note">Equity paid by DoD allowance</div>
+          </div>
+        </div>
+
+        <!-- Breakdown Data Table -->
+        <div class="breakdown-table-card">
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td class="label-cell">Home Purchase Price</td>
+                <td class="value-cell" id="tblPrice">$375,900</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Down Payment (0% VA Loan)</td>
+                <td class="value-cell" style="color:var(--accent-emerald-dark);">$0.00 (0.0%)</td>
+              </tr>
+              <tr>
+                <td class="label-cell">VA Funding Fee (<span id="tblFeePct">2.15%</span> Financed)</td>
+                <td class="value-cell" id="tblFeeAmount">$8,082</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Total Financed VA Loan Balance</td>
+                <td class="value-cell" id="tblLoanAmount">$383,982</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Monthly Principal &amp; Interest (P&amp;I)</td>
+                <td class="value-cell" id="tblPI">$2,364 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Monthly Property Taxes (1.20%)</td>
+                <td class="value-cell" id="tblTax">$376 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Monthly Hazard Insurance (0.35%)</td>
+                <td class="value-cell" id="tblInsurance">$110 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Private Mortgage Insurance (PMI)</td>
+                <td class="value-cell" style="color:var(--accent-emerald-dark);">$0.00 (VA Zero PMI)</td>
+              </tr>
+              <tr class="highlight-total">
+                <td class="label-cell">Total Monthly Outlay (PITI + HOA)</td>
+                <td class="value-cell" id="tblTotalPayment">$2,850 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Monthly BAH Allowance</td>
+                <td class="value-cell" id="tblBahAllowance" style="color:var(--primary-navy);">$2,850 / mo</td>
+              </tr>
+              <tr>
+                <td class="label-cell">Net Out-of-Pocket / Surplus Delta</td>
+                <td class="value-cell" id="tblNetDelta" style="color:var(--accent-emerald-dark); font-weight:800;">$0 / mo (Balanced)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-btn-row">
+          <button type="button" class="btn-action btn-action-primary" onclick="window.print()">
+            <span>🖨️</span> Print / Save BAH Report
+          </button>
+          <button type="button" class="btn-action" id="btnShareURL">
+            <span>🔗</span> Copy Shareable Link
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- 3-YEAR PCS TOUR EQUITY WEALTH ACCUMULATION -->
+    <section class="pcs-section">
+      <h2 class="section-title">The Military Homeownership Wealth Advantage</h2>
+      <p class="section-desc">
+        A standard military tour lasts 36 months (3 years) before Permanent Change of Station (PCS) orders arrive. See the wealth accumulated when your monthly BAH pays down your mortgage principal instead of paying a landlord's rent.
+      </p>
+
+      <div class="pcs-cards-grid">
+        <div class="pcs-card highlight-emerald">
+          <div class="pcs-card-title">3-Year Principal Paydown</div>
+          <div class="pcs-card-val" id="pcsPaydownVal">$19,650</div>
+          <p class="pcs-card-desc">Guaranteed debt paid off by your military housing allowance over 36 months.</p>
+        </div>
+
+        <div class="pcs-card highlight-gold">
+          <div class="pcs-card-title">Estimated 3% Appreciation</div>
+          <div class="pcs-card-val" id="pcsAppreciationVal">$34,850</div>
+          <p class="pcs-card-desc">Conservative property value appreciation based on historical 3.0% annual US growth.</p>
+        </div>
+
+        <div class="pcs-card">
+          <div class="pcs-card-title">Total 3-Year Equity Created</div>
+          <div class="pcs-card-val" id="pcsTotalEquityVal" style="color:var(--accent-emerald-dark);">$54,500</div>
+          <p class="pcs-card-desc">Net wealth created at PCS time that can be cashed out, rolled into your next home, or retained as a rental.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUYING WITH BAH VS RENTING OFF-BASE TABLE -->
+    <section class="pcs-section">
+      <h2 class="section-title">Buying with BAH vs. Renting Off-Base (3-Year Tour)</h2>
+      <p class="section-desc">
+        Comparing financial outcomes over a 36-month military duty station assignment:
+      </p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Financial Milestone</th>
+              <th class="col-buy">Buying Off-Base (VA Loan + BAH)</th>
+              <th>Renting Off-Base (Paying Landlord)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Initial Down Payment Required</strong></td>
+              <td class="cell-buy">$0.00 (100% VA Financing)</td>
+              <td>First Month + Security Deposit (~$5,700)</td>
+            </tr>
+            <tr>
+              <td><strong>Monthly Housing Allowance Used</strong></td>
+              <td class="cell-buy" id="cmpBuyBah">$2,850 / month</td>
+              <td>$2,850 / month (Paid to Landlord)</td>
+            </tr>
+            <tr>
+              <td><strong>3-Year Total Rent / Housing Spent</strong></td>
+              <td class="cell-buy" id="cmpBuy3Yr">$102,600</td>
+              <td id="cmpRent3Yr">$102,600 (100% Sunk Cost)</td>
+            </tr>
+            <tr>
+              <td><strong>Equity Retained at PCS Orders</strong></td>
+              <td class="cell-buy" id="cmpBuyEquity">+$54,500</td>
+              <td>$0.00 (Zero Equity Returned)</td>
+            </tr>
+            <tr>
+              <td><strong>PCS Transition Flexibility</strong></td>
+              <td class="cell-buy">Sell for Profit or Retain as Cash-Flow Rental</td>
+              <td>Walk Away with Zero Asset Ownership</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- COMPREHENSIVE 1,500+ WORD SEO GUIDE -->
+    <article class="guide-article">
+      <h2>Complete 2026 Guide: How to Use Your BAH to Buy a Home with a VA Loan</h2>
+      
+      <p>
+        For active-duty service members in the United States Armed Forces—including the Army, Navy, Marine Corps, Air Force, Space Force, and Coast Guard—the <strong>Basic Allowance for Housing (BAH)</strong> represents one of the most powerful wealth-building tools in military personal finance. Unlike civilian compensation, BAH is an entitlement designed to offset the cost of housing when military government quarters are not provided.
+      </p>
+
+      <p>
+        Rather than paying their monthly housing allowance to an on-base privatized housing contractor or off-base civilian landlord where 100% of the funds are sunk costs, military homeowners leverage their BAH combined with a <strong>0% down VA home loan</strong> to purchase single-family homes, townhomes, and multi-unit properties (2-4 units) at their duty station.
+      </p>
+
+      <h2>How the BAH Reverse Mortgage Calculation Works</h2>
+      <p>
+        Most conventional mortgage calculators ask you for a home price and tell you what your payment will be. Our <strong>BAH Mortgage Calculator</strong> solves the equation in reverse: you provide your monthly housing allowance, and the algorithm determines the maximum purchase price where your total monthly housing cost exactly equals your BAH:
+      </p>
+
+      <div class="formula-callout-box">
+        <h5>Mathematical Reverse-Solver Formula</h5>
+        <p>$$\text{Total Monthly PITI} = \text{Monthly BAH Allowance} (B) - \text{Monthly HOA} (H)$$</p>
+        <p>$$m = \frac{i(1+i)^N}{(1+i)^N - 1} \quad \text{(Standard Monthly Amortization Constant)}$$</p>
+        <p>$$K = (1 - d)(1 + f) m + \frac{t_{\text{tax}} + t_{\text{ins}}}{12}$$</p>
+        <p>$$\text{Maximum Purchase Price } (P) = \frac{B - H}{K}$$</p>
+      </div>
+
+      <p>
+        Where $d$ is down payment percentage (0% for standard VA loans), $f$ is the VA funding fee percentage (e.g. 2.15% financed into the loan), $t_{\text{tax}}$ is the annual local property tax rate, and $t_{\text{ins}}$ is the annual hazard insurance rate.
+      </p>
+
+      <h2>Lender Underwriting: The 125% BAH "Gross-Up" Rule</h2>
+      <p>
+        One of the biggest advantages military borrowers possess during mortgage underwriting is the tax treatment of military allowances. Under Internal Revenue Code (IRC) Section 134, military allowances including <strong>BAH</strong> and <strong>BAS (Basic Allowance for Subsistence)</strong> are completely excluded from federal, state, and local gross income taxes.
+      </p>
+      <p>
+        Under <strong>VA Pamphlet 26-7 (Lenders Handbook), Chapter 4</strong>, mortgage underwriters are permitted to "gross up" non-taxable income by <strong>125%</strong> (or the borrower’s marginal tax rate) when calculating the debt-to-income (DTI) ratio. 
+      </p>
+      <p>
+        For instance, if an E-6 with dependents receives <strong>$2,850/month</strong> in BAH, the lender enters <strong>$3,562.50/month</strong> ($2,850 \times 1.25$) on the loan application! This artificial boost increases your qualifying borrowing capacity significantly without changing your actual take-home cash flow.
+      </p>
+
+      <h2>The 3-Year PCS Tour Strategy: Buy, Pay Down, and Cash Flow</h2>
+      <p>
+        Active-duty service members frequently receive Permanent Change of Station (PCS) orders every 3 to 4 years. A common fear is: <em>"Why buy if I might move in three years?"</em>
+      </p>
+      <p>
+        Historically, military duty stations (like Norfolk, San Diego, San Antonio, Colorado Springs, and Fort Liberty) have robust rental markets populated by continuous incoming military families. When you buy at the start of a 3-year assignment:
+      </p>
+      <ol>
+        <li><strong>Principal Reduction:</strong> Over 36 months, your BAH pays down approximately $18,000 to $25,000 of principal balance on a $350,000 to $450,000 home.</li>
+        <li><strong>Property Appreciation:</strong> Even at modest 3% annual appreciation, a $400,000 property gains ~$37,000 in market value over 36 months.</li>
+        <li><strong>PCS Departure Options:</strong> When PCS orders arrive, you can either sell the property and pocket $50,000+ in tax-free equity (under IRC Section 121 military primary residence exclusion rules), or rent it out to an incoming service member where the rent covers your mortgage, turning you into a long-term real estate investor.</li>
+      </ol>
+
+      <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+      <h2>Frequently Asked Questions: BAH Mortgage Guidelines</h2>
+      <div class="faq-accordion">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if my mortgage payment is less than my monthly BAH?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            You keep the difference! Unlike on-base privatized housing (which takes 100% of your BAH regardless of rank or home size), off-base housing allows you to retain any surplus. If your monthly BAH is $2,850 and your total mortgage payment is $2,550, you pocket $300 in tax-free cash every month into your savings or investment accounts.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What if my mortgage payment is higher than my BAH?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            You can use your military base pay (or a working spouse's income) to cover the difference. Many military families choose to buy a slightly larger home that exceeds their BAH by $200-$400/month because they view the difference as a sound investment into home equity rather than pure rental expense.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I buy a multi-family home (duplex, triplex, or fourplex) with my BAH?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! This is known in the military community as "house hacking." Under VA loan guidelines, active-duty members can purchase up to a 4-unit residential property with 0% down, live in one unit using their BAH, and rent out the remaining units to civilian or military tenants, often living 100% housing-cost free while generating passive monthly income.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do BAH rates change if mortgage interest rates go up or down?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No. The Department of Defense (DoD) sets BAH rates annually on January 1st based on local residential rental market surveys, not mortgage interest rates. However, under DoD "individual rate protection" rules, your BAH rate will never decrease as long as you remain stationed at the same duty station and keep your paygrade/dependency status, protecting you against downward market shifts.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I keep my VA loan on my first house when I PCS and buy a second home?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, by utilizing your <strong>VA Bonus Entitlement (Tier 2 Entitlement)</strong>. If you keep your first home as a rental, your remaining entitlement can be used with $0 down up to your new county's FHFA loan limit. Use our <a href="/va-bonus-entitlement-calculator">VA Bonus Entitlement Calculator 2026</a> to check your exact second-home zero-down purchasing power.
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="rr-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="rr-logo" style="margin-bottom:0.85rem;">
+            RealRefin<span>.</span>
+          </a>
+          <p style="margin-bottom:1rem; line-height:1.6;">
+            Institutional real estate investment and debt structuring calculators. Built for mortgage originators, real estate investors, and veterans seeking zero-latency mathematical modeling.
+          </p>
+          <p style="font-size:0.775rem; color:var(--text-light);">
+            RealRefin is an independent financial technology analytics engine and is not affiliated with the U.S. Department of Defense, VA, HUD, Fannie Mae, or Freddie Mac.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Military &amp; VA Suite</h5>
+          <ul>
+            <li><a href="/bah-mortgage-calculator">BAH Mortgage Calculator</a></li>
+            <li><a href="/va-bonus-entitlement-calculator">VA Bonus Entitlement Calculator</a></li>
+            <li><a href="/va-irrrl-calculator">VA IRRRL Streamline Refinance</a></li>
+            <li><a href="/assumable-mortgage-calculator">VA Assumable Loan Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Financial Suites</h5>
+          <ul>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+            <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Calculator</a></li>
+            <li><a href="/home-affordability-calculator">Home Affordability Tool</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform &amp; Legal</h5>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Disclaimers</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 RealRefin.com. All calculations run 100% client-side with zero data tracking. Updated for 2026 DoD BAH &amp; VA Underwriting Guidelines.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT: DUAL-MODE REACTIVE BAH CALCULATION ENGINE -->
+  <script>
+    (function() {
+      'use strict';
+
+      // State Mode: 'reverse' (BAH to Price) or 'specific' (Price to BAH Delta)
+      let currentMode = 'reverse';
+
+      // DOM Input Elements
+      const btnModeReverse = document.getElementById('btnModeReverse');
+      const btnModeSpecific = document.getElementById('btnModeSpecific');
+      const grpBahInput = document.getElementById('grpBahInput');
+      const grpTargetPrice = document.getElementById('grpTargetPrice');
+      const formTitle = document.getElementById('formTitle');
+
+      const bahInput = document.getElementById('bahInput');
+      const bahSlider = document.getElementById('bahSlider');
+      const bahDisplay = document.getElementById('bahDisplay');
+
+      const targetPriceInput = document.getElementById('targetPriceInput');
+      const targetPriceSlider = document.getElementById('targetPriceSlider');
+      const targetPriceDisplay = document.getElementById('targetPriceDisplay');
+
+      const interestRateInput = document.getElementById('interestRateInput');
+      const loanTermSelect = document.getElementById('loanTermSelect');
+      const taxRateInput = document.getElementById('taxRateInput');
+      const insuranceRateInput = document.getElementById('insuranceRateInput');
+      const monthlyHoaInput = document.getElementById('monthlyHoaInput');
+
+      const basePresetBtns = document.querySelectorAll('.base-preset-btn');
+      const fundingFeeRadios = document.querySelectorAll('input[name="fundingFeeStatus"]');
+      const optionLabels = document.querySelectorAll('.option-card-label');
+      const grossUpDisplay = document.getElementById('grossUpDisplay');
+
+      // Output Elements
+      const heroBadge = document.getElementById('heroBadge');
+      const heroStatTitle = document.getElementById('heroStatTitle');
+      const heroStatValue = document.getElementById('heroStatValue');
+      const heroStatDesc = document.getElementById('heroStatDesc');
+
+      const kpiCard1 = document.getElementById('kpiCard1');
+      const kpi1Label = document.getElementById('kpi1Label');
+      const kpi1Value = document.getElementById('kpi1Value');
+      const kpi1Note = document.getElementById('kpi1Note');
+
+      const kpiCard2 = document.getElementById('kpiCard2');
+      const kpi2Label = document.getElementById('kpi2Label');
+      const kpi2Value = document.getElementById('kpi2Value');
+      const kpi2Note = document.getElementById('kpi2Note');
+
+      const tblPrice = document.getElementById('tblPrice');
+      const tblFeePct = document.getElementById('tblFeePct');
+      const tblFeeAmount = document.getElementById('tblFeeAmount');
+      const tblLoanAmount = document.getElementById('tblLoanAmount');
+      const tblPI = document.getElementById('tblPI');
+      const tblTax = document.getElementById('tblTax');
+      const tblInsurance = document.getElementById('tblInsurance');
+      const tblTotalPayment = document.getElementById('tblTotalPayment');
+      const tblBahAllowance = document.getElementById('tblBahAllowance');
+      const tblNetDelta = document.getElementById('tblNetDelta');
+
+      const pcsPaydownVal = document.getElementById('pcsPaydownVal');
+      const pcsAppreciationVal = document.getElementById('pcsAppreciationVal');
+      const pcsTotalEquityVal = document.getElementById('pcsTotalEquityVal');
+
+      const cmpBuyBah = document.getElementById('cmpBuyBah');
+      const cmpBuy3Yr = document.getElementById('cmpBuy3Yr');
+      const cmpRent3Yr = document.getElementById('cmpRent3Yr');
+      const cmpBuyEquity = document.getElementById('cmpBuyEquity');
+
+      // Helper Formatters
+      const fmtUSD = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+      const fmtPct = (val) => val.toFixed(2) + '%';
+
+      function getSelectedFundingFeeRate() {
+        const checked = document.querySelector('input[name="fundingFeeStatus"]:checked');
+        const val = checked ? checked.value : 'first';
+        if (val === 'exempt') return 0.0;
+        if (val === 'subsequent') return 0.0330;
+        return 0.0215; // first-time use 0% down
+      }
+
+      function calculate() {
+        const bah = parseFloat(bahInput.value) || 0;
+        const interestRate = parseFloat(interestRateInput.value) || 6.25;
+        const loanTermYears = parseInt(loanTermSelect.value, 10) || 30;
+        const taxRate = (parseFloat(taxRateInput.value) || 1.20) / 100;
+        const insRate = (parseFloat(insuranceRateInput.value) || 0.35) / 100;
+        const monthlyHoa = parseFloat(monthlyHoaInput.value) || 0;
+        const feeRate = getSelectedFundingFeeRate();
+
+        // 125% Gross-Up Calculation
+        const grossedUpBah = bah * 1.25;
+        grossUpDisplay.textContent = `${fmtUSD(grossedUpBah)} / mo`;
+
+        // Sync display labels
+        bahDisplay.textContent = `${fmtUSD(bah)} / mo`;
+
+        const monthlyRate = (interestRate / 100) / 12;
+        const totalMonths = loanTermYears * 12;
+
+        // Amortization factor 'm': monthly P&I per $1 of financed loan
+        let m = 0;
+        if (monthlyRate > 0) {
+          m = (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        } else {
+          m = 1 / totalMonths;
+        }
+
+        let purchasePrice = 0;
+        let monthlyPI = 0;
+        let monthlyTax = 0;
+        let monthlyIns = 0;
+        let totalMonthlyPayment = 0;
+
+        if (currentMode === 'reverse') {
+          // MODE 1: REVERSE SOLVE FROM BAH TO PURCHASE PRICE
+          // Total Monthly = PITI + HOA = BAH
+          // Available for PITI = BAH - monthlyHoa
+          const availableForPITI = Math.max(0, bah - monthlyHoa);
+
+          // PITI = P * [ (1 + feeRate) * m + (taxRate + insRate) / 12 ]
+          const K = ((1 + feeRate) * m) + ((taxRate + insRate) / 12);
+          if (K > 0) {
+            purchasePrice = availableForPITI / K;
+          } else {
+            purchasePrice = 0;
+          }
+
+          // Round purchase price to nearest $100 for institutional realism
+          purchasePrice = Math.round(purchasePrice / 100) * 100;
+
+          const baseLoan = purchasePrice;
+          const fundingFeeAmount = baseLoan * feeRate;
+          const totalLoan = baseLoan + fundingFeeAmount;
+
+          monthlyPI = totalLoan * m;
+          monthlyTax = (purchasePrice * taxRate) / 12;
+          monthlyIns = (purchasePrice * insRate) / 12;
+          totalMonthlyPayment = monthlyPI + monthlyTax + monthlyIns + monthlyHoa;
+
+          // Hero Card for Mode 1
+          heroStatTitle.textContent = "Maximum Affordable Home Purchase Price";
+          heroStatValue.textContent = fmtUSD(purchasePrice);
+          heroStatDesc.innerHTML = `With your <strong>${fmtUSD(bah)}/mo</strong> BAH, you can buy a <strong>${fmtUSD(purchasePrice)} home</strong> with <strong>$0 down payment</strong> without spending a single dollar of your base pay on housing.`;
+          heroBadge.className = "results-status-badge";
+          heroBadge.innerHTML = "<span>✓</span> 100% BAH Fully Covered";
+
+          kpi1Label.textContent = "Total Monthly Housing Outlay";
+          kpi1Value.innerHTML = `${fmtUSD(totalMonthlyPayment)}<span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">/mo</span>`;
+          kpi1Note.textContent = "Exactly Matches 100% of BAH";
+          kpi1Note.style.color = "var(--accent-emerald-dark)";
+
+        } else {
+          // MODE 2: SPECIFIC TARGET HOME PRICE VS BAH
+          purchasePrice = parseFloat(targetPriceInput.value) || 0;
+          targetPriceDisplay.textContent = fmtUSD(purchasePrice);
+
+          const baseLoan = purchasePrice;
+          const fundingFeeAmount = baseLoan * feeRate;
+          const totalLoan = baseLoan + fundingFeeAmount;
+
+          monthlyPI = totalLoan * m;
+          monthlyTax = (purchasePrice * taxRate) / 12;
+          monthlyIns = (purchasePrice * insRate) / 12;
+          totalMonthlyPayment = monthlyPI + monthlyTax + monthlyIns + monthlyHoa;
+
+          const delta = totalMonthlyPayment - bah;
+
+          heroStatTitle.textContent = "Total Estimated Monthly Housing Outlay";
+          heroStatValue.textContent = `${fmtUSD(totalMonthlyPayment)}/mo`;
+
+          if (delta <= 0) {
+            const surplus = Math.abs(delta);
+            heroBadge.className = "results-status-badge";
+            heroBadge.innerHTML = "<span>✓</span> 100% Covered + Cash Surplus!";
+            heroStatDesc.innerHTML = `Your BAH allowance of <strong>${fmtUSD(bah)}/mo</strong> fully covers this <strong>${fmtUSD(purchasePrice)} home</strong>, leaving you with an extra <strong>${fmtUSD(surplus)}/month</strong> in your pocket!`;
+            kpi1Note.textContent = `+$${Math.round(surplus)}/mo extra pocket money`;
+            kpi1Note.style.color = "var(--accent-emerald-dark)";
+          } else {
+            heroBadge.className = "results-status-badge";
+            heroBadge.style.background = "rgba(217, 119, 6, 0.2)";
+            heroBadge.style.borderColor = "rgba(217, 119, 6, 0.4)";
+            heroBadge.style.color = "#fbbf24";
+            heroBadge.innerHTML = "<span>⚠️</span> Out-of-Pocket Contribution Required";
+            const covPct = ((bah / totalMonthlyPayment) * 100).toFixed(1);
+            heroStatDesc.innerHTML = `Your BAH covers <strong>${covPct}%</strong> of this home. Out-of-pocket contribution from your base pay: <strong>${fmtUSD(delta)}/month</strong>.`;
+            kpi1Note.textContent = `${fmtUSD(delta)}/mo from base pay`;
+            kpi1Note.style.color = "var(--accent-gold-dark)";
+          }
+
+          kpi1Label.textContent = "Total Monthly PITI Payment";
+          kpi1Value.innerHTML = `${fmtUSD(totalMonthlyPayment)}<span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">/mo</span>`;
+        }
+
+        const baseLoan = purchasePrice;
+        const fundingFeeAmount = baseLoan * feeRate;
+        const totalLoan = baseLoan + fundingFeeAmount;
+
+        // 3-Year PCS Tour Wealth Math (36 Months)
+        // Calculate principal paid down in first 36 months
+        let balance = totalLoan;
+        let cumulativePrincipal = 0;
+        for (let month = 1; month <= 36; month++) {
+          const interestPortion = balance * monthlyRate;
+          const principalPortion = monthlyPI - interestPortion;
+          cumulativePrincipal += principalPortion;
+          balance -= principalPortion;
+        }
+
+        // 3-Year 3.0% annual compound appreciation
+        const futureValue = purchasePrice * Math.pow(1 + 0.03, 3);
+        const appreciationGain = futureValue - purchasePrice;
+        const totalPcsEquity = cumulativePrincipal + appreciationGain;
+
+        kpi2Value.textContent = fmtUSD(cumulativePrincipal);
+        pcsPaydownVal.textContent = fmtUSD(cumulativePrincipal);
+        pcsAppreciationVal.textContent = fmtUSD(appreciationGain);
+        pcsTotalEquityVal.textContent = fmtUSD(totalPcsEquity);
+
+        // Breakdown Table Update
+        tblPrice.textContent = fmtUSD(purchasePrice);
+        tblFeePct.textContent = fmtPct(feeRate * 100);
+        tblFeeAmount.textContent = fmtUSD(fundingFeeAmount);
+        tblLoanAmount.textContent = fmtUSD(totalLoan);
+        tblPI.textContent = `${fmtUSD(monthlyPI)} / mo`;
+        tblTax.textContent = `${fmtUSD(monthlyTax)} / mo`;
+        tblInsurance.textContent = `${fmtUSD(monthlyIns)} / mo`;
+        tblTotalPayment.textContent = `${fmtUSD(totalMonthlyPayment)} / mo`;
+        tblBahAllowance.textContent = `${fmtUSD(bah)} / mo`;
+
+        const netDelta = totalMonthlyPayment - bah;
+        if (Math.abs(netDelta) < 1.0) {
+          tblNetDelta.textContent = "$0 / mo (100% Balanced)";
+          tblNetDelta.style.color = "var(--accent-emerald-dark)";
+        } else if (netDelta < 0) {
+          tblNetDelta.textContent = `+${fmtUSD(Math.abs(netDelta))} / mo (Pocket Surplus)`;
+          tblNetDelta.style.color = "var(--accent-emerald-dark)";
+        } else {
+          tblNetDelta.textContent = `-${fmtUSD(netDelta)} / mo (Out of Pocket)`;
+          tblNetDelta.style.color = "var(--accent-gold-dark)";
+        }
+
+        // Buying vs Renting Off-Base Comparison
+        cmpBuyBah.textContent = `${fmtUSD(totalMonthlyPayment)} / mo`;
+        cmpBuy3Yr.textContent = fmtUSD(totalMonthlyPayment * 36);
+        cmpRent3Yr.textContent = `${fmtUSD(bah * 36)} (100% Sunk Cost)`;
+        cmpBuyEquity.textContent = `+${fmtUSD(totalPcsEquity)}`;
+      }
+
+      // Mode Switcher Event Handlers
+      btnModeReverse.addEventListener('click', function() {
+        currentMode = 'reverse';
+        btnModeReverse.classList.add('active');
+        btnModeReverse.setAttribute('aria-selected', 'true');
+        btnModeSpecific.classList.remove('active');
+        btnModeSpecific.setAttribute('aria-selected', 'false');
+
+        grpBahInput.style.display = 'block';
+        grpTargetPrice.style.display = 'none';
+        formTitle.textContent = "Housing Allowance & Mortgage Terms";
+        calculate();
+      });
+
+      btnModeSpecific.addEventListener('click', function() {
+        currentMode = 'specific';
+        btnModeSpecific.classList.add('active');
+        btnModeSpecific.setAttribute('aria-selected', 'true');
+        btnModeReverse.classList.remove('active');
+        btnModeReverse.setAttribute('aria-selected', 'false');
+
+        grpBahInput.style.display = 'block';
+        grpTargetPrice.style.display = 'block';
+        formTitle.textContent = "Target Price vs. BAH Allowance";
+        calculate();
+      });
+
+      // Interactive Listeners
+      bahInput.addEventListener('input', function() {
+        bahSlider.value = this.value;
+        calculate();
+      });
+
+      bahSlider.addEventListener('input', function() {
+        bahInput.value = this.value;
+        calculate();
+      });
+
+      targetPriceInput.addEventListener('input', function() {
+        targetPriceSlider.value = this.value;
+        calculate();
+      });
+
+      targetPriceSlider.addEventListener('input', function() {
+        targetPriceInput.value = this.value;
+        calculate();
+      });
+
+      interestRateInput.addEventListener('input', calculate);
+      loanTermSelect.addEventListener('change', calculate);
+      taxRateInput.addEventListener('input', calculate);
+      insuranceRateInput.addEventListener('input', calculate);
+      monthlyHoaInput.addEventListener('input', calculate);
+
+      // Base Station Preset Buttons
+      basePresetBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          basePresetBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          bahInput.value = this.dataset.bah;
+          bahSlider.value = this.dataset.bah;
+          calculate();
+        });
+      });
+
+      // Funding Fee Radios
+      fundingFeeRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          optionLabels.forEach(lbl => lbl.classList.remove('selected'));
+          this.closest('.option-card-label').classList.add('selected');
+          calculate();
+        });
+      });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const item = this.closest('.faq-item');
+          item.classList.toggle('active');
+        });
+      });
+
+      // Shareable URL Parameters
+      const btnShareURL = document.getElementById('btnShareURL');
+      btnShareURL.addEventListener('click', function() {
+        const url = new URL(window.location.href);
+        url.searchParams.set('bah', bahInput.value);
+        url.searchParams.set('rate', interestRateInput.value);
+        if (currentMode === 'specific') {
+          url.searchParams.set('price', targetPriceInput.value);
+          url.searchParams.set('mode', 'specific');
+        }
+        navigator.clipboard.writeText(url.toString()).then(() => {
+          const originalText = btnShareURL.innerHTML;
+          btnShareURL.innerHTML = '<span>✓</span> Copied to Clipboard!';
+          setTimeout(() => { btnShareURL.innerHTML = originalText; }, 2500);
+        });
+      });
+
+      // URL parameters loading on mount
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('bah')) {
+        bahInput.value = params.get('bah');
+        bahSlider.value = params.get('bah');
+      }
+      if (params.has('rate')) {
+        interestRateInput.value = params.get('rate');
+      }
+      if (params.has('price')) {
+        targetPriceInput.value = params.get('price');
+        targetPriceSlider.value = params.get('price');
+      }
+      if (params.get('mode') === 'specific') {
+        btnModeSpecific.click();
+      } else {
+        calculate();
+      }
+
+    })();
+  </script>
+</body>
+</html>

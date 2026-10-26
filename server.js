@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/bah-mortgage-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/va-bonus-entitlement-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -127,6 +133,8 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/bah-mortgage-calculator': 'bah-mortgage-calculator.html',
+  '/bah-mortgage-calculator.html': 'bah-mortgage-calculator.html',
   '/va-bonus-entitlement-calculator': 'va-bonus-entitlement-calculator.html',
   '/va-bonus-entitlement-calculator.html': 'va-bonus-entitlement-calculator.html',
   '/2-1-buydown-calculator': '2-1-buydown-calculator.html',
