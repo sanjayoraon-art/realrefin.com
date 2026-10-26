@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/1031-exchange-tax-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/pmi-removal-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -151,6 +157,10 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/1031-exchange-tax-calculator': '1031-exchange-tax-calculator.html',
+  '/1031-exchange-tax-calculator.html': '1031-exchange-tax-calculator.html',
+  '/1031-tax-exchange-calculator': '1031-exchange-tax-calculator.html',
+  '/1031-tax-exchange-calculator.html': '1031-exchange-tax-calculator.html',
   '/pmi-removal-calculator': 'pmi-removal-calculator.html',
   '/pmi-removal-calculator.html': 'pmi-removal-calculator.html',
   '/remove-pmi-calculator': 'pmi-removal-calculator.html',
