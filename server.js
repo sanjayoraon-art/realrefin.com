@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/cash-out-refinance-vs-heloc-calculator</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/1031-exchange-tax-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,6 +163,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/cash-out-refinance-vs-heloc-calculator': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/cash-out-refinance-vs-heloc-calculator.html': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/heloc-vs-cash-out-refinance-calculator': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/heloc-vs-cash-out-refinance-calculator.html': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/heloc-vs-cash-out-refi-calculator': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/heloc-vs-cash-out-refi-calculator.html': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/cash-out-refi-vs-heloc-calculator': 'cash-out-refinance-vs-heloc-calculator.html',
+  '/cash-out-refi-vs-heloc-calculator.html': 'cash-out-refinance-vs-heloc-calculator.html',
   '/1031-exchange-tax-calculator': '1031-exchange-tax-calculator.html',
   '/1031-exchange-tax-calculator.html': '1031-exchange-tax-calculator.html',
   '/1031-tax-exchange-calculator': '1031-exchange-tax-calculator.html',
