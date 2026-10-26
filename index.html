@@ -835,12 +835,12 @@
     }
 
     /* -----------------------------------------------------------
-       FOOTER
+       CATEGORIZED FOOTER DESIGN
     ----------------------------------------------------------- */
     footer {
       background: #ffffff;
       border-top: 1px solid var(--border-color);
-      padding: 4rem 1.25rem 2rem;
+      padding: 4.5rem 1.25rem 2.5rem;
       color: var(--text-muted);
     }
 
@@ -849,58 +849,172 @@
       margin: 0 auto;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 2.5rem;
+    /* Footer Brand Top Header */
+    .footer-top-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-color);
       margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
     }
 
-    @media (max-width: 860px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    .footer-brand-left {
+      max-width: 580px;
     }
 
-    @media (max-width: 520px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
+    .footer-brand-left p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-top: 0.5rem;
     }
 
-    .footer-col h4 {
-      font-size: 0.95rem;
+    .footer-trust-pills {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--primary-navy);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.15rem;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
     }
 
-    .footer-col ul {
+    /* 4-Category Suite Columns Grid */
+    .footer-categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 960px) {
+      .footer-categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .footer-categories-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-cat-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-cat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .footer-cat-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-cat-title span.cat-icon {
+      font-size: 1.15rem;
+    }
+
+    .footer-cat-count {
+      font-size: 0.725rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+    }
+
+    .footer-cat-col ul {
       list-style: none;
     }
 
-    .footer-col li {
-      margin-bottom: 0.65rem;
+    .footer-cat-col li {
+      margin-bottom: 0.7rem;
     }
 
-    .footer-col a {
+    .footer-cat-col a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.885rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      line-height: 1.45;
+    }
+
+    .footer-cat-col a:hover {
+      color: var(--accent-emerald-dark);
+      transform: translateX(3px);
+      font-weight: 600;
+    }
+
+    /* Sub-Footer Legal & Compliance Bar */
+    .footer-sub-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 500;
       transition: color 0.15s ease;
     }
 
-    .footer-col a:hover {
-      color: var(--accent-emerald-dark);
+    .footer-legal-links a:hover {
+      color: var(--primary-navy);
+      text-decoration: underline;
     }
 
     .footer-bottom-bar {
-      border-top: 1px solid var(--border-color);
-      padding-top: 2rem;
+      margin-top: 1.75rem;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.5rem;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -1533,74 +1647,127 @@
 </div>
 
 <!-- ========================================================
-     6. FOOTER
+     6. CATEGORIZED FOOTER DIRECTORY
 ======================================================== -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-grid">
-      
-      <!-- Brand & Mission -->
-      <div class="footer-col">
-        <a href="/" class="rr-logo" style="margin-bottom: 0.85rem; display: inline-block;">Real<span>Refin</span>.com</a>
-        <p style="font-size: 0.9rem; line-height: 1.6; color: #64748b; margin-bottom: 1.25rem;">
-          Institutional-grade real estate financial tools, debt modeling software, and yield calculators for active property investors across the US, UK, and Australia.
-        </p>
-        <p style="font-size: 0.8rem; color: #94a3b8;">
-          Empowering real estate investors with zero-latency algorithmic underwriting.
+
+    <!-- Top Brand & Platform Overview -->
+    <div class="footer-top-brand">
+      <div class="footer-brand-left">
+        <a href="/" class="rr-logo" style="margin-bottom: 0.35rem; display: inline-flex;">
+          <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 6px; margin-right: 0.35rem;">
+          Real<span>Refin</span>.com
+        </a>
+        <p>
+          Institutional-grade real estate financial modeling software, debt analytics, and investment calculators organized across 4 specialized suites for property investors, refinancers, and home buyers.
         </p>
       </div>
 
-      <!-- Quick Tools -->
-      <div class="footer-col">
-        <h4>Financial Suites</h4>
+      <div class="footer-trust-pills">
+        <span class="footer-trust-pill">⚡ 17 Specialized Engines</span>
+        <span class="footer-trust-pill">🛡️ 100% Client-Side Math</span>
+        <span class="footer-trust-pill">🌐 US ($) • UK (£) • AU (A$)</span>
+      </div>
+    </div>
+
+    <!-- 4 Specialized Financial Categories Grid -->
+    <div class="footer-categories-grid">
+
+      <!-- Category 1: Refinance & Mortgage Suite -->
+      <div class="footer-cat-col">
+        <div class="footer-cat-header">
+          <div class="footer-cat-title">
+            <span class="cat-icon">🔄</span> Suite 1: Refinance
+          </div>
+          <span class="footer-cat-count">4 Tools</span>
+        </div>
         <ul>
-          <li><a href="#suite-refinance">1. Refinance &amp; Mortgage</a></li>
-          <li><a href="#suite-investor">2. Investor &amp; Rental</a></li>
-          <li><a href="#suite-buyer">3. Home Buyer Affordability</a></li>
-          <li><a href="#suite-military">4. Military &amp; VA Loans</a></li>
+          <li><a href="/cash-out-refinance-vs-heloc-calculator">⚖️ Cash-Out Refi vs. HELOC</a></li>
+          <li><a href="/pmi-removal-calculator">🛡️ PMI Removal Calculator (80/78%)</a></li>
+          <li><a href="/assumable-mortgage-calculator">🔑 Assumable Mortgage &amp; Blended Rate</a></li>
+          <li><a href="/2-1-buydown-calculator">📊 2-1 &amp; 3/2/1 Rate Buydowns</a></li>
+          <li><a href="#suite-refinance" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 1 Details →</a></li>
         </ul>
       </div>
 
-      <!-- Individual Tools -->
-      <div class="footer-col">
-        <h4>Popular Calculators</h4>
+      <!-- Category 2: Investor & Rental Suite -->
+      <div class="footer-cat-col">
+        <div class="footer-cat-header">
+          <div class="footer-cat-title">
+            <span class="cat-icon">🏢</span> Suite 2: Investor &amp; Rental
+          </div>
+          <span class="footer-cat-count">7 Tools</span>
+        </div>
         <ul>
-          <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs HELOC</a></li>
-          <li><a href="/1031-exchange-tax-calculator">1031 Exchange Tax Calculator</a></li>
-          <li><a href="/pmi-removal-calculator">PMI Removal Calculator</a></li>
-          <li><a href="/subto-calculator">SubTo Calculator</a></li>
-          <li><a href="/creative-financing-calculator">Creative Finance Calculator</a></li>
-          <li><a href="/bah-mortgage-calculator">BAH Mortgage Calculator</a></li>
-          <li><a href="/va-bonus-entitlement-calculator">VA Bonus Entitlement Calculator</a></li>
-          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
-          <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
-          <li><a href="/section-8-rental-calculator">Section 8 Rental Calculator</a></li>
-          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
-          <li><a href="/va-irrrl-calculator">VA IRRRL Calculator</a></li>
-          <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+          <li><a href="/1031-exchange-tax-calculator">🏛️ 1031 Exchange Tax Calculator</a></li>
+          <li><a href="/subto-calculator">🏠 SubTo &amp; Subject-To Deal Analyzer</a></li>
+          <li><a href="/creative-financing-calculator">⚡ Creative Financing &amp; Seller Carry</a></li>
+          <li><a href="/dscr-calculator">📈 DSCR Loan &amp; Commercial Non-QM</a></li>
+          <li><a href="/section-8-rental-calculator">🏘️ Section 8 Rental Assistance (HAP)</a></li>
+          <li><a href="/brrrr-calculator">🔄 BRRRR Method Takeout Modeler</a></li>
+          <li><a href="/rental-yield-calculator">📊 Rental Yield &amp; Cap Rate Engine</a></li>
+          <li><a href="#suite-investor" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 2 Details →</a></li>
         </ul>
       </div>
 
-      <!-- Legal & Google Ads Compliance -->
-      <div class="footer-col">
-        <h4>Legal &amp; Trust</h4>
+      <!-- Category 3: Home Buyer Affordability Suite -->
+      <div class="footer-cat-col">
+        <div class="footer-cat-header">
+          <div class="footer-cat-title">
+            <span class="cat-icon">🏡</span> Suite 3: Home Buyer
+          </div>
+          <span class="footer-cat-count">2 Tools</span>
+        </div>
         <ul>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms-of-service">Terms of Service</a></li>
-          <li><a href="/disclaimer">Financial Disclaimer</a></li>
-          <li><a href="/cookie-policy">Cookie Policy</a></li>
-          <li><a href="/about">About RealRefin</a></li>
-          <li><a href="/contact">Contact Support</a></li>
+          <li><a href="/home-affordability-calculator">🏡 Home Affordability (28/36 DTI)</a></li>
+          <li><a href="/2-1-buydown-calculator">📉 Temporary Rate Buydowns</a></li>
+          <li><a href="/home-affordability-calculator#piti">💵 PITI Monthly Payment Breakdown</a></li>
+          <li><a href="/home-affordability-calculator#salary">💼 Salary &amp; Buying Power Ratio</a></li>
+          <li><a href="#suite-buyer" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 3 Details →</a></li>
+        </ul>
+      </div>
+
+      <!-- Category 4: Military & VA Loans Suite -->
+      <div class="footer-cat-col">
+        <div class="footer-cat-header">
+          <div class="footer-cat-title">
+            <span class="cat-icon">🎖️</span> Suite 4: Military &amp; VA
+          </div>
+          <span class="footer-cat-count">4 Tools</span>
+        </div>
+        <ul>
+          <li><a href="/bah-mortgage-calculator">🎖️ BAH Mortgage Calculator 2026</a></li>
+          <li><a href="/va-bonus-entitlement-calculator">⭐ VA Bonus Entitlement Calculator</a></li>
+          <li><a href="/va-irrrl-calculator">🔄 VA IRRRL Streamline Refinance</a></li>
+          <li><a href="/assumable-mortgage-calculator#va">🇺🇸 VA Assumable Entitlement Substitution</a></li>
+          <li><a href="#suite-military" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 4 Details →</a></li>
         </ul>
       </div>
 
     </div>
 
+    <!-- Sub-Footer: Legal, Company & Trust Navigation -->
+    <div class="footer-sub-bar">
+      <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-navy);">
+        RealRefin Financial Platform &bull; United States &bull; United Kingdom &bull; Australia
+      </div>
+
+      <ul class="footer-legal-links">
+        <li><a href="/about">About RealRefin</a></li>
+        <li><a href="/contact">Contact Support</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-service">Terms of Service</a></li>
+        <li><a href="/disclaimer">Financial Disclaimer</a></li>
+        <li><a href="/cookie-policy">Cookie Policy</a></li>
+      </ul>
+    </div>
+
     <!-- Bottom Disclaimer & Copyright -->
     <div class="footer-bottom-bar">
       <p>&copy; 2026 RealRefin.com. All rights reserved. Real Estate Investment Modeling Software.</p>
-      <p style="font-size: 0.775rem; color: #94a3b8; max-width: 900px; margin: 0.5rem auto 0; line-height: 1.5;">
-        Disclaimer: RealRefin.com provides educational computational tools and theoretical estimates. We are not a licensed mortgage lender, broker, CPA, or financial advisor. All investments carry risk of loss. Always consult certified financial, legal, and tax professionals before executing real estate transactions.
+      <p style="font-size: 0.775rem; color: #94a3b8; max-width: 960px; margin: 0.5rem auto 0; line-height: 1.5;">
+        Disclaimer: RealRefin.com provides educational computational tools and theoretical mathematical models. We are not a licensed mortgage lender, loan originator, broker, CPA, tax attorney, or financial advisor. All investments carry risk of loss. Always consult certified financial, legal, and tax professionals before executing real estate or mortgage transactions.
       </p>
     </div>
   </div>
