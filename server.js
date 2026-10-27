@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/hard-money-loan-calculator</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/maximum-allowable-offer-calculator</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -169,6 +175,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/hard-money-loan-calculator': 'hard-money-loan-calculator.html',
+  '/hard-money-loan-calculator.html': 'hard-money-loan-calculator.html',
+  '/hard-money-loan-payment-calculator': 'hard-money-loan-calculator.html',
+  '/hard-money-loan-payment-calculator.html': 'hard-money-loan-calculator.html',
+  '/hard-money-lender-loan-calculator': 'hard-money-loan-calculator.html',
+  '/hard-money-lender-loan-calculator.html': 'hard-money-loan-calculator.html',
+  '/hard-money-calculator': 'hard-money-loan-calculator.html',
+  '/hard-money-calculator.html': 'hard-money-loan-calculator.html',
   '/maximum-allowable-offer-calculator': 'maximum-allowable-offer-calculator.html',
   '/maximum-allowable-offer-calculator.html': 'maximum-allowable-offer-calculator.html',
   '/mao-calculator': 'maximum-allowable-offer-calculator.html',

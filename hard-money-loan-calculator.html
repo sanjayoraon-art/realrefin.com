@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hard Money Loan Calculator | Free Payment &amp; Lender Rates Tool</title>
+  <meta name="description" content="Free hard money loan payment calculator for real estate flippers and developers. Calculate monthly interest-only payments, origination points, rehab draws, Dutch vs. non-Dutch interest, and total cost of capital.">
+  <meta name="keywords" content="hard money loan calculator, hard money loan payment calculator, hard money lender loan calculator, hard money calculator points and interest, fix and flip hard money calculator, private money loan calculator, commercial bridge loan calculator">
+  <link rel="canonical" href="https://realrefin.com/hard-money-loan-calculator">
+  <meta property="og:title" content="Hard Money Loan Calculator | Free Payment &amp; Lender Rates Tool">
+  <meta property="og:description" content="Calculate monthly interest-only payments, upfront points, draw schedules, and total financing costs for fix &amp; flips and bridge loans.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/hard-money-loan-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/hard-money-loan-calculator#app",
+        "name": "RealRefin Hard Money Loan & Payment Calculator",
+        "url": "https://realrefin.com/hard-money-loan-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free institutional hard money loan calculator that computes monthly interest-only payments, origination points, rehab holdback escrow draws, Dutch vs non-Dutch interest costs, cash to close, and balloon maturity payoffs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Real Estate Investor & Creative Finance Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hard Money Loan Calculator",
+            "item": "https://realrefin.com/hard-money-loan-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a hard money loan and how does it work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A hard money loan is a short-term, asset-based bridge financing instrument funded by private lenders rather than conventional commercial banks. Eligibility is anchored to the property's collateral equity and After Repair Value (ARV) rather than personal W-2 income or debt-to-income (DTI) ratios. Hard money loans typically feature terms from 6 to 24 months, interest-only monthly payments, and balloon principal payoff upon property sale or refinance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the monthly payment on a hard money loan calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because virtually all hard money loans are structured as interest-only debt without principal amortization, the monthly payment is computed using the formula: Monthly Payment = (Total Loan Balance × Annual Interest Rate) ÷ 12. For example, a $200,000 hard money loan at 12.0% interest yields a monthly debt service payment of ($200,000 × 0.12) ÷ 12 = $2,000.00."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are origination points and how much do hard money lenders charge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Origination points are upfront fees paid to the lender at closing, where one point equals 1.0% of the total loan commitment amount. Hard money lenders typically assess between 1.5 and 3.5 points depending on borrower track record, deal profitability, and loan-to-cost (LTC). For a $250,000 loan, 2.0 points equals a $5,000 upfront fee deducted at closing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Dutch Interest and Non-Dutch Interest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In a 'Dutch Interest' structure, the borrower pays monthly interest on the entire approved loan balance from day one—including renovation funds held back in the construction escrow. In a 'Non-Dutch' structure, the borrower pays interest strictly on the initial purchase funds plus renovation funds as they are drawn in phases. Dutch interest increases total financing carry costs by 15% to 25%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the typical Loan-to-Cost (LTC) and Loan-to-ARV (LTARV) limits?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hard money lenders typically advance up to 85% to 90% of the purchase price and 100% of the renovation budget, subject to a strict ceiling of 70% to 75% of the appraised After Repair Value (ARV). Whichever threshold produces the lower loan amount governs the maximum advance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you refinance out of a hard money loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. While fix-and-flippers retire hard money loans through the retail resale of the property, buy-and-hold BRRRR investors refinance the short-term debt into long-term 30-year fixed DSCR or conventional mortgages once renovations are complete and the asset is stabilized with a paying tenant."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-purple: #7C3AED;
+      --accent-purple-light: #F5F3FF;
+      --accent-purple-border: #DDD6FE;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border: 1px solid var(--accent-emerald-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 840px;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Input Card Container */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label span.hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 1rem; }
+    .input-suffix { right: 1rem; }
+
+    .form-control {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      background: #FFFFFF;
+      font-family: inherit;
+    }
+
+    .form-control.has-prefix { padding-left: 2.25rem; }
+    .form-control.has-suffix { padding-right: 2.5rem; }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .slider-row {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+      accent-color: var(--accent-emerald);
+    }
+
+    /* Preset Quick Buttons */
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .preset-pill {
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border-color: var(--accent-emerald-border);
+    }
+
+    /* Switcher Toggle (Dutch vs Non-Dutch) */
+    .toggle-box {
+      background: #F8FAFC;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .toggle-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .toggle-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+    }
+
+    .switch-wrap {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch-wrap input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #CBD5E1;
+      transition: .3s;
+      border-radius: 34px;
+    }
+
+    .switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .switch-slider {
+      background-color: var(--accent-emerald);
+    }
+
+    input:checked + .switch-slider:before {
+      transform: translateX(24px);
+    }
+
+    .toggle-desc {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* -----------------------------------------------------------
+       STICKY RESULT CARD
+    ----------------------------------------------------------- */
+    .sticky-result-card {
+      position: sticky;
+      top: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-metric-box {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-metric-box::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-metric-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-metric-val {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #34D399;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-metric-sub {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+    }
+
+    /* Term Sheet Highlights Grid */
+    .term-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-cell {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+
+    .highlight-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* Breakdown List */
+    .breakdown-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      font-size: 0.925rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .breakdown-row .label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .breakdown-row .val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-row.total-row {
+      border-top: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
+      padding: 0.9rem 0;
+      font-size: 1.05rem;
+    }
+
+    .breakdown-row.total-row .val {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Distribution Progress Bar */
+    .dist-bar-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .dist-bar-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dist-bar {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #E2E8F0;
+      margin-bottom: 0.5rem;
+    }
+
+    .dist-seg-loan   { background: #10B981; }
+    .dist-seg-equity { background: #3B82F6; }
+    .dist-seg-points { background: #F59E0B; }
+    .dist-seg-carry  { background: #8B5CF6; }
+
+    .dist-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .dist-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dist-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Action Buttons */
+    .action-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .btn-action {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--secondary-navy);
+      border: 1.5px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT SECTION
+    ----------------------------------------------------------- */
+    .seo-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .seo-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .seo-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin: 2.25rem 0 1rem;
+      line-height: 1.3;
+    }
+
+    .seo-section h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-section h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    .seo-section p {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-section ul, .seo-section ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.75rem;
+    }
+
+    .seo-section li {
+      font-size: 1.025rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      border-left: 5px solid var(--accent-emerald);
+    }
+
+    .formula-banner .katex {
+      font-size: 1.35rem !important;
+      color: #34D399;
+    }
+
+    .callout-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #14532D;
+    }
+
+    .callout-alert {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-left: 4px solid #D97706;
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-alert h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #92400E;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-alert p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #78350F;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .data-table th {
+      background: #F1F5F9;
+      color: var(--primary-navy);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .data-table tr:hover {
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--accent-emerald);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.25rem;
+      font-size: 0.975rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       CROSS LINK TOOLS GRID
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title-wrap {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-title-wrap h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-investor">Investor Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Hard Money Loan Calculator</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="badge-pill">Private Lending &amp; Bridge Financing Modeler</span>
+    <h1>Hard Money Loan Calculator</h1>
+    <p>Calculate your exact hard money loan payments, origination points, cash to close, and total cost of capital. Model 100% construction escrow holdbacks, Dutch vs. non-Dutch interest, and balloon payoff schedules for fix &amp; flips and commercial bridge loans.</p>
+  </header>
+
+  <!-- CALCULATOR APP MAIN -->
+  <main class="calc-layout" id="app">
+
+    <!-- LEFT COLUMN: INPUTS -->
+    <div class="calc-inputs-col">
+      
+      <!-- 1. ACQUISITION & REHAB CARD -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>1. Property &amp; Renovation Budget</span>
+          <span style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 700;">USD ($)</span>
+        </div>
+
+        <!-- Purchase Price -->
+        <div class="form-group">
+          <label class="form-label" for="inputPurchasePrice">
+            <span>Property Purchase Price</span>
+            <span class="hint">Contract acquisition cost</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputPurchasePrice" class="form-control has-prefix" value="225000" step="5000" min="10000">
+          </div>
+          <div class="slider-row">
+            <input type="range" id="sliderPurchasePrice" class="custom-range" min="50000" max="1500000" step="5000" value="225000">
+          </div>
+        </div>
+
+        <!-- Rehab Budget -->
+        <div class="form-group">
+          <label class="form-label" for="inputRehabBudget">
+            <span>Rehab / Construction Budget</span>
+            <span class="hint">100% financed into escrow</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputRehabBudget" class="form-control has-prefix" value="50000" step="2500" min="0">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-rehab="25000">Light Cosmetic ($25k)</button>
+            <button type="button" class="preset-pill active" data-rehab="50000">Standard Flip ($50k)</button>
+            <button type="button" class="preset-pill" data-rehab="85000">Heavy Addition ($85k)</button>
+          </div>
+        </div>
+
+        <!-- After Repair Value (ARV) -->
+        <div class="form-group">
+          <label class="form-label" for="inputArv">
+            <span>After Repair Value (ARV)</span>
+            <span class="hint">Appraised post-rehab retail value</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputArv" class="form-control has-prefix" value="340000" step="5000" min="10000">
+          </div>
+        </div>
+
+        <!-- Loan-to-Cost (LTC) Limits -->
+        <div class="form-group">
+          <label class="form-label" for="inputLtcPct">
+            <span>Loan-to-Cost (LTC) Advance Rate</span>
+            <span class="hint" id="ltcDisplay">85% of Purchase</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputLtcPct" class="form-control has-suffix" value="85" step="1" min="50" max="100">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-ltc="80">80% LTC (Conservative)</button>
+            <button type="button" class="preset-pill active" data-ltc="85">85% LTC (Standard)</button>
+            <button type="button" class="preset-pill" data-ltc="90">90% LTC (Experienced)</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. LENDER FINANCING TERMS CARD -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>2. Private Lender Rates &amp; Points</span>
+          <span style="font-size: 0.8rem; color: var(--accent-blue); font-weight: 700;">Term Sheet Rates</span>
+        </div>
+
+        <!-- Interest Rate -->
+        <div class="form-group">
+          <label class="form-label" for="inputInterestRate">
+            <span>Annual Interest Rate (APR)</span>
+            <span class="hint">Typically 10% – 14%</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputInterestRate" class="form-control has-suffix" value="11.5" step="0.25" min="5" max="25">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="slider-row">
+            <input type="range" id="sliderInterestRate" class="custom-range" min="8" max="18" step="0.25" value="11.5">
+          </div>
+        </div>
+
+        <!-- Origination Points -->
+        <div class="form-group">
+          <label class="form-label" for="inputPoints">
+            <span>Origination Points</span>
+            <span class="hint">% of total loan commitment</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputPoints" class="form-control has-suffix" value="2.0" step="0.25" min="0" max="6">
+            <span class="input-suffix">Pts</span>
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-points="1.5">1.5 Points</button>
+            <button type="button" class="preset-pill active" data-points="2.0">2.0 Points</button>
+            <button type="button" class="preset-pill" data-points="3.0">3.0 Points</button>
+          </div>
+        </div>
+
+        <!-- Loan Term / Duration -->
+        <div class="form-group">
+          <label class="form-label" for="inputLoanTerm">
+            <span>Loan Duration / Term</span>
+            <span class="hint">Months until balloon payoff</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputLoanTerm" class="form-control has-suffix" value="9" step="1" min="1" max="36">
+            <span class="input-suffix">Months</span>
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-term="6">6 Months</button>
+            <button type="button" class="preset-pill active" data-term="9">9 Months</button>
+            <button type="button" class="preset-pill" data-term="12">12 Months</button>
+            <button type="button" class="preset-pill" data-term="18">18 Months</button>
+          </div>
+        </div>
+
+        <!-- Lender Admin & Underwriting Fees -->
+        <div class="form-group">
+          <label class="form-label" for="inputLenderFees">
+            <span>Lender Underwriting, Processing &amp; Legal</span>
+            <span class="hint">Doc prep, legal, valuation fees</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputLenderFees" class="form-control has-prefix" value="1500" step="100" min="0">
+          </div>
+        </div>
+
+        <!-- Dutch Interest Toggle Box -->
+        <div class="toggle-box">
+          <div class="toggle-header">
+            <span class="toggle-title">🏛️ Dutch Interest Charging Structure</span>
+            <label class="switch-wrap">
+              <input type="checkbox" id="checkDutchInterest" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+          <p class="toggle-desc" id="dutchDesc">
+            <strong>Dutch Interest ON (Standard):</strong> Lender charges monthly interest on the <em>entire loan commitment</em> ($241,250) from Day 1, including undrawn rehab funds sitting in escrow.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: STICKY RESULTS -->
+    <div class="calc-results-col">
+      <div class="sticky-result-card">
+        
+        <!-- HERO METRIC BANNER -->
+        <div class="hero-metric-box">
+          <div class="hero-metric-label">Monthly Interest-Only Payment</div>
+          <div class="hero-metric-val" id="resMonthlyPayment">$2,312</div>
+          <div class="hero-metric-sub" id="resPaymentSub">Interest-only debt service (Principal due at exit)</div>
+        </div>
+
+        <!-- 2x2 TERM HIGHLIGHTS -->
+        <div class="term-highlights">
+          <div class="highlight-cell">
+            <div class="highlight-label">Total Loan Amount</div>
+            <div class="highlight-val" id="resTotalLoan">$241,250</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Cash Needed at Close</div>
+            <div class="highlight-val" id="resCashToClose" style="color: var(--accent-emerald-dark);">$40,075</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Points Fee Upfront</div>
+            <div class="highlight-val" id="resPointsFee">$4,825</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Total Cost of Capital</div>
+            <div class="highlight-val" id="resTotalFinancingCost" style="color: #92400E;">$27,133</div>
+          </div>
+        </div>
+
+        <!-- VISUAL CAPITAL DISTRIBUTION BAR -->
+        <div class="dist-bar-wrap">
+          <div class="dist-bar-label">
+            <span>Project Financing Capital Stack</span>
+            <span id="distTotalProject">$275,000</span>
+          </div>
+          <div class="dist-bar">
+            <div class="dist-seg-loan" id="barLoan" style="width: 88%;"></div>
+            <div class="dist-seg-equity" id="barEquity" style="width: 12%;"></div>
+          </div>
+          <div class="dist-legend">
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-loan"></span> Hard Money Debt ($241k)</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-equity"></span> Borrower Down Payment ($34k)</div>
+          </div>
+        </div>
+
+        <!-- DETAILED LINE-ITEM BREAKDOWN TABLE -->
+        <ul class="breakdown-list">
+          <li class="breakdown-row">
+            <span class="label">Initial Purchase Loan Advance</span>
+            <span class="val" id="resPurchaseLoan">$191,250</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">100% Construction Rehab Escrow</span>
+            <span class="val" id="resRehabEscrow">+$50,000</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Borrower Equity Down Payment</span>
+            <span class="val" id="resDownPayment">$33,750</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Origination Points (2.0%)</span>
+            <span class="val" id="resPointsLine">$4,825</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Lender Admin &amp; Legal Underwriting</span>
+            <span class="val" id="resLenderFeesLine">$1,500</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Total Cumulative Interest (9 mos)</span>
+            <span class="val" id="resTotalInterest">$20,808</span>
+          </li>
+          <li class="breakdown-row total-row">
+            <span class="label"><strong>Balloon Principal Payoff at Exit</strong></span>
+            <span class="val" id="resBalloonPayoff">$241,250</span>
+          </li>
+        </ul>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-group">
+          <button type="button" class="btn-action btn-primary" id="btnCopySheet">
+            📋 Copy Term Sheet
+          </button>
+          <button type="button" class="btn-action btn-secondary" id="btnShareDeal">
+            🔗 Share Link
+          </button>
+        </div>
+
+        <button type="button" class="btn-action btn-secondary" id="btnDownloadCsv" style="width: 100%;">
+          📥 Download Loan Underwriting CSV
+        </button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO GUIDE & TUTORIAL -->
+  <article class="seo-section">
+    <h2>Understanding Hard Money Loans &amp; Private Bridge Lending</h2>
+    <p>A <strong>hard money loan</strong> is a specialized, short-term debt instrument secured by real estate collateral and underwritten by private lending institutions or high-net-worth individual investors. Unlike conventional commercial mortgages that prioritize personal debt-to-income (DTI) metrics and tax returns, hard money lenders make credit approvals based on <strong>Loan-to-Cost (LTC)</strong> and the <strong>After Repair Value (ARV)</strong> of the property.</p>
+    
+    <p>Real estate fix-and-flippers, residential redevelopers, and commercial operators rely on hard money loans when velocity of execution is paramount—typically closing deals in 5 to 10 business days where traditional banks require 45 to 60 days of bureaucratic committee underwriting.</p>
+
+    <!-- FORMULA BANNER -->
+    <div class="formula-banner">
+      <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #94A3B8;">The Hard Money Monthly Payment Formula</div>
+      <div>
+        $$\text{Monthly Payment (Interest-Only)} = \frac{\text{Total Loan Balance} \times \text{Annual Interest Rate}}{12}$$
+      </div>
+    </div>
+
+    <h3>How Origination Points &amp; Fees Impact Your Upfront Cash to Close</h3>
+    <p>Hard money financing entails two distinct cost categories: <strong>upfront fees</strong> and <strong>monthly carrying interest</strong>.</p>
+    <ul>
+      <li><strong>Origination Points:</strong> Lenders charge between 1.5 and 3.5 points at closing. One point represents 1.0% of the gross loan facility. On a \$200,000 total loan, 2.5 points equates to \$5,000 deducted directly from loan proceeds or added to cash required at closing.</li>
+      <li><strong>Underwriting &amp; Document Preparation:</strong> Private lenders incur legal review, appraisal inspection, and flood certification costs, routinely itemized as a flat fee between \$1,200 and \$2,000.</li>
+      <li><strong>Rehab Draw Inspection Fees:</strong> When you request milestone reimbursements from the construction escrow, the lender dispatches a third-party inspector (typically \$200 to \$350 per draw request).</li>
+    </ul>
+
+    <div class="callout-alert">
+      <h4>⚠️ Crucial Investor Insight: Dutch vs. Non-Dutch Interest</h4>
+      <p>In a <strong>Dutch Interest</strong> arrangement, the lender assesses interest on your total loan commitment from Day 1—meaning you pay interest on your \$50,000 renovation escrow even while the money sits untouched in the bank during the first 3 months. In a <strong>Non-Dutch</strong> structure, you only pay interest on funds after they are physically disbursed. Over a 9-month project, Dutch interest can add \$2,500 to \$6,000 in phantom financing carry costs!</p>
+    </div>
+
+    <h2>2026 Hard Money Loan Industry Benchmarks</h2>
+    <p>Private money lending terms fluctuate based on borrower experience, credit score, and regional real estate stability. The matrix below illustrates typical underwriting terms across investor tiers:</p>
+
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Borrower Experience</th>
+            <th>Max Loan-to-Cost (LTC)</th>
+            <th>Max Loan-to-ARV</th>
+            <th>Typical Interest Rate</th>
+            <th>Origination Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>First-Time / Novice (0–1 Flips)</strong></td>
+            <td>75% – 80% LTC</td>
+            <td>65% – 70% ARV</td>
+            <td>12.5% – 14.5%</td>
+            <td>2.5 – 3.5 Points</td>
+          </tr>
+          <tr>
+            <td><strong>Intermediate (2–4 Completed Deals)</strong></td>
+            <td>85% LTC + 100% Rehab</td>
+            <td>70% – 72.5% ARV</td>
+            <td>11.0% – 12.5%</td>
+            <td>1.75 – 2.5 Points</td>
+          </tr>
+          <tr>
+            <td><strong>Institutional Pro (5+ Verified Flips)</strong></td>
+            <td>90% LTC + 100% Rehab</td>
+            <td>75% ARV</td>
+            <td>9.5% – 11.0%</td>
+            <td>1.0 – 1.75 Points</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Comparing Hard Money vs. Conventional vs. DSCR Loans</h2>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Financing Parameter</th>
+            <th>Hard Money Loan</th>
+            <th>Conventional Bank Mortgage</th>
+            <th>DSCR Long-Term Loan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Primary Use Case</strong></td>
+            <td>Distressed fix &amp; flip, heavy rehab, bridge acquisition</td>
+            <td>Move-in ready primary or turnkey rental</td>
+            <td>Stabilized long-term rental cash flow</td>
+          </tr>
+          <tr>
+            <td><strong>Underwriting Speed</strong></td>
+            <td><strong>5 to 10 Days</strong></td>
+            <td>35 to 60 Days</td>
+            <td>21 to 30 Days</td>
+          </tr>
+          <tr>
+            <td><strong>Repayment Structure</strong></td>
+            <td><strong>Interest-Only</strong> (Balloon at exit)</td>
+            <td>30-Year Amortizing</td>
+            <td>30-Year Fixed or 10-Yr I/O</td>
+          </tr>
+          <tr>
+            <td><strong>Property Condition Req.</strong></td>
+            <td><strong>Any condition</strong> (uninhabitable allowed)</td>
+            <td>Strict appraisal (must be fully habitable)</td>
+            <td>C4 or better appraisal rating</td>
+          </tr>
+          <tr>
+            <td><strong>Income Verification</strong></td>
+            <td><strong>Asset-based</strong> (No W-2 required)</td>
+            <td>Full W-2, tax returns, strict 43% DTI</td>
+            <td>Property rental cash flow ratio (1.20x)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+    <h2>Frequently Asked Questions About Hard Money Loans</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is a hard money loan and how does it work?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        A hard money loan is a short-term, asset-based bridge financing instrument funded by private lenders rather than conventional commercial banks. Eligibility is anchored to the property's collateral equity and After Repair Value (ARV) rather than personal W-2 income or debt-to-income (DTI) ratios. Hard money loans typically feature terms from 6 to 24 months, interest-only monthly payments, and balloon principal payoff upon property sale or refinance.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How is the monthly payment on a hard money loan calculated?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Because virtually all hard money loans are structured as interest-only debt without principal amortization, the monthly payment is computed using the formula: Monthly Payment = (Total Loan Balance × Annual Interest Rate) ÷ 12. For example, a $200,000 hard money loan at 12.0% interest yields a monthly debt service payment of ($200,000 × 0.12) ÷ 12 = $2,000.00.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What are origination points and how much do hard money lenders charge?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Origination points are upfront fees paid to the lender at closing, where one point equals 1.0% of the total loan commitment amount. Hard money lenders typically assess between 1.5 and 3.5 points depending on borrower track record, deal profitability, and loan-to-cost (LTC). For a $250,000 loan, 2.0 points equals a $5,000 upfront fee deducted at closing.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the difference between Dutch Interest and Non-Dutch Interest?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        In a "Dutch Interest" structure, the borrower pays monthly interest on the entire approved loan balance from day one—including renovation funds held back in the construction escrow. In a "Non-Dutch" structure, the borrower pays interest strictly on the initial purchase funds plus renovation funds as they are drawn in phases. Dutch interest increases total financing carry costs by 15% to 25%.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What are typical Loan-to-Cost (LTC) and Loan-to-ARV (LTARV) limits?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Hard money lenders typically advance up to 85% to 90% of the purchase price and 100% of the renovation budget, subject to a strict ceiling of 70% to 75% of the appraised After Repair Value (ARV). Whichever threshold produces the lower loan amount governs the maximum advance.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can you refinance out of a hard money loan?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes. While fix-and-flippers retire hard money loans through the retail resale of the property, buy-and-hold BRRRR investors refinance the short-term debt into long-term 30-year fixed DSCR or conventional mortgages once renovations are complete and the asset is stabilized with a paying tenant.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED TOOLS CROSS-LINKING -->
+  <section class="related-tools-section">
+    <div class="section-title-wrap">
+      <h3>Explore Complementary Real Estate Investment Tools</h3>
+    </div>
+    <div class="related-grid">
+      <a href="/maximum-allowable-offer-calculator" class="related-card">
+        <h4>Maximum Allowable Offer (MAO)</h4>
+        <p>Calculate your highest viable cash purchase price using the 70% rule and line-item flip underwriting.</p>
+      </a>
+      <a href="/brrrr-calculator" class="related-card">
+        <h4>BRRRR Method Calculator</h4>
+        <p>Analyze Buy, Rehab, Rent, Refinance, Repeat deals with cash-out takeout math and infinite return models.</p>
+      </a>
+      <a href="/dscr-calculator" class="related-card">
+        <h4>DSCR Loan Underwriter</h4>
+        <p>Calculate Debt Service Coverage Ratios for residential Non-QM debt and commercial mortgage financing.</p>
+      </a>
+      <a href="/creative-financing-calculator" class="related-card">
+        <h4>Creative Finance &amp; SubTo Calculator</h4>
+        <p>Model existing mortgage takeovers, seller carry 2nd notes, and zero-bank qualifying structures.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/maximum-allowable-offer-calculator">MAO Calculator</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/dscr-calculator">DSCR Calculator</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All financial calculations and formulas are for educational and deal underwriting purposes only.</p>
+  </footer>
+
+</div>
+
+<!-- CALCULATOR INTERACTIVE LOGIC JAVASCRIPT -->
+<script>
+(function() {
+  'use strict';
+
+  // Input Elements
+  const inputPurchasePrice = document.getElementById('inputPurchasePrice');
+  const sliderPurchasePrice = document.getElementById('sliderPurchasePrice');
+  const inputRehabBudget = document.getElementById('inputRehabBudget');
+  const inputArv = document.getElementById('inputArv');
+  const inputLtcPct = document.getElementById('inputLtcPct');
+  const ltcDisplay = document.getElementById('ltcDisplay');
+  const inputInterestRate = document.getElementById('inputInterestRate');
+  const sliderInterestRate = document.getElementById('sliderInterestRate');
+  const inputPoints = document.getElementById('inputPoints');
+  const inputLoanTerm = document.getElementById('inputLoanTerm');
+  const inputLenderFees = document.getElementById('inputLenderFees');
+  const checkDutchInterest = document.getElementById('checkDutchInterest');
+  const dutchDesc = document.getElementById('dutchDesc');
+
+  // Output Elements
+  const resMonthlyPayment = document.getElementById('resMonthlyPayment');
+  const resPaymentSub = document.getElementById('resPaymentSub');
+  const resTotalLoan = document.getElementById('resTotalLoan');
+  const resCashToClose = document.getElementById('resCashToClose');
+  const resPointsFee = document.getElementById('resPointsFee');
+  const resTotalFinancingCost = document.getElementById('resTotalFinancingCost');
+  const distTotalProject = document.getElementById('distTotalProject');
+  const barLoan = document.getElementById('barLoan');
+  const barEquity = document.getElementById('barEquity');
+
+  const resPurchaseLoan = document.getElementById('resPurchaseLoan');
+  const resRehabEscrow = document.getElementById('resRehabEscrow');
+  const resDownPayment = document.getElementById('resDownPayment');
+  const resPointsLine = document.getElementById('resPointsLine');
+  const resLenderFeesLine = document.getElementById('resLenderFeesLine');
+  const resTotalInterest = document.getElementById('resTotalInterest');
+  const resBalloonPayoff = document.getElementById('resBalloonPayoff');
+
+  // Buttons
+  const btnCopySheet = document.getElementById('btnCopySheet');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+
+  // Currency Formatter
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount || 0);
+  }
+
+  // Sliders Sync
+  inputPurchasePrice.addEventListener('input', () => {
+    sliderPurchasePrice.value = inputPurchasePrice.value;
+    calculateLoan();
+  });
+
+  sliderPurchasePrice.addEventListener('input', () => {
+    inputPurchasePrice.value = sliderPurchasePrice.value;
+    calculateLoan();
+  });
+
+  inputInterestRate.addEventListener('input', () => {
+    sliderInterestRate.value = inputInterestRate.value;
+    calculateLoan();
+  });
+
+  sliderInterestRate.addEventListener('input', () => {
+    inputInterestRate.value = sliderInterestRate.value;
+    calculateLoan();
+  });
+
+  // Preset Buttons (Rehab)
+  document.querySelectorAll('[data-rehab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-rehab]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputRehabBudget.value = btn.getAttribute('data-rehab');
+      calculateLoan();
+    });
+  });
+
+  // Preset Buttons (LTC)
+  document.querySelectorAll('[data-ltc]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-ltc]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputLtcPct.value = btn.getAttribute('data-ltc');
+      calculateLoan();
+    });
+  });
+
+  // Preset Buttons (Points)
+  document.querySelectorAll('[data-points]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-points]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputPoints.value = btn.getAttribute('data-points');
+      calculateLoan();
+    });
+  });
+
+  // Preset Buttons (Term)
+  document.querySelectorAll('[data-term]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-term]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputLoanTerm.value = btn.getAttribute('data-term');
+      calculateLoan();
+    });
+  });
+
+  // Dutch Interest Toggle
+  checkDutchInterest.addEventListener('change', () => {
+    calculateLoan();
+  });
+
+  // Main Calculation Engine
+  function calculateLoan() {
+    const purchase = Math.max(0, parseFloat(inputPurchasePrice.value) || 0);
+    const rehab = Math.max(0, parseFloat(inputRehabBudget.value) || 0);
+    const arv = Math.max(0, parseFloat(inputArv.value) || 0);
+    const ltcPct = (parseFloat(inputLtcPct.value) || 85) / 100;
+    const rate = (parseFloat(inputInterestRate.value) || 11.5) / 100;
+    const pointsPct = (parseFloat(inputPoints.value) || 2.0) / 100;
+    const termMonths = Math.max(1, parseFloat(inputLoanTerm.value) || 9);
+    const adminFees = Math.max(0, parseFloat(inputLenderFees.value) || 0);
+    const isDutch = checkDutchInterest.checked;
+
+    ltcDisplay.textContent = `${(ltcPct * 100).toFixed(0)}% of Purchase`;
+
+    // Purchase Loan Calculation
+    const purchaseLoan = purchase * ltcPct;
+    const downPayment = purchase - purchaseLoan;
+
+    // Total Facility Commitment (Purchase Loan + 100% Rehab Escrow)
+    const totalLoan = purchaseLoan + rehab;
+
+    // Points Upfront Fee
+    const pointsFee = totalLoan * pointsPct;
+
+    // Total Cash to Close = Down payment + Points + Lender Admin Fees
+    const cashToClose = downPayment + pointsFee + adminFees;
+
+    // Monthly Interest Calculation
+    let monthlyPayment = 0;
+    let totalInterest = 0;
+
+    if (isDutch) {
+      // Dutch Interest: interest on 100% of commitment from day 1
+      monthlyPayment = (totalLoan * rate) / 12;
+      totalInterest = monthlyPayment * termMonths;
+      dutchDesc.innerHTML = `<strong>Dutch Interest ON (Standard):</strong> Lender charges monthly interest on the <em>entire loan commitment</em> (${formatMoney(totalLoan)}) from Day 1, including undrawn rehab funds sitting in escrow.`;
+    } else {
+      // Non-Dutch: purchase loan + average drawn rehab (assume linear 50% average utilization over project)
+      const avgDrawnRehab = rehab * 0.50;
+      const effectiveBalance = purchaseLoan + avgDrawnRehab;
+      monthlyPayment = (effectiveBalance * rate) / 12;
+      totalInterest = monthlyPayment * termMonths;
+      dutchDesc.innerHTML = `<strong>Non-Dutch Interest Active:</strong> Interest is charged strictly on drawn funds (initial purchase loan + approx. 50% avg. rehab draw). You save approx. <strong>${formatMoney(((totalLoan - effectiveBalance) * rate / 12) * termMonths)}</strong> in carry costs!`;
+    }
+
+    // Total Financing Capital Cost = Points + Total Interest + Admin Fees
+    const totalFinancingCost = pointsFee + totalInterest + adminFees;
+
+    // Total Project Cost
+    const totalProject = purchase + rehab;
+
+    // Update Displays
+    resMonthlyPayment.textContent = formatMoney(monthlyPayment);
+    resPaymentSub.textContent = `Interest-only (${(rate * 100).toFixed(2)}% APR) • Balloon principal due at month ${termMonths}`;
+    resTotalLoan.textContent = formatMoney(totalLoan);
+    resCashToClose.textContent = formatMoney(cashToClose);
+    resPointsFee.textContent = formatMoney(pointsFee);
+    resTotalFinancingCost.textContent = formatMoney(totalFinancingCost);
+
+    resPurchaseLoan.textContent = formatMoney(purchaseLoan);
+    resRehabEscrow.textContent = `+${formatMoney(rehab)}`;
+    resDownPayment.textContent = formatMoney(downPayment);
+    resPointsLine.textContent = formatMoney(pointsFee);
+    resLenderFeesLine.textContent = formatMoney(adminFees);
+    resTotalInterest.textContent = formatMoney(totalInterest);
+    resBalloonPayoff.textContent = formatMoney(totalLoan);
+
+    distTotalProject.textContent = formatMoney(totalProject);
+
+    // Distribution Bar
+    if (totalProject > 0) {
+      const pctLoan = Math.min(100, (totalLoan / totalProject) * 100);
+      const pctEquity = Math.max(0, 100 - pctLoan);
+      barLoan.style.width = pctLoan + '%';
+      barEquity.style.width = pctEquity + '%';
+    }
+  }
+
+  // Copy Term Sheet to Clipboard
+  btnCopySheet.addEventListener('click', () => {
+    const purchase = formatMoney(inputPurchasePrice.value);
+    const rehab = formatMoney(inputRehabBudget.value);
+    const totalLoan = resTotalLoan.textContent;
+    const monthly = resMonthlyPayment.textContent;
+    const cashToClose = resCashToClose.textContent;
+    const points = inputPoints.value;
+    const rate = inputInterestRate.value;
+    const term = inputLoanTerm.value;
+    const isDutch = checkDutchInterest.checked ? 'Dutch (Full Balance)' : 'Non-Dutch (As-Drawn)';
+
+    const sheet = `🏛️ HARD MONEY LOAN TERM SHEET SUMMARY (via RealRefin.com)
+--------------------------------------------------
+Purchase Price:          ${purchase}
+Rehab Escrow Budget:     ${rehab}
+Total Loan Facility:     ${totalLoan}
+--------------------------------------------------
+Annual Interest Rate:    ${rate}% (Interest-Only)
+Origination Points:      ${points} Points (${resPointsFee.textContent})
+Loan Duration:           ${term} Months
+Interest Structure:      ${isDutch}
+--------------------------------------------------
+🎯 MONTHLY DEBT PAYMENT: ${monthly}
+💵 TOTAL CASH TO CLOSE:  ${cashToClose}
+💰 TOTAL FINANCING COST: ${resTotalFinancingCost.textContent}
+--------------------------------------------------
+Model terms live at: ${window.location.href}`;
+
+    navigator.clipboard.writeText(sheet).then(() => {
+      const orig = btnCopySheet.innerHTML;
+      btnCopySheet.innerHTML = '✓ Copied Term Sheet!';
+      btnCopySheet.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnCopySheet.innerHTML = orig;
+        btnCopySheet.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('Hard Money Loan Term Sheet:\n\n' + sheet);
+    });
+  });
+
+  // Share Link with Query Params
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      purchase: inputPurchasePrice.value,
+      rehab: inputRehabBudget.value,
+      arv: inputArv.value,
+      ltc: inputLtcPct.value,
+      rate: inputInterestRate.value,
+      points: inputPoints.value,
+      term: inputLoanTerm.value,
+      dutch: checkDutchInterest.checked ? '1' : '0'
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const orig = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Link Copied!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = orig;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // Download CSV
+  btnDownloadCsv.addEventListener('click', () => {
+    let csv = `REALREFIN.COM - HARD MONEY LOAN UNDERWRITING REPORT\n`;
+    csv += `Generated On,${new Date().toISOString()}\n\n`;
+    csv += `METRIC,AMOUNT\n`;
+    csv += `Purchase Price,$${inputPurchasePrice.value}\n`;
+    csv += `Rehab Budget,$${inputRehabBudget.value}\n`;
+    csv += `After Repair Value (ARV),$${inputArv.value}\n`;
+    csv += `Total Hard Money Loan,${resTotalLoan.textContent}\n`;
+    csv += `Monthly Interest-Only Payment,${resMonthlyPayment.textContent}\n`;
+    csv += `Upfront Cash to Close,${resCashToClose.textContent}\n`;
+    csv += `Origination Points Fee,${resPointsFee.textContent}\n`;
+    csv += `Total Cost of Capital,${resTotalFinancingCost.textContent}\n`;
+    csv += `Balloon Principal Payoff,${resBalloonPayoff.textContent}\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `realrefin-hard-money-loan-${Date.now()}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+
+  // Load URL Query Parameters
+  function loadUrlParams() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('purchase')) inputPurchasePrice.value = p.get('purchase');
+    if (p.has('rehab')) inputRehabBudget.value = p.get('rehab');
+    if (p.has('arv')) inputArv.value = p.get('arv');
+    if (p.has('ltc')) inputLtcPct.value = p.get('ltc');
+    if (p.has('rate')) inputInterestRate.value = p.get('rate');
+    if (p.has('points')) inputPoints.value = p.get('points');
+    if (p.has('term')) inputLoanTerm.value = p.get('term');
+    if (p.has('dutch')) checkDutchInterest.checked = p.get('dutch') === '1';
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      const active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!active) item.classList.add('active');
+    });
+  });
+
+  // Attach Event Listeners
+  [inputRehabBudget, inputArv, inputLtcPct, inputPoints, inputLoanTerm, inputLenderFees]
+    .forEach(el => el && el.addEventListener('input', calculateLoan));
+
+  // Initialize
+  loadUrlParams();
+  sliderPurchasePrice.value = inputPurchasePrice.value;
+  sliderInterestRate.value = inputInterestRate.value;
+  calculateLoan();
+
+})();
+</script>
+
+</body>
+</html>
