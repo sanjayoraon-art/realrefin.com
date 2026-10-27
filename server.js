@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/maximum-allowable-offer-calculator</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/cash-out-refinance-vs-heloc-calculator</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,6 +169,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/maximum-allowable-offer-calculator': 'maximum-allowable-offer-calculator.html',
+  '/maximum-allowable-offer-calculator.html': 'maximum-allowable-offer-calculator.html',
+  '/mao-calculator': 'maximum-allowable-offer-calculator.html',
+  '/mao-calculator.html': 'maximum-allowable-offer-calculator.html',
+  '/70-rule-calculator': 'maximum-allowable-offer-calculator.html',
+  '/70-rule-calculator.html': 'maximum-allowable-offer-calculator.html',
+  '/wholesale-mao-calculator': 'maximum-allowable-offer-calculator.html',
+  '/wholesale-mao-calculator.html': 'maximum-allowable-offer-calculator.html',
   '/cash-out-refinance-vs-heloc-calculator': 'cash-out-refinance-vs-heloc-calculator.html',
   '/cash-out-refinance-vs-heloc-calculator.html': 'cash-out-refinance-vs-heloc-calculator.html',
   '/heloc-vs-cash-out-refinance-calculator': 'cash-out-refinance-vs-heloc-calculator.html',

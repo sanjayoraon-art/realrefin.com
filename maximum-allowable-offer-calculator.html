@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximum Allowable Offer Calculator | Free Real Estate MAO &amp; 70% Rule Tool</title>
+  <meta name="description" content="Free Maximum Allowable Offer (MAO) calculator for real estate flippers and wholesalers. Calculate exact cash offers using the 70% rule, custom rehab budgets, holding costs, and target profit margins.">
+  <meta name="keywords" content="maximum allowable offer calculator, mao calculator real estate, 70 rule real estate calculator, maximum allowable offer formula, wholesale mao calculator, fix and flip offer calculator, arv mao calculator, real estate offer calculator">
+  <link rel="canonical" href="https://realrefin.com/maximum-allowable-offer-calculator">
+  <meta property="og:title" content="Maximum Allowable Offer Calculator | Free Real Estate MAO &amp; 70% Rule">
+  <meta property="og:description" content="Calculate your Maximum Allowable Offer (MAO) in seconds. Instant 70% rule and detailed line-item underwriting for house flippers and wholesalers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/maximum-allowable-offer-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/maximum-allowable-offer-calculator#app",
+        "name": "RealRefin Maximum Allowable Offer (MAO) Calculator",
+        "url": "https://realrefin.com/maximum-allowable-offer-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free institutional Maximum Allowable Offer (MAO) calculator for real estate investors, fix & flippers, and wholesalers. Computes purchase price ceilings using the 70% rule, variable rule percentages, rehab budgets, holding carry costs, and wholesale assignment margins.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Real Estate Investor & Creative Finance Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Maximum Allowable Offer Calculator",
+            "item": "https://realrefin.com/maximum-allowable-offer-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Maximum Allowable Offer (MAO) in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Maximum Allowable Offer (MAO) is the absolute highest dollar amount an investor or wholesaler can offer a property seller while still ensuring target profit margins and covering all acquisition, renovation, holding, financing, and resale costs. Offering above the MAO drastically reduces profit and risks capital loss."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 70% Rule in real estate investing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 70% Rule is a widely adopted real estate rule of thumb stating that an investor should pay no more than 70% of the property's After Repair Value (ARV), minus the estimated cost of repairs. The mathematical formula is: MAO = (ARV × 0.70) − Estimated Repair Costs. The remaining 30% margin accounts for closing costs, holding expenses, financing costs, and the investor's net profit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do wholesalers calculate MAO differently from flippers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wholesalers must subtract their desired wholesale assignment fee from the standard flipper MAO. The wholesale MAO formula is: Wholesale MAO = (ARV × 0.70) − Repair Costs − Wholesale Fee. This guarantees that when the wholesaler assigns the contract to an end cash buyer at the flipper's MAO, the end investor still achieves their full 15% to 20% profit margin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should you ever adjust the 70% Rule to 75% or 80%?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. In high-demand, low-inventory hot markets with rapid days on market (DOM) and predictable appreciation, investors frequently increase their benchmark to 75% or 80% of ARV. Conversely, in higher-interest-rate environments, slow buyer markets, or for heavy structural gut renovations, conservative investors reduce the formula to 60% or 65% to account for extended holding durations and market volatility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you accurately estimate After Repair Value (ARV)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ARV is determined by analyzing 3 to 5 recent comparable sales ('comps') within a 0.5 to 1-mile radius that sold in the last 90 to 180 days. Comps must match the subject property in square footage (±15%), bedroom/bathroom count, year built, and finish level after full modern renovation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What hidden costs are most often missed when calculating MAO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The most commonly overlooked expenses include hard money origination points and monthly interest carry costs, municipal building permit delays, transfer taxes, title insurance, contractor contingency reserves (10%-15%), and seller concessions on the final disposition sale."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-gold: #F59E0B;
+      --accent-gold-light: #FEF3C7;
+      --accent-gold-border: #FDE68A;
+
+      --accent-red: #EF4444;
+      --accent-red-light: #FEF2F2;
+      --accent-red-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    /* -----------------------------------------------------------
+       HERO HEADER
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border: 1px solid var(--accent-emerald-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 820px;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mode Switcher Tabs */
+    .mode-switcher {
+      display: flex;
+      background: #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 0.35rem;
+      margin-bottom: 1.5rem;
+      gap: 0.35rem;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .mode-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Input Card Container */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label span.hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-control {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      background: #FFFFFF;
+      font-family: inherit;
+    }
+
+    .form-control.has-prefix {
+      padding-left: 2.25rem;
+    }
+
+    .form-control.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .slider-row {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+      accent-color: var(--accent-emerald);
+    }
+
+    /* Preset Quick Buttons */
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .preset-pill {
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border-color: var(--accent-emerald-border);
+    }
+
+    /* -----------------------------------------------------------
+       STICKY RESULT CARD
+    ----------------------------------------------------------- */
+    .sticky-result-card {
+      position: sticky;
+      top: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-metric-box {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-metric-box::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-metric-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-metric-val {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #34D399;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-metric-sub {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+    }
+
+    /* Deal Viability Badge */
+    .deal-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .status-strong {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border: 1px solid var(--accent-emerald-border);
+    }
+
+    .status-moderate {
+      background: var(--accent-blue-light);
+      color: var(--accent-blue);
+      border: 1px solid var(--accent-blue-border);
+    }
+
+    .status-tight {
+      background: var(--accent-gold-light);
+      color: #92400E;
+      border: 1px solid var(--accent-gold-border);
+    }
+
+    .status-risk {
+      background: var(--accent-red-light);
+      color: #991B1B;
+      border: 1px solid var(--accent-red-border);
+    }
+
+    /* Breakdown Rows */
+    .breakdown-list {
+      list-style: none;
+      margin-bottom: 1.75rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      font-size: 0.925rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .breakdown-row .label {
+      color: var(--text-muted);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .breakdown-row .val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-row.total-row {
+      border-top: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
+      padding: 0.9rem 0;
+      font-size: 1.05rem;
+    }
+
+    .breakdown-row.total-row .val {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Distribution Bar */
+    .dist-bar-wrap {
+      margin-bottom: 1.75rem;
+    }
+
+    .dist-bar-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dist-bar {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #E2E8F0;
+      margin-bottom: 0.5rem;
+    }
+
+    .dist-seg-offer { background: #10B981; }
+    .dist-seg-rehab { background: #3B82F6; }
+    .dist-seg-hold  { background: #F59E0B; }
+    .dist-seg-fee   { background: #8B5CF6; }
+    .dist-seg-profit{ background: #0F172A; }
+
+    .dist-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .dist-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dist-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Action Buttons */
+    .action-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-action {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--secondary-navy);
+      border: 1.5px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+    }
+
+    /* Offer Escalation Table */
+    .escalator-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .escalator-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--secondary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .escalator-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .escalator-table td {
+      padding: 0.35rem 0;
+    }
+
+    .escalator-table td.tier-name {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .escalator-table td.tier-val {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT SECTION
+    ----------------------------------------------------------- */
+    .seo-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .seo-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .seo-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin: 2.25rem 0 1rem;
+      line-height: 1.3;
+    }
+
+    .seo-section h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-section h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    .seo-section p {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-section ul, .seo-section ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.75rem;
+    }
+
+    .seo-section li {
+      font-size: 1.025rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      border-left: 5px solid var(--accent-emerald);
+    }
+
+    .formula-banner .katex {
+      font-size: 1.35rem !important;
+      color: #34D399;
+    }
+
+    .callout-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #14532D;
+    }
+
+    /* Comparison & Rehab Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .data-table th {
+      background: #F1F5F9;
+      color: var(--primary-navy);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .data-table tr:hover {
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--accent-emerald);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.25rem;
+      font-size: 0.975rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       CROSS LINK TOOLS GRID
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title-wrap {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-title-wrap h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-investor">Investor Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Maximum Allowable Offer Calculator</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="badge-pill">Wholesale &amp; Fix/Flip Deal Analyzer</span>
+    <h1>Maximum Allowable Offer Calculator</h1>
+    <p>Determine your absolute highest cash offer on any distressed real estate deal. Calculate your MAO using the standard 70% rule, variable risk percentages, rehab budgets, holding carry costs, and wholesale assignment fees.</p>
+  </header>
+
+  <!-- CALCULATOR APP MAIN -->
+  <main class="calc-layout" id="app">
+
+    <!-- LEFT COLUMN: INPUTS -->
+    <div class="calc-inputs-col">
+      
+      <!-- MODE TOGGLER -->
+      <div class="mode-switcher">
+        <button type="button" class="mode-btn active" id="btnModeQuick" data-mode="quick">
+          ⚡ 70% Rule Quick MAO
+        </button>
+        <button type="button" class="mode-btn" id="btnModeDeep" data-mode="deep">
+          📐 Detailed Line-Item Underwriting
+        </button>
+      </div>
+
+      <!-- CORE PROPERTY VALUATION CARD -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>1. Property &amp; Rehab Valuation</span>
+          <span style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 700;">USD ($)</span>
+        </div>
+
+        <!-- ARV Input -->
+        <div class="form-group">
+          <label class="form-label" for="inputArv">
+            <span>After Repair Value (ARV)</span>
+            <span class="hint">Appraised post-renovation value</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputArv" class="form-control has-prefix" value="325000" step="5000" min="10000">
+          </div>
+          <div class="slider-row">
+            <input type="range" id="sliderArv" class="custom-range" min="50000" max="1500000" step="5000" value="325000">
+          </div>
+        </div>
+
+        <!-- Estimated Rehab Cost Input -->
+        <div class="form-group">
+          <label class="form-label" for="inputRehab">
+            <span>Estimated Repair / Rehab Costs</span>
+            <span class="hint">Labor, materials, permits</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputRehab" class="form-control has-prefix" value="45000" step="1000" min="0">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-rehab-tier="cosmetic">Cosmetic Paint/Flooring ($20k)</button>
+            <button type="button" class="preset-pill active" data-rehab-tier="kitchen-bath">Kitchen &amp; Bath ($45k)</button>
+            <button type="button" class="preset-pill" data-rehab-tier="full-gut">Full Gut Rehab ($80k)</button>
+          </div>
+        </div>
+
+        <!-- Investor Rule Percentage (Quick Mode Only) -->
+        <div class="form-group" id="groupRulePct">
+          <label class="form-label" for="inputRulePct">
+            <span>Investor Rule Percentage</span>
+            <span class="hint" id="rulePctDisplay">70% Standard Rule</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputRulePct" class="form-control has-suffix" value="70" step="1" min="50" max="90">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="preset-pills" style="margin-top: 0.65rem;">
+            <button type="button" class="preset-pill" data-rule="65">65% (Slow/Buyer Market)</button>
+            <button type="button" class="preset-pill active" data-rule="70">70% (Standard Benchmark)</button>
+            <button type="button" class="preset-pill" data-rule="75">75% (Competitive Market)</button>
+            <button type="button" class="preset-pill" data-rule="80">80% (Hot / Turnkey)</button>
+          </div>
+        </div>
+
+        <!-- Wholesale Assignment Fee -->
+        <div class="form-group">
+          <label class="form-label" for="inputWholesaleFee">
+            <span>Wholesale Assignment Fee (Optional)</span>
+            <span class="hint">Leave $0 if flipping yourself</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputWholesaleFee" class="form-control has-prefix" value="10000" step="1000" min="0">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DEEP UNDERWRITING CARD (VISIBLE ONLY IN DEEP MODE) -->
+      <div class="calc-card" id="cardDeepInputs" style="display: none;">
+        <div class="card-title">
+          <span>2. Holding, Financing &amp; Profit Targets</span>
+          <span style="font-size: 0.8rem; color: var(--accent-blue); font-weight: 700;">Institutional Line-Item</span>
+        </div>
+
+        <!-- Target Investor Profit -->
+        <div class="form-group">
+          <label class="form-label" for="inputTargetProfit">
+            <span>Target Investor Profit</span>
+            <span class="hint">Minimum net cash return</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputTargetProfit" class="form-control has-prefix" value="45000" step="1000" min="5000">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-profit-pct="12">12% of ARV</button>
+            <button type="button" class="preset-pill active" data-profit-pct="15">15% of ARV</button>
+            <button type="button" class="preset-pill" data-profit-pct="20">20% of ARV</button>
+          </div>
+        </div>
+
+        <!-- Holding & Carry Costs -->
+        <div class="form-group">
+          <label class="form-label" for="inputHoldingMonths">
+            <span>Estimated Project Duration</span>
+            <span class="hint">Renovation + Resale period</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputHoldingMonths" class="form-control has-suffix" value="6" step="1" min="1" max="24">
+            <span class="input-suffix">Months</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="inputMonthlyHolding">
+            <span>Monthly Holding Carry Cost</span>
+            <span class="hint">Taxes, insurance, utilities, HOA</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputMonthlyHolding" class="form-control has-prefix" value="1200" step="100" min="0">
+          </div>
+        </div>
+
+        <!-- Financing Costs (Hard Money / Private Lender) -->
+        <div class="form-group">
+          <label class="form-label" for="inputLoanInterest">
+            <span>Hard Money / Debt Interest Rate</span>
+            <span class="hint">Annual interest rate</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputLoanInterest" class="form-control has-suffix" value="11.5" step="0.25" min="0">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="inputLoanPoints">
+            <span>Origination Points / Lender Fees</span>
+            <span class="hint">% of borrowed loan amount</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputLoanPoints" class="form-control has-suffix" value="2.0" step="0.5" min="0">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <!-- Disposition / Closing Costs -->
+        <div class="form-group">
+          <label class="form-label" for="inputResaleCostPct">
+            <span>Resale Closing Costs &amp; Realtor Fees</span>
+            <span class="hint">% of final ARV (typically 6-8%)</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputResaleCostPct" class="form-control has-suffix" value="7.0" step="0.5" min="1" max="15">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <!-- Contingency Buffer -->
+        <div class="form-group">
+          <label class="form-label" for="inputContingencyPct">
+            <span>Rehab Contingency Buffer</span>
+            <span class="hint">Buffer for hidden repair overruns</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputContingencyPct" class="form-control has-suffix" value="10" step="1" min="0" max="25">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: STICKY RESULTS -->
+    <div class="calc-results-col">
+      <div class="sticky-result-card">
+        
+        <!-- HERO METRIC BANNER -->
+        <div class="hero-metric-box">
+          <div class="hero-metric-label">Maximum Allowable Offer (MAO)</div>
+          <div class="hero-metric-val" id="resMaoDisplay">$172,500</div>
+          <div class="hero-metric-sub" id="resMaoSub">Do not exceed this price to protect profit margins</div>
+        </div>
+
+        <!-- DEAL STATUS PILL -->
+        <div class="deal-status-pill status-strong" id="dealStatusBadge">
+          <span>✓ Viable Deal Spread: Healthy Safety Buffer</span>
+        </div>
+
+        <!-- VISUAL ARV ALLOCATION BAR -->
+        <div class="dist-bar-wrap">
+          <div class="dist-bar-label">
+            <span>ARV Capital Breakdown</span>
+            <span id="distArvTotal">$325,000</span>
+          </div>
+          <div class="dist-bar">
+            <div class="dist-seg-offer" id="barOffer" style="width: 53%;"></div>
+            <div class="dist-seg-rehab" id="barRehab" style="width: 14%;"></div>
+            <div class="dist-seg-hold" id="barHold" style="width: 15%;"></div>
+            <div class="dist-seg-fee" id="barFee" style="width: 3%;"></div>
+            <div class="dist-seg-profit" id="barProfit" style="width: 15%;"></div>
+          </div>
+          <div class="dist-legend">
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-offer"></span> Purchase Offer</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-rehab"></span> Rehab</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-hold"></span> Carry/Costs</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-fee"></span> Wholesale</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-profit"></span> Net Profit</div>
+          </div>
+        </div>
+
+        <!-- DETAILED LINE-ITEM BREAKDOWN TABLE -->
+        <ul class="breakdown-list">
+          <li class="breakdown-row">
+            <span class="label">After Repair Value (ARV)</span>
+            <span class="val" id="resArvVal">$325,000</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Total Rehab Budget (incl. buffer)</span>
+            <span class="val" id="resRehabVal">-$45,000</span>
+          </li>
+          <li class="breakdown-row" id="rowFixedMargin">
+            <span class="label">30% Fixed Margin &amp; Cost Reserve</span>
+            <span class="val" id="resFixedMarginVal">-$97,500</span>
+          </li>
+          <li class="breakdown-row" id="rowDetailedCosts" style="display: none;">
+            <span class="label">Holding &amp; Financing Costs</span>
+            <span class="val" id="resHoldCostVal">-$18,450</span>
+          </li>
+          <li class="breakdown-row" id="rowSellingCosts" style="display: none;">
+            <span class="label">Resale Closing &amp; Brokerage (7%)</span>
+            <span class="val" id="resSellCostVal">-$22,750</span>
+          </li>
+          <li class="breakdown-row" id="rowTargetProfit" style="display: none;">
+            <span class="label">Target Flipper Profit</span>
+            <span class="val" id="resTargetProfitVal">-$45,000</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Wholesale Assignment Spread</span>
+            <span class="val" id="resWholesaleVal">-$10,000</span>
+          </li>
+          <li class="breakdown-row total-row">
+            <span class="label"><strong>Final Cash Offer Ceiling (MAO)</strong></span>
+            <span class="val" id="resFinalMaoVal">$172,500</span>
+          </li>
+        </ul>
+
+        <!-- OFFER TIER ESCALATION LADDER -->
+        <div class="escalator-card">
+          <div class="escalator-title">Strategic Offer Ladder</div>
+          <table class="escalator-table">
+            <tbody>
+              <tr>
+                <td class="tier-name">🟢 Aggressive Opening Offer (-10%)</td>
+                <td class="tier-val" id="tierAggressive">$155,250</td>
+              </tr>
+              <tr>
+                <td class="tier-name">🎯 Recommended Target Offer (MAO)</td>
+                <td class="tier-val" id="tierTarget" style="color: var(--accent-emerald-dark);">$172,500</td>
+              </tr>
+              <tr>
+                <td class="tier-name">🔴 Walk-Away Ceiling (+5% Max)</td>
+                <td class="tier-val" id="tierCeiling">$181,125</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-group" style="margin-top: 1.5rem;">
+          <button type="button" class="btn-action btn-primary" id="btnCopyDeal">
+            📋 Copy Deal Summary
+          </button>
+          <button type="button" class="btn-action btn-secondary" id="btnShareDeal">
+            🔗 Share Link
+          </button>
+        </div>
+
+        <button type="button" class="btn-action btn-secondary" id="btnDownloadCsv" style="width: 100%;">
+          📥 Download Underwriting CSV
+        </button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO GUIDE & TUTORIAL -->
+  <article class="seo-section">
+    <h2>Understanding the Maximum Allowable Offer (MAO) in Real Estate</h2>
+    <p>In real estate wholesaling and fix-and-flip investing, the <strong>Maximum Allowable Offer (MAO)</strong> represents the supreme mathematical threshold for deal acquisition. It is the highest purchase price an investor can offer a seller while ensuring adequate downside capital protection, absorption of unforeseen renovation cost overruns, and realization of target net return on investment (ROI).</p>
+    
+    <p>Submitting offers based on subjective emotion or unverified comparable sales represents the primary reason novice investors suffer capital impairment. Institutional flippers and high-volume wholesale operators engineer acquisitions backward from the <strong>After Repair Value (ARV)</strong> down to the dollar.</p>
+
+    <!-- FORMULA BANNER -->
+    <div class="formula-banner">
+      <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #94A3B8;">The Classic Real Estate 70% Rule Formula</div>
+      <div>
+        $$\text{MAO} = (\text{ARV} \times 0.70) - \text{Estimated Repair Costs} - \text{Wholesale Fee}$$
+      </div>
+    </div>
+
+    <h3>Deconstructing the 70% Rule: Where Does the Other 30% Go?</h3>
+    <p>A frequent misconception among beginning real estate practitioners is that the 70% rule yields a 30% net profit margin for the investor. In institutional reality, that 30% equity allocation accommodates three distinct expense buckets:</p>
+    <ul>
+      <li><strong>Holding &amp; Carrying Costs (Approx. 4%–6%):</strong> Property taxes, hazard insurance, utility maintenance, municipal permit fees, and debt service (interest charges and origination points paid to hard money lenders) during the renovation and marketing cycles.</li>
+      <li><strong>Acquisition &amp; Disposition Transaction Costs (Approx. 8%–10%):</strong> Title insurance, escrow settlement fees, transfer taxes, attorney fees, staging expenses, and real estate brokerage commissions (typically 5% to 6% paid on the final disposition sale).</li>
+      <li><strong>Net Investor Profit Margin (Approx. 14%–18%):</strong> The true bottom-line compensation required by the fix-and-flipper to justify the operational risk and capital outlay of the repositioning project.</li>
+    </ul>
+
+    <div class="callout-box">
+      <h4>💡 Pro Wholesaler Nuance</h4>
+      <p>If you are wholesaling rather than executing the physical renovation yourself, you must always subtract your desired contract assignment fee from the standard flipper's MAO. Failing to deduct your assignment fee means your cash buyer's profit margin will be compressed, drastically reducing their likelihood of funding the contract.</p>
+    </div>
+
+    <h2>How to Accurately Estimate After Repair Value (ARV)</h2>
+    <p>Your MAO calculation is only as reliable as your baseline ARV appraisal. To accurately establish the After Repair Value without an appraisal report, use the following strict underwriting criteria:</p>
+    <ol>
+      <li><strong>Geographic Proximity:</strong> Select strictly comparable properties ("comps") located within 0.5 miles in urban/suburban subdivisions, never crossing major commercial thoroughfares, railroad tracks, or school district boundaries.</li>
+      <li><strong>Recency:</strong> Prioritize closed transactions recorded within the preceding 90 days. In fluctuating interest rate climates, comps older than 180 days are obsolete.</li>
+      <li><strong>Property Characteristics:</strong> Ensure comps share similar gross living area (GLA) within $\pm 15\%$, comparable bedroom and bathroom counts, similar architectural style, and equivalent basement foundations.</li>
+      <li><strong>Renovation Quality:</strong> Comps must reflect fully renovated, turn-key retail condition—including updated mechanicals, modern quartz or granite countertops, remodeled bathrooms, and premium flooring.</li>
+    </ol>
+
+    <h2>Rehabilitation Cost Estimation Benchmarks (2026 Guidelines)</h2>
+    <p>To assist in your initial walkthrough evaluations before bringing general contractors onto the job site, professional investors utilize square-foot cost heuristics:</p>
+
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rehab Scope</th>
+            <th>Typical Cost / Sq. Ft.</th>
+            <th>Included Renovation Scope</th>
+            <th>Avg. Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cosmetic / Light</strong></td>
+            <td>$15 – $25 / sq. ft.</td>
+            <td>Interior/exterior paint, carpet/LVP flooring, modern light fixtures, basic hardware upgrades, landscaping cleanup.</td>
+            <td>2 – 4 Weeks</td>
+          </tr>
+          <tr>
+            <td><strong>Medium / Standard</strong></td>
+            <td>$30 – $55 / sq. ft.</td>
+            <td>Cosmetic items plus complete kitchen remodel (cabinets &amp; stone tops), bathroom tiled showers, updated HVAC, new water heater.</td>
+            <td>6 – 10 Weeks</td>
+          </tr>
+          <tr>
+            <td><strong>Heavy / Full Gut</strong></td>
+            <td>$60 – $95+ / sq. ft.</td>
+            <td>Down-to-the-studs remodel, electrical rewiring, PEX re-plumbing, structural load-bearing wall removals, new architectural shingle roof, foundation reinforcement.</td>
+            <td>12 – 24 Weeks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Adjusting the Rule: When to Use 65%, 75%, or 80%</h2>
+    <p>While the 70% rule remains the universal real estate baseline, local market microclimates dictate calibration:</p>
+    <ul>
+      <li><strong>The 65% Rule (Buyer's Market / High Interest Rates):</strong> When borrowing costs exceed 10% and inventory sits on market beyond 60 days, expanding the discount buffer to 65% shields the investor against prolonged holding carry and price depreciation.</li>
+      <li><strong>The 75% Rule (Balanced Metropolitan Markets):</strong> Common in prime metropolitan submarkets with stable days-on-market metrics and high consumer demand for renovated entry-level housing.</li>
+      <li><strong>The 80% Rule (Hyper-Competitive / High-Value Markets):</strong> In premier urban coastal submarkets (e.g., Southern California, Northern New Jersey, South Florida) with median home prices exceeding $750,000, investors frequently bid at 80% because fixed closing and holding expenses represent a smaller percentage of overall transaction proceeds.</li>
+    </ul>
+
+    <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+    <h2>Frequently Asked Questions About MAO &amp; The 70% Rule</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the Maximum Allowable Offer (MAO) in real estate?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The Maximum Allowable Offer (MAO) is the absolute highest dollar amount an investor or wholesaler can offer a property seller while still ensuring target profit margins and covering all acquisition, renovation, holding, financing, and resale costs. Offering above the MAO drastically reduces profit and risks capital loss.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the 70% Rule in real estate investing?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The 70% Rule is a widely adopted real estate rule of thumb stating that an investor should pay no more than 70% of the property's After Repair Value (ARV), minus the estimated cost of repairs. The mathematical formula is: MAO = (ARV × 0.70) − Estimated Repair Costs. The remaining 30% margin accounts for closing costs, holding expenses, financing costs, and the investor's net profit.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do wholesalers calculate MAO differently from flippers?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Wholesalers must subtract their desired wholesale assignment fee from the standard flipper MAO. The wholesale MAO formula is: Wholesale MAO = (ARV × 0.70) − Repair Costs − Wholesale Fee. This guarantees that when the wholesaler assigns the contract to an end cash buyer at the flipper's MAO, the end investor still achieves their full 15% to 20% profit margin.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Should you ever adjust the 70% Rule to 75% or 80%?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes. In high-demand, low-inventory hot markets with rapid days on market (DOM) and predictable appreciation, investors frequently increase their benchmark to 75% or 80% of ARV. Conversely, in higher-interest-rate environments, slow buyer markets, or for heavy structural gut renovations, conservative investors reduce the formula to 60% or 65% to account for extended holding durations and market volatility.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do you accurately estimate After Repair Value (ARV)?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        ARV is determined by analyzing 3 to 5 recent comparable sales ('comps') within a 0.5 to 1-mile radius that sold in the last 90 to 180 days. Comps must match the subject property in square footage (±15%), bedroom/bathroom count, year built, and finish level after full modern renovation.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What hidden costs are most often missed when calculating MAO?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The most commonly overlooked expenses include hard money origination points and monthly interest carry costs, municipal building permit delays, transfer taxes, title insurance, contractor contingency reserves (10%-15%), and seller concessions on the final disposition sale.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED TOOLS CROSS-LINKING -->
+  <section class="related-tools-section">
+    <div class="section-title-wrap">
+      <h3>Explore Complementary Real Estate Investment Tools</h3>
+    </div>
+    <div class="related-grid">
+      <a href="/brrrr-calculator" class="related-card">
+        <h4>BRRRR Method Calculator</h4>
+        <p>Analyze Buy, Rehab, Rent, Refinance, Repeat deals with cash-out refi modeling and infinite return analysis.</p>
+      </a>
+      <a href="/dscr-calculator" class="related-card">
+        <h4>DSCR Loan Underwriter</h4>
+        <p>Calculate Debt Service Coverage Ratios for residential Non-QM debt and commercial mortgage financing.</p>
+      </a>
+      <a href="/subto-calculator" class="related-card">
+        <h4>Subject-To (SubTo) Calculator</h4>
+        <p>Model creative financing acquisitions by taking over existing low-rate mortgages with seller wrap spreads.</p>
+      </a>
+      <a href="/1031-exchange-tax-calculator" class="related-card">
+        <h4>1031 Exchange Tax Calculator</h4>
+        <p>Calculate capital gains and depreciation recapture tax deferral on real property reinvestment swaps.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/brrrr-calculator">BRRRR Calculator</a></li>
+      <li><a href="/dscr-calculator">DSCR Calculator</a></li>
+      <li><a href="/subto-calculator">SubTo Calculator</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All financial calculations and formulas are for educational and deal underwriting purposes only.</p>
+  </footer>
+
+</div>
+
+<!-- CALCULATOR INTERACTIVE LOGIC JAVASCRIPT -->
+<script>
+(function() {
+  'use strict';
+
+  // State Management
+  let currentMode = 'quick'; // 'quick' or 'deep'
+
+  // Input Elements
+  const inputArv = document.getElementById('inputArv');
+  const sliderArv = document.getElementById('sliderArv');
+  const inputRehab = document.getElementById('inputRehab');
+  const inputRulePct = document.getElementById('inputRulePct');
+  const rulePctDisplay = document.getElementById('rulePctDisplay');
+  const inputWholesaleFee = document.getElementById('inputWholesaleFee');
+
+  // Deep Inputs
+  const cardDeepInputs = document.getElementById('cardDeepInputs');
+  const groupRulePct = document.getElementById('groupRulePct');
+  const inputTargetProfit = document.getElementById('inputTargetProfit');
+  const inputHoldingMonths = document.getElementById('inputHoldingMonths');
+  const inputMonthlyHolding = document.getElementById('inputMonthlyHolding');
+  const inputLoanInterest = document.getElementById('inputLoanInterest');
+  const inputLoanPoints = document.getElementById('inputLoanPoints');
+  const inputResaleCostPct = document.getElementById('inputResaleCostPct');
+  const inputContingencyPct = document.getElementById('inputContingencyPct');
+
+  // Output Elements
+  const resMaoDisplay = document.getElementById('resMaoDisplay');
+  const resMaoSub = document.getElementById('resMaoSub');
+  const dealStatusBadge = document.getElementById('dealStatusBadge');
+  const distArvTotal = document.getElementById('distArvTotal');
+  const barOffer = document.getElementById('barOffer');
+  const barRehab = document.getElementById('barRehab');
+  const barHold = document.getElementById('barHold');
+  const barFee = document.getElementById('barFee');
+  const barProfit = document.getElementById('barProfit');
+
+  const resArvVal = document.getElementById('resArvVal');
+  const resRehabVal = document.getElementById('resRehabVal');
+  const resFixedMarginVal = document.getElementById('resFixedMarginVal');
+  const rowFixedMargin = document.getElementById('rowFixedMargin');
+  const rowDetailedCosts = document.getElementById('rowDetailedCosts');
+  const rowSellingCosts = document.getElementById('rowSellingCosts');
+  const rowTargetProfit = document.getElementById('rowTargetProfit');
+  const resHoldCostVal = document.getElementById('resHoldCostVal');
+  const resSellCostVal = document.getElementById('resSellCostVal');
+  const resTargetProfitVal = document.getElementById('resTargetProfitVal');
+  const resWholesaleVal = document.getElementById('resWholesaleVal');
+  const resFinalMaoVal = document.getElementById('resFinalMaoVal');
+
+  const tierAggressive = document.getElementById('tierAggressive');
+  const tierTarget = document.getElementById('tierTarget');
+  const tierCeiling = document.getElementById('tierCeiling');
+
+  // Buttons
+  const btnModeQuick = document.getElementById('btnModeQuick');
+  const btnModeDeep = document.getElementById('btnModeDeep');
+  const btnCopyDeal = document.getElementById('btnCopyDeal');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+
+  // Formatters
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount || 0);
+  }
+
+  // Sync ARV Input & Slider
+  inputArv.addEventListener('input', () => {
+    sliderArv.value = inputArv.value;
+    calculateMAO();
+  });
+
+  sliderArv.addEventListener('input', () => {
+    inputArv.value = sliderArv.value;
+    calculateMAO();
+  });
+
+  // Mode Toggling
+  btnModeQuick.addEventListener('click', () => {
+    currentMode = 'quick';
+    btnModeQuick.classList.add('active');
+    btnModeDeep.classList.remove('active');
+    cardDeepInputs.style.display = 'none';
+    groupRulePct.style.display = 'block';
+    rowFixedMargin.style.display = 'flex';
+    rowDetailedCosts.style.display = 'none';
+    rowSellingCosts.style.display = 'none';
+    rowTargetProfit.style.display = 'none';
+    calculateMAO();
+  });
+
+  btnModeDeep.addEventListener('click', () => {
+    currentMode = 'deep';
+    btnModeDeep.classList.add('active');
+    btnModeQuick.classList.remove('active');
+    cardDeepInputs.style.display = 'block';
+    groupRulePct.style.display = 'none';
+    rowFixedMargin.style.display = 'none';
+    rowDetailedCosts.style.display = 'flex';
+    rowSellingCosts.style.display = 'flex';
+    rowTargetProfit.style.display = 'flex';
+    calculateMAO();
+  });
+
+  // Quick Rehab Presets
+  document.querySelectorAll('[data-rehab-tier]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('[data-rehab-tier]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tier = btn.getAttribute('data-rehab-tier');
+      if (tier === 'cosmetic') inputRehab.value = 20000;
+      else if (tier === 'kitchen-bath') inputRehab.value = 45000;
+      else if (tier === 'full-gut') inputRehab.value = 80000;
+      calculateMAO();
+    });
+  });
+
+  // Rule % Presets
+  document.querySelectorAll('[data-rule]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-rule]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputRulePct.value = btn.getAttribute('data-rule');
+      calculateMAO();
+    });
+  });
+
+  // Profit % Presets for Deep Mode
+  document.querySelectorAll('[data-profit-pct]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-profit-pct]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const arv = parseFloat(inputArv.value) || 0;
+      const pct = parseFloat(btn.getAttribute('data-profit-pct')) / 100;
+      inputTargetProfit.value = Math.round(arv * pct);
+      calculateMAO();
+    });
+  });
+
+  // Main Calculation Engine
+  function calculateMAO() {
+    const arv = Math.max(0, parseFloat(inputArv.value) || 0);
+    const baseRehab = Math.max(0, parseFloat(inputRehab.value) || 0);
+    const wholesaleFee = Math.max(0, parseFloat(inputWholesaleFee.value) || 0);
+
+    let finalMao = 0;
+    let totalRehab = baseRehab;
+    let totalHolding = 0;
+    let totalSelling = 0;
+    let targetProfit = 0;
+
+    if (currentMode === 'quick') {
+      const rulePct = (parseFloat(inputRulePct.value) || 70) / 100;
+      rulePctDisplay.textContent = `${(rulePct * 100).toFixed(0)}% Rule Setting`;
+      
+      // Quick MAO Formula: (ARV * Rule%) - Rehab - WholesaleFee
+      finalMao = Math.round((arv * rulePct) - baseRehab - wholesaleFee);
+      const fixedMargin = arv * (1 - rulePct);
+      resFixedMarginVal.textContent = `-${formatMoney(fixedMargin)}`;
+      
+      // Allocations for visuals
+      targetProfit = arv * 0.15;
+      totalHolding = Math.max(0, fixedMargin - targetProfit);
+
+    } else {
+      // Detailed Line-Item Underwriting
+      const contingencyPct = (parseFloat(inputContingencyPct.value) || 0) / 100;
+      totalRehab = baseRehab * (1 + contingencyPct);
+
+      targetProfit = Math.max(0, parseFloat(inputTargetProfit.value) || 0);
+      const months = Math.max(1, parseFloat(inputHoldingMonths.value) || 6);
+      const monthlyHold = Math.max(0, parseFloat(inputMonthlyHolding.value) || 0);
+      const fixedCarry = monthlyHold * months;
+
+      // Resale commissions & seller concessions
+      const resalePct = (parseFloat(inputResaleCostPct.value) || 7) / 100;
+      totalSelling = arv * resalePct;
+
+      // Financing estimation (approx 85% of purchase + 100% of rehab borrowed)
+      const interestRate = (parseFloat(inputLoanInterest.value) || 0) / 100;
+      const points = (parseFloat(inputLoanPoints.value) || 0) / 100;
+      
+      // Preliminary estimate for financing debt carry
+      const prelimMaoRough = (arv * 0.70) - totalRehab;
+      const estimatedLoan = Math.max(0, (prelimMaoRough * 0.85) + totalRehab);
+      const pointsFee = estimatedLoan * points;
+      const loanInterestCarry = estimatedLoan * (interestRate / 12) * months;
+      totalHolding = fixedCarry + pointsFee + loanInterestCarry;
+
+      // Deep MAO Formula
+      finalMao = Math.round(arv - totalRehab - totalHolding - totalSelling - targetProfit - wholesaleFee);
+
+      resHoldCostVal.textContent = `-${formatMoney(totalHolding)}`;
+      resSellCostVal.textContent = `-${formatMoney(totalSelling)}`;
+      resTargetProfitVal.textContent = `-${formatMoney(targetProfit)}`;
+    }
+
+    // Safety Floor Check
+    finalMao = Math.max(0, finalMao);
+
+    // Update Primary Displays
+    resMaoDisplay.textContent = formatMoney(finalMao);
+    resArvVal.textContent = formatMoney(arv);
+    resRehabVal.textContent = `-${formatMoney(totalRehab)}`;
+    resWholesaleVal.textContent = `-${formatMoney(wholesaleFee)}`;
+    resFinalMaoVal.textContent = formatMoney(finalMao);
+    distArvTotal.textContent = formatMoney(arv);
+
+    // Escalator Tiers
+    const aggressiveOffer = Math.round(finalMao * 0.90);
+    const ceilingOffer = Math.round(finalMao * 1.05);
+
+    tierAggressive.textContent = formatMoney(aggressiveOffer);
+    tierTarget.textContent = formatMoney(finalMao);
+    tierCeiling.textContent = formatMoney(ceilingOffer);
+
+    // Calculate Deal Ratio & Status Badge
+    const maoRatio = arv > 0 ? (finalMao + totalRehab) / arv : 1;
+    dealStatusBadge.className = 'deal-status-pill';
+
+    if (finalMao <= 0) {
+      dealStatusBadge.classList.add('status-risk');
+      dealStatusBadge.innerHTML = '⚠️ Negative Spread: Overpriced Rehab / Zero Profit Margin';
+      resMaoSub.textContent = 'Property acquisition cost exceeds target threshold.';
+    } else if (maoRatio <= 0.68) {
+      dealStatusBadge.classList.add('status-strong');
+      dealStatusBadge.innerHTML = '✓ Strong Spread: High Confidence & Healthy Cushion';
+      resMaoSub.textContent = 'Excellent safety buffer for unforeseen contractor overruns.';
+    } else if (maoRatio <= 0.75) {
+      dealStatusBadge.classList.add('status-moderate');
+      dealStatusBadge.innerHTML = '⚖️ Standard Viability: Balanced Flipper Margin';
+      resMaoSub.textContent = 'Meets institutional standards for typical market flips.';
+    } else {
+      dealStatusBadge.classList.add('status-tight');
+      dealStatusBadge.innerHTML = '⚡ Tight Margin: Minimal Room for Contractor Delays';
+      resMaoSub.textContent = 'Aggressive pricing. Ensure rehab budget is locked.';
+    }
+
+    // Progress Distribution Bar
+    if (arv > 0) {
+      const pctOffer = Math.max(0, Math.min(100, (finalMao / arv) * 100));
+      const pctRehab = Math.max(0, Math.min(100, (totalRehab / arv) * 100));
+      const pctHold = Math.max(0, Math.min(100, ((totalHolding + totalSelling) / arv) * 100));
+      const pctFee = Math.max(0, Math.min(100, (wholesaleFee / arv) * 100));
+      const pctProfit = Math.max(0, Math.min(100, 100 - (pctOffer + pctRehab + pctHold + pctFee)));
+
+      barOffer.style.width = pctOffer + '%';
+      barRehab.style.width = pctRehab + '%';
+      barHold.style.width = pctHold + '%';
+      barFee.style.width = pctFee + '%';
+      barProfit.style.width = pctProfit + '%';
+    }
+  }
+
+  // Copy Deal Summary to Clipboard
+  btnCopyDeal.addEventListener('click', () => {
+    const arv = formatMoney(inputArv.value);
+    const mao = resMaoDisplay.textContent;
+    const rehab = formatMoney(inputRehab.value);
+    const fee = formatMoney(inputWholesaleFee.value);
+    const agg = tierAggressive.textContent;
+    const ceil = tierCeiling.textContent;
+
+    const summary = `🏠 REAL ESTATE DEAL UNDERWRITING SUMMARY (via RealRefin.com)
+--------------------------------------------------
+After Repair Value (ARV): ${arv}
+Estimated Rehab Budget:   ${rehab}
+Wholesale Assignment:     ${fee}
+--------------------------------------------------
+🎯 MAXIMUM ALLOWABLE OFFER (MAO): ${mao}
+🟢 Aggressive Lowball Offer:     ${agg}
+🔴 Walk-Away Ceiling:            ${ceil}
+--------------------------------------------------
+Analyze deal live at: ${window.location.href}`;
+
+    navigator.clipboard.writeText(summary).then(() => {
+      const originalText = btnCopyDeal.innerHTML;
+      btnCopyDeal.innerHTML = '✓ Copied Summary!';
+      btnCopyDeal.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnCopyDeal.innerHTML = originalText;
+        btnCopyDeal.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('Deal Underwriting Summary:\n\n' + summary);
+    });
+  });
+
+  // Share Link with Query Params
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      arv: inputArv.value,
+      rehab: inputRehab.value,
+      rule: inputRulePct.value,
+      fee: inputWholesaleFee.value,
+      mode: currentMode
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const orig = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Link Copied!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = orig;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // Download CSV Underwriting Report
+  btnDownloadCsv.addEventListener('click', () => {
+    const arv = inputArv.value;
+    const rehab = inputRehab.value;
+    const rule = inputRulePct.value;
+    const fee = inputWholesaleFee.value;
+    const mao = resMaoDisplay.textContent.replace(/[^0-9.-]+/g, '');
+
+    let csv = `REALREFIN.COM - MAXIMUM ALLOWABLE OFFER (MAO) UNDERWRITING REPORT\n`;
+    csv += `Generated On,${new Date().toISOString()}\n`;
+    csv += `Calculation Mode,${currentMode.toUpperCase()}\n\n`;
+    csv += `METRIC,AMOUNT\n`;
+    csv += `After Repair Value (ARV),$${arv}\n`;
+    csv += `Estimated Rehab Budget,$${rehab}\n`;
+    csv += `Investor Rule Percentage,${rule}%\n`;
+    csv += `Wholesale Assignment Spread,$${fee}\n`;
+    csv += `MAXIMUM ALLOWABLE OFFER (MAO),$${mao}\n`;
+    csv += `Aggressive Opening Offer (-10%),$${(mao * 0.9).toFixed(0)}\n`;
+    csv += `Walk-Away Ceiling (+5%),$${(mao * 1.05).toFixed(0)}\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `realrefin-mao-deal-analysis-${Date.now()}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+
+  // Load URL Query Parameters
+  function loadUrlParams() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('arv')) inputArv.value = p.get('arv');
+    if (p.has('rehab')) inputRehab.value = p.get('rehab');
+    if (p.has('rule')) inputRulePct.value = p.get('rule');
+    if (p.has('fee')) inputWholesaleFee.value = p.get('fee');
+    if (p.get('mode') === 'deep') {
+      btnModeDeep.click();
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      const active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!active) item.classList.add('active');
+    });
+  });
+
+  // Attach Event Listeners
+  [inputRehab, inputRulePct, inputWholesaleFee, inputTargetProfit, inputHoldingMonths, 
+   inputMonthlyHolding, inputLoanInterest, inputLoanPoints, inputResaleCostPct, inputContingencyPct]
+    .forEach(el => el && el.addEventListener('input', calculateMAO));
+
+  // Initialize
+  loadUrlParams();
+  sliderArv.value = inputArv.value;
+  calculateMAO();
+
+})();
+</script>
+
+</body>
+</html>
