@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/airbnb-profit-calculator</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/hard-money-loan-calculator</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -175,6 +181,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/airbnb-profit-calculator': 'airbnb-profit-calculator.html',
+  '/airbnb-profit-calculator.html': 'airbnb-profit-calculator.html',
+  '/airbnb-profit-calculator-excel': 'airbnb-profit-calculator.html',
+  '/airbnb-profit-calculator-excel.html': 'airbnb-profit-calculator.html',
+  '/airbnb-profit-calculator-spreadsheet': 'airbnb-profit-calculator.html',
+  '/airbnb-profit-calculator-spreadsheet.html': 'airbnb-profit-calculator.html',
+  '/free-airbnb-revenue-calculator': 'airbnb-profit-calculator.html',
+  '/free-airbnb-revenue-calculator.html': 'airbnb-profit-calculator.html',
+  '/airbnb-calculator': 'airbnb-profit-calculator.html',
+  '/airbnb-calculator.html': 'airbnb-profit-calculator.html',
+  '/airbnb-cash-flow-calculator': 'airbnb-profit-calculator.html',
+  '/airbnb-cash-flow-calculator.html': 'airbnb-profit-calculator.html',
   '/hard-money-loan-calculator': 'hard-money-loan-calculator.html',
   '/hard-money-loan-calculator.html': 'hard-money-loan-calculator.html',
   '/hard-money-loan-payment-calculator': 'hard-money-loan-calculator.html',

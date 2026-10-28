@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Airbnb Profit Calculator Excel &amp; STR Revenue Spreadsheet (2026)</title>
+  <meta name="description" content="Free Airbnb profit calculator and downloadable Excel spreadsheet. Calculate gross rental revenue, average daily rate (ADR), occupancy break-even, host platform fees, cleaning spread, and net cash flow.">
+  <meta name="keywords" content="airbnb profit calculator excel, airbnb profit calculator spreadsheet, free airbnb revenue calculator, airbnb cash flow calculator, short term rental revenue calculator, str profit calculator, airbnb roi calculator excel, airbnb investment spreadsheet">
+  <link rel="canonical" href="https://realrefin.com/airbnb-profit-calculator">
+  <meta property="og:title" content="Free Airbnb Profit Calculator Excel &amp; STR Revenue Spreadsheet">
+  <meta property="og:description" content="Model Airbnb &amp; VRBO cash flow with real-time ADR, seasonal occupancy, cleaning spreads, and download the free Excel financial model template.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/airbnb-profit-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/airbnb-profit-calculator#app",
+        "name": "RealRefin Free Airbnb Profit Calculator & Excel Spreadsheet Generator",
+        "url": "https://realrefin.com/airbnb-profit-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free Airbnb profit calculator and downloadable Excel spreadsheet for short-term rental investors and rental arbitrage operators. Calculates gross revenue, ADR, occupancy rates, host service fees, cleaning margin spreads, operating expenses, and net ROI.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Real Estate Investor & Creative Finance Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Airbnb Profit Calculator & Excel Spreadsheet",
+            "item": "https://realrefin.com/airbnb-profit-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you calculate net profit from an Airbnb rental?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Net Airbnb profit is calculated by taking Gross Rental Revenue (Average Daily Rate × Booked Nights) + Cleaning Fees Collected, and subtracting all operating deductions: Airbnb host platform fees (typically 3%), cleaning expenses paid, utilities (electric, water, gas, high-speed WiFi), consumable guest supplies, STR insurance, local transient occupancy taxes (TOT), and fixed housing debt service (mortgage PITI or master lease rent)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good profit margin for an Airbnb or Short-Term Rental (STR)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For purchased properties, a healthy net Airbnb operating margin ranges between 20% and 35% of gross revenue, yielding a Cash-on-Cash return of 15% to 25%+. For Airbnb rental arbitrage (leasing a property and subleasing on Airbnb with landlord approval), successful operators aim for at least $1,000 to $1,500 net monthly profit per unit after paying master lease rent and utilities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between ADR and RevPAR in short-term rentals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Average Daily Rate (ADR) measures the average rental revenue paid per paid occupied night: Total Nightly Revenue ÷ Booked Nights. In contrast, Revenue Per Available Room (RevPAR) reflects overall asset monetization efficiency by dividing Total Nightly Revenue by Total Available Calendar Nights (or ADR × Occupancy Rate). A property with a $200 ADR at 70% occupancy has a RevPAR of $140."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are typical Airbnb host service fees in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under Airbnb's standard 'Split-Fee' structure, the host pays approximately 3% of the booking subtotal (nightly rate + cleaning fee), while the guest pays a 14% to 16% service fee. Under the 'Host-Only Fee' structure (mandatory for software-connected professional property managers and hospitality brands), the host pays the entire 14% to 16% service fee, with zero fee charged to the guest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does cleaning fee pass-through affect short-term rental profitability?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If a host charges guests $150 per turnover and pays cleaning crews $120, the $30 spread generates auxiliary net revenue ($30 × 5 turns = $150/month). Conversely, undercharging for cleanings turns housekeeping into an unbudgeted operational loss. In our calculator, you can model cleaning fees collected versus cleaning costs paid directly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download this Airbnb profit calculator as an Excel spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! You can customize all financial parameters directly in this free calculator and click 'Download Excel Spreadsheet (.csv)' to export a pre-formatted, editable financial model compatible with Microsoft Excel, Google Sheets, and Apple Numbers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-coral: #F43F5E;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-coral-light);
+      color: var(--accent-coral);
+      border: 1px solid var(--accent-coral-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 840px;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mode Toggler (Purchased Property vs Rental Arbitrage) */
+    .mode-switcher {
+      display: flex;
+      background: #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 0.35rem;
+      margin-bottom: 1.5rem;
+      gap: 0.35rem;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .mode-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Input Card Container */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label span.hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 1rem; }
+    .input-suffix { right: 1rem; }
+
+    .form-control {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      background: #FFFFFF;
+      font-family: inherit;
+    }
+
+    .form-control.has-prefix { padding-left: 2.25rem; }
+    .form-control.has-suffix { padding-right: 2.5rem; }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .slider-row {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+      accent-color: var(--accent-emerald);
+    }
+
+    /* Preset Quick Buttons */
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .preset-pill {
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border-color: var(--accent-emerald-border);
+    }
+
+    /* -----------------------------------------------------------
+       STICKY RESULT CARD
+    ----------------------------------------------------------- */
+    .sticky-result-card {
+      position: sticky;
+      top: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-metric-box {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-metric-box::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-metric-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-metric-val {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #34D399;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-metric-sub {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+    }
+
+    /* 2x2 Highlights Grid */
+    .term-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-cell {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+
+    .highlight-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* Breakdown List */
+    .breakdown-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      font-size: 0.925rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .breakdown-row .label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .breakdown-row .val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-row.total-row {
+      border-top: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
+      padding: 0.9rem 0;
+      font-size: 1.05rem;
+    }
+
+    .breakdown-row.total-row .val {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Distribution Progress Bar */
+    .dist-bar-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .dist-bar-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dist-bar {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #E2E8F0;
+      margin-bottom: 0.5rem;
+    }
+
+    .dist-seg-profit { background: #10B981; }
+    .dist-seg-house  { background: #3B82F6; }
+    .dist-seg-fee    { background: #F59E0B; }
+    .dist-seg-ops    { background: #8B5CF6; }
+
+    .dist-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .dist-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dist-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Action Buttons */
+    .action-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .btn-action {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--secondary-navy);
+      border: 1.5px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+    }
+
+    .btn-excel {
+      background: #059669;
+      color: #FFFFFF;
+      border: 1px solid #059669;
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-excel:hover {
+      background: #047857;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT SECTION
+    ----------------------------------------------------------- */
+    .seo-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .seo-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .seo-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin: 2.25rem 0 1rem;
+      line-height: 1.3;
+    }
+
+    .seo-section h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-section h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    .seo-section p {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-section ul, .seo-section ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.75rem;
+    }
+
+    .seo-section li {
+      font-size: 1.025rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      border-left: 5px solid var(--accent-coral);
+    }
+
+    .formula-banner .katex {
+      font-size: 1.35rem !important;
+      color: #34D399;
+    }
+
+    .callout-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #14532D;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .data-table th {
+      background: #F1F5F9;
+      color: var(--primary-navy);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .data-table tr:hover {
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--accent-emerald);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.25rem;
+      font-size: 0.975rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       CROSS LINK TOOLS GRID
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title-wrap {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-title-wrap h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-investor">Investor Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Airbnb Profit Calculator &amp; Excel Spreadsheet</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="badge-pill">Free STR Revenue &amp; Excel Spreadsheet Engine</span>
+    <h1>Free Airbnb Profit Calculator &amp; Excel Spreadsheet</h1>
+    <p>Forecast your short-term rental revenue, monthly cash flow, and return on investment. Model Average Daily Rates (ADR), seasonal occupancy, host fees, cleaning fee spreads, and download the free pre-built Excel spreadsheet template.</p>
+  </header>
+
+  <!-- CALCULATOR APP MAIN -->
+  <main class="calc-layout" id="app">
+
+    <!-- LEFT COLUMN: INPUTS -->
+    <div class="calc-inputs-col">
+      
+      <!-- MODE TOGGLER -->
+      <div class="mode-switcher">
+        <button type="button" class="mode-btn active" id="btnModeOwned" data-mode="owned">
+          🏠 Owned Property (Mortgage PITI)
+        </button>
+        <button type="button" class="mode-btn" id="btnModeArbitrage" data-mode="arbitrage">
+          🏢 Rental Arbitrage (Master Lease)
+        </button>
+      </div>
+
+      <!-- 1. REVENUE DRIVERS CARD -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>1. Nightly Pricing &amp; Occupancy</span>
+          <span style="font-size: 0.8rem; color: var(--accent-coral); font-weight: 700;">Revenue Engine</span>
+        </div>
+
+        <!-- ADR Input -->
+        <div class="form-group">
+          <label class="form-label" for="inputAdr">
+            <span>Average Daily Rate (ADR)</span>
+            <span class="hint">Nightly booking price</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputAdr" class="form-control has-prefix" value="195" step="5" min="20">
+          </div>
+          <div class="slider-row">
+            <input type="range" id="sliderAdr" class="custom-range" min="50" max="800" step="5" value="195">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-adr="125">Budget ($125/nt)</button>
+            <button type="button" class="preset-pill active" data-adr="195">Mid-Tier ($195/nt)</button>
+            <button type="button" class="preset-pill" data-adr="325">Luxury / Large ($325/nt)</button>
+          </div>
+        </div>
+
+        <!-- Occupancy Rate Input -->
+        <div class="form-group">
+          <label class="form-label" for="inputOccupancy">
+            <span>Projected Occupancy Rate</span>
+            <span class="hint" id="occupancyDaysDisplay">68% (~20 booked nights/mo)</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputOccupancy" class="form-control has-suffix" value="68" step="1" min="10" max="100">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="slider-row">
+            <input type="range" id="sliderOccupancy" class="custom-range" min="30" max="95" step="1" value="68">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-occ="55">55% (Low Season)</button>
+            <button type="button" class="preset-pill active" data-occ="68">68% (National Avg)</button>
+            <button type="button" class="preset-pill" data-occ="82">82% (High Season)</button>
+          </div>
+        </div>
+
+        <!-- Average Length of Stay -->
+        <div class="form-group">
+          <label class="form-label" for="inputStayLength">
+            <span>Average Length of Stay (ALOS)</span>
+            <span class="hint">Determines monthly guest turns</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputStayLength" class="form-control has-suffix" value="3.5" step="0.5" min="1" max="30">
+            <span class="input-suffix">Nights</span>
+          </div>
+        </div>
+
+        <!-- Cleaning Fees -->
+        <div class="form-group">
+          <label class="form-label" for="inputCleanCharged">
+            <span>Cleaning Fee Charged to Guest</span>
+            <span class="hint">Added to booking subtotal</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputCleanCharged" class="form-control has-prefix" value="135" step="5" min="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="inputCleanPaid">
+            <span>Cleaning Cost Paid to Cleaner</span>
+            <span class="hint">Out-of-pocket per turnover</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputCleanPaid" class="form-control has-prefix" value="120" step="5" min="0">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. OPERATING EXPENSES & HOUSING CARRY -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>2. Property Housing &amp; Operating Expenses</span>
+          <span style="font-size: 0.8rem; color: var(--accent-blue); font-weight: 700;">Monthly Outflows</span>
+        </div>
+
+        <!-- Housing Cost (Mortgage vs Master Rent) -->
+        <div class="form-group" id="groupHousingCost">
+          <label class="form-label" for="inputHousingCost">
+            <span id="labelHousingCost">Monthly Mortgage Debt Service (PITI)</span>
+            <span class="hint">Principal, Interest, Taxes, Insurance</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputHousingCost" class="form-control has-prefix" value="1850" step="50" min="0">
+          </div>
+        </div>
+
+        <!-- Airbnb Platform Host Fee % -->
+        <div class="form-group">
+          <label class="form-label" for="inputHostFeePct">
+            <span>Airbnb Host Platform Service Fee</span>
+            <span class="hint">3.0% (Split Fee) or 15.0% (Host-Only)</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputHostFeePct" class="form-control has-suffix" value="3.0" step="0.5" min="0" max="25">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill active" data-fee="3.0">3.0% (Standard Split-Fee)</button>
+            <button type="button" class="preset-pill" data-fee="15.0">15.0% (Host-Only Fee)</button>
+          </div>
+        </div>
+
+        <!-- Utilities & Internet -->
+        <div class="form-group">
+          <label class="form-label" for="inputUtilities">
+            <span>Monthly Utilities, Electric, Water &amp; WiFi</span>
+            <span class="hint">HVAC, trash, high-speed internet</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputUtilities" class="form-control has-prefix" value="340" step="20" min="0">
+          </div>
+        </div>
+
+        <!-- Supplies & Consumables -->
+        <div class="form-group">
+          <label class="form-label" for="inputSupplies">
+            <span>Guest Consumables &amp; Supplies</span>
+            <span class="hint">Coffee, soaps, linens, toiletries ($/mo)</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputSupplies" class="form-control has-prefix" value="150" step="10" min="0">
+          </div>
+        </div>
+
+        <!-- Co-Host / Property Management Fee % -->
+        <div class="form-group">
+          <label class="form-label" for="inputMgmtFeePct">
+            <span>Co-Host / Property Management Fee</span>
+            <span class="hint">% of rental revenue (0% if self-managing)</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputMgmtFeePct" class="form-control has-suffix" value="0.0" step="1" min="0" max="35">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <!-- Initial Startup / Furnishing Capital -->
+        <div class="form-group">
+          <label class="form-label" for="inputStartupCapital">
+            <span>Total Initial Capital / Furnishing Investment</span>
+            <span class="hint">Furniture, decor, photography, locks</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputStartupCapital" class="form-control has-prefix" value="14000" step="500" min="1000">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: STICKY RESULTS -->
+    <div class="calc-results-col">
+      <div class="sticky-result-card">
+        
+        <!-- HERO METRIC BANNER -->
+        <div class="hero-metric-box">
+          <div class="hero-metric-label">Net Monthly Cash Flow</div>
+          <div class="hero-metric-val" id="resMonthlyNetProfit">$1,484</div>
+          <div class="hero-metric-sub" id="resAnnualNetSub">≈ $17,808 Net Annual Profit</div>
+        </div>
+
+        <!-- 2x2 PERFORMANCE HIGHLIGHTS -->
+        <div class="term-highlights">
+          <div class="highlight-cell">
+            <div class="highlight-label">Gross Monthly Revenue</div>
+            <div class="highlight-val" id="resGrossMonthly">$4,749</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Break-Even Occupancy</div>
+            <div class="highlight-val" id="resBreakEvenOcc" style="color: var(--accent-emerald-dark);">41.2%</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">RevPAR (Rev per Avail Night)</div>
+            <div class="highlight-val" id="resRevPar">$132.60</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Cash-on-Cash Return</div>
+            <div class="highlight-val" id="resCocReturn" style="color: var(--accent-coral);">127.2%</div>
+          </div>
+        </div>
+
+        <!-- VISUAL CAPITAL DISTRIBUTION BAR -->
+        <div class="dist-bar-wrap">
+          <div class="dist-bar-label">
+            <span>Gross Revenue Allocation</span>
+            <span id="distGrossTotal">$4,749</span>
+          </div>
+          <div class="dist-bar">
+            <div class="dist-seg-profit" id="barProfit" style="width: 31%;"></div>
+            <div class="dist-seg-house" id="barHouse" style="width: 39%;"></div>
+            <div class="dist-seg-fee" id="barFees" style="width: 15%;"></div>
+            <div class="dist-seg-ops" id="barOps" style="width: 15%;"></div>
+          </div>
+          <div class="dist-legend">
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-profit"></span> Net Profit</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-house"></span> Housing Carry</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-fee"></span> Platform &amp; Clean</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-ops"></span> Utilities &amp; Supplies</div>
+          </div>
+        </div>
+
+        <!-- DETAILED LINE-ITEM BREAKDOWN TABLE -->
+        <ul class="breakdown-list">
+          <li class="breakdown-row">
+            <span class="label">Nightly Rental Income (20.4 nights)</span>
+            <span class="val" id="resNightlyIncome">$3,978</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Cleaning Fees Collected (5.8 turns)</span>
+            <span class="val" id="resCleaningIncome">+$787</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Housing Carry (Mortgage / Master Rent)</span>
+            <span class="val" id="resHousingExpense">-$1,850</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Airbnb Host Platform Fee (3%)</span>
+            <span class="val" id="resHostFeeExpense">-$142</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Cleaning Expenses Paid</span>
+            <span class="val" id="resCleaningExpense">-$700</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Utilities, Internet &amp; Consumables</span>
+            <span class="val" id="resUtilitiesExpense">-$490</span>
+          </li>
+          <li class="breakdown-row total-row">
+            <span class="label"><strong>Estimated Monthly Net Cash Flow</strong></span>
+            <span class="val" id="resFinalNetProfit">$1,484</span>
+          </li>
+        </ul>
+
+        <!-- EXCEL TEMPLATE DOWNLOAD BUTTON (PRIMARY CTA) -->
+        <button type="button" class="btn-action btn-excel" id="btnDownloadExcel">
+          📊 Download Free Excel Spreadsheet (.csv)
+        </button>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-group">
+          <button type="button" class="btn-action btn-primary" id="btnCopyDeal">
+            📋 Copy Pro-Forma
+          </button>
+          <button type="button" class="btn-action btn-secondary" id="btnShareDeal">
+            🔗 Share Model
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO GUIDE & TUTORIAL -->
+  <article class="seo-section">
+    <h2>How to Forecast Short-Term Rental Revenue (Without Expensive Subscriptions)</h2>
+    <p>Predicting cash flow for an Airbnb or VRBO vacation rental requires transitioning beyond basic long-term rental heuristics. While conventional multifamily investing calculates income based on a fixed 12-month lease rate, short-term rentals (STR) function as active hospitality micro-businesses governed by <strong>Average Daily Rate (ADR)</strong>, dynamic seasonality, local regulation, and turnover frequency.</p>
+    
+    <p>Rather than relying strictly on paid enterprise data platforms like AirDNA, experienced operators build granular pro-forma spreadsheets evaluating local hotel RevPAR data, active competitor calendars, and strict cleaning fee pass-through margins.</p>
+
+    <!-- FORMULA BANNER -->
+    <div class="formula-banner">
+      <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #94A3B8;">The Core Short-Term Rental Net Operating Formula</div>
+      <div>
+        $$\text{Net Monthly Profit} = (\text{ADR} \times \text{Booked Nights}) + \text{Cleaning Spread} - \text{Fixed Housing} - \text{Operating Costs} - \text{Platform Fees}$$
+      </div>
+    </div>
+
+    <h3>Understanding Key Industry Metrics: ADR vs. RevPAR</h3>
+    <p>When underwriting an investment property, two core acronyms dictate deal viability:</p>
+    <ul>
+      <li><strong>Average Daily Rate (ADR):</strong> The average dollar amount collected for each paid booked night:
+        $$\text{ADR} = \frac{\text{Total Nightly Accommodation Revenue}}{\text{Number of Paid Booked Nights}}$$
+      </li>
+      <li><strong>Revenue Per Available Room (RevPAR):</strong> The gold-standard hospitality metric that integrates your occupancy rate to reveal true revenue efficiency across all 30 calendar nights:
+        $$\text{RevPAR} = \text{ADR} \times \text{Occupancy Rate} = \frac{\text{Gross Nightly Revenue}}{\text{Total Calendar Nights Available}}$$
+      </li>
+    </ul>
+
+    <div class="callout-box">
+      <h4>💡 Pro Host Strategy: The Cleaning Fee Spread Arbitrage</h4>
+      <p>Novice hosts treat cleaning fees as a pure reimbursement pass-through. Experienced short-term rental operators structure their cleaning fee slightly above direct contractor costs (e.g., charging $140 while paying cleaning crews $115 per turnover). With an average length of stay of 3.2 nights, a property experiences 7 to 9 turnovers per month—generating \$175 to \$225 in extra recurring monthly margin that shields against minor linen wear-and-tear.</p>
+    </div>
+
+    <h2>2026 Short-Term Rental Expense Benchmarks</h2>
+    <p>To ensure your Airbnb financial model accounts for every line item, utilize these standardized industry operating expense allocations:</p>
+
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Expense Category</th>
+            <th>Typical Allocation (% of Rev or $)</th>
+            <th>Included Operational Scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Airbnb Host Platform Fee</strong></td>
+            <td>3.0% (Split) or 15.0% (Host-Only)</td>
+            <td>Payment processing, worldwide customer service, and host liability protection.</td>
+          </tr>
+          <tr>
+            <td><strong>Utilities &amp; High-Speed WiFi</strong></td>
+            <td>$250 – $450 / month</td>
+            <td>Electricity, water, natural gas, trash collection, and 500+ Mbps internet for remote workers.</td>
+          </tr>
+          <tr>
+            <td><strong>Guest Consumables &amp; Coffee</strong></td>
+            <td>$8 – $15 / booked turn</td>
+            <td>Artisan coffee pods, shampoo/conditioner dispensers, paper towels, and welcome snacks.</td>
+          </tr>
+          <tr>
+            <td><strong>Commercial STR Insurance Rider</strong></td>
+            <td>$120 – $250 / month</td>
+            <td>Specialized commercial vacation rental policy (Proper Insurance, Steadily) covering guest liability and loss of income.</td>
+          </tr>
+          <tr>
+            <td><strong>Maintenance &amp; Minor Repairs</strong></td>
+            <td>5.0% of Gross Revenue</td>
+            <td>Smart lock battery replacements, plumbing unclogs, touch-up paint, and furniture touch-ups.</td>
+          </tr>
+          <tr>
+            <td><strong>Co-Host / Property Management</strong></td>
+            <td>15.0% – 25.0% (Optional)</td>
+            <td>24/7 guest communication, pricing algorithm automation, cleaner scheduling (0% if self-managing).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Airbnb Rental Arbitrage vs. Buying STR Property</h2>
+    <p>Our calculator supports both acquisition models via the top toggle switch:</p>
+    <ol>
+      <li><strong>Purchasing Real Estate:</strong> High upfront capital requirement (20% to 25% down payment on conventional or DSCR loans), but builds long-term equity, mortgage amortization paydown, and significant tax depreciation (such as Cost Segregation).</li>
+      <li><strong>Rental Arbitrage:</strong> You sign a commercial master lease with a landlord permitting subleasing. Upfront capital is limited strictly to first/last month rent, security deposit, and furnishing ($10,000–$18,000 total), yielding astronomical <strong>Cash-on-Cash returns (100%–200%+)</strong> despite lacking equity ownership.</li>
+    </ol>
+
+    <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+    <h2>Frequently Asked Questions About Airbnb Financial Modeling</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do you calculate net profit from an Airbnb rental?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Net Airbnb profit is calculated by taking Gross Rental Revenue (Average Daily Rate × Booked Nights) + Cleaning Fees Collected, and subtracting all operating deductions: Airbnb host platform fees (typically 3%), cleaning expenses paid, utilities (electric, water, gas, high-speed WiFi), consumable guest supplies, STR insurance, local transient occupancy taxes (TOT), and fixed housing debt service (mortgage PITI or master lease rent).
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is a good profit margin for an Airbnb or Short-Term Rental (STR)?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        For purchased properties, a healthy net Airbnb operating margin ranges between 20% and 35% of gross revenue, yielding a Cash-on-Cash return of 15% to 25%+. For Airbnb rental arbitrage (leasing a property and subleasing on Airbnb with landlord approval), successful operators aim for at least $1,000 to $1,500 net monthly profit per unit after paying master lease rent and utilities.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the difference between ADR and RevPAR in short-term rentals?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Average Daily Rate (ADR) measures the average rental revenue paid per paid occupied night: Total Nightly Revenue ÷ Booked Nights. In contrast, Revenue Per Available Room (RevPAR) reflects overall asset monetization efficiency by dividing Total Nightly Revenue by Total Available Calendar Nights (or ADR × Occupancy Rate). A property with a $200 ADR at 70% occupancy has a RevPAR of $140.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What are typical Airbnb host service fees in 2026?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Under Airbnb's standard "Split-Fee" structure, the host pays approximately 3% of the booking subtotal (nightly rate + cleaning fee), while the guest pays a 14% to 16% service fee. Under the "Host-Only Fee" structure (mandatory for software-connected professional property managers and hospitality brands), the host pays the entire 14% to 16% service fee, with zero fee charged to the guest.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does cleaning fee pass-through affect short-term rental profitability?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        If a host charges guests $150 per turnover and pays cleaning crews $120, the $30 spread generates auxiliary net revenue ($30 × 5 turns = $150/month). Conversely, undercharging for cleanings turns housekeeping into an unbudgeted operational loss. In our calculator, you can model cleaning fees collected versus cleaning costs paid directly.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I download this Airbnb profit calculator as an Excel spreadsheet?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes! You can customize all financial parameters directly in this free calculator and click "Download Free Excel Spreadsheet (.csv)" to export a pre-formatted, editable financial model compatible with Microsoft Excel, Google Sheets, and Apple Numbers.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED TOOLS CROSS-LINKING -->
+  <section class="related-tools-section">
+    <div class="section-title-wrap">
+      <h3>Explore Complementary Real Estate Investment Tools</h3>
+    </div>
+    <div class="related-grid">
+      <a href="/dscr-calculator" class="related-card">
+        <h4>DSCR Loan Underwriter</h4>
+        <p>Qualify for 30-year fixed rental loans using short-term rental Airbnb revenue and AirDNA 1007 schedules.</p>
+      </a>
+      <a href="/rental-yield-calculator" class="related-card">
+        <h4>Rental Yield &amp; Cap Rate Engine</h4>
+        <p>Compare long-term traditional rental yields against your projected short-term Airbnb returns.</p>
+      </a>
+      <a href="/brrrr-calculator" class="related-card">
+        <h4>BRRRR Method Calculator</h4>
+        <p>Analyze Buy, Rehab, Rent, Refinance, Repeat deals with cash-out takeout math and infinite return models.</p>
+      </a>
+      <a href="/hard-money-loan-calculator" class="related-card">
+        <h4>Hard Money Loan Calculator</h4>
+        <p>Model short-term private debt, interest-only payments, and rehab escrow draws for property flips.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/dscr-calculator">DSCR Calculator</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield Calculator</a></li>
+      <li><a href="/hard-money-loan-calculator">Hard Money Calculator</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All financial calculations and formulas are for educational and deal underwriting purposes only.</p>
+  </footer>
+
+</div>
+
+<!-- CALCULATOR INTERACTIVE LOGIC JAVASCRIPT -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode state: 'owned' or 'arbitrage'
+  let currentMode = 'owned';
+
+  // Input Elements
+  const btnModeOwned = document.getElementById('btnModeOwned');
+  const btnModeArbitrage = document.getElementById('btnModeArbitrage');
+  const labelHousingCost = document.getElementById('labelHousingCost');
+
+  const inputAdr = document.getElementById('inputAdr');
+  const sliderAdr = document.getElementById('sliderAdr');
+  const inputOccupancy = document.getElementById('inputOccupancy');
+  const sliderOccupancy = document.getElementById('sliderOccupancy');
+  const occupancyDaysDisplay = document.getElementById('occupancyDaysDisplay');
+  const inputStayLength = document.getElementById('inputStayLength');
+  const inputCleanCharged = document.getElementById('inputCleanCharged');
+  const inputCleanPaid = document.getElementById('inputCleanPaid');
+
+  const inputHousingCost = document.getElementById('inputHousingCost');
+  const inputHostFeePct = document.getElementById('inputHostFeePct');
+  const inputUtilities = document.getElementById('inputUtilities');
+  const inputSupplies = document.getElementById('inputSupplies');
+  const inputMgmtFeePct = document.getElementById('inputMgmtFeePct');
+  const inputStartupCapital = document.getElementById('inputStartupCapital');
+
+  // Output Elements
+  const resMonthlyNetProfit = document.getElementById('resMonthlyNetProfit');
+  const resAnnualNetSub = document.getElementById('resAnnualNetSub');
+  const resGrossMonthly = document.getElementById('resGrossMonthly');
+  const resBreakEvenOcc = document.getElementById('resBreakEvenOcc');
+  const resRevPar = document.getElementById('resRevPar');
+  const resCocReturn = document.getElementById('resCocReturn');
+
+  const distGrossTotal = document.getElementById('distGrossTotal');
+  const barProfit = document.getElementById('barProfit');
+  const barHouse = document.getElementById('barHouse');
+  const barFees = document.getElementById('barFees');
+  const barOps = document.getElementById('barOps');
+
+  const resNightlyIncome = document.getElementById('resNightlyIncome');
+  const resCleaningIncome = document.getElementById('resCleaningIncome');
+  const resHousingExpense = document.getElementById('resHousingExpense');
+  const resHostFeeExpense = document.getElementById('resHostFeeExpense');
+  const resCleaningExpense = document.getElementById('resCleaningExpense');
+  const resUtilitiesExpense = document.getElementById('resUtilitiesExpense');
+  const resFinalNetProfit = document.getElementById('resFinalNetProfit');
+
+  // Action Buttons
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+  const btnCopyDeal = document.getElementById('btnCopyDeal');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  // Currency Formatter
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount || 0);
+  }
+
+  // Mode Switcher
+  btnModeOwned.addEventListener('click', () => {
+    currentMode = 'owned';
+    btnModeOwned.classList.add('active');
+    btnModeArbitrage.classList.remove('active');
+    labelHousingCost.textContent = 'Monthly Mortgage Debt Service (PITI)';
+    if (parseFloat(inputHousingCost.value) === 2200) inputHousingCost.value = 1850;
+    calculateSTR();
+  });
+
+  btnModeArbitrage.addEventListener('click', () => {
+    currentMode = 'arbitrage';
+    btnModeArbitrage.classList.add('active');
+    btnModeOwned.classList.remove('active');
+    labelHousingCost.textContent = 'Monthly Master Lease Rent to Landlord';
+    if (parseFloat(inputHousingCost.value) === 1850) inputHousingCost.value = 2200;
+    calculateSTR();
+  });
+
+  // Slider Syncs
+  inputAdr.addEventListener('input', () => {
+    sliderAdr.value = inputAdr.value;
+    calculateSTR();
+  });
+  sliderAdr.addEventListener('input', () => {
+    inputAdr.value = sliderAdr.value;
+    calculateSTR();
+  });
+
+  inputOccupancy.addEventListener('input', () => {
+    sliderOccupancy.value = inputOccupancy.value;
+    calculateSTR();
+  });
+  sliderOccupancy.addEventListener('input', () => {
+    inputOccupancy.value = sliderOccupancy.value;
+    calculateSTR();
+  });
+
+  // Presets
+  document.querySelectorAll('[data-adr]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-adr]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputAdr.value = btn.getAttribute('data-adr');
+      sliderAdr.value = inputAdr.value;
+      calculateSTR();
+    });
+  });
+
+  document.querySelectorAll('[data-occ]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-occ]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputOccupancy.value = btn.getAttribute('data-occ');
+      sliderOccupancy.value = inputOccupancy.value;
+      calculateSTR();
+    });
+  });
+
+  document.querySelectorAll('[data-fee]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-fee]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputHostFeePct.value = btn.getAttribute('data-fee');
+      calculateSTR();
+    });
+  });
+
+  // Main STR Calculation Logic
+  function calculateSTR() {
+    const adr = Math.max(0, parseFloat(inputAdr.value) || 0);
+    const occPct = (parseFloat(inputOccupancy.value) || 0) / 100;
+    const alos = Math.max(1, parseFloat(inputStayLength.value) || 3.5);
+    const cleanCharged = Math.max(0, parseFloat(inputCleanCharged.value) || 0);
+    const cleanPaid = Math.max(0, parseFloat(inputCleanPaid.value) || 0);
+
+    const housingCost = Math.max(0, parseFloat(inputHousingCost.value) || 0);
+    const hostFeePct = (parseFloat(inputHostFeePct.value) || 3.0) / 100;
+    const utilities = Math.max(0, parseFloat(inputUtilities.value) || 0);
+    const supplies = Math.max(0, parseFloat(inputSupplies.value) || 0);
+    const mgmtFeePct = (parseFloat(inputMgmtFeePct.value) || 0) / 100;
+    const startupCapital = Math.max(1, parseFloat(inputStartupCapital.value) || 14000);
+
+    const daysInMonth = 30;
+    const bookedNights = daysInMonth * occPct;
+    const turns = bookedNights / alos;
+
+    occupancyDaysDisplay.textContent = `${(occPct * 100).toFixed(0)}% (~${bookedNights.toFixed(1)} booked nights/mo)`;
+
+    // Revenues
+    const nightlyRevenue = adr * bookedNights;
+    const cleaningRevenue = cleanCharged * turns;
+    const grossRevenue = nightlyRevenue + cleaningRevenue;
+
+    // Expenses
+    const hostFeeExpense = (nightlyRevenue + cleaningRevenue) * hostFeePct;
+    const cleaningExpense = cleanPaid * turns;
+    const mgmtFeeExpense = nightlyRevenue * mgmtFeePct;
+    const totalOps = utilities + supplies + mgmtFeeExpense;
+    const totalExpenses = housingCost + hostFeeExpense + cleaningExpense + totalOps;
+
+    // Net Profit
+    const netMonthlyProfit = grossRevenue - totalExpenses;
+    const annualNetProfit = netMonthlyProfit * 12;
+
+    // RevPAR
+    const revPar = adr * occPct;
+
+    // Cash-on-Cash Return
+    const cocReturn = (annualNetProfit / startupCapital) * 100;
+
+    // Break-even Occupancy
+    // Break-even formula: When Gross Revenue = Total Expenses
+    // NightlyRev(x) + CleanRev(x) - HostFee(x) - CleanExp(x) - Fixed = 0
+    const netPerNight = adr * (1 - hostFeePct - mgmtFeePct) + (cleanCharged * (1 - hostFeePct) - cleanPaid) / alos;
+    const fixedMonthly = housingCost + utilities + supplies;
+    let breakEvenNights = netPerNight > 0 ? fixedMonthly / netPerNight : daysInMonth;
+    let breakEvenOcc = (breakEvenNights / daysInMonth) * 100;
+    breakEvenOcc = Math.max(0, Math.min(100, breakEvenOcc));
+
+    // Update Displays
+    resMonthlyNetProfit.textContent = formatMoney(netMonthlyProfit);
+    resAnnualNetSub.textContent = `≈ ${formatMoney(annualNetProfit)} Net Annual Cash Flow`;
+    resGrossMonthly.textContent = formatMoney(grossRevenue);
+    resBreakEvenOcc.textContent = `${breakEvenOcc.toFixed(1)}%`;
+    resRevPar.textContent = `$${revPar.toFixed(2)}`;
+    resCocReturn.textContent = `${cocReturn.toFixed(1)}%`;
+
+    resNightlyIncome.textContent = formatMoney(nightlyRevenue);
+    resCleaningIncome.textContent = `+${formatMoney(cleaningRevenue)}`;
+    resHousingExpense.textContent = `-${formatMoney(housingCost)}`;
+    resHostFeeExpense.textContent = `-${formatMoney(hostFeeExpense)}`;
+    resCleaningExpense.textContent = `-${formatMoney(cleaningExpense)}`;
+    resUtilitiesExpense.textContent = `-${formatMoney(totalOps)}`;
+    resFinalNetProfit.textContent = formatMoney(netMonthlyProfit);
+
+    distGrossTotal.textContent = formatMoney(grossRevenue);
+
+    // Distribution Bar
+    if (grossRevenue > 0) {
+      const pPct = Math.max(0, (netMonthlyProfit / grossRevenue) * 100);
+      const hPct = Math.min(100, (housingCost / grossRevenue) * 100);
+      const fPct = Math.min(100, ((hostFeeExpense + cleaningExpense) / grossRevenue) * 100);
+      const oPct = Math.max(0, 100 - (pPct + hPct + fPct));
+
+      barProfit.style.width = pPct + '%';
+      barHouse.style.width = hPct + '%';
+      barFees.style.width = fPct + '%';
+      barOps.style.width = oPct + '%';
+    }
+  }
+
+  // Download Excel Spreadsheet (.csv)
+  btnDownloadExcel.addEventListener('click', () => {
+    const adr = inputAdr.value;
+    const occ = inputOccupancy.value;
+    const alos = inputStayLength.value;
+    const cleanIn = inputCleanCharged.value;
+    const cleanOut = inputCleanPaid.value;
+    const housing = inputHousingCost.value;
+    const feePct = inputHostFeePct.value;
+    const util = inputUtilities.value;
+    const supplies = inputSupplies.value;
+    const mgmt = inputMgmtFeePct.value;
+    const startup = inputStartupCapital.value;
+
+    let csv = `REALREFIN.COM - AIRBNB & SHORT TERM RENTAL PROFIT CALCULATOR SPREADSHEET\n`;
+    csv += `Model Type,${currentMode.toUpperCase()}\n`;
+    csv += `Generated Date,${new Date().toISOString()}\n\n`;
+
+    csv += `SECTION 1: KEY PERFORMANCE ASSUMPTIONS\n`;
+    csv += `Average Daily Rate (ADR),$${adr}\n`;
+    csv += `Projected Occupancy Rate,${occ}%\n`;
+    csv += `Average Length of Stay (ALOS),${alos} Nights\n`;
+    csv += `Cleaning Fee Charged to Guest,$${cleanIn}\n`;
+    csv += `Cleaning Fee Paid to Crew,$${cleanOut}\n`;
+    csv += `Total Initial Startup & Furnishing Capital,$${startup}\n\n`;
+
+    csv += `SECTION 2: MONTHLY REVENUE PROJECTIONS\n`;
+    csv += `Nightly Accommodation Revenue,${resNightlyIncome.textContent}\n`;
+    csv += `Cleaning Fees Collected,${resCleaningIncome.textContent}\n`;
+    csv += `TOTAL GROSS MONTHLY REVENUE,${resGrossMonthly.textContent}\n\n`;
+
+    csv += `SECTION 3: MONTHLY OPERATING EXPENSES\n`;
+    csv += `Monthly Housing Carry (Mortgage PITI / Master Rent),$${housing}\n`;
+    csv += `Airbnb Host Platform Fee (${feePct}%),${resHostFeeExpense.textContent}\n`;
+    csv += `Cleaning Costs Paid Out,${resCleaningExpense.textContent}\n`;
+    csv += `Utilities and High Speed WiFi,$${util}\n`;
+    csv += `Guest Consumables and Supplies,$${supplies}\n`;
+    csv += `Co-Host Management Fee (${mgmt}%),$${((parseFloat(adr) * 30 * (parseFloat(occ)/100)) * (parseFloat(mgmt)/100)).toFixed(2)}\n\n`;
+
+    csv += `SECTION 4: NET CASH FLOW & RETURN METRICS\n`;
+    csv += `ESTIMATED NET MONTHLY CASH FLOW,${resMonthlyNetProfit.textContent}\n`;
+    csv += `ESTIMATED NET ANNUAL PROFIT,${resAnnualNetSub.textContent.replace('≈ ', '').split(' ')[0]}\n`;
+    csv += `Break-Even Occupancy Rate,${resBreakEvenOcc.textContent}\n`;
+    csv += `RevPAR (Revenue Per Available Night),${resRevPar.textContent}\n`;
+    csv += `Cash-on-Cash Return (CoC),${resCocReturn.textContent}\n\n`;
+
+    csv += `SECTION 5: 12-MONTH SEASONALITY PROJECTION TABLE\n`;
+    csv += `MONTH,PROJECTED OCCUPANCY,ESTIMATED GROSS REVENUE,ESTIMATED NET PROFIT\n`;
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const seasonFactors = [0.85, 0.90, 1.05, 1.10, 1.15, 1.25, 1.30, 1.25, 1.00, 0.95, 0.85, 1.05];
+    
+    months.forEach((m, idx) => {
+      const mOcc = Math.min(100, Math.round(parseFloat(occ) * seasonFactors[idx]));
+      const mGross = (parseFloat(adr) * (30 * mOcc / 100)) + (parseFloat(cleanIn) * ((30 * mOcc / 100) / parseFloat(alos)));
+      const mNet = mGross - (parseFloat(housing) + (mGross * (parseFloat(feePct)/100)) + (parseFloat(cleanOut) * ((30 * mOcc / 100) / parseFloat(alos))) + parseFloat(util) + parseFloat(supplies));
+      csv += `${m},${mOcc}%,$${mGross.toFixed(0)},$${mNet.toFixed(0)}\n`;
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `realrefin-airbnb-profit-calculator-spreadsheet-${Date.now()}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+
+  // Copy Pro-Forma Summary
+  btnCopyDeal.addEventListener('click', () => {
+    const summary = `🏠 AIRBNB & STR FINANCIAL PRO-FORMA (via RealRefin.com)
+--------------------------------------------------
+Model Type:              ${currentMode.toUpperCase()}
+Average Daily Rate:      $${inputAdr.value}/night
+Occupancy Rate:          ${inputOccupancy.value}%
+RevPAR:                  ${resRevPar.textContent}
+--------------------------------------------------
+Gross Monthly Revenue:   ${resGrossMonthly.textContent}
+Monthly Housing Carry:   $${inputHousingCost.value}
+--------------------------------------------------
+🎯 NET MONTHLY CASH FLOW: ${resMonthlyNetProfit.textContent}
+💰 NET ANNUAL CASH FLOW:  ${resAnnualNetSub.textContent.replace('≈ ', '').split(' ')[0]}
+📈 CASH-ON-CASH RETURN:   ${resCocReturn.textContent}
+⚖️ BREAK-EVEN OCCUPANCY:   ${resBreakEvenOcc.textContent}
+--------------------------------------------------
+Model your property live at: ${window.location.href}`;
+
+    navigator.clipboard.writeText(summary).then(() => {
+      const orig = btnCopyDeal.innerHTML;
+      btnCopyDeal.innerHTML = '✓ Copied Pro-Forma!';
+      btnCopyDeal.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnCopyDeal.innerHTML = orig;
+        btnCopyDeal.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('Airbnb Pro-Forma Summary:\n\n' + summary);
+    });
+  });
+
+  // Share URL with Query Params
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      mode: currentMode,
+      adr: inputAdr.value,
+      occ: inputOccupancy.value,
+      alos: inputStayLength.value,
+      cleanIn: inputCleanCharged.value,
+      cleanOut: inputCleanPaid.value,
+      housing: inputHousingCost.value,
+      fee: inputHostFeePct.value,
+      util: inputUtilities.value,
+      supplies: inputSupplies.value,
+      mgmt: inputMgmtFeePct.value,
+      startup: inputStartupCapital.value
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const orig = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Link Copied!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = orig;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params
+  function loadUrlParams() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('adr')) inputAdr.value = p.get('adr');
+    if (p.has('occ')) inputOccupancy.value = p.get('occ');
+    if (p.has('alos')) inputStayLength.value = p.get('alos');
+    if (p.has('cleanIn')) inputCleanCharged.value = p.get('cleanIn');
+    if (p.has('cleanOut')) inputCleanPaid.value = p.get('cleanOut');
+    if (p.has('housing')) inputHousingCost.value = p.get('housing');
+    if (p.has('fee')) inputHostFeePct.value = p.get('fee');
+    if (p.has('util')) inputUtilities.value = p.get('util');
+    if (p.has('supplies')) inputSupplies.value = p.get('supplies');
+    if (p.has('mgmt')) inputMgmtFeePct.value = p.get('mgmt');
+    if (p.has('startup')) inputStartupCapital.value = p.get('startup');
+    if (p.get('mode') === 'arbitrage') {
+      btnModeArbitrage.click();
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      const active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!active) item.classList.add('active');
+    });
+  });
+
+  // Attach Event Listeners
+  [inputStayLength, inputCleanCharged, inputCleanPaid, inputHousingCost, inputHostFeePct, inputUtilities, inputSupplies, inputMgmtFeePct, inputStartupCapital]
+    .forEach(el => el && el.addEventListener('input', calculateSTR));
+
+  // Initialize
+  loadUrlParams();
+  sliderAdr.value = inputAdr.value;
+  sliderOccupancy.value = inputOccupancy.value;
+  calculateSTR();
+
+})();
+</script>
+
+</body>
+</html>
