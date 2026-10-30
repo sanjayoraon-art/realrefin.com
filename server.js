@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/mortgage-payoff-vs-investing-calculator</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/rent-vs-buy-calculator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -193,6 +199,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/mortgage-payoff-vs-investing-calculator': 'mortgage-payoff-vs-investing-calculator.html',
+  '/mortgage-payoff-vs-investing-calculator.html': 'mortgage-payoff-vs-investing-calculator.html',
+  '/mortgage-payoff-vs-investment-calculator': 'mortgage-payoff-vs-investing-calculator.html',
+  '/mortgage-payoff-vs-investment-calculator.html': 'mortgage-payoff-vs-investing-calculator.html',
+  '/pay-off-mortgage-or-invest-calculator': 'mortgage-payoff-vs-investing-calculator.html',
+  '/pay-off-mortgage-or-invest-calculator.html': 'mortgage-payoff-vs-investing-calculator.html',
+  '/pay-off-mortgage-early-vs-invest-calculator': 'mortgage-payoff-vs-investing-calculator.html',
+  '/pay-off-mortgage-early-vs-invest-calculator.html': 'mortgage-payoff-vs-investing-calculator.html',
+  '/mortgage-vs-investing-calculator': 'mortgage-payoff-vs-investing-calculator.html',
+  '/mortgage-vs-investing-calculator.html': 'mortgage-payoff-vs-investing-calculator.html',
   '/rent-vs-buy-calculator': 'rent-vs-buy-calculator.html',
   '/rent-vs-buy-calculator.html': 'rent-vs-buy-calculator.html',
   '/renting-vs-buying-calculator': 'rent-vs-buy-calculator.html',

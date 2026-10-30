@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Payoff vs Investing Calculator | Pay Off Early or Invest? (2026)</title>
+  <meta name="description" content="Free mortgage payoff vs investing calculator. Compare the wealth-building power of paying off your mortgage early vs investing extra cash in the stock market (S&P 500). Calculate interest saved, payoff years, portfolio growth, and breakeven return.">
+  <meta name="keywords" content="mortgage payoff vs investing calculator, mortgage payoff vs investment calculator, pay off mortgage or invest calculator, pay off mortgage early vs invest calculator, extra mortgage payment vs investing calculator, mortgage vs investing calculator, paying off house early vs investing">
+  <link rel="canonical" href="https://realrefin.com/mortgage-payoff-vs-investing-calculator">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Mortgage Payoff vs. Investing Calculator | RealRefin">
+  <meta property="og:description" content="Should you pay off your mortgage early or invest in the stock market? Compare 30-year wealth, guaranteed interest savings, and exact breakeven return rate.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/mortgage-payoff-vs-investing-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/mortgage-payoff-vs-investing-calculator#app",
+        "name": "RealRefin Mortgage Payoff vs Investing Calculator",
+        "url": "https://realrefin.com/mortgage-payoff-vs-investing-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Comprehensive mortgage payoff vs investing financial calculator. Models accelerated debt amortization, tax-adjusted stock market compounding, guaranteed risk-free interest savings, and exact breakeven rate of return.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Refinance & Mortgage Suite",
+            "item": "https://realrefin.com/#suite-refinance"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mortgage Payoff vs Investing Calculator",
+            "item": "https://realrefin.com/mortgage-payoff-vs-investing-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is it mathematically better to pay off a mortgage early or invest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mathematically, it depends on the spread between your mortgage interest rate and your expected after-tax investment return. If your mortgage rate is low (e.g., 2.5% to 4%), investing extra capital in broad index funds like the S&P 500 (historical average 8%–10% annualized) yields significantly higher net worth over 20–30 years. Conversely, if your mortgage rate is high (6.5% to 8%+), paying down the mortgage provides a guaranteed, risk-free, tax-exempt return equivalent to that interest rate, making accelerated payoff highly competitive."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Breakeven Investment Return Rate in a mortgage payoff vs investing calculation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The breakeven rate is the minimum annual return your investment portfolio must generate after accounting for capital gains taxes and mortgage interest deductions to beat paying down your mortgage. For example, if your mortgage rate is 6.5% and you pay a 15% long-term capital gains tax rate on investments, your portfolio must earn at least 6.5% ÷ (1 - 0.15) = 7.65% annually just to tie with the guaranteed return of paying off your home loan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens in the calculator after the mortgage is paid off early?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To create a rigorous apples-to-apples 30-year financial comparison, our calculator simulates two distinct phases for the mortgage payoff strategy: During Phase 1, extra cash accelerates principal reduction until the balance reaches zero. During Phase 2, the homeowner redirects 100% of their liberated monthly cash flow (original monthly mortgage payment PLUS the extra payment) directly into their investment portfolio until the end of the comparison horizon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the liquidity risks of paying off a mortgage early?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Home equity is inherently illiquid ('trapped in drywall'). Once extra cash is paid toward mortgage principal, you cannot easily withdraw it during a personal emergency or job loss without refinancing, taking out a HELOC, or selling the property—all of which require lender approval and good credit. In contrast, investments in taxable brokerage accounts can be liquidated in 2 to 3 business days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the mortgage interest tax deduction make keeping a mortgage better?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For over 88% of homeowners in 2026, the mortgage interest tax deduction provides zero financial benefit because the federal standard deduction ($30,000+ for married filing jointly) is substantially higher than their itemized deductions. Only borrowers in high tax brackets with very large loans who itemize deductions reduce their effective mortgage interest rate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 50/50 balanced hybrid approach?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 50/50 hybrid strategy splits your monthly surplus capital evenly: 50% goes to extra mortgage principal payments (shortening your loan term and locking in guaranteed interest savings), while 50% is invested in equity index funds (maintaining liquid wealth and capturing compound market growth). This balances psychological peace of mind with long-term wealth maximization."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-indigo-border: #C7D2FE;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #F43F5E;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .currency-selector {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 2px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .curr-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn:hover {
+      color: var(--primary-navy);
+      background: #F1F5F9;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-emerald);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HERO
+    ----------------------------------------------------------- */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .hero-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       PRESET SCENARIOS
+    ----------------------------------------------------------- */
+    .presets-container {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .preset-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .preset-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 0.4rem 0.95rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .preset-pill:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: var(--accent-emerald-light);
+      transform: translateY(-1px);
+    }
+
+    .preset-pill.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       MAIN INTERACTIVE GRID
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARDS */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* FORM ELEMENTS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+    }
+
+    .form-help-tip {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: help;
+      text-decoration: underline dotted;
+    }
+
+    .input-field-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix,
+    .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix {
+      left: 0.85rem;
+    }
+
+    .input-suffix {
+      right: 0.85rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0 0.85rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+
+    .form-input.has-prefix {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Range Sliders */
+    .slider-control {
+      margin-top: 0.45rem;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #E2E8F0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider-control::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease;
+    }
+
+    .slider-control::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Toggle Switches & Radio Groups */
+    .radio-toggle-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      background: #F1F5F9;
+      padding: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .radio-toggle-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .radio-toggle-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Advanced accordion toggle */
+    .advanced-toggle-wrap {
+      margin-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .advanced-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS SIDE
+    ----------------------------------------------------------- */
+    /* WINNER BANNER */
+    .winner-banner {
+      background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .winner-banner.investing-wins {
+      background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+    }
+
+    .winner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+
+    .winner-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .winner-diff {
+      font-size: 2.25rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #6EE7B7;
+    }
+
+    .winner-banner.investing-wins .winner-diff {
+      color: #93C5FD;
+    }
+
+    .winner-subtext {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.4rem;
+      line-height: 1.45;
+    }
+
+    /* KPI METRICS GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      position: relative;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .kpi-val {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* STRATEGY COMPARISON SCOREBOARD */
+    .strategies-scoreboard {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .scoreboard-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .strat-row {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.2fr;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #F1F5F9;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    .strat-row:last-child {
+      border-bottom: none;
+    }
+
+    .strat-name {
+      font-weight: 700;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .strat-tag {
+      font-size: 0.675rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .tag-payoff { background: var(--accent-emerald-light); color: var(--accent-emerald-dark); }
+    .tag-invest { background: var(--accent-indigo-light); color: var(--accent-indigo); }
+    .tag-hybrid { background: var(--accent-amber-light); color: var(--accent-amber); }
+
+    .strat-val {
+      text-align: right;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .strat-note {
+      text-align: right;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* CHART WRAP */
+    .chart-container-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .chart-canvas-box {
+      position: relative;
+      width: 100%;
+      height: 280px;
+    }
+
+    /* ACTION BUTTONS */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .btn-action {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       SCHEDULE ACCORDION TABLE
+    ----------------------------------------------------------- */
+    .schedule-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .schedule-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .schedule-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .schedule-toggle-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .schedule-content {
+      display: none;
+      margin-top: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .schedule-content.open {
+      display: block;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      min-width: 650px;
+    }
+
+    .schedule-table th {
+      background: #F8FAFC;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.725rem;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 0.65rem;
+      text-align: right;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .schedule-table th:first-child {
+      text-align: left;
+    }
+
+    .schedule-table td {
+      padding: 0.65rem;
+      border-bottom: 1px solid #F1F5F9;
+      text-align: right;
+      font-weight: 600;
+      color: var(--secondary-navy);
+    }
+
+    .schedule-table td:first-child {
+      text-align: left;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .schedule-table tr.payoff-milestone td {
+      background: #ECFDF5;
+      color: #065F46;
+      font-weight: 800;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDES
+    ----------------------------------------------------------- */
+    .seo-guide-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .seo-guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin: 2rem 0 0.85rem;
+    }
+
+    .seo-guide-section p {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section ul, 
+    .seo-guide-section ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      line-height: 1.75;
+      font-size: 1.025rem;
+    }
+
+    .seo-guide-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout {
+      background: #F8FAFC;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.5rem 0;
+    }
+
+    .formula-callout h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comparison-matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.925rem;
+    }
+
+    .comparison-matrix-table th,
+    .comparison-matrix-table td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .comparison-matrix-table th {
+      background: #F8FAFC;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .matrix-pro { color: #047857; font-weight: 700; }
+    .matrix-con { color: #BE123C; font-weight: 700; }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION SECTION
+    ----------------------------------------------------------- */
+    .faq-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.15rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.975rem;
+      color: var(--secondary-navy);
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RELATED SUITE CARDS
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+
+  <!-- Chart.js CDN for Visual Trajectory Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    
+    <!-- Multi-Currency Selector -->
+    <div class="currency-selector" aria-label="Select Currency">
+      <button class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+      <button class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+      <button class="curr-btn" data-currency="EUR" data-symbol="€">€ EUR</button>
+      <button class="curr-btn" data-currency="AUD" data-symbol="A$">A$ AUD</button>
+      <button class="curr-btn" data-currency="INR" data-symbol="₹">₹ INR</button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance" class="active">Refinance</a></li>
+      <li><a href="/#suite-investor">Investor Suite</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-refinance">Refinance &amp; Mortgage Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Mortgage Payoff vs Investing Calculator</span>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="hero-header">
+    <div class="badge-pill">⚖️ Risk-Adjusted Wealth Simulator • 2026 Edition</div>
+    <h1>Mortgage Payoff vs. Investing Calculator</h1>
+    <p>
+      Should you make extra mortgage payments to become completely debt-free, or invest that surplus cash in the stock market (S&P 500)? Model both 30-year wealth trajectories, calculate exact interest saved, and discover your financial breakeven rate.
+    </p>
+  </header>
+
+  <!-- PRESET SCENARIO BUTTONS -->
+  <div class="presets-container" aria-label="Quick Presets">
+    <span class="preset-label">Quick Presets:</span>
+    <button class="preset-pill active" data-preset="current-rates">
+      <span>📈</span> 2026 Average (6.75% Mort vs 9% S&P)
+    </button>
+    <button class="preset-pill" data-preset="pandemic-low">
+      <span>🔒</span> Pandemic Golden Handcuffs (3.0% Mort vs 9% S&P)
+    </button>
+    <button class="preset-pill" data-preset="high-rate">
+      <span>⚡</span> High-Interest Loan (7.75% Mort vs 8.5% S&P)
+    </button>
+    <button class="preset-pill" data-preset="aggressive-saver">
+      <span>🚀</span> Aggressive Saver ($1,000/mo Extra)
+    </button>
+  </div>
+
+  <!-- MAIN CALCULATOR WORKSPACE -->
+  <main class="calc-layout">
+    
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <section class="calc-card" aria-label="Mortgage and Investment Inputs">
+      <div class="card-title-wrap">
+        <h2><span>⚙️</span> Loan &amp; Investment Parameters</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-emerald);">Auto-Calculating</span>
+      </div>
+
+      <!-- CURRENT MORTGAGE SECTION -->
+      <div class="section-divider-label">1. Current Mortgage Details</div>
+
+      <!-- Current Balance -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputLoanBalance">Current Remaining Mortgage Balance</label>
+          <span class="form-help-tip" title="Principal balance left on your primary mortgage statement">Principal</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputLoanBalance" class="form-input has-prefix" value="320000" min="10000" max="2500000" step="5000">
+        </div>
+        <input type="range" id="sliderLoanBalance" class="slider-control" value="320000" min="50000" max="1000000" step="5000">
+      </div>
+
+      <!-- Mortgage Interest Rate -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputMortgageRate">Mortgage Interest Rate (Annual)</label>
+          <span class="form-help-tip" title="Your fixed or current adjustable interest rate">Fixed Rate</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputMortgageRate" class="form-input has-suffix" value="6.75" min="1" max="16" step="0.05">
+          <span class="input-suffix">%</span>
+        </div>
+        <input type="range" id="sliderMortgageRate" class="slider-control" value="6.75" min="2" max="12" step="0.05">
+      </div>
+
+      <!-- Remaining Term -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputRemainingYears">Remaining Loan Term</label>
+          <span class="form-help-tip" title="Number of years remaining until scheduled payoff">Years Left</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputRemainingYears" class="form-input has-suffix" value="25" min="1" max="40" step="1">
+          <span class="input-suffix">Years</span>
+        </div>
+        <input type="range" id="sliderRemainingYears" class="slider-control" value="25" min="5" max="30" step="1">
+      </div>
+
+      <!-- Standard Monthly P&I (Auto-calculated baseline) -->
+      <div style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--secondary-navy);">Base Monthly P&amp;I Payment:</span>
+        <span id="baseMonthlyPaymentDisplay" style="font-size: 1.05rem; font-weight: 800; color: var(--primary-navy);">$2,078 / mo</span>
+      </div>
+
+      <!-- EXTRA CASH ALLOCATION SECTION -->
+      <div class="section-divider-label">2. Monthly Surplus &amp; Investing Strategy</div>
+
+      <!-- Monthly Extra Amount Available -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputExtraMonthly">Monthly Extra Surplus to Allocate</label>
+          <span class="form-help-tip" title="Surplus cash available each month to either prepay principal or invest">Extra / Month</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputExtraMonthly" class="form-input has-prefix" value="500" min="0" max="25000" step="50">
+        </div>
+        <input type="range" id="sliderExtraMonthly" class="slider-control" value="500" min="0" max="3000" step="50">
+      </div>
+
+      <!-- Expected Investment Annual Return Rate -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputInvestmentReturn">Expected Annual Investment Return</label>
+          <span class="form-help-tip" title="Historical annualized return of broad index funds (e.g. S&P 500 ~8%-10%)">S&amp;P 500 Benchmark</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputInvestmentReturn" class="form-input has-suffix" value="9.0" min="0" max="25" step="0.1">
+          <span class="input-suffix">%</span>
+        </div>
+        <input type="range" id="sliderInvestmentReturn" class="slider-control" value="9.0" min="3" max="15" step="0.25">
+      </div>
+
+      <!-- ADVANCED TOGGLE (Taxes & Deductions) -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" id="btnToggleAdvanced" class="advanced-btn">
+          <span>⚙️</span> Advanced Settings: Taxes &amp; Lump Sums <span id="advancedArrow">▼</span>
+        </button>
+
+        <div id="advancedBox" class="advanced-content">
+          <!-- One-Time Lump Sum Windfall -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputLumpSum">Optional Upfront Lump Sum Windfall</label>
+              <span class="form-help-tip" title="One-time cash bonus, tax refund, or inheritance">Lump Sum ($)</span>
+            </div>
+            <div class="input-field-wrap">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputLumpSum" class="form-input has-prefix" value="0" min="0" max="500000" step="1000">
+            </div>
+          </div>
+
+          <!-- Investment Tax Drag (Capital gains rate) -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputCapGainsTax">Capital Gains / Investment Tax Rate</label>
+              <span class="form-help-tip" title="Set to 0% for tax-advantaged accounts (Roth IRA / 401k), or 15% for taxable brokerage">Tax Drag</span>
+            </div>
+            <div class="input-field-wrap">
+              <input type="number" id="inputCapGainsTax" class="form-input has-suffix" value="15" min="0" max="40" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <!-- Itemized Mortgage Deduction -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputItemizedTaxRate">Marginal Tax Bracket (If Itemizing Mortgage Interest)</label>
+              <span class="form-help-tip" title="Set to 0% if using Standard Deduction (applies to 88%+ of taxpayers)">Tax Benefit</span>
+            </div>
+            <div class="input-field-wrap">
+              <input type="number" id="inputItemizedTaxRate" class="form-input has-suffix" value="0" min="0" max="45" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: RESULTS, WINNER SCORECARD & CHARTS -->
+    <section aria-label="Calculation Results & Wealth Comparison">
+
+      <!-- DYNAMIC WINNER BANNER -->
+      <div id="winnerBanner" class="winner-banner">
+        <div id="winnerBadge" class="winner-badge">🏆 Mathematically Superior Strategy</div>
+        <div id="winnerTitle" class="winner-title">Investing Extra Cash Builds More Wealth</div>
+        <div id="winnerDiff" class="winner-diff">+$168,420</div>
+        <div id="winnerSubtext" class="winner-subtext">
+          Over your 25-year timeline, investing the extra $500/month in the market outperforms accelerated debt payoff by generating greater net portfolio compound interest.
+        </div>
+      </div>
+
+      <!-- 4 TOP KEY PERFORMANCE METRICS -->
+      <div class="kpi-grid">
+        <!-- Accelerated Payoff Date -->
+        <div class="kpi-box">
+          <div class="kpi-label"><span>📅</span> Debt-Free In</div>
+          <div id="kpiPayoffYears" class="kpi-val">15.2 Yrs</div>
+          <div id="kpiYearsSaved" class="kpi-sub">Saves 9.8 years of debt</div>
+        </div>
+
+        <!-- Total Interest Saved -->
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🛡️</span> Guaranteed Interest Saved</div>
+          <div id="kpiInterestSaved" class="kpi-val" style="color: var(--accent-emerald);">$146,310</div>
+          <div class="kpi-sub">100% Risk-free return</div>
+        </div>
+
+        <!-- Breakeven Return Rate -->
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🎯</span> Breakeven Market Return</div>
+          <div id="kpiBreakevenReturn" class="kpi-val">7.94%</div>
+          <div class="kpi-sub">Min. return needed to beat mortgage</div>
+        </div>
+
+        <!-- Effective Rate Spread -->
+        <div class="kpi-box">
+          <div class="kpi-label"><span>⚖️</span> Net Arbitrage Spread</div>
+          <div id="kpiArbitrageSpread" class="kpi-val" style="color: var(--accent-blue);">+0.90%</div>
+          <div class="kpi-sub">After-tax market return − loan rate</div>
+        </div>
+      </div>
+
+      <!-- 3 STRATEGIES COMPARISON SCOREBOARD -->
+      <div class="strategies-scoreboard">
+        <div class="scoreboard-title">
+          <span>30-Year Apples-to-Apples Wealth Comparison</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: none; font-weight: 500;">Horizon: End of Original Term</span>
+        </div>
+
+        <!-- Strategy 1: Accelerated Payoff Then Invest -->
+        <div class="strat-row">
+          <div>
+            <div class="strat-name">
+              <span>Strategy 1: Pay Off Early, Then Invest</span>
+              <span class="strat-tag tag-payoff">Debt-Free</span>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">
+              Pay loan in full early, then invest full $(P&amp;I + Extra) monthly
+            </div>
+          </div>
+          <div class="strat-val" id="strat1Portfolio">$425,180</div>
+          <div class="strat-note" id="strat1Rank">Baseline</div>
+        </div>
+
+        <!-- Strategy 2: Keep Mortgage & Invest Extra -->
+        <div class="strat-row">
+          <div>
+            <div class="strat-name">
+              <span>Strategy 2: Invest Extra Cash</span>
+              <span class="strat-tag tag-invest">Market Growth</span>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">
+              Pay normal mortgage, invest extra surplus into index funds
+            </div>
+          </div>
+          <div class="strat-val" id="strat2Portfolio">$593,600</div>
+          <div class="strat-note" id="strat2Rank" style="color: var(--accent-emerald); font-weight: 700;">+$168,420</div>
+        </div>
+
+        <!-- Strategy 3: 50/50 Balanced Split -->
+        <div class="strat-row">
+          <div>
+            <div class="strat-name">
+              <span>Strategy 3: 50/50 Hybrid Split</span>
+              <span class="strat-tag tag-hybrid">Balanced</span>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">
+              50% extra to principal reduction + 50% extra into investing
+            </div>
+          </div>
+          <div class="strat-val" id="strat3Portfolio">$510,840</div>
+          <div class="strat-note" id="strat3Rank" style="color: var(--accent-amber); font-weight: 700;">+$85,660</div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE TRAJECTORY CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-header">
+          <div class="chart-title">Net Wealth &amp; Investment Portfolio Trajectory (30 Years)</div>
+          <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">Year-by-Year Growth</div>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="wealthTrajectoryChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" id="btnDownloadCsv" class="btn-action">
+          <span>📥</span> Download Schedule (CSV)
+        </button>
+        <button type="button" id="btnPrintReport" class="btn-action">
+          <span>🖨️</span> Print PDF Report
+        </button>
+        <button type="button" id="btnShareDeal" class="btn-action">
+          <span>🔗</span> Share Comparison
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ACCORDION YEAR-BY-YEAR DETAILED SCHEDULE -->
+  <section class="schedule-section">
+    <div class="schedule-header" id="btnToggleSchedule">
+      <div class="schedule-title">
+        <span>📊</span> View Detailed Year-by-Year Wealth &amp; Amortization Schedule
+      </div>
+      <div class="schedule-toggle-arrow" id="scheduleArrow">▼</div>
+    </div>
+    
+    <div class="schedule-content" id="scheduleContentBox">
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+        This table displays the remaining mortgage balance under accelerated payments, accumulated interest saved, and investment portfolio values across all three strategies for every single year of your loan.
+      </p>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Payoff Bal (Strat 1)</th>
+            <th>Standard Bal (Strat 2)</th>
+            <th>Interest Saved</th>
+            <th>Portfolio (Strat 1)</th>
+            <th>Portfolio (Strat 2)</th>
+            <th>Portfolio (50/50 Split)</th>
+          </tr>
+        </thead>
+        <tbody id="scheduleTableBody">
+          <!-- Injected via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE SEO CONTENT & FINANCIAL PLANNING GUIDE -->
+  <article class="seo-guide-section">
+    <h2>Mortgage Payoff vs Investing: Complete 2026 Financial Blueprint</h2>
+    <p>
+      One of the most consequential personal finance dilemmas facing homeowners is whether to allocate excess monthly cash flow toward **paying off their mortgage early** or **investing in the stock market (equities)**. 
+    </p>
+    <p>
+      With prevailing mortgage rates fluctuating between 6% and 7.5% in 2026 and broad equity indexes (like the S&amp;P 500) historically delivering 8% to 10% long-term annualized nominal returns, the decision requires evaluating not just raw mathematical arbitrage, but also **liquidity risks**, **tax treatment**, and **psychological peace of mind**.
+    </p>
+
+    <h3>1. The Mathematical Foundation: Rate Spread Arbitrage</h3>
+    <p>
+      At its core, the mathematical comparison is governed by the **Net Arbitrage Spread** ($S$):
+    </p>
+    
+    <div class="formula-callout">
+      <h4>Mathematical Arbitrage Formula</h4>
+      $$S = R_{\text{invest, net}} - R_{\text{mortgage, effective}}$$
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+        Where $R_{\text{invest, net}} = R_{\text{gross}} \times (1 - T_{\text{capgains}})$ and $R_{\text{mortgage, effective}} = R_{\text{mortgage}} \times (1 - T_{\text{itemized}})$.
+      </p>
+    </div>
+
+    <ul>
+      <li><strong>If $S > 0$:</strong> Investing surplus capital yields a higher expected terminal net worth.</li>
+      <li><strong>If $S < 0$:</strong> Prepaying mortgage debt mathematically beats investing.</li>
+      <li><strong>If $S = 0$:</strong> Both strategies yield equal terminal wealth, making qualitative risk factors decisive.</li>
+    </ul>
+
+    <h3>2. The Exact Breakeven Investment Return Formula</h3>
+    <p>
+      Many calculators make the mistake of comparing nominal mortgage rates directly to nominal stock market returns. In reality, investment gains inside taxable brokerage accounts face capital gains taxes, whereas mortgage debt elimination is **100% tax-free**.
+    </p>
+    <p>
+      To find the exact gross investment return your portfolio must deliver to match your mortgage interest rate, use the **Breakeven Return Formula**:
+    </p>
+
+    <div class="formula-callout">
+      <h4>Gross Breakeven Investment Return Formula</h4>
+      $$R_{\text{breakeven}} = \frac{R_{\text{mortgage}} \times (1 - T_{\text{itemized}})}{1 - T_{\text{capgains}}}$$
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+        <strong>Example:</strong> If your mortgage interest rate is <strong>6.75%</strong>, you take the standard tax deduction ($T_{\text{itemized}} = 0\%$), and pay a <strong>15%</strong> long-term capital gains tax ($T_{\text{capgains}} = 0.15$), your breakeven return is:
+        $$\frac{6.75\%}{1 - 0.15} = \frac{6.75\%}{0.85} = 7.94\%$$
+        If your investment portfolio earns more than <strong>7.94% annually</strong>, investing wins. If it earns less, mortgage payoff wins.
+      </p>
+    </div>
+
+    <h3>3. Side-by-Side Comparison: Strategy 1 vs. Strategy 2</h3>
+    <table class="comparison-matrix-table">
+      <thead>
+        <tr>
+          <th>Comparison Factor</th>
+          <th>Strategy 1: Pay Off Mortgage Early</th>
+          <th>Strategy 2: Invest Surplus in Equities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Return Certainty</strong></td>
+          <td><span class="matrix-pro">100% Guaranteed</span> (Equal to loan rate)</td>
+          <td><span class="matrix-con">Variable &amp; Volatile</span> (Market fluctuations)</td>
+        </tr>
+        <tr>
+          <td><strong>Liquidity &amp; Access</strong></td>
+          <td><span class="matrix-con">Illiquid</span> (Trapped in home equity)</td>
+          <td><span class="matrix-pro">High Liquidity</span> (Liquid within 2–3 days)</td>
+        </tr>
+        <tr>
+          <td><strong>Inflation Protection</strong></td>
+          <td><span class="matrix-con">Low</span> (Payoff uses nominal dollars)</td>
+          <td><span class="matrix-pro">High</span> (Companies raise prices with inflation)</td>
+        </tr>
+        <tr>
+          <td><strong>Cash Flow Relief</strong></td>
+          <td><span class="matrix-pro">Permanent Freedom</span> from monthly bank payment</td>
+          <td><span class="matrix-con">Continuous Obligation</span> to pay lender monthly</td>
+        </tr>
+        <tr>
+          <td><strong>Tax Friction</strong></td>
+          <td><span class="matrix-pro">Zero Tax Friction</span> (Savings are untaxed)</td>
+          <td><span class="matrix-con">Capital Gains &amp; Dividends</span> taxable</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4. The 3-Bucket Decision Matrix: Which Path Should You Choose?</h3>
+    <ol>
+      <li>
+        <strong>Bucket A: Low Mortgage Rates (&lt; 4.0% Fixed) — "The Golden Handcuffs"</strong><br>
+        If you locked in a 2.5% to 3.75% mortgage during the 2020–2021 pandemic, paying it off early is mathematically sub-optimal. Even high-yield savings accounts, Treasury bills, and conservative index funds comfortably outperform your borrowing cost. <em>Recommendation: Keep the low-rate mortgage and invest aggressively.</em>
+      </li>
+      <li>
+        <strong>Bucket B: Moderate Mortgage Rates (4.5% to 6.25%) — "The 50/50 Hybrid Zone"</strong><br>
+        In this intermediate zone, risk tolerance and age dominate. Younger investors with 20+ years until retirement should favor investing to harness decades of compound equity growth. Homeowners within 5 to 10 years of retirement often prefer paying down principal to lower fixed overhead. <em>Recommendation: Adopt the 50/50 balanced split.</em>
+      </li>
+      <li>
+        <strong>Bucket C: High Mortgage Rates (&gt; 6.5% Fixed) — "The Guaranteed Return Zone"</strong><br>
+        A 7.0%+ guaranteed, risk-free, untaxed return is exceptionally difficult to beat in modern financial markets on a risk-adjusted basis. <em>Recommendation: Prioritize accelerated debt reduction while capturing your employer 401(k) match.</em>
+      </li>
+    </ol>
+
+  </article>
+
+  <!-- PEOPLE ALSO ASK / FAQ SECTION -->
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions: Mortgage Payoff vs. Investing</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Is it mathematically better to pay off a mortgage early or invest?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Mathematically, the outcome is determined by the spread between your mortgage interest rate and your net after-tax investment return. If your mortgage rate is low (e.g. 2.75%–4%), investing extra capital into broad equity index funds like the S&amp;P 500 produces significantly higher net wealth over 20 to 30 years. Conversely, if your mortgage rate is high (6.5% to 8%+), paying down the mortgage delivers a guaranteed, risk-free, tax-exempt return equal to that interest rate, making debt payoff exceptionally attractive.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the Breakeven Investment Return Rate?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The breakeven rate is the minimum gross annual percentage return your investment portfolio must earn after capital gains taxes to tie with the guaranteed return of paying off your home loan. For example, with a 6.75% mortgage and a 15% capital gains tax rate, your portfolio must generate at least 7.94% annually ($6.75\% \div 0.85 = 7.94\%$) just to break even.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does this calculator model what happens after the mortgage is paid off?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Our calculator performs a rigorous 30-year apples-to-apples comparison. In Strategy 1, once your accelerated payments eliminate your mortgage balance in (for example) 14 years, you now have zero monthly debt obligation. For the remaining 16 years of the simulation, 100% of your freed-up cash flow—your original monthly mortgage payment plus your extra contribution—is invested into the stock market with compounding interest until Year 30.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What are the liquidity risks of prepaying a mortgage?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Home equity is inherently illiquid. Once cash is applied to reduce mortgage principal, you cannot withdraw or access that money during an emergency, job loss, or medical crisis without qualifying for a HELOC, cash-out refinance, or selling the house—actions that are difficult or impossible if you are unemployed. Brokerage accounts, however, can be converted to cash within 2 to 3 business days.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Does the mortgage interest deduction make keeping a mortgage advantageous?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        For approximately 88% of homeowners in 2026, the mortgage interest deduction provides zero tax benefit because the federal standard deduction is substantially higher than their cumulative itemized deductions. Only high-income earners with substantial mortgages who itemize deductions effectively lower their net mortgage interest rate.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the 50/50 Balanced Hybrid Strategy?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The 50/50 hybrid strategy splits your monthly surplus capital down the middle: 50% pays down mortgage principal (shortening your term and guaranteeing interest savings), while 50% is invested into equity index funds (building liquid wealth and capturing long-term market upside). This approach prevents decision paralysis and balances psychological peace of mind with financial wealth optimization.
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SPECIALIZED TOOLS -->
+  <section class="related-tools-section" aria-label="Related Real Estate & Mortgage Tools">
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-navy);">Related Financial Calculators</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted);">Explore our other specialized mortgage and wealth calculators.</p>
+    </div>
+
+    <div class="related-grid">
+      <a href="/cash-out-refinance-vs-heloc-calculator" class="related-card">
+        <div>
+          <h4>Cash-Out Refi vs. HELOC</h4>
+          <p>Decide whether to replace your 1st lien mortgage or keep your low rate and take out a second-lien equity line of credit.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Compare Refi vs HELOC →</span>
+      </a>
+
+      <a href="/pmi-removal-calculator" class="related-card">
+        <div>
+          <h4>PMI Removal Calculator</h4>
+          <p>Find your exact 80% and 78% LTV dates and model how extra principal payments eliminate monthly private mortgage insurance.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate PMI Removal →</span>
+      </a>
+
+      <a href="/assumable-mortgage-calculator" class="related-card">
+        <div>
+          <h4>Assumable Mortgage Calculator</h4>
+          <p>Evaluate taking over a seller's low 2%–4% fixed-rate FHA or VA loan and calculate your blended financing rate.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Launch Assumable Tool →</span>
+      </a>
+
+      <a href="/rent-vs-buy-calculator" class="related-card">
+        <div>
+          <h4>Renting vs. Buying Calculator</h4>
+          <p>Determine your exact breakeven horizon and model the opportunity cost of investing a home down payment.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Compare Rent vs Buy →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes and should not be construed as individualized legal or financial advice.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT LOGIC & FINANCIAL COMPUTATION ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // State variables
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let trajectoryChart = null;
+
+  // DOM Elements - Inputs
+  const inputLoanBalance = document.getElementById('inputLoanBalance');
+  const sliderLoanBalance = document.getElementById('sliderLoanBalance');
+
+  const inputMortgageRate = document.getElementById('inputMortgageRate');
+  const sliderMortgageRate = document.getElementById('sliderMortgageRate');
+
+  const inputRemainingYears = document.getElementById('inputRemainingYears');
+  const sliderRemainingYears = document.getElementById('sliderRemainingYears');
+
+  const baseMonthlyPaymentDisplay = document.getElementById('baseMonthlyPaymentDisplay');
+
+  const inputExtraMonthly = document.getElementById('inputExtraMonthly');
+  const sliderExtraMonthly = document.getElementById('sliderExtraMonthly');
+
+  const inputInvestmentReturn = document.getElementById('inputInvestmentReturn');
+  const sliderInvestmentReturn = document.getElementById('sliderInvestmentReturn');
+
+  const inputLumpSum = document.getElementById('inputLumpSum');
+  const inputCapGainsTax = document.getElementById('inputCapGainsTax');
+  const inputItemizedTaxRate = document.getElementById('inputItemizedTaxRate');
+
+  // DOM Elements - Outputs
+  const winnerBanner = document.getElementById('winnerBanner');
+  const winnerBadge = document.getElementById('winnerBadge');
+  const winnerTitle = document.getElementById('winnerTitle');
+  const winnerDiff = document.getElementById('winnerDiff');
+  const winnerSubtext = document.getElementById('winnerSubtext');
+
+  const kpiPayoffYears = document.getElementById('kpiPayoffYears');
+  const kpiYearsSaved = document.getElementById('kpiYearsSaved');
+  const kpiInterestSaved = document.getElementById('kpiInterestSaved');
+  const kpiBreakevenReturn = document.getElementById('kpiBreakevenReturn');
+  const kpiArbitrageSpread = document.getElementById('kpiArbitrageSpread');
+
+  const strat1Portfolio = document.getElementById('strat1Portfolio');
+  const strat1Rank = document.getElementById('strat1Rank');
+  const strat2Portfolio = document.getElementById('strat2Portfolio');
+  const strat2Rank = document.getElementById('strat2Rank');
+  const strat3Portfolio = document.getElementById('strat3Portfolio');
+  const strat3Rank = document.getElementById('strat3Rank');
+
+  const scheduleTableBody = document.getElementById('scheduleTableBody');
+
+  // Format Money helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'INR' ? 'INR' : (activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'EUR' ? 'EUR' : (activeCurrency === 'AUD' ? 'AUD' : 'USD'))),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculatePayoffVsInvest();
+    });
+  });
+
+  // Slider <-> Input Syncs
+  function syncInputSlider(input, slider) {
+    input.addEventListener('input', () => {
+      slider.value = input.value;
+      calculatePayoffVsInvest();
+    });
+    slider.addEventListener('input', () => {
+      input.value = slider.value;
+      calculatePayoffVsInvest();
+    });
+  }
+
+  syncInputSlider(inputLoanBalance, sliderLoanBalance);
+  syncInputSlider(inputMortgageRate, sliderMortgageRate);
+  syncInputSlider(inputRemainingYears, sliderRemainingYears);
+  syncInputSlider(inputExtraMonthly, sliderExtraMonthly);
+  syncInputSlider(inputInvestmentReturn, sliderInvestmentReturn);
+
+  [inputLumpSum, inputCapGainsTax, inputItemizedTaxRate].forEach(el => {
+    el.addEventListener('input', calculatePayoffVsInvest);
+  });
+
+  // Advanced Box Toggle
+  const btnToggleAdvanced = document.getElementById('btnToggleAdvanced');
+  const advancedBox = document.getElementById('advancedBox');
+  const advancedArrow = document.getElementById('advancedArrow');
+  btnToggleAdvanced.addEventListener('click', () => {
+    advancedBox.classList.toggle('open');
+    advancedArrow.textContent = advancedBox.classList.contains('open') ? '▲' : '▼';
+  });
+
+  // Schedule Accordion Toggle
+  const btnToggleSchedule = document.getElementById('btnToggleSchedule');
+  const scheduleContentBox = document.getElementById('scheduleContentBox');
+  const scheduleArrow = document.getElementById('scheduleArrow');
+  btnToggleSchedule.addEventListener('click', () => {
+    scheduleContentBox.classList.toggle('open');
+    scheduleArrow.textContent = scheduleContentBox.classList.contains('open') ? '▲' : '▼';
+  });
+
+  // Preset Handlers
+  document.querySelectorAll('.preset-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const preset = btn.getAttribute('data-preset');
+
+      if (preset === 'current-rates') {
+        inputLoanBalance.value = 320000;
+        sliderLoanBalance.value = 320000;
+        inputMortgageRate.value = 6.75;
+        sliderMortgageRate.value = 6.75;
+        inputRemainingYears.value = 25;
+        sliderRemainingYears.value = 25;
+        inputExtraMonthly.value = 500;
+        sliderExtraMonthly.value = 500;
+        inputInvestmentReturn.value = 9.0;
+        sliderInvestmentReturn.value = 9.0;
+        inputLumpSum.value = 0;
+      } else if (preset === 'pandemic-low') {
+        inputLoanBalance.value = 280000;
+        sliderLoanBalance.value = 280000;
+        inputMortgageRate.value = 3.0;
+        sliderMortgageRate.value = 3.0;
+        inputRemainingYears.value = 26;
+        sliderRemainingYears.value = 26;
+        inputExtraMonthly.value = 500;
+        sliderExtraMonthly.value = 500;
+        inputInvestmentReturn.value = 9.0;
+        sliderInvestmentReturn.value = 9.0;
+        inputLumpSum.value = 0;
+      } else if (preset === 'high-rate') {
+        inputLoanBalance.value = 350000;
+        sliderLoanBalance.value = 350000;
+        inputMortgageRate.value = 7.75;
+        sliderMortgageRate.value = 7.75;
+        inputRemainingYears.value = 28;
+        sliderRemainingYears.value = 28;
+        inputExtraMonthly.value = 600;
+        sliderExtraMonthly.value = 600;
+        inputInvestmentReturn.value = 8.5;
+        sliderInvestmentReturn.value = 8.5;
+        inputLumpSum.value = 0;
+      } else if (preset === 'aggressive-saver') {
+        inputLoanBalance.value = 320000;
+        sliderLoanBalance.value = 320000;
+        inputMortgageRate.value = 6.75;
+        sliderMortgageRate.value = 6.75;
+        inputRemainingYears.value = 25;
+        sliderRemainingYears.value = 25;
+        inputExtraMonthly.value = 1000;
+        sliderExtraMonthly.value = 1000;
+        inputInvestmentReturn.value = 9.0;
+        sliderInvestmentReturn.value = 9.0;
+        inputLumpSum.value = 5000;
+      }
+
+      calculatePayoffVsInvest();
+    });
+  });
+
+  // Monthly Payment Formula: M = P * (r*(1+r)^n) / ((1+r)^n - 1)
+  function calcMonthlyPayment(principal, annualRatePct, years) {
+    if (principal <= 0) return 0;
+    const r = (annualRatePct / 100) / 12;
+    const n = Math.round(years * 12);
+    if (r === 0) return principal / n;
+    return principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  // Main Calculation Engine
+  function calculatePayoffVsInvest() {
+    const loanBalance = Math.max(1000, parseFloat(inputLoanBalance.value) || 0);
+    const mortgageRate = Math.max(0.1, parseFloat(inputMortgageRate.value) || 0);
+    const remainingYears = Math.max(1, Math.min(40, parseInt(inputRemainingYears.value) || 25));
+    const extraMonthly = Math.max(0, parseFloat(inputExtraMonthly.value) || 0);
+    const investmentReturn = Math.max(0, parseFloat(inputInvestmentReturn.value) || 0);
+    const lumpSum = Math.max(0, parseFloat(inputLumpSum.value) || 0);
+    const capGainsTaxRate = Math.max(0, Math.min(50, parseFloat(inputCapGainsTax.value) || 0)) / 100;
+    const itemizedTaxRate = Math.max(0, Math.min(50, parseFloat(inputItemizedTaxRate.value) || 0)) / 100;
+
+    const totalMonths = remainingYears * 12;
+    const monthlyMortgageRate = (mortgageRate / 100) / 12;
+
+    // Standard Monthly Base Payment
+    const baseMonthlyPayment = calcMonthlyPayment(loanBalance, mortgageRate, remainingYears);
+    baseMonthlyPaymentDisplay.textContent = `${formatMoney(baseMonthlyPayment)} / mo`;
+
+    // Net After-Tax Return Rate
+    const netInvestmentReturnRate = investmentReturn * (1 - capGainsTaxRate);
+    const monthlyNetInvestmentRate = (netInvestmentReturnRate / 100) / 12;
+
+    // Effective Mortgage Rate (if itemizing)
+    const effectiveMortgageRate = mortgageRate * (1 - itemizedTaxRate);
+
+    // Breakeven gross return rate required
+    const breakevenRate = capGainsTaxRate < 1 ? (effectiveMortgageRate / (1 - capGainsTaxRate)) : effectiveMortgageRate;
+    kpiBreakevenReturn.textContent = `${breakevenRate.toFixed(2)}%`;
+
+    const arbitrageSpread = netInvestmentReturnRate - effectiveMortgageRate;
+    kpiArbitrageSpread.textContent = `${arbitrageSpread >= 0 ? '+' : ''}${arbitrageSpread.toFixed(2)}%`;
+    kpiArbitrageSpread.style.color = arbitrageSpread >= 0 ? 'var(--accent-blue)' : 'var(--accent-coral)';
+
+    // -------------------------------------------------------------
+    // SIMULATION 1: BASELINE LOAN (Standard schedule, no extra)
+    // -------------------------------------------------------------
+    let baselineTotalInterest = 0;
+    let baselineBal = loanBalance;
+    for (let m = 1; m <= totalMonths; m++) {
+      if (baselineBal > 0) {
+        const interest = baselineBal * monthlyMortgageRate;
+        const principal = Math.min(baselineBal, baseMonthlyPayment - interest);
+        baselineTotalInterest += interest;
+        baselineBal = Math.max(0, baselineBal - principal);
+      }
+    }
+
+    // -------------------------------------------------------------
+    // MONTH-BY-MONTH DETAILED SIMULATION (All 3 Strategies)
+    // -------------------------------------------------------------
+    // Strategy 1: Accelerated Payoff (Lump Sum + Extra Monthly to principal until 0, then invest base + extra)
+    let bal1 = Math.max(0, loanBalance - lumpSum);
+    let port1 = 0;
+    let strat1TotalInterest = 0;
+    let payoffMonth1 = null;
+
+    // Strategy 2: Invest Extra Cash (Pay regular mortgage, invest lump sum + extra monthly)
+    let bal2 = loanBalance;
+    let port2 = lumpSum;
+
+    // Strategy 3: 50/50 Hybrid (Half lump sum to mortgage, half invested. Half extra to mortgage, half invested)
+    let bal3 = Math.max(0, loanBalance - (lumpSum * 0.5));
+    let port3 = lumpSum * 0.5;
+    let payoffMonth3 = null;
+
+    // Yearly tracking arrays for Chart & Table
+    const yearlyData = [];
+    yearlyData.push({
+      year: 0,
+      bal1: loanBalance,
+      bal2: loanBalance,
+      port1: 0,
+      port2: lumpSum,
+      port3: lumpSum * 0.5,
+      interestSavedSoFar: 0
+    });
+
+    let cumulativeInterest1 = 0;
+
+    for (let m = 1; m <= totalMonths; m++) {
+      // --- Strategy 1 ---
+      if (bal1 > 0) {
+        const interest = bal1 * monthlyMortgageRate;
+        cumulativeInterest1 += interest;
+        strat1TotalInterest += interest;
+        const payment = baseMonthlyPayment + extraMonthly;
+        const principal = Math.min(bal1, payment - interest);
+        bal1 = Math.max(0, bal1 - principal);
+        if (bal1 === 0 && payoffMonth1 === null) {
+          payoffMonth1 = m;
+        }
+      } else {
+        // Mortgage is 100% paid off: Invest full payment (base + extra)
+        port1 = (port1 * (1 + monthlyNetInvestmentRate)) + (baseMonthlyPayment + extraMonthly);
+      }
+
+      // --- Strategy 2 ---
+      if (bal2 > 0) {
+        const interest = bal2 * monthlyMortgageRate;
+        const principal = Math.min(bal2, baseMonthlyPayment - interest);
+        bal2 = Math.max(0, bal2 - principal);
+      }
+      port2 = (port2 * (1 + monthlyNetInvestmentRate)) + extraMonthly;
+
+      // --- Strategy 3 (50/50 Hybrid) ---
+      const hybridExtra = extraMonthly * 0.5;
+      if (bal3 > 0) {
+        const interest = bal3 * monthlyMortgageRate;
+        const payment = baseMonthlyPayment + hybridExtra;
+        const principal = Math.min(bal3, payment - interest);
+        bal3 = Math.max(0, bal3 - principal);
+        if (bal3 === 0 && payoffMonth3 === null) {
+          payoffMonth3 = m;
+        }
+        port3 = (port3 * (1 + monthlyNetInvestmentRate)) + hybridExtra;
+      } else {
+        // Mortgage paid off in hybrid: Invest full liberated cash flow
+        port3 = (port3 * (1 + monthlyNetInvestmentRate)) + (baseMonthlyPayment + extraMonthly);
+      }
+
+      // Record snapshot at end of each year
+      if (m % 12 === 0) {
+        const yr = m / 12;
+        yearlyData.push({
+          year: yr,
+          bal1: bal1,
+          bal2: bal2,
+          port1: port1,
+          port2: port2,
+          port3: port3,
+          interestSavedSoFar: Math.max(0, baselineTotalInterest - strat1TotalInterest)
+        });
+      }
+    }
+
+    if (payoffMonth1 === null) payoffMonth1 = totalMonths;
+    if (payoffMonth3 === null) payoffMonth3 = totalMonths;
+
+    const payoffYears1 = payoffMonth1 / 12;
+    const yearsSaved = remainingYears - payoffYears1;
+    const totalInterestSaved = Math.max(0, baselineTotalInterest - strat1TotalInterest);
+
+    // Update KPI Displays
+    kpiPayoffYears.textContent = `${payoffYears1.toFixed(1)} Yrs`;
+    kpiYearsSaved.textContent = `Saves ${yearsSaved.toFixed(1)} years of debt`;
+    kpiInterestSaved.textContent = formatMoney(totalInterestSaved);
+
+    // Scoreboard Balances
+    strat1Portfolio.textContent = formatMoney(port1);
+    strat2Portfolio.textContent = formatMoney(port2);
+    strat3Portfolio.textContent = formatMoney(port3);
+
+    // WINNER CALCULATION & BANNER
+    const diff = Math.abs(port2 - port1);
+    if (port2 > port1) {
+      // Investing Wins
+      winnerBanner.classList.add('investing-wins');
+      winnerBadge.textContent = '🚀 Mathematically Superior: Investing Extra Cash';
+      winnerTitle.textContent = 'Investing Extra Cash Wins';
+      winnerDiff.textContent = `+${formatMoney(diff)}`;
+      winnerSubtext.textContent = `Over your ${remainingYears}-year timeline, investing the extra ${formatMoney(extraMonthly)}/mo into equities beats accelerated mortgage payoff by generating ${formatMoney(diff)} more net wealth.`;
+
+      strat2Rank.textContent = `Winner (+${formatMoney(diff)})`;
+      strat2Rank.style.color = '#93C5FD';
+      strat1Rank.textContent = 'Baseline';
+      strat1Rank.style.color = 'var(--text-muted)';
+      const hybridDiff = port3 - port1;
+      strat3Rank.textContent = hybridDiff > 0 ? `+${formatMoney(hybridDiff)}` : `-${formatMoney(Math.abs(hybridDiff))}`;
+    } else {
+      // Mortgage Payoff Wins
+      winnerBanner.classList.remove('investing-wins');
+      winnerBadge.textContent = '🛡️ Mathematically Superior: Accelerated Debt Payoff';
+      winnerTitle.textContent = 'Paying Off Mortgage Wins';
+      winnerDiff.textContent = `+${formatMoney(diff)}`;
+      winnerSubtext.textContent = `Because your mortgage rate (${mortgageRate}%) exceeds the risk-adjusted investment return, paying off the loan guarantees ${formatMoney(totalInterestSaved)} in interest savings and beats investing by ${formatMoney(diff)}.`;
+
+      strat1Rank.textContent = `Winner (+${formatMoney(diff)})`;
+      strat1Rank.style.color = '#6EE7B7';
+      strat2Rank.textContent = `-${formatMoney(diff)}`;
+      strat2Rank.style.color = 'var(--accent-coral)';
+      const hybridDiff = port3 - port2;
+      strat3Rank.textContent = `+${formatMoney(port3 - port1)}`;
+    }
+
+    // Render Detailed Table
+    renderScheduleTable(yearlyData, payoffYears1);
+
+    // Render / Update Chart.js
+    renderTrajectoryChart(yearlyData);
+  }
+
+  // Render Schedule Table
+  function renderScheduleTable(yearlyData, payoffYears1) {
+    scheduleTableBody.innerHTML = '';
+    const roundedPayoffYear = Math.ceil(payoffYears1);
+
+    yearlyData.forEach(row => {
+      if (row.year === 0) return;
+      const tr = document.createElement('tr');
+      if (row.year === roundedPayoffYear) {
+        tr.classList.add('payoff-milestone');
+      }
+
+      tr.innerHTML = `
+        <td>Year ${row.year}${row.year === roundedPayoffYear ? ' 🎯 (Paid Off!)' : ''}</td>
+        <td>${formatMoney(row.bal1)}</td>
+        <td>${formatMoney(row.bal2)}</td>
+        <td style="color: var(--accent-emerald);">${formatMoney(row.interestSavedSoFar)}</td>
+        <td>${formatMoney(row.port1)}</td>
+        <td style="font-weight: 700;">${formatMoney(row.port2)}</td>
+        <td>${formatMoney(row.port3)}</td>
+      `;
+      scheduleTableBody.appendChild(tr);
+    });
+  }
+
+  // Render Trajectory Chart
+  function renderTrajectoryChart(yearlyData) {
+    const labels = yearlyData.map(d => `Yr ${d.year}`);
+    const dataStrat1 = yearlyData.map(d => Math.round(d.port1));
+    const dataStrat2 = yearlyData.map(d => Math.round(d.port2));
+    const dataStrat3 = yearlyData.map(d => Math.round(d.port3));
+
+    if (trajectoryChart) {
+      trajectoryChart.destroy();
+    }
+
+    const ctx = document.getElementById('wealthTrajectoryChart').getContext('2d');
+    trajectoryChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Strategy 2: Invest Extra Cash',
+            data: dataStrat2,
+            borderColor: '#4F46E5',
+            backgroundColor: 'rgba(79, 70, 229, 0.08)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+            pointHoverRadius: 6
+          },
+          {
+            label: 'Strategy 1: Pay Off Early, Then Invest',
+            data: dataStrat1,
+            borderColor: '#10B981',
+            backgroundColor: 'rgba(16, 185, 129, 0.06)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.3,
+            pointRadius: 2,
+            pointHoverRadius: 6
+          },
+          {
+            label: 'Strategy 3: 50/50 Hybrid Split',
+            data: dataStrat3,
+            borderColor: '#D97706',
+            borderWidth: 2,
+            borderDash: [5, 5],
+            fill: false,
+            tension: 0.3,
+            pointRadius: 1,
+            pointHoverRadius: 5
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              boxWidth: 12,
+              font: {
+                size: 11,
+                weight: '600',
+                family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.dataset.label}: ${formatMoney(context.raw)}`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { maxTicksLimit: 10, font: { size: 10 } }
+          },
+          y: {
+            ticks: {
+              callback: function(value) {
+                if (value >= 1000000) return `${activeSymbol}${(value / 1000000).toFixed(1)}M`;
+                if (value >= 1000) return `${activeSymbol}${(value / 1000).toFixed(0)}k`;
+                return `${activeSymbol}${value}`;
+              },
+              font: { size: 10 }
+            },
+            grid: { color: '#F1F5F9' }
+          }
+        }
+      }
+    });
+  }
+
+  // FAQ Accordion Toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
+
+  // Action Buttons
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+  const btnPrintReport = document.getElementById('btnPrintReport');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  // CSV Exporter
+  btnDownloadCsv.addEventListener('click', () => {
+    let csv = `RealRefin Mortgage Payoff vs Investing Schedule\n`;
+    csv += `Loan Balance: ${inputLoanBalance.value}, Interest Rate: ${inputMortgageRate.value}%, Remaining Term: ${inputRemainingYears.value} Years\n`;
+    csv += `Extra Monthly: ${inputExtraMonthly.value}, Expected Investment Return: ${inputInvestmentReturn.value}%\n\n`;
+    csv += `Year,Accelerated Mortgage Balance (Strategy 1),Standard Mortgage Balance (Strategy 2),Interest Saved,Portfolio Strategy 1,Portfolio Strategy 2,Portfolio 50/50 Split\n`;
+
+    const rows = scheduleTableBody.querySelectorAll('tr');
+    rows.forEach(r => {
+      const cols = r.querySelectorAll('td');
+      if (cols.length === 7) {
+        const cleanCols = Array.from(cols).map(c => `"${c.textContent.trim().replace(/"/g, '""')}"`);
+        csv += cleanCols.join(',') + '\n';
+      }
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Mortgage-Payoff-vs-Investing-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // Print PDF Handler
+  btnPrintReport.addEventListener('click', () => {
+    window.print();
+  });
+
+  // Share URL Handler
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      balance: inputLoanBalance.value,
+      rate: inputMortgageRate.value,
+      years: inputRemainingYears.value,
+      extra: inputExtraMonthly.value,
+      return: inputInvestmentReturn.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy this comparison link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params if present
+  function loadQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('balance')) inputLoanBalance.value = urlParams.get('balance');
+    if (urlParams.has('rate')) inputMortgageRate.value = urlParams.get('rate');
+    if (urlParams.has('years')) inputRemainingYears.value = urlParams.get('years');
+    if (urlParams.has('extra')) inputExtraMonthly.value = urlParams.get('extra');
+    if (urlParams.has('return')) inputInvestmentReturn.value = urlParams.get('return');
+    if (urlParams.has('curr')) {
+      const c = urlParams.get('curr');
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  loadQueryParams();
+  // Initial run
+  calculatePayoffVsInvest();
+});
+</script>
+
+</body>
+</html>
