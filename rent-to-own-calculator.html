@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent to Own Mortgage Calculator | Free Lease Option Equity Tool (2026)</title>
+  <meta name="description" content="Free rent-to-own mortgage calculator and lease option analyzer. Calculate upfront option fees, monthly rent credits, accumulated down payment equity, and projected 30-year future mortgage payments.">
+  <meta name="keywords" content="rent to own mortgage calculator, rent to own calculator, lease to own calculator, lease option calculator, rent to own home calculator, rent to own payment calculator, rent to own equity calculator, lease purchase calculator">
+  <link rel="canonical" href="https://realrefin.com/rent-to-own-calculator">
+  <meta property="og:title" content="Rent to Own Mortgage Calculator | Free Lease Option Equity Tool">
+  <meta property="og:description" content="Calculate your rent credits, accumulated down payment, and future 30-year mortgage payments for rent-to-own and lease-option homes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/rent-to-own-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/rent-to-own-calculator#app",
+        "name": "RealRefin Rent to Own Mortgage & Lease Option Calculator",
+        "url": "https://realrefin.com/rent-to-own-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free institutional rent to own mortgage calculator that computes upfront option considerations, monthly rent credit accumulation, equity build-up, and future takeout mortgage payments for aspiring buyers and lease-option sellers.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer Affordability Suite",
+            "item": "https://realrefin.com/#suite-buyer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Rent to Own Mortgage Calculator",
+            "item": "https://realrefin.com/rent-to-own-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a rent-to-own home agreement work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A rent-to-own contract (also known as a lease-option agreement) allows a tenant to rent a property for a specified period (typically 1 to 3 years) with the exclusive legal right to purchase the property at a predetermined price when the lease expires. A portion of each monthly rent payment (called a rent credit or rent premium) alongside an upfront non-refundable option fee is credited toward the tenant's future down payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an upfront option fee in a rent-to-own contract?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The option fee (or option consideration) is a non-refundable upfront payment made by the buyer to the seller, typically ranging from 1% to 5% of the agreed purchase price. This fee grants the buyer the exclusive right to purchase the home during the lease term and prevents the seller from marketing the property to other buyers. In standard agreements, 100% of the option fee is credited toward the final purchase down payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the future mortgage payment calculated after a rent-to-own lease ends?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When the lease term concludes, the buyer secures a conventional, FHA, or VA mortgage for the remaining balance. The new loan principal equals the Locked Purchase Price minus Total Accumulated Credits (Option Fee + Monthly Rent Credits). The monthly principal and interest payment is then calculated using the standard mortgage amortization formula based on prevailing market interest rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do Fannie Mae and FHA lenders allow rent credits to count toward the down payment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but strictly under specific lending rules. Both Fannie Mae and the FHA require that the monthly rent credit represents an amount paid ABOVE fair market rent as verified by an appraiser. For example, if fair market rent is $1,800 and the tenant pays $2,200, the $400 monthly difference can be credited toward the down payment, provided a formal written lease-option contract is maintained."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a Lease Option and a Lease Purchase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In a Lease Option agreement, the tenant has the right—but NOT the legal obligation—to purchase the home when the lease expires. If they cannot qualify for a mortgage, they can walk away (though they forfeit their option fee and rent credits). In a Lease Purchase contract, the tenant is legally bound to purchase the home, and the seller can sue for breach of contract or damages if financing fails."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if home prices increase during my rent-to-own term?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If you locked in a predetermined purchase price (e.g., $300,000) and the property appreciates to $340,000 over the 2-year lease, you immediately capture $40,000 in instant home equity upon closing. This equity cushion helps eliminate private mortgage insurance (PMI) and lowers your effective loan-to-value (LTV)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-indigo-border: #C7D2FE;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    /* -----------------------------------------------------------
+       PAGE HEADER
+    ----------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-indigo-light);
+      color: var(--accent-indigo);
+      border: 1px solid var(--accent-indigo-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 840px;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mode Toggler (Tenant Buyer vs Seller Investor) */
+    .mode-switcher {
+      display: flex;
+      background: #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 0.35rem;
+      margin-bottom: 1.5rem;
+      gap: 0.35rem;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .mode-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Input Card Container */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-label span.hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 1rem; }
+    .input-suffix { right: 1rem; }
+
+    .form-control {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      background: #FFFFFF;
+      font-family: inherit;
+    }
+
+    .form-control.has-prefix { padding-left: 2.25rem; }
+    .form-control.has-suffix { padding-right: 2.5rem; }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .slider-row {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+      accent-color: var(--accent-emerald);
+    }
+
+    /* Preset Quick Buttons */
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .preset-pill {
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+      border-color: var(--accent-emerald-border);
+    }
+
+    /* -----------------------------------------------------------
+       STICKY RESULT CARD
+    ----------------------------------------------------------- */
+    .sticky-result-card {
+      position: sticky;
+      top: 1.5rem;
+      background: #FFFFFF;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hero-metric-box {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-metric-box::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-metric-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-metric-val {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #34D399;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-metric-sub {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+    }
+
+    /* 2x2 Highlights Grid */
+    .term-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-cell {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+
+    .highlight-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .highlight-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* Breakdown List */
+    .breakdown-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      font-size: 0.925rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .breakdown-row .label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .breakdown-row .val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-row.total-row {
+      border-top: 2px solid var(--border-color);
+      border-bottom: 2px solid var(--border-color);
+      padding: 0.9rem 0;
+      font-size: 1.05rem;
+    }
+
+    .breakdown-row.total-row .val {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Distribution Progress Bar */
+    .dist-bar-wrap {
+      margin-bottom: 1.5rem;
+    }
+
+    .dist-bar-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dist-bar {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #E2E8F0;
+      margin-bottom: 0.5rem;
+    }
+
+    .dist-seg-fee    { background: #10B981; }
+    .dist-seg-credit { background: #3B82F6; }
+    .dist-seg-loan   { background: #0F172A; }
+
+    .dist-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .dist-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dist-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Action Buttons */
+    .action-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .btn-action {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-navy);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--secondary-navy);
+      border: 1.5px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+    }
+
+    .btn-excel {
+      background: #059669;
+      color: #FFFFFF;
+      border: 1px solid #059669;
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-excel:hover {
+      background: #047857;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT SECTION
+    ----------------------------------------------------------- */
+    .seo-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .seo-section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .seo-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin: 2.25rem 0 1rem;
+      line-height: 1.3;
+    }
+
+    .seo-section h2:first-child {
+      margin-top: 0;
+    }
+
+    .seo-section h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    .seo-section p {
+      font-size: 1.05rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-section ul, .seo-section ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.75rem;
+    }
+
+    .seo-section li {
+      font-size: 1.025rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      margin: 1.75rem 0;
+      text-align: center;
+      border-left: 5px solid var(--accent-indigo);
+    }
+
+    .formula-banner .katex {
+      font-size: 1.35rem !important;
+      color: #34D399;
+    }
+
+    .callout-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #14532D;
+    }
+
+    .callout-alert {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-left: 4px solid #D97706;
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout-alert h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #92400E;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-alert p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #78350F;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.75rem 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .data-table th {
+      background: #F1F5F9;
+      color: var(--primary-navy);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .data-table tr:hover {
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+
+    .faq-question {
+      padding: 1.15rem 1.35rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--accent-emerald);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.25rem;
+      font-size: 0.975rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       CROSS LINK TOOLS GRID
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title-wrap {
+      margin-bottom: 1.75rem;
+    }
+
+    .section-title-wrap h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor">Investor Suite</a></li>
+      <li><a href="/#suite-buyer" class="active">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-buyer">Home Buyer Affordability Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Rent to Own Mortgage Calculator</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="badge-pill">Lease Option &amp; Down Payment Accumulator</span>
+    <h1>Rent to Own Mortgage Calculator</h1>
+    <p>Model your complete lease-option path to homeownership. Calculate upfront option fees, monthly rent credits, accumulated down payment savings, and projected future 30-year mortgage payments with real-time amortization modeling.</p>
+  </header>
+
+  <!-- CALCULATOR APP MAIN -->
+  <main class="calc-layout" id="app">
+
+    <!-- LEFT COLUMN: INPUTS -->
+    <div class="calc-inputs-col">
+      
+      <!-- MODE TOGGLER -->
+      <div class="mode-switcher">
+        <button type="button" class="mode-btn active" id="btnModeBuyer" data-mode="buyer">
+          🧑‍💼 Tenant / Buyer Perspective
+        </button>
+        <button type="button" class="mode-btn" id="btnModeSeller" data-mode="seller">
+          🏠 Landlord / Seller Perspective
+        </button>
+      </div>
+
+      <!-- 1. LEASE-OPTION PURCHASE TERMS CARD -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>1. Agreed Home Price &amp; Option Fee</span>
+          <span style="font-size: 0.8rem; color: var(--accent-indigo); font-weight: 700;">Purchase Contract</span>
+        </div>
+
+        <!-- Agreed Purchase Price -->
+        <div class="form-group">
+          <label class="form-label" for="inputHomePrice">
+            <span>Locked Purchase Price</span>
+            <span class="hint">Agreed future buyout price</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputHomePrice" class="form-control has-prefix" value="325000" step="5000" min="50000">
+          </div>
+          <div class="slider-row">
+            <input type="range" id="sliderHomePrice" class="custom-range" min="100000" max="1000000" step="5000" value="325000">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-price="250000">$250k Starter</button>
+            <button type="button" class="preset-pill active" data-price="325000">$325k Median</button>
+            <button type="button" class="preset-pill" data-price="450000">$450k Single Family</button>
+          </div>
+        </div>
+
+        <!-- Upfront Option Fee % / $ -->
+        <div class="form-group">
+          <label class="form-label" for="inputOptionFeePct">
+            <span>Upfront Option Consideration Fee</span>
+            <span class="hint" id="optionFeeDollarDisplay">$9,750 (3.0%)</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputOptionFeePct" class="form-control has-suffix" value="3.0" step="0.5" min="1.0" max="10.0">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-option-pct="2.0">2.0% ($6.5k)</button>
+            <button type="button" class="preset-pill active" data-option-pct="3.0">3.0% ($9.75k)</button>
+            <button type="button" class="preset-pill" data-option-pct="5.0">5.0% ($16.25k)</button>
+          </div>
+        </div>
+
+        <!-- Lease Option Term (Years) -->
+        <div class="form-group">
+          <label class="form-label" for="inputLeaseTerm">
+            <span>Lease Option Duration</span>
+            <span class="hint">Months to build credit &amp; savings</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputLeaseTerm" class="form-control has-suffix" value="24" step="6" min="12" max="60">
+            <span class="input-suffix">Months</span>
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-term="12">1 Year (12 mos)</button>
+            <button type="button" class="preset-pill active" data-term="24">2 Years (24 mos)</button>
+            <button type="button" class="preset-pill" data-term="36">3 Years (36 mos)</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. MONTHLY RENT & RENT CREDIT ACCUMULATION -->
+      <div class="calc-card">
+        <div class="card-title">
+          <span>2. Monthly Rent &amp; Down Payment Credit</span>
+          <span style="font-size: 0.8rem; color: var(--accent-emerald); font-weight: 700;">Monthly Split</span>
+        </div>
+
+        <!-- Base Market Rent -->
+        <div class="form-group">
+          <label class="form-label" for="inputBaseRent">
+            <span>Fair Market Base Rent</span>
+            <span class="hint">Standard rental rate for area</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputBaseRent" class="form-control has-prefix" value="1800" step="50" min="500">
+          </div>
+        </div>
+
+        <!-- Monthly Rent Credit Premium -->
+        <div class="form-group">
+          <label class="form-label" for="inputRentCredit">
+            <span>Monthly Rent Credit (Equity Premium)</span>
+            <span class="hint">Credited towards future down payment</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inputRentCredit" class="form-control has-prefix" value="350" step="25" min="0">
+          </div>
+          <div class="preset-pills">
+            <button type="button" class="preset-pill" data-credit="200">$200/mo</button>
+            <button type="button" class="preset-pill active" data-credit="350">$350/mo</button>
+            <button type="button" class="preset-pill" data-credit="500">$500/mo</button>
+          </div>
+        </div>
+
+        <!-- Future Mortgage Financing Assumptions -->
+        <div class="form-group" style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+          <label class="form-label" for="inputMortgageRate">
+            <span>Projected Future Mortgage Rate (Takeout)</span>
+            <span class="hint">Expected 30-year fixed rate</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputMortgageRate" class="form-control has-suffix" value="6.5" step="0.125" min="3.0" max="15.0">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="inputLoanTermYears">
+            <span>Future Mortgage Loan Amortization</span>
+            <span class="hint">Permanent financing term</span>
+          </label>
+          <div class="input-wrapper">
+            <input type="number" id="inputLoanTermYears" class="form-control has-suffix" value="30" step="5" min="10" max="30">
+            <span class="input-suffix">Years</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: STICKY RESULTS -->
+    <div class="calc-results-col">
+      <div class="sticky-result-card">
+        
+        <!-- HERO METRIC BANNER -->
+        <div class="hero-metric-box">
+          <div class="hero-metric-label">Total Down Payment Accumulated</div>
+          <div class="hero-metric-val" id="resTotalEquity">$18,150</div>
+          <div class="hero-metric-sub" id="resEquityPctSub">5.58% Total Equity Credited at Closing</div>
+        </div>
+
+        <!-- 2x2 PERFORMANCE HIGHLIGHTS -->
+        <div class="term-highlights">
+          <div class="highlight-cell">
+            <div class="highlight-label">Total Monthly Rent</div>
+            <div class="highlight-val" id="resTotalMonthlyRent">$2,150</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Future Mortgage (P&amp;I)</div>
+            <div class="highlight-val" id="resFutureMortgage" style="color: var(--accent-emerald-dark);">$1,939</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Option Fee Paid</div>
+            <div class="highlight-val" id="resOptionFeeHighlight">$9,750</div>
+          </div>
+          <div class="highlight-cell">
+            <div class="highlight-label">Remaining Loan Amount</div>
+            <div class="highlight-val" id="resLoanBalance">$306,850</div>
+          </div>
+        </div>
+
+        <!-- VISUAL CAPITAL DISTRIBUTION BAR -->
+        <div class="dist-bar-wrap">
+          <div class="dist-bar-label">
+            <span>Purchase Capital Financing Stack</span>
+            <span id="distHomePriceTotal">$325,000</span>
+          </div>
+          <div class="dist-bar">
+            <div class="dist-seg-fee" id="barFee" style="width: 3.0%;"></div>
+            <div class="dist-seg-credit" id="barCredit" style="width: 2.6%;"></div>
+            <div class="dist-seg-loan" id="barLoan" style="width: 94.4%;"></div>
+          </div>
+          <div class="dist-legend">
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-fee"></span> Option Fee ($9.7k)</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-credit"></span> Rent Credits ($8.4k)</div>
+            <div class="dist-legend-item"><span class="dist-dot dist-seg-loan"></span> Future Mortgage ($306k)</div>
+          </div>
+        </div>
+
+        <!-- DETAILED LINE-ITEM BREAKDOWN TABLE -->
+        <ul class="breakdown-list">
+          <li class="breakdown-row">
+            <span class="label">Agreed Purchase Price</span>
+            <span class="val" id="resPurchasePrice">$325,000</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Upfront Option Fee (Credited)</span>
+            <span class="val" id="resOptionFeeCredit">-$9,750</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Total Rent Credits ($350 × 24 mos)</span>
+            <span class="val" id="resRentCreditsTotal">-$8,400</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Monthly Base Rent (Landlord Income)</span>
+            <span class="val" id="resBaseRentDisplay">$1,800/mo</span>
+          </li>
+          <li class="breakdown-row">
+            <span class="label">Monthly Rent Credit Premium</span>
+            <span class="val" id="resCreditDisplay">+$350/mo</span>
+          </li>
+          <li class="breakdown-row total-row">
+            <span class="label"><strong>Future Loan Amount to Finance</strong></span>
+            <span class="val" id="resFinalLoanAmt">$306,850</span>
+          </li>
+        </ul>
+
+        <!-- EXCEL TEMPLATE DOWNLOAD BUTTON -->
+        <button type="button" class="btn-action btn-excel" id="btnDownloadCsv">
+          📊 Download Rent-to-Own Amortization CSV
+        </button>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-group">
+          <button type="button" class="btn-action btn-primary" id="btnCopySheet">
+            📋 Copy Lease Term Sheet
+          </button>
+          <button type="button" class="btn-action btn-secondary" id="btnShareDeal">
+            🔗 Share Link
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO GUIDE & TUTORIAL -->
+  <article class="seo-section">
+    <h2>How a Rent-to-Own Mortgage &amp; Lease-Option Works</h2>
+    <p>A <strong>rent-to-own mortgage agreement</strong> (frequently referred to as a lease-option or lease-purchase contract) creates an alternative pathway to homeownership for aspiring buyers who cannot currently qualify for a conventional or FHA mortgage due to insufficient down payment savings, limited credit history, or recent self-employment.</p>
+    
+    <p>Under a lease-option agreement, you execute two legal contracts simultaneously: a standard residential lease agreement and an <strong>option to purchase</strong>. The option grants you the exclusive legal privilege to buy the property at a locked purchase price within an agreed timeframe (typically 12 to 36 months).</p>
+
+    <!-- FORMULA BANNER -->
+    <div class="formula-banner">
+      <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #94A3B8;">The Rent-to-Own Equity Accumulation Formula</div>
+      <div>
+        $$\text{Total Down Payment} = \text{Upfront Option Fee} + (\text{Monthly Rent Credit} \times \text{Lease Months})$$
+      </div>
+    </div>
+
+    <h3>Where Does Your Money Go Each Month?</h3>
+    <p>Unlike standard rental leases where 100% of your monthly payment is an unrecoverable housing expense, a rent-to-own payment is bifurcated into two distinct components:</p>
+    <ul>
+      <li><strong>Base Market Rent:</strong> The fair market rental value paid to the landlord for occupying the property. This covers the landlord's mortgage debt service, property taxes, hazard insurance, and property maintenance reserves.</li>
+      <li><strong>Rent Premium / Credit:</strong> An agreed-upon surcharge (typically \$200 to \$500 per month) added directly on top of the base rent. The seller holds this extra capital in an escrow trust account, which is credited dollar-for-dollar toward your purchase down payment at settlement.</li>
+    </ul>
+
+    <div class="callout-box">
+      <h4>💡 Fannie Mae &amp; FHA Underwriting Rule for Rent Credits</h4>
+      <p>Conventional mortgage lenders (Fannie Mae &amp; Freddie Mac) and government programs (FHA) permit rent credits to satisfy down payment requirements ONLY if the total monthly rent paid exceeds the appraised fair market rent. For instance, if fair market rent is \$1,800/month and you pay \$2,150/month, the \$350 difference is recognized as valid buyer equity. Ensure you maintain bank payment receipts and canceled checks!</p>
+    </div>
+
+    <h2>Calculating Your Future Mortgage Payment (Takeout Financing)</h2>
+    <p>When your 24 or 36-month lease concludes, you exercise your purchase option by securing a traditional 30-year fixed mortgage. The loan principal ($P$) equals your original locked purchase price minus all accumulated equity:</p>
+
+    <div class="formula-banner">
+      <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #94A3B8;">Standard Mortgage Amortization Formula</div>
+      <div>
+        $$M = P \left[ \frac{r(1+r)^n}{(1+r)^n - 1} \right]$$
+      </div>
+      <div style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.5rem;">
+        Where $P$ = Loan Balance, $r$ = Monthly Interest Rate, $n$ = 360 Months (30 Years)
+      </div>
+    </div>
+
+    <h2>Lease Option vs. Lease Purchase: Critical Legal Differences</h2>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Contract Feature</th>
+            <th>Lease-Option Agreement (Recommended)</th>
+            <th>Lease-Purchase Contract</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Legal Obligation to Buy</strong></td>
+            <td><strong>Optional:</strong> You hold the right to buy, but are not legally obligated.</td>
+            <td><strong>Mandatory:</strong> You are legally bound to purchase at lease expiration.</td>
+          </tr>
+          <tr>
+            <td><strong>What If You Can't Get a Mortgage?</strong></td>
+            <td>You forfeit your option fee and rent credits, but the seller cannot sue you.</td>
+            <td>The seller can sue you for breach of contract and specific performance.</td>
+          </tr>
+          <tr>
+            <td><strong>Price Lock-In</strong></td>
+            <td>Locked at contract signing or appraised at exercise date.</td>
+            <td>Firmly locked at contract execution date.</td>
+          </tr>
+          <tr>
+            <td><strong>Maintenance Responsibility</strong></td>
+            <td>Typically split (tenant handles minor upkeep under $150; landlord covers roof/HVAC).</td>
+            <td>Tenant often assumes 100% of all maintenance and repair liabilities.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout-alert">
+      <h4>⚠️ Crucial Buyer Caveat: The Risk of Forfeiture</h4>
+      <p>In almost all rent-to-own agreements, the <strong>upfront option fee and monthly rent credits are non-refundable</strong>. If you decide not to purchase the home, or if your credit score does not improve sufficiently to secure mortgage takeout financing before the deadline, you will forfeit every dollar of accumulated equity. Always partner with a certified mortgage credit planner during your lease term.</p>
+    </div>
+
+    <!-- FREQUENTLY ASKED QUESTIONS ACCORDION -->
+    <h2>Frequently Asked Questions About Rent-to-Own Mortgages</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does a rent-to-own home agreement work?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        A rent-to-own contract (also known as a lease-option agreement) allows a tenant to rent a property for a specified period (typically 1 to 3 years) with the exclusive legal right to purchase the property at a predetermined price when the lease expires. A portion of each monthly rent payment (called a rent credit or rent premium) alongside an upfront non-refundable option fee is credited toward the tenant's future down payment.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is an upfront option fee in a rent-to-own contract?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The option fee (or option consideration) is a non-refundable upfront payment made by the buyer to the seller, typically ranging from 1% to 5% of the agreed purchase price. This fee grants the buyer the exclusive right to purchase the home during the lease term and prevents the seller from marketing the property to other buyers. In standard agreements, 100% of the option fee is credited toward the final purchase down payment.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How is the future mortgage payment calculated after a rent-to-own lease ends?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        When the lease term concludes, the buyer secures a conventional, FHA, or VA mortgage for the remaining balance. The new loan principal equals the Locked Purchase Price minus Total Accumulated Credits (Option Fee + Monthly Rent Credits). The monthly principal and interest payment is then calculated using the standard mortgage amortization formula based on prevailing market interest rates.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Do Fannie Mae and FHA lenders allow rent credits to count toward the down payment?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes, but strictly under specific lending rules. Both Fannie Mae and the FHA require that the monthly rent credit represents an amount paid ABOVE fair market rent as verified by an appraiser. For example, if fair market rent is $1,800 and the tenant pays $2,200, the $400 monthly difference can be credited toward the down payment, provided a formal written lease-option contract is maintained.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the difference between a Lease Option and a Lease Purchase?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        In a Lease Option agreement, the tenant has the right—but NOT the legal obligation—to purchase the home when the lease expires. If they cannot qualify for a mortgage, they can walk away (though they forfeit their option fee and rent credits). In a Lease Purchase contract, the tenant is legally bound to purchase the home, and the seller can sue for breach of contract or damages if financing fails.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What happens if home prices increase during my rent-to-own term?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        If you locked in a predetermined purchase price (e.g., $300,000) and the property appreciates to $340,000 over the 2-year lease, you immediately capture $40,000 in instant home equity upon closing. This equity cushion helps eliminate private mortgage insurance (PMI) and lowers your effective loan-to-value (LTV).
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED TOOLS CROSS-LINKING -->
+  <section class="related-tools-section">
+    <div class="section-title-wrap">
+      <h3>Explore Complementary Home Buyer &amp; Affordability Tools</h3>
+    </div>
+    <div class="related-grid">
+      <a href="/home-affordability-calculator" class="related-card">
+        <h4>Home Affordability Calculator</h4>
+        <p>Determine your maximum home purchase budget based on salary, debts, and the 28/36 DTI ratio rule.</p>
+      </a>
+      <a href="/2-1-buydown-calculator" class="related-card">
+        <h4>2-1 Buydown Relief Calculator</h4>
+        <p>Save up to $700/mo on your mortgage with seller-funded temporary interest rate buydowns.</p>
+      </a>
+      <a href="/pmi-removal-calculator" class="related-card">
+        <h4>PMI Removal Calculator</h4>
+        <p>Calculate exactly when your private mortgage insurance drops off at 80% and 78% LTV thresholds.</p>
+      </a>
+      <a href="/subto-calculator" class="related-card">
+        <h4>SubTo &amp; Subject-To Calculator</h4>
+        <p>Model existing low-rate mortgage takeovers with zero bank qualifying and creative finance structures.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/home-affordability-calculator">Affordability Calculator</a></li>
+      <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+      <li><a href="/pmi-removal-calculator">PMI Removal Calculator</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <p>&copy; 2026 RealRefin.com. All financial calculations and formulas are for educational and lease-option modeling purposes only.</p>
+  </footer>
+
+</div>
+
+<!-- CALCULATOR INTERACTIVE LOGIC JAVASCRIPT -->
+<script>
+(function() {
+  'use strict';
+
+  // State
+  let currentMode = 'buyer'; // 'buyer' or 'seller'
+
+  // Input Elements
+  const btnModeBuyer = document.getElementById('btnModeBuyer');
+  const btnModeSeller = document.getElementById('btnModeSeller');
+
+  const inputHomePrice = document.getElementById('inputHomePrice');
+  const sliderHomePrice = document.getElementById('sliderHomePrice');
+  const inputOptionFeePct = document.getElementById('inputOptionFeePct');
+  const optionFeeDollarDisplay = document.getElementById('optionFeeDollarDisplay');
+  const inputLeaseTerm = document.getElementById('inputLeaseTerm');
+  const inputBaseRent = document.getElementById('inputBaseRent');
+  const inputRentCredit = document.getElementById('inputRentCredit');
+  const inputMortgageRate = document.getElementById('inputMortgageRate');
+  const inputLoanTermYears = document.getElementById('inputLoanTermYears');
+
+  // Output Elements
+  const resTotalEquity = document.getElementById('resTotalEquity');
+  const resEquityPctSub = document.getElementById('resEquityPctSub');
+  const resTotalMonthlyRent = document.getElementById('resTotalMonthlyRent');
+  const resFutureMortgage = document.getElementById('resFutureMortgage');
+  const resOptionFeeHighlight = document.getElementById('resOptionFeeHighlight');
+  const resLoanBalance = document.getElementById('resLoanBalance');
+
+  const distHomePriceTotal = document.getElementById('distHomePriceTotal');
+  const barFee = document.getElementById('barFee');
+  const barCredit = document.getElementById('barCredit');
+  const barLoan = document.getElementById('barLoan');
+
+  const resPurchasePrice = document.getElementById('resPurchasePrice');
+  const resOptionFeeCredit = document.getElementById('resOptionFeeCredit');
+  const resRentCreditsTotal = document.getElementById('resRentCreditsTotal');
+  const resBaseRentDisplay = document.getElementById('resBaseRentDisplay');
+  const resCreditDisplay = document.getElementById('resCreditDisplay');
+  const resFinalLoanAmt = document.getElementById('resFinalLoanAmt');
+
+  // Action Buttons
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+  const btnCopySheet = document.getElementById('btnCopySheet');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  // Currency Formatter
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount || 0);
+  }
+
+  // Sync Slider & Input Price
+  inputHomePrice.addEventListener('input', () => {
+    sliderHomePrice.value = inputHomePrice.value;
+    calculateLeaseOption();
+  });
+  sliderHomePrice.addEventListener('input', () => {
+    inputHomePrice.value = sliderHomePrice.value;
+    calculateLeaseOption();
+  });
+
+  // Mode Switcher
+  btnModeBuyer.addEventListener('click', () => {
+    currentMode = 'buyer';
+    btnModeBuyer.classList.add('active');
+    btnModeSeller.classList.remove('active');
+    calculateLeaseOption();
+  });
+  btnModeSeller.addEventListener('click', () => {
+    currentMode = 'seller';
+    btnModeSeller.classList.add('active');
+    btnModeBuyer.classList.remove('active');
+    calculateLeaseOption();
+  });
+
+  // Presets: Price
+  document.querySelectorAll('[data-price]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-price]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputHomePrice.value = btn.getAttribute('data-price');
+      sliderHomePrice.value = inputHomePrice.value;
+      calculateLeaseOption();
+    });
+  });
+
+  // Presets: Option Fee
+  document.querySelectorAll('[data-option-pct]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-option-pct]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputOptionFeePct.value = btn.getAttribute('data-option-pct');
+      calculateLeaseOption();
+    });
+  });
+
+  // Presets: Term
+  document.querySelectorAll('[data-term]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-term]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputLeaseTerm.value = btn.getAttribute('data-term');
+      calculateLeaseOption();
+    });
+  });
+
+  // Presets: Credit
+  document.querySelectorAll('[data-credit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-credit]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputRentCredit.value = btn.getAttribute('data-credit');
+      calculateLeaseOption();
+    });
+  });
+
+  // Mortgage Amortization Calculation
+  function calculateMortgagePayment(principal, annualRate, termYears) {
+    if (principal <= 0) return 0;
+    const monthlyRate = (annualRate / 100) / 12;
+    const totalPayments = termYears * 12;
+    if (monthlyRate === 0) return principal / totalPayments;
+    const payment = principal * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
+    return payment;
+  }
+
+  // Main Calculation Engine
+  function calculateLeaseOption() {
+    const homePrice = Math.max(0, parseFloat(inputHomePrice.value) || 0);
+    const optionPct = (parseFloat(inputOptionFeePct.value) || 3.0) / 100;
+    const leaseMonths = Math.max(1, parseFloat(inputLeaseTerm.value) || 24);
+    const baseRent = Math.max(0, parseFloat(inputBaseRent.value) || 0);
+    const rentCredit = Math.max(0, parseFloat(inputRentCredit.value) || 0);
+    const mortgageRate = parseFloat(inputMortgageRate.value) || 6.5;
+    const loanTermYears = parseFloat(inputLoanTermYears.value) || 30;
+
+    // Upfront Option Fee ($)
+    const optionFeeDollars = homePrice * optionPct;
+    optionFeeDollarDisplay.textContent = `${formatMoney(optionFeeDollars)} (${(optionPct * 100).toFixed(1)}%)`;
+
+    // Monthly Rent
+    const totalMonthlyRent = baseRent + rentCredit;
+
+    // Total Accumulated Rent Credits
+    const totalRentCredits = rentCredit * leaseMonths;
+
+    // Total Accumulated Equity at Takeout Closing
+    const totalDownPaymentEquity = optionFeeDollars + totalRentCredits;
+    const equityPct = homePrice > 0 ? (totalDownPaymentEquity / homePrice) * 100 : 0;
+
+    // Future Loan Balance to Finance
+    const loanBalance = Math.max(0, homePrice - totalDownPaymentEquity);
+
+    // Future Takeout Monthly Mortgage (P&I)
+    const futureMonthlyMortgage = calculateMortgagePayment(loanBalance, mortgageRate, loanTermYears);
+
+    // Update Displays
+    resTotalEquity.textContent = formatMoney(totalDownPaymentEquity);
+    resEquityPctSub.textContent = `${equityPct.toFixed(2)}% Total Equity Credited at Closing`;
+    resTotalMonthlyRent.textContent = formatMoney(totalMonthlyRent);
+    resFutureMortgage.textContent = formatMoney(futureMonthlyMortgage);
+    resOptionFeeHighlight.textContent = formatMoney(optionFeeDollars);
+    resLoanBalance.textContent = formatMoney(loanBalance);
+
+    distHomePriceTotal.textContent = formatMoney(homePrice);
+
+    resPurchasePrice.textContent = formatMoney(homePrice);
+    resOptionFeeCredit.textContent = `-${formatMoney(optionFeeDollars)}`;
+    resRentCreditsTotal.textContent = `-${formatMoney(totalRentCredits)}`;
+    resBaseRentDisplay.textContent = `${formatMoney(baseRent)}/mo`;
+    resCreditDisplay.textContent = `+${formatMoney(rentCredit)}/mo`;
+    resFinalLoanAmt.textContent = formatMoney(loanBalance);
+
+    // Progress Bar Distribution
+    if (homePrice > 0) {
+      const pctFee = Math.min(100, (optionFeeDollars / homePrice) * 100);
+      const pctCredit = Math.min(100, (totalRentCredits / homePrice) * 100);
+      const pctLoan = Math.max(0, 100 - (pctFee + pctCredit));
+
+      barFee.style.width = pctFee + '%';
+      barCredit.style.width = pctCredit + '%';
+      barLoan.style.width = pctLoan + '%';
+    }
+  }
+
+  // Download CSV
+  btnDownloadCsv.addEventListener('click', () => {
+    const price = inputHomePrice.value;
+    const optPct = inputOptionFeePct.value;
+    const months = inputLeaseTerm.value;
+    const base = inputBaseRent.value;
+    const credit = inputRentCredit.value;
+    const rate = inputMortgageRate.value;
+
+    let csv = `REALREFIN.COM - RENT TO OWN MORTGAGE & LEASE OPTION REPORT\n`;
+    csv += `Perspective,${currentMode.toUpperCase()}\n`;
+    csv += `Generated Date,${new Date().toISOString()}\n\n`;
+
+    csv += `SECTION 1: PURCHASE & LEASE TERMS\n`;
+    csv += `Locked Purchase Price,$${price}\n`;
+    csv += `Upfront Option Consideration (${optPct}%),${resOptionFeeHighlight.textContent}\n`;
+    csv += `Lease Option Term,${months} Months\n`;
+    csv += `Fair Market Base Rent,$${base}/month\n`;
+    csv += `Monthly Rent Credit Premium,$${credit}/month\n`;
+    csv += `Total Monthly Tenant Rent,${resTotalMonthlyRent.textContent}/month\n\n`;
+
+    csv += `SECTION 2: ACCUMULATED EQUITY & FUTURE MORTGAGE\n`;
+    csv += `Total Monthly Rent Credits Accumulated,${resRentCreditsTotal.textContent.replace('-', '')}\n`;
+    csv += `TOTAL DOWN PAYMENT EQUITY AT CLOSING,${resTotalEquity.textContent}\n`;
+    csv += `Effective Down Payment Percentage,${resEquityPctSub.textContent.split(' ')[0]}\n`;
+    csv += `Remaining Principal Loan to Finance,${resLoanBalance.textContent}\n`;
+    csv += `Projected Future Mortgage Rate,${rate}%\n`;
+    csv += `PROJECTED FUTURE MORTGAGE PAYMENT (P&I),${resFutureMortgage.textContent}/month\n\n`;
+
+    csv += `SECTION 3: MONTH-BY-MONTH EQUITY ACCUMULATION SCHEDULE\n`;
+    csv += `MONTH,BASE RENT PAID,EQUITY CREDIT PAID,CUMULATIVE DOWN PAYMENT EQUITY,REMAINING LOAN BALANCE\n`;
+
+    const optFeeVal = (parseFloat(price) * (parseFloat(optPct) / 100));
+    let curEquity = optFeeVal;
+    const crVal = parseFloat(credit);
+    const baseVal = parseFloat(base);
+    const pVal = parseFloat(price);
+
+    for (let m = 1; m <= parseInt(months); m++) {
+      curEquity += crVal;
+      const remBal = Math.max(0, pVal - curEquity);
+      csv += `Month ${m},$${baseVal.toFixed(2)},$${crVal.toFixed(2)},$${curEquity.toFixed(2)},$${remBal.toFixed(2)}\n`;
+    }
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `realrefin-rent-to-own-schedule-${Date.now()}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+
+  // Copy Lease Term Sheet
+  btnCopySheet.addEventListener('click', () => {
+    const summary = `🏠 RENT-TO-OWN LEASE OPTION TERM SHEET (via RealRefin.com)
+--------------------------------------------------
+Locked Purchase Price:     $${inputHomePrice.value}
+Upfront Option Fee:        ${resOptionFeeHighlight.textContent} (${inputOptionFeePct.value}%)
+Lease Option Duration:     ${inputLeaseTerm.value} Months
+--------------------------------------------------
+Monthly Base Rent:         $${inputBaseRent.value}/month
+Monthly Rent Credit:       +$${inputRentCredit.value}/month
+TOTAL MONTHLY OUT-OF-POCKET: ${resTotalMonthlyRent.textContent}/month
+--------------------------------------------------
+🎯 TOTAL ACCUMULATED EQUITY: ${resTotalEquity.textContent} (${resEquityPctSub.textContent.split(' ')[0]})
+💵 REMAINING BALANCE TO BUY: ${resLoanBalance.textContent}
+🏦 FUTURE 30-YR MORTGAGE:    ${resFutureMortgage.textContent}/month (${inputMortgageRate.value}% APR)
+--------------------------------------------------
+Model lease-option deals live at: ${window.location.href}`;
+
+    navigator.clipboard.writeText(summary).then(() => {
+      const orig = btnCopySheet.innerHTML;
+      btnCopySheet.innerHTML = '✓ Copied Term Sheet!';
+      btnCopySheet.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        btnCopySheet.innerHTML = orig;
+        btnCopySheet.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('Rent to Own Term Sheet:\n\n' + summary);
+    });
+  });
+
+  // Share URL with Query Params
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      mode: currentMode,
+      price: inputHomePrice.value,
+      opt: inputOptionFeePct.value,
+      term: inputLeaseTerm.value,
+      base: inputBaseRent.value,
+      credit: inputRentCredit.value,
+      rate: inputMortgageRate.value,
+      loanTerm: inputLoanTermYears.value
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const orig = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '✓ Link Copied!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = orig;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params
+  function loadUrlParams() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('price')) inputHomePrice.value = p.get('price');
+    if (p.has('opt')) inputOptionFeePct.value = p.get('opt');
+    if (p.has('term')) inputLeaseTerm.value = p.get('term');
+    if (p.has('base')) inputBaseRent.value = p.get('base');
+    if (p.has('credit')) inputRentCredit.value = p.get('credit');
+    if (p.has('rate')) inputMortgageRate.value = p.get('rate');
+    if (p.has('loanTerm')) inputLoanTermYears.value = p.get('loanTerm');
+    if (p.get('mode') === 'seller') {
+      btnModeSeller.click();
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      const active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!active) item.classList.add('active');
+    });
+  });
+
+  // Attach Event Listeners
+  [inputOptionFeePct, inputLeaseTerm, inputBaseRent, inputRentCredit, inputMortgageRate, inputLoanTermYears]
+    .forEach(el => el && el.addEventListener('input', calculateLeaseOption));
+
+  // Initialize
+  loadUrlParams();
+  sliderHomePrice.value = inputHomePrice.value;
+  calculateLeaseOption();
+
+})();
+</script>
+
+</body>
+</html>

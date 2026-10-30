@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/rent-to-own-calculator</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/airbnb-profit-calculator</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -181,6 +187,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/rent-to-own-calculator': 'rent-to-own-calculator.html',
+  '/rent-to-own-calculator.html': 'rent-to-own-calculator.html',
+  '/rent-to-own-mortgage-calculator': 'rent-to-own-calculator.html',
+  '/rent-to-own-mortgage-calculator.html': 'rent-to-own-calculator.html',
+  '/lease-to-own-calculator': 'rent-to-own-calculator.html',
+  '/lease-to-own-calculator.html': 'rent-to-own-calculator.html',
+  '/lease-option-calculator': 'rent-to-own-calculator.html',
+  '/lease-option-calculator.html': 'rent-to-own-calculator.html',
+  '/rent-to-own-home-calculator': 'rent-to-own-calculator.html',
+  '/rent-to-own-home-calculator.html': 'rent-to-own-calculator.html',
+  '/rent-to-own-payment-calculator': 'rent-to-own-calculator.html',
+  '/rent-to-own-payment-calculator.html': 'rent-to-own-calculator.html',
   '/airbnb-profit-calculator': 'airbnb-profit-calculator.html',
   '/airbnb-profit-calculator.html': 'airbnb-profit-calculator.html',
   '/airbnb-profit-calculator-excel': 'airbnb-profit-calculator.html',
