@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/real-estate-commission-calculator</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/mortgage-payoff-vs-investing-calculator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -199,6 +205,26 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/real-estate-commission-calculator': 'real-estate-commission-calculator.html',
+  '/real-estate-commission-calculator.html': 'real-estate-commission-calculator.html',
+  '/real-estate-agent-commission-calculator': 'real-estate-commission-calculator.html',
+  '/real-estate-agent-commission-calculator.html': 'real-estate-commission-calculator.html',
+  '/calculate-real-estate-commission': 'real-estate-commission-calculator.html',
+  '/calculate-real-estate-commission.html': 'real-estate-commission-calculator.html',
+  '/calculate-real-estate-agent-commission': 'real-estate-commission-calculator.html',
+  '/calculate-real-estate-agent-commission.html': 'real-estate-commission-calculator.html',
+  '/commission-calculator-for-real-estate-agents': 'real-estate-commission-calculator.html',
+  '/commission-calculator-for-real-estate-agents.html': 'real-estate-commission-calculator.html',
+  '/how-to-calculate-real-estate-commission': 'real-estate-commission-calculator.html',
+  '/how-to-calculate-real-estate-commission.html': 'real-estate-commission-calculator.html',
+  '/real-estate-agents-commission-calculator': 'real-estate-commission-calculator.html',
+  '/real-estate-agents-commission-calculator.html': 'real-estate-commission-calculator.html',
+  '/real-estate-commission-calculator-with-broker-split': 'real-estate-commission-calculator.html',
+  '/real-estate-commission-calculator-with-broker-split.html': 'real-estate-commission-calculator.html',
+  '/calculator-real-estate-commission': 'real-estate-commission-calculator.html',
+  '/calculator-real-estate-commission.html': 'real-estate-commission-calculator.html',
+  '/real-estate-broker-commission-calculator': 'real-estate-commission-calculator.html',
+  '/real-estate-broker-commission-calculator.html': 'real-estate-commission-calculator.html',
   '/mortgage-payoff-vs-investing-calculator': 'mortgage-payoff-vs-investing-calculator.html',
   '/mortgage-payoff-vs-investing-calculator.html': 'mortgage-payoff-vs-investing-calculator.html',
   '/mortgage-payoff-vs-investment-calculator': 'mortgage-payoff-vs-investing-calculator.html',

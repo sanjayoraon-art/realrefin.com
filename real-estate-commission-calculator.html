@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Commission Calculator | Agent & Broker Split Tool (2026)</title>
+  <meta name="description" content="Free real estate commission calculator with broker split. Calculate real estate agent commission, listing vs buyer agent side splits, franchise fees, desk fees, and net take-home pay under 2026 NAR settlement rules.">
+  <meta name="keywords" content="real estate commission calculator, real estate agent commission calculator, calculate real estate commission, calculate real estate agent commission, commission calculator for real estate agents, how to calculate real estate commission, real estate agents commission calculator, real estate commission calculator with broker split, calculator real estate commission, real estate broker commission calculator">
+  <link rel="canonical" href="https://realrefin.com/real-estate-commission-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Real Estate Commission Calculator with Broker Split | RealRefin">
+  <meta property="og:description" content="Calculate real estate commission, agent vs broker splits, franchise fees, and net take-home pay. 100% free tool for real estate agents, brokers, and home sellers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/real-estate-commission-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/real-estate-commission-calculator#app",
+        "name": "RealRefin Real Estate Commission Calculator with Broker Split",
+        "url": "https://realrefin.com/real-estate-commission-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Comprehensive real estate agent and broker commission calculator. Calculates total property commission, listing vs buyer agent side splits, brokerage split models (70/30, 80/20, cap limits), franchise royalties, transaction fees, and net agent take-home income.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Agent Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Real Estate Commission Calculator",
+            "item": "https://realrefin.com/real-estate-commission-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How to calculate real estate commission on a home sale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate real estate commission, multiply the final property sale price by the total agreed-upon commission percentage rate: Total Commission = Sale Price × Commission Rate. For example, on a $500,000 property with a 5% commission rate, the total commission is $500,000 × 0.05 = $25,000. This sum is typically divided between the listing brokerage and the buyer's brokerage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a real estate commission calculator with broker split work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A real estate commission calculator with broker split determines an agent's actual take-home income. After the gross commission for the agent's side (e.g., 2.5% of $500,000 = $12,500) is collected by the brokerage, the broker split is applied (such as an 80/20 or 70/30 split). Additional deductions like national franchise royalties (e.g., 5% to 6%) and flat transaction desk fees (e.g., $250 to $500) are subtracted to reveal the agent's true net pre-tax payout."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How did the 2024–2026 NAR settlement change real estate commissions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Following the landmark National Association of Realtors (NAR) settlement, listing brokers are prohibited from offering cooperative buyer-broker compensation directly on Multiple Listing Services (MLS). Buyer agents must now enter into formal written buyer representation agreements detailing their exact fee before touring homes. Sellers can still offer concessions or buyer agent compensation off-MLS, but commissions are now decoupled and negotiated independently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an annual commission cap model in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A commission cap model (popularized by brokerages like eXp Realty and Keller Williams) caps the maximum dollar amount an agent must pay to their brokerage in any single anniversary year (e.g., a $16,000 or $20,000 cap). Once the agent's splits pay off this cap amount, the agent retains 100% of their commission for the remainder of their fiscal year, subject only to a minimal per-transaction fee."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who typically pays the real estate commission fee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditionally, the property seller pays the entire commission fee from their gross sale proceeds at the closing table. Under post-NAR settlement practices, sellers may negotiate to pay only the listing agent's fee (e.g., 2.5%–3%), leaving buyers to negotiate and pay their own agent's compensation directly or request seller concessions at closing to cover it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Gross Commission Income (GCI) and Net Take-Home Pay?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gross Commission Income (GCI) is the total top-line dollar amount earned on a real estate transaction before any deductions. Net Take-Home Pay is the final cash amount the real estate agent retains after deducting their broker's percentage split, franchise royalties, local MLS/E&O insurance fees, transaction fees, and self-employment taxes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-indigo-border: #C7D2FE;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #F43F5E;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .currency-selector {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 2px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .curr-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn:hover {
+      color: var(--primary-navy);
+      background: #F1F5F9;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-emerald);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HERO
+    ----------------------------------------------------------- */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .hero-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       PERSPECTIVE MODE SWITCHER (Agent vs Home Seller)
+    ----------------------------------------------------------- */
+    .perspective-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .perspective-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .view-toggle-btns {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .view-btn {
+      background: #F1F5F9;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .view-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    /* -----------------------------------------------------------
+       PRESET BUTTONS
+    ----------------------------------------------------------- */
+    .presets-container {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .preset-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .preset-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 0.4rem 0.95rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .preset-pill:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: var(--accent-emerald-light);
+      transform: translateY(-1px);
+    }
+
+    .preset-pill.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       MAIN INTERACTIVE GRID
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARDS */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* FORM ELEMENTS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+    }
+
+    .form-help-tip {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: help;
+      text-decoration: underline dotted;
+    }
+
+    .input-field-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix,
+    .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix {
+      left: 0.85rem;
+    }
+
+    .input-suffix {
+      right: 0.85rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0 0.85rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+
+    .form-input.has-prefix {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Range Sliders */
+    .slider-control {
+      margin-top: 0.45rem;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #E2E8F0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider-control::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease;
+    }
+
+    .slider-control::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Quick Rate Buttons */
+    .rate-btn-group {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .rate-btn {
+      flex: 1;
+      padding: 0.35rem 0.5rem;
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .rate-btn:hover {
+      background: var(--accent-emerald-light);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+    }
+
+    .rate-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* ADVANCED TOGGLE */
+    .advanced-toggle-wrap {
+      margin-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .advanced-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS SIDE
+    ----------------------------------------------------------- */
+    .hero-result-banner {
+      background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+
+    .banner-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      opacity: 0.95;
+      margin-bottom: 0.25rem;
+    }
+
+    .banner-val {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #6EE7B7;
+    }
+
+    .banner-subtext {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-top: 0.35rem;
+    }
+
+    /* KPI METRICS GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .kpi-val {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* DETAILED WATERFALL SCOREBOARD */
+    .waterfall-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #F1F5F9;
+      font-size: 0.875rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .wf-label {
+      font-weight: 600;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .wf-val {
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .wf-deduct {
+      color: var(--accent-coral);
+    }
+
+    .wf-highlight {
+      background: var(--accent-emerald-light);
+      padding: 0.65rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin: 0.25rem 0;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* CHART WRAP */
+    .chart-container-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .chart-canvas-box {
+      position: relative;
+      width: 100%;
+      height: 250px;
+    }
+
+    /* ACTION BUTTONS */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .btn-action {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDES
+    ----------------------------------------------------------- */
+    .seo-guide-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .seo-guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin: 2rem 0 0.85rem;
+    }
+
+    .seo-guide-section p {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section ul, 
+    .seo-guide-section ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      line-height: 1.75;
+      font-size: 1.025rem;
+    }
+
+    .seo-guide-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout {
+      background: #F8FAFC;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.5rem 0;
+    }
+
+    .formula-callout h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comparison-matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.925rem;
+    }
+
+    .comparison-matrix-table th,
+    .comparison-matrix-table td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .comparison-matrix-table th {
+      background: #F8FAFC;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION SECTION
+    ----------------------------------------------------------- */
+    .faq-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.15rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.975rem;
+      color: var(--secondary-navy);
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RELATED SUITE CARDS
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+
+  <!-- Chart.js CDN for Visual Commission Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    
+    <!-- Multi-Currency Selector -->
+    <div class="currency-selector" aria-label="Select Currency">
+      <button class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+      <button class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+      <button class="curr-btn" data-currency="EUR" data-symbol="€">€ EUR</button>
+      <button class="curr-btn" data-currency="AUD" data-symbol="A$">A$ AUD</button>
+      <button class="curr-btn" data-currency="INR" data-symbol="₹">₹ INR</button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-investor">Investor &amp; Agent Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Real Estate Commission Calculator</span>
+  </div>
+
+  <!-- HERO HEADER -->
+  <header class="hero-header">
+    <div class="badge-pill">💼 2026 Post-NAR Rules • Broker Split &amp; Agent Net Simulator</div>
+    <h1>Real Estate Commission Calculator</h1>
+    <p>
+      Calculate real estate commission, listing vs. buyer agent side splits, brokerage split models (70/30, 80/20, 100% cap), franchise fees, and net agent take-home pay. Designed for real estate agents, brokers, and home sellers.
+    </p>
+  </header>
+
+  <!-- PERSPECTIVE BAR -->
+  <div class="perspective-bar">
+    <div class="perspective-title">
+      <span>🎯 View Calculation As:</span>
+    </div>
+    <div class="view-toggle-btns">
+      <button class="view-btn active" data-view="agent">👤 Real Estate Agent / Broker</button>
+      <button class="view-btn" data-view="seller">🏡 Home Seller Net Proceeds</button>
+    </div>
+  </div>
+
+  <!-- PRESET BUTTONS -->
+  <div class="presets-container" aria-label="Quick Presets">
+    <span class="preset-label">Quick Presets:</span>
+    <button class="preset-pill active" data-preset="standard-split">
+      <span>🤝</span> Standard 80/20 Split (5.0% Total)
+    </button>
+    <button class="preset-pill" data-preset="traditional-split">
+      <span>🏢</span> Traditional 70/30 + 6% Franchise (6.0% Total)
+    </button>
+    <button class="preset-pill" data-preset="high-producer">
+      <span>⭐</span> 90/10 High Producer / Capped
+    </button>
+    <button class="preset-pill" data-preset="flat-fee">
+      <span>⚡</span> 100% Split ($500 Flat Desk Fee)
+    </button>
+  </div>
+
+  <!-- MAIN CALCULATOR WORKSPACE -->
+  <main class="calc-layout">
+    
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <section class="calc-card" aria-label="Commission and Split Inputs">
+      <div class="card-title-wrap">
+        <h2><span>⚙️</span> Deal &amp; Commission Parameters</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-emerald);">Auto-Calculating</span>
+      </div>
+
+      <!-- 1. PROPERTY SALE DETAILS -->
+      <div class="section-divider-label">1. Property Sale Price &amp; Commission Rate</div>
+
+      <!-- Sale Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputSalePrice">Property Sale Price</label>
+          <span class="form-help-tip" title="Agreed contract purchase price of the residential or commercial property">Sale Price</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputSalePrice" class="form-input has-prefix" value="450000" min="10000" max="25000000" step="5000">
+        </div>
+        <input type="range" id="sliderSalePrice" class="slider-control" value="450000" min="50000" max="1500000" step="5000">
+      </div>
+
+      <!-- Total Commission Rate -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputCommissionRate">Total Real Estate Commission Rate</label>
+          <span class="form-help-tip" title="Combined total commission percentage paid on the transaction">Total Rate (%)</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputCommissionRate" class="form-input has-suffix" value="5.0" min="0.5" max="12.0" step="0.1">
+          <span class="input-suffix">%</span>
+        </div>
+        <input type="range" id="sliderCommissionRate" class="slider-control" value="5.0" min="1.0" max="8.0" step="0.1">
+        
+        <!-- Quick Rate Buttons -->
+        <div class="rate-btn-group">
+          <button type="button" class="rate-btn" data-rate="4.5">4.5%</button>
+          <button type="button" class="rate-btn active" data-rate="5.0">5.0%</button>
+          <button type="button" class="rate-btn" data-rate="5.5">5.5%</button>
+          <button type="button" class="rate-btn" data-rate="6.0">6.0%</button>
+        </div>
+      </div>
+
+      <!-- Total Dollar Commission Display -->
+      <div style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--secondary-navy);">Total Deal Commission:</span>
+        <span id="totalCommissionDollarDisplay" style="font-size: 1.15rem; font-weight: 800; color: var(--primary-navy);">$22,500</span>
+      </div>
+
+      <!-- 2. SIDE SPLIT (Listing vs Buyer Agent) -->
+      <div class="section-divider-label">2. Side Split (Listing vs. Buyer Agent)</div>
+
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputListingSidePct">Listing Agent Side Share</label>
+          <span class="form-help-tip" title="Percentage of total commission allocated to the seller/listing agent side">Side %</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputListingSidePct" class="form-input has-suffix" value="50" min="0" max="100" step="1">
+          <span class="input-suffix">%</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.775rem; color: var(--text-muted); margin-top: 0.35rem;">
+          <span>Listing Side: <strong id="listingSideEffectiveRate">2.50%</strong></span>
+          <span>Buyer Side: <strong id="buyerSideEffectiveRate">2.50%</strong></span>
+        </div>
+      </div>
+
+      <!-- 3. BROKERAGE SPLIT & AGENT FEES (Agent View) -->
+      <div id="agentSplitSection">
+        <div class="section-divider-label">3. Real Estate Brokerage Split &amp; Fees</div>
+
+        <!-- Broker / Agent Split % -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputAgentSplitPct">Your Agent Split (Agent Share)</label>
+            <span class="form-help-tip" title="Percentage of gross side commission you keep (Brokerage gets the remainder)">Agent %</span>
+          </div>
+          <div class="input-field-wrap">
+            <input type="number" id="inputAgentSplitPct" class="form-input has-suffix" value="80" min="20" max="100" step="1">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="rate-btn-group" style="margin-top: 0.45rem;">
+            <button type="button" class="rate-btn split-btn" data-split="70">70 / 30</button>
+            <button type="button" class="rate-btn split-btn active" data-split="80">80 / 20</button>
+            <button type="button" class="rate-btn split-btn" data-split="90">90 / 10</button>
+            <button type="button" class="rate-btn split-btn" data-split="100">100% (Flat)</button>
+          </div>
+        </div>
+
+        <!-- Franchise / Royalty Fee -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputFranchiseFeePct">National Franchise / Royalty Fee</label>
+            <span class="form-help-tip" title="Fee deducted from gross side commission for franchise brands (e.g. KW, RE/MAX, Coldwell Banker)">Franchise %</span>
+          </div>
+          <div class="input-field-wrap">
+            <input type="number" id="inputFranchiseFeePct" class="form-input has-suffix" value="0.0" min="0" max="15" step="0.5">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <!-- Flat Transaction / E&O Fee -->
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputTransactionFee">Flat Transaction / Desk / E&amp;O Fee</label>
+            <span class="form-help-tip" title="Fixed dollar amount charged by your brokerage per closed deal">Per Deal Fee</span>
+          </div>
+          <div class="input-field-wrap">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputTransactionFee" class="form-input has-prefix" value="250" min="0" max="5000" step="50">
+          </div>
+        </div>
+
+        <!-- ADVANCED AGENT TOGGLE: Referral & Taxes -->
+        <div class="advanced-toggle-wrap">
+          <button type="button" id="btnToggleAdvanced" class="advanced-btn">
+            <span>⚙️</span> Referral Fee &amp; Income Tax Estimate <span id="advancedArrow">▼</span>
+          </button>
+
+          <div id="advancedBox" class="advanced-content">
+            <!-- Referral Fee -->
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputReferralFeePct">Client Referral Fee Paid Out</label>
+                <span class="form-help-tip" title="Percentage paid to referring agent (commonly 25%)">Referral %</span>
+              </div>
+              <div class="input-field-wrap">
+                <input type="number" id="inputReferralFeePct" class="form-input has-suffix" value="0" min="0" max="50" step="5">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+
+            <!-- Tax Rate -->
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputTaxRatePct">Estimated Taxes &amp; Self-Employment</label>
+                <span class="form-help-tip" title="Set aside percentage for 1099 self-employment and income taxes">Tax Set-Aside %</span>
+              </div>
+              <div class="input-field-wrap">
+                <input type="number" id="inputTaxRatePct" class="form-input has-suffix" value="25" min="0" max="50" step="1">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. SELLER NET SECTION (Seller View) -->
+      <div id="sellerSection" style="display: none;">
+        <div class="section-divider-label">3. Seller Closing Costs &amp; Mortgage</div>
+
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputMortgagePayoff">Existing Mortgage Payoff Balance</label>
+            <span class="form-help-tip" title="Remaining principal loan balance owed to the lender">Mortgage Payoff</span>
+          </div>
+          <div class="input-field-wrap">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputMortgagePayoff" class="form-input has-prefix" value="200000" min="0" max="25000000" step="5000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputClosingCosts">Estimated Title, Escrow &amp; Transfer Taxes</label>
+            <span class="form-help-tip" title="Typical seller closing fees (~1% to 2% of price)">Closing Costs</span>
+          </div>
+          <div class="input-field-wrap">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputClosingCosts" class="form-input has-prefix" value="5500" min="0" max="100000" step="500">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: RESULTS SCOREBOARD, CHARTS & WATERFALL -->
+    <section aria-label="Commission Calculations and Breakdown">
+
+      <!-- DYNAMIC HERO RESULT BANNER -->
+      <div id="resultBanner" class="hero-result-banner">
+        <div id="resultBannerBadge" class="banner-badge">💼 Real Estate Agent Net Payout</div>
+        <div id="resultBannerTitle" class="banner-title">Net Agent Take-Home Pay</div>
+        <div id="resultBannerVal" class="banner-val">$8,750</div>
+        <div id="resultBannerSubtext" class="banner-subtext">
+          Calculated from $11,250 gross commission on an 80/20 split after brokerage deductions.
+        </div>
+      </div>
+
+      <!-- 4 KEY STATS METRIC BOXES -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-label"><span>💰</span> Total Deal Commission</div>
+          <div id="kpiTotalCommission" class="kpi-val">$22,500</div>
+          <div id="kpiTotalPct" class="kpi-sub">5.0% of $450,000</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🏢</span> Gross Side Commission</div>
+          <div id="kpiSideCommission" class="kpi-val">$11,250</div>
+          <div id="kpiSidePct" class="kpi-sub">50% Side Share (2.50%)</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🏛️</span> Brokerage Share Cut</div>
+          <div id="kpiBrokerCut" class="kpi-val" style="color: var(--accent-coral);">$2,250</div>
+          <div id="kpiBrokerSplitDisplay" class="kpi-sub">20% Broker split cut</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🛡️</span> Effective Commission Retained</div>
+          <div id="kpiEffectiveRetained" class="kpi-val" style="color: var(--accent-emerald);">77.8%</div>
+          <div class="kpi-sub">Of gross side commission</div>
+        </div>
+      </div>
+
+      <!-- DETAILED WATERFALL DEDUCTIONS SCOREBOARD -->
+      <div class="waterfall-card">
+        <div class="waterfall-title">
+          <span>Commission Waterfall &amp; Fee Breakdown</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: none; font-weight: 500;">Per Transaction</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Gross Property Sale Price:</span>
+          <span class="wf-val" id="wfSalePrice">$450,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Gross Commission Income (GCI):</span>
+          <span class="wf-val" id="wfGci">$11,250</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Brokerage Split:</span>
+          <span class="wf-val wf-deduct" id="wfBrokerSplit">-$2,250</span>
+        </div>
+
+        <div class="waterfall-row" id="wfFranchiseRow">
+          <span class="wf-label">Less: National Franchise Royalty:</span>
+          <span class="wf-val wf-deduct" id="wfFranchise">-$0</span>
+        </div>
+
+        <div class="waterfall-row" id="wfReferralRow" style="display: none;">
+          <span class="wf-label">Less: Agent Referral Fee:</span>
+          <span class="wf-val wf-deduct" id="wfReferral">-$0</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Desk / Transaction Fee:</span>
+          <span class="wf-val wf-deduct" id="wfDeskFee">-$250</span>
+        </div>
+
+        <div class="waterfall-row wf-highlight">
+          <span class="wf-label" style="color: var(--accent-emerald-dark);">Pre-Tax Agent Payout:</span>
+          <span class="wf-val" id="wfPreTaxPayout" style="color: var(--accent-emerald-dark); font-size: 1.05rem;">$8,750</span>
+        </div>
+
+        <div class="waterfall-row" id="wfTaxRow">
+          <span class="wf-label">Estimated Tax Reserve (25%):</span>
+          <span class="wf-val wf-deduct" id="wfTaxAmount">-$2,188</span>
+        </div>
+
+        <div class="waterfall-row" style="font-weight: 800; border-top: 2px solid var(--border-color); padding-top: 0.75rem;">
+          <span class="wf-label" style="color: var(--primary-navy); font-size: 0.95rem;">Net In-Pocket Take-Home Cash:</span>
+          <span class="wf-val" id="wfNetInPocket" style="font-size: 1.15rem; color: var(--accent-emerald);">$6,562</span>
+        </div>
+      </div>
+
+      <!-- VISUAL BREAKDOWN DOUGHNUT CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-header">
+          <div class="chart-title">Commission Distribution Breakdown</div>
+          <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">Where the Money Goes</div>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="commissionPieChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" id="btnDownloadCsv" class="btn-action">
+          <span>📥</span> Export CSV Sheet
+        </button>
+        <button type="button" id="btnPrintReport" class="btn-action">
+          <span>🖨️</span> Print PDF Summary
+        </button>
+        <button type="button" id="btnShareDeal" class="btn-action">
+          <span>🔗</span> Share Deal Link
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO CONTENT & FINANCIAL GUIDE -->
+  <article class="seo-guide-section">
+    <h2>How to Calculate Real Estate Commission with Broker Split: 2026 Guide</h2>
+    <p>
+      Whether you are a residential real estate agent calculating your net take-home earnings or a home seller determining total closing costs, understanding how real estate commissions work is vital. 
+    </p>
+    <p>
+      Following the landmark **2024–2026 National Association of Realtors (NAR) settlement**, the traditional automatic 6% commission model split evenly between buyer and seller agents has evolved into a fully negotiable, decoupled system.
+    </p>
+
+    <h3>1. How Real Estate Commissions Are Calculated: The Core Math</h3>
+    <p>
+      Total real estate commission is calculated by multiplying the final settled home sale price by the total contractual commission percentage:
+    </p>
+
+    <div class="formula-callout">
+      <h4>Total Real Estate Commission Formula</h4>
+      $$\text{Total Deal Commission} = \text{Property Sale Price} \times \text{Commission Rate}$$
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+        <strong>Example:</strong> For a <strong>$450,000</strong> home with a negotiated <strong>5.0%</strong> commission:
+        $$\$450,000 \times 0.05 = \$22,500$$
+      </p>
+    </div>
+
+    <h3>2. Listing Agent vs. Buyer Agent Side Split</h3>
+    <p>
+      The total commission is typically allocated across two distinct "sides" of the transaction:
+    </p>
+    <ul>
+      <li><strong>Listing Side:</strong> Paid to the listing brokerage representing the property owner/seller.</li>
+      <li><strong>Buyer Side:</strong> Paid to the cooperating buyer's brokerage representing the purchaser.</li>
+    </ul>
+    <p>
+      If the sides split the fee 50/50, each side receives half ($2.5\%$ or $\$11,250$ in the example above).
+    </p>
+
+    <h3>3. Real Estate Commission Calculator with Broker Split</h3>
+    <p>
+      A licensed real estate sales agent does not keep the entire side commission. State licensing statutes mandate that all commissions must be disbursed directly to the sponsoring **broker of record**, who then distributes the agent's share according to their independent contractor agreement.
+    </p>
+
+    <div class="formula-callout">
+      <h4>Agent Net Commission Formula</h4>
+      $$\text{Agent Net Payout} = (\text{GCI} \times \text{Split Rate}) - \text{Franchise Fee} - \text{Transaction Fees} - \text{Referral Fees}$$
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+        Where $\text{GCI}$ is Gross Commission Income for the agent's side.
+      </p>
+    </div>
+
+    <h3>4. Popular Real Estate Brokerage Split Models</h3>
+    <table class="comparison-matrix-table">
+      <thead>
+        <tr>
+          <th>Brokerage Model</th>
+          <th>Typical Split</th>
+          <th>Annual Cap</th>
+          <th>Best Suited For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Traditional Franchise (KW, RE/MAX, Coldwell)</strong></td>
+          <td>60/40 to 70/30</td>
+          <td>$18,000 – $28,000 Cap</td>
+          <td>New agents requiring intensive desk training &amp; physical office space.</td>
+        </tr>
+        <tr>
+          <td><strong>Cloud / Modern Brokerage (eXp, Real Broker)</strong></td>
+          <td>80/20 to 85/15</td>
+          <td>$12,000 – $16,000 Cap</td>
+          <td>Self-sufficient agents looking for low overhead and stock/revenue share.</td>
+        </tr>
+        <tr>
+          <td><strong>100% Flat-Fee Brokerage</strong></td>
+          <td>100% Split</td>
+          <td>No Cap ($350–$650/deal)</td>
+          <td>High-volume top producers who require minimal broker supervision.</td>
+        </tr>
+        <tr>
+          <td><strong>Graduated / Tiered Split</strong></td>
+          <td>50/50 up to 90/10</td>
+          <td>Volume-Based Reset</td>
+          <td>Boutique brokerages that reward higher annual production tiers.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>5. Understanding Post-NAR Settlement Commission Changes</h3>
+    <p>
+      The 2024 NAR antitrust settlement introduced two monumental operational changes across US residential real estate:
+    </p>
+    <ol>
+      <li><strong>MLS Prohibition on Compensation Offers:</strong> Offers of compensation to buyer brokers cannot be posted or communicated on any MLS platform.</li>
+      <li><strong>Mandatory Written Buyer Agreements:</strong> Real estate professionals representing buyers must execute an agreement specifying their exact fee structure before showing any prospective properties.</li>
+    </ol>
+    <p>
+      Sellers can still choose to offer concessions or contribute toward buyer agent commissions, but these negotiations occur directly in purchase contracts rather than as blanket MLS offers.
+    </p>
+  </article>
+
+  <!-- PEOPLE ALSO ASK / FAQ SECTION -->
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions: Real Estate Commissions &amp; Splits</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How to calculate real estate commission on a home sale?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        To calculate real estate commission, multiply the home's final selling price by the agreed-upon commission rate. For example, on a $400,000 home with a 5% commission rate, the total fee is $400,000 × 0.05 = $20,000. If split equally between listing and buyer brokers, each side receives $10,000.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does a real estate commission calculator with broker split work?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        A commission calculator with broker split computes an agent's actual take-home pay. It takes the agent's gross commission on the transaction, applies their contractual broker split percentage (e.g. 80/20), and deducts franchise fees, desk fees, and client referral fees to display the exact pre-tax and after-tax cash earnings.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is Gross Commission Income (GCI)?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Gross Commission Income (GCI) is the total commission earned on a real estate transaction prior to any brokerage splits, franchise royalties, referral fees, or business expenses. For example, if an agent represents the seller on a $500,000 sale at a 2.5% listing fee, their GCI is $12,500.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is an annual commission cap model?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        An annual cap model sets a maximum dollar amount in splits that an agent pays to their brokerage during a 12-month anniversary year (e.g., $16,000). Once the agent has paid that cumulative amount to the brokerage, they "cap" and keep 100% of their commission for the remainder of that year, paying only minor per-transaction or administrative fees.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Who pays the real estate agent's commission?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Traditionally, the home seller pays the full real estate commission from the proceeds of the sale at closing. In post-NAR settlement practice, sellers may pay their listing agent's fee while buyers negotiate their agent's fee directly, frequently asking sellers for closing credits to satisfy that agreement.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How much should a real estate agent save for taxes?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Because real estate agents are typically 1099 independent contractors, no federal or state taxes are withheld from commission checks. Most certified financial planners recommend setting aside 25% to 35% of every commission check for federal income taxes, state taxes, and the 15.3% self-employment tax (Social Security and Medicare).
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SPECIALIZED TOOLS -->
+  <section class="related-tools-section" aria-label="Related Real Estate Tools">
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-navy);">Related Real Estate Calculators</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted);">Explore our other specialized investor, wholesale, and acquisition tools.</p>
+    </div>
+
+    <div class="related-grid">
+      <a href="/maximum-allowable-offer-calculator" class="related-card">
+        <div>
+          <h4>Maximum Allowable Offer (MAO)</h4>
+          <p>Calculate wholesale assignment fees, 70% rule rehab budgets, and maximum purchase offers for fix-and-flips.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Launch MAO Tool →</span>
+      </a>
+
+      <a href="/hard-money-loan-calculator" class="related-card">
+        <div>
+          <h4>Hard Money Loan Calculator</h4>
+          <p>Estimate interest-only monthly payments, points, draw schedules, and total cost of private debt for fix-and-flips.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate Hard Money →</span>
+      </a>
+
+      <a href="/rental-yield-calculator" class="related-card">
+        <div>
+          <h4>Rental Yield &amp; Cap Rate</h4>
+          <p>Compute gross yield, net yield, capitalization rates, and cash-on-cash returns across residential rental properties.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Analyze Rental Yield →</span>
+      </a>
+
+      <a href="/1031-exchange-tax-calculator" class="related-card">
+        <div>
+          <h4>1031 Exchange Tax Calculator</h4>
+          <p>Model capital gains tax deferral, depreciation recapture, and 45-day / 180-day statutory identification deadlines.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate 1031 Exchange →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes and should not be construed as individualized legal or financial advice.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT LOGIC & COMMISSION CALCULATION ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // State variables
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let currentView = 'agent'; // 'agent' or 'seller'
+  let pieChart = null;
+
+  // DOM Elements - Inputs
+  const inputSalePrice = document.getElementById('inputSalePrice');
+  const sliderSalePrice = document.getElementById('sliderSalePrice');
+
+  const inputCommissionRate = document.getElementById('inputCommissionRate');
+  const sliderCommissionRate = document.getElementById('sliderCommissionRate');
+  const totalCommissionDollarDisplay = document.getElementById('totalCommissionDollarDisplay');
+
+  const inputListingSidePct = document.getElementById('inputListingSidePct');
+  const listingSideEffectiveRate = document.getElementById('listingSideEffectiveRate');
+  const buyerSideEffectiveRate = document.getElementById('buyerSideEffectiveRate');
+
+  const agentSplitSection = document.getElementById('agentSplitSection');
+  const sellerSection = document.getElementById('sellerSection');
+
+  const inputAgentSplitPct = document.getElementById('inputAgentSplitPct');
+  const inputFranchiseFeePct = document.getElementById('inputFranchiseFeePct');
+  const inputTransactionFee = document.getElementById('inputTransactionFee');
+
+  const inputReferralFeePct = document.getElementById('inputReferralFeePct');
+  const inputTaxRatePct = document.getElementById('inputTaxRatePct');
+
+  const inputMortgagePayoff = document.getElementById('inputMortgagePayoff');
+  const inputClosingCosts = document.getElementById('inputClosingCosts');
+
+  // DOM Elements - Outputs
+  const resultBanner = document.getElementById('resultBanner');
+  const resultBannerBadge = document.getElementById('resultBannerBadge');
+  const resultBannerTitle = document.getElementById('resultBannerTitle');
+  const resultBannerVal = document.getElementById('resultBannerVal');
+  const resultBannerSubtext = document.getElementById('resultBannerSubtext');
+
+  const kpiTotalCommission = document.getElementById('kpiTotalCommission');
+  const kpiTotalPct = document.getElementById('kpiTotalPct');
+  const kpiSideCommission = document.getElementById('kpiSideCommission');
+  const kpiSidePct = document.getElementById('kpiSidePct');
+  const kpiBrokerCut = document.getElementById('kpiBrokerCut');
+  const kpiBrokerSplitDisplay = document.getElementById('kpiBrokerSplitDisplay');
+  const kpiEffectiveRetained = document.getElementById('kpiEffectiveRetained');
+
+  const wfSalePrice = document.getElementById('wfSalePrice');
+  const wfGci = document.getElementById('wfGci');
+  const wfBrokerSplit = document.getElementById('wfBrokerSplit');
+  const wfFranchise = document.getElementById('wfFranchise');
+  const wfReferral = document.getElementById('wfReferral');
+  const wfReferralRow = document.getElementById('wfReferralRow');
+  const wfDeskFee = document.getElementById('wfDeskFee');
+  const wfPreTaxPayout = document.getElementById('wfPreTaxPayout');
+  const wfTaxAmount = document.getElementById('wfTaxAmount');
+  const wfNetInPocket = document.getElementById('wfNetInPocket');
+
+  // Format Money Helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'INR' ? 'INR' : (activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'EUR' ? 'EUR' : (activeCurrency === 'AUD' ? 'AUD' : 'USD'))),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateCommission();
+    });
+  });
+
+  // Slider <-> Input Syncs
+  function syncInputSlider(input, slider) {
+    input.addEventListener('input', () => {
+      slider.value = input.value;
+      calculateCommission();
+    });
+    slider.addEventListener('input', () => {
+      input.value = slider.value;
+      calculateCommission();
+    });
+  }
+
+  syncInputSlider(inputSalePrice, sliderSalePrice);
+  syncInputSlider(inputCommissionRate, sliderCommissionRate);
+
+  [inputListingSidePct, inputAgentSplitPct, inputFranchiseFeePct, inputTransactionFee, inputReferralFeePct, inputTaxRatePct, inputMortgagePayoff, inputClosingCosts].forEach(el => {
+    if (el) el.addEventListener('input', calculateCommission);
+  });
+
+  // Quick Commission Rate Buttons
+  document.querySelectorAll('.rate-btn[data-rate]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.rate-btn[data-rate]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputCommissionRate.value = btn.getAttribute('data-rate');
+      sliderCommissionRate.value = btn.getAttribute('data-rate');
+      calculateCommission();
+    });
+  });
+
+  // Split Buttons
+  document.querySelectorAll('.split-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.split-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      inputAgentSplitPct.value = btn.getAttribute('data-split');
+      calculateCommission();
+    });
+  });
+
+  // Perspective View Switcher (Agent vs Seller)
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentView = btn.getAttribute('data-view');
+
+      if (currentView === 'agent') {
+        agentSplitSection.style.display = 'block';
+        sellerSection.style.display = 'none';
+        resultBannerBadge.textContent = '💼 Real Estate Agent Net Payout';
+        resultBannerTitle.textContent = 'Net Agent Take-Home Pay';
+      } else {
+        agentSplitSection.style.display = 'none';
+        sellerSection.style.display = 'block';
+        resultBannerBadge.textContent = '🏡 Home Seller Net Proceeds';
+        resultBannerTitle.textContent = 'Net Cash to Seller';
+      }
+      calculateCommission();
+    });
+  });
+
+  // Advanced Toggle
+  const btnToggleAdvanced = document.getElementById('btnToggleAdvanced');
+  const advancedBox = document.getElementById('advancedBox');
+  const advancedArrow = document.getElementById('advancedArrow');
+  if (btnToggleAdvanced && advancedBox) {
+    btnToggleAdvanced.addEventListener('click', () => {
+      advancedBox.classList.toggle('open');
+      advancedArrow.textContent = advancedBox.classList.contains('open') ? '▲' : '▼';
+    });
+  }
+
+  // Preset Handlers
+  document.querySelectorAll('.preset-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const preset = btn.getAttribute('data-preset');
+
+      if (preset === 'standard-split') {
+        inputCommissionRate.value = 5.0;
+        sliderCommissionRate.value = 5.0;
+        inputAgentSplitPct.value = 80;
+        inputFranchiseFeePct.value = 0.0;
+        inputTransactionFee.value = 250;
+        inputReferralFeePct.value = 0;
+      } else if (preset === 'traditional-split') {
+        inputCommissionRate.value = 6.0;
+        sliderCommissionRate.value = 6.0;
+        inputAgentSplitPct.value = 70;
+        inputFranchiseFeePct.value = 6.0;
+        inputTransactionFee.value = 350;
+        inputReferralFeePct.value = 0;
+      } else if (preset === 'high-producer') {
+        inputCommissionRate.value = 5.0;
+        sliderCommissionRate.value = 5.0;
+        inputAgentSplitPct.value = 90;
+        inputFranchiseFeePct.value = 0.0;
+        inputTransactionFee.value = 150;
+        inputReferralFeePct.value = 0;
+      } else if (preset === 'flat-fee') {
+        inputCommissionRate.value = 5.0;
+        sliderCommissionRate.value = 5.0;
+        inputAgentSplitPct.value = 100;
+        inputFranchiseFeePct.value = 0.0;
+        inputTransactionFee.value = 500;
+        inputReferralFeePct.value = 0;
+      }
+
+      calculateCommission();
+    });
+  });
+
+  // Main Calculation Engine
+  function calculateCommission() {
+    const salePrice = Math.max(0, parseFloat(inputSalePrice.value) || 0);
+    const commRate = Math.max(0, parseFloat(inputCommissionRate.value) || 0) / 100;
+    const listingSidePct = Math.max(0, Math.min(100, parseFloat(inputListingSidePct.value) || 50)) / 100;
+    const buyerSidePct = 1 - listingSidePct;
+
+    const agentSplitRate = Math.max(0, Math.min(100, parseFloat(inputAgentSplitPct.value) || 80)) / 100;
+    const franchiseFeeRate = Math.max(0, Math.min(50, parseFloat(inputFranchiseFeePct.value) || 0)) / 100;
+    const transactionFee = Math.max(0, parseFloat(inputTransactionFee.value) || 0);
+    const referralFeeRate = Math.max(0, Math.min(100, parseFloat(inputReferralFeePct.value) || 0)) / 100;
+    const taxRate = Math.max(0, Math.min(100, parseFloat(inputTaxRatePct.value) || 25)) / 100;
+
+    const mortgagePayoff = Math.max(0, parseFloat(inputMortgagePayoff.value) || 0);
+    const closingCosts = Math.max(0, parseFloat(inputClosingCosts.value) || 0);
+
+    // 1. Total Commission
+    const totalCommission = salePrice * commRate;
+    totalCommissionDollarDisplay.textContent = formatMoney(totalCommission);
+
+    // Side Rates
+    const listingEffective = commRate * listingSidePct * 100;
+    const buyerEffective = commRate * buyerSidePct * 100;
+    listingSideEffectiveRate.textContent = `${listingEffective.toFixed(2)}%`;
+    buyerSideEffectiveRate.textContent = `${buyerEffective.toFixed(2)}%`;
+
+    // Agent's Gross Commission Income (assuming agent is listing side)
+    const gci = totalCommission * listingSidePct;
+    const buyerSideGci = totalCommission * buyerSidePct;
+
+    // Deductions from GCI
+    const brokerShareRate = 1 - agentSplitRate;
+    const brokerSplitAmount = gci * brokerShareRate;
+    const franchiseFeeAmount = gci * franchiseFeeRate;
+    const referralFeeAmount = gci * referralFeeRate;
+
+    // Pre-Tax Agent Payout
+    const agentPreTax = Math.max(0, gci - brokerSplitAmount - franchiseFeeAmount - referralFeeAmount - transactionFee);
+    const taxReserve = agentPreTax * taxRate;
+    const agentNetInPocket = Math.max(0, agentPreTax - taxReserve);
+
+    // Home Seller Math
+    const sellerNetProceeds = Math.max(0, salePrice - totalCommission - mortgagePayoff - closingCosts);
+
+    // Update KPI Displays
+    kpiTotalCommission.textContent = formatMoney(totalCommission);
+    kpiTotalPct.textContent = `${(commRate * 100).toFixed(1)}% of ${formatMoney(salePrice)}`;
+    kpiSideCommission.textContent = formatMoney(gci);
+    kpiSidePct.textContent = `${(listingSidePct * 100).toFixed(0)}% Side Share (${listingEffective.toFixed(2)}%)`;
+    kpiBrokerCut.textContent = formatMoney(brokerSplitAmount + franchiseFeeAmount + transactionFee);
+    kpiBrokerSplitDisplay.textContent = `${((1 - agentSplitRate) * 100).toFixed(0)}% Broker + Fees`;
+
+    const retainedPct = gci > 0 ? (agentPreTax / gci) * 100 : 0;
+    kpiEffectiveRetained.textContent = `${retainedPct.toFixed(1)}%`;
+
+    // Waterfall DOM Elements
+    wfSalePrice.textContent = formatMoney(salePrice);
+    wfGci.textContent = formatMoney(gci);
+    wfBrokerSplit.textContent = `-${formatMoney(brokerSplitAmount)}`;
+    wfFranchise.textContent = `-${formatMoney(franchiseFeeAmount)}`;
+    wfDeskFee.textContent = `-${formatMoney(transactionFee)}`;
+    wfPreTaxPayout.textContent = formatMoney(agentPreTax);
+    wfTaxAmount.textContent = `-${formatMoney(taxReserve)}`;
+    wfNetInPocket.textContent = formatMoney(agentNetInPocket);
+
+    if (referralFeeAmount > 0) {
+      wfReferralRow.style.display = 'flex';
+      wfReferral.textContent = `-${formatMoney(referralFeeAmount)}`;
+    } else {
+      wfReferralRow.style.display = 'none';
+    }
+
+    // Hero Result Banner Display
+    if (currentView === 'agent') {
+      resultBannerVal.textContent = formatMoney(agentPreTax);
+      resultBannerSubtext.textContent = `Calculated from ${formatMoney(gci)} GCI on a ${(agentSplitRate * 100).toFixed(0)}/${((1 - agentSplitRate) * 100).toFixed(0)} split. Estimated net after-tax cash: ${formatMoney(agentNetInPocket)}.`;
+    } else {
+      resultBannerVal.textContent = formatMoney(sellerNetProceeds);
+      resultBannerSubtext.textContent = `From ${formatMoney(salePrice)} sale price after deducting ${formatMoney(totalCommission)} commission, ${formatMoney(mortgagePayoff)} mortgage payoff, and ${formatMoney(closingCosts)} closing fees.`;
+    }
+
+    // Render Doughnut Chart
+    renderChart(agentPreTax, brokerSplitAmount + franchiseFeeAmount + transactionFee + referralFeeAmount, buyerSideGci, salePrice, totalCommission, sellerNetProceeds);
+  }
+
+  // Render Chart.js
+  function renderChart(agentCut, brokerCut, buyerCut, salePrice, totalComm, sellerNet) {
+    const ctx = document.getElementById('commissionPieChart').getContext('2d');
+    if (pieChart) {
+      pieChart.destroy();
+    }
+
+    if (currentView === 'agent') {
+      pieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Agent Net Payout', 'Broker Cut & Desk Fees', "Buyer Agent's Side"],
+          datasets: [{
+            data: [Math.round(agentCut), Math.round(brokerCut), Math.round(buyerCut)],
+            backgroundColor: ['#10B981', '#F43F5E', '#4F46E5'],
+            borderWidth: 2,
+            borderColor: '#FFFFFF'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 12,
+                font: { size: 11, weight: '600', family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `${context.label}: ${formatMoney(context.raw)}`;
+                }
+              }
+            }
+          },
+          cutout: '65%'
+        }
+      });
+    } else {
+      // Seller View
+      const remainingProceeds = Math.max(0, salePrice - totalComm);
+      pieChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Seller Net Proceeds', 'Total Real Estate Commission'],
+          datasets: [{
+            data: [Math.round(sellerNet), Math.round(totalComm)],
+            backgroundColor: ['#10B981', '#F43F5E'],
+            borderWidth: 2,
+            borderColor: '#FFFFFF'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 12,
+                font: { size: 11, weight: '600' }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `${context.label}: ${formatMoney(context.raw)}`;
+                }
+              }
+            }
+          },
+          cutout: '65%'
+        }
+      });
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Action Buttons
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+  const btnPrintReport = document.getElementById('btnPrintReport');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  // CSV Exporter
+  btnDownloadCsv.addEventListener('click', () => {
+    let csv = `RealRefin Real Estate Commission & Broker Split Schedule\n`;
+    csv += `Property Sale Price: ${inputSalePrice.value}, Commission Rate: ${inputCommissionRate.value}%\n`;
+    csv += `Total Deal Commission: ${totalCommissionDollarDisplay.textContent}\n`;
+    csv += `Agent Split: ${inputAgentSplitPct.value}%, Franchise Fee: ${inputFranchiseFeePct.value}%, Desk Fee: ${inputTransactionFee.value}\n\n`;
+    csv += `Metric,Amount\n`;
+    csv += `"Gross Sale Price","${wfSalePrice.textContent}"\n`;
+    csv += `"Gross Commission Income (GCI)","${wfGci.textContent}"\n`;
+    csv += `"Brokerage Split","${wfBrokerSplit.textContent}"\n`;
+    csv += `"Franchise Fee","${wfFranchise.textContent}"\n`;
+    csv += `"Desk Fee","${wfDeskFee.textContent}"\n`;
+    csv += `"Agent Pre-Tax Payout","${wfPreTaxPayout.textContent}"\n`;
+    csv += `"Estimated Tax Reserve","${wfTaxAmount.textContent}"\n`;
+    csv += `"Net In-Pocket Payout","${wfNetInPocket.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Commission-Split-Report-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // Print PDF Handler
+  btnPrintReport.addEventListener('click', () => {
+    window.print();
+  });
+
+  // Share URL Handler
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      price: inputSalePrice.value,
+      rate: inputCommissionRate.value,
+      side: inputListingSidePct.value,
+      split: inputAgentSplitPct.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy this link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params
+  function loadQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('price')) inputSalePrice.value = urlParams.get('price');
+    if (urlParams.has('rate')) inputCommissionRate.value = urlParams.get('rate');
+    if (urlParams.has('side')) inputListingSidePct.value = urlParams.get('side');
+    if (urlParams.has('split')) inputAgentSplitPct.value = urlParams.get('split');
+    if (urlParams.has('curr')) {
+      const c = urlParams.get('curr');
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  loadQueryParams();
+  // Initial Run
+  calculateCommission();
+});
+</script>
+
+</body>
+</html>
