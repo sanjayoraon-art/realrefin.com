@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Capital Gains Tax Calculator | Home Sale Tax Tool (2026)</title>
+  <meta name="description" content="Free real estate capital gains tax calculator. Calculate capital gains tax on home sales, Section 121 primary residence exclusions ($250k/$500k), 25% depreciation recapture, NIIT (3.8%), and state tax liability.">
+  <meta name="keywords" content="real estate capital gains tax calculator, capital gains tax on real estate calculator, capital gains tax calculator real estate, capital gains tax real estate calculator, capital gains tax calculator on real estate, capital gains tax calculator for real estate, home sale capital gains tax calculator, section 121 exclusion calculator, real estate tax calculator">
+  <link rel="canonical" href="https://realrefin.com/real-estate-capital-gains-tax-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Real Estate Capital Gains Tax Calculator (2026) | RealRefin">
+  <meta property="og:description" content="Calculate federal and state capital gains tax on selling a home or investment property. Models IRS Section 121 exclusion, depreciation recapture, and net walk-away cash.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/real-estate-capital-gains-tax-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/real-estate-capital-gains-tax-calculator#app",
+        "name": "RealRefin Real Estate Capital Gains Tax Calculator",
+        "url": "https://realrefin.com/real-estate-capital-gains-tax-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Comprehensive federal and state real estate capital gains tax calculator. Computes adjusted cost basis, capital improvements, IRS Section 121 exclusions, 25% depreciation recapture, 3.8% NIIT, and state tax liabilities across all 50 US states and international regions.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Tax Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Real Estate Capital Gains Tax Calculator",
+            "item": "https://realrefin.com/real-estate-capital-gains-tax-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is capital gains tax calculated on real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capital gains tax on real estate is calculated by subtracting your adjusted cost basis (purchase price + buying fees + qualified capital improvements - depreciation) from your net sales proceeds (selling price - selling commissions and closing costs). The resulting net realized gain is then taxed at federal capital gains rates (0%, 15%, or 20%), plus applicable state taxes and the 3.8% Net Investment Income Tax (NIIT)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the Section 121 primary residence capital gains tax exclusion?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under IRS Section 121, homeowners who sell their primary residence can exclude up to $250,000 of capital gain if filing single, or up to $500,000 if married filing jointly. To qualify, you must have owned and occupied the property as your principal residence for at least 2 out of the 5 years immediately preceding the date of sale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is depreciation recapture tax when selling a rental property?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When you sell an investment or rental property, the IRS taxes the cumulative depreciation deductions you claimed (or were eligible to claim) during ownership. Under Section 1250, this unrecaptured depreciation is taxed at a flat maximum federal rate of 25%, in addition to regular long-term capital gains tax on gains exceeding your original purchase price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What capital improvements increase your cost basis and lower your tax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Capital improvements that prolong the life of the property, adapt it to new uses, or add substantial value can be added directly to your cost basis, dollar-for-dollar reducing your taxable gain. Qualifying examples include room additions, new roofs, kitchen and bathroom remodels, HVAC replacements, deck installations, and major landscaping. Routine maintenance and basic repairs (like painting or fixing a leak) do not qualify."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 3.8% Net Investment Income Tax (NIIT) on real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Net Investment Income Tax (NIIT) is a 3.8% Medicare surtax that applies to net investment income—including taxable real estate capital gains—for individuals whose Modified Adjusted Gross Income (MAGI) exceeds statutory thresholds: $200,000 for single filers, or $250,000 for married couples filing jointly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which states have zero state capital gains tax on real estate sales?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "States with zero state-level income tax on real estate capital gains include Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, and Wyoming. States like California (up to 13.3%), New York (up to 10.9%), and New Jersey (up to 10.75%) impose substantial state capital gains taxes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-indigo-border: #C7D2FE;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #F43F5E;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .currency-selector {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 2px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .curr-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn:hover {
+      color: var(--primary-navy);
+      background: #F1F5F9;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-emerald);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HERO
+    ----------------------------------------------------------- */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .hero-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       PROPERTY TYPE & PRESET BUTTONS
+    ----------------------------------------------------------- */
+    .presets-container {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .preset-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .preset-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 0.4rem 0.95rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .preset-pill:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: var(--accent-emerald-light);
+      transform: translateY(-1px);
+    }
+
+    .preset-pill.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       MAIN INTERACTIVE GRID
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARDS */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* FORM ELEMENTS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+    }
+
+    .form-help-tip {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: help;
+      text-decoration: underline dotted;
+    }
+
+    .input-field-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix,
+    .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix {
+      left: 0.85rem;
+    }
+
+    .input-suffix {
+      right: 0.85rem;
+    }
+
+    .form-input,
+    .form-select {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0 0.85rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+
+    .form-input.has-prefix {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    .form-input:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .slider-control {
+      margin-top: 0.45rem;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #E2E8F0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider-control::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease;
+    }
+
+    .slider-control::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Radio Segment Control */
+    .segment-control {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.35rem;
+      background: #F1F5F9;
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.25rem;
+    }
+
+    .segment-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 7px 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .segment-btn.active {
+      background: #FFFFFF;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS SIDE
+    ----------------------------------------------------------- */
+    .hero-tax-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .hero-tax-banner.tax-free {
+      background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+    }
+
+    .banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+
+    .banner-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      opacity: 0.95;
+      margin-bottom: 0.25rem;
+    }
+
+    .banner-val {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #F87171;
+    }
+
+    .hero-tax-banner.tax-free .banner-val {
+      color: #6EE7B7;
+    }
+
+    .banner-subtext {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-top: 0.35rem;
+    }
+
+    /* KPI METRICS GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .kpi-val {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* WATERFALL SCOREBOARD */
+    .waterfall-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #F1F5F9;
+      font-size: 0.875rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .wf-label {
+      font-weight: 600;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .wf-val {
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .wf-tax {
+      color: var(--accent-coral);
+    }
+
+    .wf-exempt {
+      color: var(--accent-emerald-dark);
+      background: var(--accent-emerald-light);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .wf-highlight {
+      background: #EFF6FF;
+      padding: 0.75rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin: 0.35rem 0;
+      font-weight: 800;
+      color: #1E40AF;
+    }
+
+    /* CHART WRAP */
+    .chart-container-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .chart-canvas-box {
+      position: relative;
+      width: 100%;
+      height: 250px;
+    }
+
+    /* ACTION BUTTONS */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .btn-action {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDES
+    ----------------------------------------------------------- */
+    .seo-guide-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .seo-guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin: 2rem 0 0.85rem;
+    }
+
+    .seo-guide-section p {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section ul, 
+    .seo-guide-section ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      line-height: 1.75;
+      font-size: 1.025rem;
+    }
+
+    .seo-guide-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout {
+      background: #F8FAFC;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.5rem 0;
+    }
+
+    .formula-callout h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comparison-matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.925rem;
+    }
+
+    .comparison-matrix-table th,
+    .comparison-matrix-table td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .comparison-matrix-table th {
+      background: #F8FAFC;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION SECTION
+    ----------------------------------------------------------- */
+    .faq-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.15rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.975rem;
+      color: var(--secondary-navy);
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RELATED SUITE CARDS
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+
+  <!-- Chart.js CDN for Visual Proceeds Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    
+    <!-- Multi-Currency Selector -->
+    <div class="currency-selector" aria-label="Select Currency">
+      <button class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+      <button class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+      <button class="curr-btn" data-currency="EUR" data-symbol="€">€ EUR</button>
+      <button class="curr-btn" data-currency="AUD" data-symbol="A$">A$ AUD</button>
+      <button class="curr-btn" data-currency="INR" data-symbol="₹">₹ INR</button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor" class="active">Investor Suite</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-investor">Investor &amp; Tax Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Real Estate Capital Gains Tax Calculator</span>
+  </div>
+
+  <!-- HERO HEADER -->
+  <header class="hero-header">
+    <div class="badge-pill">🏛️ 2026 Tax Code • Section 121 &amp; Recapture Modeler</div>
+    <h1>Real Estate Capital Gains Tax Calculator</h1>
+    <p>
+      Calculate capital gains tax on home sales and investment properties. Model IRS Section 121 primary residence exclusions ($250,000 / $500,000), 25% depreciation recapture, 3.8% NIIT surtax, and state tax liability to find your exact net walk-away cash.
+    </p>
+  </header>
+
+  <!-- PRESET SCENARIO BUTTONS -->
+  <div class="presets-container" aria-label="Quick Presets">
+    <span class="preset-label">Quick Presets:</span>
+    <button class="preset-pill active" data-preset="primary-joint">
+      <span>🏡</span> Primary Home ($500k Exclusion - Married)
+    </button>
+    <button class="preset-pill" data-preset="primary-single">
+      <span>👤</span> Primary Home ($250k Exclusion - Single)
+    </button>
+    <button class="preset-pill" data-preset="rental-property">
+      <span>🏢</span> Rental Property (Depreciation Recapture)
+    </button>
+    <button class="preset-pill" data-preset="high-tax-state">
+      <span>🌴</span> California / High-Earner Sale
+    </button>
+  </div>
+
+  <!-- MAIN CALCULATOR WORKSPACE -->
+  <main class="calc-layout">
+    
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <section class="calc-card" aria-label="Property and Tax Inputs">
+      <div class="card-title-wrap">
+        <h2><span>⚙️</span> Property &amp; Tax Parameters</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-emerald);">Auto-Calculating</span>
+      </div>
+
+      <!-- PROPERTY TYPE SEGMENT -->
+      <label class="form-label">Property Classification:</label>
+      <div class="segment-control">
+        <button type="button" class="segment-btn active" data-type="primary">🏡 Primary Home</button>
+        <button type="button" class="segment-btn" data-type="investment">🏢 Rental / Investment</button>
+        <button type="button" class="segment-btn" data-type="second">🏖️ Second / Vacation</button>
+      </div>
+
+      <!-- FILING STATUS -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="selectFilingStatus">Tax Filing Status</label>
+          <span class="form-help-tip" title="IRS filing status determines your Section 121 exclusion limit ($250k single vs $500k married) and tax brackets">IRS Status</span>
+        </div>
+        <select id="selectFilingStatus" class="form-select">
+          <option value="mfj" selected>Married Filing Jointly ($500,000 Exclusion)</option>
+          <option value="single">Single / Head of Household ($250,000 Exclusion)</option>
+          <option value="mfs">Married Filing Separately ($250,000 Exclusion)</option>
+        </select>
+      </div>
+
+      <!-- 1. PURCHASE & BASIS DETAILS -->
+      <div class="section-divider-label">1. Original Purchase &amp; Cost Basis</div>
+
+      <!-- Original Purchase Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputPurchasePrice">Original Purchase Price</label>
+          <span class="form-help-tip" title="Amount originally paid when acquiring the property">Acquisition Price</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputPurchasePrice" class="form-input has-prefix" value="380000" min="10000" max="25000000" step="5000">
+        </div>
+        <input type="range" id="sliderPurchasePrice" class="slider-control" value="380000" min="50000" max="1500000" step="5000">
+      </div>
+
+      <!-- Capital Improvements -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputImprovements">Qualified Capital Improvements</label>
+          <span class="form-help-tip" title="Substantial upgrades (additions, new roof, remodel, HVAC) that increase basis dollar-for-dollar">Upgrades ($)</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputImprovements" class="form-input has-prefix" value="45000" min="0" max="1000000" step="2500">
+        </div>
+      </div>
+
+      <!-- Cumulative Depreciation (Rental only) -->
+      <div class="form-group" id="depreciationGroup" style="display: none;">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputDepreciation">Cumulative Depreciation Claimed</label>
+          <span class="form-help-tip" title="Total tax depreciation claimed during rental holding period (taxed at 25% recapture)">Depreciation ($)</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputDepreciation" class="form-input has-prefix" value="35000" min="0" max="2000000" step="1000">
+        </div>
+      </div>
+
+      <!-- Adjusted Basis Display Box -->
+      <div style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--secondary-navy);">Adjusted Cost Basis:</span>
+        <span id="adjustedBasisDisplay" style="font-size: 1.15rem; font-weight: 800; color: var(--primary-navy);">$425,000</span>
+      </div>
+
+      <!-- 2. SALE & SELLING COSTS -->
+      <div class="section-divider-label">2. Sale Price &amp; Disposition Expenses</div>
+
+      <!-- Selling Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputSalePrice">Contract Selling Price</label>
+          <span class="form-help-tip" title="Final gross sales price negotiated with the buyer">Sale Price</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputSalePrice" class="form-input has-prefix" value="750000" min="10000" max="25000000" step="5000">
+        </div>
+        <input type="range" id="sliderSalePrice" class="slider-control" value="750000" min="50000" max="2000000" step="5000">
+      </div>
+
+      <!-- Selling Costs / Real Estate Commissions -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputSellingCosts">Selling Costs &amp; Agent Commissions</label>
+          <span class="form-help-tip" title="Brokerage commissions, title/escrow fees, transfer taxes (typically 5% to 7%)">Closing Costs ($)</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputSellingCosts" class="form-input has-prefix" value="45000" min="0" max="500000" step="1000">
+        </div>
+      </div>
+
+      <!-- 3. TAX RATES & STATE -->
+      <div class="section-divider-label">3. Tax Rates &amp; State Selection</div>
+
+      <!-- State Dropdown -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="selectState">State of Property</label>
+          <span class="form-help-tip" title="State where property is located determines state capital gains tax liability">State Tax</span>
+        </div>
+        <select id="selectState" class="form-select">
+          <option value="0">Texas / Florida / Washington / TN / NV (0% State Tax)</option>
+          <option value="9.3" selected>California (9.3% Standard Top Tier)</option>
+          <option value="13.3">California (13.3% Millionaire Surcharge)</option>
+          <option value="6.85">New York (6.85% State Standard)</option>
+          <option value="10.9">New York City (State + Local ~10.9%)</option>
+          <option value="8.97">New Jersey (8.97%)</option>
+          <option value="5.0">Average US State (5.0%)</option>
+          <option value="custom">Custom State Tax Rate...</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="customStateGroup" style="display: none;">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputCustomStateRate">Custom State Tax Rate (%)</label>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputCustomStateRate" class="form-input has-suffix" value="5.0" min="0" max="20" step="0.1">
+          <span class="input-suffix">%</span>
+        </div>
+      </div>
+
+      <!-- Annual Household Taxable Income (for Federal Bracket & NIIT) -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputAnnualIncome">Annual Household Taxable Income</label>
+          <span class="form-help-tip" title="Used to determine federal capital gains bracket (0%, 15%, or 20%) and 3.8% NIIT threshold">Household Income</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputAnnualIncome" class="form-input has-prefix" value="160000" min="0" max="5000000" step="5000">
+        </div>
+      </div>
+
+      <!-- Optional Mortgage Payoff for Net Walk-Away -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputMortgagePayoff">Remaining Mortgage Payoff (Optional)</label>
+          <span class="form-help-tip" title="Remaining loan balance to calculate exact net walk-away cash">Mortgage Payoff ($)</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputMortgagePayoff" class="form-input has-prefix" value="210000" min="0" max="10000000" step="5000">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: RESULTS BANNER, WATERFALL & CHARTS -->
+    <section aria-label="Capital Gains Calculations and Net Proceeds">
+
+      <!-- HERO RESULT TAX BANNER -->
+      <div id="taxBanner" class="hero-tax-banner tax-free">
+        <div id="bannerBadge" class="banner-badge">🛡️ 100% Tax-Exempt Sale</div>
+        <div id="bannerTitle" class="banner-title">Estimated Total Capital Gains Tax Due</div>
+        <div id="bannerVal" class="banner-val">$0</div>
+        <div id="bannerSubtext" class="banner-subtext">
+          Congratulations! Your entire $280,000 capital gain is fully sheltered under the IRS Section 121 Primary Residence Exclusion ($500,000 allowance).
+        </div>
+      </div>
+
+      <!-- 4 TOP PERFORMANCE METRICS -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-label"><span>📈</span> Total Realized Capital Gain</div>
+          <div id="kpiRealizedGain" class="kpi-val">$280,000</div>
+          <div id="kpiGrossPct" class="kpi-sub">Net Sales Proceeds − Basis</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🛡️</span> Section 121 Exclusion</div>
+          <div id="kpiSec121Exclusion" class="kpi-val" style="color: var(--accent-emerald);">-$280,000</div>
+          <div class="kpi-sub">Tax-free home sale shield</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>⚖️</span> Taxable Capital Gain</div>
+          <div id="kpiTaxableGain" class="kpi-val">$0</div>
+          <div class="kpi-sub">Subject to federal &amp; state tax</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>💵</span> Net Walk-Away Cash</div>
+          <div id="kpiWalkAwayCash" class="kpi-val" style="color: var(--accent-emerald);">$495,000</div>
+          <div class="kpi-sub">After tax &amp; mortgage payoff</div>
+        </div>
+      </div>
+
+      <!-- WATERFALL DEDUCTIONS BREAKDOWN -->
+      <div class="waterfall-card">
+        <div class="waterfall-title">
+          <span>Capital Gains Tax &amp; Proceeds Waterfall</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: none; font-weight: 500;">IRS &amp; State Compliance</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Gross Property Sale Price:</span>
+          <span class="wf-val" id="wfSalePrice">$750,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Selling Costs &amp; Brokerage Commissions:</span>
+          <span class="wf-val wf-tax" id="wfSellingCosts">-$45,000</span>
+        </div>
+
+        <div class="waterfall-row" style="font-weight: 700;">
+          <span class="wf-label">Net Sales Proceeds:</span>
+          <span class="wf-val" id="wfNetProceeds">$705,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Adjusted Cost Basis:</span>
+          <span class="wf-val" id="wfAdjustedBasis">-$425,000</span>
+        </div>
+
+        <div class="waterfall-row" style="font-weight: 800; border-top: 1px dashed var(--border-color); padding-top: 0.5rem;">
+          <span class="wf-label" style="color: var(--primary-navy);">Total Realized Gain:</span>
+          <span class="wf-val" id="wfRealizedGain" style="font-size: 1.05rem;">$280,000</span>
+        </div>
+
+        <div class="waterfall-row" id="wfSec121Row">
+          <span class="wf-label">Less: IRS Section 121 Primary Exclusion:</span>
+          <span class="wf-val wf-exempt" id="wfSec121Amount">-$280,000</span>
+        </div>
+
+        <div class="waterfall-row" id="wfRecaptureRow" style="display: none;">
+          <span class="wf-label">Depreciation Recapture Tax (25% Fed):</span>
+          <span class="wf-val wf-tax" id="wfRecaptureTax">$0</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Federal Capital Gains Tax (<span id="fedRateLabel">15%</span>):</span>
+          <span class="wf-val wf-tax" id="wfFedTax">$0</span>
+        </div>
+
+        <div class="waterfall-row" id="wfNiitRow" style="display: none;">
+          <span class="wf-label">Net Investment Income Surtax (NIIT 3.8%):</span>
+          <span class="wf-val wf-tax" id="wfNiitTax">$0</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">State Capital Gains Tax (<span id="stateRateLabel">9.3%</span>):</span>
+          <span class="wf-val wf-tax" id="wfStateTax">$0</span>
+        </div>
+
+        <div class="waterfall-row wf-highlight">
+          <span class="wf-label" style="color: #1E40AF; font-size: 0.95rem;">Total Tax Obligation:</span>
+          <span class="wf-val" id="wfTotalTax" style="font-size: 1.15rem; color: #DC2626;">$0</span>
+        </div>
+
+        <div class="waterfall-row" style="font-weight: 800; border-top: 2px solid var(--border-color); padding-top: 0.75rem;">
+          <span class="wf-label" style="color: var(--accent-emerald-dark); font-size: 1rem;">Net Walk-Away In-Pocket Cash:</span>
+          <span class="wf-val" id="wfNetInPocket" style="font-size: 1.25rem; color: var(--accent-emerald);">$495,000</span>
+        </div>
+      </div>
+
+      <!-- VISUAL BREAKDOWN PIE / DOUGHNUT CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-header">
+          <div class="chart-title">Net Proceeds &amp; Tax Distribution</div>
+          <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">Visual Allocation</div>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="proceedsPieChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" id="btnDownloadCsv" class="btn-action">
+          <span>📥</span> Download Tax Sheet (CSV)
+        </button>
+        <button type="button" id="btnPrintReport" class="btn-action">
+          <span>🖨️</span> Print PDF Report
+        </button>
+        <button type="button" id="btnShareDeal" class="btn-action">
+          <span>🔗</span> Share Calculation
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO CONTENT & FINANCIAL PLANNING GUIDE -->
+  <article class="seo-guide-section">
+    <h2>Real Estate Capital Gains Tax: Complete 2026 Home Sale Blueprint</h2>
+    <p>
+      Selling real estate can generate substantial financial wealth, but it also triggers complex federal and state tax liabilities. Whether you are selling your primary family home, a rental property, or a vacation retreat, understanding how the IRS calculates **cost basis**, **Section 121 exclusions**, and **depreciation recapture** is critical to preserving your sale proceeds.
+    </p>
+
+    <h3>1. The Mathematical Foundation: How Capital Gains Tax Is Calculated</h3>
+    <p>
+      Your tax liability is determined by your **Net Realized Capital Gain**, not your gross selling price:
+    </p>
+
+    <div class="formula-callout">
+      <h4>Net Realized Capital Gain Formula</h4>
+      $$\text{Net Realized Gain} = \text{Net Sales Proceeds} - \text{Adjusted Cost Basis}$$
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+        Where:
+        <br>&bull; $\text{Net Sales Proceeds} = \text{Gross Sale Price} - \text{Realtor Commissions} - \text{Title/Escrow Fees} - \text{Transfer Taxes}$
+        <br>&bull; $\text{Adjusted Cost Basis} = \text{Original Purchase Price} + \text{Purchase Closing Fees} + \text{Capital Improvements} - \text{Depreciation}$
+      </p>
+    </div>
+
+    <h3>2. The Section 121 Primary Residence Tax Shield ($250k / $500k)</h3>
+    <p>
+      The single most generous tax break in the entire US Internal Revenue Code is **IRC Section 121**. Under this rule:
+    </p>
+    <ul>
+      <li><strong>Single Filers:</strong> Can exclude up to <strong>$250,000</strong> of profit completely tax-free.</li>
+      <li><strong>Married Filing Jointly:</strong> Can exclude up to <strong>$500,000</strong> of profit completely tax-free.</li>
+    </ul>
+    <p>
+      <strong>The 2-Out-of-5-Year Rule:</strong> To qualify, you must have owned and used the home as your principal residence for at least 24 months (2 full years) during the 5-year period ending on the date of the sale.
+    </p>
+
+    <h3>3. Federal Capital Gains Tax Brackets (2026)</h3>
+    <p>
+      If your net gain exceeds your Section 121 exclusion (or if you are selling a rental/second home), the remaining taxable gain is taxed according to your long-term capital gains bracket:
+    </p>
+    <table class="comparison-matrix-table">
+      <thead>
+        <tr>
+          <th>Federal Tax Rate</th>
+          <th>Single Taxable Income</th>
+          <th>Married Filing Jointly Income</th>
+          <th>Head of Household</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>0% Tax-Free</strong></td>
+          <td>Up to $47,025</td>
+          <td>Up to $94,050</td>
+          <td>Up to $63,000</td>
+        </tr>
+        <tr>
+          <td><strong>15% Standard Rate</strong></td>
+          <td>$47,026 – $518,900</td>
+          <td>$94,051 – $583,750</td>
+          <td>$63,001 – $551,350</td>
+        </tr>
+        <tr>
+          <td><strong>20% Top Bracket</strong></td>
+          <td>Over $518,900</td>
+          <td>Over $583,750</td>
+          <td>Over $551,350</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4. The 25% Depreciation Recapture Trap on Investment Properties</h3>
+    <p>
+      If you sell a rental or commercial property, you cannot claim the Section 121 exclusion. Furthermore, the IRS requires you to "recapture" all depreciation deductions taken during the ownership period under **IRC Section 1250**.
+    </p>
+    <p>
+      This unrecaptured depreciation is taxed at a special flat federal maximum rate of **25%**, regardless of whether your standard capital gains bracket is 15%. To legally defer both capital gains tax and depreciation recapture, investors frequently utilize a <a href="/1031-exchange-tax-calculator" style="color: var(--accent-emerald-dark); font-weight: 700;">1031 Tax-Deferred Exchange</a>.
+    </p>
+
+    <h3>5. Capital Improvements vs. Routine Repairs</h3>
+    <p>
+      One of the most effective ways to lower your real estate capital gains tax is by meticulously documenting **capital improvements**. Every dollar spent on qualifying improvements increases your adjusted cost basis, dollar-for-dollar eliminating taxable gain:
+    </p>
+    <ul>
+      <li><strong>Qualifying Capital Improvements (Increases Basis):</strong> Adding a bedroom or bathroom, replacing a roof, complete HVAC installation, new kitchen cabinetry, new driveway paving, installing a swimming pool.</li>
+      <li><strong>Non-Qualifying Routine Repairs (Cannot Increase Basis):</strong> Interior painting, fixing a broken window latch, cleaning gutters, replacing a faucet washer.</li>
+    </ul>
+  </article>
+
+  <!-- PEOPLE ALSO ASK / FAQ SECTION -->
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions: Real Estate Capital Gains Tax</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How is capital gains tax calculated on real estate?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Capital gains tax is calculated by subtracting your adjusted cost basis (purchase price + buying expenses + capital improvements - depreciation) from your net sales proceeds (selling price - sales commissions and transfer fees). The remaining profit is taxed at federal capital gains rates (0%, 15%, or 20%), plus state taxes and the 3.8% NIIT surtax if your income exceeds federal thresholds.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does the Section 121 exclusion work for married vs. single homeowners?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Under IRS Section 121, single filers can exclude up to $250,000 of profit, and married couples filing jointly can exclude up to $500,000 of profit completely tax-free. Both spouses must meet the 2-year residence requirement to claim the full $500,000 exemption, though only one spouse needs to meet the ownership test.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is depreciation recapture on a rental property?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Depreciation recapture is the IRS mechanism to tax the cumulative depreciation write-offs you claimed while renting out the property. When the property is sold, the total depreciation taken is taxed at a maximum federal rate of 25%. Any profit above the original cost basis is then taxed at standard capital gains rates (15% or 20%).
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the 3.8% Net Investment Income Tax (NIIT)?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        The Net Investment Income Tax is a 3.8% surtax created under the Affordable Care Act that applies to net investment income (including taxable real estate capital gains) for single filers earning over $200,000, and married couples earning over $250,000 in Modified Adjusted Gross Income.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Which states have zero state capital gains tax on home sales?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Texas, Florida, Alaska, Nevada, South Dakota, Tennessee, and Wyoming have zero state income or capital gains taxes. Selling property located in these states incurs zero state-level capital gains tax liability, saving sellers thousands compared to states like California (up to 13.3%) or New York (up to 10.9%).
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I avoid capital gains tax by rolling profits into another home?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        For primary residences, the old "rollover rule" was replaced in 1997 by the Section 121 exclusion ($250k/$500k tax-free). You no longer need to buy another home to keep your profits tax-free. For investment properties, you can legally defer 100% of capital gains taxes and depreciation recapture by executing an IRS Section 1031 like-kind exchange into another investment property.
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SPECIALIZED TOOLS -->
+  <section class="related-tools-section" aria-label="Related Real Estate Tools">
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-navy);">Related Real Estate Calculators</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted);">Explore our other specialized investor, wholesale, and acquisition tools.</p>
+    </div>
+
+    <div class="related-grid">
+      <a href="/1031-exchange-tax-calculator" class="related-card">
+        <div>
+          <h4>1031 Exchange Tax Calculator</h4>
+          <p>Model tax deferral, boot calculations, and 45/180-day deadlines for investment property exchanges.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Launch 1031 Tool →</span>
+      </a>
+
+      <a href="/real-estate-commission-calculator" class="related-card">
+        <div>
+          <h4>Real Estate Commission &amp; Split</h4>
+          <p>Calculate gross real estate commissions, listing vs buyer splits, broker cuts, and net seller closing costs.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate Commission →</span>
+      </a>
+
+      <a href="/mortgage-payoff-vs-investing-calculator" class="related-card">
+        <div>
+          <h4>Mortgage Payoff vs. Investing</h4>
+          <p>Compare guaranteed interest savings from prepaying your mortgage vs investing surplus cash in equities.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Compare Payoff vs Invest →</span>
+      </a>
+
+      <a href="/maximum-allowable-offer-calculator" class="related-card">
+        <div>
+          <h4>Maximum Allowable Offer (MAO)</h4>
+          <p>Calculate wholesale assignment fees, 70% rule rehab budgets, and maximum purchase offers for flips.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Launch MAO Tool →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes and should not be construed as individualized legal or tax advice. Consult a certified CPA for official tax filing.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT LOGIC & CAPITAL GAINS COMPUTATION ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // State variables
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let propertyType = 'primary'; // 'primary', 'investment', 'second'
+  let proceedsChart = null;
+
+  // DOM Elements - Inputs
+  const selectFilingStatus = document.getElementById('selectFilingStatus');
+  const inputPurchasePrice = document.getElementById('inputPurchasePrice');
+  const sliderPurchasePrice = document.getElementById('sliderPurchasePrice');
+
+  const inputImprovements = document.getElementById('inputImprovements');
+  const depreciationGroup = document.getElementById('depreciationGroup');
+  const inputDepreciation = document.getElementById('inputDepreciation');
+  const adjustedBasisDisplay = document.getElementById('adjustedBasisDisplay');
+
+  const inputSalePrice = document.getElementById('inputSalePrice');
+  const sliderSalePrice = document.getElementById('sliderSalePrice');
+  const inputSellingCosts = document.getElementById('inputSellingCosts');
+
+  const selectState = document.getElementById('selectState');
+  const customStateGroup = document.getElementById('customStateGroup');
+  const inputCustomStateRate = document.getElementById('inputCustomStateRate');
+  const inputAnnualIncome = document.getElementById('inputAnnualIncome');
+  const inputMortgagePayoff = document.getElementById('inputMortgagePayoff');
+
+  // DOM Elements - Outputs
+  const taxBanner = document.getElementById('taxBanner');
+  const bannerBadge = document.getElementById('bannerBadge');
+  const bannerTitle = document.getElementById('bannerTitle');
+  const bannerVal = document.getElementById('bannerVal');
+  const bannerSubtext = document.getElementById('bannerSubtext');
+
+  const kpiRealizedGain = document.getElementById('kpiRealizedGain');
+  const kpiGrossPct = document.getElementById('kpiGrossPct');
+  const kpiSec121Exclusion = document.getElementById('kpiSec121Exclusion');
+  const kpiTaxableGain = document.getElementById('kpiTaxableGain');
+  const kpiWalkAwayCash = document.getElementById('kpiWalkAwayCash');
+
+  const wfSalePrice = document.getElementById('wfSalePrice');
+  const wfSellingCosts = document.getElementById('wfSellingCosts');
+  const wfNetProceeds = document.getElementById('wfNetProceeds');
+  const wfAdjustedBasis = document.getElementById('wfAdjustedBasis');
+  const wfRealizedGain = document.getElementById('wfRealizedGain');
+  const wfSec121Row = document.getElementById('wfSec121Row');
+  const wfSec121Amount = document.getElementById('wfSec121Amount');
+  const wfRecaptureRow = document.getElementById('wfRecaptureRow');
+  const wfRecaptureTax = document.getElementById('wfRecaptureTax');
+  const wfFedTax = document.getElementById('wfFedTax');
+  const fedRateLabel = document.getElementById('fedRateLabel');
+  const wfNiitRow = document.getElementById('wfNiitRow');
+  const wfNiitTax = document.getElementById('wfNiitTax');
+  const wfStateTax = document.getElementById('wfStateTax');
+  const stateRateLabel = document.getElementById('stateRateLabel');
+  const wfTotalTax = document.getElementById('wfTotalTax');
+  const wfNetInPocket = document.getElementById('wfNetInPocket');
+
+  // Format Money helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'INR' ? 'INR' : (activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'EUR' ? 'EUR' : (activeCurrency === 'AUD' ? 'AUD' : 'USD'))),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateCapitalGains();
+    });
+  });
+
+  // Slider <-> Input Syncs
+  function syncInputSlider(input, slider) {
+    input.addEventListener('input', () => {
+      slider.value = input.value;
+      calculateCapitalGains();
+    });
+    slider.addEventListener('input', () => {
+      input.value = slider.value;
+      calculateCapitalGains();
+    });
+  }
+
+  syncInputSlider(inputPurchasePrice, sliderPurchasePrice);
+  syncInputSlider(inputSalePrice, sliderSalePrice);
+
+  [inputImprovements, inputDepreciation, inputSellingCosts, inputAnnualIncome, inputMortgagePayoff, inputCustomStateRate].forEach(el => {
+    if (el) el.addEventListener('input', calculateCapitalGains);
+  });
+
+  selectFilingStatus.addEventListener('change', calculateCapitalGains);
+
+  // State selection handler
+  selectState.addEventListener('change', () => {
+    if (selectState.value === 'custom') {
+      customStateGroup.style.display = 'block';
+    } else {
+      customStateGroup.style.display = 'none';
+    }
+    calculateCapitalGains();
+  });
+
+  // Property Type Switcher
+  document.querySelectorAll('.segment-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.segment-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      propertyType = btn.getAttribute('data-type');
+
+      if (propertyType === 'investment') {
+        depreciationGroup.style.display = 'block';
+        wfSec121Row.style.display = 'none';
+        wfRecaptureRow.style.display = 'flex';
+      } else if (propertyType === 'primary') {
+        depreciationGroup.style.display = 'none';
+        wfSec121Row.style.display = 'flex';
+        wfRecaptureRow.style.display = 'none';
+      } else {
+        // Second home
+        depreciationGroup.style.display = 'none';
+        wfSec121Row.style.display = 'none';
+        wfRecaptureRow.style.display = 'none';
+      }
+
+      calculateCapitalGains();
+    });
+  });
+
+  // Preset Handlers
+  document.querySelectorAll('.preset-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const preset = btn.getAttribute('data-preset');
+
+      if (preset === 'primary-joint') {
+        document.querySelector('.segment-btn[data-type="primary"]').click();
+        selectFilingStatus.value = 'mfj';
+        inputPurchasePrice.value = 380000;
+        sliderPurchasePrice.value = 380000;
+        inputImprovements.value = 45000;
+        inputSalePrice.value = 750000;
+        sliderSalePrice.value = 750000;
+        inputSellingCosts.value = 45000;
+        selectState.value = '9.3';
+        inputAnnualIncome.value = 160000;
+        inputMortgagePayoff.value = 210000;
+      } else if (preset === 'primary-single') {
+        document.querySelector('.segment-btn[data-type="primary"]').click();
+        selectFilingStatus.value = 'single';
+        inputPurchasePrice.value = 320000;
+        sliderPurchasePrice.value = 320000;
+        inputImprovements.value = 30000;
+        inputSalePrice.value = 680000;
+        sliderSalePrice.value = 680000;
+        inputSellingCosts.value = 40000;
+        selectState.value = '5.0';
+        inputAnnualIncome.value = 110000;
+        inputMortgagePayoff.value = 180000;
+      } else if (preset === 'rental-property') {
+        document.querySelector('.segment-btn[data-type="investment"]').click();
+        selectFilingStatus.value = 'mfj';
+        inputPurchasePrice.value = 280000;
+        sliderPurchasePrice.value = 280000;
+        inputImprovements.value = 25000;
+        inputDepreciation.value = 42000;
+        inputSalePrice.value = 540000;
+        sliderSalePrice.value = 540000;
+        inputSellingCosts.value = 32000;
+        selectState.value = '0'; // Texas / Florida
+        inputAnnualIncome.value = 180000;
+        inputMortgagePayoff.value = 140000;
+      } else if (preset === 'high-tax-state') {
+        document.querySelector('.segment-btn[data-type="primary"]').click();
+        selectFilingStatus.value = 'single';
+        inputPurchasePrice.value = 650000;
+        sliderPurchasePrice.value = 650000;
+        inputImprovements.value = 60000;
+        inputSalePrice.value = 1350000;
+        sliderSalePrice.value = 1350000;
+        inputSellingCosts.value = 80000;
+        selectState.value = '13.3'; // California millionaire
+        inputAnnualIncome.value = 350000;
+        inputMortgagePayoff.value = 450000;
+      }
+
+      calculateCapitalGains();
+    });
+  });
+
+  // Main Calculation Engine
+  function calculateCapitalGains() {
+    const purchasePrice = Math.max(0, parseFloat(inputPurchasePrice.value) || 0);
+    const improvements = Math.max(0, parseFloat(inputImprovements.value) || 0);
+    const depreciation = propertyType === 'investment' ? Math.max(0, parseFloat(inputDepreciation.value) || 0) : 0;
+
+    const salePrice = Math.max(0, parseFloat(inputSalePrice.value) || 0);
+    const sellingCosts = Math.max(0, parseFloat(inputSellingCosts.value) || 0);
+    const annualIncome = Math.max(0, parseFloat(inputAnnualIncome.value) || 0);
+    const mortgagePayoff = Math.max(0, parseFloat(inputMortgagePayoff.value) || 0);
+
+    // 1. Adjusted Basis = Purchase Price + Improvements - Depreciation
+    const adjustedBasis = Math.max(0, purchasePrice + improvements - depreciation);
+    adjustedBasisDisplay.textContent = formatMoney(adjustedBasis);
+
+    // 2. Net Sales Proceeds = Sale Price - Selling Costs
+    const netSalesProceeds = Math.max(0, salePrice - sellingCosts);
+
+    // 3. Realized Gain = Net Proceeds - Adjusted Basis
+    const realizedGain = Math.max(0, netSalesProceeds - adjustedBasis);
+
+    // 4. Section 121 Exclusion (Primary home only)
+    let sec121Limit = 0;
+    if (propertyType === 'primary') {
+      sec121Limit = (selectFilingStatus.value === 'mfj') ? 500000 : 250000;
+    }
+    const sec121Applied = Math.min(realizedGain, sec121Limit);
+
+    // 5. Depreciation Recapture (Rental only)
+    // Recaptured depreciation is taxed at 25% federal
+    let depreciationRecaptureAmount = 0;
+    let depreciationTax = 0;
+    if (propertyType === 'investment') {
+      depreciationRecaptureAmount = Math.min(realizedGain, depreciation);
+      depreciationTax = depreciationRecaptureAmount * 0.25;
+    }
+
+    // 6. Taxable Long-Term Capital Gain
+    const remainingGainAfterExclusion = Math.max(0, realizedGain - sec121Applied - depreciationRecaptureAmount);
+
+    // 7. Federal Capital Gains Tax Rate Calculation
+    // Total income for brackets = annual income + capital gain
+    const totalTaxableIncome = annualIncome + remainingGainAfterExclusion;
+    let fedCapGainsRate = 0.15;
+    const isMfj = (selectFilingStatus.value === 'mfj');
+
+    if (isMfj) {
+      if (totalTaxableIncome <= 94050) fedCapGainsRate = 0.0;
+      else if (totalTaxableIncome > 583750) fedCapGainsRate = 0.20;
+      else fedCapGainsRate = 0.15;
+    } else {
+      if (totalTaxableIncome <= 47025) fedCapGainsRate = 0.0;
+      else if (totalTaxableIncome > 518900) fedCapGainsRate = 0.20;
+      else fedCapGainsRate = 0.15;
+    }
+
+    const federalCapGainsTax = remainingGainAfterExclusion * fedCapGainsRate;
+    fedRateLabel.textContent = `${(fedCapGainsRate * 100).toFixed(0)}%`;
+
+    // 8. Net Investment Income Tax (NIIT 3.8%)
+    // Applies if MAGI > $200k single / $250k MFJ on investment properties or gains over Sec 121
+    const niitThreshold = isMfj ? 250000 : 200000;
+    let niitTax = 0;
+    if (totalTaxableIncome > niitThreshold && (remainingGainAfterExclusion + depreciationRecaptureAmount) > 0) {
+      const subjectToNiit = Math.min(remainingGainAfterExclusion + depreciationRecaptureAmount, totalTaxableIncome - niitThreshold);
+      niitTax = subjectToNiit * 0.038;
+      wfNiitRow.style.display = 'flex';
+      wfNiitTax.textContent = formatMoney(niitTax);
+    } else {
+      wfNiitRow.style.display = 'none';
+      wfNiitTax.textContent = '$0';
+    }
+
+    // 9. State Tax Rate
+    let stateRate = 0;
+    if (selectState.value === 'custom') {
+      stateRate = (parseFloat(inputCustomStateRate.value) || 0) / 100;
+    } else {
+      stateRate = (parseFloat(selectState.value) || 0) / 100;
+    }
+    stateRateLabel.textContent = `${(stateRate * 100).toFixed(1)}%`;
+    const stateTax = (remainingGainAfterExclusion + depreciationRecaptureAmount) * stateRate;
+
+    // 10. Total Tax Due
+    const totalTaxDue = federalCapGainsTax + depreciationTax + niitTax + stateTax;
+
+    // 11. Net Walk-Away In-Pocket Cash
+    const netWalkAwayCash = Math.max(0, netSalesProceeds - totalTaxDue - mortgagePayoff);
+
+    // Update KPIs
+    kpiRealizedGain.textContent = formatMoney(realizedGain);
+    kpiGrossPct.textContent = `${formatMoney(netSalesProceeds)} − ${formatMoney(adjustedBasis)}`;
+    kpiSec121Exclusion.textContent = `-${formatMoney(sec121Applied)}`;
+    kpiTaxableGain.textContent = formatMoney(remainingGainAfterExclusion + depreciationRecaptureAmount);
+    kpiWalkAwayCash.textContent = formatMoney(netWalkAwayCash);
+
+    // Update Waterfall
+    wfSalePrice.textContent = formatMoney(salePrice);
+    wfSellingCosts.textContent = `-${formatMoney(sellingCosts)}`;
+    wfNetProceeds.textContent = formatMoney(netSalesProceeds);
+    wfAdjustedBasis.textContent = `-${formatMoney(adjustedBasis)}`;
+    wfRealizedGain.textContent = formatMoney(realizedGain);
+    wfSec121Amount.textContent = `-${formatMoney(sec121Applied)}`;
+
+    if (propertyType === 'investment') {
+      wfRecaptureRow.style.display = 'flex';
+      wfRecaptureTax.textContent = formatMoney(depreciationTax);
+    } else {
+      wfRecaptureRow.style.display = 'none';
+    }
+
+    wfFedTax.textContent = formatMoney(federalCapGainsTax);
+    wfStateTax.textContent = formatMoney(stateTax);
+    wfTotalTax.textContent = formatMoney(totalTaxDue);
+    wfNetInPocket.textContent = formatMoney(netWalkAwayCash);
+
+    // Update Hero Banner
+    if (totalTaxDue === 0) {
+      taxBanner.classList.add('tax-free');
+      bannerBadge.textContent = '🛡️ 100% Tax-Exempt Sale';
+      bannerTitle.textContent = 'Estimated Total Capital Gains Tax Due';
+      bannerVal.textContent = '$0';
+      if (propertyType === 'primary') {
+        bannerSubtext.textContent = `Your entire ${formatMoney(realizedGain)} capital gain is fully sheltered under the IRS Section 121 Primary Residence Exclusion (${formatMoney(sec121Limit)} allowance).`;
+      } else {
+        bannerSubtext.textContent = `Based on your low income tier and basis adjustments, no capital gains tax is due on this real estate sale.`;
+      }
+    } else {
+      taxBanner.classList.remove('tax-free');
+      bannerBadge.textContent = '⚠️ Taxable Real Estate Sale';
+      bannerTitle.textContent = 'Estimated Total Capital Gains Tax Due';
+      bannerVal.textContent = formatMoney(totalTaxDue);
+      const effectiveRate = realizedGain > 0 ? ((totalTaxDue / realizedGain) * 100).toFixed(1) : 0;
+      bannerSubtext.textContent = `Total tax liability represents an effective ${effectiveRate}% rate on your ${formatMoney(realizedGain)} gain (Fed: ${formatMoney(federalCapGainsTax + depreciationTax + niitTax)}, State: ${formatMoney(stateTax)}).`;
+    }
+
+    // Render Pie Chart
+    renderProceedsChart(netWalkAwayCash, mortgagePayoff, totalTaxDue, sellingCosts);
+  }
+
+  // Render Proceeds Chart
+  function renderProceedsChart(walkAway, mortgage, totalTax, sellingCosts) {
+    const ctx = document.getElementById('proceedsPieChart').getContext('2d');
+    if (proceedsChart) {
+      proceedsChart.destroy();
+    }
+
+    proceedsChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Net Walk-Away Cash', 'Mortgage Payoff', 'Capital Gains Tax (Fed + State)', 'Selling Costs & Commissions'],
+        datasets: [{
+          data: [Math.round(walkAway), Math.round(mortgage), Math.round(totalTax), Math.round(sellingCosts)],
+          backgroundColor: ['#10B981', '#4F46E5', '#F43F5E', '#D97706'],
+          borderWidth: 2,
+          borderColor: '#FFFFFF'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, weight: '600', family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${formatMoney(context.raw)}`;
+              }
+            }
+          }
+        },
+        cutout: '65%'
+      }
+    });
+  }
+
+  // FAQ Accordion Toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Action Buttons
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+  const btnPrintReport = document.getElementById('btnPrintReport');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  // CSV Exporter
+  btnDownloadCsv.addEventListener('click', () => {
+    let csv = `RealRefin Real Estate Capital Gains Tax Schedule\n`;
+    csv += `Property Type: ${propertyType}, Filing Status: ${selectFilingStatus.value}\n`;
+    csv += `Purchase Price: ${inputPurchasePrice.value}, Improvements: ${inputImprovements.value}, Sale Price: ${inputSalePrice.value}\n\n`;
+    csv += `Metric,Amount\n`;
+    csv += `"Gross Sale Price","${wfSalePrice.textContent}"\n`;
+    csv += `"Selling Costs & Commissions","${wfSellingCosts.textContent}"\n`;
+    csv += `"Net Sales Proceeds","${wfNetProceeds.textContent}"\n`;
+    csv += `"Adjusted Cost Basis","${wfAdjustedBasis.textContent}"\n`;
+    csv += `"Total Realized Capital Gain","${wfRealizedGain.textContent}"\n`;
+    csv += `"IRS Section 121 Exclusion","${wfSec121Amount.textContent}"\n`;
+    csv += `"Federal Capital Gains Tax","${wfFedTax.textContent}"\n`;
+    csv += `"State Capital Gains Tax","${wfStateTax.textContent}"\n`;
+    csv += `"Total Tax Liability","${wfTotalTax.textContent}"\n`;
+    csv += `"Remaining Mortgage Payoff","${formatMoney(inputMortgagePayoff.value)}"\n`;
+    csv += `"Net Walk-Away In-Pocket Cash","${wfNetInPocket.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Capital-Gains-Tax-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // Print PDF Handler
+  btnPrintReport.addEventListener('click', () => {
+    window.print();
+  });
+
+  // Share URL Handler
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      type: propertyType,
+      status: selectFilingStatus.value,
+      purchase: inputPurchasePrice.value,
+      sale: inputSalePrice.value,
+      improvements: inputImprovements.value,
+      state: selectState.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy this link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params
+  function loadQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('type')) {
+      const t = urlParams.get('type');
+      const targetBtn = document.querySelector(`.segment-btn[data-type="${t}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+    if (urlParams.has('status')) selectFilingStatus.value = urlParams.get('status');
+    if (urlParams.has('purchase')) inputPurchasePrice.value = urlParams.get('purchase');
+    if (urlParams.has('sale')) inputSalePrice.value = urlParams.get('sale');
+    if (urlParams.has('improvements')) inputImprovements.value = urlParams.get('improvements');
+    if (urlParams.has('state')) selectState.value = urlParams.get('state');
+    if (urlParams.has('curr')) {
+      const c = urlParams.get('curr');
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  loadQueryParams();
+  // Initial Run
+  calculateCapitalGains();
+});
+</script>
+
+</body>
+</html>

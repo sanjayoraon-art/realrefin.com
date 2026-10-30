@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/real-estate-capital-gains-tax-calculator</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/real-estate-commission-calculator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,6 +211,22 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/real-estate-capital-gains-tax-calculator': 'real-estate-capital-gains-tax-calculator.html',
+  '/real-estate-capital-gains-tax-calculator.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-on-real-estate-calculator': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-on-real-estate-calculator.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-calculator-real-estate': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-calculator-real-estate.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-real-estate-calculator': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-real-estate-calculator.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-calculator-on-real-estate': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-calculator-on-real-estate.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-calculator-for-real-estate': 'real-estate-capital-gains-tax-calculator.html',
+  '/capital-gains-tax-calculator-for-real-estate.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/home-sale-capital-gains-tax-calculator': 'real-estate-capital-gains-tax-calculator.html',
+  '/home-sale-capital-gains-tax-calculator.html': 'real-estate-capital-gains-tax-calculator.html',
+  '/section-121-exclusion-calculator': 'real-estate-capital-gains-tax-calculator.html',
+  '/section-121-exclusion-calculator.html': 'real-estate-capital-gains-tax-calculator.html',
   '/real-estate-commission-calculator': 'real-estate-commission-calculator.html',
   '/real-estate-commission-calculator.html': 'real-estate-commission-calculator.html',
   '/real-estate-agent-commission-calculator': 'real-estate-commission-calculator.html',
