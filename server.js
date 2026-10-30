@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/rent-vs-buy-calculator</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/rent-to-own-calculator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -187,6 +193,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/rent-vs-buy-calculator': 'rent-vs-buy-calculator.html',
+  '/rent-vs-buy-calculator.html': 'rent-vs-buy-calculator.html',
+  '/renting-vs-buying-calculator': 'rent-vs-buy-calculator.html',
+  '/renting-vs-buying-calculator.html': 'rent-vs-buy-calculator.html',
+  '/buying-vs-renting-calculator': 'rent-vs-buy-calculator.html',
+  '/buying-vs-renting-calculator.html': 'rent-vs-buy-calculator.html',
+  '/should-i-rent-or-buy-calculator': 'rent-vs-buy-calculator.html',
+  '/should-i-rent-or-buy-calculator.html': 'rent-vs-buy-calculator.html',
+  '/rent-or-buy-calculator': 'rent-vs-buy-calculator.html',
+  '/rent-or-buy-calculator.html': 'rent-vs-buy-calculator.html',
   '/rent-to-own-calculator': 'rent-to-own-calculator.html',
   '/rent-to-own-calculator.html': 'rent-to-own-calculator.html',
   '/rent-to-own-mortgage-calculator': 'rent-to-own-calculator.html',
