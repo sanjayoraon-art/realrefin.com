@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/calculate-debt-to-income-ratio-for-mortgage</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/seller-net-sheet-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -217,6 +223,20 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/calculate-debt-to-income-ratio-for-mortgage': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/calculate-debt-to-income-ratio-for-mortgage.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/debt-to-income-ratio-calculator-mortgage': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/debt-to-income-ratio-calculator-mortgage.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/dti-calculator-for-mortgage': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/dti-calculator-for-mortgage.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/mortgage-dti-calculator': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/mortgage-dti-calculator.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/how-to-calculate-debt-to-income-ratio-for-mortgage': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/how-to-calculate-debt-to-income-ratio-for-mortgage.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/front-end-and-back-end-dti-calculator': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/front-end-and-back-end-dti-calculator.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/fha-dti-calculator': 'calculate-debt-to-income-ratio-for-mortgage.html',
+  '/fha-dti-calculator.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
   '/seller-net-sheet-calculator': 'seller-net-sheet-calculator.html',
   '/seller-net-sheet-calculator.html': 'seller-net-sheet-calculator.html',
   '/seller-net-sheet-calculator-florida': 'seller-net-sheet-calculator.html',
