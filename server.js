@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/cost-segregation-study-calculator</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/calculate-debt-to-income-ratio-for-mortgage</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -223,6 +229,22 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/cost-segregation-study-calculator': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-study-calculator.html': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-calculator': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-calculator.html': 'cost-segregation-study-calculator.html',
+  '/bonus-depreciation-calculator-real-estate': 'cost-segregation-study-calculator.html',
+  '/bonus-depreciation-calculator-real-estate.html': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-tax-savings-calculator': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-tax-savings-calculator.html': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-bonus-depreciation-calculator': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-bonus-depreciation-calculator.html': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-study-cost-vs-savings': 'cost-segregation-study-calculator.html',
+  '/cost-segregation-study-cost-vs-savings.html': 'cost-segregation-study-calculator.html',
+  '/commercial-cost-segregation-calculator': 'cost-segregation-study-calculator.html',
+  '/commercial-cost-segregation-calculator.html': 'cost-segregation-study-calculator.html',
+  '/residential-rental-cost-segregation-calculator': 'cost-segregation-study-calculator.html',
+  '/residential-rental-cost-segregation-calculator.html': 'cost-segregation-study-calculator.html',
   '/calculate-debt-to-income-ratio-for-mortgage': 'calculate-debt-to-income-ratio-for-mortgage.html',
   '/calculate-debt-to-income-ratio-for-mortgage.html': 'calculate-debt-to-income-ratio-for-mortgage.html',
   '/debt-to-income-ratio-calculator-mortgage': 'calculate-debt-to-income-ratio-for-mortgage.html',
