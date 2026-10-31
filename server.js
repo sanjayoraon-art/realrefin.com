@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/seller-net-sheet-calculator</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/real-estate-capital-gains-tax-calculator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -211,6 +217,26 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/seller-net-sheet-calculator': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator.html': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator-florida': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator-florida.html': 'seller-net-sheet-calculator.html',
+  '/sellers-net-sheet-calculator': 'seller-net-sheet-calculator.html',
+  '/sellers-net-sheet-calculator.html': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator-texas': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator-texas.html': 'seller-net-sheet-calculator.html',
+  '/florida-seller-net-sheet-calculator': 'seller-net-sheet-calculator.html',
+  '/florida-seller-net-sheet-calculator.html': 'seller-net-sheet-calculator.html',
+  '/net-seller-sheet-calculator': 'seller-net-sheet-calculator.html',
+  '/net-seller-sheet-calculator.html': 'seller-net-sheet-calculator.html',
+  '/net-sheet-calculator-for-seller': 'seller-net-sheet-calculator.html',
+  '/net-sheet-calculator-for-seller.html': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator-california': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-calculator-california.html': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-florida-calculator': 'seller-net-sheet-calculator.html',
+  '/seller-net-sheet-florida-calculator.html': 'seller-net-sheet-calculator.html',
+  '/seller-proceeds-calculator': 'seller-net-sheet-calculator.html',
+  '/seller-proceeds-calculator.html': 'seller-net-sheet-calculator.html',
   '/real-estate-capital-gains-tax-calculator': 'real-estate-capital-gains-tax-calculator.html',
   '/real-estate-capital-gains-tax-calculator.html': 'real-estate-capital-gains-tax-calculator.html',
   '/capital-gains-tax-on-real-estate-calculator': 'real-estate-capital-gains-tax-calculator.html',

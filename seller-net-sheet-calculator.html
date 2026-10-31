@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Net Sheet Calculator | Closing Costs & Proceeds (Florida, Texas, CA)</title>
+  <meta name="description" content="Free seller net sheet calculator. Estimate net proceeds from selling a home after deducting mortgage payoffs, real estate commissions, title fees, transfer taxes, and seller concessions across Florida, Texas, and California.">
+  <meta name="keywords" content="seller net sheet calculator, seller net sheet calculator florida, seller's net sheet calculator, seller net sheet calculator texas, florida seller net sheet calculator, net seller sheet calculator, net sheet calculator for seller, seller net sheet calculator california, seller net sheet florida calculator, home seller proceeds calculator">
+  <link rel="canonical" href="https://realrefin.com/seller-net-sheet-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Seller Net Sheet Calculator | Florida, Texas & California (2026)">
+  <meta property="og:description" content="Calculate your exact net walk-away cash when selling a home. Models mortgage payoffs, brokerage commissions, state transfer taxes (FL doc stamps, CA transfer tax, TX title rates), and closing costs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/seller-net-sheet-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/seller-net-sheet-calculator#app",
+        "name": "RealRefin Seller Net Sheet Calculator",
+        "url": "https://realrefin.com/seller-net-sheet-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Professional real estate seller net sheet calculator. Estimates net cash proceeds at closing after deducting mortgage payoffs, brokerage commissions, title insurance, state documentary stamps, escrow fees, and buyer concessions with state-specific presets for Florida, Texas, and California.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer & Seller Suite",
+            "item": "https://realrefin.com/#suite-buyer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Seller Net Sheet Calculator",
+            "item": "https://realrefin.com/seller-net-sheet-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a seller net sheet in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A seller net sheet is a standardized financial spreadsheet that estimates the net cash proceeds a home seller will walk away with at closing. It starts with the agreed-upon contract purchase price and subtracts mortgage payoffs, broker commissions, title insurance policies, government transfer taxes, escrow settlement charges, property tax prorations, and buyer concessions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a Florida seller net sheet calculator compute transfer taxes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Florida, home sellers are statutory responsible for documentary stamp taxes on the deed (Doc Stamps). The rate is $0.70 per $100 of consideration (0.70%) in all counties except Miami-Dade, which charges $0.60 per $100 plus a $0.45 surtax on non-single-family homes. On a $500,000 home sale in Florida, doc stamps on the deed equal $3,500."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a Texas seller net sheet calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Texas has no state or local documentary transfer taxes on real estate sales ($0). However, title insurance rates in Texas are strictly promulgated and set by the Texas Department of Insurance (TDI), meaning all title companies charge the exact same statutory rate based on the sales price (e.g., approximately $2,500 to $2,700 on a $450,000 home)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are real estate commissions accounted for post-NAR settlement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Following the 2024 NAR antitrust settlement, listing agent commissions and buyer agent compensation are decoupled. Home sellers negotiate their listing agent's fee directly (typically 2% to 3%) and can choose whether or not to offer a buyer concession or broker credit to cover the buyer's agent fee."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are property tax prorations on a seller net sheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Property taxes are paid either in arrears (common in Texas, Florida, and California) or in advance. The seller net sheet prorates property taxes to the exact day of closing, giving the buyer a credit for the days during the tax year that the seller occupied the property before closing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a seller net sheet and an ALTA settlement statement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A seller net sheet is an estimated projection created before or during listing and contract negotiations. An ALTA (American Land Title Association) settlement statement or Closing Disclosure (CD) is the final, binding legal accounting prepared by the title or escrow company on the actual closing day."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-indigo-border: #C7D2FE;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #F43F5E;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .currency-selector {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 2px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .curr-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn:hover {
+      color: var(--primary-navy);
+      background: #F1F5F9;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-emerald);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HERO
+    ----------------------------------------------------------- */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .hero-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       STATE PRESET BUTTONS (FLORIDA, TEXAS, CALIFORNIA, US)
+    ----------------------------------------------------------- */
+    .presets-container {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .preset-label {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .preset-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 0.4rem 0.95rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .preset-pill:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: var(--accent-emerald-light);
+      transform: translateY(-1px);
+    }
+
+    .preset-pill.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       MAIN INTERACTIVE GRID
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARDS */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-divider-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* FORM ELEMENTS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+    }
+
+    .form-help-tip {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: help;
+      text-decoration: underline dotted;
+    }
+
+    .input-field-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix,
+    .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .input-prefix {
+      left: 0.85rem;
+    }
+
+    .input-suffix {
+      right: 0.85rem;
+    }
+
+    .form-input,
+    .form-select {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0 0.85rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+
+    .form-input.has-prefix {
+      padding-left: 2rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    .form-input:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .slider-control {
+      margin-top: 0.45rem;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: #E2E8F0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider-control::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease;
+    }
+
+    .slider-control::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Rate Buttons Grid */
+    .rate-btn-group {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .rate-btn {
+      flex: 1;
+      padding: 0.35rem 0.5rem;
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+
+    .rate-btn:hover {
+      background: var(--accent-emerald-light);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+    }
+
+    .rate-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* Advanced Accordion Toggle */
+    .advanced-toggle-wrap {
+      margin-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .advanced-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS SIDE
+    ----------------------------------------------------------- */
+    .hero-proceeds-banner {
+      background: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+
+    .banner-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      opacity: 0.95;
+      margin-bottom: 0.25rem;
+    }
+
+    .banner-val {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #6EE7B7;
+    }
+
+    .banner-subtext {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-top: 0.35rem;
+    }
+
+    /* KPI METRICS GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+    }
+
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .kpi-val {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* SETTLEMENT STATEMENT WATERFALL */
+    .waterfall-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #F1F5F9;
+      font-size: 0.875rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .wf-label {
+      font-weight: 600;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .wf-val {
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .wf-deduct {
+      color: var(--accent-coral);
+    }
+
+    .wf-highlight {
+      background: var(--accent-emerald-light);
+      padding: 0.75rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin: 0.35rem 0;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* CHART WRAP */
+    .chart-container-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .chart-canvas-box {
+      position: relative;
+      width: 100%;
+      height: 250px;
+    }
+
+    /* ACTION BUTTONS */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .btn-action {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDES
+    ----------------------------------------------------------- */
+    .seo-guide-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .seo-guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin: 2rem 0 0.85rem;
+    }
+
+    .seo-guide-section p {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-guide-section ul, 
+    .seo-guide-section ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      line-height: 1.75;
+      font-size: 1.025rem;
+    }
+
+    .seo-guide-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .formula-callout {
+      background: #F8FAFC;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.5rem 0;
+    }
+
+    .formula-callout h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comparison-matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.925rem;
+    }
+
+    .comparison-matrix-table th,
+    .comparison-matrix-table td {
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .comparison-matrix-table th {
+      background: #F8FAFC;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION SECTION
+    ----------------------------------------------------------- */
+    .faq-section {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.15rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.975rem;
+      color: var(--secondary-navy);
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RELATED SUITE CARDS
+    ----------------------------------------------------------- */
+    .related-tools-section {
+      margin-bottom: 4rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .related-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-emerald);
+    }
+
+    .related-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--secondary-navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+
+  <!-- Chart.js CDN for Visual Proceeds Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- NAVBAR -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    
+    <!-- Multi-Currency Selector -->
+    <div class="currency-selector" aria-label="Select Currency">
+      <button class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+      <button class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+      <button class="curr-btn" data-currency="EUR" data-symbol="€">€ EUR</button>
+      <button class="curr-btn" data-currency="AUD" data-symbol="A$">A$ AUD</button>
+      <button class="curr-btn" data-currency="INR" data-symbol="₹">₹ INR</button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor">Investor Suite</a></li>
+      <li><a href="/#suite-buyer" class="active">Buyers &amp; Sellers</a></li>
+      <li><a href="/#suite-military">Military</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="/#suite-buyer">Home Buyer &amp; Seller Suite</a>
+    <span>/</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Seller Net Sheet Calculator</span>
+  </div>
+
+  <!-- HERO HEADER -->
+  <header class="hero-header">
+    <div class="badge-pill">📋 ALTA Closing Disclosure Modeler • Florida, Texas &amp; California Presets</div>
+    <h1>Seller Net Sheet Calculator</h1>
+    <p>
+      Estimate your exact net walk-away cash proceeds from selling a home. Factor in mortgage payoffs, real estate commissions, owner's title policy, county transfer taxes (Florida Doc Stamps, CA Transfer Tax, TX Title), escrow charges, and buyer concessions.
+    </p>
+  </header>
+
+  <!-- STATE SELECTION PRESETS -->
+  <div class="presets-container" aria-label="State Specific Presets">
+    <span class="preset-label">State Presets:</span>
+    <button class="preset-pill active" data-state="FL">
+      <span>🌴</span> Florida (0.70% Doc Stamps + FL Title)
+    </button>
+    <button class="preset-pill" data-state="TX">
+      <span>🤠</span> Texas (TDI Promulgated Title • $0 Transfer Tax)
+    </button>
+    <button class="preset-pill" data-state="CA">
+      <span>☀️</span> California ($1.10/k Doc Tax + Escrow Split)
+    </button>
+    <button class="preset-pill" data-state="US">
+      <span>🇺🇸</span> National Average (~1.5% Title/Escrow)
+    </button>
+  </div>
+
+  <!-- MAIN CALCULATOR WORKSPACE -->
+  <main class="calc-layout">
+    
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <section class="calc-card" aria-label="Seller Net Sheet Inputs">
+      <div class="card-title-wrap">
+        <h2><span>⚙️</span> Sale &amp; Closing Parameters</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-emerald);">Auto-Calculating</span>
+      </div>
+
+      <!-- 1. CONTRACT SALE PRICE -->
+      <div class="section-divider-label">1. Agreed Sale Price</div>
+
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputSalePrice">Contract Purchase Price</label>
+          <span class="form-help-tip" title="Agreed gross sales price on the executed purchase contract">Contract Price</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputSalePrice" class="form-input has-prefix" value="480000" min="10000" max="25000000" step="5000">
+        </div>
+        <input type="range" id="sliderSalePrice" class="slider-control" value="480000" min="50000" max="1500000" step="5000">
+      </div>
+
+      <!-- 2. EXISTING MORTGAGES & LIENS -->
+      <div class="section-divider-label">2. Mortgage &amp; Lien Payoffs</div>
+
+      <!-- 1st Mortgage Payoff -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputFirstMortgage">1st Mortgage Principal Payoff</label>
+          <span class="form-help-tip" title="Remaining balance on primary home loan statement">1st Lien ($)</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputFirstMortgage" class="form-input has-prefix" value="225000" min="0" max="20000000" step="5000">
+        </div>
+      </div>
+
+      <!-- 2nd Mortgage / HELOC -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputSecondMortgage">2nd Mortgage / HELOC Payoff</label>
+          <span class="form-help-tip" title="Second lien, home equity line of credit, or solar loan payoff">2nd Lien ($)</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputSecondMortgage" class="form-input has-prefix" value="0" min="0" max="2000000" step="1000">
+        </div>
+      </div>
+
+      <!-- 3. REAL ESTATE BROKERAGE COMMISSIONS -->
+      <div class="section-divider-label">3. Real Estate Commissions</div>
+
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputListingCommPct">Listing Brokerage Commission</label>
+          <span class="form-help-tip" title="Fee paid to listing broker representing seller">Listing Side (%)</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputListingCommPct" class="form-input has-suffix" value="2.5" min="0" max="6" step="0.1">
+          <span class="input-suffix">%</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputBuyerConcessionPct">Buyer Brokerage Concession / Fee</label>
+          <span class="form-help-tip" title="Seller contribution toward buyer broker commission under post-NAR rules">Buyer Side (%)</span>
+        </div>
+        <div class="input-field-wrap">
+          <input type="number" id="inputBuyerConcessionPct" class="form-input has-suffix" value="2.5" min="0" max="6" step="0.1">
+          <span class="input-suffix">%</span>
+        </div>
+        <div class="rate-btn-group">
+          <button type="button" class="rate-btn" data-comm="4.0">4.0% Total</button>
+          <button type="button" class="rate-btn active" data-comm="5.0">5.0% Total</button>
+          <button type="button" class="rate-btn" data-comm="5.5">5.5% Total</button>
+          <button type="button" class="rate-btn" data-comm="6.0">6.0% Total</button>
+        </div>
+      </div>
+
+      <!-- 4. TITLE, ESCROW & STATE TRANSFER TAXES -->
+      <div class="section-divider-label">4. Title, Transfer Taxes &amp; Escrow</div>
+
+      <!-- State Doc Stamps / Transfer Tax -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputTransferTax">State/County Documentary Transfer Tax</label>
+          <span class="form-help-tip" id="taxHelpTip" title="FL: 0.70% doc stamps on deed. CA: $1.10 per $1,000. TX: $0">Transfer Tax</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputTransferTax" class="form-input has-prefix" value="3360" min="0" max="100000" step="50">
+        </div>
+      </div>
+
+      <!-- Owner's Title Insurance -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputTitlePolicy">Owner's Title Insurance Policy</label>
+          <span class="form-help-tip" id="titleHelpTip" title="Standard seller expense in FL, TX, CA to guarantee clear title to buyer">Title Policy</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputTitlePolicy" class="form-input has-prefix" value="2475" min="0" max="50000" step="50">
+        </div>
+      </div>
+
+      <!-- Settlement / Escrow Closing Fee -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputSettlementFee">Settlement / Escrow Closing Fee</label>
+          <span class="form-help-tip" title="Title company or closing attorney closing/escrow facilitation fee">Escrow Fee</span>
+        </div>
+        <div class="input-field-wrap">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputSettlementFee" class="form-input has-prefix" value="650" min="0" max="10000" step="25">
+        </div>
+      </div>
+
+      <!-- 5. ADVANCED PRORATIONS & CREDITS -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" id="btnToggleAdvanced" class="advanced-btn">
+          <span>⚙️</span> Seller Credits, HOA &amp; Tax Prorations <span id="advancedArrow">▼</span>
+        </button>
+
+        <div id="advancedBox" class="advanced-content">
+          <!-- Buyer Closing Cost Credit -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputBuyerCredit">Agreed Buyer Closing Credit / Concession</label>
+              <span class="form-help-tip" title="Lump sum credit offered to buyer to cover their closing costs or interest rate buydown">Buyer Credit ($)</span>
+            </div>
+            <div class="input-field-wrap">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputBuyerCredit" class="form-input has-prefix" value="3000" min="0" max="50000" step="250">
+            </div>
+          </div>
+
+          <!-- Home Warranty Credit -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputHomeWarranty">Home Warranty Credit</label>
+              <span class="form-help-tip" title="1-year residential service warranty commonly provided by seller">Warranty ($)</span>
+            </div>
+            <div class="input-field-wrap">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputHomeWarranty" class="form-input has-prefix" value="600" min="0" max="2500" step="50">
+            </div>
+          </div>
+
+          <!-- Prorated Property Taxes -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputProratedTaxes">Estimated Unpaid Prorated Property Taxes</label>
+              <span class="form-help-tip" title="Taxes accrued during your ownership prior to closing date owed to buyer at closing">Tax Proration ($)</span>
+            </div>
+            <div class="input-field-wrap">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputProratedTaxes" class="form-input has-prefix" value="1200" min="0" max="25000" step="100">
+            </div>
+          </div>
+
+          <!-- HOA Estoppel / Transfer Fee -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputHoaFee">HOA Estoppel Certificate &amp; Transfer Fee</label>
+              <span class="form-help-tip" title="HOA management company charge to verify account standing">HOA Fee ($)</span>
+            </div>
+            <div class="input-field-wrap">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputHoaFee" class="form-input has-prefix" value="350" min="0" max="5000" step="50">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: RESULTS BANNER, WATERFALL & CHARTS -->
+    <section aria-label="Net Proceeds & Settlement Statement">
+
+      <!-- DYNAMIC HERO PROCEEDS BANNER -->
+      <div id="proceedsBanner" class="hero-proceeds-banner">
+        <div id="bannerBadge" class="banner-badge">💰 Estimated Net Proceeds</div>
+        <div id="bannerTitle" class="banner-title">Net Cash to Seller at Closing</div>
+        <div id="bannerVal" class="banner-val">$224,365</div>
+        <div id="bannerSubtext" class="banner-subtext">
+          Calculated from $480,000 contract price after satisfying $225,000 in mortgage liens and $30,635 in closing deductions.
+        </div>
+      </div>
+
+      <!-- 4 TOP PERFORMANCE METRICS -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🏷️</span> Total Deductions &amp; Costs</div>
+          <div id="kpiTotalCosts" class="kpi-val" style="color: var(--accent-coral);">$30,635</div>
+          <div id="kpiCostPct" class="kpi-sub">6.38% of contract price</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🤝</span> Total Commissions</div>
+          <div id="kpiCommissions" class="kpi-val">$24,000</div>
+          <div id="kpiCommPct" class="kpi-sub">5.0% (Listing + Buyer)</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🏛️</span> Title, Taxes &amp; Escrow</div>
+          <div id="kpiClosingFees" class="kpi-val">$6,485</div>
+          <div id="kpiStateBadge" class="kpi-sub">Florida Promulgated Rates</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-label"><span>🏦</span> Total Mortgage Payoff</div>
+          <div id="kpiMortgagePayoff" class="kpi-val">$225,000</div>
+          <div class="kpi-sub">1st &amp; 2nd lien satisfaction</div>
+        </div>
+      </div>
+
+      <!-- ALTA-STYLE SETTLEMENT STATEMENT WATERFALL -->
+      <div class="waterfall-card">
+        <div class="waterfall-title">
+          <span>ALTA Seller Closing Statement Summary</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: none; font-weight: 500;">Itemized Settlement</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Gross Contract Sales Price:</span>
+          <span class="wf-val" id="wfSalePrice">$480,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: 1st Mortgage Principal Payoff:</span>
+          <span class="wf-val wf-deduct" id="wfFirstMortgage">-$225,000</span>
+        </div>
+
+        <div class="waterfall-row" id="wfSecondRow" style="display: none;">
+          <span class="wf-label">Less: 2nd Mortgage / HELOC Payoff:</span>
+          <span class="wf-val wf-deduct" id="wfSecondMortgage">-$0</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Real Estate Commissions (<span id="wfCommPctDisplay">5.0%</span>):</span>
+          <span class="wf-val wf-deduct" id="wfCommission">-$24,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: State Documentary Stamps / Transfer Tax:</span>
+          <span class="wf-val wf-deduct" id="wfTransferTax">-$3,360</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Owner's Title Insurance Policy:</span>
+          <span class="wf-val wf-deduct" id="wfTitlePolicy">-$2,475</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="wf-label">Less: Settlement / Escrow Closing Fee:</span>
+          <span class="wf-val wf-deduct" id="wfSettlementFee">-$650</span>
+        </div>
+
+        <div class="waterfall-row" id="wfBuyerCreditRow">
+          <span class="wf-label">Less: Buyer Closing Credit / Concession:</span>
+          <span class="wf-val wf-deduct" id="wfBuyerCredit">-$3,000</span>
+        </div>
+
+        <div class="waterfall-row" id="wfProrationsRow">
+          <span class="wf-label">Less: Property Taxes &amp; HOA Prorations:</span>
+          <span class="wf-val wf-deduct" id="wfProrations">-$2,150</span>
+        </div>
+
+        <div class="waterfall-row wf-highlight">
+          <span class="wf-label" style="color: var(--accent-emerald-dark); font-size: 1rem;">Net Cash Proceeds to Seller:</span>
+          <span class="wf-val" id="wfNetProceeds" style="font-size: 1.25rem; color: var(--accent-emerald);">$219,365</span>
+        </div>
+      </div>
+
+      <!-- VISUAL BREAKDOWN PIE / DOUGHNUT CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-header">
+          <div class="chart-title">Proceeds &amp; Deductions Distribution</div>
+          <div style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">Where the Sale Price Goes</div>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="proceedsPieChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" id="btnDownloadCsv" class="btn-action">
+          <span>📥</span> Download Net Sheet (CSV)
+        </button>
+        <button type="button" id="btnPrintReport" class="btn-action">
+          <span>🖨️</span> Print Net Statement
+        </button>
+        <button type="button" id="btnShareDeal" class="btn-action">
+          <span>🔗</span> Share Net Sheet
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO CONTENT & FINANCIAL PLANNING GUIDE -->
+  <article class="seo-guide-section">
+    <h2>Seller Net Sheet Calculator: Complete Guide to Closing Costs &amp; Proceeds</h2>
+    <p>
+      Before accepting an offer on your home, every seller needs to know their bottom-line walk-away figure. A **Seller Net Sheet** is the essential financial document prepared by listing agents, closing attorneys, and title companies that itemizes every single dollar deducted from your gross contract price at the closing table.
+    </p>
+
+    <h3>1. How to Calculate Seller Net Proceeds</h3>
+    <p>
+      The core mathematical formula governing any real estate seller net sheet is:
+    </p>
+
+    <div class="formula-callout">
+      <h4>Seller Net Proceeds Formula</h4>
+      $$\text{Net Proceeds} = \text{Contract Sale Price} - \text{Mortgage Payoffs} - \text{Commissions} - \text{Title \& Escrow} - \text{Transfer Taxes} - \text{Prorations \& Credits}$$
+    </div>
+
+    <h3>2. State-Specific Closing Rules: Florida, Texas &amp; California</h3>
+    <p>
+      Closing costs for home sellers vary dramatically depending on the state where the real property is located:
+    </p>
+
+    <table class="comparison-matrix-table">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>State Transfer Taxes (Doc Stamps)</th>
+          <th>Owner's Title Insurance Rates</th>
+          <th>Customary Payer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Florida</strong></td>
+          <td><strong>0.70%</strong> ($0.70 per $100 on deed; 0.60% + 0.45% in Miami-Dade)</td>
+          <td>Promulgated by State ($5.75/$1k up to $100k; $5.00/$1k thereafter)</td>
+          <td>Seller customarily pays in most counties (Buyer pays in Miami-Dade/Broward/Collier).</td>
+        </tr>
+        <tr>
+          <td><strong>Texas</strong></td>
+          <td><strong>$0.00</strong> (No state, county, or city transfer taxes!)</td>
+          <td>TDI Promulgated Rates (Mandatory chart set by TX Dept of Insurance)</td>
+          <td>Seller customarily pays for the Owner's Title Policy in standard TREC 1-4 contracts.</td>
+        </tr>
+        <tr>
+          <td><strong>California</strong></td>
+          <td><strong>$1.10 per $1,000</strong> (0.11% County Tax) + City Transfer Taxes</td>
+          <td>Competitive market rates; split negotiated in CAR contract</td>
+          <td>Northern CA: Buyer often pays. Southern CA: Seller customarily pays title &amp; escrow.</td>
+        </tr>
+        <tr>
+          <td><strong>National Average</strong></td>
+          <td>0.1% to 1.5% depending on county transfer tax statutes</td>
+          <td>$1,500 – $3,000 standard premium</td>
+          <td>Negotiable in purchase agreement.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3. Understanding the Florida Seller Net Sheet: Doc Stamps on Deed</h3>
+    <p>
+      In Florida, the single largest closing fee behind real estate commissions is the **Documentary Stamp Tax on Deeds** (Florida Statute § 201.02). 
+    </p>
+    <ul>
+      <li>In 66 out of 67 Florida counties, the tax is calculated as <strong>$0.70 per $100</strong> of consideration. For instance, on a $500,000 home sale, the state doc stamp fee is exactly $\$500,000 \times 0.007 = \$3,500$.</li>
+      <li>In Miami-Dade County, the tax is $0.60 per $100, plus an additional $0.45 surtax on properties that are not single-family residences.</li>
+    </ul>
+
+    <h3>4. The Texas Seller Net Sheet: Zero Transfer Tax &amp; TDI Charts</h3>
+    <p>
+      Texas is one of the most seller-friendly states in the nation regarding transactional taxes. The State of Texas constitutionally prohibits transfer taxes on real estate deeds. 
+    </p>
+    <p>
+      However, Texas regulates title insurance premiums under the **Texas Department of Insurance (TDI) Title Insurance Basic Premium Rates**. Under Texas law, title companies cannot discount or compete on title insurance rates; every title insurer must charge the exact statutory rate on the promulgated chart (e.g., $2,583 on a $450,000 home).
+    </p>
+
+    <h3>5. Post-NAR Settlement Commission Structures</h3>
+    <p>
+      Under post-2024 NAR antitrust settlement rules:
+    </p>
+    <ol>
+      <li>The seller negotiates their listing agent's commission independently (e.g., 2% to 3%).</li>
+      <li>Buyer agent commissions are no longer published on MLS platforms. Buyers negotiate their representation fee directly with their agent.</li>
+      <li>Sellers may offer a **Buyer Broker Concession** at closing (e.g., 2% to 2.5%) to make their listing attractive to qualified purchasers who may lack liquid cash to pay their agent out-of-pocket.</li>
+    </ol>
+  </article>
+
+  <!-- PEOPLE ALSO ASK / FAQ SECTION -->
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <h2>Frequently Asked Questions: Seller Net Sheets</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is a seller net sheet in real estate?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        A seller net sheet is a closing financial projection that calculates the exact amount of cash a homeowner will receive when selling their home. It starts with the agreed-upon sales price and itemizes all deductions including existing mortgage payoffs, brokerage fees, title insurance, transfer taxes, escrow fees, and property tax prorations.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does the Florida seller net sheet calculate Doc Stamps?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        In Florida, transfer taxes are called Documentary Stamp Taxes on the Deed. State law sets the rate at 70 cents per $100 of the total purchase price (0.70%) in all counties except Miami-Dade. For example, selling a home for $400,000 results in $2,800 in Florida doc stamps paid by the seller at closing.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Why is a Texas seller net sheet different from other states?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Texas has zero transfer taxes on real estate sales, saving sellers thousands. However, title insurance rates in Texas are set by state statute through the Texas Department of Insurance (TDI), meaning all title agencies charge identical, non-negotiable insurance premiums based on the purchase price.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What are customary seller closing costs in California?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        California sellers customarily pay county documentary transfer taxes ($1.10 per $1,000 of consideration, or 0.11%), municipal city transfer taxes (where applicable), half of the escrow company fee, an owner's title policy (in Southern California), a Natural Hazard Disclosure (NHD) report (~$120), and any negotiated buyer closing cost credits.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do property tax prorations affect my net proceeds?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Because property taxes are paid in arrears in most states, the seller owes taxes for the portion of the year they owned the property before the closing date. At closing, the title company calculates the exact per-diem tax amount and deducts it from the seller's proceeds, crediting it to the buyer who will pay the full tax bill at year-end.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I negotiate seller closing costs?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes. While statutory government transfer taxes (like Florida doc stamps or California documentary taxes) are fixed by law, other fees—such as real estate commissions, buyer closing credits, home warranties, and escrow fees—are fully negotiable in your purchase contract.
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED SPECIALIZED TOOLS -->
+  <section class="related-tools-section" aria-label="Related Real Estate Tools">
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-navy);">Related Real Estate Calculators</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted);">Explore our other specialized homeowner, seller, and acquisition tools.</p>
+    </div>
+
+    <div class="related-grid">
+      <a href="/real-estate-capital-gains-tax-calculator" class="related-card">
+        <div>
+          <h4>Capital Gains Tax Calculator</h4>
+          <p>Model Section 121 exclusions ($250k/$500k), depreciation recapture, and federal/state tax bills on your home sale.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate Capital Gains →</span>
+      </a>
+
+      <a href="/real-estate-commission-calculator" class="related-card">
+        <div>
+          <h4>Real Estate Commission &amp; Split</h4>
+          <p>Calculate gross commissions, agent vs broker splits, franchise royalties, and net take-home pay under post-NAR rules.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate Commission →</span>
+      </a>
+
+      <a href="/rent-vs-buy-calculator" class="related-card">
+        <div>
+          <h4>Renting vs. Buying Calculator</h4>
+          <p>Compare 30-year net worth trajectories and calculate your exact breakeven horizon between renting and buying.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Compare Rent vs Buy →</span>
+      </a>
+
+      <a href="/home-affordability-calculator" class="related-card">
+        <div>
+          <h4>Home Affordability Calculator</h4>
+          <p>Model true purchasing power using banking-grade 28/36 debt-to-income limits and PITI payment breakdowns.</p>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.85rem; margin-top: 1rem;">Calculate Affordability →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes. Final settlement statements are determined by the closing title or escrow company.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT LOGIC & SELLER NET SHEET CALCULATION ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // State variables
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let activeState = 'FL'; // 'FL', 'TX', 'CA', 'US'
+  let proceedsChart = null;
+
+  // DOM Elements - Inputs
+  const inputSalePrice = document.getElementById('inputSalePrice');
+  const sliderSalePrice = document.getElementById('sliderSalePrice');
+
+  const inputFirstMortgage = document.getElementById('inputFirstMortgage');
+  const inputSecondMortgage = document.getElementById('inputSecondMortgage');
+
+  const inputListingCommPct = document.getElementById('inputListingCommPct');
+  const inputBuyerConcessionPct = document.getElementById('inputBuyerConcessionPct');
+
+  const inputTransferTax = document.getElementById('inputTransferTax');
+  const taxHelpTip = document.getElementById('taxHelpTip');
+  const inputTitlePolicy = document.getElementById('inputTitlePolicy');
+  const titleHelpTip = document.getElementById('titleHelpTip');
+  const inputSettlementFee = document.getElementById('inputSettlementFee');
+
+  const inputBuyerCredit = document.getElementById('inputBuyerCredit');
+  const inputHomeWarranty = document.getElementById('inputHomeWarranty');
+  const inputProratedTaxes = document.getElementById('inputProratedTaxes');
+  const inputHoaFee = document.getElementById('inputHoaFee');
+
+  // DOM Elements - Outputs
+  const proceedsBanner = document.getElementById('proceedsBanner');
+  const bannerBadge = document.getElementById('bannerBadge');
+  const bannerTitle = document.getElementById('bannerTitle');
+  const bannerVal = document.getElementById('bannerVal');
+  const bannerSubtext = document.getElementById('bannerSubtext');
+
+  const kpiTotalCosts = document.getElementById('kpiTotalCosts');
+  const kpiCostPct = document.getElementById('kpiCostPct');
+  const kpiCommissions = document.getElementById('kpiCommissions');
+  const kpiCommPct = document.getElementById('kpiCommPct');
+  const kpiClosingFees = document.getElementById('kpiClosingFees');
+  const kpiStateBadge = document.getElementById('kpiStateBadge');
+  const kpiMortgagePayoff = document.getElementById('kpiMortgagePayoff');
+
+  const wfSalePrice = document.getElementById('wfSalePrice');
+  const wfFirstMortgage = document.getElementById('wfFirstMortgage');
+  const wfSecondRow = document.getElementById('wfSecondRow');
+  const wfSecondMortgage = document.getElementById('wfSecondMortgage');
+  const wfCommPctDisplay = document.getElementById('wfCommPctDisplay');
+  const wfCommission = document.getElementById('wfCommission');
+  const wfTransferTax = document.getElementById('wfTransferTax');
+  const wfTitlePolicy = document.getElementById('wfTitlePolicy');
+  const wfSettlementFee = document.getElementById('wfSettlementFee');
+  const wfBuyerCredit = document.getElementById('wfBuyerCredit');
+  const wfProrations = document.getElementById('wfProrations');
+  const wfNetProceeds = document.getElementById('wfNetProceeds');
+
+  // Format Money helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'INR' ? 'INR' : (activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'EUR' ? 'EUR' : (activeCurrency === 'AUD' ? 'AUD' : 'USD'))),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateNetSheet();
+    });
+  });
+
+  // Slider <-> Input Syncs
+  function syncInputSlider(input, slider) {
+    input.addEventListener('input', () => {
+      slider.value = input.value;
+      autoCalculateStateFees();
+      calculateNetSheet();
+    });
+    slider.addEventListener('input', () => {
+      input.value = slider.value;
+      autoCalculateStateFees();
+      calculateNetSheet();
+    });
+  }
+
+  syncInputSlider(inputSalePrice, sliderSalePrice);
+
+  [inputFirstMortgage, inputSecondMortgage, inputListingCommPct, inputBuyerConcessionPct, inputTransferTax, inputTitlePolicy, inputSettlementFee, inputBuyerCredit, inputHomeWarranty, inputProratedTaxes, inputHoaFee].forEach(el => {
+    if (el) el.addEventListener('input', calculateNetSheet);
+  });
+
+  // Commission Preset Quick Buttons
+  document.querySelectorAll('.rate-btn[data-comm]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.rate-btn[data-comm]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const totalComm = parseFloat(btn.getAttribute('data-comm'));
+      inputListingCommPct.value = (totalComm / 2).toFixed(1);
+      inputBuyerConcessionPct.value = (totalComm / 2).toFixed(1);
+      calculateNetSheet();
+    });
+  });
+
+  // Advanced Toggle
+  const btnToggleAdvanced = document.getElementById('btnToggleAdvanced');
+  const advancedBox = document.getElementById('advancedBox');
+  const advancedArrow = document.getElementById('advancedArrow');
+  if (btnToggleAdvanced && advancedBox) {
+    btnToggleAdvanced.addEventListener('click', () => {
+      advancedBox.classList.toggle('open');
+      advancedArrow.textContent = advancedBox.classList.contains('open') ? '▲' : '▼';
+    });
+  }
+
+  // State-Specific Auto Calculation Rules
+  function autoCalculateStateFees() {
+    const price = Math.max(0, parseFloat(inputSalePrice.value) || 0);
+
+    if (activeState === 'FL') {
+      // Florida: Doc stamps on deed = $0.70 per $100 (0.70%)
+      const docStamps = Math.round(price * 0.007);
+      inputTransferTax.value = docStamps;
+      taxHelpTip.title = 'Florida: $0.70 per $100 on deed (0.70%)';
+
+      // Florida Promulgated Title Rate: $5.75 per $1,000 up to $100k, $5.00 per $1,000 up to $1M
+      let titleRate = 0;
+      if (price <= 100000) {
+        titleRate = (price / 1000) * 5.75;
+      } else {
+        titleRate = (100 * 5.75) + ((price - 100000) / 1000) * 5.00;
+      }
+      inputTitlePolicy.value = Math.round(titleRate);
+      titleHelpTip.title = 'Florida Promulgated Title Chart ($5.75/$1k to $100k, $5/$1k thereafter)';
+      inputSettlementFee.value = 650;
+      kpiStateBadge.textContent = 'Florida Promulgated Rates (Doc Stamps: 0.7%)';
+
+    } else if (activeState === 'TX') {
+      // Texas: Zero transfer taxes!
+      inputTransferTax.value = 0;
+      taxHelpTip.title = 'Texas has $0 state or county deed transfer tax!';
+
+      // Texas TDI Promulgated Title Chart estimate:
+      // ~$2,500 on $450k, roughly $1,350 base + 0.45% of excess
+      const txTitle = Math.round(1350 + (price > 100000 ? (price - 100000) * 0.0035 : 0));
+      inputTitlePolicy.value = Math.min(6000, Math.max(1200, txTitle));
+      titleHelpTip.title = 'Texas Department of Insurance (TDI) Promulgated Chart';
+      inputSettlementFee.value = 450; // TX 50/50 escrow split
+      kpiStateBadge.textContent = 'Texas TDI Rates (No State Transfer Tax)';
+
+    } else if (activeState === 'CA') {
+      // California: County transfer tax $1.10 per $1,000 (0.11%)
+      const docTax = Math.round((price / 1000) * 1.10);
+      inputTransferTax.value = docTax;
+      taxHelpTip.title = 'California: $1.10 per $1,000 County Documentary Tax';
+
+      // California Title & Escrow market rate
+      const caTitle = Math.round(800 + (price * 0.002));
+      inputTitlePolicy.value = caTitle;
+      titleHelpTip.title = 'California Market Owner Title Premium';
+      inputSettlementFee.value = 1100;
+      kpiStateBadge.textContent = 'California Rates ($1.10/k Doc Tax)';
+
+    } else {
+      // US National Average
+      inputTransferTax.value = Math.round(price * 0.0025);
+      inputTitlePolicy.value = Math.round(price * 0.0045);
+      inputSettlementFee.value = 750;
+      kpiStateBadge.textContent = 'National US Average Estimates';
+    }
+  }
+
+  // State Preset Button Click Handlers
+  document.querySelectorAll('.preset-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeState = btn.getAttribute('data-state');
+      autoCalculateStateFees();
+      calculateNetSheet();
+    });
+  });
+
+  // Main Net Sheet Calculation Engine
+  function calculateNetSheet() {
+    const salePrice = Math.max(0, parseFloat(inputSalePrice.value) || 0);
+    const firstMortgage = Math.max(0, parseFloat(inputFirstMortgage.value) || 0);
+    const secondMortgage = Math.max(0, parseFloat(inputSecondMortgage.value) || 0);
+
+    const listCommPct = Math.max(0, parseFloat(inputListingCommPct.value) || 0) / 100;
+    const buyerCommPct = Math.max(0, parseFloat(inputBuyerConcessionPct.value) || 0) / 100;
+    const totalCommPct = listCommPct + buyerCommPct;
+    const totalCommission = salePrice * totalCommPct;
+
+    const transferTax = Math.max(0, parseFloat(inputTransferTax.value) || 0);
+    const titlePolicy = Math.max(0, parseFloat(inputTitlePolicy.value) || 0);
+    const settlementFee = Math.max(0, parseFloat(inputSettlementFee.value) || 0);
+
+    const buyerCredit = Math.max(0, parseFloat(inputBuyerCredit.value) || 0);
+    const homeWarranty = Math.max(0, parseFloat(inputHomeWarranty.value) || 0);
+    const proratedTaxes = Math.max(0, parseFloat(inputProratedTaxes.value) || 0);
+    const hoaFee = Math.max(0, parseFloat(inputHoaFee.value) || 0);
+
+    const totalTitleEscrow = transferTax + titlePolicy + settlementFee;
+    const totalCreditsProrations = buyerCredit + homeWarranty + proratedTaxes + hoaFee;
+    const totalMortgagePayoff = firstMortgage + secondMortgage;
+    const totalClosingCosts = totalCommission + totalTitleEscrow + totalCreditsProrations;
+
+    // Net Proceeds to Seller
+    const netProceeds = salePrice - totalMortgagePayoff - totalClosingCosts;
+
+    // Update Banner Display
+    if (netProceeds >= 0) {
+      bannerTitle.textContent = 'Net Cash to Seller at Closing';
+      bannerVal.textContent = formatMoney(netProceeds);
+      bannerVal.style.color = '#6EE7B7';
+      bannerSubtext.textContent = `Calculated from ${formatMoney(salePrice)} contract price after satisfying ${formatMoney(totalMortgagePayoff)} in mortgage debt and ${formatMoney(totalClosingCosts)} in transaction costs.`;
+    } else {
+      bannerTitle.textContent = 'Shortfall / Cash to Bring to Closing';
+      bannerVal.textContent = `-${formatMoney(Math.abs(netProceeds))}`;
+      bannerVal.style.color = '#F87171';
+      bannerSubtext.textContent = `Warning: Sale price does not cover mortgage payoffs and closing fees. Seller must bring ${formatMoney(Math.abs(netProceeds))} to closing (or negotiate a short sale).`;
+    }
+
+    // Update KPIs
+    kpiTotalCosts.textContent = formatMoney(totalClosingCosts);
+    const costPct = salePrice > 0 ? ((totalClosingCosts / salePrice) * 100).toFixed(2) : 0;
+    kpiCostPct.textContent = `${costPct}% of contract price`;
+    kpiCommissions.textContent = formatMoney(totalCommission);
+    kpiCommPct.textContent = `${(totalCommPct * 100).toFixed(1)}% (Listing + Buyer)`;
+    kpiClosingFees.textContent = formatMoney(totalTitleEscrow);
+    kpiMortgagePayoff.textContent = formatMoney(totalMortgagePayoff);
+
+    // Update Waterfall Statement
+    wfSalePrice.textContent = formatMoney(salePrice);
+    wfFirstMortgage.textContent = `-${formatMoney(firstMortgage)}`;
+
+    if (secondMortgage > 0) {
+      wfSecondRow.style.display = 'flex';
+      wfSecondMortgage.textContent = `-${formatMoney(secondMortgage)}`;
+    } else {
+      wfSecondRow.style.display = 'none';
+    }
+
+    wfCommPctDisplay.textContent = `${(totalCommPct * 100).toFixed(1)}%`;
+    wfCommission.textContent = `-${formatMoney(totalCommission)}`;
+    wfTransferTax.textContent = `-${formatMoney(transferTax)}`;
+    wfTitlePolicy.textContent = `-${formatMoney(titlePolicy)}`;
+    wfSettlementFee.textContent = `-${formatMoney(settlementFee)}`;
+    wfBuyerCredit.textContent = `-${formatMoney(buyerCredit + homeWarranty)}`;
+    wfProrations.textContent = `-${formatMoney(proratedTaxes + hoaFee)}`;
+    wfNetProceeds.textContent = formatMoney(netProceeds);
+    wfNetProceeds.style.color = netProceeds >= 0 ? 'var(--accent-emerald)' : 'var(--accent-coral)';
+
+    // Render Doughnut Chart
+    renderProceedsChart(Math.max(0, netProceeds), totalMortgagePayoff, totalCommission, totalTitleEscrow, totalCreditsProrations);
+  }
+
+  // Render Doughnut Chart
+  function renderProceedsChart(netCash, mortgage, commission, titleFees, credits) {
+    const ctx = document.getElementById('proceedsPieChart').getContext('2d');
+    if (proceedsChart) {
+      proceedsChart.destroy();
+    }
+
+    proceedsChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Net Proceeds to Seller', 'Mortgage Payoffs', 'Brokerage Commissions', 'Title, Taxes & Escrow', 'Buyer Credits & Prorations'],
+        datasets: [{
+          data: [Math.round(netCash), Math.round(mortgage), Math.round(commission), Math.round(titleFees), Math.round(credits)],
+          backgroundColor: ['#10B981', '#4F46E5', '#D97706', '#F43F5E', '#06B6D4'],
+          borderWidth: 2,
+          borderColor: '#FFFFFF'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, weight: '600', family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${formatMoney(context.raw)}`;
+              }
+            }
+          }
+        },
+        cutout: '65%'
+      }
+    });
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Action Buttons
+  const btnDownloadCsv = document.getElementById('btnDownloadCsv');
+  const btnPrintReport = document.getElementById('btnPrintReport');
+  const btnShareDeal = document.getElementById('btnShareDeal');
+
+  // CSV Exporter
+  btnDownloadCsv.addEventListener('click', () => {
+    let csv = `RealRefin Seller Net Sheet Closing Statement\n`;
+    csv += `State Preset: ${activeState}, Contract Sale Price: ${inputSalePrice.value}\n`;
+    csv += `1st Mortgage Payoff: ${inputFirstMortgage.value}, Commissions: ${wfCommPctDisplay.textContent}\n\n`;
+    csv += `Settlement Line Item,Amount\n`;
+    csv += `"Contract Sales Price","${wfSalePrice.textContent}"\n`;
+    csv += `"1st Mortgage Payoff","${wfFirstMortgage.textContent}"\n`;
+    csv += `"2nd Mortgage Payoff","${wfSecondMortgage.textContent}"\n`;
+    csv += `"Real Estate Commissions","${wfCommission.textContent}"\n`;
+    csv += `"Transfer Taxes / Doc Stamps","${wfTransferTax.textContent}"\n`;
+    csv += `"Owner's Title Policy","${wfTitlePolicy.textContent}"\n`;
+    csv += `"Escrow / Settlement Fee","${wfSettlementFee.textContent}"\n`;
+    csv += `"Buyer Credits & Warranty","${wfBuyerCredit.textContent}"\n`;
+    csv += `"Taxes & HOA Prorations","${wfProrations.textContent}"\n`;
+    csv += `"Net Walk-Away Proceeds","${wfNetProceeds.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Seller-Net-Sheet-${activeState}-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // Print PDF Handler
+  btnPrintReport.addEventListener('click', () => {
+    window.print();
+  });
+
+  // Share URL Handler
+  btnShareDeal.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      price: inputSalePrice.value,
+      mort: inputFirstMortgage.value,
+      listComm: inputListingCommPct.value,
+      buyerComm: inputBuyerConcessionPct.value,
+      state: activeState,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const originalText = btnShareDeal.innerHTML;
+      btnShareDeal.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => {
+        btnShareDeal.innerHTML = originalText;
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy this link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params
+  function loadQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('price')) inputSalePrice.value = urlParams.get('price');
+    if (urlParams.has('mort')) inputFirstMortgage.value = urlParams.get('mort');
+    if (urlParams.has('listComm')) inputListingCommPct.value = urlParams.get('listComm');
+    if (urlParams.has('buyerComm')) inputBuyerConcessionPct.value = urlParams.get('buyerComm');
+    if (urlParams.has('state')) {
+      activeState = urlParams.get('state');
+      const targetBtn = document.querySelector(`.preset-pill[data-state="${activeState}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+    if (urlParams.has('curr')) {
+      const c = urlParams.get('curr');
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  loadQueryParams();
+  autoCalculateStateFees();
+  calculateNetSheet();
+});
+</script>
+
+</body>
+</html>
