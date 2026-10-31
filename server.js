@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/house-hacking-calculator</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/cost-segregation-study-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -229,6 +235,22 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/house-hacking-calculator': 'house-hacking-calculator.html',
+  '/house-hacking-calculator.html': 'house-hacking-calculator.html',
+  '/house-hack-calculator': 'house-hacking-calculator.html',
+  '/house-hack-calculator.html': 'house-hacking-calculator.html',
+  '/house-hacking-rent-calculator': 'house-hacking-calculator.html',
+  '/house-hacking-rent-calculator.html': 'house-hacking-calculator.html',
+  '/duplex-house-hacking-calculator': 'house-hacking-calculator.html',
+  '/duplex-house-hacking-calculator.html': 'house-hacking-calculator.html',
+  '/triplex-house-hacking-calculator': 'house-hacking-calculator.html',
+  '/triplex-house-hacking-calculator.html': 'house-hacking-calculator.html',
+  '/fourplex-house-hacking-calculator': 'house-hacking-calculator.html',
+  '/fourplex-house-hacking-calculator.html': 'house-hacking-calculator.html',
+  '/house-hacking-fha-loan-calculator': 'house-hacking-calculator.html',
+  '/house-hacking-fha-loan-calculator.html': 'house-hacking-calculator.html',
+  '/how-to-calculate-house-hacking': 'house-hacking-calculator.html',
+  '/how-to-calculate-house-hacking.html': 'house-hacking-calculator.html',
   '/cost-segregation-study-calculator': 'cost-segregation-study-calculator.html',
   '/cost-segregation-study-calculator.html': 'cost-segregation-study-calculator.html',
   '/cost-segregation-calculator': 'cost-segregation-study-calculator.html',

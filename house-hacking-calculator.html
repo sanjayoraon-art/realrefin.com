@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Hacking Calculator | Live Free & Rental Analysis (2026)</title>
+  <meta name="description" content="Calculate your house hacking monthly savings, net housing cost, and cash flow. Model duplex, triplex, fourplex, and ADU rent strategies with FHA 3.5% down, 5% conventional, and 0% down VA loans. Includes FHA self-sufficiency test and move-out cash flow projection.">
+  <meta name="keywords" content="house hacking calculator, house hack calculator, house hacking rent calculator, duplex house hacking calculator, triplex house hacking calculator, fourplex house hacking calculator, house hacking fha loan calculator, how to calculate house hacking, house hack fha self sufficiency test">
+  <link rel="canonical" href="https://realrefin.com/house-hacking-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="House Hacking Calculator (2026) | RealRefin">
+  <meta property="og:description" content="Calculate net housing costs, tenant rent coverage, FHA 3.5% self-sufficiency test, and future move-out cash flow for duplex, triplex, fourplex, and ADU house hacks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/house-hacking-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/house-hacking-calculator#app",
+        "name": "RealRefin House Hacking Calculator",
+        "url": "https://realrefin.com/house-hacking-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional-grade house hacking calculator. Analyzes net out-of-pocket housing costs, mortgage rent offset percentage, FHA self-sufficiency tests for 3-4 units, annual rent savings vs market rent, and move-out investment cash flow projections.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer & Seller Suite",
+            "item": "https://realrefin.com/#suite-buyer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "House Hacking Calculator",
+            "item": "https://realrefin.com/house-hacking-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is house hacking in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "House hacking is a real estate wealth-building strategy where an individual or couple purchases a 1-to-4 unit residential property (duplex, triplex, fourplex, or single-family with an ADU/basement unit), lives in one unit as their primary residence, and rents out the other units or bedrooms to tenants. The rental income offsets or completely covers the mortgage, property taxes, insurance, and maintenance, allowing the owner to live for free or with significantly reduced housing expenses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you house hack with an FHA loan with 3.5% down?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! FHA loans allow buyers to purchase 1-to-4 unit properties with only 3.5% down payment as long as they occupy one unit as their primary residence for at least 12 months. For 3-unit and 4-unit properties, the purchase must satisfy the FHA Self-Sufficiency Test, which requires 75% of the total projected gross rental income across all units to equal or exceed the total monthly mortgage payment (PITI)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you house hack with a Conventional loan with 5% down?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Fannie Mae guidelines allow owner-occupant buyers to put as little as 5% down on 2-unit, 3-unit, and 4-unit properties. Furthermore, conventional loans on 3-4 units do not require the stringent FHA Self-Sufficiency Test, making them an excellent financing vehicle for multi-unit house hackers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the FHA Self-Sufficiency Test for 3 and 4 unit properties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The FHA Self-Sufficiency Test applies exclusively to 3-unit and 4-unit properties purchased with FHA financing. Under HUD guidelines, the total monthly mortgage payment (Principal, Interest, Taxes, Insurance, and MIP) cannot exceed 75% of the property's total estimated gross market rents (applying a 25% vacancy and maintenance haircut to all units including the owner-occupied unit)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when you move out of your house hack?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After fulfilling the 1-year owner occupancy requirement, you can legally move out, purchase another primary residence with low down payment financing, and rent out your previous owner's unit. At that point, the property transitions into a 100% full rental generating monthly positive cash flow, principal paydown, and tax depreciation."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-indigo: #4F46E5;
+      --accent-indigo-light: #EEF2FF;
+      --accent-indigo-border: #C7D2FE;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #F43F5E;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP GLOBAL HEADER */
+    .site-header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text-white);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .brand-logo span.dot {
+      color: var(--accent-emerald);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .nav-links a {
+      color: #CBD5E1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .nav-links a:hover {
+      color: var(--accent-emerald);
+    }
+    .currency-selector {
+      display: flex;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+      gap: 2px;
+    }
+    .curr-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .curr-btn.active {
+      background: var(--accent-emerald);
+      color: var(--primary-navy);
+    }
+
+    /* HERO STRIP */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #064e3b 50%, #022c22 100%);
+      color: var(--text-white);
+      padding: 2.75rem 1.5rem 2.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hero-content {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.825rem;
+      color: #94A3B8;
+      margin-bottom: 0.85rem;
+    }
+    .breadcrumbs a {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .breadcrumbs a:hover {
+      color: var(--accent-emerald);
+    }
+    .hero-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .hero-h1-group h1 {
+      font-size: 2.15rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 0.45rem;
+    }
+    .hero-h1-group p {
+      font-size: 1rem;
+      color: #CBD5E1;
+      max-width: 820px;
+      line-height: 1.5;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #E2E8F0;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .hero-badge.green {
+      background: rgba(16, 185, 129, 0.18);
+      color: #6EE7B7;
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+
+    /* PRESETS ROW */
+    .presets-bar {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1.5rem;
+    }
+    .presets-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .presets-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .preset-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .preset-pill:hover {
+      background: var(--accent-emerald-light);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+    }
+
+    /* MAIN APP LAYOUT */
+    .main-layout {
+      max-width: 1280px;
+      margin: 1.75rem auto 3rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.15fr 1.05fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARDS */
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .card-header {
+      padding: 1.1rem 1.35rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-header-badge {
+      font-size: 0.725rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+    }
+    .card-body {
+      padding: 1.35rem;
+    }
+
+    /* FORM ELEMENTS */
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    label.field-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      margin-bottom: 0.35rem;
+    }
+    .field-hint {
+      font-size: 0.725rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-prefix {
+      position: absolute;
+      left: 0.85rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+    .input-suffix {
+      position: absolute;
+      right: 0.85rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+    input.calc-input, select.calc-select {
+      width: 100%;
+      height: 42px;
+      padding: 0 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+    input.calc-input.has-prefix {
+      padding-left: 2rem;
+    }
+    input.calc-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+    input.calc-input:focus, select.calc-select:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* RANGE SLIDERS */
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.35rem;
+    }
+    input[type=range].calc-range {
+      flex: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #E2E8F0;
+      border-radius: 999px;
+      outline: none;
+    }
+    input[type=range].calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald-dark);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+      transition: transform 0.1s;
+    }
+    input[type=range].calc-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* UNITS RENTAL INCOME REPEATER */
+    .units-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-top: 0.5rem;
+    }
+    .unit-row-item {
+      display: grid;
+      grid-template-columns: 140px 1fr 1fr;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .unit-row-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    @media (max-width: 580px) {
+      .unit-row-item {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+    }
+    .unit-title-badge {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* COVERAGE PROGRESS GAUGE */
+    .gauge-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+    .gauge-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.45rem;
+    }
+    .gauge-title {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+    }
+    .gauge-pct {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+    }
+    .gauge-track {
+      background: #E2E8F0;
+      height: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .gauge-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #3B82F6, #10B981);
+      width: 80%;
+      transition: width 0.3s ease;
+    }
+    .gauge-markers {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      font-weight: 600;
+    }
+
+    /* HERO HIGHLIGHT BOX */
+    .hero-stat-box {
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 1.35rem;
+      box-shadow: var(--shadow-md);
+      color: #FFFFFF;
+      transition: all 0.2s ease;
+    }
+    .hero-stat-box.green {
+      background: linear-gradient(135deg, #064E3B 0%, #047857 60%, #059669 100%);
+    }
+    .hero-stat-box.blue {
+      background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 60%, #3B82F6 100%);
+    }
+    .hero-stat-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #A7F3D0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-stat-box.blue .hero-stat-title {
+      color: #BFDBFE;
+    }
+    .hero-stat-amount {
+      font-size: 2.25rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin: 0.4rem 0 0.25rem;
+    }
+    .hero-stat-subtitle {
+      font-size: 0.85rem;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* SUMMARY GRID */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 600px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .kpi-stat-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .kpi-stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .kpi-stat-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--accent-emerald);
+    }
+    .kpi-stat-card.blue::before { background: var(--accent-blue); }
+    .kpi-stat-card.indigo::before { background: var(--accent-indigo); }
+    .kpi-stat-card.amber::before { background: var(--accent-amber); }
+    
+    .kpi-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kpi-val {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.2;
+    }
+    .kpi-subtext {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+    .kpi-subtext span.positive {
+      color: var(--accent-emerald-dark);
+      font-weight: 700;
+    }
+
+    /* FHA SELF SUFFICIENCY BADGE */
+    .fha-test-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .fha-test-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .fha-test-badge.pass {
+      background: #DCFCE7;
+      color: #15803D;
+      border: 1px solid #86EFAC;
+    }
+    .fha-test-badge.fail {
+      background: #FEE2E2;
+      color: #B91C1C;
+      border: 1px solid #FCA5A5;
+    }
+    .fha-test-badge.na {
+      background: #F1F5F9;
+      color: #64748B;
+    }
+
+    /* CHARTS CONTAINER */
+    .chart-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .chart-header {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chart-wrapper {
+      position: relative;
+      height: 240px;
+      width: 100%;
+    }
+
+    /* ACTION BUTTONS */
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .btn-action {
+      flex: 1;
+      min-width: 130px;
+      height: 40px;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--secondary-navy);
+      font-size: 0.825rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+    .btn-action:hover {
+      background: #FFFFFF;
+      border-color: var(--secondary-navy);
+      color: var(--primary-navy);
+    }
+    .btn-action.primary {
+      background: var(--accent-emerald);
+      border-color: var(--accent-emerald-dark);
+      color: #064E3B;
+    }
+    .btn-action.primary:hover {
+      background: #059669;
+      color: #FFFFFF;
+    }
+
+    /* FUTURE MOVE OUT PROJECTION BOX */
+    .move-out-card {
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    .move-out-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .move-out-badge {
+      font-size: 0.7rem;
+      background: rgba(16, 185, 129, 0.25);
+      color: #6EE7B7;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .move-out-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 0.85rem;
+    }
+    @media (max-width: 600px) {
+      .move-out-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .move-out-stat h4 {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .move-out-stat p {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-top: 0.2rem;
+    }
+
+    /* CONTENT / SEO / FAQ SECTION */
+    .authority-content-section {
+      max-width: 1280px;
+      margin: 3.5rem auto;
+      padding: 0 1.5rem;
+    }
+    .content-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) {
+      .content-box {
+        padding: 1.5rem;
+      }
+    }
+    .content-box h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .content-box h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.5rem 0 0.65rem;
+    }
+    .content-box p {
+      margin-bottom: 1rem;
+      color: #334155;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .content-box ul, .content-box ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+    .content-box li {
+      margin-bottom: 0.45rem;
+    }
+    .formula-callout {
+      background: var(--bg-light);
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.15rem 1.35rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 1.25rem 0;
+      font-family: monospace;
+      color: var(--primary-navy);
+      overflow-x: auto;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      transition: background 0.15s;
+    }
+    .faq-question:hover {
+      background: var(--bg-light);
+    }
+    .faq-answer {
+      padding: 0 1.25rem 1rem;
+      color: #334155;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-chevron {
+      transition: transform 0.2s;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--primary-navy);
+      color: #94A3B8;
+      padding: 3rem 1.5rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      .site-header, .hero-banner, .presets-bar, .action-row, .authority-content-section, .site-footer {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF;
+        color: #000000;
+      }
+      .main-layout {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+      .calc-card {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  </style>
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- 1. TOP GLOBAL HEADER -->
+<header class="site-header">
+  <div class="header-container">
+    <a href="/" class="brand-logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="6" fill="#10B981"/>
+        <path d="M6 16L12 8L18 16H6Z" fill="#0F172A"/>
+      </svg>
+      RealRefin<span class="dot">.com</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#suite-buyer">Buyer Suite</a>
+      <a href="/calculate-debt-to-income-ratio-for-mortgage">DTI Calculator</a>
+      <a href="/rent-vs-buy-calculator">Rent vs Buy</a>
+      <div class="currency-selector" aria-label="Select Currency">
+        <button class="curr-btn active" data-currency="USD" title="US Dollar">$</button>
+        <button class="curr-btn" data-currency="EUR" title="Euro">€</button>
+        <button class="curr-btn" data-currency="GBP" title="British Pound">£</button>
+        <button class="curr-btn" data-currency="INR" title="Indian Rupee">₹</button>
+        <button class="curr-btn" data-currency="CAD" title="Canadian Dollar">C$</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 2. HERO STRIP -->
+<section class="hero-banner">
+  <div class="hero-content">
+    <div class="breadcrumbs">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/#suite-buyer">Home Buyer &amp; Seller Suite</a>
+      <span>/</span>
+      <span style="color: #FFFFFF;">House Hacking Calculator</span>
+    </div>
+    <div class="hero-title-row">
+      <div class="hero-h1-group">
+        <h1>House Hacking Calculator</h1>
+        <p>
+          Model duplex, triplex, fourplex, and ADU house hacks. Calculate your net out-of-pocket housing cost, tenant rent coverage percentage, FHA 3-4 unit self-sufficiency test, and future move-out rental cash flow.
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge green">🏡 1 to 4 Units &amp; ADU Modeling</span>
+          <span class="hero-badge">⚡ FHA 3.5% &amp; Conventional 5% Down</span>
+          <span class="hero-badge">📋 FHA Self-Sufficiency Test Evaluator</span>
+          <span class="hero-badge">🚀 Future Move-Out Full Rental Projection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PRESETS BAR -->
+<div class="presets-bar">
+  <div class="presets-container">
+    <span class="presets-label">⚡ Quick Presets:</span>
+    <button class="preset-pill" id="presetDuplex">🏡 Duplex Hack ($475k - FHA 3.5%)</button>
+    <button class="preset-pill" id="presetTriplex">🏢 Triplex Hack ($650k - Conv 5%)</button>
+    <button class="preset-pill" id="presetFourplex">🏬 Fourplex Hack ($825k - FHA 3.5%)</button>
+    <button class="preset-pill" id="presetAdu">🏠 SFR + Detached ADU ($525k)</button>
+    <button class="preset-pill" id="presetRentByRoom">🛏️ Rent-by-the-Room SFR ($380k)</button>
+  </div>
+</div>
+
+<!-- 4. MAIN APP LAYOUT -->
+<main class="main-layout">
+
+  <!-- LEFT COLUMN: INPUTS & RENTAL REVENUE -->
+  <div class="calc-inputs-col">
+
+    <!-- Card 1: Property Acquisition & Financing -->
+    <div class="calc-card">
+      <div class="card-header">
+        <h2><span>🏡</span> Property &amp; Financing Details</h2>
+        <span class="card-header-badge">Step 1: Purchase</span>
+      </div>
+      <div class="card-body">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="propertyType">
+              Property Strategy
+              <span class="field-hint">Unit Configuration</span>
+            </label>
+            <select id="propertyType" class="calc-select">
+              <option value="duplex" selected>Duplex (2 Units: Live in 1, Rent 1)</option>
+              <option value="triplex">Triplex (3 Units: Live in 1, Rent 2)</option>
+              <option value="fourplex">Fourplex (4 Units: Live in 1, Rent 3)</option>
+              <option value="sfr_adu">Single Family + ADU (Live in Main, Rent ADU)</option>
+              <option value="rent_by_room">Rent by the Room (4BR SFR: Live in 1, Rent 3)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="purchasePrice">
+              Purchase Price
+              <span class="field-hint">Acquisition cost</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix1">$</span>
+              <input type="number" id="purchasePrice" class="calc-input has-prefix" value="475000" min="50000" step="5000">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="loanType">
+              Financing Type
+              <span class="field-hint">Owner-Occupant Loan</span>
+            </label>
+            <select id="loanType" class="calc-select">
+              <option value="fha" selected>FHA Loan (3.5% Down • Up to 4 Units)</option>
+              <option value="conv_5">Conventional 5% Down (2-4 Units)</option>
+              <option value="va">VA Loan (0% Down • 0% PMI)</option>
+              <option value="conv_20">Conventional 20% Down (No PMI)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="downPaymentPct">
+              Down Payment
+              <span class="field-hint" id="downPaymentHint">3.5% = $16,625</span>
+            </label>
+            <div class="input-wrapper">
+              <input type="number" id="downPaymentPct" class="calc-input has-suffix" value="3.5" min="0" max="50" step="0.5">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="interestRate">
+              Mortgage Interest Rate
+              <span class="field-hint">30-Year Fixed</span>
+            </label>
+            <div class="input-wrapper">
+              <input type="number" id="interestRate" class="calc-input has-suffix" value="6.5" min="2" max="15" step="0.125">
+              <span class="input-suffix">%</span>
+            </div>
+            <div class="slider-row">
+              <input type="range" id="rateSlider" class="calc-range" min="4" max="10" value="6.5" step="0.125">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="marketRentComparison">
+              Alternative Market Rent
+              <span class="field-hint">What you'd pay renting elsewhere</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix2">$</span>
+              <input type="number" id="marketRentComparison" class="calc-input has-prefix" value="1800" min="500" step="50">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Card 2: Tenant Rental Income & Unit Breakdown -->
+    <div class="calc-card">
+      <div class="card-header">
+        <h2><span>💵</span> Tenant Rental Income</h2>
+        <span class="card-header-badge">Step 2: Revenue</span>
+      </div>
+      <div class="card-body">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="vacancyRate">
+              Vacancy Allowance
+              <span class="field-hint">Standard turnover buffer</span>
+            </label>
+            <div class="input-wrapper">
+              <input type="number" id="vacancyRate" class="calc-input has-suffix" value="5" min="0" max="25" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="ownerUnitMarketRent">
+              Owner's Unit Market Rent
+              <span class="field-hint">For move-out &amp; FHA test</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix3">$</span>
+              <input type="number" id="ownerUnitMarketRent" class="calc-input has-prefix" value="1800" min="300" step="50">
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Units Container -->
+        <div class="units-box" id="unitsContainer">
+          <!-- Dynamically populated rows for Unit 2, Unit 3, Unit 4 -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Card 3: Monthly Taxes, Insurance & Operating Reserves -->
+    <div class="calc-card">
+      <div class="card-header">
+        <h2><span>🛡️</span> Taxes, Insurance &amp; Operating Reserves</h2>
+        <span class="card-header-badge">Step 3: Expenses</span>
+      </div>
+      <div class="card-body">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="annualPropertyTax">
+              Annual Property Taxes
+              <span class="field-hint">~1.2% national average</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix4">$</span>
+              <input type="number" id="annualPropertyTax" class="calc-input has-prefix" value="5700" min="0" step="100">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="annualInsurance">
+              Annual Homeowners Insurance
+              <span class="field-hint">Hazard / Landlord policy</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix5">$</span>
+              <input type="number" id="annualInsurance" class="calc-input has-prefix" value="1900" min="0" step="50">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="maintenancePct">
+              Maintenance &amp; Repairs
+              <span class="field-hint">% of Gross Tenant Rent</span>
+            </label>
+            <div class="input-wrapper">
+              <input type="number" id="maintenancePct" class="calc-input has-suffix" value="6" min="0" max="20" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="capexPct">
+              CapEx Reserves (Roof, HVAC)
+              <span class="field-hint">% of Gross Tenant Rent</span>
+            </label>
+            <div class="input-wrapper">
+              <input type="number" id="capexPct" class="calc-input has-suffix" value="5" min="0" max="20" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="field-label" for="ownerPaidUtilities">
+              Owner-Paid Monthly Utilities
+              <span class="field-hint">Water, Sewer, Trash, Lawn</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix6">$</span>
+              <input type="number" id="ownerPaidUtilities" class="calc-input has-prefix" value="175" min="0" step="25">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label" for="monthlyHoa">
+              Monthly HOA / Master Fee
+              <span class="field-hint">If applicable</span>
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix" id="currPrefix7">$</span>
+              <input type="number" id="monthlyHoa" class="calc-input has-prefix" value="0" min="0" step="25">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN: RESULTS, KPI TILES & VISUALS -->
+  <div class="calc-results-col">
+
+    <!-- Hero Result Card: Net Cost to Live vs Free Living -->
+    <div class="hero-stat-box green" id="heroResultBox">
+      <div class="hero-stat-title">
+        <span id="heroBoxTitle">🎉 Net Out-Of-Pocket Housing Cost</span>
+        <span style="font-size: 0.775rem; background: rgba(0,0,0,0.25); padding: 0.2rem 0.5rem; border-radius: 4px;" id="heroCoverageTag">84% Covered</span>
+      </div>
+      <div class="hero-stat-amount" id="resNetCostToLive">$592 /mo</div>
+      <div class="hero-stat-subtitle" id="resHeroSubtitle">
+        Tenants are paying $1,805/mo towards your total $2,397/mo PITI &amp; operating costs.
+      </div>
+    </div>
+
+    <!-- Gauge: Mortgage Rent Offset Coverage -->
+    <div class="gauge-card">
+      <div class="gauge-top">
+        <span class="gauge-title">Tenant Rent Coverage of Housing Costs:</span>
+        <span class="gauge-pct" id="gaugePctDisplay">75.3%</span>
+      </div>
+      <div class="gauge-track">
+        <div class="gauge-fill" id="gaugeFillBar" style="width: 75.3%;"></div>
+      </div>
+      <div class="gauge-markers">
+        <span>0% (Solo Payer)</span>
+        <span>50%</span>
+        <span>100% (Free Living)</span>
+        <span>120%+ (Cash Flow)</span>
+      </div>
+    </div>
+
+    <!-- 4 KPI Metrics Grid -->
+    <div class="summary-grid">
+      <!-- KPI 1: Monthly Savings vs Market Rent -->
+      <div class="kpi-stat-card">
+        <div class="kpi-label">
+          <span>Monthly Savings</span>
+          <span>💰</span>
+        </div>
+        <div class="kpi-val" id="resMonthlySavings">$1,208 /mo</div>
+        <div class="kpi-subtext">
+          Annualized savings: <span class="positive" id="resAnnualSavings">$14,496/yr</span> vs renting at $1,800/mo
+        </div>
+      </div>
+
+      <!-- KPI 2: Total Monthly PITI Payment -->
+      <div class="kpi-stat-card blue">
+        <div class="kpi-label">
+          <span>Total Mortgage PITI</span>
+          <span>🏦</span>
+        </div>
+        <div class="kpi-val" id="resTotalPiti">$3,589 /mo</div>
+        <div class="kpi-subtext">
+          P&amp;I: <span id="resPiOnly">$2,897</span> • Tax/Ins/MIP: <span id="resEscrow">$692</span>
+        </div>
+      </div>
+
+      <!-- KPI 3: First-Year Principal Paydown -->
+      <div class="kpi-stat-card indigo">
+        <div class="kpi-label">
+          <span>Year 1 Principal Paydown</span>
+          <span>📈</span>
+        </div>
+        <div class="kpi-val" id="resYear1Principal">$5,940</div>
+        <div class="kpi-subtext">
+          Tenants build <span class="positive" id="resMonthlyEquity">+$495/mo</span> in forced home equity
+        </div>
+      </div>
+
+      <!-- KPI 4: Initial Cash to Close -->
+      <div class="kpi-stat-card amber">
+        <div class="kpi-label">
+          <span>Total Cash to Close</span>
+          <span>💼</span>
+        </div>
+        <div class="kpi-val" id="resTotalCashToClose">$26,125</div>
+        <div class="kpi-subtext">
+          Down payment (<span id="resDownPayDollar">$16,625</span>) + ~2% Closing costs (<span id="resClosingDollar">$9,500</span>)
+        </div>
+      </div>
+    </div>
+
+    <!-- FHA Self-Sufficiency Test Card (For 3-4 Units) -->
+    <div class="fha-test-card" id="fhaTestContainer" style="display: none;">
+      <div>
+        <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary-navy);">
+          FHA 3-4 Unit Self-Sufficiency Test
+        </div>
+        <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.2rem;" id="fhaTestExplanation">
+          75% of Gross Market Rent ($3,975) must exceed total PITI payment ($3,589).
+        </div>
+      </div>
+      <span class="fha-test-badge pass" id="fhaBadge">PASSES TEST</span>
+    </div>
+
+    <!-- Move-Out Future Rental Projection Box -->
+    <div class="move-out-card">
+      <div class="move-out-header">
+        <span style="font-weight: 800; font-size: 0.95rem;">🚀 Move-Out Strategy: Future 100% Rental</span>
+        <span class="move-out-badge">After Year 1</span>
+      </div>
+      <p style="font-size: 0.8rem; color: #CBD5E1; line-height: 1.4;">
+        When you move out after 1 year to buy your next property, you rent out your owner's unit at $<span id="dispOwnerRent">1,800</span>/mo:
+      </p>
+      <div class="move-out-grid">
+        <div class="move-out-stat">
+          <h4>Full Gross Rent</h4>
+          <p id="resMoveOutGross">$3,700 /mo</p>
+        </div>
+        <div class="move-out-stat">
+          <h4>Net Monthly Cash Flow</h4>
+          <p id="resMoveOutCashflow" style="color: #6EE7B7;">+$985 /mo</p>
+        </div>
+        <div class="move-out-stat">
+          <h4>Cash-on-Cash ROI</h4>
+          <p id="resMoveOutCoc" style="color: #6EE7B7;">45.2%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart: Monthly Housing Cash Flow Breakdown -->
+    <div class="chart-box">
+      <div class="chart-header">
+        <span>Monthly Cash Flow Breakdown</span>
+        <span style="font-size: 0.75rem; color: var(--text-muted);">PITI vs. Tenant Offset</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="cashflowBarChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-row">
+      <button class="btn-action primary" id="btnExportCsv">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CSV Analysis
+      </button>
+      <button class="btn-action" id="btnPrintReport">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print / PDF
+      </button>
+      <button class="btn-action" id="btnShareDeal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share Deal
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<!-- 5. IN-DEPTH AUTHORITY CONTENT & SEO SECTION -->
+<section class="authority-content-section">
+  <div class="content-box">
+    <h2>The Definitive Guide to House Hacking</h2>
+
+    <p>
+      <strong>House hacking</strong> is widely recognized as the single most effective low-risk strategy for first-time home buyers and aspiring real estate investors to build generational wealth. By combining <strong>low-down-payment owner-occupant financing</strong> (such as 3.5% down FHA loans or 5% down conventional mortgages) with rental revenue generated from additional units or bedrooms, buyers effectively eliminate their largest living expense: housing.
+    </p>
+
+    <h3>Mathematical Formulation of House Hacking Economics</h3>
+    <p>
+      The core financial advantage of house hacking is measured by comparing your net out-of-pocket monthly housing cost against standard fair market rent:
+    </p>
+
+    <div class="formula-callout">
+      $$\text{Total Monthly Housing Cost} = \text{P\&I} + \text{Property Taxes} + \text{Hazard Insurance} + \text{PMI/MIP} + \text{HOA} + \text{Owner Utilities}$$
+      $$\text{Net Tenant Rental Revenue} = \text{Gross Tenant Rents} \times (1 - \text{Vacancy \%}) - (\text{Maintenance Reserves} + \text{CapEx Reserves})$$
+      $$\text{Net Out-of-Pocket Housing Cost} = \text{Total Monthly Housing Cost} - \text{Net Tenant Rental Revenue}$$
+      $$\text{Monthly Savings} = \text{Market Rent (Alternative Rental)} - \text{Net Out-of-Pocket Cost}$$
+      $$\text{Total Annual Wealth Velocity} = (\text{Monthly Savings} \times 12) + \text{Annual Principal Paydown} + \text{Annual Appreciation}$$
+    </div>
+
+    <h3>Top 4 House Hacking Property Configurations</h3>
+    <ul>
+      <li>
+        <strong>The Small Multifamily (Duplex, Triplex, Fourplex):</strong> The gold standard of house hacking. You live in Unit 1 with complete privacy and separate utilities, while your tenants live in Units 2, 3, or 4. Small multifamily properties with 2 to 4 units qualify for residential 30-year fixed mortgages.
+      </li>
+      <li>
+        <strong>Single-Family Home with an Accessory Dwelling Unit (ADU):</strong> Purchase a single-family house featuring a detached granny flat, garage conversion, or mother-in-law suite. Rent out the ADU on long-term lease or as an Airbnb mid-term rental (traveling nurses).
+      </li>
+      <li>
+        <strong>The Basement Apartment / Split-Level:</strong> A single-family house with a walkout finished basement equipped with an exterior entrance, kitchen, and bathroom.
+      </li>
+      <li>
+        <strong>Rent-by-the-Room:</strong> Buy a 4-to-5 bedroom single family home near a university, medical center, or high-density employment hub. Live in the master bedroom and rent the remaining individual bedrooms.
+      </li>
+    </ul>
+
+    <h3>Loan Programs: FHA 3.5% vs. Conventional 5% vs. VA 0%</h3>
+    <p>
+      One of the largest hurdles in real estate investing is the traditional 20% to 25% down payment required on pure investment properties. House hackers sidestep this requirement entirely by purchasing as an owner-occupant:
+    </p>
+    <ul>
+      <li><strong>FHA Loans (3.5% Down):</strong> Available on 1 to 4 units with a credit score as low as 580. Note that 3-unit and 4-unit properties must pass the FHA Self-Sufficiency Test.</li>
+      <li><strong>Conventional Loans (5% Down):</strong> Under Fannie Mae guidelines, buyers can purchase 2-unit, 3-unit, and 4-unit properties with only 5% down payment. Crucially, conventional loans bypass the FHA Self-Sufficiency Test.</li>
+      <li><strong>VA Loans (0% Down, 0% PMI):</strong> Military service members and veterans can purchase up to a 4-unit property with zero down payment and zero monthly mortgage insurance.</li>
+    </ul>
+
+    <h3>Understanding the FHA Self-Sufficiency Test (3 and 4 Units)</h3>
+    <p>
+      Under HUD Handbook 4000.1, to protect the FHA insurance fund from default on larger multi-unit assets, all 3-unit and 4-unit properties must demonstrate self-sufficiency:
+    </p>
+    <div class="formula-callout">
+      $$75\% \times \text{Total Market Rents (All Units Including Owner's)} \ge \text{Total Monthly PITI Payment}$$
+    </div>
+    <p>
+      If 75% of the appraised market rents across all units does not equal or exceed the total monthly PITI payment (Principal, Interest, Taxes, Insurance, and FHA MIP), the FHA loan cannot be approved without a larger down payment to reduce the loan balance.
+    </p>
+
+    <h3>Frequently Asked Questions (FAQ)</h3>
+    <div class="faq-accordion">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long do you have to live in a house hack?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer">
+          Under standard owner-occupant mortgage covenants (including FHA, Conventional, and VA loan promissory notes), you must intend to move in within 60 days of closing and reside in the property as your principal residence for a minimum of 12 consecutive months. After 1 year, you are legally permitted to move out and convert your unit into a full market rental.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I use projected tenant rental income to qualify for the mortgage?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Under Fannie Mae and FHA underwriting guidelines, lenders can typically use 75% of the projected gross rental income from the non-owner-occupied units (documented via an appraiser's Form 1007 / 1025 market rent schedule or existing signed leases) to offset your mortgage payment and lower your Debt-to-Income (DTI) ratio.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the difference between living for free and cash flow positive?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer">
+          "Living for free" occurs when your tenant rental revenue exactly covers 100% of your mortgage, taxes, insurance, and operating expenses, reducing your personal housing cost to $0. "Cash flow positive" means tenant rents exceed 100% of the total expenses, meaning you get paid a net monthly profit each month to live in your own home!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do taxes work on a house hack?</span>
+          <span class="faq-chevron">▼</span>
+        </div>
+        <div class="faq-answer">
+          House hacking offers unique dual tax benefits. The portion of the property you occupy is treated as a personal residence (mortgage interest and property tax deductions). The portion rented to tenants is treated as investment property, allowing you to deduct proportional operating expenses, utilities, and tax depreciation (which can shelter your rental income from federal and state income tax).
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 6. GLOBAL FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+      <a href="/" class="brand-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="6" fill="#10B981"/><path d="M6 16L12 8L18 16H6Z" fill="#0F172A"/></svg>
+        RealRefin<span class="dot">.com</span>
+      </a>
+      <p style="color: #94A3B8; font-size: 0.85rem;">
+        Institutional Real Estate Financial Modeling Software.
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RealRefin.com. All rights reserved. Disclaimer: RealRefin.com provides educational computational tools. We are not a licensed mortgage lender, financial advisor, or CPA. Consult licensed professionals before entering into real estate contracts.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 7. CORE JAVASCRIPT ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  // Currency Formatter
+  let activeCurrency = 'USD';
+  const currencySymbols = { USD: '$', EUR: '€', GBP: '£', INR: '₹', CAD: 'C$' };
+
+  function fmtMoney(amount) {
+    const sym = currencySymbols[activeCurrency] || '$';
+    return sym + Math.round(amount).toLocaleString();
+  }
+
+  // DOM Elements
+  const propertyTypeSelect = document.getElementById('propertyType');
+  const inputPurchasePrice = document.getElementById('purchasePrice');
+  const selectLoanType = document.getElementById('loanType');
+  const inputDownPaymentPct = document.getElementById('downPaymentPct');
+  const downPaymentHint = document.getElementById('downPaymentHint');
+  const inputInterestRate = document.getElementById('interestRate');
+  const rateSlider = document.getElementById('rateSlider');
+  const inputMarketRent = document.getElementById('marketRentComparison');
+
+  const inputVacancyRate = document.getElementById('vacancyRate');
+  const inputOwnerRent = document.getElementById('ownerUnitMarketRent');
+  const unitsContainer = document.getElementById('unitsContainer');
+
+  const inputPropertyTax = document.getElementById('annualPropertyTax');
+  const inputInsurance = document.getElementById('annualInsurance');
+  const inputMaintenancePct = document.getElementById('maintenancePct');
+  const inputCapexPct = document.getElementById('capexPct');
+  const inputUtilities = document.getElementById('ownerPaidUtilities');
+  const inputHoa = document.getElementById('monthlyHoa');
+
+  // Result Displays
+  const heroResultBox = document.getElementById('heroResultBox');
+  const heroBoxTitle = document.getElementById('heroBoxTitle');
+  const heroCoverageTag = document.getElementById('heroCoverageTag');
+  const resNetCostToLive = document.getElementById('resNetCostToLive');
+  const resHeroSubtitle = document.getElementById('resHeroSubtitle');
+
+  const gaugePctDisplay = document.getElementById('gaugePctDisplay');
+  const gaugeFillBar = document.getElementById('gaugeFillBar');
+
+  const resMonthlySavings = document.getElementById('resMonthlySavings');
+  const resAnnualSavings = document.getElementById('resAnnualSavings');
+  const resTotalPiti = document.getElementById('resTotalPiti');
+  const resPiOnly = document.getElementById('resPiOnly');
+  const resEscrow = document.getElementById('resEscrow');
+  const resYear1Principal = document.getElementById('resYear1Principal');
+  const resMonthlyEquity = document.getElementById('resMonthlyEquity');
+  const resTotalCashToClose = document.getElementById('resTotalCashToClose');
+  const resDownPayDollar = document.getElementById('resDownPayDollar');
+  const resClosingDollar = document.getElementById('resClosingDollar');
+
+  const fhaTestContainer = document.getElementById('fhaTestContainer');
+  const fhaTestExplanation = document.getElementById('fhaTestExplanation');
+  const fhaBadge = document.getElementById('fhaBadge');
+
+  const dispOwnerRent = document.getElementById('dispOwnerRent');
+  const resMoveOutGross = document.getElementById('resMoveOutGross');
+  const resMoveOutCashflow = document.getElementById('resMoveOutCashflow');
+  const resMoveOutCoc = document.getElementById('resMoveOutCoc');
+
+  let cashflowChart = null;
+
+  // Property Unit Configurations
+  const unitConfigs = {
+    duplex: [
+      { id: 'unit2', label: 'Unit 2 (Tenant)', defaultRent: 1900 }
+    ],
+    triplex: [
+      { id: 'unit2', label: 'Unit 2 (Tenant)', defaultRent: 1800 },
+      { id: 'unit3', label: 'Unit 3 (Tenant)', defaultRent: 1750 }
+    ],
+    fourplex: [
+      { id: 'unit2', label: 'Unit 2 (Tenant)', defaultRent: 1750 },
+      { id: 'unit3', label: 'Unit 3 (Tenant)', defaultRent: 1750 },
+      { id: 'unit4', label: 'Unit 4 (Tenant)', defaultRent: 1700 }
+    ],
+    sfr_adu: [
+      { id: 'unitAdu', label: 'Detached ADU / Suite', defaultRent: 1650 }
+    ],
+    rent_by_room: [
+      { id: 'room2', label: 'Bedroom 2 (Tenant)', defaultRent: 850 },
+      { id: 'room3', label: 'Bedroom 3 (Tenant)', defaultRent: 850 },
+      { id: 'room4', label: 'Bedroom 4 (Tenant)', defaultRent: 800 }
+    ]
+  };
+
+  function renderUnitInputs() {
+    const pType = propertyTypeSelect.value;
+    const units = unitConfigs[pType] || unitConfigs.duplex;
+    unitsContainer.innerHTML = '';
+
+    units.forEach(u => {
+      const row = document.createElement('div');
+      row.className = 'unit-row-item';
+      row.innerHTML = `
+        <span class="unit-title-badge">🚪 ${u.label}</span>
+        <div class="input-wrapper">
+          <span class="input-prefix">${currencySymbols[activeCurrency] || '$'}</span>
+          <input type="number" id="rent_${u.id}" class="calc-input has-prefix unit-rent-input" value="${u.defaultRent}" min="0" step="50">
+        </div>
+        <span style="font-size: 0.775rem; color: var(--text-muted); text-align: right;">Monthly Gross Rent</span>
+      `;
+      unitsContainer.appendChild(row);
+    });
+
+    document.querySelectorAll('.unit-rent-input').forEach(inp => {
+      inp.addEventListener('input', calculateHouseHack);
+    });
+  }
+
+  // Sync Interest Rate Slider
+  inputInterestRate.addEventListener('input', () => {
+    rateSlider.value = inputInterestRate.value;
+    calculateHouseHack();
+  });
+  rateSlider.addEventListener('input', () => {
+    inputInterestRate.value = rateSlider.value;
+    calculateHouseHack();
+  });
+
+  // Loan Type Handler
+  selectLoanType.addEventListener('change', () => {
+    const lType = selectLoanType.value;
+    if (lType === 'fha') {
+      inputDownPaymentPct.value = 3.5;
+    } else if (lType === 'conv_5') {
+      inputDownPaymentPct.value = 5.0;
+    } else if (lType === 'va') {
+      inputDownPaymentPct.value = 0.0;
+    } else if (lType === 'conv_20') {
+      inputDownPaymentPct.value = 20.0;
+    }
+    calculateHouseHack();
+  });
+
+  propertyTypeSelect.addEventListener('change', () => {
+    renderUnitInputs();
+    calculateHouseHack();
+  });
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      activeCurrency = e.target.getAttribute('data-currency');
+      const sym = currencySymbols[activeCurrency] || '$';
+      document.querySelectorAll('[id^="currPrefix"]').forEach(p => p.textContent = sym);
+      renderUnitInputs();
+      calculateHouseHack();
+    });
+  });
+
+  // Presets
+  document.getElementById('presetDuplex').addEventListener('click', () => {
+    propertyTypeSelect.value = 'duplex';
+    inputPurchasePrice.value = 475000;
+    selectLoanType.value = 'fha';
+    inputDownPaymentPct.value = 3.5;
+    inputInterestRate.value = 6.5;
+    rateSlider.value = 6.5;
+    inputMarketRent.value = 1800;
+    inputOwnerRent.value = 1800;
+    renderUnitInputs();
+    const u2 = document.getElementById('rent_unit2');
+    if (u2) u2.value = 1900;
+    calculateHouseHack();
+  });
+
+  document.getElementById('presetTriplex').addEventListener('click', () => {
+    propertyTypeSelect.value = 'triplex';
+    inputPurchasePrice.value = 650000;
+    selectLoanType.value = 'conv_5';
+    inputDownPaymentPct.value = 5.0;
+    inputInterestRate.value = 6.75;
+    rateSlider.value = 6.75;
+    inputMarketRent.value = 1850;
+    inputOwnerRent.value = 1850;
+    renderUnitInputs();
+    const u2 = document.getElementById('rent_unit2');
+    const u3 = document.getElementById('rent_unit3');
+    if (u2) u2.value = 1850;
+    if (u3) u3.value = 1800;
+    calculateHouseHack();
+  });
+
+  document.getElementById('presetFourplex').addEventListener('click', () => {
+    propertyTypeSelect.value = 'fourplex';
+    inputPurchasePrice.value = 825000;
+    selectLoanType.value = 'fha';
+    inputDownPaymentPct.value = 3.5;
+    inputInterestRate.value = 6.5;
+    rateSlider.value = 6.5;
+    inputMarketRent.value = 1750;
+    inputOwnerRent.value = 1750;
+    renderUnitInputs();
+    const u2 = document.getElementById('rent_unit2');
+    const u3 = document.getElementById('rent_unit3');
+    const u4 = document.getElementById('rent_unit4');
+    if (u2) u2.value = 1750;
+    if (u3) u3.value = 1750;
+    if (u4) u4.value = 1700;
+    calculateHouseHack();
+  });
+
+  document.getElementById('presetAdu').addEventListener('click', () => {
+    propertyTypeSelect.value = 'sfr_adu';
+    inputPurchasePrice.value = 525000;
+    selectLoanType.value = 'conv_5';
+    inputDownPaymentPct.value = 5.0;
+    inputInterestRate.value = 6.5;
+    rateSlider.value = 6.5;
+    inputMarketRent.value = 2200;
+    inputOwnerRent.value = 2200;
+    renderUnitInputs();
+    const uAdu = document.getElementById('rent_unitAdu');
+    if (uAdu) uAdu.value = 1650;
+    calculateHouseHack();
+  });
+
+  document.getElementById('presetRentByRoom').addEventListener('click', () => {
+    propertyTypeSelect.value = 'rent_by_room';
+    inputPurchasePrice.value = 380000;
+    selectLoanType.value = 'fha';
+    inputDownPaymentPct.value = 3.5;
+    inputInterestRate.value = 6.5;
+    rateSlider.value = 6.5;
+    inputMarketRent.value = 1400;
+    inputOwnerRent.value = 1000;
+    renderUnitInputs();
+    const r2 = document.getElementById('rent_room2');
+    const r3 = document.getElementById('rent_room3');
+    const r4 = document.getElementById('rent_room4');
+    if (r2) r2.value = 850;
+    if (r3) r3.value = 850;
+    if (r4) r4.value = 800;
+    calculateHouseHack();
+  });
+
+  // Listeners on remaining inputs
+  [inputPurchasePrice, inputDownPaymentPct, inputMarketRent, inputVacancyRate, inputOwnerRent, inputPropertyTax, inputInsurance, inputMaintenancePct, inputCapexPct, inputUtilities, inputHoa].forEach(el => {
+    el.addEventListener('input', calculateHouseHack);
+  });
+
+  // MAIN HOUSE HACK CALCULATION ENGINE
+  function calculateHouseHack() {
+    const price = Math.max(0, parseFloat(inputPurchasePrice.value) || 0);
+    const downPct = Math.max(0, parseFloat(inputDownPaymentPct.value) || 0) / 100;
+    const downAmount = price * downPct;
+    downPaymentHint.textContent = `${(downPct * 100).toFixed(1)}% = ${fmtMoney(downAmount)}`;
+
+    const loanAmount = Math.max(0, price - downAmount);
+    const rate = Math.max(0, parseFloat(inputInterestRate.value) || 0) / 100;
+    const monthlyRate = rate / 12;
+    const totalPayments = 30 * 12;
+
+    // Monthly Principal & Interest (P&I)
+    let monthlyPI = 0;
+    if (monthlyRate > 0 && loanAmount > 0) {
+      monthlyPI = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
+    }
+
+    // Taxes, Insurance, Utilities, HOA
+    const monthlyTax = (parseFloat(inputPropertyTax.value) || 0) / 12;
+    const monthlyIns = (parseFloat(inputInsurance.value) || 0) / 12;
+    const monthlyUtilities = parseFloat(inputUtilities.value) || 0;
+    const monthlyHoa = parseFloat(inputHoa.value) || 0;
+
+    // Mortgage Insurance (PMI / FHA MIP)
+    const lType = selectLoanType.value;
+    let monthlyPmi = 0;
+    if (lType === 'fha') {
+      // Annual FHA MIP is 0.55%
+      monthlyPmi = (loanAmount * 0.0055) / 12;
+    } else if (lType === 'conv_5' || (lType !== 'va' && downPct < 0.20)) {
+      // Conventional PMI ~0.65%
+      monthlyPmi = (loanAmount * 0.0065) / 12;
+    } else {
+      // VA or >=20% down has 0 PMI
+      monthlyPmi = 0;
+    }
+
+    const totalPiti = monthlyPI + monthlyTax + monthlyIns + monthlyPmi;
+    const totalMonthlyCarryingCost = totalPiti + monthlyUtilities + monthlyHoa;
+
+    // Tenant Rental Revenue
+    let totalGrossTenantRent = 0;
+    document.querySelectorAll('.unit-rent-input').forEach(inp => {
+      totalGrossTenantRent += Math.max(0, parseFloat(inp.value) || 0);
+    });
+
+    const vacancyPct = (parseFloat(inputVacancyRate.value) || 0) / 100;
+    const maintPct = (parseFloat(inputMaintenancePct.value) || 0) / 100;
+    const capexPct = (parseFloat(inputCapexPct.value) || 0) / 100;
+
+    const netEffectiveTenantRent = totalGrossTenantRent * (1 - vacancyPct);
+    const monthlyReserves = totalGrossTenantRent * (maintPct + capexPct);
+    const netTenantCashContribution = Math.max(0, netEffectiveTenantRent - monthlyReserves);
+
+    // NET HOUSING COST / CASH FLOW
+    // If tenant covers carrying cost, you live for free or make cash flow!
+    const netHousingCost = totalMonthlyCarryingCost - netTenantCashContribution;
+    const coveragePct = totalMonthlyCarryingCost > 0 ? (netTenantCashContribution / totalMonthlyCarryingCost) * 100 : 0;
+
+    // Market Rent Comparison & Monthly Savings
+    const marketRent = parseFloat(inputMarketRent.value) || 0;
+    const monthlySavings = marketRent - netHousingCost;
+    const annualSavings = monthlySavings * 12;
+
+    // First Year Principal Paydown
+    // Month 1 Principal = MonthlyPI - (LoanAmount * monthlyRate)
+    const month1Interest = loanAmount * monthlyRate;
+    const month1Principal = Math.max(0, monthlyPI - month1Interest);
+    const year1PrincipalEstimate = month1Principal * 12 * 1.03; // ~3% amortization growth
+
+    // Cash to close
+    const estClosingCosts = price * 0.02; // ~2% typical buyer closing costs
+    const totalCashToClose = downAmount + estClosingCosts;
+
+    // Move Out Strategy: Future 100% Full Rental
+    const ownerRent = parseFloat(inputOwnerRent.value) || 0;
+    dispOwnerRent.textContent = Math.round(ownerRent).toLocaleString();
+    const fullGrossRent = totalGrossTenantRent + ownerRent;
+    const fullEffectiveRent = fullGrossRent * (1 - vacancyPct);
+    const fullReserves = fullGrossRent * (maintPct + capexPct);
+    // Add 8% professional property management when moving out
+    const fullPropMgmt = fullGrossRent * 0.08;
+    const fullMonthlyExpenses = totalMonthlyCarryingCost + fullReserves + fullPropMgmt;
+    const fullNetCashflow = fullEffectiveRent - fullMonthlyExpenses;
+    const fullAnnualCashflow = fullNetCashflow * 12;
+    const cashOnCashRoi = totalCashToClose > 0 ? (fullAnnualCashflow / totalCashToClose) * 100 : 0;
+
+    // UPDATE UI RESULTS
+    if (netHousingCost <= 0) {
+      // CASH FLOW POSITIVE!
+      heroResultBox.className = 'hero-stat-box green';
+      heroBoxTitle.textContent = '🎉 CASH FLOW POSITIVE (Living 100% Free!)';
+      heroCoverageTag.textContent = `${coveragePct.toFixed(1)}% Covered`;
+      resNetCostToLive.textContent = `+${fmtMoney(Math.abs(netHousingCost))} /mo`;
+      resHeroSubtitle.textContent = `You are getting PAID ${fmtMoney(Math.abs(netHousingCost))} per month to live in your own home while building equity!`;
+    } else {
+      heroResultBox.className = 'hero-stat-box blue';
+      heroBoxTitle.textContent = '🏠 Net Out-Of-Pocket Housing Cost';
+      heroCoverageTag.textContent = `${coveragePct.toFixed(1)}% Covered`;
+      resNetCostToLive.textContent = `${fmtMoney(netHousingCost)} /mo`;
+      resHeroSubtitle.textContent = `Tenants are paying ${fmtMoney(netTenantCashContribution)}/mo toward your total ${fmtMoney(totalMonthlyCarryingCost)}/mo housing & reserve expenses.`;
+    }
+
+    gaugePctDisplay.textContent = `${coveragePct.toFixed(1)}%`;
+    gaugeFillBar.style.width = `${Math.min(100, coveragePct)}%`;
+
+    resMonthlySavings.textContent = `${fmtMoney(monthlySavings)} /mo`;
+    resAnnualSavings.textContent = `${fmtMoney(annualSavings)}/yr`;
+
+    resTotalPiti.textContent = `${fmtMoney(totalPiti)} /mo`;
+    resPiOnly.textContent = fmtMoney(monthlyPI);
+    resEscrow.textContent = fmtMoney(monthlyTax + monthlyIns + monthlyPmi);
+
+    resYear1Principal.textContent = fmtMoney(year1PrincipalEstimate);
+    resMonthlyEquity.textContent = `+${fmtMoney(year1PrincipalEstimate / 12)}/mo`;
+
+    resTotalCashToClose.textContent = fmtMoney(totalCashToClose);
+    resDownPayDollar.textContent = fmtMoney(downAmount);
+    resClosingDollar.textContent = fmtMoney(estClosingCosts);
+
+    // Move-out UI
+    resMoveOutGross.textContent = `${fmtMoney(fullGrossRent)} /mo`;
+    resMoveOutCashflow.textContent = `${fullNetCashflow >= 0 ? '+' : ''}${fmtMoney(fullNetCashflow)} /mo`;
+    resMoveOutCashflow.style.color = fullNetCashflow >= 0 ? '#6EE7B7' : '#FCA5A5';
+    resMoveOutCoc.textContent = `${cashOnCashRoi.toFixed(1)}%`;
+    resMoveOutCoc.style.color = cashOnCashRoi >= 0 ? '#6EE7B7' : '#FCA5A5';
+
+    // FHA Self-Sufficiency Test (for 3-4 units)
+    const pType = propertyTypeSelect.value;
+    if (pType === 'triplex' || pType === 'fourplex') {
+      fhaTestContainer.style.display = 'flex';
+      const totalAllUnitsRent = totalGrossTenantRent + ownerRent;
+      const fhaQualifyingRent = totalAllUnitsRent * 0.75;
+      const passesFha = fhaQualifyingRent >= totalPiti;
+
+      fhaTestExplanation.textContent = `75% of Gross Market Rent (${fmtMoney(fhaQualifyingRent)}) vs Total PITI (${fmtMoney(totalPiti)}).`;
+      if (passesFha) {
+        fhaBadge.className = 'fha-test-badge pass';
+        fhaBadge.textContent = 'PASSES FHA TEST';
+      } else {
+        fhaBadge.className = 'fha-test-badge fail';
+        fhaBadge.textContent = 'FAILS FHA TEST';
+      }
+    } else {
+      fhaTestContainer.style.display = 'none';
+    }
+
+    renderCashflowChart(totalMonthlyCarryingCost, netTenantCashContribution, netHousingCost);
+  }
+
+  function renderCashflowChart(totalCarrying, tenantContrib, netCost) {
+    const ctx = document.getElementById('cashflowBarChart').getContext('2d');
+    if (cashflowChart) {
+      cashflowChart.destroy();
+    }
+
+    cashflowChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Total Housing Expenses', 'Tenant Rent Offset', 'Your Net Housing Cost'],
+        datasets: [{
+          data: [totalCarrying, tenantContrib, Math.max(0, netCost)],
+          backgroundColor: ['#0F172A', '#10B981', netCost <= 0 ? '#10B981' : '#3B82F6'],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(item) {
+                return ` ${fmtMoney(item.raw)}`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function(val) {
+                return (currencySymbols[activeCurrency] || '$') + val.toLocaleString();
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // FAQ Accordion Toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const parent = q.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
+
+  // CSV Export Handler
+  document.getElementById('btnExportCsv').addEventListener('click', () => {
+    const rows = [
+      ['Metric', 'Value'],
+      ['Property Strategy', propertyTypeSelect.value],
+      ['Purchase Price', inputPurchasePrice.value],
+      ['Down Payment %', inputDownPaymentPct.value],
+      ['Interest Rate', inputInterestRate.value],
+      ['Total PITI Payment', resTotalPiti.textContent],
+      ['Tenant Monthly Rent Offset', gaugePctDisplay.textContent],
+      ['Net Out-of-Pocket Cost', resNetCostToLive.textContent],
+      ['Monthly Savings vs Market Rent', resMonthlySavings.textContent],
+      ['Annual Savings', resAnnualSavings.textContent],
+      ['Year 1 Principal Paydown', resYear1Principal.textContent],
+      ['Total Cash to Close', resTotalCashToClose.textContent],
+      ['Future Move-Out Cash Flow', resMoveOutCashflow.textContent],
+      ['Future Move-Out CoC ROI', resMoveOutCoc.textContent]
+    ];
+
+    const csvContent = 'data:text/csv;charset=utf-8,' + rows.map(e => `"${e[0]}","${e[1]}"`).join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `RealRefin-House-Hacking-Analysis-${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+
+  // Print PDF Handler
+  document.getElementById('btnPrintReport').addEventListener('click', () => {
+    window.print();
+  });
+
+  // Share URL Handler
+  const btnShare = document.getElementById('btnShareDeal');
+  btnShare.addEventListener('click', () => {
+    const params = new URLSearchParams({
+      price: inputPurchasePrice.value,
+      type: propertyTypeSelect.value,
+      loan: selectLoanType.value,
+      down: inputDownPaymentPct.value,
+      rate: inputInterestRate.value,
+      mktRent: inputMarketRent.value,
+      ownerRent: inputOwnerRent.value,
+      tax: inputPropertyTax.value,
+      ins: inputInsurance.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const orig = btnShare.innerHTML;
+      btnShare.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => btnShare.innerHTML = orig, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // Load URL Query Params
+  function loadQueryParams() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('type')) propertyTypeSelect.value = p.get('type');
+    renderUnitInputs();
+    if (p.has('price')) inputPurchasePrice.value = p.get('price');
+    if (p.has('loan')) selectLoanType.value = p.get('loan');
+    if (p.has('down')) inputDownPaymentPct.value = p.get('down');
+    if (p.has('rate')) {
+      inputInterestRate.value = p.get('rate');
+      rateSlider.value = p.get('rate');
+    }
+    if (p.has('mktRent')) inputMarketRent.value = p.get('mktRent');
+    if (p.has('ownerRent')) inputOwnerRent.value = p.get('ownerRent');
+    if (p.has('tax')) inputPropertyTax.value = p.get('tax');
+    if (p.has('ins')) inputInsurance.value = p.get('ins');
+    if (p.has('curr')) {
+      const c = p.get('curr');
+      const b = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (b) b.click();
+    }
+  }
+
+  loadQueryParams();
+  calculateHouseHack();
+});
+</script>
+
+</body>
+</html>
