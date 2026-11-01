@@ -37,6 +37,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/wholesale-real-estate-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/house-hacking-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -511,6 +517,17 @@ const FILE_MAP = {
   '/owner-financing-calculator.html': 'seller-financing-calculator.html',
   '/seller-financing-calculator-with-balloon-payment': 'seller-financing-calculator.html',
   '/seller-carryback-calculator': 'seller-financing-calculator.html',
+  '/wholesale-real-estate-calculator': 'wholesale-real-estate-calculator.html',
+  '/wholesale-real-estate-calculator.html': 'wholesale-real-estate-calculator.html',
+  '/wholesale-calculator-real-estate': 'wholesale-real-estate-calculator.html',
+  '/wholesale-calculator-real-estate.html': 'wholesale-real-estate-calculator.html',
+  '/real-estate-wholesale-calculator-excel': 'wholesale-real-estate-calculator.html',
+  '/real-estate-wholesale-calculator-excel.html': 'wholesale-real-estate-calculator.html',
+  '/free-wholesale-real-estate-calculator': 'wholesale-real-estate-calculator.html',
+  '/free-wholesale-real-estate-calculator.html': 'wholesale-real-estate-calculator.html',
+  '/how-to-calculate-wholesale-price-real-estate': 'wholesale-real-estate-calculator.html',
+  '/wholesale-real-estate-arv-calculator': 'wholesale-real-estate-calculator.html',
+  '/wholesale-real-estate-offer-calculator': 'wholesale-real-estate-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',

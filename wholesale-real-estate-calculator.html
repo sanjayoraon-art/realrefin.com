@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wholesale Real Estate Calculator | Free Assignment Fee &amp; MAO Modeler</title>
+  <meta name="description" content="Free wholesale real estate calculator with Excel-style underwriting. Calculate maximum seller offers, wholesale price spreads, cash buyer assignment fees, and double closing profits.">
+  <meta name="keywords" content="wholesale calculator real estate, wholesale real estate calculator, real estate wholesale calculator excel, free wholesale real estate calculator, how to calculate wholesale price real estate, wholesale real estate arv calculator, wholesale real estate offer calculator, assignment fee calculator real estate">
+  <link rel="canonical" href="https://realrefin.com/wholesale-real-estate-calculator">
+  
+  <meta property="og:title" content="Wholesale Real Estate Calculator | Free Assignment Fee &amp; MAO Modeler">
+  <meta property="og:description" content="Calculate your wholesale purchase offers, assignment fee spreads, and end-buyer margins. 100% free with interactive Excel-style line-item underwriting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/wholesale-real-estate-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/wholesale-real-estate-calculator#app",
+        "name": "RealRefin Wholesale Real Estate & Assignment Fee Calculator",
+        "url": "https://realrefin.com/wholesale-real-estate-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional wholesale real estate calculator and Excel-style deal analyzer. Calculates maximum allowable contract offers (MAO), assignment fee spreads, cash buyer 70% rule thresholds, and double closing transactional funding costs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Wholesaling Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Wholesale Real Estate Calculator",
+            "item": "https://realrefin.com/wholesale-real-estate-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a wholesale real estate calculator and how does it work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A wholesale real estate calculator is a financial underwriting tool that calculates the maximum contract price a wholesaler can offer a motivated seller while guaranteeing a profitable assignment fee from an end-buyer cash investor. The tool applies the 70% Rule formula: Maximum Seller Offer = (After Repair Value × Buyer Discount %, typically 70%) − Estimated Renovation Costs − Target Wholesale Assignment Fee."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to calculate wholesale price in real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate the wholesale contract purchase price: First, establish the property's After Repair Value (ARV) through recent neighborhood comps. Second, estimate total rehab costs. Third, multiply ARV by your cash buyer's target rule (typically 70% for standard flips, or 75% in hot markets) and subtract repairs to find what the cash investor will pay. Finally, subtract your desired wholesale assignment fee (e.g., $10,000 to $20,000) to arrive at your Maximum Allowable Offer (MAO) to the seller."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the average assignment fee for real estate wholesaling?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Across the United States, the average wholesale real estate assignment fee ranges between $10,000 and $15,000 per deal. For deeply discounted off-market deals or higher-priced coastal markets (California, Florida, New York), assignment fees frequently range from $25,000 to over $50,000."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between an Assignment of Contract and a Double Close?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In an Assignment of Contract, the wholesaler sells their equitable interest in the purchase contract to the cash buyer using a one-page Assignment Agreement. The assignment fee is disclosed on the HUD-1/closing statement. In a Double Close (simultaneous close), the wholesaler executes two separate back-to-back closings (A-to-B with seller, B-to-C with end buyer) using short-term transactional funding (typically 1%-2% fee). A double close keeps the wholesale profit confidential when the spread is very large (e.g., $30,000+)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this wholesale calculator different from an Excel spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This calculator provides the exact line-item underwriting formulas found in institutional real estate wholesale Excel templates, with the added benefit of live instant responsiveness, interactive sliders, mobile accessibility, AI rehab cost benchmarks, and one-click printable investor memos without needing Microsoft Office or complex formula maintenance."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-purple: #7C3AED;
+      --accent-purple-light: #F5F3FF;
+      --accent-purple-border: #DDD6FE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MODE SELECTOR (TABS)
+    ----------------------------------------------------------- */
+    .mode-switch-wrapper {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .mode-tab-pill {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .mode-tab-pill.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-tab-pill span.sublabel {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .pane-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-title-wrap span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Preset Chips */
+    .preset-chips-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      padding: 0.25rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .chip-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    /* Strategy Toggle Card */
+    .strategy-card-box {
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .strategy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .strategy-header h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Primary Scorecard */
+    .scorecard-banner {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      text-align: center;
+    }
+
+    .scorecard-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .scorecard-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    /* Metrics Grid */
+    .metrics-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .metrics-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-card .metric-num {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Detailed Breakdown Card */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Excel-Style Underwriting Table */
+    .excel-table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .excel-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.65rem 0.85rem;
+      font-weight: 700;
+    }
+
+    .excel-table td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .excel-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Action Buttons */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-excel {
+      background: #107c41; /* Microsoft Excel Brand Green */
+      color: #ffffff;
+    }
+
+    .btn-action-excel:hover {
+      background: #0d6334;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box.warning {
+      border-left-color: var(--accent-amber);
+      background: var(--accent-amber-light);
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Comparison Table */
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.15rem 1.25rem;
+      text-align: left;
+      background: #ffffff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Usability Optimization */
+    @media (max-width: 768px) {
+      input, select, textarea, .input-control {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+      .calc-header-banner {
+        padding: 1.5rem 1.15rem !important;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.7rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#tools">All Calculators</a></li>
+      <li><a href="/arv-calculator">ARV Calculator</a></li>
+      <li><a href="/maximum-allowable-offer-calculator">MAO Offer</a></li>
+      <li><a href="/seller-financing-calculator">Seller Financing</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="btn-nav-cta">Contact Us</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Investor &amp; Wholesaling Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Wholesale Real Estate Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>💰</span> Excel-Grade Wholesale Underwriting &amp; MAO Engine
+    </div>
+    <h1>
+      Wholesale Real Estate Calculator <span>&amp; Assignment Spread Modeler</span>
+    </h1>
+    <p>
+      Underwrite wholesale real estate contracts with institutional precision. Calculate your Maximum Allowable Offer (MAO) to motivated sellers, lock in target assignment fees, model cash buyer discount rules, and compare contract assignments vs. double closings.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>70% Rule Formula</h4>
+        <p>End-Buyer Cash Buy Box Math</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Assignment Spread</h4>
+        <p>Locked-in Wholesaler Profit</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Excel-Style Table</h4>
+        <p>Interactive Line-Item Underwriting</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Double Close Modeler</h4>
+        <p>Transactional Funding Math</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CALCULATOR MODE SELECTOR (TABS)
+  ======================================================== -->
+  <div class="mode-switch-wrapper">
+    <button type="button" class="mode-tab-pill active" id="tabQuickWholesale">
+      <span>⚡ Quick 70% Rule Modeler</span>
+      <span class="sublabel">Instant MAO &amp; Assignment Spread</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabExcelUnderwriting">
+      <span>📊 Excel-Grade Line-Item Matrix</span>
+      <span class="sublabel">Holding, Closing &amp; Double Closing</span>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-grid">
+
+    <!-- LEFT: USER INPUTS PANE -->
+    <div class="calc-inputs-pane">
+      <div class="pane-section-header">
+        <div class="pane-title-wrap">
+          <span class="icon">💼</span>
+          <h2>Wholesale Deal Underwriting</h2>
+        </div>
+      </div>
+
+      <!-- After Repair Value (ARV) -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpARV">After Repair Value (ARV)</label>
+          <span class="input-helper-badge" id="badgeARV">$375,000</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpARV" class="form-input" value="375000" min="50000" max="5000000" step="5000">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngARV" class="custom-range" value="375000" min="100000" max="1000000" step="5000">
+        </div>
+        <div class="preset-chips-bar" id="arvChips">
+          <button type="button" class="chip-btn" data-val="250000">$250k</button>
+          <button type="button" class="chip-btn active" data-val="375000">$375k</button>
+          <button type="button" class="chip-btn" data-val="500000">$500k</button>
+          <button type="button" class="chip-btn" data-val="750000">$750k</button>
+        </div>
+      </div>
+
+      <!-- Estimated Renovation / Rehab Cost -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRehab">Estimated Rehab Cost</label>
+          <span class="input-helper-badge" id="badgeRehab">$65,000</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpRehab" class="form-input" value="65000" min="0" max="1000000" step="2500">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngRehab" class="custom-range" value="65000" min="5000" max="200000" step="2500">
+        </div>
+        <div class="preset-chips-bar" id="rehabChips">
+          <button type="button" class="chip-btn" data-val="30000">Light ($30k)</button>
+          <button type="button" class="chip-btn active" data-val="65000">Medium ($65k)</button>
+          <button type="button" class="chip-btn" data-val="110000">Heavy ($110k)</button>
+        </div>
+      </div>
+
+      <!-- Cash Buyer Buy Box Rule % -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRulePct">Cash Buyer Rule Percentage</label>
+          <span class="input-helper-badge" id="badgeRule">Standard: 70% Rule</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpRulePct" class="form-input no-prefix has-suffix" value="70" min="55" max="85" step="1">
+          <span class="input-suffix">%</span>
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngRulePct" class="custom-range" value="70" min="60" max="85" step="1">
+        </div>
+        <div class="preset-chips-bar" id="ruleChips">
+          <button type="button" class="chip-btn" data-val="65">65% (Heavy Rehab)</button>
+          <button type="button" class="chip-btn active" data-val="70">70% (Standard)</button>
+          <button type="button" class="chip-btn" data-val="75">75% (Competitive)</button>
+          <button type="button" class="chip-btn" data-val="80">80% (Landlord Buy)</button>
+        </div>
+      </div>
+
+      <!-- Target Wholesaler Assignment Fee -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpFee">Target Wholesale Assignment Fee</label>
+          <span class="input-helper-badge">Wholesaler Net Spread</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpFee" class="form-input" value="15000" min="1000" max="250000" step="1000">
+        </div>
+        <div class="preset-chips-bar" id="feeChips">
+          <button type="button" class="chip-btn" data-val="5000">$5k</button>
+          <button type="button" class="chip-btn" data-val="10000">$10k</button>
+          <button type="button" class="chip-btn active" data-val="15000">$15k</button>
+          <button type="button" class="chip-btn" data-val="25000">$25k</button>
+          <button type="button" class="chip-btn" data-val="50000">$50k</button>
+        </div>
+      </div>
+
+      <!-- Closing Strategy Box (Assignment vs Double Close) -->
+      <div class="strategy-card-box">
+        <div class="strategy-header">
+          <h4><span>📄</span> Closing &amp; Contract Strategy</h4>
+          <span class="input-helper-badge" id="badgeStrategy">Standard Assignment</span>
+        </div>
+        <div class="preset-chips-bar" id="strategyChips">
+          <button type="button" class="chip-btn active" data-val="assignment">Assignment of Contract</button>
+          <button type="button" class="chip-btn" data-val="double">Double Close (Transactional)</button>
+        </div>
+      </div>
+
+      <!-- Advanced Excel Underwriting Line Items (Toggled via Excel Mode) -->
+      <div id="excelLineItemsSection" class="excel-line-items-box" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1.5px dashed var(--border-color); display: none;">
+        <div class="strategy-header" style="margin-bottom: 1rem;">
+          <h4><span>📊</span> Excel Line-Item Underwriting Adjustments</h4>
+          <span class="input-helper-badge" style="background:#e0f2fe; color:#0369a1;">Excel Mode Active</span>
+        </div>
+
+        <!-- Estimated Holding Costs -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpHolding">Holding Costs (Taxes, Insurance, Utilities)</label>
+            <span class="input-helper-badge" id="badgeHolding">$4,500</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpHolding" class="form-input" value="4500" min="0" max="100000" step="500">
+          </div>
+          <p style="font-size:0.75rem; color:var(--text-light); margin-top:0.35rem;">Financing carry, taxes, and utility bills during project duration.</p>
+        </div>
+
+        <!-- Estimated Closing & Title Costs -->
+        <div class="input-group" style="margin-bottom: 0;">
+          <div class="input-label-row">
+            <label class="input-label" for="inpClosing">Estimated Closing &amp; Escrow Costs</label>
+            <span class="input-helper-badge" id="badgeClosing">$3,500</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpClosing" class="form-input" value="3500" min="0" max="100000" step="500">
+          </div>
+          <p style="font-size:0.75rem; color:var(--text-light); margin-top:0.35rem;">Title insurance, escrow settlement fees, legal transfer charges.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: OUTPUT RESULTS PANE -->
+    <div class="calc-results-pane">
+
+      <!-- Main Scorecard Banner -->
+      <div class="scorecard-banner">
+        <div class="scorecard-tag">Maximum Allowable Offer (MAO)</div>
+        <div class="scorecard-label">Maximum Contract Offer to Seller</div>
+        <div class="scorecard-value" id="outSellerMAO">$182,500</div>
+        <div class="scorecard-subtext">
+          <span id="outScorecardSub">Target Wholesale Spread: +$15,000</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-overview-grid">
+        <div class="metric-card">
+          <h5>End-Buyer Price</h5>
+          <div class="metric-num" id="outBuyerPrice" style="color: var(--accent-blue);">$197,500</div>
+          <div class="metric-desc">Cash Investor Buy Box</div>
+        </div>
+        <div class="metric-card">
+          <h5>Gross Wholesale Fee</h5>
+          <div class="metric-num" id="outGrossFee" style="color: var(--accent-emerald-dark);">$15,000</div>
+          <div class="metric-desc">Contract Assignment Spread</div>
+        </div>
+        <div class="metric-card">
+          <h5>End-Buyer Equity</h5>
+          <div class="metric-num" id="outBuyerEquity" style="color: var(--primary-navy);">$112,500</div>
+          <div class="metric-desc">ARV − (Buy + Rehab)</div>
+        </div>
+      </div>
+
+      <!-- Detailed Financial Breakdown Card -->
+      <div class="results-card">
+        <h3>📋 Real Estate Wholesale Spread Breakdown</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>After Repair Value (ARV):</td>
+              <td class="value-col" id="rowARV">$375,000</td>
+            </tr>
+            <tr>
+              <td>Cash Buyer Rule Ceiling (70%):</td>
+              <td class="value-col" id="rowBuyerCeiling">$262,500</td>
+            </tr>
+            <tr>
+              <td>Estimated Renovation Costs:</td>
+              <td class="value-col" id="rowRehab" style="color: var(--accent-danger);">-$65,000</td>
+            </tr>
+            <tr>
+              <td>Maximum Cash Buyer Acquisition Price:</td>
+              <td class="value-col" id="rowBuyerPrice" style="font-weight:800; color:var(--accent-blue);">$197,500</td>
+            </tr>
+            <tr>
+              <td>Target Wholesale Assignment Fee:</td>
+              <td class="value-col" id="rowAssignmentFee" style="color: var(--accent-emerald-dark); font-weight:800;">-$15,000</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Maximum Allowable Contract Offer to Seller:</td>
+              <td class="value-col" id="rowSellerMAO" style="color: var(--accent-emerald-dark); font-size:1.15rem; font-weight:900;">$182,500</td>
+            </tr>
+            <tr>
+              <td>Closing / Transactional Funding Fees:</td>
+              <td class="value-col" id="rowClosingFees">$0 (Buyer Pays Closing)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Net Wholesaler Cash Profit:</td>
+              <td class="value-col" id="rowNetProfit" style="color: var(--accent-emerald-dark); font-weight:900;">+$15,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Excel-Style Deal Matrix Preview -->
+      <div class="results-card" id="excelMatrixCard">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <h3 style="margin:0;">📊 Excel Line-Item Underwriting Matrix</h3>
+          <button type="button" class="btn-action btn-action-excel" id="btnExcelCardDownload" style="padding:0.45rem 0.9rem; font-size:0.82rem; min-width:auto; flex:none;">
+            📥 Download Excel (.CSV)
+          </button>
+        </div>
+        <div class="excel-table-wrap">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                <th>Deal Phase</th>
+                <th>Contract Party</th>
+                <th>Dollar Amount</th>
+                <th>Equity Margin %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Contract A-to-B (Seller MAO)</strong></td>
+                <td>Motivated Seller</td>
+                <td id="cellSellerContract">$182,500</td>
+                <td id="cellSellerPct">48.7% of ARV</td>
+              </tr>
+              <tr>
+                <td><strong>Contract B-to-C (Cash Buyer)</strong></td>
+                <td>Cash End Buyer</td>
+                <td id="cellBuyerContract">$197,500</td>
+                <td id="cellBuyerPct">52.7% of ARV</td>
+              </tr>
+              <tr>
+                <td><strong>Renovation CapEx</strong></td>
+                <td>General Contractor</td>
+                <td id="cellRehab">$65,000</td>
+                <td id="cellRehabPct">17.3% of ARV</td>
+              </tr>
+              <tr id="rowExcelHolding" style="display:none;">
+                <td><strong>Holding Costs</strong></td>
+                <td>Lender / Utility / Tax</td>
+                <td id="cellHolding">$4,500</td>
+                <td id="cellHoldingPct">1.2% of ARV</td>
+              </tr>
+              <tr id="rowExcelClosing" style="display:none;">
+                <td><strong>Closing &amp; Escrow Costs</strong></td>
+                <td>Title Company</td>
+                <td id="cellClosing">$3,500</td>
+                <td id="cellClosingPct">0.9% of ARV</td>
+              </tr>
+              <tr style="background:#ecfdf5; font-weight:800; color:#047857;">
+                <td><strong>Wholesale Spread</strong></td>
+                <td>Wholesaler Net</td>
+                <td id="cellWholesaleSpread">$15,000</td>
+                <td id="cellWholesalePct">4.0% of ARV</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calc-actions-row">
+        <button type="button" class="btn-action btn-action-excel" id="btnDownloadExcel">
+          📊 Download Excel (.CSV)
+        </button>
+        <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+          🔗 Copy Shareable Deal Link
+        </button>
+        <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+          🖨️ Print Wholesale Deal Memo
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+  ======================================================== -->
+  <article class="guide-section">
+
+    <h2>Comprehensive Guide: Real Estate Wholesaling &amp; Offer Calculation</h2>
+    <p>
+      In real estate investing, wholesaling is the foundational business model that bridges the gap between distressed, motivated property owners and cash investors (fix &amp; flippers or landlords). A wholesaler locates off-market properties at a substantial discount, places them under a legally binding purchase contract, and either assigns the contract or double-closes with an end-buyer for a lucrative assignment fee.
+    </p>
+    <p>
+      Without a precise **wholesale real estate calculator**, wholesalers risk putting properties under contract at prices too high for cash buyers to purchase—wasting marketing dollars, damaging investor relationships, and risking earnest money deposits.
+    </p>
+
+    <div class="callout-box">
+      <h4>What is the Wholesale Price in Real Estate?</h4>
+      <p>
+        The <strong>Wholesale Price</strong> is the deeply discounted contract price negotiated with the motivated seller. It must be sufficiently low to allow the end-buyer cash investor to purchase the property, complete all repairs, pay carrying and closing costs, and earn an attractive return on investment (ROI)—while leaving a $10,000 to $25,000+ assignment fee for the wholesaler.
+      </p>
+    </div>
+
+    <h2>How to Calculate Wholesale Price in Real Estate (The Formula)</h2>
+    <p>
+      Wholesale offer underwriting follows a strict mathematical reverse-engineering process:
+    </p>
+
+    <h3>The Core Wholesaling Formula</h3>
+    $$\text{End-Buyer Maximum Purchase Price} = (\text{ARV} \times \text{Buyer Rule \%}) - \text{Estimated Rehab Cost}$$
+    $$\text{Wholesale Maximum Allowable Offer (MAO)} = \text{End-Buyer Purchase Price} - \text{Wholesaler Assignment Fee}$$
+
+    <p>
+      <strong>Step-by-Step Numerical Example:</strong>
+    </p>
+    <ol>
+      <li><strong>Determine ARV:</strong> Comparable sales show similar renovated homes selling for <strong>$375,000</strong>.</li>
+      <li><strong>Estimate Rehab Costs:</strong> Property inspection indicates <strong>$65,000</strong> in necessary renovation costs.</li>
+      <li><strong>Apply the 70% Rule:</strong> $\$375,000 \times 0.70 = \$262,500$.</li>
+      <li><strong>Subtract Renovation:</strong> $\$262,500 - \$65,000 = \$197,500$ (The maximum cash price your end buyer will pay).</li>
+      <li><strong>Deduct Your Assignment Fee:</strong> If your target wholesale profit is <strong>$15,000</strong>:
+        $$\text{MAO to Seller} = \$197,500 - \$15,000 = \$182,500$$
+      </li>
+    </ol>
+    <p>
+      By offering the seller $182,500 or less, you have guaranteed your $15,000 assignment spread while packaging an irresistible 70% rule deal for your cash buyers list.
+    </p>
+
+    <h2>Assignment of Contract vs. Double Closing (Simultaneous Close)</h2>
+    <p>
+      When structuring wholesale deals, wholesalers must choose between two closing mechanisms based on the size of the assignment fee:
+    </p>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Wholesale Strategy</th>
+            <th>How It Works</th>
+            <th>Ideal Assignment Spread</th>
+            <th>Pros &amp; Cons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Assignment of Contract</strong></td>
+            <td>Wholesaler assigns equitable interest in purchase agreement to cash buyer for an assignment fee.</td>
+            <td><strong>$5,000 to $20,000</strong></td>
+            <td><strong>Pros:</strong> Zero capital required, buyer pays closing fees.<br><strong>Cons:</strong> Fee is disclosed to seller on HUD-1.</td>
+          </tr>
+          <tr>
+            <td><strong>Double Closing (Simultaneous)</strong></td>
+            <td>Two separate closings (A-to-B with seller, then B-to-C with end buyer) using transactional funding.</td>
+            <td><strong>$25,000 to $60,000+</strong></td>
+            <td><strong>Pros:</strong> Complete fee confidentiality.<br><strong>Cons:</strong> Requires 1%-2% transactional funding fee.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why Use an Interactive Tool Instead of an Excel Spreadsheet?</h2>
+    <p>
+      While many investors begin with a <em>real estate wholesale calculator excel</em> spreadsheet, spreadsheet files suffer from broken formulas on mobile devices, accidental cell overwrites, lack of automatic updates, and poor presentation when pitching deals to private cash buyers.
+    </p>
+    <p>
+      This online tool provides instant mobile-responsive underwriting, automatic slider adjustments, dynamic 70%/75%/80% buy box toggles, and one-click printable deal memos directly from your phone while walking a property with a motivated seller.
+    </p>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much earnest money deposit (EMD) does a wholesaler need?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          When contracting off-market residential deals directly with motivated sellers, wholesalers typically put down an earnest money deposit (EMD) between $100 and $1,000. When assigning the contract to the end cash buyer, the wholesaler requires a larger, non-refundable deposit (typically $2,500 to $5,000) to ensure the buyer performs at closing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What inspection contingency should be included in a wholesale contract?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Wholesalers standardly include a 10 to 14-day inspection contingency clause (e.g., 'Purchase contract is contingent upon buyer's inspection and partner/contractor approval'). This period allows the wholesaler to bring prospective cash buyers and contractors to tour the property without risking legal liability or forfeiture of earnest money if a buyer is not found.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can you wholesale real estate with no money and bad credit?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes. Wholesaling is an assignment of contract rights, not a loan acquisition. Because the end cash buyer brings 100% of the funds to the closing table to purchase the property, the wholesaler’s personal credit score, W-2 income, and bank balances are never scrutinized by lenders or title companies.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is the 75% rule vs. the 70% rule in wholesaling?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          The 70% rule is the historic standard for flippers in moderate or balanced housing markets. However, in competitive, high-demand metropolitan markets (such as Phoenix, Dallas, or Atlanta) or for light cosmetic renovations, cash buyers frequently underwrite at 75% or even 80% of ARV. Wholesalers adjust their buy box rule percentage to match local investor demand.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Is wholesaling real estate legal?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes, wholesaling real estate is legal across the United States. Wholesalers are legally marketing and assigning their contractual equitable interest in a purchase agreement, rather than acting as unlicensed real estate brokers representing third parties. However, states like Illinois, Oklahoma, and Texas have enacted specific disclosure guidelines requiring wholesalers to clearly state that they are selling contract rights and hold equitable title.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealRefin Platform</h4>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+            Institutional financial analytics and automated underwriting engines for residential real estate investors, wholesalers, and creative capital practitioners.
+          </p>
+          <p style="font-size: 0.8rem; color: var(--text-light);">
+            © 2026 RealRefin.com. All rights reserved.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Investor &amp; Wholesaling</h4>
+          <ul>
+            <li><a href="/wholesale-real-estate-calculator">Wholesale Real Estate Calculator</a></li>
+            <li><a href="/arv-calculator">ARV Calculator</a></li>
+            <li><a href="/maximum-allowable-offer-calculator">MAO Offer Modeler</a></li>
+            <li><a href="/seller-financing-calculator">Seller Financing Calculator</a></li>
+            <li><a href="/hard-money-loan-calculator">Hard Money Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Creative &amp; Debt</h4>
+          <ul>
+            <li><a href="/subto-calculator">SubTo Deal Analyzer</a></li>
+            <li><a href="/creative-financing-calculator">Creative Finance Modeler</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Underwriter</a></li>
+            <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Financial Disclaimer</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators, wholesale models, and assignment formulas are for educational analysis only. Purchase contracts and assignments must comply with state real estate licensing laws and disclosures. Consult a licensed real estate attorney.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Switcher Tabs
+  const tabQuickWholesale = document.getElementById('tabQuickWholesale');
+  const tabExcelUnderwriting = document.getElementById('tabExcelUnderwriting');
+  const excelLineItemsSection = document.getElementById('excelLineItemsSection');
+  const excelMatrixCard = document.getElementById('excelMatrixCard');
+
+  // Input Elements
+  const inpARV = document.getElementById('inpARV');
+  const rngARV = document.getElementById('rngARV');
+  const badgeARV = document.getElementById('badgeARV');
+
+  const inpRehab = document.getElementById('inpRehab');
+  const rngRehab = document.getElementById('rngRehab');
+  const badgeRehab = document.getElementById('badgeRehab');
+
+  const inpRulePct = document.getElementById('inpRulePct');
+  const rngRulePct = document.getElementById('rngRulePct');
+  const badgeRule = document.getElementById('badgeRule');
+
+  const inpFee = document.getElementById('inpFee');
+  const badgeStrategy = document.getElementById('badgeStrategy');
+
+  const inpHolding = document.getElementById('inpHolding');
+  const badgeHolding = document.getElementById('badgeHolding');
+  const inpClosing = document.getElementById('inpClosing');
+  const badgeClosing = document.getElementById('badgeClosing');
+
+  // Output Elements
+  const outSellerMAO = document.getElementById('outSellerMAO');
+  const outScorecardSub = document.getElementById('outScorecardSub');
+  const outBuyerPrice = document.getElementById('outBuyerPrice');
+  const outGrossFee = document.getElementById('outGrossFee');
+  const outBuyerEquity = document.getElementById('outBuyerEquity');
+
+  const rowARV = document.getElementById('rowARV');
+  const rowBuyerCeiling = document.getElementById('rowBuyerCeiling');
+  const rowRehab = document.getElementById('rowRehab');
+  const rowBuyerPrice = document.getElementById('rowBuyerPrice');
+  const rowAssignmentFee = document.getElementById('rowAssignmentFee');
+  const rowSellerMAO = document.getElementById('rowSellerMAO');
+  const rowClosingFees = document.getElementById('rowClosingFees');
+  const rowNetProfit = document.getElementById('rowNetProfit');
+
+  const cellSellerContract = document.getElementById('cellSellerContract');
+  const cellSellerPct = document.getElementById('cellSellerPct');
+  const cellBuyerContract = document.getElementById('cellBuyerContract');
+  const cellBuyerPct = document.getElementById('cellBuyerPct');
+  const cellRehab = document.getElementById('cellRehab');
+  const cellRehabPct = document.getElementById('cellRehabPct');
+  const rowExcelHolding = document.getElementById('rowExcelHolding');
+  const cellHolding = document.getElementById('cellHolding');
+  const cellHoldingPct = document.getElementById('cellHoldingPct');
+  const rowExcelClosing = document.getElementById('rowExcelClosing');
+  const cellClosing = document.getElementById('cellClosing');
+  const cellClosingPct = document.getElementById('cellClosingPct');
+  const cellWholesaleSpread = document.getElementById('cellWholesaleSpread');
+  const cellWholesalePct = document.getElementById('cellWholesalePct');
+
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+  const btnExcelCardDownload = document.getElementById('btnExcelCardDownload');
+
+  let activeStrategy = 'assignment'; // 'assignment' or 'double'
+  let isExcelMode = false;
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, dec = 2) {
+    return Number(num).toFixed(dec);
+  }
+
+  // Sync Input & Range
+  function syncPair(numInp, rngInp, callback) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      if (callback) callback();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      if (callback) callback();
+    });
+  }
+
+  syncPair(inpARV, rngARV, recalculate);
+  syncPair(inpRehab, rngRehab, recalculate);
+  syncPair(inpRulePct, rngRulePct, () => {
+    badgeRule.textContent = `${inpRulePct.value}% Cash Buyer Rule`;
+    recalculate();
+  });
+
+  // ARV Chips
+  document.querySelectorAll('#arvChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#arvChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpARV.value = this.getAttribute('data-val');
+      rngARV.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  // Rehab Chips
+  document.querySelectorAll('#rehabChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#rehabChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpRehab.value = this.getAttribute('data-val');
+      rngRehab.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  // Rule Chips
+  document.querySelectorAll('#ruleChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#ruleChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpRulePct.value = this.getAttribute('data-val');
+      rngRulePct.value = this.getAttribute('data-val');
+      badgeRule.textContent = `${inpRulePct.value}% Cash Buyer Rule`;
+      recalculate();
+    });
+  });
+
+  // Fee Chips
+  document.querySelectorAll('#feeChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#feeChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpFee.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  // Strategy Chips (Assignment vs Double Close)
+  document.querySelectorAll('#strategyChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#strategyChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      activeStrategy = this.getAttribute('data-val');
+      badgeStrategy.textContent = activeStrategy === 'assignment' ? 'Standard Assignment' : 'Double Close (1.5% Fee)';
+      recalculate();
+    });
+  });
+
+  // Mode Switcher Logic (Quick 70% vs Excel Underwriting)
+  function setMode(mode, shouldScroll = false) {
+    if (mode === 'excel') {
+      isExcelMode = true;
+      tabExcelUnderwriting.classList.add('active');
+      tabQuickWholesale.classList.remove('active');
+      if (excelLineItemsSection) excelLineItemsSection.style.display = 'block';
+      if (rowExcelHolding) rowExcelHolding.style.display = 'table-row';
+      if (rowExcelClosing) rowExcelClosing.style.display = 'table-row';
+      if (excelMatrixCard && shouldScroll) {
+        excelMatrixCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } else {
+      isExcelMode = false;
+      tabQuickWholesale.classList.add('active');
+      tabExcelUnderwriting.classList.remove('active');
+      if (excelLineItemsSection) excelLineItemsSection.style.display = 'none';
+      if (rowExcelHolding) rowExcelHolding.style.display = 'none';
+      if (rowExcelClosing) rowExcelClosing.style.display = 'none';
+    }
+    recalculate();
+  }
+
+  if (tabQuickWholesale) {
+    tabQuickWholesale.addEventListener('click', () => setMode('quick', false));
+  }
+  if (tabExcelUnderwriting) {
+    tabExcelUnderwriting.addEventListener('click', () => setMode('excel', true));
+  }
+
+  // Holding & Closing Listeners
+  if (inpHolding) {
+    inpHolding.addEventListener('input', () => {
+      badgeHolding.textContent = formatMoney(parseFloat(inpHolding.value) || 0);
+      recalculate();
+    });
+  }
+  if (inpClosing) {
+    inpClosing.addEventListener('input', () => {
+      badgeClosing.textContent = formatMoney(parseFloat(inpClosing.value) || 0);
+      recalculate();
+    });
+  }
+
+  inpFee.addEventListener('input', recalculate);
+
+  // Recalculate Logic
+  function recalculate() {
+    const arv = Math.max(0, parseFloat(inpARV.value) || 0);
+    const rehab = Math.max(0, parseFloat(inpRehab.value) || 0);
+    const rulePct = Math.max(40, Math.min(95, parseFloat(inpRulePct.value) || 70)) / 100;
+    const targetFee = Math.max(0, parseFloat(inpFee.value) || 0);
+    const holding = isExcelMode && inpHolding ? Math.max(0, parseFloat(inpHolding.value) || 0) : 0;
+    const closing = isExcelMode && inpClosing ? Math.max(0, parseFloat(inpClosing.value) || 0) : 0;
+
+    badgeARV.textContent = formatMoney(arv);
+    badgeRehab.textContent = formatMoney(rehab);
+
+    // 70% Rule Formula:
+    // Buyer Max Price = (ARV * rulePct) - Rehab - (Excel Holding & Closing)
+    const buyerDiscountCeiling = arv * rulePct;
+    const buyerMaxPrice = Math.max(0, buyerDiscountCeiling - rehab - holding - closing);
+
+    // Seller MAO = Buyer Max Price - Wholesaler Target Fee
+    const sellerMAO = Math.max(0, buyerMaxPrice - targetFee);
+
+    // Double Close transactional funding cost (approx 1.5% of A-to-B purchase price)
+    let closingCostDeduction = 0;
+    if (activeStrategy === 'double') {
+      closingCostDeduction = Math.round(sellerMAO * 0.015);
+    }
+    const netWholesaleProfit = Math.max(0, targetFee - closingCostDeduction);
+
+    // End-Buyer Equity Spread: ARV - (Buyer Price + Rehab + Holding + Closing)
+    const endBuyerEquity = Math.max(0, arv - (buyerMaxPrice + rehab + holding + closing));
+
+    // Render Outputs
+    outSellerMAO.textContent = formatMoney(sellerMAO);
+    outScorecardSub.textContent = `Target Wholesale Spread: +${formatMoney(netWholesaleProfit)} (${activeStrategy === 'double' ? 'Double Close Net' : 'Assignment Spread'})`;
+    outBuyerPrice.textContent = formatMoney(buyerMaxPrice);
+    outGrossFee.textContent = formatMoney(targetFee);
+    outBuyerEquity.textContent = formatMoney(endBuyerEquity);
+
+    // Render Breakdown Rows
+    rowARV.textContent = formatMoney(arv);
+    rowBuyerCeiling.textContent = formatMoney(buyerDiscountCeiling);
+    rowRehab.textContent = `-${formatMoney(rehab)}`;
+    rowBuyerPrice.textContent = formatMoney(buyerMaxPrice);
+    rowAssignmentFee.textContent = `-${formatMoney(targetFee)}`;
+    rowSellerMAO.textContent = formatMoney(sellerMAO);
+
+    if (activeStrategy === 'double') {
+      rowClosingFees.textContent = `-${formatMoney(closingCostDeduction)} (1.5% Transactional Funding)`;
+    } else {
+      rowClosingFees.textContent = '$0 (Buyer Pays Assignment)';
+    }
+
+    rowNetProfit.textContent = `+${formatMoney(netWholesaleProfit)}`;
+
+    // Render Excel Table Cells & ARV % Margins
+    const calcPct = (val) => arv > 0 ? ((val / arv) * 100).toFixed(1) + '% of ARV' : '0.0% of ARV';
+
+    cellSellerContract.textContent = formatMoney(sellerMAO);
+    if (cellSellerPct) cellSellerPct.textContent = calcPct(sellerMAO);
+
+    cellBuyerContract.textContent = formatMoney(buyerMaxPrice);
+    if (cellBuyerPct) cellBuyerPct.textContent = calcPct(buyerMaxPrice);
+
+    cellRehab.textContent = formatMoney(rehab);
+    if (cellRehabPct) cellRehabPct.textContent = calcPct(rehab);
+
+    if (cellHolding) cellHolding.textContent = formatMoney(holding);
+    if (cellHoldingPct) cellHoldingPct.textContent = calcPct(holding);
+
+    if (cellClosing) cellClosing.textContent = formatMoney(closing);
+    if (cellClosingPct) cellClosingPct.textContent = calcPct(closing);
+
+    cellWholesaleSpread.textContent = formatMoney(netWholesaleProfit);
+    if (cellWholesalePct) cellWholesalePct.textContent = calcPct(netWholesaleProfit);
+  }
+
+  // DYNAMIC EXCEL (.CSV) DOWNLOAD ENGINE
+  function downloadExcelCSV() {
+    const arv = Math.max(0, parseFloat(inpARV.value) || 0);
+    const rehab = Math.max(0, parseFloat(inpRehab.value) || 0);
+    const rulePct = Math.max(40, Math.min(95, parseFloat(inpRulePct.value) || 70));
+    const targetFee = Math.max(0, parseFloat(inpFee.value) || 0);
+    const holding = isExcelMode && inpHolding ? Math.max(0, parseFloat(inpHolding.value) || 0) : 0;
+    const closing = isExcelMode && inpClosing ? Math.max(0, parseFloat(inpClosing.value) || 0) : 0;
+
+    const buyerCeiling = arv * (rulePct / 100);
+    const buyerMaxPrice = Math.max(0, buyerCeiling - rehab - holding - closing);
+    const sellerMAO = Math.max(0, buyerMaxPrice - targetFee);
+
+    let closingCostDeduction = 0;
+    if (activeStrategy === 'double') {
+      closingCostDeduction = Math.round(sellerMAO * 0.015);
+    }
+    const netWholesaleProfit = Math.max(0, targetFee - closingCostDeduction);
+    const buyerTotalBasis = buyerMaxPrice + rehab + holding + closing;
+    const buyerProjectedMargin = Math.max(0, arv - buyerTotalBasis);
+
+    let csv = `REAL REFIN - REAL ESTATE WHOLESALE UNDERWRITING SPREADSHEET MODEL\n`;
+    csv += `Official Source: https://realrefin.com/wholesale-real-estate-calculator\n`;
+    csv += `Export Timestamp: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}\n\n`;
+
+    csv += `SECTION 1: PROPERTY & UNDERWRITING CRITERIA,AMOUNT,NOTES\n`;
+    csv += `After Repair Value (ARV),$${arv.toFixed(2)},"Completed Appraisal / Comps Value"\n`;
+    csv += `Cash Buyer Rule Percentage,${rulePct}%,"Target Investor Maximum Allowable Percentage"\n`;
+    csv += `Estimated Renovation / Rehab Budget,$${rehab.toFixed(2)},"Itemized Contractor Scope of Work"\n`;
+    if (isExcelMode) {
+      csv += `Estimated Holding Costs,$${holding.toFixed(2)},"Property Taxes Insurance Utilities & Loan Carry"\n`;
+      csv += `Estimated Closing & Escrow Costs,$${closing.toFixed(2)},"Title Search Escrow Settlement & Transfer Taxes"\n`;
+    }
+    csv += `Target Wholesaler Assignment Fee,$${targetFee.toFixed(2)},"Gross Wholesale Spread"\n`;
+    csv += `Closing Strategy,"${activeStrategy === 'double' ? 'Double Close (Transactional Bridge)' : 'Assignment of Contract'}",${activeStrategy === 'double' ? '1.5% Transactional Funding Deducted' : 'End Buyer Pays Escrow & Assignment'}\n\n`;
+
+    csv += `SECTION 2: WHOLESALE CONTRACT & OFFER ANALYSIS,AMOUNT,% OF ARV,NOTES / FORMULA\n`;
+    csv += `Investor Gross Rule Ceiling (ARV x Rule %),$"${buyerCeiling.toFixed(2)}",${((buyerCeiling/arv)*100).toFixed(1)}%,"=ARV * Rule%"\n`;
+    csv += `Cash Buyer Max Allowable Price (Contract B-to-C),$"${buyerMaxPrice.toFixed(2)}",${((buyerMaxPrice/arv)*100).toFixed(1)}%,"=Rule Ceiling - Rehab Budget"\n`;
+    csv += `Wholesaler Assignment Fee Target,-$"${targetFee.toFixed(2)}",${((targetFee/arv)*100).toFixed(1)}%,"Wholesale Spread"\n`;
+    csv += `Seller Maximum Allowable Offer (MAO Contract A-to-B),$"${sellerMAO.toFixed(2)}",${((sellerMAO/arv)*100).toFixed(1)}%,"=Buyer Max Price - Wholesaler Fee"\n`;
+    if (activeStrategy === 'double') {
+      csv += `Double Close Transactional Escrow Fee,-$"${closingCostDeduction.toFixed(2)}",${((closingCostDeduction/arv)*100).toFixed(1)}%,"=Seller MAO * 1.5%"\n`;
+    }
+    csv += `NET WHOLESALER CASH PROFIT,$"${netWholesaleProfit.toFixed(2)}",${((netWholesaleProfit/arv)*100).toFixed(1)}%,"Net Cash Deposited on Closing Day"\n\n`;
+
+    csv += `SECTION 3: CASH END-BUYER PROFITABILITY & ROI,AMOUNT,% OF ARV,INVESTOR OUTCOME\n`;
+    csv += `Purchase Price from Wholesaler,$"${buyerMaxPrice.toFixed(2)}",${((buyerMaxPrice/arv)*100).toFixed(1)}%,"Contract B-to-C"\n`;
+    csv += `Renovation Capital Expenditures,$"${rehab.toFixed(2)}",${((rehab/arv)*100).toFixed(1)}%,"Rehab Capital Invested"\n`;
+    csv += `Total End-Buyer Capital Basis,$"${buyerTotalBasis.toFixed(2)}",${((buyerTotalBasis/arv)*100).toFixed(1)}%,"Total All-In Investment Basis"\n`;
+    csv += `End-Buyer Gross Profit / Equity Margin,$"${buyerProjectedMargin.toFixed(2)}",${((buyerProjectedMargin/arv)*100).toFixed(1)}%,"=ARV - Total Basis"\n\n`;
+
+    csv += `EXCEL FUNCTION QUICK FORMULAS\n`;
+    csv += `"Buyer Maximum Price (B-to-C)","=(ARV * 70%) - Rehab"\n`;
+    csv += `"Seller Maximum Allowable Offer (MAO)","=Buyer Price - Wholesaler Fee"\n`;
+    csv += `"Net Wholesale Profit","=Fee - Transactional Funding"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `realrefin-real-estate-wholesale-calculator-${Math.round(arv)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  if (btnDownloadExcel) btnDownloadExcel.addEventListener('click', downloadExcelCSV);
+  if (btnExcelCardDownload) btnExcelCardDownload.addEventListener('click', downloadExcelCSV);
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('arv', inpARV.value);
+    url.searchParams.set('rehab', inpRehab.value);
+    url.searchParams.set('rule', inpRulePct.value);
+    url.searchParams.set('fee', inpFee.value);
+    url.searchParams.set('strategy', activeStrategy);
+    if (isExcelMode) {
+      url.searchParams.set('mode', 'excel');
+      if (inpHolding) url.searchParams.set('holding', inpHolding.value);
+      if (inpClosing) url.searchParams.set('closing', inpClosing.value);
+    } else {
+      url.searchParams.delete('mode');
+      url.searchParams.delete('holding');
+      url.searchParams.delete('closing');
+    }
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL State
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('arv')) {
+      inpARV.value = p.get('arv');
+      rngARV.value = p.get('arv');
+    }
+    if (p.has('rehab')) {
+      inpRehab.value = p.get('rehab');
+      rngRehab.value = p.get('rehab');
+    }
+    if (p.has('rule')) {
+      inpRulePct.value = p.get('rule');
+      rngRulePct.value = p.get('rule');
+      badgeRule.textContent = `${p.get('rule')}% Cash Buyer Rule`;
+    }
+    if (p.has('fee')) inpFee.value = p.get('fee');
+    if (p.has('strategy')) {
+      activeStrategy = p.get('strategy');
+      document.querySelectorAll('#strategyChips .chip-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-val') === activeStrategy);
+      });
+      badgeStrategy.textContent = activeStrategy === 'assignment' ? 'Standard Assignment' : 'Double Close (1.5% Fee)';
+    }
+    if (p.has('holding') && inpHolding) inpHolding.value = p.get('holding');
+    if (p.has('closing') && inpClosing) inpClosing.value = p.get('closing');
+    if (p.get('mode') === 'excel') {
+      setMode('excel', false);
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>
