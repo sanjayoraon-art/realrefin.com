@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADU Cost Calculator (Free) | Los Angeles & Southern California ADU Guide</title>
+  <meta name="description" content="Free ADU cost calculator and Southern California ADU guide. Calculate total build costs for Los Angeles and SoCal ADUs by square footage, type (detached, garage conversion, attached, JADU), permits, California Title 24 solar, and rental ROI. Download free Excel model.">
+  <meta name="keywords" content="adu cost calculator, southern california adu guide and cost calculator, adu cost calculator los angeles, cost to build an adu, garage conversion adu cost, detached adu cost, jadu cost calculator, california adu cost per square foot, adu rental income calculator">
+  <link rel="canonical" href="https://realrefin.com/adu-cost-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ADU Cost Calculator (Free) | Los Angeles & Southern California ADU Guide">
+  <meta property="og:description" content="Institutional-grade ADU cost calculator. Estimate project costs, LADBS & SoCal permit fees, garage conversions, detached backyard cottages, Title 24 solar mandates, and rental ROI.">
+  <meta property="og:url" content="https://realrefin.com/adu-cost-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ADU Cost Calculator (Free) | Los Angeles & Southern California ADU Guide">
+  <meta name="twitter:description" content="Calculate ADU construction costs, permit fees, and rental cash flow for Los Angeles, Southern California, and nationwide backyard homes.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <!-- Structured Data: WebApplication, FAQPage, HowTo, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/adu-cost-calculator#app",
+        "name": "RealRefin ADU Cost Calculator & Southern California Guide",
+        "url": "https://realrefin.com/adu-cost-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "Comprehensive ADU cost calculator and investment underwriting tool. Accurately estimates construction costs, Los Angeles (LADBS) and Southern California permit fees, garage conversions, detached backyard homes, Title 24 solar, and rental cash flow ROI.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/adu-cost-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://realrefin.com/#calculators"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "ADU Cost Calculator & SoCal Guide",
+            "item": "https://realrefin.com/adu-cost-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://realrefin.com/adu-cost-calculator#howto",
+        "name": "How to Calculate the Cost of Building an ADU in Southern California",
+        "description": "Step-by-step methodology to underwrite architectural, permit, construction, and utility costs for an Accessory Dwelling Unit in Los Angeles and Southern California.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Select ADU Construction Type",
+            "text": "Choose whether you are building a detached backyard cottage, converting an existing 2-car garage, building an attached home addition, or creating an interior Junior ADU (JADU)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Define Target Square Footage & Layout",
+            "text": "Input the planned livable area (ranging from 200 sq ft studios up to 1,200 sq ft 3-bedroom family units) and specify 1-story or 2-story construction."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Factor Regional Location Index & Permit Fees",
+            "text": "Select your municipality (such as City of Los Angeles LADBS, Orange County, San Diego, or national average) to account for regional labor rates and local municipal impact fee schedules."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Incorporate California Title 24 & Soft Costs",
+            "text": "Budget for architectural plans, structural engineering calculations, soils reports, city plan check fees, and mandatory California Title 24 solar PV installations."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Model Rental Income & Financing ROI",
+            "text": "Analyze projected monthly rental cash flow, capitalization rate (Cap Rate), debt service from a HELOC or renovation loan, and net payback period."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/adu-cost-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does it cost to build an ADU in Los Angeles in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Los Angeles, building a detached new-construction ADU typically costs between $350 and $550 per square foot, equating to $180,000 to $280,000 for a 500 sq ft 1-bedroom unit, and $320,000 to $480,000 for an 800 sq ft 2-bedroom home. In contrast, an existing 2-car garage conversion is the most cost-effective option, averaging $150 to $300 per sq ft ($80,000 to $130,000 all-in) because the existing concrete slab, framing, and roof structure are already in place."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cheapest type of ADU to build in Southern California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The cheapest type of ADU is a Junior ADU (JADU), built within the existing footprint of the primary residence (up to 500 sq ft), which typically costs $40,000 to $90,000. Among standalone or exterior conversions, a standard detached 2-car garage conversion is the most economical choice ($75,000 to $125,000 turnkey) because site grading, foundation excavation, and primary utility trenching distances are substantially minimized."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need solar panels on my ADU in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under the California Building Standards Code (Title 24, Part 6), newly constructed standalone detached ADUs are required to have a dedicated solar photovoltaic (PV) system installed. However, garage conversions, interior JADUs, and attached home additions that do not involve completely new standalone foundations are generally exempt from the solar panel mandate. A typical 2.5 kW to 4.0 kW ADU solar array costs between $8,000 and $13,000 before federal tax credits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are ADUs under 750 square feet exempt from city impact fees in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Under California state law (Gov. Code § 65852.2 and AB 68/AB 881), any ADU with less than 750 square feet of livable floor area is 100% exempt from all local impact development fees (including parks, traffic, and general municipal impact fees). For ADUs of 750 square feet or larger, impact fees must be charged proportionally to the square footage of the primary dwelling unit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do permits cost for an ADU in Los Angeles (LADBS)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "City of Los Angeles Department of Building and Safety (LADBS) plan-check and building permit fees typically range between $3,500 and $9,000 for standard detached or garage conversion ADUs. Utilizing pre-approved standard architectural plans (LADBS Standard Plan Program) can lower plan-check review fees and accelerate municipal turnaround times down to under 30 days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I build a two-story ADU in Southern California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. California state law allows detached ADUs to reach up to 16 feet in height by right, and up to 18 feet (or 20 feet if within 0.5 miles of major transit stops) to accommodate two-story structures or ADUs built over detached garages. Two-story ADUs carry a 10% to 15% construction cost premium due to second-story framing, structural sheer engineering, staircase footprint loss, and scaffolding."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much rental income can an ADU generate in Los Angeles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the Greater Los Angeles metropolitan area, studio ADUs typically rent for $1,600 to $2,100 per month, 1-bedroom units rent for $2,200 to $2,800 per month, and 2-bedroom/2-bath backyard homes command $2,900 to $3,800+ per month depending on neighborhood (e.g., West LA, San Fernando Valley, Long Beach, or Pasadena). This yields an unlevered capitalization rate of 9% to 14% on total construction capital."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can an ADU be sold separately as a condominium in California?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under California Assembly Bill 1033 (AB 1033), local cities and counties now have the legal option to adopt local ordinances allowing homeowners to subdivide their property and sell an ADU separately as an independent residential condominium unit. Check with your local city planning department to confirm if your municipality has formally opted into AB 1033 condominiumization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to design, permit, and build an ADU in SoCal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The entire ADU project lifecycle in Southern California typically spans 7 to 13 months: Architectural design, structural calculations, and Title 24 take 1 to 2 months; city plan check and permit issuance take 2 to 4 months (mandated by state law to receive initial review within 60 days); and site grading, framing, utility trenching, and finishes take 4 to 7 months."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       CORE COLOR SYSTEM & VARIABLES
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-blue: #2563eb;
+      --accent-blue-light: #eff6ff;
+      --accent-amber: #d97706;
+      --accent-amber-light: #fffbeb;
+      --accent-danger: #dc2626;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --bg-app: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVIGATION BAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-stat h4 span {
+      color: #34d399;
+    }
+
+    .trust-stat p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+
+    /* -----------------------------------------------------------
+       MODE SELECTOR TABS
+    ----------------------------------------------------------- */
+    .mode-switch-wrapper {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .mode-tab-pill {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .mode-tab-pill.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-tab-pill span.sublabel {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .pane-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-title-wrap span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-select {
+      padding-left: 1rem;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.15em;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 3rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      border: 2.5px solid #ffffff;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.18);
+    }
+
+    /* Preset Chips */
+    .preset-chips-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.65rem;
+    }
+
+    .chip-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .chip-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    /* Strategy & Feature Cards */
+    .strategy-card-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .strategy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .strategy-header h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .scorecard-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--accent-emerald);
+      position: relative;
+    }
+
+    .scorecard-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #34d399;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .scorecard-label {
+      font-size: 1rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+    }
+
+    .scorecard-subtext {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .scorecard-subtext strong {
+      color: #34d399;
+    }
+
+    /* Metrics Grid */
+    .metrics-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .metrics-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card h5 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    .metric-card .metric-num {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* Breakdown Tables */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Excel Matrix Table */
+    .excel-table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .excel-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.65rem 0.85rem;
+      font-weight: 700;
+    }
+
+    .excel-table td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #344155;
+    }
+
+    .excel-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Action Buttons */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-excel {
+      background: #107c41; /* Microsoft Excel Brand Green */
+      color: #ffffff;
+    }
+
+    .btn-action-excel:hover {
+      background: #0d6334;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE EDUCATIONAL GUIDE & FAQ SECTION
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+    }
+
+    .guide-section h3 {
+      font-size: 1.35rem;
+      font-weight: 750;
+      color: var(--primary-navy);
+      margin: 2.25rem 0 1rem;
+      line-height: 1.35;
+    }
+
+    .guide-section p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.35rem;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .guide-section li {
+      font-size: 0.975rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--accent-blue);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.925rem;
+      color: #1e3a8a;
+    }
+
+    .comparison-grid-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: 0.9rem;
+    }
+
+    .comparison-grid-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .comparison-grid-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .comparison-grid-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-accordion-wrap {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: 0.9rem;
+      overflow: hidden;
+      background: #ffffff;
+      transition: border-color 0.15s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--accent-emerald);
+    }
+
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+      background: #f8fafc;
+      border-top: 1px solid transparent;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 600px;
+      border-top-color: var(--border-color);
+    }
+
+    .faq-answer-inner {
+      padding: 1.25rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3.5rem 0 2rem;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ========================================================
+       TOP NAVIGATION
+  ======================================================== -->
+  <nav class="rr-nav" aria-label="Main Navigation">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#calculators">Calculators</a></li>
+      <li><a href="/house-hacking-calculator">House Hacking</a></li>
+      <li><a href="/wholesale-real-estate-calculator">Wholesale Modeler</a></li>
+      <li><a href="/seller-financing-calculator">Seller Financing</a></li>
+      <li><a href="/arv-calculator">ARV Calculator</a></li>
+      <li><a href="/10-year-heloc-payment-calculator">HELOC Calculator</a></li>
+      <li><a href="#guide" class="btn-nav-cta">Southern California ADU Guide</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========================================================
+       BREADCRUMB STRIP
+  ======================================================== -->
+  <div class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#calculators">Real Estate Calculators</a>
+    <span class="separator">/</span>
+    <span class="current">ADU Cost Calculator &amp; Southern California Guide</span>
+  </div>
+
+  <!-- ========================================================
+       1. HERO HEADER BANNER
+  ======================================================== -->
+  <header class="calc-header-banner">
+    <div class="badge-pill-tag">
+      🏡 2026 California ADU Construction &amp; Rental ROI Engine
+    </div>
+    <h1>ADU Cost Calculator <span>&amp; Southern California Guide</span></h1>
+    <p>
+      Accurately estimate construction costs, city permits (LADBS &amp; SoCal municipalities), garage conversions, detached backyard homes, California Title 24 solar PV mandates, and monthly rental cash flow ROI.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>$150<span>–$550</span></h4>
+        <p>SoCal Cost Per Sq Ft Range</p>
+      </div>
+      <div class="trust-stat">
+        <h4>LADBS<span> Standard</span></h4>
+        <p>Pre-Approved Plan Savings</p>
+      </div>
+      <div class="trust-stat">
+        <h4>&lt;750<span> Sq Ft</span></h4>
+        <p>100% Impact Fee Exemption</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Title 24<span> Solar</span></h4>
+        <p>California Code Compliance</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       CALCULATOR MODE SELECTOR (TABS)
+  ======================================================== -->
+  <div class="mode-switch-wrapper">
+    <button type="button" class="mode-tab-pill active" id="tabQuickMode">
+      <span>⚡ Quick ADU Cost Modeler</span>
+      <span class="sublabel">Instant Build Estimates by Size &amp; Type</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabItemizedMode">
+      <span>📊 Itemized Underwriting Matrix</span>
+      <span class="sublabel">Plans, Permits, Construction, Solar &amp; Utilities</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabRentalMode">
+      <span>📈 Rental Cash Flow &amp; ROI</span>
+      <span class="sublabel">Gross Rent, Financing, Cap Rate &amp; Payback</span>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-grid">
+
+    <!-- LEFT: USER INPUTS PANE -->
+    <div class="calc-inputs-pane">
+      <div class="pane-section-header">
+        <div class="pane-title-wrap">
+          <span class="icon">📐</span>
+          <h2>ADU Project Specifications</h2>
+        </div>
+      </div>
+
+      <!-- Regional Location Preset -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selRegion">Regional Location &amp; Labor Market</label>
+          <span class="input-helper-badge" id="badgeRegion">City of Los Angeles (LADBS)</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selRegion" class="form-select">
+            <option value="los-angeles" selected>City of Los Angeles (LADBS / LA County) - 1.05x</option>
+            <option value="socal-metro">Southern California (Orange County, San Diego) - 1.02x</option>
+            <option value="socal-inland">SoCal Inland Empire (Riverside, San Bernardino) - 0.92x</option>
+            <option value="norcal-bay">Northern California (SF Bay Area, Silicon Valley) - 1.20x</option>
+            <option value="national-avg">National US Average (Affordable Market) - 0.82x</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ADU Construction Type -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selType">ADU Construction Type</label>
+          <span class="input-helper-badge" id="badgeType">Detached Backyard Cottage</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selType" class="form-select">
+            <option value="detached" selected>Detached Backyard Cottage (New Standalone Build)</option>
+            <option value="garage">Garage Conversion (Existing 1 or 2-Car Garage)</option>
+            <option value="attached">Attached Home Addition (Expansion / Bump-Out)</option>
+            <option value="jadu">Junior ADU (JADU - Interior Conversion up to 500 sq ft)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Livable Floor Area (Square Footage) -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpSqft">Livable Floor Area (Sq Ft)</label>
+          <span class="input-helper-badge" id="badgeSqft">600 sq ft (1-Bedroom)</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpSqft" class="form-input no-prefix has-suffix" value="600" min="150" max="1200" step="25">
+          <span class="input-suffix">sq ft</span>
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngSqft" class="custom-range" value="600" min="150" max="1200" step="25">
+        </div>
+        <div class="preset-chips-bar" id="sqftChips">
+          <button type="button" class="chip-btn" data-val="350">Studio (350 sqft)</button>
+          <button type="button" class="chip-btn active" data-val="600">1-Bed (600 sqft)</button>
+          <button type="button" class="chip-btn" data-val="750">2-Bed (750 sqft)</button>
+          <button type="button" class="chip-btn" data-val="1000">2-Bed / 2-Bath (1,000 sqft)</button>
+          <button type="button" class="chip-btn" data-val="1200">3-Bed (1,200 sqft)</button>
+        </div>
+      </div>
+
+      <!-- Stories / Height Selection -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selStories">Number of Stories</label>
+          <span class="input-helper-badge" id="badgeStories">Single Story (Standard)</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selStories" class="form-select">
+            <option value="1" selected>Single Story (Standard Footprint)</option>
+            <option value="2">Two-Story (+12% Structural Sheer &amp; Stairs Premium)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Architectural Finishes Grade -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selFinish">Interior &amp; Exterior Finish Tier</label>
+          <span class="input-helper-badge" id="badgeFinish">Standard Modern ($$)</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selFinish" class="form-select">
+            <option value="economy">Economy / Durable Rental Grade ($ - LVP, Prefab Cabinets)</option>
+            <option value="standard" selected>Standard Modern ($$ - Quartz, Tile Bath, Stainless)</option>
+            <option value="luxury">Luxury Custom ($$$ - Hardwood, Custom Millwork, High-End)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Rental & Financing ROI Module (Toggleable / Expanded in Rental Mode) -->
+      <div id="rentalInputsSection" class="strategy-card-box" style="display: none;">
+        <div class="strategy-header">
+          <h4><span>📈</span> ADU Rental &amp; Financing Assumptions</h4>
+          <span class="input-helper-badge" style="background:#e0f2fe; color:#0369a1;">ROI Engine Active</span>
+        </div>
+
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpMonthlyRent">Expected Monthly Market Rent</label>
+            <span class="input-helper-badge" id="badgeRent">$2,450 / mo</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpMonthlyRent" class="form-input" value="2450" min="500" max="10000" step="50">
+          </div>
+          <p style="font-size:0.75rem; color:var(--text-light); margin-top:0.35rem;">Typical SoCal studio: $1,750–$2,100; 1-BR: $2,200–$2,800; 2-BR: $2,900–$3,800.</p>
+        </div>
+
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpLoanRate">Financing Interest Rate (HELOC / Loan)</label>
+            <span class="input-helper-badge">7.5% Annual</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpLoanRate" class="form-input no-prefix has-suffix" value="7.5" min="0" max="15" step="0.25">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div class="input-group" style="margin-bottom:0;">
+          <div class="input-label-row">
+            <label class="input-label" for="inpDownPaymentPct">Cash Equity / Down Payment</label>
+            <span class="input-helper-badge">20% Cash</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpDownPaymentPct" class="form-input no-prefix has-suffix" value="20" min="0" max="100" step="5">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: OUTPUT RESULTS PANE -->
+    <div class="calc-results-pane">
+
+      <!-- Main Scorecard Banner -->
+      <div class="scorecard-banner">
+        <div class="scorecard-tag">Estimated Turnkey Project Cost</div>
+        <div class="scorecard-label" id="outScorecardDesc">600 sq ft Detached ADU in Los Angeles</div>
+        <div class="scorecard-value" id="outTotalCostRange">$231,000 – $346,500</div>
+        <div class="scorecard-subtext">
+          <span>Benchmark Unit Cost: <strong id="outCostPerSqft">$385 – $578 / sq ft</strong></span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-overview-grid">
+        <div class="metric-card">
+          <h5>Plans &amp; Permits</h5>
+          <div class="metric-num" id="outSoftCosts" style="color: var(--accent-blue);">$28,500</div>
+          <div class="metric-desc">Architecture, Title 24 &amp; City Fees</div>
+        </div>
+        <div class="metric-card">
+          <h5>Hard Construction</h5>
+          <div class="metric-num" id="outHardCosts" style="color: var(--primary-navy);">$202,000</div>
+          <div class="metric-desc">Framing, Roofing, MEP &amp; Finishes</div>
+        </div>
+        <div class="metric-card">
+          <h5>Solar &amp; Utilities</h5>
+          <div class="metric-num" id="outUtilityCosts" style="color: var(--accent-emerald-dark);">$14,500</div>
+          <div class="metric-desc">Trenching &amp; Title 24 Solar PV</div>
+        </div>
+      </div>
+
+      <!-- Detailed 5-Pillar Itemized Financial Breakdown Card -->
+      <div class="results-card">
+        <h3>📋 5-Pillar ADU Cost Breakdown</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>1. Architecture, Structural Engineering &amp; Title 24:</td>
+              <td class="value-col" id="rowCostDesign">$19,500 – $27,000</td>
+            </tr>
+            <tr>
+              <td>2. City Plan Check &amp; Municipal Building Permits:</td>
+              <td class="value-col" id="rowCostPermits">$6,500 – $11,500</td>
+            </tr>
+            <tr>
+              <td>3. Site Preparation, Grading &amp; Foundation Slab:</td>
+              <td class="value-col" id="rowCostSite">$22,000 – $33,000</td>
+            </tr>
+            <tr>
+              <td>4. Hard Construction Framing, Enclosure &amp; Interior Finishes:</td>
+              <td class="value-col" id="rowCostConstruction">$162,000 – $243,000</td>
+            </tr>
+            <tr>
+              <td>5. Utility Connections, Trenching &amp; Solar PV Mandate:</td>
+              <td class="value-col" id="rowCostUtilities">$12,000 – $18,000</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Estimated All-In Turnkey Project Total:</td>
+              <td class="value-col" id="rowCostTotal" style="color: var(--accent-emerald-dark); font-size:1.15rem; font-weight:900;">$222,000 – $332,500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Rental Cash Flow & ROI Scorecard (Dynamic in Rental Mode) -->
+      <div class="results-card" id="rentalScorecardCard">
+        <h3>📈 Rental Income &amp; Investment Yield Scorecard</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Projected Annual Gross Rental Income:</td>
+              <td class="value-col" id="rowGrossRent" style="color: var(--accent-blue); font-weight:800;">$29,400 / yr</td>
+            </tr>
+            <tr>
+              <td>Estimated Operating Expenses (Tax supplement, insurance, reserves):</td>
+              <td class="value-col" id="rowOpex" style="color: var(--accent-danger);">-$4,410 / yr</td>
+            </tr>
+            <tr>
+              <td>Net Operating Income (NOI):</td>
+              <td class="value-col" id="rowNOI" style="font-weight:800; color:var(--primary-navy);">$24,990 / yr</td>
+            </tr>
+            <tr>
+              <td>Monthly Debt Service (HELOC / Construction Loan 80% LTV):</td>
+              <td class="value-col" id="rowLoanPmt">-$1,610 / mo</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Net Monthly Free Cash Flow:</td>
+              <td class="value-col" id="rowNetCashFlow" style="color: var(--accent-emerald-dark); font-weight:900;">+$472 / mo (+$5,664/yr)</td>
+            </tr>
+            <tr>
+              <td>Unlevered Capitalization Rate (Cap Rate):</td>
+              <td class="value-col" id="rowCapRate" style="font-weight:800; color:var(--accent-emerald-dark);">8.9%</td>
+            </tr>
+            <tr>
+              <td>Estimated Capital Payback Period:</td>
+              <td class="value-col" id="rowPayback">11.2 Years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Itemized Underwriting Matrix Preview -->
+      <div class="results-card" id="itemizedMatrixCard">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <h3 style="margin:0;">📊 Itemized Underwriting Spreadsheet Matrix</h3>
+          <button type="button" class="btn-action btn-action-excel" id="btnMatrixExcelDownload" style="padding:0.45rem 0.9rem; font-size:0.82rem; min-width:auto; flex:none;">
+            📥 Download Excel (.CSV)
+          </button>
+        </div>
+        <div class="excel-table-wrap">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                <th>Project Component</th>
+                <th>Category</th>
+                <th>Conservative Low</th>
+                <th>Turnkey High</th>
+                <th>% of Budget</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Architectural Plans &amp; Structural</strong></td>
+                <td>Soft Costs</td>
+                <td id="cellDesignLow">$19,500</td>
+                <td id="cellDesignHigh">$27,000</td>
+                <td>8.5%</td>
+              </tr>
+              <tr>
+                <td><strong>City Plan Check &amp; LADBS Permits</strong></td>
+                <td>Soft Costs</td>
+                <td id="cellPermitsLow">$6,500</td>
+                <td id="cellPermitsHigh">$11,500</td>
+                <td>3.5%</td>
+              </tr>
+              <tr>
+                <td><strong>Site Prep, Trenching &amp; Foundation</strong></td>
+                <td>Hard Costs</td>
+                <td id="cellSiteLow">$22,000</td>
+                <td id="cellSiteHigh">$33,000</td>
+                <td>10.0%</td>
+              </tr>
+              <tr>
+                <td><strong>Framing, Enclosure, MEP &amp; Finishes</strong></td>
+                <td>Hard Costs</td>
+                <td id="cellConstLow">$162,000</td>
+                <td id="cellConstHigh">$243,000</td>
+                <td>72.5%</td>
+              </tr>
+              <tr>
+                <td><strong>Title 24 Solar PV &amp; Utility Tie-In</strong></td>
+                <td>Hard Costs</td>
+                <td id="cellUtilLow">$12,000</td>
+                <td id="cellUtilHigh">$18,000</td>
+                <td>5.5%</td>
+              </tr>
+              <tr style="background:#ecfdf5; font-weight:800; color:#047857;">
+                <td><strong>Turnkey Project Total</strong></td>
+                <td>All-In Total</td>
+                <td id="cellTotalLow">$222,000</td>
+                <td id="cellTotalHigh">$332,500</td>
+                <td>100.0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calc-actions-row">
+        <button type="button" class="btn-action btn-action-excel" id="btnDownloadExcel">
+          📊 Download ADU Model (.CSV)
+        </button>
+        <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+          🔗 Copy Shareable Link
+        </button>
+        <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+          🖨️ Print Feasibility Memo
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SOUTHERN CALIFORNIA ADU GUIDE (2,500+ WORDS)
+  ======================================================== -->
+  <article class="guide-section" id="guide">
+
+    <h2>Comprehensive Southern California ADU Guide &amp; Cost Calculator</h2>
+    <p>
+      In California, Accessory Dwelling Units (ADUs)—frequently termed **backyard cottages, granny flats, casitas, or in-law suites**—have become the single most powerful strategy for homeowners to create passive rental income, house multi-generational family members, and maximize residential property equity. Over the past decade, sweeping legislative reforms enacted by the State of California have dismantled municipal hurdles, mandated 60-day permit reviews, abolished prohibitive minimum lot sizes, and curtailed exorbitant parking requirements.
+    </p>
+    <p>
+      However, building an ADU in Southern California—especially within the **City of Los Angeles (governed by LADBS)**, Orange County, and San Diego—is a major capital investment. Without a rigorous, itemized **ADU cost calculator**, property owners frequently face budget overruns, unexpected utility trenching fees, or compliance surprises with California's Title 24 solar requirements. This comprehensive Southern California ADU guide outlines every cost pillar, municipal exemption, construction type, and financial underwriting metric you need to plan your project with institutional confidence.
+    </p>
+
+    <div class="callout-box">
+      <h4>💡 California Legislative Golden Rule (AB 68 &amp; AB 881 Exemption)</h4>
+      <p>
+        Under California Government Code § 65852.2, any ADU constructed with **less than 750 square feet of livable floor area is 100% exempt from all local impact development fees**. Building a 749 sq ft ADU instead of an 800 sq ft unit can instantly save between $6,000 and $18,000 in municipal impact fees in Southern California cities!
+      </p>
+    </div>
+
+    <h3>1. What Drives ADU Costs in Los Angeles and Southern California?</h3>
+    <p>
+      The total cost to construct an ADU is determined by five interconnected categories: construction typology, structural square footage, site topography, municipal permit fees, and utility infrastructure. In Southern California, labor shortages, high seismic engineering standards, and strict energy efficiency codes result in typical build costs ranging from **$150 to $300 per sq ft for garage conversions** and **$350 to $550+ per sq ft for detached ground-up new builds**.
+    </p>
+
+    <!-- Comparison Table -->
+    <table class="comparison-grid-table">
+      <thead>
+        <tr>
+          <th>ADU Typology</th>
+          <th>Typical Size (Sq Ft)</th>
+          <th>Estimated Cost Range</th>
+          <th>Avg Cost / Sq Ft</th>
+          <th>Best Use Case &amp; Feasibility</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Detached Backyard Cottage</strong></td>
+          <td>400 – 1,200 sq ft</td>
+          <td>$180,000 – $480,000+</td>
+          <td>$350 – $550 / sq ft</td>
+          <td>Maximum privacy and highest rental command. Requires dedicated foundation and solar PV array.</td>
+        </tr>
+        <tr>
+          <td><strong>Garage Conversion (2-Car)</strong></td>
+          <td>360 – 480 sq ft</td>
+          <td>$75,000 – $140,000</td>
+          <td>$180 – $300 / sq ft</td>
+          <td>Lowest barrier to entry. Utilizes existing foundation, framing, and roof structure; exempt from solar mandate.</td>
+        </tr>
+        <tr>
+          <td><strong>Attached Home Addition</strong></td>
+          <td>400 – 1,000 sq ft</td>
+          <td>$140,000 – $360,000</td>
+          <td>$280 – $450 / sq ft</td>
+          <td>Shares a structural wall with the primary dwelling; lower utility trenching runs than detached cottages.</td>
+        </tr>
+        <tr>
+          <td><strong>Junior ADU (JADU)</strong></td>
+          <td>150 – 500 sq ft</td>
+          <td>$35,000 – $85,000</td>
+          <td>$120 – $250 / sq ft</td>
+          <td>Built entirely within existing primary home footprint (e.g., converted master suite or attached garage).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2. The 5 Pillars of ADU Construction Costs</h3>
+    <p>
+      An accurate ADU budget must itemize both "soft costs" (design, engineering, city fees) and "hard costs" (materials, labor, site civil work):
+    </p>
+
+    <h4>Pillar 1: Architecture, Structural Engineering &amp; Title 24 Compliance (6%–10% of Budget)</h4>
+    <p>
+      Before a single shovel touches your lot, professional architectural plans and structural calculations must be drafted and submitted to your local building department. In Southern California, this includes:
+    </p>
+    <ul>
+      <li><strong>Architectural Site &amp; Floor Plans:</strong> Dimensioned floor layouts, exterior elevations, electrical schedules, and window/door schedules ($6,000–$14,000).</li>
+      <li><strong>Structural Engineering Calculations:</strong> California Building Code seismic sheer wall calculations, foundation tie-downs, and roof truss sizing ($3,000–$6,500).</li>
+      <li><strong>California Title 24 Energy Report:</strong> State-mandated thermal envelope and energy efficiency compliance report ($400–$800).</li>
+      <li><strong>Soils / Geotechnical Report:</strong> Mandatory in designated hillside grading areas, liquefaction zones, or fault hazard corridors throughout Los Angeles ($3,500–$6,000).</li>
+    </ul>
+
+    <h4>Pillar 2: City Plan Check, Building Permits &amp; Impact Fees (3%–6% of Budget)</h4>
+    <p>
+      In the City of Los Angeles, the Department of Building and Safety (LADBS) collects plan-check review fees, building permit fees, electrical/plumbing/mechanical fees, and school district developer fees. While units under 750 sq ft are exempt from city development impact fees, permit issuance costs typically total between **$3,500 and $9,500**. Utilizing an LADBS Standard Plan (pre-approved architectural design) can accelerate review times and discount plan-check fees by up to 50%.
+    </p>
+
+    <h4>Pillar 3: Site Preparation, Grading &amp; Foundation Slab (8%–12% of Budget)</h4>
+    <p>
+      A detached ADU requires earthwork, demolition of existing concrete or trees, and a structural concrete slab-on-grade foundation. In Los Angeles, site conditions dramatically affect this phase: flat, easily accessible yards with alleyway access cost significantly less than sloped hillside lots requiring caissons, grade beams, or retaining walls.
+    </p>
+
+    <h4>Pillar 4: Hard Construction &amp; Turnkey Interior Finishes (65%–72% of Budget)</h4>
+    <p>
+      Hard construction comprises framing lumber, roofing, insulation, windows, doors, rough electrical, plumbing, HVAC mini-split heat pumps, drywall, painting, cabinetry, quartz countertops, tile showers, and appliances. Construction costs in SoCal generally average **$220 to $320 per square foot** for labor and materials alone, excluding soft costs and utility infrastructure.
+    </p>
+
+    <h4>Pillar 5: Utility Connections &amp; California Title 24 Solar PV Mandate (5%–8% of Budget)</h4>
+    <p>
+      Every livable ADU requires independent sewer/septic drainage, potable water, and electrical power. Key considerations include:
+    </p>
+    <ul>
+      <li><strong>Sewer Lateral Tie-In:</strong> Trenching from the backyard ADU to the main sewer line at the front of the lot typically costs $4,000 to $9,000 depending on distance and concrete removal.</li>
+      <li><strong>Electrical Subpanel Upgrade:</strong> Most older Los Angeles single-family homes possess 100A or 125A main electrical panels. Adding an all-electric ADU often requires upgrading the main service to 200A or 400A ($3,500–$6,500).</li>
+      <li><strong>Mandatory Solar PV Installation:</strong> Under California Title 24, all newly constructed standalone detached ADUs must install a dedicated solar photovoltaic system (typically 2.5 kW to 3.8 kW, costing $8,000–$13,000 before federal tax credits).</li>
+    </ul>
+
+    <h3>3. Financing Your ADU: How to Fund Construction in Southern California</h3>
+    <p>
+      Because most homeowners do not have $150,000 to $350,000 in liquid cash reserves, Southern California homeowners utilize specialized equity and renovation loan vehicles:
+    </p>
+    <ol>
+      <li><strong>Home Equity Line of Credit (HELOC):</strong> A revolving credit line drawn against existing home equity. Offers flexible interest-only payment periods during the construction phase. (Calculate payments using our <a href="/10-year-heloc-payment-calculator">10-Year HELOC Payment Calculator</a>).</li>
+      <li><strong>Cash-Out Refinance:</strong> Replacing your current mortgage with a larger loan, taking the equity difference in lump-sum cash to fund construction.</li>
+      <li><strong>Fannie Mae HomeStyle &amp; FHA 203(k) Renovation Loans:</strong> Construction loans based on the *future completed appraised value* of the home with the finished ADU, allowing homeowners with minimal current equity to secure funding.</li>
+      <li><strong>California CalHFA ADU Grant Program:</strong> Periodically offering up to $40,000 in non-repayable grants to assist low-to-moderate-income homeowners with ADU pre-development and soft costs.</li>
+    </ol>
+
+    <h3>4. Rental Income ROI &amp; Property Value Impact</h3>
+    <p>
+      Building an ADU in Southern California represents one of the highest cash-on-cash investment yields available in residential real estate:
+    </p>
+    <ul>
+      <li><strong>Monthly Cash Flow:</strong> In Los Angeles, a newly built 1-bedroom ADU commonly generates **$2,200 to $2,800/month** in gross rent. After accounting for property tax supplements, landlord insurance, and maintenance, net annual cash flow frequently exceeds **$18,000 to $25,000**.</li>
+      <li><strong>Unlevered Cap Rate:</strong> Producing an unlevered return of **8.5% to 12.5%**, significantly outperforming traditional single-family rental yields (typically 4% to 6% in coastal California).</li>
+      <li><strong>Property Equity Increase:</strong> According to Southern California appraisal data, a professionally permitted ADU adds approximately **$150,000 to $300,000+** in contributory property market value upon completion.</li>
+    </ul>
+
+    <!-- ========================================================
+         4. FREQUENTLY ASKED QUESTIONS (FAQ)
+    ======================================================== -->
+    <h3 style="margin-top: 3.5rem;">Frequently Asked Questions: Southern California ADUs &amp; Costs</h3>
+
+    <div class="faq-accordion-wrap">
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much does it cost to build an ADU in Los Angeles in 2026?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            In Los Angeles, building a detached new-construction ADU typically costs between <strong>$350 and $550 per square foot</strong>, equating to $180,000 to $280,000 for a 500 sq ft 1-bedroom unit, and $320,000 to $480,000 for an 800 sq ft 2-bedroom home. In contrast, an existing 2-car garage conversion is the most cost-effective option, averaging $150 to $300 per sq ft ($80,000 to $130,000 all-in) because the existing concrete slab, framing, and roof structure are already in place.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is the cheapest type of ADU to build in Southern California?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            The cheapest type of ADU is a <strong>Junior ADU (JADU)</strong>, built within the existing footprint of the primary residence (up to 500 sq ft), which typically costs $40,000 to $90,000. Among standalone or exterior conversions, a standard detached 2-car garage conversion is the most economical choice ($75,000 to $125,000 turnkey) because site grading, foundation excavation, and primary utility trenching distances are substantially minimized.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Do I need solar panels on my ADU in California?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Under the California Building Standards Code (Title 24, Part 6), <strong>newly constructed standalone detached ADUs are required to have a dedicated solar photovoltaic (PV) system installed</strong>. However, garage conversions, interior JADUs, and attached home additions that do not involve completely new standalone foundations are generally exempt from the solar panel mandate. A typical 2.5 kW to 4.0 kW ADU solar array costs between $8,000 and $13,000 before federal tax credits.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Are ADUs under 750 square feet exempt from city impact fees in California?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <strong>Yes. Under California Government Code § 65852.2 and AB 68/AB 881</strong>, any ADU with less than 750 square feet of livable floor area is 100% exempt from all local municipal impact fees (including parks, traffic, and general development impact fees). For ADUs of 750 square feet or larger, impact fees must be charged proportionally to the square footage of the primary dwelling unit.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much do permits cost for an ADU in Los Angeles (LADBS)?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            City of Los Angeles Department of Building and Safety (LADBS) plan-check and building permit fees typically range between <strong>$3,500 and $9,000</strong> for standard detached or garage conversion ADUs. Utilizing pre-approved standard architectural plans (LADBS Standard Plan Program) can lower plan-check review fees and accelerate municipal turnaround times down to under 30 days.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I build a two-story ADU in Southern California?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. California state law allows detached ADUs to reach up to 16 feet in height by right, and up to 18 feet (or 20 feet if within 0.5 miles of major transit stops) to accommodate two-story structures or ADUs built over detached garages. Two-story ADUs carry a <strong>10% to 15% construction cost premium</strong> due to second-story framing, structural sheer engineering, staircase footprint loss, and scaffolding.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much rental income can an ADU generate in Los Angeles?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            In the Greater Los Angeles metropolitan area, studio ADUs typically rent for $1,600 to $2,100 per month, 1-bedroom units rent for $2,200 to $2,800 per month, and 2-bedroom/2-bath backyard homes command $2,900 to $3,800+ per month depending on neighborhood (e.g., West LA, San Fernando Valley, Long Beach, or Pasadena). This yields an unlevered capitalization rate of <strong>9% to 14%</strong> on total construction capital.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can an ADU be sold separately as a condominium in California?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Under <strong>California Assembly Bill 1033 (AB 1033)</strong>, local cities and counties now have the legal option to adopt local ordinances allowing homeowners to subdivide their property and sell an ADU separately as an independent residential condominium unit. Check with your local city planning department to confirm if your municipality has formally opted into AB 1033 condominiumization.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How long does it take to design, permit, and build an ADU in SoCal?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            The entire ADU project lifecycle in Southern California typically spans <strong>7 to 13 months</strong>: Architectural design, structural calculations, and Title 24 take 1 to 2 months; city plan check and permit issuance take 2 to 4 months (mandated by state law to receive initial review within 60 days); and site grading, framing, utility trenching, and finishes take 4 to 7 months.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="rr-footer">
+    <div class="container">
+      <div class="footer-content-grid">
+        <div class="footer-col">
+          <a href="/" class="rr-logo" style="margin-bottom: 0.75rem; display: inline-flex;">
+            Real<span>Refin</span>
+          </a>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-light);">
+            Institutional-grade real estate underwriting engines, ADU feasibility calculators, and mortgage modeling tools designed for modern investors, brokers, and analytical homeowners.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Investor Calculators</h4>
+          <ul>
+            <li><a href="/adu-cost-calculator">ADU Cost Calculator</a></li>
+            <li><a href="/house-hacking-calculator">House Hacking Calculator</a></li>
+            <li><a href="/wholesale-real-estate-calculator">Wholesale Real Estate &amp; MAO</a></li>
+            <li><a href="/seller-financing-calculator">Seller Financing Calculator</a></li>
+            <li><a href="/arv-calculator">ARV Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Financing &amp; Loans</h4>
+          <ul>
+            <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Calculator</a></li>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+            <li><a href="/interest-rate-cap-calculator">Interest Rate Cap Calculator</a></li>
+            <li><a href="/cost-segregation-study-calculator">Cost Segregation Calculator</a></li>
+            <li><a href="/real-estate-capital-gains-tax-calculator">Capital Gains Tax Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company &amp; Legal</h4>
+          <ul>
+            <li><a href="/about">About RealRefin</a></li>
+            <li><a href="/contact">Contact Support</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators, ADU cost models, and municipal fee estimates are provided for educational and analytical purposes only. Construction costs, architectural bids, and permit schedules vary widely based on site topography, local zoning, and contractor scopes. Consult a licensed California architect and general contractor.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Tabs
+  const tabQuickMode = document.getElementById('tabQuickMode');
+  const tabItemizedMode = document.getElementById('tabItemizedMode');
+  const tabRentalMode = document.getElementById('tabRentalMode');
+
+  // Input Elements
+  const selRegion = document.getElementById('selRegion');
+  const badgeRegion = document.getElementById('badgeRegion');
+  const selType = document.getElementById('selType');
+  const badgeType = document.getElementById('badgeType');
+  const inpSqft = document.getElementById('inpSqft');
+  const rngSqft = document.getElementById('rngSqft');
+  const badgeSqft = document.getElementById('badgeSqft');
+  const selStories = document.getElementById('selStories');
+  const badgeStories = document.getElementById('badgeStories');
+  const selFinish = document.getElementById('selFinish');
+  const badgeFinish = document.getElementById('badgeFinish');
+
+  // Rental & Financing Inputs
+  const rentalInputsSection = document.getElementById('rentalInputsSection');
+  const inpMonthlyRent = document.getElementById('inpMonthlyRent');
+  const badgeRent = document.getElementById('badgeRent');
+  const inpLoanRate = document.getElementById('inpLoanRate');
+  const inpDownPaymentPct = document.getElementById('inpDownPaymentPct');
+
+  // Output Elements
+  const outScorecardDesc = document.getElementById('outScorecardDesc');
+  const outTotalCostRange = document.getElementById('outTotalCostRange');
+  const outCostPerSqft = document.getElementById('outCostPerSqft');
+  const outSoftCosts = document.getElementById('outSoftCosts');
+  const outHardCosts = document.getElementById('outHardCosts');
+  const outUtilityCosts = document.getElementById('outUtilityCosts');
+
+  const rowCostDesign = document.getElementById('rowCostDesign');
+  const rowCostPermits = document.getElementById('rowCostPermits');
+  const rowCostSite = document.getElementById('rowCostSite');
+  const rowCostConstruction = document.getElementById('rowCostConstruction');
+  const rowCostUtilities = document.getElementById('rowCostUtilities');
+  const rowCostTotal = document.getElementById('rowCostTotal');
+
+  // Rental Table Rows
+  const rowGrossRent = document.getElementById('rowGrossRent');
+  const rowOpex = document.getElementById('rowOpex');
+  const rowNOI = document.getElementById('rowNOI');
+  const rowLoanPmt = document.getElementById('rowLoanPmt');
+  const rowNetCashFlow = document.getElementById('rowNetCashFlow');
+  const rowCapRate = document.getElementById('rowCapRate');
+  const rowPayback = document.getElementById('rowPayback');
+
+  // Excel Matrix Cells
+  const cellDesignLow = document.getElementById('cellDesignLow');
+  const cellDesignHigh = document.getElementById('cellDesignHigh');
+  const cellPermitsLow = document.getElementById('cellPermitsLow');
+  const cellPermitsHigh = document.getElementById('cellPermitsHigh');
+  const cellSiteLow = document.getElementById('cellSiteLow');
+  const cellSiteHigh = document.getElementById('cellSiteHigh');
+  const cellConstLow = document.getElementById('cellConstLow');
+  const cellConstHigh = document.getElementById('cellConstHigh');
+  const cellUtilLow = document.getElementById('cellUtilLow');
+  const cellUtilHigh = document.getElementById('cellUtilHigh');
+  const cellTotalLow = document.getElementById('cellTotalLow');
+  const cellTotalHigh = document.getElementById('cellTotalHigh');
+
+  // Cards
+  const rentalScorecardCard = document.getElementById('rentalScorecardCard');
+  const itemizedMatrixCard = document.getElementById('itemizedMatrixCard');
+
+  // Buttons
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+  const btnMatrixExcelDownload = document.getElementById('btnMatrixExcelDownload');
+
+  let activeMode = 'quick'; // 'quick', 'itemized', 'rental'
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatRange(low, high) {
+    return `${formatMoney(low)} – ${formatMoney(high)}`;
+  }
+
+  // Sync Input & Range Slider
+  function syncPair(numInp, rngInp, callback) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      if (callback) callback();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      if (callback) callback();
+    });
+  }
+
+  syncPair(inpSqft, rngSqft, recalculate);
+
+  // Sq Ft Presets
+  document.querySelectorAll('#sqftChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#sqftChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const val = parseInt(this.getAttribute('data-val'), 10);
+      inpSqft.value = val;
+      rngSqft.value = val;
+      recalculate();
+    });
+  });
+
+  // Select Change Listeners
+  selRegion.addEventListener('change', () => {
+    badgeRegion.textContent = selRegion.options[selRegion.selectedIndex].text.split(' - ')[0];
+    recalculate();
+  });
+
+  selType.addEventListener('change', () => {
+    badgeType.textContent = selType.options[selType.selectedIndex].text.split(' (')[0];
+    // Adjust sqft chip bounds if JADU
+    if (selType.value === 'jadu' && parseInt(inpSqft.value, 10) > 500) {
+      inpSqft.value = 450;
+      rngSqft.value = 450;
+    }
+    recalculate();
+  });
+
+  selStories.addEventListener('change', () => {
+    badgeStories.textContent = selStories.value === '2' ? 'Two-Story (+12% Premium)' : 'Single Story (Standard)';
+    recalculate();
+  });
+
+  selFinish.addEventListener('change', () => {
+    badgeFinish.textContent = selFinish.options[selFinish.selectedIndex].text.split(' (')[0];
+    recalculate();
+  });
+
+  inpMonthlyRent.addEventListener('input', () => {
+    badgeRent.textContent = `${formatMoney(parseFloat(inpMonthlyRent.value) || 0)} / mo`;
+    recalculate();
+  });
+
+  inpLoanRate.addEventListener('input', recalculate);
+  inpDownPaymentPct.addEventListener('input', recalculate);
+
+  // Tab Switcher Function
+  function setMode(mode, shouldScroll = false) {
+    activeMode = mode;
+    tabQuickMode.classList.toggle('active', mode === 'quick');
+    tabItemizedMode.classList.toggle('active', mode === 'itemized');
+    tabRentalMode.classList.toggle('active', mode === 'rental');
+
+    if (mode === 'rental') {
+      rentalInputsSection.style.display = 'block';
+      rentalScorecardCard.style.display = 'block';
+      if (shouldScroll) rentalScorecardCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      rentalInputsSection.style.display = 'none';
+      if (mode === 'itemized') {
+        rentalScorecardCard.style.display = 'none';
+        itemizedMatrixCard.style.display = 'block';
+        if (shouldScroll) itemizedMatrixCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        rentalScorecardCard.style.display = 'block';
+        itemizedMatrixCard.style.display = 'block';
+      }
+    }
+    recalculate();
+  }
+
+  tabQuickMode.addEventListener('click', () => setMode('quick', false));
+  tabItemizedMode.addEventListener('click', () => setMode('itemized', true));
+  tabRentalMode.addEventListener('click', () => setMode('rental', true));
+
+  // Regional Cost Multipliers
+  const REGION_MULTIPLIERS = {
+    'los-angeles': 1.05,
+    'socal-metro': 1.02,
+    'socal-inland': 0.92,
+    'norcal-bay': 1.20,
+    'national-avg': 0.82
+  };
+
+  // Base Cost Per Sq Ft Ranges by ADU Typology
+  const BASE_RANGES = {
+    detached: { low: 350, high: 525 },
+    garage:   { low: 160, high: 290 },
+    attached: { low: 280, high: 440 },
+    jadu:     { low: 125, high: 240 }
+  };
+
+  // Finish Tier Multipliers
+  const FINISH_MULTIPLIERS = {
+    economy: 0.90,
+    standard: 1.00,
+    luxury: 1.25
+  };
+
+  // Core Recalculate Engine
+  function recalculate() {
+    const regionKey = selRegion.value;
+    const regionMult = REGION_MULTIPLIERS[regionKey] || 1.05;
+    const typeKey = selType.value;
+    const sqft = Math.max(150, Math.min(1200, parseInt(inpSqft.value, 10) || 600));
+    const stories = parseInt(selStories.value, 10) || 1;
+    const finishKey = selFinish.value;
+    const finishMult = FINISH_MULTIPLIERS[finishKey] || 1.00;
+
+    // Stories premium
+    const storyMult = stories === 2 ? 1.12 : 1.00;
+
+    // Calculate adjusted cost per sqft
+    const baseRange = BASE_RANGES[typeKey] || BASE_RANGES.detached;
+    const unitLow = Math.round(baseRange.low * regionMult * finishMult * storyMult);
+    const unitHigh = Math.round(baseRange.high * regionMult * finishMult * storyMult);
+
+    const totalLow = unitLow * sqft;
+    const totalHigh = unitHigh * sqft;
+    const midTotal = (totalLow + totalHigh) / 2;
+
+    // Update Badges
+    let roomDesc = 'Studio';
+    if (sqft >= 450 && sqft < 700) roomDesc = '1-Bedroom';
+    else if (sqft >= 700 && sqft < 1050) roomDesc = '2-Bedroom';
+    else if (sqft >= 1050) roomDesc = '3-Bedroom';
+    badgeSqft.textContent = `${sqft.toLocaleString()} sq ft (${roomDesc})`;
+
+    const typeNameMap = {
+      detached: 'Detached Backyard Cottage',
+      garage: 'Garage Conversion ADU',
+      attached: 'Attached Addition ADU',
+      jadu: 'Junior ADU (JADU)'
+    };
+    const regionNameMap = {
+      'los-angeles': 'Los Angeles (LADBS)',
+      'socal-metro': 'Southern California (OC/SD)',
+      'socal-inland': 'SoCal Inland Empire',
+      'norcal-bay': 'Northern California',
+      'national-avg': 'National US Average'
+    };
+
+    outScorecardDesc.textContent = `${sqft.toLocaleString()} sq ft ${stories === 2 ? 'Two-Story ' : ''}${typeNameMap[typeKey]} in ${regionNameMap[regionKey]}`;
+    outTotalCostRange.textContent = formatRange(totalLow, totalHigh);
+    outCostPerSqft.textContent = `$${unitLow} – $${unitHigh} / sq ft`;
+
+    // 5-Pillar Component Breakdown Percentages & Thresholds
+    let designLow, designHigh, permitsLow, permitsHigh, siteLow, siteHigh, constLow, constHigh, utilLow, utilHigh;
+
+    if (typeKey === 'garage' || typeKey === 'jadu') {
+      designLow = Math.round(totalLow * 0.08);
+      designHigh = Math.round(totalHigh * 0.10);
+      permitsLow = 2500;
+      permitsHigh = 6500;
+      siteLow = Math.round(totalLow * 0.05);
+      siteHigh = Math.round(totalHigh * 0.08);
+      constLow = Math.round(totalLow * 0.75);
+      constHigh = Math.round(totalHigh * 0.75);
+      utilLow = 2000;
+      utilHigh = 5500;
+    } else {
+      // Detached or Attached
+      designLow = Math.round(totalLow * 0.075);
+      designHigh = Math.round(totalHigh * 0.095);
+      permitsLow = sqft < 750 ? 4000 : 7500; // California <750 sqft impact fee exemption!
+      permitsHigh = sqft < 750 ? 8000 : 15000;
+      siteLow = Math.round(totalLow * 0.08);
+      siteHigh = Math.round(totalHigh * 0.11);
+      constLow = Math.round(totalLow * 0.69);
+      constHigh = Math.round(totalHigh * 0.69);
+      utilLow = Math.round(3500 + (sqft * 7)); // utility trenching + Title 24 solar
+      utilHigh = Math.round(7500 + (sqft * 10));
+    }
+
+    // Top Metrics
+    const softMid = Math.round(((designLow + designHigh) / 2) + ((permitsLow + permitsHigh) / 2));
+    const hardMid = Math.round(((constLow + constHigh) / 2) + ((siteLow + siteHigh) / 2));
+    const utilMid = Math.round((utilLow + utilHigh) / 2);
+
+    outSoftCosts.textContent = formatMoney(softMid);
+    outHardCosts.textContent = formatMoney(hardMid);
+    outUtilityCosts.textContent = formatMoney(utilMid);
+
+    // Breakdown Rows
+    rowCostDesign.textContent = formatRange(designLow, designHigh);
+    rowCostPermits.textContent = formatRange(permitsLow, permitsHigh);
+    rowCostSite.textContent = formatRange(siteLow, siteHigh);
+    rowCostConstruction.textContent = formatRange(constLow, constHigh);
+    rowCostUtilities.textContent = formatRange(utilLow, utilHigh);
+    rowCostTotal.textContent = formatRange(totalLow, totalHigh);
+
+    // Excel Matrix Table Cells
+    cellDesignLow.textContent = formatMoney(designLow);
+    cellDesignHigh.textContent = formatMoney(designHigh);
+    cellPermitsLow.textContent = formatMoney(permitsLow);
+    cellPermitsHigh.textContent = formatMoney(permitsHigh);
+    cellSiteLow.textContent = formatMoney(siteLow);
+    cellSiteHigh.textContent = formatMoney(siteHigh);
+    cellConstLow.textContent = formatMoney(constLow);
+    cellConstHigh.textContent = formatMoney(constHigh);
+    cellUtilLow.textContent = formatMoney(utilLow);
+    cellUtilHigh.textContent = formatMoney(utilHigh);
+    cellTotalLow.textContent = formatMoney(totalLow);
+    cellTotalHigh.textContent = formatMoney(totalHigh);
+
+    // -----------------------------------------------------------
+    // RENTAL INCOME & INVESTMENT ROI LOGIC
+    // -----------------------------------------------------------
+    const monthlyRent = Math.max(0, parseFloat(inpMonthlyRent.value) || 2450);
+    const annualGrossRent = monthlyRent * 12;
+
+    // Operating expenses: property tax assessment increment (~1.15% of construction cost in CA)
+    // + insurance supplement (~$600/yr) + maintenance/vacancy (~6% of gross rent)
+    const annualPropertyTaxIncrement = midTotal * 0.0115;
+    const annualInsurance = 600;
+    const annualMaintenanceVacancy = annualGrossRent * 0.06;
+    const annualOpex = annualPropertyTaxIncrement + annualInsurance + annualMaintenanceVacancy;
+
+    const annualNOI = Math.max(0, annualGrossRent - annualOpex);
+    const unleveredCapRate = midTotal > 0 ? (annualNOI / midTotal) * 100 : 0;
+
+    // Financing calculation (30-year amortization loan on borrowed capital)
+    const downPaymentPct = Math.max(0, Math.min(100, parseFloat(inpDownPaymentPct.value) || 20)) / 100;
+    const loanAmount = midTotal * (1 - downPaymentPct);
+    const annualInterestRate = Math.max(0, parseFloat(inpLoanRate.value) || 7.5) / 100;
+
+    let monthlyLoanPmt = 0;
+    if (loanAmount > 0 && annualInterestRate > 0) {
+      const monthlyRate = annualInterestRate / 12;
+      const nPayments = 360;
+      monthlyLoanPmt = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, nPayments)) / (Math.pow(1 + monthlyRate, nPayments) - 1);
+    }
+    const annualDebtService = monthlyLoanPmt * 12;
+    const annualNetCashFlow = annualGrossRent - annualOpex - annualDebtService;
+    const monthlyNetCashFlow = annualNetCashFlow / 12;
+
+    // Payback period
+    const totalCashInvested = (midTotal * downPaymentPct);
+    let paybackYears = 'N/A';
+    if (annualNetCashFlow > 0) {
+      paybackYears = (totalCashInvested > 0 ? (totalCashInvested / annualNetCashFlow) : (midTotal / annualNOI)).toFixed(1) + ' Years';
+    }
+
+    // Render Rental Rows
+    rowGrossRent.textContent = `${formatMoney(annualGrossRent)} / yr (${formatMoney(monthlyRent)}/mo)`;
+    rowOpex.textContent = `-${formatMoney(annualOpex)} / yr (Taxes, Ins, Reserves)`;
+    rowNOI.textContent = `${formatMoney(annualNOI)} / yr`;
+    rowLoanPmt.textContent = loanAmount > 0 ? `-${formatMoney(monthlyLoanPmt)} / mo (${formatMoney(annualDebtService)}/yr)` : '$0 (100% Cash Financed)';
+    rowNetCashFlow.textContent = `${monthlyNetCashFlow >= 0 ? '+' : ''}${formatMoney(monthlyNetCashFlow)} / mo (${monthlyNetCashFlow >= 0 ? '+' : ''}${formatMoney(annualNetCashFlow)}/yr)`;
+    rowNetCashFlow.style.color = monthlyNetCashFlow >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-danger)';
+    rowCapRate.textContent = `${unleveredCapRate.toFixed(2)}%`;
+    rowPayback.textContent = paybackYears;
+  }
+
+  // DYNAMIC EXCEL (.CSV) DOWNLOAD GENERATOR
+  function downloadExcelCSV() {
+    const regionKey = selRegion.value;
+    const typeKey = selType.value;
+    const sqft = parseInt(inpSqft.value, 10) || 600;
+    const stories = parseInt(selStories.value, 10) || 1;
+    const finishKey = selFinish.value;
+    const monthlyRent = parseFloat(inpMonthlyRent.value) || 2450;
+
+    const baseRange = BASE_RANGES[typeKey] || BASE_RANGES.detached;
+    const regionMult = REGION_MULTIPLIERS[regionKey] || 1.05;
+    const finishMult = FINISH_MULTIPLIERS[finishKey] || 1.00;
+    const storyMult = stories === 2 ? 1.12 : 1.00;
+
+    const unitLow = Math.round(baseRange.low * regionMult * finishMult * storyMult);
+    const unitHigh = Math.round(baseRange.high * regionMult * finishMult * storyMult);
+    const totalLow = unitLow * sqft;
+    const totalHigh = unitHigh * sqft;
+    const midTotal = (totalLow + totalHigh) / 2;
+
+    let csv = `REAL REFIN - ADU CONSTRUCTION COST & INVESTMENT UNDERWRITING SPREADSHEET\n`;
+    csv += `Official Source: https://realrefin.com/adu-cost-calculator\n`;
+    csv += `Export Timestamp: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}\n\n`;
+
+    csv += `SECTION 1: ADU PROJECT SPECIFICATIONS,VALUE,NOTES\n`;
+    csv += `Regional Market,"${selRegion.options[selRegion.selectedIndex].text}",Location labor index\n`;
+    csv += `ADU Construction Typology,"${selType.options[selType.selectedIndex].text}",Construction scope\n`;
+    csv += `Livable Floor Area,${sqft} sq ft,Livable heated area\n`;
+    csv += `Number of Stories,${stories} Story,Vertical height\n`;
+    csv += `Finish Tier Quality,"${selFinish.options[selFinish.selectedIndex].text}",Materials grade\n`;
+    csv += `Estimated Cost Per Sq Ft Range,$${unitLow} - $${unitHigh} / sq ft,Turnkey benchmark\n`;
+    csv += `Estimated Total Build Cost Range,$${totalLow.toLocaleString()} - $${totalHigh.toLocaleString()},Turnkey range\n\n`;
+
+    csv += `SECTION 2: 5-PILLAR ITEMIZED COST BREAKDOWN,CONSERVATIVE LOW,TURNKEY HIGH,CATEGORY\n`;
+    csv += `Architecture Structural & Title 24,$"${cellDesignLow.textContent.replace('$', '')}",$"${cellDesignHigh.textContent.replace('$', '')}",Soft Costs\n`;
+    csv += `City Plan Check & Municipal Permits,$"${cellPermitsLow.textContent.replace('$', '')}",$"${cellPermitsHigh.textContent.replace('$', '')}",Soft Costs (Exempt <750 sqft)\n`;
+    csv += `Site Prep Trenching & Concrete Slab,$"${cellSiteLow.textContent.replace('$', '')}",$"${cellSiteHigh.textContent.replace('$', '')}",Hard Costs\n`;
+    csv += `Framing Enclosure MEP & Interior Finishes,$"${cellConstLow.textContent.replace('$', '')}",$"${cellConstHigh.textContent.replace('$', '')}",Hard Costs\n`;
+    csv += `Title 24 Solar PV & Utility Lateral Hookups,$"${cellUtilLow.textContent.replace('$', '')}",$"${cellUtilHigh.textContent.replace('$', '')}",Hard Costs\n`;
+    csv += `ALL-IN TURNKEY PROJECT TOTAL,$"${cellTotalLow.textContent.replace('$', '')}",$"${cellTotalHigh.textContent.replace('$', '')}",Complete Project Budget\n\n`;
+
+    csv += `SECTION 3: RENTAL INCOME & INVESTMENT YIELD (ANNUAL),AMOUNT,METRIC\n`;
+    csv += `Projected Gross Annual Rental Income,$"${(monthlyRent * 12).toFixed(2)}",$${monthlyRent}/month market rent\n`;
+    csv += `Estimated Annual Operating Expenses (Taxes/Ins/Maint),$"${(midTotal * 0.0115 + 600 + (monthlyRent * 12 * 0.06)).toFixed(2)}",Property tax supplement & insurance\n`;
+    csv += `Net Operating Income (NOI),$"${rowNOI.textContent.replace('$', '').replace(' / yr', '')}",Unlevered cash flow\n`;
+    csv += `Unlevered Capitalization Rate (Cap Rate),${rowCapRate.textContent},NOI / Total Cost\n`;
+    csv += `Net Monthly Cash Flow (After Debt Service),${rowNetCashFlow.textContent},Net to owner\n\n`;
+
+    csv += `CALIFORNIA ADU EXEMPTIONS & LEGAL COMPLIANCE\n`;
+    csv += `"AB 68 / AB 881 Exemption","ADUs under 750 sq ft are 100% exempt from all local impact development fees."\n`;
+    csv += `"Title 24 Solar Mandate","Detached newly built standalone ADUs require dedicated solar PV systems."\n`;
+    csv += `"AB 1033 Condo Law","Allows opt-in cities to permit ADU condo subdivision sales."\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `realrefin-adu-cost-calculator-${sqft}sqft.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  if (btnDownloadExcel) btnDownloadExcel.addEventListener('click', downloadExcelCSV);
+  if (btnMatrixExcelDownload) btnMatrixExcelDownload.addEventListener('click', downloadExcelCSV);
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('region', selRegion.value);
+    url.searchParams.set('type', selType.value);
+    url.searchParams.set('sqft', inpSqft.value);
+    url.searchParams.set('stories', selStories.value);
+    url.searchParams.set('finish', selFinish.value);
+    url.searchParams.set('rent', inpMonthlyRent.value);
+    url.searchParams.set('mode', activeMode);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL State
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('region')) selRegion.value = p.get('region');
+    if (p.has('type')) selType.value = p.get('type');
+    if (p.has('sqft')) {
+      inpSqft.value = p.get('sqft');
+      rngSqft.value = p.get('sqft');
+      document.querySelectorAll('#sqftChips .chip-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-val') === p.get('sqft'));
+      });
+    }
+    if (p.has('stories')) selStories.value = p.get('stories');
+    if (p.has('finish')) selFinish.value = p.get('finish');
+    if (p.has('rent')) inpMonthlyRent.value = p.get('rent');
+    if (p.has('mode')) {
+      setMode(p.get('mode'), false);
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>

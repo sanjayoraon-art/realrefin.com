@@ -37,6 +37,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/adu-cost-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/wholesale-real-estate-calculator</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -528,6 +534,15 @@ const FILE_MAP = {
   '/how-to-calculate-wholesale-price-real-estate': 'wholesale-real-estate-calculator.html',
   '/wholesale-real-estate-arv-calculator': 'wholesale-real-estate-calculator.html',
   '/wholesale-real-estate-offer-calculator': 'wholesale-real-estate-calculator.html',
+  '/adu-cost-calculator': 'adu-cost-calculator.html',
+  '/adu-cost-calculator.html': 'adu-cost-calculator.html',
+  '/southern-california-adu-guide-and-cost-calculator': 'adu-cost-calculator.html',
+  '/southern-california-adu-guide-and-cost-calculator.html': 'adu-cost-calculator.html',
+  '/adu-cost-calculator-los-angeles': 'adu-cost-calculator.html',
+  '/adu-cost-calculator-los-angeles.html': 'adu-cost-calculator.html',
+  '/cost-to-build-an-adu': 'adu-cost-calculator.html',
+  '/garage-conversion-adu-cost': 'adu-cost-calculator.html',
+  '/jadu-cost-calculator': 'adu-cost-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',
