@@ -31,6 +31,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/seller-financing-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/house-hacking-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -497,6 +503,14 @@ const FILE_MAP = {
   '/how-to-calculate-heloc-interest-only-payment.html': '10-year-heloc-payment-calculator.html',
   '/how-to-calculate-interest-only-payments-on-a-heloc': '10-year-heloc-payment-calculator.html',
   '/how-to-calculate-interest-only-payments-on-a-heloc.html': '10-year-heloc-payment-calculator.html',
+  '/seller-financing-calculator': 'seller-financing-calculator.html',
+  '/seller-financing-calculator.html': 'seller-financing-calculator.html',
+  '/seller-finance-calculator': 'seller-financing-calculator.html',
+  '/seller-finance-calculator.html': 'seller-financing-calculator.html',
+  '/owner-financing-calculator': 'seller-financing-calculator.html',
+  '/owner-financing-calculator.html': 'seller-financing-calculator.html',
+  '/seller-financing-calculator-with-balloon-payment': 'seller-financing-calculator.html',
+  '/seller-carryback-calculator': 'seller-financing-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',

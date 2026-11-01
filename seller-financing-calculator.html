@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Financing Calculator | Owner Finance &amp; Balloon Payment Modeler</title>
+  <meta name="description" content="Free seller financing calculator. Calculate monthly owner finance payments, balloon payment payoff amounts, interest-only vs amortizing notes, and total seller interest earned.">
+  <meta name="keywords" content="seller financing calculator, seller finance calculator, seller financing calculator with balloon payment, owner financing calculator, seller finance loan calculator, seller carryback calculator, owner carry calculator, seller financing amortization schedule, promissory note calculator real estate">
+  <link rel="canonical" href="https://realrefin.com/seller-financing-calculator">
+  
+  <meta property="og:title" content="Seller Financing Calculator | Owner Finance &amp; Balloon Payment Modeler">
+  <meta property="og:description" content="Calculate monthly seller finance payments, balloon payoff amounts, interest-only options, and buyer vs. seller returns. 100% free with complete amortization schedule.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/seller-financing-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/seller-financing-calculator#app",
+        "name": "RealRefin Seller Financing & Owner Finance Calculator",
+        "url": "https://realrefin.com/seller-financing-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Comprehensive seller financing calculator and owner finance note modeler. Computes monthly payments, down payment percentages, balloon payment balances, interest-only schedules, and seller passive income returns.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Creative & Investor Financing Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Seller Financing Calculator",
+            "item": "https://realrefin.com/seller-financing-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is seller financing and how does a seller finance loan work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seller financing (also known as owner financing or seller carryback) is a real estate transaction where the property seller acts as the bank. Instead of the buyer applying for a conventional mortgage from an institutional lender, the buyer makes a down payment directly to the seller and signs a promissory note and deed of trust (or mortgage). The buyer makes monthly principal and interest payments directly to the seller over an agreed-upon term."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is a monthly seller financing payment calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The monthly payment on a seller finance note is calculated using the standard loan amortization formula: M = P [r(1 + r)^n] / [(1 + r)^n - 1], where P is the financed loan balance (Purchase Price minus Down Payment), r is the monthly interest rate (annual APR divided by 12), and n is the total number of monthly payments in the amortization schedule (typically 360 months for a 30-year amortization). If structured as interest-only, the monthly payment is simply: (Loan Balance × Annual Interest Rate) ÷ 12."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a balloon payment in seller financing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A balloon payment is a lump-sum payoff of the remaining principal balance due at a predetermined maturity date before the loan fully amortizes. In creative real estate financing, most sellers do not want to wait 30 years to receive their full equity. They amortize the monthly payments over 30 years to keep the buyer's payment affordable, but mandate a balloon payment in 3, 5, or 10 years, requiring the buyer to refinance with a conventional mortgage, sell the property, or pay off the remaining balance in cash."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the tax benefits of seller financing for the seller?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under IRS Section 453, seller financing qualifies as an Installment Sale. Instead of recognizing 100% of the capital gains tax in the year of sale, the seller only pays capital gains taxes proportionally as principal installments are received over time. Furthermore, the interest portion of the monthly payment is taxed as ordinary income, transforming illiquid property equity into a high-yield passive monthly annuity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is seller financing legal under the Dodd-Frank Act?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, seller financing is completely legal under federal law. The Dodd-Frank Wall Street Reform and Consumer Protection Act provides clear statutory exclusions for private sellers: (1) The One-Property Exclusion permits an individual seller to finance one residential property every 12 months without being classified as a mortgage loan originator (MLO), provided they did not construct the home and the loan is fully amortizing or fixed. (2) The Three-Property Exclusion permits financing up to three properties every 12 months with basic ability-to-repay verification. Commercial properties, land, and sales to business entities (LLCs) are exempt from Dodd-Frank residential rules."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-purple: #7C3AED;
+      --accent-purple-light: #F5F3FF;
+      --accent-purple-border: #DDD6FE;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MODE SELECTOR (TABS)
+    ----------------------------------------------------------- */
+    .mode-switch-wrapper {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .mode-tab-pill {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .mode-tab-pill.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-section-header span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Preset Chips */
+    .preset-chips-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      padding: 0.25rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .chip-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    /* Balloon Payment Select Box */
+    .balloon-card-box {
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .balloon-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .balloon-header h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Primary Scorecard */
+    .scorecard-banner {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      text-align: center;
+    }
+
+    .scorecard-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .scorecard-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    /* Metrics Grid */
+    .metrics-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .metrics-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card.balloon-alert {
+      border-color: var(--accent-amber-border);
+      background: var(--accent-amber-light);
+    }
+
+    .metric-card h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-card .metric-num {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .metric-card.balloon-alert .metric-num {
+      color: var(--accent-amber);
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Detailed Breakdown Card */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Amortization Table Preview */
+    .schedule-table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      max-height: 280px;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .schedule-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.65rem 0.85rem;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .schedule-table td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .schedule-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .schedule-table tr.balloon-row td {
+      background: #fef3c7;
+      font-weight: 800;
+      color: #92400e;
+    }
+
+    /* Action Buttons */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box.warning {
+      border-left-color: var(--accent-amber);
+      background: var(--accent-amber-light);
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Comparison Table */
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.15rem 1.25rem;
+      text-align: left;
+      background: #ffffff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Usability Optimization */
+    @media (max-width: 768px) {
+      input, select, textarea, .input-control {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+      .calc-header-banner {
+        padding: 1.5rem 1.15rem !important;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.7rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#tools">All Calculators</a></li>
+      <li><a href="/creative-financing-calculator">Creative Finance</a></li>
+      <li><a href="/subto-calculator">SubTo Deal Analyzer</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="btn-nav-cta">Contact Us</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Creative &amp; Investor Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Seller Financing Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>🤝</span> Creative Real Estate &amp; Owner Carry Engine
+    </div>
+    <h1>
+      Seller Financing Calculator <span>&amp; Balloon Payment Modeler</span>
+    </h1>
+    <p>
+      Structure institutional-grade owner-financed real estate transactions. Model monthly principal and interest payments, down payment requirements, balloon payment payoff amounts, and buyer vs. seller yield metrics.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>Dual Perspective</h4>
+        <p>Buyer P&amp;I vs. Seller Yield View</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Balloon Engine</h4>
+        <p>3, 5, 7 &amp; 10-Yr Maturity Payoff</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Full Amortization</h4>
+        <p>Annual &amp; Monthly Schedule Table</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Dodd-Frank Ready</h4>
+        <p>Legal &amp; Tax Deferral Guidance</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CALCULATOR MODE SELECTOR (TABS)
+  ======================================================== -->
+  <div class="mode-switch-wrapper">
+    <button type="button" class="mode-tab-pill active" id="tabBuyerView">
+      <span>🏡 Buyer Perspective (Payment &amp; Cash to Close)</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabSellerView">
+      <span>💰 Seller Perspective (Passive Income &amp; Note Yield)</span>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-grid">
+
+    <!-- LEFT: USER INPUTS PANE -->
+    <div class="calc-inputs-pane">
+      <div class="pane-section-header">
+        <span class="icon">📝</span>
+        <h2>Promissory Note &amp; Deal Terms</h2>
+      </div>
+
+      <!-- Purchase Price -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpPrice">Agreed Purchase Price</label>
+          <span class="input-helper-badge" id="badgePrice">$350,000</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpPrice" class="form-input" value="350000" min="25000" max="10000000" step="10000">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngPrice" class="custom-range" value="350000" min="50000" max="1500000" step="10000">
+        </div>
+        <div class="preset-chips-bar" id="priceChips">
+          <button type="button" class="chip-btn" data-val="200000">$200k</button>
+          <button type="button" class="chip-btn active" data-val="350000">$350k</button>
+          <button type="button" class="chip-btn" data-val="500000">$500k</button>
+          <button type="button" class="chip-btn" data-val="750000">$750k</button>
+          <button type="button" class="chip-btn" data-val="1000000">$1M</button>
+        </div>
+      </div>
+
+      <!-- Down Payment -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpDownPct">Buyer Down Payment</label>
+          <span class="input-helper-badge" id="badgeDownDollars">15% ($52,500)</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpDownPct" class="form-input no-prefix has-suffix" value="15" min="0" max="80" step="1">
+          <span class="input-suffix">%</span>
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngDownPct" class="custom-range" value="15" min="0" max="50" step="1">
+        </div>
+        <div class="preset-chips-bar" id="downChips">
+          <button type="button" class="chip-btn" data-val="10">10%</button>
+          <button type="button" class="chip-btn active" data-val="15">15%</button>
+          <button type="button" class="chip-btn" data-val="20">20%</button>
+          <button type="button" class="chip-btn" data-val="25">25%</button>
+          <button type="button" class="chip-btn" data-val="30">30%</button>
+        </div>
+      </div>
+
+      <!-- Financed Note Balance (Read-Only Dynamic) -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label">Seller Financed Loan Amount (The Note)</label>
+          <span class="input-helper-badge">Price − Down Payment</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="text" id="outFinancedNote" class="form-input" value="$297,500" readonly style="background:#f1f5f9; font-weight:800; cursor:not-allowed;">
+        </div>
+      </div>
+
+      <!-- Interest Rate -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRate">Seller Note Interest Rate (APR)</label>
+          <span class="input-helper-badge">Agreed Annual Rate</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpRate" class="form-input no-prefix has-suffix" value="7.00" min="1.00" max="18.00" step="0.25">
+          <span class="input-suffix">%</span>
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngRate" class="custom-range" value="7.00" min="3.00" max="12.00" step="0.25">
+        </div>
+      </div>
+
+      <!-- Amortization Schedule Term -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpAmortYears">Amortization Period (Payment Schedule)</label>
+          <span class="input-helper-badge" id="badgeAmortYears">30-Year Amortization</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpAmortYears" class="form-input no-prefix has-suffix" value="30" min="5" max="40" step="5">
+          <span class="input-suffix">Years</span>
+        </div>
+        <div class="preset-chips-bar" id="amortChips">
+          <button type="button" class="chip-btn" data-val="15">15-Yr Amort</button>
+          <button type="button" class="chip-btn" data-val="20">20-Yr Amort</button>
+          <button type="button" class="chip-btn active" data-val="30">30-Yr Amort</button>
+          <button type="button" class="chip-btn" data-val="0">Interest-Only</button>
+        </div>
+      </div>
+
+      <!-- Balloon Payment Feature Box -->
+      <div class="balloon-card-box">
+        <div class="balloon-header">
+          <h4><span>🎈</span> Balloon Payment Due Date</h4>
+          <span class="input-helper-badge" id="badgeBalloonTerm">5-Year Balloon</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+          Specify when the remaining note balance must be paid off in full (refinanced or sold):
+        </p>
+        <div class="preset-chips-bar" id="balloonChips">
+          <button type="button" class="chip-btn" data-val="0">None (Full Amort)</button>
+          <button type="button" class="chip-btn" data-val="3">3 Years</button>
+          <button type="button" class="chip-btn active" data-val="5">5 Years</button>
+          <button type="button" class="chip-btn" data-val="7">7 Years</button>
+          <button type="button" class="chip-btn" data-val="10">10 Years</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: OUTPUT RESULTS PANE -->
+    <div class="calc-results-pane">
+
+      <!-- Main Scorecard Banner -->
+      <div class="scorecard-banner">
+        <div class="scorecard-tag">Monthly Debt Service</div>
+        <div class="scorecard-label" id="lblMainScorecard">Monthly Principal &amp; Interest Payment</div>
+        <div class="scorecard-value" id="outMonthlyPayment">$1,979.28</div>
+        <div class="scorecard-subtext">
+          <span id="outScorecardSub">$297,500 Note • 7.00% APR</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-overview-grid">
+        <div class="metric-card">
+          <h5>Down Payment Cash</h5>
+          <div class="metric-num" id="outDownDollars" style="color: var(--accent-emerald-dark);">$52,500</div>
+          <div class="metric-desc">15% Equity at Closing</div>
+        </div>
+        <div class="metric-card balloon-alert" id="cardBalloonMetric">
+          <h5>Balloon Payoff Due</h5>
+          <div class="metric-num" id="outBalloonPayoff">$280,317</div>
+          <div class="metric-desc" id="outBalloonDateDesc">Due at End of Year 5</div>
+        </div>
+        <div class="metric-card">
+          <h5>Total Interest</h5>
+          <div class="metric-num" id="outTotalInterest" style="color: var(--primary-navy);">$101,574</div>
+          <div class="metric-desc" id="outInterestDesc">Over 5-Year Balloon Window</div>
+        </div>
+      </div>
+
+      <!-- Detailed Financial Breakdown Card -->
+      <div class="results-card">
+        <h3 id="headingBreakdown">📋 Seller Financing Note Structure</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Agreed Property Purchase Price:</td>
+              <td class="value-col" id="rowPrice">$350,000</td>
+            </tr>
+            <tr>
+              <td>Buyer Down Payment Cash:</td>
+              <td class="value-col" id="rowDownPayment">-$52,500 (15%)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Total Financed Note Amount (LTV 85%):</td>
+              <td class="value-col" id="rowFinancedNote">$297,500</td>
+            </tr>
+            <tr>
+              <td>Monthly Principal &amp; Interest (P&amp;I):</td>
+              <td class="value-col" id="rowMonthlyPayment">$1,979.28 /mo</td>
+            </tr>
+            <tr>
+              <td>Annual Debt Service Cash Flow:</td>
+              <td class="value-col" id="rowAnnualPayment">$23,751.36 /yr</td>
+            </tr>
+            <tr>
+              <td>Principal Paid Down Prior to Balloon:</td>
+              <td class="value-col" id="rowPrincipalPaid" style="color: var(--accent-emerald-dark); font-weight:800;">-$17,183</td>
+            </tr>
+            <tr class="highlight-row" id="rowBalloonHighlight">
+              <td>Lump-Sum Balloon Payoff at Year 5:</td>
+              <td class="value-col" id="rowBalloonPayoff" style="color: var(--accent-amber); font-size:1.15rem; font-weight:900;">$280,317</td>
+            </tr>
+            <tr>
+              <td>Total Seller Payout (Down + Payments + Balloon):</td>
+              <td class="value-col" id="rowTotalPayout" style="color: var(--primary-navy); font-weight:800;">$451,574</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Amortization Schedule Table Preview -->
+      <div class="results-card">
+        <h3>📅 Annual Amortization &amp; Balloon Schedule</h3>
+        <div class="schedule-table-wrap">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Annual Payment</th>
+                <th>Principal Paid</th>
+                <th>Interest Paid</th>
+                <th>Ending Balance</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTableBody">
+              <!-- Dynamically generated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calc-actions-row">
+        <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+          🔗 Copy Shareable Deal Link
+        </button>
+        <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+          🖨️ Print Seller Note Memo
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+  ======================================================== -->
+  <article class="guide-section">
+
+    <h2>Comprehensive Guide to Seller Financing &amp; Owner Carryback Notes</h2>
+    <p>
+      In high-interest rate cycles, conventional bank lending criteria tighten, creating immense friction for real estate transactions. **Seller financing** (also known as owner financing, seller carry, or an owner-carryback note) bypasses commercial mortgage underwriters entirely by allowing the property owner to act as the direct lender.
+    </p>
+    <p>
+      Whether you are an investor looking to purchase properties without bank qualifying, or a property seller wanting to generate passive monthly cash flow and defer capital gains taxes, mastering the mechanics of a **seller finance calculator** is essential.
+    </p>
+
+    <div class="callout-box">
+      <h4>What is Seller Financing in Real Estate?</h4>
+      <p>
+        <strong>Seller Financing</strong> is an agreement where the buyer makes an upfront down payment to the seller, and the seller finances the remaining balance of the purchase price. The buyer receives legal title or equitable title, moves in, and makes monthly installment payments directly to the seller based on an agreed-upon promissory note.
+      </p>
+    </div>
+
+    <h2>How to Calculate Monthly Payments on a Seller Finance Loan</h2>
+    <p>
+      The monthly payment on a seller financed note depends on whether the transaction is structured as **Fully Amortizing** or **Interest-Only**:
+    </p>
+
+    <h3>1. Standard Amortizing Seller Finance Formula</h3>
+    $$M = P \frac{r(1 + r)^n}{(1 + r)^n - 1}$$
+    <p>Where:</p>
+    <ul>
+      <li><strong>$M$</strong> = Monthly Principal &amp; Interest payment</li>
+      <li><strong>$P$</strong> = Financed Principal Note amount ($\text{Purchase Price} - \text{Down Payment}$)</li>
+      <li><strong>$r$</strong> = Monthly interest rate ($\text{Annual Interest Rate} \div 12$)</li>
+      <li><strong>$n$</strong> = Total number of monthly installments ($\text{Amortization Years} \times 12$)</li>
+    </ul>
+
+    <h3>2. Interest-Only Seller Financing Formula</h3>
+    <p>
+      When an investor negotiates an interest-only structure, no principal is paid down during the monthly term, minimizing the buyer's holding costs:
+    </p>
+    $$M = \frac{P \times \text{Annual Interest Rate}}{12}$$
+    <p>
+      For example, on a $300,000 seller financed note at 7.00% interest-only, the monthly payment is strictly:
+    </p>
+    $$\frac{\$300,000 \times 0.07}{12} = \$1,750.00 \text{ per month}$$
+
+    <h2>Understanding the Balloon Payment in Seller Financing</h2>
+    <p>
+      Over 90% of residential and commercial seller financing agreements incorporate a **balloon payment**. Most property sellers do not want their capital locked away for 30 full years.
+    </p>
+    <p>
+      To resolve this, parties structure the loan with a **30-year amortization schedule** (to keep monthly payments affordable for the buyer) but add a **balloon maturity date at year 3, 5, or 10**.
+    </p>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Deal Structure</th>
+            <th>Monthly Payment ($297.5k Note @ 7%)</th>
+            <th>Principal Paid at Year 5</th>
+            <th>Lump-Sum Balloon Due at Year 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>30-Yr Amort with 5-Yr Balloon</strong></td>
+            <td><strong>$1,979.28 /mo</strong></td>
+            <td>$17,183</td>
+            <td><strong>$280,317</strong> (Refinance required)</td>
+          </tr>
+          <tr>
+            <td><strong>Interest-Only with 5-Yr Balloon</strong></td>
+            <td><strong>$1,735.42 /mo</strong></td>
+            <td>$0</td>
+            <td><strong>$297,500</strong> (100% principal due)</td>
+          </tr>
+          <tr>
+            <td><strong>15-Yr Full Amortization (No Balloon)</strong></td>
+            <td><strong>$2,674.03 /mo</strong></td>
+            <td>$73,281</td>
+            <td><strong>$0</strong> (Fully paid off at year 15)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Benefits for Sellers: High-Yield Income &amp; Tax Deferral (IRC §453)</h2>
+    <p>
+      Property owners frequently ask why they should offer seller financing instead of taking all cash at closing. The benefits are substantial:
+    </p>
+    <ul>
+      <li><strong>Installment Sale Tax Deferral:</strong> Under Internal Revenue Code Section 453, capital gains taxes are recognized proportionally only as principal is collected. If a seller has a large capital gain, selling via owner financing spreads the tax burden across multiple tax years, avoiding higher tax brackets.</li>
+      <li><strong>Superior Yield vs. Banks:</strong> Instead of depositing cash in a savings account yielding 3%–4%, sellers earn 7% to 9%+ secured by the first-lien deed of trust on a hard asset they understand.</li>
+      <li><strong>Top-of-Market Sales Price:</strong> Offering seller financing attracts a wide pool of qualified buyers, allowing sellers to command full asking price or even a premium.</li>
+    </ul>
+
+    <h2>Dodd-Frank Compliance for Private Sellers</h2>
+    <p>
+      The 2010 Dodd-Frank Wall Street Reform Act introduced rules governing residential seller financing. Individual property owners must understand the safe harbor exclusions:
+    </p>
+    <ul>
+      <li><strong>1-Property Exclusion:</strong> An individual seller can finance one residential property per 12 months without being licensed as a Mortgage Loan Originator (MLO), provided they did not construct the home and the loan is fixed-rate or adjustable after 5 years.</li>
+      <li><strong>3-Property Exclusion:</strong> Sellers can finance up to three residential properties per 12 months if the loan is fully amortizing (no balloon payments under strict guidelines) and the seller verifies the buyer’s reasonable ability to repay.</li>
+      <li><strong>Commercial &amp; Entity Exemption:</strong> Transactions involving commercial real estate, raw land, or buyers purchasing in the name of an entity (LLC, Corporation, or Partnership) are completely exempt from Dodd-Frank residential rules.</li>
+    </ul>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What documents are required to close a seller financed real estate deal?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          A properly structured seller financing transaction requires: (1) A Purchase and Sale Agreement outlining terms, (2) A Promissory Note detailing loan balance, interest rate, monthly payments, and balloon date, (3) A Deed of Trust or Mortgage recorded with the county to secure the seller's legal lien against the property, and (4) A Loan Servicing Agreement through a licensed third-party escrow servicing company to collect monthly payments and handle tax reporting (Form 1098).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How does a buyer pay off a balloon payment when it comes due?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Buyers typically resolve a balloon payment through one of four methods: (1) Refinancing the property with a conventional mortgage, FHA loan, or DSCR loan, (2) Selling the property and paying off the note from net sale proceeds, (3) Negotiating a balloon extension with the seller in exchange for an extension fee or principal pay-down, or (4) Paying off the remaining balance with accumulated cash reserves.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can a seller finance a property if they still have an existing bank mortgage?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          If the seller has an underlying institutional mortgage, seller financing must be structured either as a Subject-To transaction (where the buyer takes over existing payments) or as a Wraparound Mortgage (where the seller's note 'wraps' around the existing debt). Note that existing mortgages usually contain a 'Due-on-Sale' clause, which grants the lender the right to call the loan due if ownership transfers.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What interest rate should a seller charge for owner financing?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          In typical market conditions, seller financing interest rates are set 1.0% to 2.5% above prevailing conventional mortgage rates (currently 7.0% to 9.5%). Sellers charge higher rates to compensate for underwriting risk, convenience, and the lack of stringent bank approval processes for the buyer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What happens if the buyer defaults on a seller financed loan?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Because the promissory note is secured by a recorded Deed of Trust or Mortgage, the seller retains the legal right to foreclose on the property just like a commercial bank. Depending on the state (judicial vs. non-judicial foreclosure), the seller can reclaim title to the property while keeping the down payment and all previous installment payments made by the defaulting buyer.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealRefin Platform</h4>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+            Institutional financial analytics and automated underwriting engines for residential real estate investors, creative finance practitioners, and property sellers.
+          </p>
+          <p style="font-size: 0.8rem; color: var(--text-light);">
+            © 2026 RealRefin.com. All rights reserved.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Creative &amp; Investor</h4>
+          <ul>
+            <li><a href="/seller-financing-calculator">Seller Financing Calculator</a></li>
+            <li><a href="/creative-financing-calculator">Creative Finance Modeler</a></li>
+            <li><a href="/subto-calculator">SubTo Deal Analyzer</a></li>
+            <li><a href="/arv-calculator">ARV Wholesaling Calculator</a></li>
+            <li><a href="/hard-money-loan-calculator">Hard Money Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Debt &amp; Commercial</h4>
+          <ul>
+            <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Calculator</a></li>
+            <li><a href="/interest-rate-cap-calculator">Interest Rate Cap &amp; SOFR</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Underwriter</a></li>
+            <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Financial Disclaimer</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators, seller financing schedules, and balloon models are for educational analysis only. Private promissory notes and deeds of trust must comply with state usury laws and Dodd-Frank regulations. Consult a licensed real estate attorney and CPA.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Switcher Tabs
+  const tabBuyerView = document.getElementById('tabBuyerView');
+  const tabSellerView = document.getElementById('tabSellerView');
+  const lblMainScorecard = document.getElementById('lblMainScorecard');
+  const headingBreakdown = document.getElementById('headingBreakdown');
+
+  let activeMode = 'buyer'; // 'buyer' or 'seller'
+
+  tabBuyerView.addEventListener('click', () => {
+    activeMode = 'buyer';
+    tabBuyerView.classList.add('active');
+    tabSellerView.classList.remove('active');
+    lblMainScorecard.textContent = 'Monthly Principal & Interest Payment';
+    headingBreakdown.textContent = '📋 Buyer Financing & Cash Outflow Breakdown';
+    recalculate();
+  });
+
+  tabSellerView.addEventListener('click', () => {
+    activeMode = 'seller';
+    tabSellerView.classList.add('active');
+    tabBuyerView.classList.remove('active');
+    lblMainScorecard.textContent = 'Monthly Passive Cash Flow (Interest + Principal)';
+    headingBreakdown.textContent = '💰 Seller Passive Income & Note Yield Breakdown';
+    recalculate();
+  });
+
+  // Inputs
+  const inpPrice = document.getElementById('inpPrice');
+  const rngPrice = document.getElementById('rngPrice');
+  const badgePrice = document.getElementById('badgePrice');
+
+  const inpDownPct = document.getElementById('inpDownPct');
+  const rngDownPct = document.getElementById('rngDownPct');
+  const badgeDownDollars = document.getElementById('badgeDownDollars');
+  const outFinancedNote = document.getElementById('outFinancedNote');
+
+  const inpRate = document.getElementById('inpRate');
+  const rngRate = document.getElementById('rngRate');
+
+  const inpAmortYears = document.getElementById('inpAmortYears');
+  const badgeAmortYears = document.getElementById('badgeAmortYears');
+  const badgeBalloonTerm = document.getElementById('badgeBalloonTerm');
+
+  // Outputs
+  const outMonthlyPayment = document.getElementById('outMonthlyPayment');
+  const outScorecardSub = document.getElementById('outScorecardSub');
+  const outDownDollars = document.getElementById('outDownDollars');
+  const outBalloonPayoff = document.getElementById('outBalloonPayoff');
+  const outBalloonDateDesc = document.getElementById('outBalloonDateDesc');
+  const outTotalInterest = document.getElementById('outTotalInterest');
+  const outInterestDesc = document.getElementById('outInterestDesc');
+
+  const rowPrice = document.getElementById('rowPrice');
+  const rowDownPayment = document.getElementById('rowDownPayment');
+  const rowFinancedNote = document.getElementById('rowFinancedNote');
+  const rowMonthlyPayment = document.getElementById('rowMonthlyPayment');
+  const rowAnnualPayment = document.getElementById('rowAnnualPayment');
+  const rowPrincipalPaid = document.getElementById('rowPrincipalPaid');
+  const rowBalloonHighlight = document.getElementById('rowBalloonHighlight');
+  const rowBalloonPayoff = document.getElementById('rowBalloonPayoff');
+  const rowTotalPayout = document.getElementById('rowTotalPayout');
+
+  const scheduleTableBody = document.getElementById('scheduleTableBody');
+
+  let selectedBalloonYears = 5; // Default 5 years
+  let isInterestOnly = false;
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, dec = 2) {
+    return Number(num).toFixed(dec);
+  }
+
+  // Sync Input & Range
+  function syncPair(numInp, rngInp, callback) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      if (callback) callback();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      if (callback) callback();
+    });
+  }
+
+  syncPair(inpPrice, rngPrice, recalculate);
+  syncPair(inpDownPct, rngDownPct, recalculate);
+  syncPair(inpRate, rngRate, recalculate);
+
+  // Price Chips
+  document.querySelectorAll('#priceChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#priceChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpPrice.value = this.getAttribute('data-val');
+      rngPrice.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  // Down Payment Chips
+  document.querySelectorAll('#downChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#downChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpDownPct.value = this.getAttribute('data-val');
+      rngDownPct.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  // Amortization Chips
+  document.querySelectorAll('#amortChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#amortChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const val = parseInt(this.getAttribute('data-val'), 10);
+      if (val === 0) {
+        isInterestOnly = true;
+        badgeAmortYears.textContent = 'Interest-Only Note';
+      } else {
+        isInterestOnly = false;
+        inpAmortYears.value = val;
+        badgeAmortYears.textContent = `${val}-Year Amortization`;
+      }
+      recalculate();
+    });
+  });
+
+  // Balloon Chips
+  document.querySelectorAll('#balloonChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#balloonChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      selectedBalloonYears = parseInt(this.getAttribute('data-val'), 10);
+      if (selectedBalloonYears === 0) {
+        badgeBalloonTerm.textContent = 'No Balloon (Full Amortization)';
+      } else {
+        badgeBalloonTerm.textContent = `${selectedBalloonYears}-Year Balloon`;
+      }
+      recalculate();
+    });
+  });
+
+  inpAmortYears.addEventListener('input', () => {
+    isInterestOnly = false;
+    badgeAmortYears.textContent = `${inpAmortYears.value}-Year Amortization`;
+    recalculate();
+  });
+
+  // Amortization Formula Helper
+  function calcPmt(principal, ratePct, years) {
+    if (principal <= 0) return 0;
+    const r = (ratePct / 100) / 12;
+    if (isInterestOnly) return principal * r;
+    const n = years * 12;
+    if (r === 0) return principal / n;
+    return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  // Recalculate Logic
+  function recalculate() {
+    const price = Math.max(0, parseFloat(inpPrice.value) || 0);
+    const downPct = Math.max(0, Math.min(100, parseFloat(inpDownPct.value) || 0));
+    const rate = Math.max(0.1, parseFloat(inpRate.value) || 0);
+    const amortYears = Math.max(1, parseFloat(inpAmortYears.value) || 30);
+
+    const downDollars = price * (downPct / 100);
+    const financedNote = Math.max(0, price - downDollars);
+
+    badgePrice.textContent = formatMoney(price);
+    badgeDownDollars.textContent = `${downPct}% (${formatMoney(downDollars)})`;
+    outFinancedNote.value = formatMoney(financedNote);
+
+    const monthlyPmt = calcPmt(financedNote, rate, amortYears);
+    const monthlyRate = (rate / 100) / 12;
+    const annualCashFlow = monthlyPmt * 12;
+
+    // Simulate Amortization Schedule
+    const maxYears = selectedBalloonYears > 0 ? selectedBalloonYears : (isInterestOnly ? 10 : Math.min(30, amortYears));
+    let balance = financedNote;
+    let totalInterestPaid = 0;
+    let totalPrincipalPaid = 0;
+    let scheduleRowsHtml = '';
+
+    for (let yr = 1; yr <= maxYears; yr++) {
+      let annualPrincipal = 0;
+      let annualInterest = 0;
+
+      for (let m = 1; m <= 12; m++) {
+        if (balance <= 0) break;
+        const interestM = balance * monthlyRate;
+        const principalM = isInterestOnly ? 0 : Math.min(balance, monthlyPmt - interestM);
+        
+        annualInterest += interestM;
+        annualPrincipal += principalM;
+        balance -= principalM;
+      }
+
+      totalInterestPaid += annualInterest;
+      totalPrincipalPaid += annualPrincipal;
+
+      const isBalloonYear = (selectedBalloonYears > 0 && yr === selectedBalloonYears);
+
+      scheduleRowsHtml += `
+        <tr class="${isBalloonYear ? 'balloon-row' : ''}">
+          <td><strong>Year ${yr}</strong> ${isBalloonYear ? '🎈 (Balloon Due)' : ''}</td>
+          <td>${formatMoney(annualPrincipal + annualInterest)}</td>
+          <td style="color:var(--accent-emerald-dark); font-weight:700;">${formatMoney(annualPrincipal)}</td>
+          <td>${formatMoney(annualInterest)}</td>
+          <td style="font-weight:800;">${formatMoney(balance)}</td>
+        </tr>
+      `;
+    }
+
+    const balloonPayoff = selectedBalloonYears > 0 ? balance : 0;
+    const totalPayout = downDollars + totalPrincipalPaid + totalInterestPaid + balloonPayoff;
+
+    // Render Outputs
+    outMonthlyPayment.textContent = `$${formatDecimal(monthlyPmt, 2)}`;
+    outScorecardSub.textContent = `${formatMoney(financedNote)} Note • ${formatDecimal(rate, 2)}% APR • ${isInterestOnly ? 'Interest-Only' : `${amortYears}-Yr Amort`}`;
+    outDownDollars.textContent = formatMoney(downDollars);
+
+    if (selectedBalloonYears > 0) {
+      document.getElementById('cardBalloonMetric').style.display = 'block';
+      outBalloonPayoff.textContent = formatMoney(balloonPayoff);
+      outBalloonDateDesc.textContent = `Due at End of Year ${selectedBalloonYears}`;
+      outInterestDesc.textContent = `Over ${selectedBalloonYears}-Year Balloon Window`;
+      rowBalloonHighlight.style.display = '';
+      rowBalloonPayoff.textContent = formatMoney(balloonPayoff);
+    } else {
+      document.getElementById('cardBalloonMetric').style.display = 'none';
+      outInterestDesc.textContent = `Over Full ${amortYears}-Year Term`;
+      rowBalloonHighlight.style.display = 'none';
+    }
+
+    outTotalInterest.textContent = formatMoney(totalInterestPaid);
+
+    // Render Table Rows
+    rowPrice.textContent = formatMoney(price);
+    rowDownPayment.textContent = `-${formatMoney(downDollars)} (${downPct}%)`;
+    rowFinancedNote.textContent = formatMoney(financedNote);
+    rowMonthlyPayment.textContent = `$${formatDecimal(monthlyPmt, 2)} /mo`;
+    rowAnnualPayment.textContent = `$${formatDecimal(annualCashFlow, 2)} /yr`;
+    rowPrincipalPaid.textContent = `-${formatMoney(totalPrincipalPaid)}`;
+    rowTotalPayout.textContent = formatMoney(totalPayout);
+
+    scheduleTableBody.innerHTML = scheduleRowsHtml;
+  }
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('price', inpPrice.value);
+    url.searchParams.set('down', inpDownPct.value);
+    url.searchParams.set('rate', inpRate.value);
+    url.searchParams.set('amort', inpAmortYears.value);
+    url.searchParams.set('balloon', selectedBalloonYears);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL State
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('price')) {
+      inpPrice.value = p.get('price');
+      rngPrice.value = p.get('price');
+    }
+    if (p.has('down')) {
+      inpDownPct.value = p.get('down');
+      rngDownPct.value = p.get('down');
+    }
+    if (p.has('rate')) {
+      inpRate.value = p.get('rate');
+      rngRate.value = p.get('rate');
+    }
+    if (p.has('amort')) inpAmortYears.value = p.get('amort');
+    if (p.has('balloon')) {
+      selectedBalloonYears = parseInt(p.get('balloon'), 10);
+      document.querySelectorAll('#balloonChips .chip-btn').forEach(b => {
+        b.classList.toggle('active', parseInt(b.getAttribute('data-val'), 10) === selectedBalloonYears);
+      });
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>
