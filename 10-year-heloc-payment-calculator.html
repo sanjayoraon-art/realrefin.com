@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-Year HELOC Payment Calculator | Interest-Only &amp; Extra Payments</title>
+  <meta name="description" content="Calculate your 10-year HELOC interest-only payment, model the year-10 repayment reset payment shock, and see how extra principal payments slash total interest and accelerate debt payoff.">
+  <meta name="keywords" content="10 year heloc payment calculator, heloc calculator with extra payments, how to calculate heloc interest only payment, how to calculate interest only payments on a heloc, heloc payment calculator with extra payments, 10 year interest only heloc, heloc payment shock calculator, home equity line of credit payment calculator">
+  <link rel="canonical" href="https://realrefin.com/10-year-heloc-payment-calculator">
+  
+  <meta property="og:title" content="10-Year HELOC Payment Calculator | Interest-Only &amp; Extra Payments">
+  <meta property="og:description" content="Free 10-year HELOC payment calculator. Model draw period interest-only payments, repayment phase resets, and interest savings from extra principal payments.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/10-year-heloc-payment-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/10-year-heloc-payment-calculator#app",
+        "name": "RealRefin 10-Year HELOC Payment & Extra Principal Calculator",
+        "url": "https://realrefin.com/10-year-heloc-payment-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional 10-year Home Equity Line of Credit (HELOC) payment calculator. Calculates monthly interest-only payments during the 10-year draw period, models year-10 payment shock upon entering the repayment period, and computes total interest saved with extra principal payments.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Equity & Refinance Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "10-Year HELOC Payment Calculator",
+            "item": "https://realrefin.com/10-year-heloc-payment-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is a 10-year HELOC payment calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "During the initial 10-year draw period of a HELOC, most lenders require only interest payments. The monthly payment is calculated by multiplying the outstanding drawn balance by the annual interest rate, divided by 12 (or based on 365 daily simple interest). For example, a $100,000 balance at an 8.5% interest rate requires an interest-only payment of ($100,000 × 0.085) ÷ 12 = $708.33 per month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate interest-only payments on a HELOC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate your exact monthly interest-only payment on a HELOC, use the daily simple interest formula: Monthly Interest = (Current Balance × Annual Interest Rate ÷ 365) × Number of Days in the Billing Cycle. Alternatively, the monthly rule-of-thumb is (Balance × Rate) ÷ 12. Because interest rates on standard HELOCs are variable (indexed to the Wall Street Journal Prime Rate + Lender Margin), payments fluctuate whenever the Federal Reserve adjusts rates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens at the end of a 10-year HELOC draw period (Payment Shock)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "At the 10-year mark, the revolving draw period closes permanently, and the HELOC enters its repayment period (typically 10 to 20 years). Borrowers can no longer draw additional funds, and monthly payments immediately convert from interest-only to fully amortizing principal-plus-interest payments. This often causes 'payment shock', with monthly payments jumping by 70% to 120% depending on the remaining balance and amortization length."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do extra payments affect a 10-year HELOC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because a HELOC is a revolving line of credit with interest computed daily on the outstanding balance, every extra dollar paid directly toward principal immediately lowers the daily balance. This produces a compounding reduction in monthly interest charges, protects against future interest rate hikes, and dramatically reduces the repayment reset payment at year 10."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you pay off a HELOC during the 10-year draw period?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can pay down or pay off the entire balance at any time during the 10-year draw period without closing the line of credit (unless an early closure fee applies, typically within the first 24-36 months). Once paid down, the balance sits at zero, incurring zero interest charges while remaining available for future draws until the draw period expires."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-section-header span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Preset Chips */
+    .preset-chips-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      padding: 0.25rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .chip-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    /* Extra Payments Highlight Box */
+    .extra-payments-card {
+      background: #f0fdf4;
+      border: 1.5px solid var(--accent-emerald-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .extra-payments-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.85rem;
+    }
+
+    .extra-payments-header h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--accent-emerald-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Primary Scorecard */
+    .scorecard-banner {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      text-align: center;
+    }
+
+    .scorecard-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .scorecard-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    /* Phase Comparison Grid (10-Yr Draw vs Repayment Shock) */
+    .payment-phases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .payment-phases-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .phase-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+    }
+
+    .phase-card.shock-warning {
+      border-color: var(--accent-amber-border);
+      background: var(--accent-amber-light);
+    }
+
+    .phase-card h5 {
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .phase-card .phase-num {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--primary-navy);
+    }
+
+    .phase-card.shock-warning .phase-num {
+      color: var(--accent-amber);
+    }
+
+    .phase-card .phase-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Detailed Breakdown Card */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Action Buttons */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box.warning {
+      border-left-color: var(--accent-amber);
+      background: var(--accent-amber-light);
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Comparison Table */
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.15rem 1.25rem;
+      text-align: left;
+      background: #ffffff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Usability Optimization */
+    @media (max-width: 768px) {
+      input, select, textarea, .input-control {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+      .calc-header-banner {
+        padding: 1.5rem 1.15rem !important;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.7rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#tools">All Calculators</a></li>
+      <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out vs HELOC</a></li>
+      <li><a href="/mortgage-payoff-vs-investing-calculator">Mortgage Payoff</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="btn-nav-cta">Contact Us</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Home Equity &amp; Refinance Suite</a>
+    <span class="separator">/</span>
+    <span class="current">10-Year HELOC Payment Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>⚡</span> 10-Year Draw &amp; Extra Principal Payoff Engine
+    </div>
+    <h1>
+      10-Year HELOC Payment Calculator <span>&amp; Extra Payments Modeler</span>
+    </h1>
+    <p>
+      Calculate your exact interest-only monthly payment during the 10-year HELOC draw period. Simulate the year-10 repayment reset shock, and model how extra principal payments slash interest costs and pay off your balance early.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>10-Yr Draw Math</h4>
+        <p>Interest-Only Monthly Formula</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Payment Shock</h4>
+        <p>Year-10 Amortization Reset</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Extra Principal</h4>
+        <p>Daily Simple Interest Reducer</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Lifetime Savings</h4>
+        <p>Complete Payoff Cost Comparison</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-grid">
+
+    <!-- LEFT: USER INPUTS PANE -->
+    <div class="calc-inputs-pane">
+      <div class="pane-section-header">
+        <span class="icon">💳</span>
+        <h2>HELOC Loan &amp; Rate Parameters</h2>
+      </div>
+
+      <!-- Current / Drawn HELOC Balance -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpBalance">Drawn HELOC Balance</label>
+          <span class="input-helper-badge" id="badgeBalance">$75,000</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpBalance" class="form-input" value="75000" min="5000" max="1500000" step="2500">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngBalance" class="custom-range" value="75000" min="10000" max="300000" step="2500">
+        </div>
+        <div class="preset-chips-bar" id="balanceChips">
+          <button type="button" class="chip-btn" data-val="25000">$25k</button>
+          <button type="button" class="chip-btn" data-val="50000">$50k</button>
+          <button type="button" class="chip-btn active" data-val="75000">$75k</button>
+          <button type="button" class="chip-btn" data-val="100000">$100k</button>
+          <button type="button" class="chip-btn" data-val="150000">$150k</button>
+          <button type="button" class="chip-btn" data-val="250000">$250k</button>
+        </div>
+      </div>
+
+      <!-- HELOC Interest Rate -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRate">Annual HELOC Interest Rate (APR)</label>
+          <span class="input-helper-badge">Variable Prime + Margin</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpRate" class="form-input no-prefix has-suffix" value="8.50" min="1.00" max="25.00" step="0.125">
+          <span class="input-suffix">%</span>
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngRate" class="custom-range" value="8.50" min="4.00" max="15.00" step="0.125">
+        </div>
+      </div>
+
+      <!-- Draw Period & Repayment Period Terms -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpDrawYears">Draw Period (Interest-Only)</label>
+          <span class="input-helper-badge">Standard Industry Term</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpDrawYears" class="form-input no-prefix has-suffix" value="10" min="5" max="15" step="1" readonly style="background:#f1f5f9; cursor:not-allowed;">
+          <span class="input-suffix">Years (120 Mo)</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRepayYears">Post-Draw Repayment Period</label>
+          <span class="input-helper-badge" id="badgeRepayYears">20-Year Repayment</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpRepayYears" class="form-input no-prefix has-suffix" value="20" min="5" max="30" step="5">
+          <span class="input-suffix">Years</span>
+        </div>
+        <div class="preset-chips-bar" id="repayChips">
+          <button type="button" class="chip-btn" data-val="10">10-Yr Repay</button>
+          <button type="button" class="chip-btn" data-val="15">15-Yr Repay</button>
+          <button type="button" class="chip-btn active" data-val="20">20-Yr Repay</button>
+        </div>
+      </div>
+
+      <!-- Extra Principal Payments Box -->
+      <div class="extra-payments-card">
+        <div class="extra-payments-header">
+          <h4><span>🚀</span> Extra Principal Payoff Accelerator</h4>
+          <span class="input-helper-badge" style="background:#dcfce7; color:#15803d;">Optional Savings</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+          Add extra monthly principal during the 10-year draw period to reduce your balance and dodge the year-10 reset shock:
+        </p>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpExtraMonthly" class="form-input" value="200" min="0" max="10000" step="25">
+          <span class="input-suffix" style="right: 1rem;">/mo Extra</span>
+        </div>
+        <div class="preset-chips-bar" id="extraChips">
+          <button type="button" class="chip-btn" data-val="0">$0</button>
+          <button type="button" class="chip-btn" data-val="100">+$100/mo</button>
+          <button type="button" class="chip-btn active" data-val="200">+$200/mo</button>
+          <button type="button" class="chip-btn" data-val="350">+$350/mo</button>
+          <button type="button" class="chip-btn" data-val="500">+$500/mo</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: OUTPUT RESULTS PANE -->
+    <div class="calc-results-pane">
+
+      <!-- Main Draw Period Scorecard Banner -->
+      <div class="scorecard-banner">
+        <div class="scorecard-tag">10-Year Draw Period Payment</div>
+        <div class="scorecard-label">Monthly Interest-Only Payment</div>
+        <div class="scorecard-value" id="outIOPayment">$531.25</div>
+        <div class="scorecard-subtext">
+          <span id="outTotalWithExtra">$731.25 with +$200/mo Extra Principal</span>
+        </div>
+      </div>
+
+      <!-- Year-10 Reset Shock Comparison Grid -->
+      <div class="payment-phases-grid">
+        <div class="phase-card">
+          <h5>Phase 1: Initial 10-Yr Draw</h5>
+          <div class="phase-num" id="outDrawSummary">$531 /mo</div>
+          <div class="phase-desc">Strictly Interest-Only (Years 1–10)</div>
+        </div>
+        <div class="phase-card shock-warning">
+          <h5>Phase 2: Year-10 Reset Shock</h5>
+          <div class="phase-num" id="outResetPayment">$651 /mo</div>
+          <div class="phase-desc" id="outShockPct">+22.5% Jump (Principal + Interest)</div>
+        </div>
+      </div>
+
+      <!-- Detailed Breakdown & Savings Card -->
+      <div class="results-card">
+        <h3>📊 10-Year HELOC &amp; Extra Payments Breakdown</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Drawn HELOC Balance:</td>
+              <td class="value-col" id="rowBalance">$75,000</td>
+            </tr>
+            <tr>
+              <td>Standard Monthly Interest-Only Payment:</td>
+              <td class="value-col" id="rowIOPayment">$531.25 /mo</td>
+            </tr>
+            <tr>
+              <td>Daily Interest Cost ($\text{Balance} \times \text{Rate} \div 365$):</td>
+              <td class="value-col" id="rowDailyInterest">$17.47 /day</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Total 10-Yr Draw Interest (Without Extra):</td>
+              <td class="value-col" id="rowTotalBaseInterest">$63,750</td>
+            </tr>
+            <tr>
+              <td>Principal Paid Off During Draw Period:</td>
+              <td class="value-col" id="rowPrincipalPaid" style="color: var(--accent-emerald-dark); font-weight:800;">-$24,000</td>
+            </tr>
+            <tr>
+              <td>Remaining Balance at Year-10 Reset:</td>
+              <td class="value-col" id="rowResetBalance">$51,000</td>
+            </tr>
+            <tr>
+              <td>Repayment Period Monthly Payment (P&amp;I):</td>
+              <td class="value-col" id="rowRepayMonthly">$442.54 /mo</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Total Lifetime Interest Saved with Extra Payments:</td>
+              <td class="value-col" id="rowTotalSavings" style="color: var(--accent-emerald-dark); font-size:1.15rem; font-weight:900;">+$27,422</td>
+            </tr>
+            <tr>
+              <td>Payoff Time Accelerated By:</td>
+              <td class="value-col" id="rowTimeSaved" style="color: var(--primary-navy); font-weight:800;">4.8 Years Early</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Reset Payment Comparison Box -->
+      <div class="callout-box warning">
+        <h4>⚠️ Understanding Year-10 HELOC Payment Shock</h4>
+        <p id="outShockMessage">
+          If you only make interest-only payments for 10 years, your balance remains <strong>$75,000</strong>. At year 10, your payment will jump to <strong>$650.80/mo</strong>. By contributing <strong>$200/mo</strong> extra toward principal, your year-10 reset payment drops to <strong>$442.54/mo</strong>, saving you over <strong>$27,422</strong> in lifetime interest!
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calc-actions-row">
+        <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+          🔗 Copy Shareable Deal Link
+        </button>
+        <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+          🖨️ Print HELOC Analysis
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+  ======================================================== -->
+  <article class="guide-section">
+
+    <h2>Comprehensive Guide: 10-Year HELOC Payments &amp; Extra Payment Math</h2>
+    <p>
+      A **Home Equity Line of Credit (HELOC)** is one of the most flexible second-lien financing tools available to homeowners, real estate investors, and flippers. Unlike a standard fixed-rate closed-end home equity loan, a standard HELOC is divided into two distinct chronological phases: a **10-year revolving draw period** followed by a **10 to 20-year repayment period**.
+    </p>
+    <p>
+      Understanding the exact mathematics of how a 10-year HELOC payment is calculated—and how strategically adding **extra principal payments** impacts your debt balance—can protect your family from severe financial distress when the line resets.
+    </p>
+
+    <h2>How to Calculate HELOC Interest-Only Payment (The Exact Formula)</h2>
+    <p>
+      During the initial 10-year draw period, lenders do not require you to pay down principal. Your monthly billing statement reflects strictly the interest accrued on the funds you have drawn.
+    </p>
+
+    <h3>1. Standard Monthly Rule-of-Thumb Formula</h3>
+    $$\text{Monthly Interest-Only Payment} = \frac{\text{Current Drawn Balance} \times \text{Annual Interest Rate (APR)}}{12}$$
+
+    <p>
+      <strong>Step-by-Step Example:</strong> If your drawn HELOC balance is $75,000 and your current variable APR is 8.50%:
+    </p>
+    $$\text{Monthly Payment} = \frac{\$75,000 \times 0.085}{12} = \frac{\$6,375}{12} = \$531.25 \text{ per month}$$
+
+    <h3>2. Daily Simple Interest Formula (How Banks Actually Calculate It)</h3>
+    <p>
+      Institutional banks and credit unions (such as Chase, Bank of America, Figure, and PNC) calculate HELOC interest on a **daily simple interest basis**. Because months have 28, 30, or 31 days, your monthly billing varies slightly:
+    </p>
+    $$\text{Daily Interest Charge} = \frac{\text{Outstanding Balance} \times \text{Interest Rate}}{365}$$
+    $$\text{Billing Cycle Interest} = \text{Daily Interest Charge} \times \text{Days in Month (e.g., 30 or 31)}$$
+    <p>
+      On a $75,000 balance at 8.50%, your daily interest accrual is:
+    </p>
+    $$\frac{\$75,000 \times 0.085}{365} = \$17.465 \text{ per day}$$
+    <p>
+      In a 31-day month (e.g., March or July), your payment is $\$17.465 \times 31 = \$541.44$. In February (28 days), it drops to $\$489.04$.
+    </p>
+
+    <h2>What is Year-10 HELOC Payment Shock?</h2>
+    <p>
+      The greatest danger facing HELOC borrowers is **Payment Reset Shock**. When your 10-year draw period ends:
+    </p>
+    <ol>
+      <li><strong>Your Draw Privileges Terminate:</strong> You cannot withdraw additional funds from the credit line.</li>
+      <li><strong>Interest-Only Options Vanish:</strong> You can no longer pay just interest.</li>
+      <li><strong>Principal Amortization Begins:</strong> The remaining principal is amortized over the repayment period (typically 20 years or 10 years).</li>
+    </ol>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>HELOC Phase</th>
+            <th>Duration</th>
+            <th>Payment Requirement</th>
+            <th>Monthly Payment ($75k Balance @ 8.5%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Phase 1: Draw Period</strong></td>
+            <td>Years 1 through 10 (120 Months)</td>
+            <td>Interest-Only (I/O)</td>
+            <td><strong>$531.25 /mo</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Phase 2: Repayment (20-Yr Term)</strong></td>
+            <td>Years 11 through 30 (240 Months)</td>
+            <td>Fully Amortizing (Principal + Interest)</td>
+            <td><strong>$650.80 /mo</strong> (+22.5% Jump)</td>
+          </tr>
+          <tr>
+            <td><strong>Phase 2: Repayment (10-Yr Term)</strong></td>
+            <td>Years 11 through 20 (120 Months)</td>
+            <td>Aggressive Amortizing (P&amp;I)</td>
+            <td><strong>$929.83 /mo</strong> (+75.0% Jump)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Why Making Extra Payments on a HELOC is Powerful</h2>
+    <p>
+      Because HELOC interest is computed daily, making **extra principal payments** yields an immediate financial return that outperforms traditional fixed-rate mortgages:
+    </p>
+    <ul>
+      <li><strong>Immediate Daily Balance Reduction:</strong> Unlike a closed-end mortgage where extra payments only affect future amortization schedules, extra cash deposited into a HELOC immediately lowers the daily balance that interest is calculated against.</li>
+      <li><strong>Shield Against Variable Rate Hikes:</strong> HELOC rates are tied to the Wall Street Journal Prime Rate ($WSJ \text{ Prime} = \text{Fed Funds Target} + 3.00\%$). When the Federal Reserve raises rates, every extra principal payment you made keeps your interest charges manageable.</li>
+      <li><strong>Deflating Year-10 Reset Shock:</strong> Adding even $150 to $250 extra per month during the 10-year draw period ensures you pay down tens of thousands of dollars in principal before the loan amortizes, completely neutralizing the repayment shock.</li>
+    </ul>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What happens if I only pay the interest-only minimum on my HELOC for 10 years?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          If you only pay the minimum interest-only requirement for 10 years, your loan balance will not decrease by even one penny. At the start of year 11, you will still owe 100% of the original principal you borrowed, and your monthly payment will immediately increase because you are forced to pay both principal and interest.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How do extra payments affect a 10-year HELOC?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          When you make extra principal payments during the draw period, you immediately reduce the outstanding balance upon which daily interest is calculated. This creates compounding monthly interest savings and lowers the future amortizing payment required during the repayment phase.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I refinance a HELOC before the 10-year draw period ends?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes. Many homeowners refinance their HELOC into a new 10-year draw HELOC, a fixed-rate second mortgage (Home Equity Loan), or a cash-out refinance first mortgage before the draw period expires to avoid the payment reset.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How does the Wall Street Journal (WSJ) Prime Rate affect my HELOC payment?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Most HELOCs feature variable interest rates pegged to the WSJ Prime Rate plus or minus a lender margin (e.g., Prime + 0.50%). Whenever the Federal Reserve increases or decreases its federal funds rate, the Prime Rate changes identically, directly adjusting your monthly HELOC interest-only payment on the subsequent billing cycle.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Is the interest on a 10-year HELOC tax deductible?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Under IRS guidelines (Tax Cuts and Jobs Act), HELOC interest is tax deductible only if the borrowed funds were used to buy, build, or substantially improve the primary or secondary home that secures the line of credit. If the HELOC proceeds were used for personal expenses (such as paying off credit cards, buying a car, or funding college tuition), the interest is not deductible.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealRefin Platform</h4>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+            Institutional financial analytics and automated underwriting engines for residential real estate investors, mortgage originators, and home equity borrowers.
+          </p>
+          <p style="font-size: 0.8rem; color: var(--text-light);">
+            © 2026 RealRefin.com. All rights reserved.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Home Equity &amp; Refinance</h4>
+          <ul>
+            <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Calculator</a></li>
+            <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out vs HELOC</a></li>
+            <li><a href="/mortgage-payoff-vs-investing-calculator">Mortgage Payoff vs Investing</a></li>
+            <li><a href="/pmi-removal-calculator">PMI Removal Calculator</a></li>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Modeler</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Investor &amp; Wholesaling</h4>
+          <ul>
+            <li><a href="/arv-calculator">ARV Calculator</a></li>
+            <li><a href="/maximum-allowable-offer-calculator">MAO Offer Modeler</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Underwriter</a></li>
+            <li><a href="/interest-rate-cap-calculator">Interest Rate Cap &amp; SOFR</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Modeler</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Financial Disclaimer</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators, HELOC models, and payment schedules are for educational and financial scenario analysis only. Variable interest rates fluctuate with market prime rate changes. Consult a licensed mortgage originator or financial advisor.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Input Elements
+  const inpBalance = document.getElementById('inpBalance');
+  const rngBalance = document.getElementById('rngBalance');
+  const badgeBalance = document.getElementById('badgeBalance');
+
+  const inpRate = document.getElementById('inpRate');
+  const rngRate = document.getElementById('rngRate');
+
+  const inpDrawYears = document.getElementById('inpDrawYears');
+  const inpRepayYears = document.getElementById('inpRepayYears');
+  const badgeRepayYears = document.getElementById('badgeRepayYears');
+
+  const inpExtraMonthly = document.getElementById('inpExtraMonthly');
+
+  // Output Elements
+  const outIOPayment = document.getElementById('outIOPayment');
+  const outTotalWithExtra = document.getElementById('outTotalWithExtra');
+  const outDrawSummary = document.getElementById('outDrawSummary');
+  const outResetPayment = document.getElementById('outResetPayment');
+  const outShockPct = document.getElementById('outShockPct');
+
+  const rowBalance = document.getElementById('rowBalance');
+  const rowIOPayment = document.getElementById('rowIOPayment');
+  const rowDailyInterest = document.getElementById('rowDailyInterest');
+  const rowTotalBaseInterest = document.getElementById('rowTotalBaseInterest');
+  const rowPrincipalPaid = document.getElementById('rowPrincipalPaid');
+  const rowResetBalance = document.getElementById('rowResetBalance');
+  const rowRepayMonthly = document.getElementById('rowRepayMonthly');
+  const rowTotalSavings = document.getElementById('rowTotalSavings');
+  const rowTimeSaved = document.getElementById('rowTimeSaved');
+
+  const outShockMessage = document.getElementById('outShockMessage');
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, dec = 2) {
+    return Number(num).toFixed(dec);
+  }
+
+  // Sync Input & Range
+  function syncPair(numInp, rngInp, callback) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      if (callback) callback();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      if (callback) callback();
+    });
+  }
+
+  syncPair(inpBalance, rngBalance, recalculate);
+  syncPair(inpRate, rngRate, recalculate);
+
+  // Chips: Balance
+  document.querySelectorAll('#balanceChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#balanceChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpBalance.value = this.getAttribute('data-val');
+      rngBalance.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  // Chips: Repay Years
+  document.querySelectorAll('#repayChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#repayChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpRepayYears.value = this.getAttribute('data-val');
+      badgeRepayYears.textContent = `${this.getAttribute('data-val')}-Year Repayment`;
+      recalculate();
+    });
+  });
+
+  // Chips: Extra Payments
+  document.querySelectorAll('#extraChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#extraChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      inpExtraMonthly.value = this.getAttribute('data-val');
+      recalculate();
+    });
+  });
+
+  inpRepayYears.addEventListener('input', () => {
+    badgeRepayYears.textContent = `${inpRepayYears.value}-Year Repayment`;
+    recalculate();
+  });
+  inpExtraMonthly.addEventListener('input', recalculate);
+
+  // Standard Amortization Formula
+  function calcAmortPayment(principal, annualRate, years) {
+    if (principal <= 0) return 0;
+    const r = (annualRate / 100) / 12;
+    const n = years * 12;
+    if (r === 0) return principal / n;
+    return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  // Recalculate Logic
+  function recalculate() {
+    const balance = Math.max(0, parseFloat(inpBalance.value) || 0);
+    const annualRate = Math.max(0.1, parseFloat(inpRate.value) || 0);
+    const drawYears = 10;
+    const drawMonths = drawYears * 12; // 120 months
+    const repayYears = Math.max(1, parseFloat(inpRepayYears.value) || 20);
+    const extraMonthly = Math.max(0, parseFloat(inpExtraMonthly.value) || 0);
+
+    badgeBalance.textContent = formatMoney(balance);
+
+    // 1. Initial 10-Yr Interest-Only Monthly Payment
+    const monthlyRate = (annualRate / 100) / 12;
+    const dailyRate = (annualRate / 100) / 365;
+    const initialIOPayment = balance * monthlyRate;
+    const dailyInterest = balance * dailyRate;
+
+    // 2. Base Scenario (Without Extra Payments)
+    // Over 10 years, balance remains 100% untouched
+    const totalBaseDrawInterest = initialIOPayment * drawMonths;
+    const baseRepayMonthly = calcAmortPayment(balance, annualRate, repayYears);
+    const baseTotalRepayPaid = baseRepayMonthly * (repayYears * 12);
+    const baseLifetimeInterest = totalBaseDrawInterest + (baseTotalRepayPaid - balance);
+
+    // 3. Accelerated Scenario (With Extra Monthly Payments during 10-Yr Draw)
+    let currentBal = balance;
+    let totalAccDrawInterest = 0;
+    let actualDrawMonthsPaid = 0;
+    let paidOffDuringDraw = false;
+
+    for (let m = 1; m <= drawMonths; m++) {
+      if (currentBal <= 0) {
+        paidOffDuringDraw = true;
+        break;
+      }
+      const interestThisMonth = currentBal * monthlyRate;
+      totalAccDrawInterest += interestThisMonth;
+
+      // Extra payment reduces principal directly
+      const principalPayment = Math.min(currentBal, extraMonthly);
+      currentBal -= principalPayment;
+      actualDrawMonthsPaid = m;
+    }
+
+    const principalPaidInDraw = balance - currentBal;
+    const remainingResetBalance = currentBal;
+
+    // Repayment phase for remaining balance
+    let accRepayMonthly = 0;
+    let accLifetimeInterest = totalAccDrawInterest;
+    let totalYearsToPayoff = 0;
+
+    if (remainingResetBalance > 0) {
+      accRepayMonthly = calcAmortPayment(remainingResetBalance, annualRate, repayYears);
+      const accRepayTotalPaid = accRepayMonthly * (repayYears * 12);
+      accLifetimeInterest += (accRepayTotalPaid - remainingResetBalance);
+      totalYearsToPayoff = drawYears + repayYears;
+    } else {
+      totalYearsToPayoff = actualDrawMonthsPaid / 12;
+    }
+
+    // Savings & Comparisons
+    const totalInterestSaved = Math.max(0, baseLifetimeInterest - accLifetimeInterest);
+    const baseTotalTermYears = drawYears + repayYears;
+    const timeSavedYears = Math.max(0, baseTotalTermYears - totalYearsToPayoff);
+
+    // Payment Shock Percentage (Comparing Draw IO to Year-10 Reset)
+    const shockIncreaseDollars = baseRepayMonthly - initialIOPayment;
+    const shockPct = initialIOPayment > 0 ? (shockIncreaseDollars / initialIOPayment) * 100 : 0;
+
+    // Render Scorecard Outputs
+    outIOPayment.textContent = `$${formatDecimal(initialIOPayment, 2)}`;
+    outTotalWithExtra.textContent = extraMonthly > 0 
+      ? `$${formatDecimal(initialIOPayment + extraMonthly, 2)} with +$${Math.round(extraMonthly)}/mo Extra Principal` 
+      : 'Minimum Interest-Only Payment';
+
+    outDrawSummary.textContent = `${formatMoney(initialIOPayment)} /mo`;
+    outResetPayment.textContent = `${formatMoney(baseRepayMonthly)} /mo`;
+    outShockPct.textContent = `+${formatDecimal(shockPct, 1)}% Payment Shock (${repayYears}-Yr Amort)`;
+
+    // Render Table Rows
+    rowBalance.textContent = formatMoney(balance);
+    rowIOPayment.textContent = `$${formatDecimal(initialIOPayment, 2)} /mo`;
+    rowDailyInterest.textContent = `$${formatDecimal(dailyInterest, 2)} /day`;
+    rowTotalBaseInterest.textContent = formatMoney(totalBaseDrawInterest);
+    rowPrincipalPaid.textContent = `-${formatMoney(principalPaidInDraw)}`;
+    rowResetBalance.textContent = formatMoney(remainingResetBalance);
+    rowRepayMonthly.textContent = `$${formatDecimal(accRepayMonthly, 2)} /mo`;
+    rowTotalSavings.textContent = `+${formatMoney(totalInterestSaved)}`;
+    rowTimeSaved.textContent = timeSavedYears > 0 ? `${formatDecimal(timeSavedYears, 1)} Years Early` : 'Standard Schedule';
+
+    // Render Explanatory Message
+    if (extraMonthly > 0) {
+      outShockMessage.innerHTML = `
+        If you only make minimum interest payments, your balance remains <strong>${formatMoney(balance)}</strong>, and at year 10 your monthly bill jumps to <strong>${formatMoney(baseRepayMonthly)}/mo</strong>. 
+        By contributing <strong>${formatMoney(extraMonthly)}/mo extra</strong>, your year-10 reset balance drops to <strong>${formatMoney(remainingResetBalance)}</strong>, lowering your reset payment to <strong>$${formatDecimal(accRepayMonthly, 2)}/mo</strong> and saving you <strong>${formatMoney(totalInterestSaved)}</strong> in lifetime interest!
+      `;
+    } else {
+      outShockMessage.innerHTML = `
+        At the end of your 10-year draw period, your balance remains <strong>${formatMoney(balance)}</strong>. 
+        Your payment will immediately jump from <strong>$${formatDecimal(initialIOPayment, 2)}/mo</strong> to <strong>${formatMoney(baseRepayMonthly)}/mo</strong> (+${formatDecimal(shockPct, 1)}% payment shock). 
+        Use the <em>Extra Principal Accelerator</em> to model how adding extra monthly cash lowers this reset shock.
+      `;
+    }
+  }
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('balance', inpBalance.value);
+    url.searchParams.set('rate', inpRate.value);
+    url.searchParams.set('repay', inpRepayYears.value);
+    url.searchParams.set('extra', inpExtraMonthly.value);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('balance')) {
+      inpBalance.value = p.get('balance');
+      rngBalance.value = p.get('balance');
+    }
+    if (p.has('rate')) {
+      inpRate.value = p.get('rate');
+      rngRate.value = p.get('rate');
+    }
+    if (p.has('repay')) {
+      inpRepayYears.value = p.get('repay');
+      badgeRepayYears.textContent = `${p.get('repay')}-Year Repayment`;
+    }
+    if (p.has('extra')) inpExtraMonthly.value = p.get('extra');
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>

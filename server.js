@@ -25,6 +25,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/10-year-heloc-payment-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/house-hacking-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -479,6 +485,18 @@ const FILE_MAP = {
   '/ai-arv-calculator.html': 'arv-calculator.html',
   '/arv-real-estate-calculator': 'arv-calculator.html',
   '/arv-real-estate-calculator.html': 'arv-calculator.html',
+  '/10-year-heloc-payment-calculator': '10-year-heloc-payment-calculator.html',
+  '/10-year-heloc-payment-calculator.html': '10-year-heloc-payment-calculator.html',
+  '/10-year-heloc-calculator': '10-year-heloc-payment-calculator.html',
+  '/10-year-heloc-calculator.html': '10-year-heloc-payment-calculator.html',
+  '/heloc-calculator-with-extra-payments': '10-year-heloc-payment-calculator.html',
+  '/heloc-calculator-with-extra-payments.html': '10-year-heloc-payment-calculator.html',
+  '/heloc-payment-calculator-with-extra-payments': '10-year-heloc-payment-calculator.html',
+  '/heloc-payment-calculator-with-extra-payments.html': '10-year-heloc-payment-calculator.html',
+  '/how-to-calculate-heloc-interest-only-payment': '10-year-heloc-payment-calculator.html',
+  '/how-to-calculate-heloc-interest-only-payment.html': '10-year-heloc-payment-calculator.html',
+  '/how-to-calculate-interest-only-payments-on-a-heloc': '10-year-heloc-payment-calculator.html',
+  '/how-to-calculate-interest-only-payments-on-a-heloc.html': '10-year-heloc-payment-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',
