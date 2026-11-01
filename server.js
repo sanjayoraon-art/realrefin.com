@@ -37,6 +37,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/203k-loan-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/adu-cost-calculator</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -543,6 +549,18 @@ const FILE_MAP = {
   '/cost-to-build-an-adu': 'adu-cost-calculator.html',
   '/garage-conversion-adu-cost': 'adu-cost-calculator.html',
   '/jadu-cost-calculator': 'adu-cost-calculator.html',
+  '/203k-loan-calculator': '203k-loan-calculator.html',
+  '/203k-loan-calculator.html': '203k-loan-calculator.html',
+  '/203k-fha-loan-calculator': '203k-loan-calculator.html',
+  '/203k-fha-loan-calculator.html': '203k-loan-calculator.html',
+  '/203k-loan-mortgage-calculator': '203k-loan-calculator.html',
+  '/203k-loan-mortgage-calculator.html': '203k-loan-calculator.html',
+  '/203k-loan-payment-calculator': '203k-loan-calculator.html',
+  '/203k-loan-payment-calculator.html': '203k-loan-calculator.html',
+  '/203k-rehab-loan-calculator': '203k-loan-calculator.html',
+  '/203k-rehab-loan-calculator.html': '203k-loan-calculator.html',
+  '/fha-203k-loan-calculator': '203k-loan-calculator.html',
+  '/203k-renovation-loan-calculator': '203k-loan-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',

@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FHA 203k Loan Calculator (Free) | 203(k) Rehab Mortgage & Payment Engine</title>
+  <meta name="description" content="Free FHA 203k loan calculator and rehab mortgage payment engine. Calculate monthly PITI payments, 3.5% down payment, 1.75% UFMIP, 10-20% contingency reserves, and loan limits for Limited & Standard 203(k) loans. Download free Excel model.">
+  <meta name="keywords" content="203k loan calculator, 203k fha loan calculator, 203k loan mortgage calculator, 203k loan payment calculator, 203k rehab loan calculator, fha 203k calculator, limited 203k loan calculator, standard 203k loan calculator">
+  <link rel="canonical" href="https://realrefin.com/203k-loan-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FHA 203k Loan Calculator (Free) | 203(k) Rehab Mortgage & Payment Engine">
+  <meta property="og:description" content="Institutional-grade FHA 203(k) loan calculator. Underwrite purchase price, repair budget, contingency reserves, 1.75% UFMIP, and monthly mortgage payments.">
+  <meta property="og:url" content="https://realrefin.com/203k-loan-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FHA 203k Loan Calculator (Free) | 203(k) Rehab Mortgage & Payment Engine">
+  <meta name="twitter:description" content="Calculate FHA 203(k) rehab loan payments, contingency reserves, 3.5% down payments, and 110% ARV maximum loan rules.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <!-- Structured Data: WebApplication, FinancialProduct, HowTo, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/203k-loan-calculator#app",
+        "name": "RealRefin FHA 203k Loan Calculator & Rehab Mortgage Engine",
+        "url": "https://realrefin.com/203k-loan-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "Comprehensive FHA 203(k) loan calculator. Computes monthly PITI payments, 3.5% down payment on total acquisition cost, 1.75% Upfront MIP, contingency reserves (10%-20%), consultant fees, and 110% ARV limit compliance for Limited and Standard 203(k) renovation loans.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/203k-loan-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://realrefin.com/#calculators"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "FHA 203k Loan Calculator",
+            "item": "https://realrefin.com/203k-loan-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://realrefin.com/203k-loan-calculator#howto",
+        "name": "How to Calculate an FHA 203(k) Loan and Monthly Payment",
+        "description": "Step-by-step HUD underwriting methodology for calculating total acquisition costs, down payment, financed UFMIP, and monthly mortgage payments on an FHA 203(k) loan.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Enter Purchase Price & Renovation Scope",
+            "text": "Input the contract purchase price of the fixer-upper property (or current mortgage payoff if refinancing) and the licensed general contractor's estimated repair budget."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Select 203(k) Program: Limited vs Standard",
+            "text": "Select Limited 203(k) for minor non-structural repairs up to $35,000–$75,000, or Standard 203(k) for major structural remodeling, room additions, or repairs requiring a HUD 203(k) Consultant."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Contingency Reserve & Soft Costs",
+            "text": "Add a mandatory 10% to 20% contingency reserve buffer, inspection draw fees, consultant fees, and any optional financed mortgage payments if the home is uninhabitable during construction."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Compute 3.5% Down Payment & Base Loan",
+            "text": "Calculate the 3.5% minimum down payment against the Total Acquisition Cost (Purchase Price + Total Renovation & Reserves). The remainder equals the Base Loan Amount."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Add 1.75% Upfront MIP & Verify 110% ARV Cap",
+            "text": "Add the 1.75% Upfront Mortgage Insurance Premium (UFMIP) to the base loan to obtain the Total Financed Loan Amount. Ensure the base loan does not exceed 110% of the As-Completed Appraised Value."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Monthly PITI & FHA MIP Payment",
+            "text": "Amortize the total financed balance over 15 or 30 years and add the annual 0.55% FHA Monthly Mortgage Insurance Premium (MIP), property taxes, and hazard insurance."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/203k-loan-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an FHA 203(k) loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An FHA 203(k) loan is a government-backed mortgage insured by the Federal Housing Administration (HUD) that enables homebuyers or refinancing homeowners to combine the purchase price (or existing debt) of a home and the cost of its renovation into a single mortgage with a single monthly payment and a low 3.5% down payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a Limited 203(k) and a Standard 203(k) loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Limited 203(k) (formerly Streamline 203k) is designed for minor, non-structural remodeling and cosmetic repairs capped at $35,000 (or up to $75,000 in designated pilot/modernized jurisdictions) and does not require a HUD consultant. A Standard 203(k) has a minimum repair budget of $5,000 with no upper ceiling (subject only to county FHA loan limits), permits major structural alterations, foundation work, and additions, and legally requires an FHA-approved 203(k) Consultant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the 3.5% down payment calculated on an FHA 203(k) loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike standard mortgages where down payment is based solely on the purchase price, the FHA 203(k) minimum down payment of 3.5% is calculated against the Total Acquisition Cost: (Purchase Price + Total Renovation Costs + Contingency Reserve + Allowable Soft Costs). For example, on a $250,000 home purchase with $50,000 in repairs, the 3.5% down payment is calculated on $300,000, requiring $10,500 down."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the FHA 203(k) 110% Rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 110% Rule is HUD's statutory collateral safeguard. For a purchase, the maximum base loan amount cannot exceed 110% of the property's estimated After-Repair Value (As-Completed Appraised Value) multiplied by 96.5%. This protects both the borrower and the lender by ensuring the total borrowed funds do not exceed reasonable future market equity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is a contingency reserve required on a 203(k) loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "HUD mandates a 10% to 20% contingency reserve on all 203(k) renovation budgets to protect against unexpected construction discoveries (e.g., hidden termite damage, dry rot, outdated electrical wiring, or broken sewer lines). If the contingency reserve funds are not spent during construction, the remaining balance is applied directly as a principal paydown on the mortgage upon final inspection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I do the renovation work myself with an FHA 203(k) loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In almost all circumstances, no. HUD requires all 203(k) repair work to be performed by licensed, insured, and experienced independent general contractors. While HUD guidelines contain a rare 'Self-Help' provision, virtually no FHA-approved lenders permit it due to contractor underwriting risk and strict completion deadline milestones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I finance my mortgage payments during construction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, on a Standard 203(k) loan. If the HUD 203(k) Consultant determines that the home will be completely uninhabitable during the renovation phase (e.g., no functional plumbing, missing roof, or extensive structural work), up to six months of full monthly mortgage payments (PITI) can be financed directly into the loan escrow so you do not have to pay both rent and a mortgage simultaneously."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the mortgage insurance requirements on a 203(k) loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "FHA 203(k) loans require two forms of mortgage insurance: (1) An Upfront Mortgage Insurance Premium (UFMIP) of 1.75% of the base loan amount, which is rolled into the total loan balance; and (2) An annual Monthly Mortgage Insurance Premium (MIP) of 0.55% (55 basis points) of the loan balance, paid monthly as part of your mortgage payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does contractor draw disbursement work on an FHA 203(k)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Renovation funds are held in a custodial escrow account managed by the lender. On a Limited 203(k), the contractor typically receives a 50% upfront material deposit upon closing and the remaining 50% upon final completion. On a Standard 203(k), funds are disbursed in up to five progress draws following an on-site inspection and formal approval by the HUD 203(k) Consultant."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       CORE COLOR SYSTEM & VARIABLES
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-blue: #2563eb;
+      --accent-blue-light: #eff6ff;
+      --accent-amber: #d97706;
+      --accent-amber-light: #fffbeb;
+      --accent-danger: #dc2626;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --bg-app: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVIGATION BAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-stat h4 span {
+      color: #34d399;
+    }
+
+    .trust-stat p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+
+    /* -----------------------------------------------------------
+       MODE SELECTOR TABS
+    ----------------------------------------------------------- */
+    .mode-switch-wrapper {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .mode-tab-pill {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .mode-tab-pill.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-tab-pill span.sublabel {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .pane-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-title-wrap span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-select {
+      padding-left: 1rem;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.15em;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 3rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      border: 2.5px solid #ffffff;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.18);
+    }
+
+    /* Preset Chips */
+    .preset-chips-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.65rem;
+    }
+
+    .chip-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .chip-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    /* Strategy & Feature Cards */
+    .strategy-card-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .strategy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .strategy-header h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .scorecard-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--accent-emerald);
+      position: relative;
+    }
+
+    .scorecard-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #34d399;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .scorecard-label {
+      font-size: 1rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+    }
+
+    .scorecard-subtext {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .scorecard-subtext strong {
+      color: #34d399;
+    }
+
+    /* Metrics Grid */
+    .metrics-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .metrics-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card h5 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    .metric-card .metric-num {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    /* Breakdown Tables */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Excel Matrix Table */
+    .excel-table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .excel-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.65rem 0.85rem;
+      font-weight: 700;
+    }
+
+    .excel-table td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .excel-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* Action Buttons */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-excel {
+      background: #107c41; /* Microsoft Excel Brand Green */
+      color: #ffffff;
+    }
+
+    .btn-action-excel:hover {
+      background: #0d6334;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE EDUCATIONAL GUIDE & FAQ SECTION
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+    }
+
+    .guide-section h3 {
+      font-size: 1.35rem;
+      font-weight: 750;
+      color: var(--primary-navy);
+      margin: 2.25rem 0 1rem;
+      line-height: 1.35;
+    }
+
+    .guide-section p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.35rem;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .guide-section li {
+      font-size: 0.975rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--accent-blue);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.925rem;
+      color: #1e3a8a;
+    }
+
+    .comparison-grid-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.75rem 0;
+      font-size: 0.9rem;
+    }
+
+    .comparison-grid-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .comparison-grid-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .comparison-grid-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-accordion-wrap {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: 0.9rem;
+      overflow: hidden;
+      background: #ffffff;
+      transition: border-color 0.15s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--accent-emerald);
+    }
+
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+      color: var(--accent-emerald);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out;
+      background: #f8fafc;
+      border-top: 1px solid transparent;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 600px;
+      border-top-color: var(--border-color);
+    }
+
+    .faq-answer-inner {
+      padding: 1.25rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3.5rem 0 2rem;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ========================================================
+       TOP NAVIGATION
+  ======================================================== -->
+  <nav class="rr-nav" aria-label="Main Navigation">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#calculators">Calculators</a></li>
+      <li><a href="/adu-cost-calculator">ADU Cost Calculator</a></li>
+      <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC</a></li>
+      <li><a href="/seller-financing-calculator">Seller Financing</a></li>
+      <li><a href="/arv-calculator">ARV Calculator</a></li>
+      <li><a href="/wholesale-real-estate-calculator">Wholesale Modeler</a></li>
+      <li><a href="#guide" class="btn-nav-cta">FHA 203(k) Guide</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========================================================
+       BREADCRUMB STRIP
+  ======================================================== -->
+  <div class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#calculators">Mortgage &amp; Rehab Calculators</a>
+    <span class="separator">/</span>
+    <span class="current">FHA 203(k) Loan Calculator &amp; Payment Engine</span>
+  </div>
+
+  <!-- ========================================================
+       1. HERO HEADER BANNER
+  ======================================================== -->
+  <header class="calc-header-banner">
+    <div class="badge-pill-tag">
+      🛠️ 2026 HUD FHA 203(k) Renovation Underwriting Engine
+    </div>
+    <h1>FHA 203k Loan Calculator <span>&amp; Payment Engine</span></h1>
+    <p>
+      Accurately calculate monthly mortgage payments, minimum 3.5% down payments on total acquisition cost, 1.75% financed UFMIP, 10%–20% contingency reserves, and statutory 110% ARV limit compliance for Limited &amp; Standard 203(k) renovation loans.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>3.5%<span> Down</span></h4>
+        <p>Purchase + Rehab Combined</p>
+      </div>
+      <div class="trust-stat">
+        <h4>110%<span> ARV</span></h4>
+        <p>Maximum Loan Safeguard</p>
+      </div>
+      <div class="trust-stat">
+        <h4>1.75%<span> UFMIP</span></h4>
+        <p>Upfront Financed Premium</p>
+      </div>
+      <div class="trust-stat">
+        <h4>0.55%<span> MIP</span></h4>
+        <p>Annual FHA Monthly Escrow</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       CALCULATOR MODE SELECTOR (TABS)
+  ======================================================== -->
+  <div class="mode-switch-wrapper">
+    <button type="button" class="mode-tab-pill active" id="tabLimitedMode">
+      <span>⚡ Limited 203(k) Modeler</span>
+      <span class="sublabel">Up to $75,000 Minor Non-Structural Repairs</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabStandardMode">
+      <span>🏗️ Standard 203(k) Modeler</span>
+      <span class="sublabel">Major Structural, Room Additions &amp; Consultant</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabEscrowMatrix">
+      <span>📊 Itemized Escrow &amp; Reserves Matrix</span>
+      <span class="sublabel">Draws, Contingency, Soft Costs &amp; PITI Reserves</span>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-grid">
+
+    <!-- LEFT: USER INPUTS PANE -->
+    <div class="calc-inputs-pane">
+      <div class="pane-section-header">
+        <div class="pane-title-wrap">
+          <span class="icon">💼</span>
+          <h2>203(k) Transaction Parameters</h2>
+        </div>
+      </div>
+
+      <!-- Transaction Type (Purchase vs Refinance) -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selTransType">Transaction Type</label>
+          <span class="input-helper-badge" id="badgeTrans">Purchase (3.5% Down)</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selTransType" class="form-select">
+            <option value="purchase" selected>Home Purchase (Acquisition + Renovation)</option>
+            <option value="refinance">Rehab Refinance (Mortgage Payoff + Renovation)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Purchase Price / Current Property Value -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpPrice" id="lblPrice">Contract Purchase Price</label>
+          <span class="input-helper-badge" id="badgePrice">$275,000</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpPrice" class="form-input" value="275000" min="50000" max="2500000" step="5000">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngPrice" class="custom-range" value="275000" min="100000" max="1000000" step="5000">
+        </div>
+        <div class="preset-chips-bar" id="priceChips">
+          <button type="button" class="chip-btn" data-val="175000">$175k</button>
+          <button type="button" class="chip-btn active" data-val="275000">$275k</button>
+          <button type="button" class="chip-btn" data-val="350000">$350k</button>
+          <button type="button" class="chip-btn" data-val="500000">$500k</button>
+        </div>
+      </div>
+
+      <!-- Estimated Renovation / Repair Budget -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRehab">Contractor Renovation Bid</label>
+          <span class="input-helper-badge" id="badgeRehab">$45,000 (Kitchen &amp; Bath)</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpRehab" class="form-input" value="45000" min="5000" max="500000" step="2500">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngRehab" class="custom-range" value="45000" min="5000" max="250000" step="2500">
+        </div>
+        <div class="preset-chips-bar" id="rehabChips">
+          <button type="button" class="chip-btn" data-val="25000">Cosmetic ($25k)</button>
+          <button type="button" class="chip-btn active" data-val="45000">Kitchen &amp; Bath ($45k)</button>
+          <button type="button" class="chip-btn" data-val="75000">Limited Cap ($75k)</button>
+          <button type="button" class="chip-btn" data-val="125000">Standard ($125k)</button>
+          <button type="button" class="chip-btn" data-val="200000">Major Rehab ($200k)</button>
+        </div>
+      </div>
+
+      <!-- Contingency Reserve Percentage -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selContingency">Contingency Reserve (Mandatory Buffer)</label>
+          <span class="input-helper-badge" id="badgeContingency">15% Standard Buffer</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selContingency" class="form-select">
+            <option value="10">10% (Utilities on &amp; documented minor work)</option>
+            <option value="15" selected>15% (Standard HUD Recommended Buffer)</option>
+            <option value="20">20% (Utilities off / Older properties / Major structural)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Down Payment Percentage -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selDown">Down Payment Percentage</label>
+          <span class="input-helper-badge" id="badgeDown">3.5% (Min for 580+ Credit)</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selDown" class="form-select">
+            <option value="3.5" selected>3.5% (FHA Minimum - 580+ FICO Score)</option>
+            <option value="5.0">5.0%</option>
+            <option value="10.0">10.0% (Required for 500–579 FICO Score)</option>
+            <option value="15.0">15.0%</option>
+            <option value="20.0">20.0%</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Mortgage Note Interest Rate & Loan Term -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="inpRate">Mortgage Interest Rate (Annual)</label>
+          <span class="input-helper-badge">FHA 30-Year Fixed</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpRate" class="form-input no-prefix has-suffix" value="6.75" min="2.0" max="15.0" step="0.125">
+          <span class="input-suffix">%</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-label-row">
+          <label class="input-label" for="selTerm">Loan Term</label>
+          <span class="input-helper-badge">30 Years (360 Months)</span>
+        </div>
+        <div class="input-control-box">
+          <select id="selTerm" class="form-select">
+            <option value="30" selected>30-Year Fixed Amortization</option>
+            <option value="15">15-Year Fixed Amortization</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Advanced Standard 203(k) Options (Consultant & Soft Costs) -->
+      <div id="standardOptionsSection" class="strategy-card-box">
+        <div class="strategy-header">
+          <h4><span>📐</span> Standard 203(k) Soft Costs &amp; PITI Reserves</h4>
+          <span class="input-helper-badge" id="badgeStandardActive">Standard 203(k) Active</span>
+        </div>
+
+        <!-- As-Completed Appraised Value / ARV -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpARV">As-Completed Appraised Value (ARV)</label>
+            <span class="input-helper-badge" id="badgeARV">$375,000</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpARV" class="form-input" value="375000" min="50000" max="3000000" step="5000">
+          </div>
+          <p style="font-size:0.75rem; color:var(--text-light); margin-top:0.35rem;">Used to verify the HUD 110% rule: Maximum Base Loan ≤ 110% of After-Repair Value.</p>
+        </div>
+
+        <!-- Financed Mortgage Payment Reserve (Months Uninhabitable) -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="selMortgageReserves">Financed Mortgage Payment Reserves</label>
+            <span class="input-helper-badge" id="badgeReserves">0 Months (Habitable)</span>
+          </div>
+          <div class="input-control-box">
+            <select id="selMortgageReserves" class="form-select">
+              <option value="0" selected>0 Months (Property is habitable during rehab)</option>
+              <option value="2">2 Months Financed PITI</option>
+              <option value="4">4 Months Financed PITI</option>
+              <option value="6">6 Months Financed PITI (Max allowed by HUD)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Property Taxes & Hazard Insurance -->
+        <div class="input-group" style="margin-bottom:0;">
+          <div class="input-label-row">
+            <label class="input-label" for="inpTaxRate">Annual Property Tax Rate</label>
+            <span class="input-helper-badge">1.20% National Avg</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpTaxRate" class="form-input no-prefix has-suffix" value="1.20" min="0.2" max="4.0" step="0.05">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: OUTPUT RESULTS PANE -->
+    <div class="calc-results-pane">
+
+      <!-- Main Scorecard Banner -->
+      <div class="scorecard-banner">
+        <div class="scorecard-tag">Estimated Monthly Mortgage Payment</div>
+        <div class="scorecard-label" id="outScorecardDesc">Total Monthly PITI + FHA Mortgage Insurance</div>
+        <div class="scorecard-value" id="outTotalMonthlyPayment">$2,568 / mo</div>
+        <div class="scorecard-subtext">
+          <span>Total Financed Loan Amount: <strong id="outFinancedLoan">$317,640</strong></span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-overview-grid">
+        <div class="metric-card">
+          <h5>Down Payment</h5>
+          <div class="metric-num" id="outDownPayment" style="color: var(--accent-emerald-dark);">$11,541</div>
+          <div class="metric-desc">3.5% of Total Acquisition Cost</div>
+        </div>
+        <div class="metric-card">
+          <h5>Total Project Cost</h5>
+          <div class="metric-num" id="outAcquisitionCost" style="color: var(--primary-navy);">$329,750</div>
+          <div class="metric-desc">Purchase + Rehab + Reserves</div>
+        </div>
+        <div class="metric-card">
+          <h5>Monthly FHA MIP</h5>
+          <div class="metric-num" id="outMonthlyMIP" style="color: var(--accent-blue);">$143 / mo</div>
+          <div class="metric-desc">0.55% Annual FHA Escrow</div>
+        </div>
+      </div>
+
+      <!-- Monthly PITI Payment Breakdown Card -->
+      <div class="results-card">
+        <h3>📋 Monthly Housing Expense Breakdown (PITI + MIP)</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Principal &amp; Interest (P&amp;I):</td>
+              <td class="value-col" id="rowPI" style="font-weight:800; color:var(--primary-navy);">$2,062 / mo</td>
+            </tr>
+            <tr>
+              <td>FHA Monthly Mortgage Insurance Premium (0.55% MIP):</td>
+              <td class="value-col" id="rowMIP">$143 / mo</td>
+            </tr>
+            <tr>
+              <td>Estimated Property Taxes (Escrow):</td>
+              <td class="value-col" id="rowTaxes">$275 / mo</td>
+            </tr>
+            <tr>
+              <td>Homeowners Hazard Insurance (Escrow):</td>
+              <td class="value-col" id="rowInsurance">$88 / mo</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Total Monthly PITI + MIP Mortgage Payment:</td>
+              <td class="value-col" id="rowTotalPITI" style="color: var(--accent-emerald-dark); font-size:1.15rem; font-weight:900;">$2,568 / mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FHA 203(k) Loan Underwriting Breakdown Card -->
+      <div class="results-card">
+        <h3>🏛️ FHA 203(k) Loan &amp; Acquisition Breakdown</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Purchase Price (or Mortgage Payoff):</td>
+              <td class="value-col" id="rowPurchasePrice">$275,000</td>
+            </tr>
+            <tr>
+              <td>Contractor Renovation Bid:</td>
+              <td class="value-col" id="rowRehabCost">$45,000</td>
+            </tr>
+            <tr>
+              <td>Contingency Reserve (15%):</td>
+              <td class="value-col" id="rowContingency">$6,750</td>
+            </tr>
+            <tr>
+              <td>Soft Costs (Consultant, Inspection &amp; Title Fees):</td>
+              <td class="value-col" id="rowSoftCosts">$3,000</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Total Acquisition &amp; Project Cost:</td>
+              <td class="value-col" id="rowTotalAcquisition" style="color:var(--primary-navy); font-weight:800;">$329,750</td>
+            </tr>
+            <tr>
+              <td>Minimum Down Payment (3.5%):</td>
+              <td class="value-col" id="rowDownPayment" style="color:var(--accent-emerald-dark); font-weight:800;">-$11,541</td>
+            </tr>
+            <tr>
+              <td>Base FHA Loan Amount:</td>
+              <td class="value-col" id="rowBaseLoan" style="font-weight:700;">$318,209</td>
+            </tr>
+            <tr>
+              <td>Upfront Mortgage Insurance Premium (1.75% UFMIP):</td>
+              <td class="value-col" id="rowUFMIP" style="color:var(--accent-blue); font-weight:700;">+$5,569</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Total Financed FHA 203(k) Mortgage:</td>
+              <td class="value-col" id="rowFinalLoan" style="color:var(--accent-emerald-dark); font-size:1.1rem; font-weight:900;">$323,778</td>
+            </tr>
+            <tr>
+              <td>HUD 110% ARV Collateral Safeguard:</td>
+              <td class="value-col" id="rowARVCheck" style="color:var(--accent-emerald-dark); font-weight:800;">✓ Compliant (Max $412,500)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Itemized Escrow & Reserves Spreadsheet Matrix -->
+      <div class="results-card" id="escrowMatrixCard">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <h3 style="margin:0;">📊 Itemized 203(k) Escrow &amp; Draw Matrix</h3>
+          <button type="button" class="btn-action btn-action-excel" id="btnMatrixExcelDownload" style="padding:0.45rem 0.9rem; font-size:0.82rem; min-width:auto; flex:none;">
+            📥 Download Excel (.CSV)
+          </button>
+        </div>
+        <div class="excel-table-wrap">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                <th>Escrow Component</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Disbursement Timing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Contractor Hard Construction</strong></td>
+                <td>Rehab Escrow</td>
+                <td id="cellRehabHard">$45,000</td>
+                <td>Progress Draws (1–5)</td>
+              </tr>
+              <tr>
+                <td><strong>Contingency Reserve Buffer</strong></td>
+                <td>Safety Escrow</td>
+                <td id="cellContingencyReserve">$6,750</td>
+                <td>Held until final inspection</td>
+              </tr>
+              <tr>
+                <td><strong>HUD 203(k) Consultant Fee</strong></td>
+                <td>Soft Costs</td>
+                <td id="cellConsultantFee">$1,000</td>
+                <td>Disbursed at Closing / Draw</td>
+              </tr>
+              <tr>
+                <td><strong>Inspection &amp; Title Rundown Fees</strong></td>
+                <td>Soft Costs</td>
+                <td id="cellInspectionFees">$1,750</td>
+                <td>$350 per draw inspection</td>
+              </tr>
+              <tr>
+                <td><strong>Financed Mortgage PITI Reserves</strong></td>
+                <td>Payment Escrow</td>
+                <td id="cellMortgageReserves">$0</td>
+                <td>Paid monthly during vacancy</td>
+              </tr>
+              <tr style="background:#ecfdf5; font-weight:800; color:#047857;">
+                <td><strong>Total Renovation Escrow Account</strong></td>
+                <td>Total Escrow</td>
+                <td id="cellTotalEscrow">$54,500</td>
+                <td>Held in Custodial Lender Escrow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calc-actions-row">
+        <button type="button" class="btn-action btn-action-excel" id="btnDownloadExcel">
+          📊 Download 203(k) Model (.CSV)
+        </button>
+        <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+          🔗 Copy Shareable Link
+        </button>
+        <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+          🖨️ Print Loan Feasibility Memo
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE FHA 203(k) EDUCATIONAL GUIDE (2,500+ WORDS)
+  ======================================================== -->
+  <article class="guide-section" id="guide">
+
+    <h2>Comprehensive Guide: FHA 203(k) Rehab Loan &amp; Payment Calculation</h2>
+    <p>
+      In residential real estate, finding a move-in-ready home at an affordable price in competitive metropolitan markets has become increasingly difficult. Fixer-upper properties—homes requiring modernization, deferred maintenance cures, structural modifications, or major systems replacements—often represent the most lucrative opportunities for homebuyers and real estate investors. However, traditional conventional mortgages (and standard FHA financing) strictly prohibit properties with safety hazards, unpermitted additions, broken HVAC systems, peeling paint, or missing kitchens.
+    </p>
+    <p>
+      The **FHA 203(k) Rehabilitation Mortgage Insurance Program**, administered by the U.S. Department of Housing and Urban Development (HUD), is the nation's premier financing vehicle designed specifically to solve this dilemma. It allows a borrower to finance both the purchase (or refinancing) of a dwelling and the cost of its renovation through a single long-term, fixed-rate mortgage with a **low 3.5% down payment**.
+    </p>
+
+    <div class="callout-box">
+      <h4>💡 The FHA 203(k) Down Payment Rule</h4>
+      <p>
+        On a standard home purchase, a 3.5% down payment is calculated strictly against the purchase price. On an FHA 203(k) loan, HUD guidelines mandate that the **3.5% down payment is calculated against the Total Acquisition Cost** (Purchase Price + Renovation Budget + Contingency Reserve + Allowable Soft Costs). This ensures the borrower maintains 3.5% true equity across the entire completed project.
+      </p>
+    </div>
+
+    <h3>1. Limited 203(k) vs. Standard 203(k): Choosing the Right Program</h3>
+    <p>
+      HUD divides the 203(k) program into two distinct tracks based on project scope, cost, and structural complexity:
+    </p>
+
+    <table class="comparison-grid-table">
+      <thead>
+        <tr>
+          <th>Program Feature</th>
+          <th>Limited 203(k) (Streamline)</th>
+          <th>Standard 203(k) (Consultant)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Eligible Repair Budget</strong></td>
+          <td>No minimum up to $35,000 (up to $75,000 in modernized jurisdictions)</td>
+          <td>$5,000 minimum with no maximum cap (subject only to county FHA limits)</td>
+        </tr>
+        <tr>
+          <td><strong>Structural Alterations</strong></td>
+          <td>Strictly prohibited (no moving load-bearing walls or room additions)</td>
+          <td>Fully allowed (major additions, structural repairs, foundation rebuilds)</td>
+        </tr>
+        <tr>
+          <td><strong>HUD 203(k) Consultant</strong></td>
+          <td>Not required (general contractor bid is submitted directly to lender)</td>
+          <td><strong>Mandatory</strong> (FHA-approved consultant oversees work write-up &amp; draws)</td>
+        </tr>
+        <tr>
+          <td><strong>Financed Mortgage Payments</strong></td>
+          <td>Not permitted (home must remain habitable during work)</td>
+          <td>Permitted (up to 6 months of PITI payments can be financed into escrow)</td>
+        </tr>
+        <tr>
+          <td><strong>Contractor Draw Schedule</strong></td>
+          <td>Typically 2 draws: 50% upfront material deposit and 50% upon final sign-off</td>
+          <td>Up to 5 milestone progress draws based on consultant on-site inspections</td>
+        </tr>
+        <tr>
+          <td><strong>Best For</strong></td>
+          <td>New kitchens, bathroom updates, new roof, HVAC, paint, flooring, appliances</td>
+          <td>Gut renovations, structural foundation cures, ADU conversions, 2-to-4 unit rehabs</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2. How FHA 203(k) Loan Amounts Are Calculated: The 110% ARV Rule</h3>
+    <p>
+      To prevent borrowers and lenders from over-leveraging properties, HUD enforces a statutory collateral cap known as the **110% Rule**. On a purchase transaction, the Maximum Base FHA 203(k) Loan Amount is strictly governed by the <em>lesser</em> of:
+    </p>
+    <ol>
+      <li><strong>Total Acquisition Cost Formula:</strong> (Purchase Price + Total Repair Costs + Contingency Reserve + Soft Costs) × 96.5% (accounting for the 3.5% down payment).</li>
+      <li><strong>As-Completed Value (ARV) Formula:</strong> 110% of the property's As-Completed Appraised Market Value × 96.5%.</li>
+      <li><strong>Statutory County FHA Loan Limit:</strong> The maximum single-family or multi-unit loan ceiling established annually by HUD for the county where the property is located.</li>
+    </ol>
+    <p>
+      For example, if you purchase a home for $200,000 and invest $60,000 in repairs and reserves, your total project cost is $260,000, requiring a 3.5% down payment of $9,100, leaving a base loan of $250,900. An FHA-approved appraiser performs a "subject-to" appraisal determining the future value will be $300,000. 110% of $300,000 is $330,000 (which at 96.5% equals $318,450). Because $250,900 is well below $318,450, your loan is fully compliant.
+    </p>
+
+    <h3>3. Understanding 203(k) Escrow Accounts &amp; Contingency Reserves</h3>
+    <p>
+      One of the most misunderstood elements of a 203(k) loan is the custodial escrow structure. The borrower does not receive cash at closing. Instead, all renovation funds are deposited into an interest-bearing custodial escrow account managed by the lender's specialized renovation department:
+    </p>
+    <ul>
+      <li><strong>Mandatory Contingency Reserve (10% to 20%):</strong> If the contractor's bid is $50,000, a 15% contingency reserve adds $7,500 into escrow. This fund can only be drawn upon via an approved Change Order signed by the consultant and lender for unforeseen structural discoveries (e.g., hidden plumbing leaks behind shower walls or broken electrical wiring). If unused upon final project completion, this $7,500 is applied directly as a principal reduction on your mortgage!</li>
+      <li><strong>HUD Consultant Fee:</strong> Ranging from $500 to $1,500 depending on repair volume based on HUD's published fee schedule.</li>
+      <li><strong>Title Rundown &amp; Inspection Fees:</strong> Every time a progress draw is requested, an on-site inspector verifies completed milestones, and a title company performs an updated title search to ensure no mechanic's liens have been filed.</li>
+      <li><strong>Mortgage Payment Reserves (Uninhabitable Homes):</strong> On Standard 203(k) projects where major utility shutoffs or structural wall demolition make living in the home impossible, up to six months of PITI payments can be rolled into the loan so you are not burdened with dual housing costs.</li>
+    </ul>
+
+    <h3>4. Upfront and Monthly FHA Mortgage Insurance (MIP) Explained</h3>
+    <p>
+      Because FHA 203(k) loans allow high loan-to-value (up to 96.5% LTV) on distressed collateral, HUD requires two forms of mortgage insurance protection:
+    </p>
+    <ol>
+      <li><strong>Upfront Mortgage Insurance Premium (UFMIP):</strong> Exactly 1.75% of the base loan amount. This premium is almost always financed directly into the total mortgage balance rather than paid in cash at closing.</li>
+      <li><strong>Annual Mortgage Insurance Premium (MIP):</strong> In 2023, HUD reduced the annual FHA MIP rate down to **0.55% (55 basis points)** for typical 30-year mortgages with 3.5% down. This annual cost is divided by 12 and collected each month as an escrow component alongside your principal, interest, property taxes, and homeowners insurance.</li>
+    </ol>
+
+    <h3>5. Permitted vs. Non-Permitted Renovation Improvements</h3>
+    <p>
+      HUD maintains strict guidelines regarding what repairs can and cannot be financed through a 203(k) mortgage:
+    </p>
+    <ul>
+      <li><strong>Eligible Improvements (Permitted):</strong> Roof replacement, gutters, downspouts, HVAC system heating/cooling, complete plumbing &amp; electrical rewiring, kitchen remodeling (cabinets, countertops, sinks, appliances), bathroom renovations, flooring (hardwood, tile, carpet), interior/exterior painting, siding, foundation repairs, structural room additions, disability accessibility modifications, energy-efficient window/door replacements, and finishing basements or attics.</li>
+      <li><strong>Ineligible Improvements (Prohibited):</strong> Luxury additions with no core housing necessity cannot be built from scratch. This includes building new swimming pools, tennis courts, outdoor gazebos, barbecue pits, or luxury landscape fountains. However, existing damaged pools can be repaired or filled in for safety.</li>
+    </ul>
+
+    <!-- ========================================================
+         4. FREQUENTLY ASKED QUESTIONS (FAQ)
+    ======================================================== -->
+    <h3 style="margin-top: 3.5rem;">Frequently Asked Questions: FHA 203(k) Loans &amp; Payments</h3>
+
+    <div class="faq-accordion-wrap">
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is an FHA 203(k) loan?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            An FHA 203(k) loan is a government-backed mortgage insured by the Federal Housing Administration (HUD) that enables homebuyers or refinancing homeowners to combine the purchase price (or existing debt) of a home and the cost of its renovation into a single mortgage with a single monthly payment and a low 3.5% down payment.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is the difference between a Limited 203(k) and a Standard 203(k) loan?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            A <strong>Limited 203(k)</strong> (formerly Streamline 203k) is designed for minor, non-structural remodeling and cosmetic repairs capped at $35,000 (or up to $75,000 in designated pilot/modernized jurisdictions) and does not require a HUD consultant. A <strong>Standard 203(k)</strong> has a minimum repair budget of $5,000 with no upper ceiling (subject only to county FHA loan limits), permits major structural alterations, foundation work, and additions, and legally requires an FHA-approved 203(k) Consultant.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How is the 3.5% down payment calculated on an FHA 203(k) loan?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Unlike standard mortgages where down payment is based solely on the purchase price, the FHA 203(k) minimum down payment of 3.5% is calculated against the <strong>Total Acquisition Cost: (Purchase Price + Total Renovation Costs + Contingency Reserve + Allowable Soft Costs)</strong>. For example, on a $250,000 home purchase with $50,000 in repairs, the 3.5% down payment is calculated on $300,000, requiring $10,500 down.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is the FHA 203(k) 110% Rule?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            The 110% Rule is HUD's statutory collateral safeguard. For a purchase, the maximum base loan amount cannot exceed <strong>110% of the property's estimated After-Repair Value (As-Completed Appraised Value) multiplied by 96.5%</strong>. This protects both the borrower and the lender by ensuring the total borrowed funds do not exceed reasonable future market equity.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Why is a contingency reserve required on a 203(k) loan?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            HUD mandates a 10% to 20% contingency reserve on all 203(k) renovation budgets to protect against unexpected construction discoveries (e.g., hidden termite damage, dry rot, outdated electrical wiring, or broken sewer lines). If the contingency reserve funds are not spent during construction, the remaining balance is applied directly as a principal paydown on the mortgage upon final inspection.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I do the renovation work myself with an FHA 203(k) loan?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            In almost all circumstances, no. HUD requires all 203(k) repair work to be performed by licensed, insured, and experienced independent general contractors. While HUD guidelines contain a rare "Self-Help" provision, virtually no FHA-approved lenders permit it due to contractor underwriting risk and strict completion deadline milestones.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I finance my mortgage payments during construction?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes, on a Standard 203(k) loan. If the HUD 203(k) Consultant determines that the home will be completely uninhabitable during the renovation phase (e.g., no functional plumbing, missing roof, or extensive structural work), up to six months of full monthly mortgage payments (PITI) can be financed directly into the loan escrow so you do not have to pay both rent and a mortgage simultaneously.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What are the mortgage insurance requirements on a 203(k) loan?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            FHA 203(k) loans require two forms of mortgage insurance: (1) An Upfront Mortgage Insurance Premium (UFMIP) of 1.75% of the base loan amount, which is rolled into the total loan balance; and (2) An annual Monthly Mortgage Insurance Premium (MIP) of 0.55% (55 basis points) of the loan balance, paid monthly as part of your mortgage payment.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How does contractor draw disbursement work on an FHA 203(k)?</span>
+          <span class="faq-toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Renovation funds are held in a custodial escrow account managed by the lender. On a Limited 203(k), the contractor typically receives a 50% upfront material deposit upon closing and the remaining 50% upon final completion. On a Standard 203(k), funds are disbursed in up to five progress draws following an on-site inspection and formal approval by the HUD 203(k) Consultant.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="rr-footer">
+    <div class="container">
+      <div class="footer-content-grid">
+        <div class="footer-col">
+          <a href="/" class="rr-logo" style="margin-bottom: 0.75rem; display: inline-flex;">
+            Real<span>Refin</span>
+          </a>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-light);">
+            Institutional-grade renovation mortgage calculators, HUD 203(k) underwriting engines, and residential real estate investment tools designed for homebuyers, contractors, and mortgage professionals.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Renovation &amp; Refinance</h4>
+          <ul>
+            <li><a href="/203k-loan-calculator">FHA 203(k) Loan Calculator</a></li>
+            <li><a href="/adu-cost-calculator">ADU Cost Calculator</a></li>
+            <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Calculator</a></li>
+            <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+            <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs. HELOC</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Investor Suite</h4>
+          <ul>
+            <li><a href="/wholesale-real-estate-calculator">Wholesale Real Estate &amp; MAO</a></li>
+            <li><a href="/seller-financing-calculator">Seller Financing Calculator</a></li>
+            <li><a href="/arv-calculator">ARV Calculator</a></li>
+            <li><a href="/house-hacking-calculator">House Hacking Calculator</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Modeler</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company &amp; Legal</h4>
+          <ul>
+            <li><a href="/about">About RealRefin</a></li>
+            <li><a href="/contact">Contact Support</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators, FHA 203(k) underwriting models, and loan estimates are provided for educational and analytical purposes only. FHA mortgage insurance rules, consultant fees, and county loan limits vary. Final loan approval is subject to HUD guidelines and an FHA-approved lender's underwriting.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Switcher Tabs
+  const tabLimitedMode = document.getElementById('tabLimitedMode');
+  const tabStandardMode = document.getElementById('tabStandardMode');
+  const tabEscrowMatrix = document.getElementById('tabEscrowMatrix');
+
+  // Input Elements
+  const selTransType = document.getElementById('selTransType');
+  const badgeTrans = document.getElementById('badgeTrans');
+  const lblPrice = document.getElementById('lblPrice');
+  const inpPrice = document.getElementById('inpPrice');
+  const rngPrice = document.getElementById('rngPrice');
+  const badgePrice = document.getElementById('badgePrice');
+
+  const inpRehab = document.getElementById('inpRehab');
+  const rngRehab = document.getElementById('rngRehab');
+  const badgeRehab = document.getElementById('badgeRehab');
+
+  const selContingency = document.getElementById('selContingency');
+  const badgeContingency = document.getElementById('badgeContingency');
+
+  const selDown = document.getElementById('selDown');
+  const badgeDown = document.getElementById('badgeDown');
+
+  const inpRate = document.getElementById('inpRate');
+  const selTerm = document.getElementById('selTerm');
+
+  // Standard 203(k) Advanced Inputs
+  const standardOptionsSection = document.getElementById('standardOptionsSection');
+  const badgeStandardActive = document.getElementById('badgeStandardActive');
+  const inpARV = document.getElementById('inpARV');
+  const badgeARV = document.getElementById('badgeARV');
+  const selMortgageReserves = document.getElementById('selMortgageReserves');
+  const badgeReserves = document.getElementById('badgeReserves');
+  const inpTaxRate = document.getElementById('inpTaxRate');
+
+  // Output Elements
+  const outScorecardDesc = document.getElementById('outScorecardDesc');
+  const outTotalMonthlyPayment = document.getElementById('outTotalMonthlyPayment');
+  const outFinancedLoan = document.getElementById('outFinancedLoan');
+  const outDownPayment = document.getElementById('outDownPayment');
+  const outAcquisitionCost = document.getElementById('outAcquisitionCost');
+  const outMonthlyMIP = document.getElementById('outMonthlyMIP');
+
+  // Monthly Table Rows
+  const rowPI = document.getElementById('rowPI');
+  const rowMIP = document.getElementById('rowMIP');
+  const rowTaxes = document.getElementById('rowTaxes');
+  const rowInsurance = document.getElementById('rowInsurance');
+  const rowTotalPITI = document.getElementById('rowTotalPITI');
+
+  // Acquisition Table Rows
+  const rowPurchasePrice = document.getElementById('rowPurchasePrice');
+  const rowRehabCost = document.getElementById('rowRehabCost');
+  const rowContingency = document.getElementById('rowContingency');
+  const rowSoftCosts = document.getElementById('rowSoftCosts');
+  const rowTotalAcquisition = document.getElementById('rowTotalAcquisition');
+  const rowDownPayment = document.getElementById('rowDownPayment');
+  const rowBaseLoan = document.getElementById('rowBaseLoan');
+  const rowUFMIP = document.getElementById('rowUFMIP');
+  const rowFinalLoan = document.getElementById('rowFinalLoan');
+  const rowARVCheck = document.getElementById('rowARVCheck');
+
+  // Escrow Matrix Cells
+  const cellRehabHard = document.getElementById('cellRehabHard');
+  const cellContingencyReserve = document.getElementById('cellContingencyReserve');
+  const cellConsultantFee = document.getElementById('cellConsultantFee');
+  const cellInspectionFees = document.getElementById('cellInspectionFees');
+  const cellMortgageReserves = document.getElementById('cellMortgageReserves');
+  const cellTotalEscrow = document.getElementById('cellTotalEscrow');
+  const escrowMatrixCard = document.getElementById('escrowMatrixCard');
+
+  // Buttons
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+  const btnMatrixExcelDownload = document.getElementById('btnMatrixExcelDownload');
+
+  let activeProgram = 'limited'; // 'limited', 'standard', 'escrow'
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  // Sync Input & Range Slider
+  function syncPair(numInp, rngInp, callback) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      if (callback) callback();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      if (callback) callback();
+    });
+  }
+
+  syncPair(inpPrice, rngPrice, recalculate);
+  syncPair(inpRehab, rngRehab, () => {
+    autoAdjustProgramBasedOnRehab();
+    recalculate();
+  });
+
+  // Price Chips
+  document.querySelectorAll('#priceChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#priceChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const val = parseInt(this.getAttribute('data-val'), 10);
+      inpPrice.value = val;
+      rngPrice.value = val;
+      recalculate();
+    });
+  });
+
+  // Rehab Chips
+  document.querySelectorAll('#rehabChips .chip-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#rehabChips .chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const val = parseInt(this.getAttribute('data-val'), 10);
+      inpRehab.value = val;
+      rngRehab.value = val;
+      autoAdjustProgramBasedOnRehab();
+      recalculate();
+    });
+  });
+
+  function autoAdjustProgramBasedOnRehab() {
+    const rehab = parseFloat(inpRehab.value) || 0;
+    if (rehab > 75000 && activeProgram === 'limited') {
+      setProgram('standard', false);
+    }
+  }
+
+  // Transaction Select
+  selTransType.addEventListener('change', () => {
+    if (selTransType.value === 'refinance') {
+      lblPrice.textContent = 'Existing Mortgage Balance / Payoff';
+      badgeTrans.textContent = 'Rehab Refinance';
+    } else {
+      lblPrice.textContent = 'Contract Purchase Price';
+      badgeTrans.textContent = 'Purchase (3.5% Down)';
+    }
+    recalculate();
+  });
+
+  selContingency.addEventListener('change', () => {
+    badgeContingency.textContent = `${selContingency.value}% Contingency Buffer`;
+    recalculate();
+  });
+
+  selDown.addEventListener('change', () => {
+    badgeDown.textContent = `${selDown.value}% Down Payment`;
+    recalculate();
+  });
+
+  inpRate.addEventListener('input', recalculate);
+  selTerm.addEventListener('change', recalculate);
+  inpARV.addEventListener('input', recalculate);
+  selMortgageReserves.addEventListener('change', recalculate);
+  inpTaxRate.addEventListener('input', recalculate);
+
+  // Tab Switcher
+  function setProgram(prog, shouldScroll = false) {
+    activeProgram = prog;
+    tabLimitedMode.classList.toggle('active', prog === 'limited');
+    tabStandardMode.classList.toggle('active', prog === 'standard');
+    tabEscrowMatrix.classList.toggle('active', prog === 'escrow');
+
+    if (prog === 'standard') {
+      badgeStandardActive.textContent = 'Standard 203(k) Active (Consultant Required)';
+      badgeStandardActive.style.background = '#e0f2fe';
+      badgeStandardActive.style.color = '#0369a1';
+      standardOptionsSection.style.display = 'block';
+      if (shouldScroll) standardOptionsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else if (prog === 'escrow') {
+      standardOptionsSection.style.display = 'block';
+      if (shouldScroll && escrowMatrixCard) escrowMatrixCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      // Limited Mode
+      badgeStandardActive.textContent = 'Limited 203(k) Active (No Consultant)';
+      badgeStandardActive.style.background = '#ecfdf5';
+      badgeStandardActive.style.color = '#047857';
+      standardOptionsSection.style.display = 'block';
+    }
+    recalculate();
+  }
+
+  tabLimitedMode.addEventListener('click', () => setProgram('limited', false));
+  tabStandardMode.addEventListener('click', () => setProgram('standard', true));
+  tabEscrowMatrix.addEventListener('click', () => setProgram('escrow', true));
+
+  // Recalculate Logic
+  function recalculate() {
+    const isPurchase = selTransType.value === 'purchase';
+    const price = Math.max(0, parseFloat(inpPrice.value) || 0);
+    const rehab = Math.max(5000, parseFloat(inpRehab.value) || 0);
+    const contingencyPct = (parseFloat(selContingency.value) || 15) / 100;
+    const downPct = (parseFloat(selDown.value) || 3.5) / 100;
+    const noteRate = (parseFloat(inpRate.value) || 6.75) / 100;
+    const termYears = parseInt(selTerm.value, 10) || 30;
+    const nPayments = termYears * 12;
+
+    const isStandard = activeProgram === 'standard' || rehab > 75000;
+
+    badgePrice.textContent = formatMoney(price);
+    badgeRehab.textContent = formatMoney(rehab);
+
+    // Default ARV if not set
+    let arv = parseFloat(inpARV.value) || (price + rehab * 1.25);
+    badgeARV.textContent = formatMoney(arv);
+
+    // 1. Contingency Reserve
+    const contingencyAmount = Math.round(rehab * contingencyPct);
+
+    // 2. Soft Costs (Consultant & Inspections)
+    let consultantFee = 0;
+    let inspectionFees = 0;
+    let permitTitleFees = 0;
+
+    if (isStandard) {
+      // HUD Consultant Fee schedule
+      if (rehab <= 15000) consultantFee = 600;
+      else if (rehab <= 30000) consultantFee = 800;
+      else if (rehab <= 50000) consultantFee = 1000;
+      else if (rehab <= 75000) consultantFee = 1200;
+      else if (rehab <= 100000) consultantFee = 1400;
+      else consultantFee = 1600;
+
+      // 5 draw inspections @ $350 each
+      inspectionFees = 5 * 350;
+      permitTitleFees = 1250;
+    } else {
+      // Limited 203k: No consultant, 2 draw inspections
+      consultantFee = 0;
+      inspectionFees = 2 * 350;
+      permitTitleFees = 650;
+    }
+
+    const totalSoftCosts = consultantFee + inspectionFees + permitTitleFees;
+
+    // 3. Preliminary P&I for Financed Mortgage Payments
+    const basePITIApproxMonthly = Math.round((price + rehab) * 0.0075);
+    const nReserveMonths = isStandard ? parseInt(selMortgageReserves.value, 10) || 0 : 0;
+    badgeReserves.textContent = nReserveMonths > 0 ? `${nReserveMonths} Months Financed PITI` : '0 Months (Habitable)';
+    const financedMortgageReserveAmount = nReserveMonths * basePITIApproxMonthly;
+
+    // 4. Total Acquisition Cost (Combined Base Project)
+    const totalAcquisitionCost = price + rehab + contingencyAmount + totalSoftCosts + financedMortgageReserveAmount;
+
+    // 5. Down Payment (3.5% on Total Acquisition Cost)
+    const downPaymentAmount = Math.round(totalAcquisitionCost * downPct);
+
+    // 6. Base Loan Amount (Before UFMIP)
+    const baseLoanAmount = totalAcquisitionCost - downPaymentAmount;
+
+    // 7. HUD 110% ARV Cap Rule Check
+    // Maximum Base Loan = 110% of ARV * (1 - Down%)
+    const maxAllowed110Loan = Math.round((arv * 1.10) * (1 - downPct));
+    const isARVCompliant = baseLoanAmount <= maxAllowed110Loan;
+
+    // 8. Upfront Mortgage Insurance Premium (UFMIP 1.75%)
+    const ufmipAmount = Math.round(baseLoanAmount * 0.0175);
+
+    // 9. Total Financed FHA Loan Amount (Base Loan + UFMIP)
+    const finalFinancedLoan = baseLoanAmount + ufmipAmount;
+
+    // 10. Monthly Principal & Interest Payment
+    let monthlyPI = 0;
+    if (finalFinancedLoan > 0 && noteRate > 0) {
+      const monthlyRate = noteRate / 12;
+      monthlyPI = finalFinancedLoan * (monthlyRate * Math.pow(1 + monthlyRate, nPayments)) / (Math.pow(1 + monthlyRate, nPayments) - 1);
+    }
+
+    // 11. Monthly FHA MIP (0.55% annual)
+    const annualMIPRate = 0.0055;
+    const monthlyMIP = Math.round((finalFinancedLoan * annualMIPRate) / 12);
+
+    // 12. Monthly Property Taxes (based on estimated future value)
+    const taxRate = (parseFloat(inpTaxRate.value) || 1.20) / 100;
+    const monthlyTaxes = Math.round((arv * taxRate) / 12);
+
+    // 13. Monthly Hazard Insurance (approx $1,050/yr standard)
+    const monthlyInsurance = Math.round(1050 / 12);
+
+    // 14. Total Monthly PITI Payment
+    const totalMonthlyPITI = Math.round(monthlyPI + monthlyMIP + monthlyTaxes + monthlyInsurance);
+
+    // -----------------------------------------------------------
+    // RENDER OUTPUTS
+    // -----------------------------------------------------------
+    outScorecardDesc.textContent = `${isStandard ? 'Standard' : 'Limited'} 203(k) · ${termYears}-Yr Fixed @ ${(noteRate * 100).toFixed(2)}%`;
+    outTotalMonthlyPayment.textContent = `${formatMoney(totalMonthlyPITI)} / mo`;
+    outFinancedLoan.textContent = formatMoney(finalFinancedLoan);
+
+    outDownPayment.textContent = formatMoney(downPaymentAmount);
+    outAcquisitionCost.textContent = formatMoney(totalAcquisitionCost);
+    outMonthlyMIP.textContent = `${formatMoney(monthlyMIP)} / mo`;
+
+    // Monthly Rows
+    rowPI.textContent = `${formatMoney(monthlyPI)} / mo`;
+    rowMIP.textContent = `${formatMoney(monthlyMIP)} / mo (0.55% Annual)`;
+    rowTaxes.textContent = `${formatMoney(monthlyTaxes)} / mo (${(taxRate * 100).toFixed(2)}%)`;
+    rowInsurance.textContent = `${formatMoney(monthlyInsurance)} / mo`;
+    rowTotalPITI.textContent = `${formatMoney(totalMonthlyPITI)} / mo`;
+
+    // Acquisition Rows
+    rowPurchasePrice.textContent = formatMoney(price);
+    rowRehabCost.textContent = formatMoney(rehab);
+    rowContingency.textContent = `${formatMoney(contingencyAmount)} (${(contingencyPct * 100).toFixed(0)}%)`;
+    rowSoftCosts.textContent = `${formatMoney(totalSoftCosts + financedMortgageReserveAmount)} (${isStandard ? 'Consultant + Draws' : 'Limited Fees'})`;
+    rowTotalAcquisition.textContent = formatMoney(totalAcquisitionCost);
+    rowDownPayment.textContent = `-${formatMoney(downPaymentAmount)} (${(downPct * 100).toFixed(1)}%)`;
+    rowBaseLoan.textContent = formatMoney(baseLoanAmount);
+    rowUFMIP.textContent = `+${formatMoney(ufmipAmount)} (1.75% Financed)`;
+    rowFinalLoan.textContent = formatMoney(finalFinancedLoan);
+
+    if (isARVCompliant) {
+      rowARVCheck.textContent = `✓ Compliant (Max 110% ARV Cap: ${formatMoney(maxAllowed110Loan)})`;
+      rowARVCheck.style.color = 'var(--accent-emerald-dark)';
+    } else {
+      rowARVCheck.textContent = `⚠️ Exceeds 110% ARV Cap (${formatMoney(maxAllowed110Loan)}) - Additional Cash Required`;
+      rowARVCheck.style.color = 'var(--accent-danger)';
+    }
+
+    // Escrow Matrix Table Cells
+    cellRehabHard.textContent = formatMoney(rehab);
+    cellContingencyReserve.textContent = formatMoney(contingencyAmount);
+    cellConsultantFee.textContent = formatMoney(consultantFee);
+    cellInspectionFees.textContent = formatMoney(inspectionFees + permitTitleFees);
+    cellMortgageReserves.textContent = formatMoney(financedMortgageReserveAmount);
+    cellTotalEscrow.textContent = formatMoney(rehab + contingencyAmount + totalSoftCosts + financedMortgageReserveAmount);
+  }
+
+  // DYNAMIC EXCEL (.CSV) DOWNLOAD GENERATOR
+  function downloadExcelCSV() {
+    const isPurchase = selTransType.value === 'purchase';
+    const price = parseFloat(inpPrice.value) || 0;
+    const rehab = parseFloat(inpRehab.value) || 0;
+    const contingencyPct = parseFloat(selContingency.value) || 15;
+    const downPct = parseFloat(selDown.value) || 3.5;
+    const noteRate = parseFloat(inpRate.value) || 6.75;
+    const termYears = parseInt(selTerm.value, 10) || 30;
+    const arv = parseFloat(inpARV.value) || (price + rehab * 1.25);
+    const isStandard = activeProgram === 'standard' || rehab > 75000;
+
+    let csv = `REAL REFIN - FHA 203(k) REHABILITATION LOAN UNDERWRITING SPREADSHEET MODEL\n`;
+    csv += `Official Source: https://realrefin.com/203k-loan-calculator\n`;
+    csv += `Export Timestamp: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}\n\n`;
+
+    csv += `SECTION 1: TRANSACTION & LOAN PARAMETERS,VALUE,NOTES\n`;
+    csv += `Transaction Type,"${isPurchase ? 'Home Purchase + Renovation' : 'Rehab Refinance'}",Acquisition structure\n`;
+    csv += `203(k) Program Variant,"${isStandard ? 'Standard 203(k) (Consultant Required)' : 'Limited 203(k) (Non-Structural)'}",HUD program category\n`;
+    csv += `Contract Purchase Price / Payoff,$${price.toFixed(2)},Property base price\n`;
+    csv += `Contractor Renovation Bid,$${rehab.toFixed(2)},Itemized scope of work\n`;
+    csv += `Contingency Reserve Percentage,${contingencyPct}%,Mandatory cost-overrun reserve\n`;
+    csv += `Minimum Down Payment Percentage,${downPct}%,Calculated on Total Acquisition Cost\n`;
+    csv += `Mortgage Interest Rate,${noteRate}%,Note rate\n`;
+    csv += `Loan Term,${termYears} Years,Fixed amortization\n`;
+    csv += `As-Completed Appraised Value (ARV),$${arv.toFixed(2)},Estimated future value\n\n`;
+
+    csv += `SECTION 2: 203(k) TOTAL ACQUISITION & LOAN BREAKDOWN,AMOUNT,NOTES / HUD RULES\n`;
+    csv += `Purchase Price (or Mortgage Payoff),$"${price.toFixed(2)}","Contract purchase price"\n`;
+    csv += `Hard Renovation Bid,$"${rehab.toFixed(2)}","General contractor work bid"\n`;
+    csv += `Contingency Reserve Buffer,$"${cellContingencyReserve.textContent.replace('$', '')}","10-20% held in escrow for change orders"\n`;
+    csv += `HUD Consultant & Inspection Soft Costs,$"${(parseFloat(cellConsultantFee.textContent.replace('$', '').replace(',', '')) + parseFloat(cellInspectionFees.textContent.replace('$', '').replace(',', ''))).toFixed(2)}","Plan write-up & draw milestone reviews"\n`;
+    csv += `Financed Mortgage Payments (PITI Reserve),$"${cellMortgageReserves.textContent.replace('$', '')}","Up to 6 mos if uninhabitable"\n`;
+    csv += `TOTAL PROJECT ACQUISITION COST,$"${rowTotalAcquisition.textContent.replace('$', '')}","Acquisition Basis for Down Payment"\n`;
+    csv += `Borrower Down Payment Deduction,-$"${outDownPayment.textContent.replace('$', '')}","3.5% minimum cash required at closing"\n`;
+    csv += `Base FHA 203(k) Loan Amount,$"${rowBaseLoan.textContent.replace('$', '')}","Eligible base borrowing amount"\n`;
+    csv += `Upfront Mortgage Insurance Premium (1.75% UFMIP),$"${rowUFMIP.textContent.replace('$', '').replace('+', '')}","Financed directly into loan"\n`;
+    csv += `TOTAL FINANCED FHA MORTGAGE BALANCE,$"${rowFinalLoan.textContent.replace('$', '')}","Final Promissory Note Balance"\n\n`;
+
+    csv += `SECTION 3: MONTHLY HOUSING EXPENSE (PITI + MIP),AMOUNT,COMPONENT\n`;
+    csv += `Monthly Principal & Interest (P&I),$"${rowPI.textContent.replace('$', '').replace(' / mo', '')}",30-Yr Fixed Amortization\n`;
+    csv += `FHA Monthly Mortgage Insurance (0.55% MIP),$"${rowMIP.textContent.replace('$', '').replace(' / mo (0.55% Annual)', '')}",Monthly FHA Escrow\n`;
+    csv += `Monthly Property Tax Escrow,$"${rowTaxes.textContent.replace('$', '').split(' / mo')[0]}",Future assessed tax escrow\n`;
+    csv += `Monthly Homeowners Hazard Insurance,$"${rowInsurance.textContent.replace('$', '').replace(' / mo', '')}",Hazard insurance escrow\n`;
+    csv += `TOTAL ESTIMATED MONTHLY PAYMENT,$"${rowTotalPITI.textContent.replace('$', '').replace(' / mo', '')}",Total Monthly Housing Outlay\n\n`;
+
+    csv += `HUD STATUTORY SAFEGUARDS & RULES\n`;
+    csv += `"110% ARV Cap Rule","Base Loan Amount cannot exceed 110% of After-Repair Value x 96.5%."\n`;
+    csv += `"Contingency Refund","Unused contingency reserve funds are applied as an automatic principal paydown."\n`;
+    csv += `"Down Payment Basis","Down payment must be calculated on Purchase + Rehab + Reserves."\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `realrefin-203k-loan-calculator-${price}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  if (btnDownloadExcel) btnDownloadExcel.addEventListener('click', downloadExcelCSV);
+  if (btnMatrixExcelDownload) btnMatrixExcelDownload.addEventListener('click', downloadExcelCSV);
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('trans', selTransType.value);
+    url.searchParams.set('price', inpPrice.value);
+    url.searchParams.set('rehab', inpRehab.value);
+    url.searchParams.set('contingency', selContingency.value);
+    url.searchParams.set('down', selDown.value);
+    url.searchParams.set('rate', inpRate.value);
+    url.searchParams.set('term', selTerm.value);
+    url.searchParams.set('arv', inpARV.value);
+    url.searchParams.set('program', activeProgram);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL State
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('trans')) selTransType.value = p.get('trans');
+    if (p.has('price')) {
+      inpPrice.value = p.get('price');
+      rngPrice.value = p.get('price');
+      document.querySelectorAll('#priceChips .chip-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-val') === p.get('price'));
+      });
+    }
+    if (p.has('rehab')) {
+      inpRehab.value = p.get('rehab');
+      rngRehab.value = p.get('rehab');
+      document.querySelectorAll('#rehabChips .chip-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-val') === p.get('rehab'));
+      });
+    }
+    if (p.has('contingency')) selContingency.value = p.get('contingency');
+    if (p.has('down')) selDown.value = p.get('down');
+    if (p.has('rate')) inpRate.value = p.get('rate');
+    if (p.has('term')) selTerm.value = p.get('term');
+    if (p.has('arv')) inpARV.value = p.get('arv');
+    if (p.has('program')) {
+      setProgram(p.get('program'), false);
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>
