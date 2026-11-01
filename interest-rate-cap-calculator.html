@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interest Rate Cap Calculator | SOFR Rate Cap Pricing & Chatham Benchmark</title>
+  <meta name="description" content="Free commercial real estate interest rate cap calculator modeling SOFR strike rate pricing, Chatham Financial benchmarks, upfront cap premium costs, lender escrow reserves, and rental cap rates.">
+  <meta name="keywords" content="chatham rate cap calculator, chatham interest rate cap calculator, interest rate cap calculator, chatham financial rate cap calculator, chatham financial interest rate cap calculator, cap rate calculator rental, sofr rate cap cost calculator, commercial real estate rate cap pricer">
+  <link rel="canonical" href="https://realrefin.com/interest-rate-cap-calculator">
+  
+  <meta property="og:title" content="Interest Rate Cap Calculator | SOFR Rate Cap Pricing & Chatham Benchmark">
+  <meta property="og:description" content="Calculate commercial real estate SOFR rate cap costs, maximum all-in borrowing rates, counterparty payouts, and lender escrow reserves based on Chatham Financial market standards.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/interest-rate-cap-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/interest-rate-cap-calculator#app",
+        "name": "RealRefin Interest Rate Cap Calculator & SOFR Hedge Modeler",
+        "url": "https://realrefin.com/interest-rate-cap-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional commercial real estate interest rate cap pricing calculator. Models SOFR strike rates, Chatham Financial benchmark market estimates, lender escrow reserves, and rental property cap rates.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Commercial Debt Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Interest Rate Cap Calculator",
+            "item": "https://realrefin.com/interest-rate-cap-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an interest rate cap and why is it used in commercial real estate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An interest rate cap is an over-the-counter (OTC) derivative contract between a commercial borrower and a financial institution (counterparty). It places a contractual ceiling (strike rate) on a floating interest rate benchmark, such as 30-Day Average SOFR or 1-Month Term SOFR. If the benchmark rate rises above the agreed strike rate, the cap counterparty pays the borrower the difference, protecting project cash flow and ensuring the borrower can continue servicing their debt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Chatham Financial price an interest rate cap?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Chatham Financial and major institutional cap providers price interest rate caps by valuing each individual quarterly or monthly option (known as a 'caplet') using the Black-76 option pricing framework. The key pricing determinants include the forward SOFR interest rate curve, the strike rate relative to the market forward rate, the term (tenor) of the cap, market implied interest rate volatility, and counterparty credit rating requirements (such as A-/A3)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between an Interest Rate Cap and a Rental Cap Rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An Interest Rate Cap is a financial hedging derivative purchased by a commercial borrower to set a maximum ceiling on floating mortgage rates (e.g., SOFR capped at 3.50%). In contrast, a Rental Cap Rate (Capitalization Rate) is a real estate investment valuation metric representing the unleveraged annual return of a property, calculated by dividing Net Operating Income (NOI) by the current market purchase price (e.g., $60,000 NOI ÷ $1,000,000 Value = 6.0% Cap Rate)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do Fannie Mae, Freddie Mac, and bridge lenders require rate caps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Agency and bridge lenders require rate caps on floating-rate commercial loans to mitigate default risk caused by rising interest rate shocks. By capping the reference benchmark, the lender guarantees that the property's Debt Service Coverage Ratio (DSCR) will not fall below a sustainable threshold (such as 1.05x or 1.10x), protecting both the lender and borrower from foreclosure during periods of central bank monetary tightening."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is a lender rate cap replacement escrow calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When an initial interest rate cap has a term shorter than the underlying loan (for example, a 2-year cap on a 3-year or 5-year loan), commercial lenders mandate a replacement rate cap escrow reserve. Lenders calculate the projected cost to purchase a replacement cap at maturity using future forward SOFR curves and require the sponsor to deposit funds either upfront or via monthly escrows spread across the initial term."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What replaced LIBOR for commercial real estate rate caps?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Secured Overnight Financing Rate (SOFR)—specifically 30-day Average SOFR and CME 1-Month Term SOFR—has fully replaced USD LIBOR as the standard reference benchmark for commercial real estate floating-rate mortgages and interest rate hedging contracts."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MODE SELECTOR (TABS)
+    ----------------------------------------------------------- */
+    .mode-switch-wrapper {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .mode-tab-pill {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      background: transparent;
+    }
+
+    .mode-tab-pill.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-tab-pill span.sublabel {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-section-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-section-header span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Quick Preset Chips */
+    .preset-chips-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      padding: 0.25rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    .chip-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    /* Toggle Grid (Tenor & Volatility) */
+    .toggle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .toggle-btn {
+      padding: 0.65rem 0.5rem;
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-align: center;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .toggle-btn:hover {
+      border-color: #cbd5e1;
+      color: var(--primary-navy);
+    }
+
+    .toggle-btn.active {
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Primary Scorecard */
+    .scorecard-banner {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      text-align: center;
+    }
+
+    .scorecard-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .scorecard-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    /* Rate Comparison Cards Grid */
+    .rates-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .rates-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rate-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .rate-card h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .rate-card .rate-num {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .rate-card .rate-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Detailed Breakdown Card */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Scenario Simulation Table */
+    .scenario-table-wrap {
+      overflow-x: auto;
+      margin-top: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .scenario-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .scenario-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.65rem 0.85rem;
+      font-weight: 700;
+    }
+
+    .scenario-table td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .scenario-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .scenario-table tr.current-env td {
+      background: #ecfdf5;
+      font-weight: 700;
+    }
+
+    .tag-payout {
+      color: var(--accent-emerald-dark);
+      font-weight: 700;
+    }
+
+    .tag-no-payout {
+      color: var(--text-light);
+    }
+
+    /* Action Buttons Group */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (1,800+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box.warning {
+      border-left-color: var(--accent-amber);
+      background: var(--accent-amber-light);
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Comparison Table (Rate Cap vs Cap Rate) */
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.15rem 1.25rem;
+      text-align: left;
+      background: #ffffff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Usability Optimization */
+    @media (max-width: 768px) {
+      input, select, textarea, .input-control {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+      .calc-header-banner {
+        padding: 1.5rem 1.15rem !important;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.7rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#tools">All Calculators</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/hard-money-loan-calculator">Hard Money</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="btn-nav-cta">Contact Us</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Investor &amp; Commercial Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Interest Rate Cap Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>🛡️</span> SOFR Hedging &amp; Chatham Benchmark Engine
+    </div>
+    <h1>
+      Interest Rate Cap Calculator <span>&amp; Chatham Benchmark Modeler</span>
+    </h1>
+    <p>
+      Price commercial real estate interest rate caps on SOFR-indexed floating debt. Calculate upfront option premiums, maximum all-in borrowing rates, counterparty hedge payouts, and lender replacement escrow reserves matching institutional standards.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>1-Mo Term SOFR</h4>
+        <p>Post-LIBOR Derivative Standard</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Black-76 Pricing</h4>
+        <p>Institutional Option Model</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Escrow Modeler</h4>
+        <p>Fannie, Freddie &amp; Debt Fund Rules</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Dual-Engine</h4>
+        <p>Rate Cap + Rental Cap Rate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CALCULATOR MODE SELECTOR
+  ======================================================== -->
+  <div class="mode-switch-wrapper">
+    <button type="button" class="mode-tab-pill active" id="tabRateCap">
+      <span>🛡️ SOFR Interest Rate Cap (Debt Hedge)</span>
+      <span class="sublabel">Chatham Financial Market Pricing &amp; Escrow</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabRentalCap">
+      <span>🏢 Rental Cap Rate (Property Yield)</span>
+      <span class="sublabel">Capitalization Rate &amp; NOI Calculator</span>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE: MODE 1 (RATE CAP)
+  ======================================================== -->
+  <div id="paneRateCap" class="calc-engine-container">
+    <div class="calc-grid">
+
+      <!-- LEFT: USER INPUTS -->
+      <div class="calc-inputs-pane">
+        <div class="pane-section-header">
+          <span class="icon">📊</span>
+          <h2>Loan &amp; Hedging Structure</h2>
+        </div>
+
+        <!-- Notional / Loan Balance -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpNotional">Loan Amount (Notional Balance)</label>
+            <span class="input-helper-badge" id="badgeNotional">$10,000,000</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpNotional" class="form-input" value="10000000" min="250000" max="250000000" step="250000">
+          </div>
+          <div class="preset-chips-bar">
+            <button type="button" class="chip-btn" data-val="2500000">$2.5M</button>
+            <button type="button" class="chip-btn" data-val="5000000">$5M</button>
+            <button type="button" class="chip-btn active" data-val="10000000">$10M</button>
+            <button type="button" class="chip-btn" data-val="25000000">$25M</button>
+            <button type="button" class="chip-btn" data-val="50000000">$50M</button>
+          </div>
+        </div>
+
+        <!-- Reference Index: 1-Month Term SOFR -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpSOFR">Current 1-Month Term SOFR</label>
+            <span class="input-helper-badge">Benchmark Index</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpSOFR" class="form-input no-prefix has-suffix" value="4.80" min="0.00" max="15.00" step="0.05">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngSOFR" class="custom-range" value="4.80" min="2.00" max="8.00" step="0.05">
+          </div>
+        </div>
+
+        <!-- Lender Spread / Margin -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpMargin">Lender Margin / Spread</label>
+            <span class="input-helper-badge">Over SOFR (+275 bps)</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpMargin" class="form-input no-prefix has-suffix" value="2.75" min="0.50" max="10.00" step="0.05">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngMargin" class="custom-range" value="2.75" min="1.00" max="6.00" step="0.05">
+          </div>
+        </div>
+
+        <!-- Cap Strike Rate -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpStrike">Cap Strike Rate (Index Ceiling)</label>
+            <span class="input-helper-badge">Ceiling on SOFR</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpStrike" class="form-input no-prefix has-suffix" value="3.50" min="1.00" max="10.00" step="0.25">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="preset-chips-bar" id="strikePresets">
+            <button type="button" class="chip-btn" data-val="2.50">2.50% Strike</button>
+            <button type="button" class="chip-btn" data-val="3.00">3.00% Strike</button>
+            <button type="button" class="chip-btn active" data-val="3.50">3.50% Strike</button>
+            <button type="button" class="chip-btn" data-val="4.00">4.00% Strike</button>
+            <button type="button" class="chip-btn" data-val="4.50">4.50% Strike</button>
+          </div>
+        </div>
+
+        <!-- Cap Term / Tenor -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Cap Term (Tenor)</label>
+            <span class="input-helper-badge" id="badgeTerm">24 Months</span>
+          </div>
+          <div class="toggle-grid" id="tenorToggles">
+            <button type="button" class="toggle-btn" data-tenor="1">1 Year (12 Mo)</button>
+            <button type="button" class="toggle-btn active" data-tenor="2">2 Years (24 Mo)</button>
+            <button type="button" class="toggle-btn" data-tenor="3">3 Years (36 Mo)</button>
+          </div>
+        </div>
+
+        <!-- Market Volatility Environment -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Interest Rate Volatility</label>
+            <span class="input-helper-badge">Pricing Curve Shift</span>
+          </div>
+          <div class="toggle-grid" id="volToggles">
+            <button type="button" class="toggle-btn" data-vol="0.25">Low (25%)</button>
+            <button type="button" class="toggle-btn active" data-vol="0.38">Moderate (38%)</button>
+            <button type="button" class="toggle-btn" data-vol="0.55">Elevated (55%)</button>
+          </div>
+        </div>
+
+        <!-- Escrow Reserve Horizon -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpEscrowMonths">Lender Replacement Reserve Horizon</label>
+            <span class="input-helper-badge">Fannie / Freddie Rule</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpEscrowMonths" class="form-input no-prefix has-suffix" value="12" min="6" max="36" step="1">
+            <span class="input-suffix">Months</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: OUTPUT RESULTS PANE -->
+      <div class="calc-results-pane">
+
+        <!-- Main Upfront Cap Cost Scorecard -->
+        <div class="scorecard-banner">
+          <div class="scorecard-tag">Estimated Institutional Cap Cost</div>
+          <div class="scorecard-label">Upfront Option Premium (Chatham Benchmark)</div>
+          <div class="scorecard-value" id="outPremiumDollars">$142,500</div>
+          <div class="scorecard-subtext">
+            <span id="outPremiumBps">142.5 bps (1.43% of Notional)</span> • 
+            <span id="outTermLabel" style="color: var(--accent-emerald-dark); font-weight:800;">2-Year Term</span>
+          </div>
+        </div>
+
+        <!-- Rates Overview Grid -->
+        <div class="rates-overview-grid">
+          <div class="rate-card">
+            <h5>Max All-In Rate</h5>
+            <div class="rate-num" id="outMaxRate" style="color: var(--accent-emerald-dark);">6.25%</div>
+            <div class="rate-desc">Strike (3.50%) + Margin (2.75%)</div>
+          </div>
+          <div class="rate-card">
+            <h5>Current Unhedged</h5>
+            <div class="rate-num" id="outUnhedgedRate" style="color: var(--accent-danger);">7.55%</div>
+            <div class="rate-desc">SOFR (4.80%) + Margin (2.75%)</div>
+          </div>
+          <div class="rate-card">
+            <h5>Effective Net Rate</h5>
+            <div class="rate-num" id="outEffectiveRate" style="color: var(--primary-navy);">6.25%</div>
+            <div class="rate-desc">Capped by Counterparty</div>
+          </div>
+        </div>
+
+        <!-- Cash Flow & Hedge Payout Breakdown -->
+        <div class="results-card">
+          <h3>💰 Monthly Cash Flow &amp; Debt Service Breakdown</h3>
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td>Unhedged Monthly Debt Service:</td>
+                <td class="value-col" id="outUnhedgedPayment">$62,917 /mo</td>
+              </tr>
+              <tr>
+                <td>Capped Maximum Monthly Debt Service:</td>
+                <td class="value-col" id="outCappedPayment">$52,083 /mo</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>Counterparty Monthly Payout (Savings):</td>
+                <td class="value-col" id="outMonthlyPayout">+$10,833 /mo</td>
+              </tr>
+              <tr>
+                <td>Annual Projected Counterparty Payout:</td>
+                <td class="value-col" id="outAnnualPayout" style="color: var(--accent-emerald-dark); font-weight:800;">+$130,000 /yr</td>
+              </tr>
+              <tr>
+                <td>Break-Even Payback Period:</td>
+                <td class="value-col" id="outBreakevenMonths">13.2 Months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Lender Replacement Cap Escrow Reserve -->
+        <div class="results-card">
+          <h3>🏛️ Lender Escrow &amp; Replacement Cap Reserve</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Commercial lenders require sponsors to escrow funds to repurchase a replacement cap prior to initial maturity:
+          </p>
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td>Projected Replacement Cap Premium:</td>
+                <td class="value-col" id="outEscrowTotal">$128,250</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>Required Monthly Escrow Deposit:</td>
+                <td class="value-col" id="outEscrowMonthly">$10,688 /mo</td>
+              </tr>
+              <tr>
+                <td>Escrow Accumulation Horizon:</td>
+                <td class="value-col" id="outEscrowHorizon">12 Months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SOFR Rate Shock Simulation -->
+        <div class="results-card">
+          <h3>⚡ SOFR Rate Shock Sensitivity Matrix</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            Simulated performance of your <strong id="outStrikeEcho">3.50%</strong> strike cap across varying SOFR interest rate environments:
+          </p>
+          <div class="scenario-table-wrap">
+            <table class="scenario-table">
+              <thead>
+                <tr>
+                  <th>1-Mo SOFR</th>
+                  <th>Uncapped Rate</th>
+                  <th>Capped Rate</th>
+                  <th>Monthly Payment</th>
+                  <th>Counterparty Payout</th>
+                </tr>
+              </thead>
+              <tbody id="scenarioTableBody">
+                <!-- Dynamically generated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="calc-actions-row">
+          <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+            🔗 Copy Shareable Deal Link
+          </button>
+          <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+            🖨️ Print Underwriting Summary
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       3. INTERACTIVE CALCULATOR ENGINE: MODE 2 (RENTAL CAP RATE)
+  ======================================================== -->
+  <div id="paneRentalCap" class="calc-engine-container" style="display: none;">
+    <div class="calc-grid">
+
+      <!-- LEFT: RENTAL PROPERTY INPUTS -->
+      <div class="calc-inputs-pane">
+        <div class="pane-section-header">
+          <span class="icon">🏢</span>
+          <h2>Rental Property Valuation &amp; NOI</h2>
+        </div>
+
+        <!-- Property Purchase Price -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpPropPrice">Property Purchase Price / Market Value</label>
+            <span class="input-helper-badge">Acquisition Basis</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpPropPrice" class="form-input" value="1500000" min="50000" max="50000000" step="25000">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngPropPrice" class="custom-range" value="1500000" min="200000" max="5000000" step="25000">
+          </div>
+        </div>
+
+        <!-- Gross Annual Rental Income -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpGrossRent">Gross Annual Rental Income</label>
+            <span class="input-helper-badge">Gross Potential Rent</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpGrossRent" class="form-input" value="150000" min="10000" max="5000000" step="5000">
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngGrossRent" class="custom-range" value="150000" min="20000" max="500000" step="5000">
+          </div>
+        </div>
+
+        <!-- Vacancy Rate -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpVacancy">Vacancy &amp; Credit Loss</label>
+            <span class="input-helper-badge">Market Vacancy</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpVacancy" class="form-input no-prefix has-suffix" value="5.0" min="0" max="30" step="0.5">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <!-- Annual Operating Expenses -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpOpex">Total Annual Operating Expenses</label>
+            <span class="input-helper-badge">Taxes, Ins, Mgmt, Maint</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpOpex" class="form-input" value="45000" min="0" max="2000000" step="1000">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: RENTAL CAP RATE RESULTS -->
+      <div class="calc-results-pane">
+
+        <!-- Scorecard: Rental Cap Rate -->
+        <div class="scorecard-banner">
+          <div class="scorecard-tag">Property Investment Yield</div>
+          <div class="scorecard-label">Capitalization Rate (Cap Rate)</div>
+          <div class="scorecard-value" id="outRentalCapRate">6.50%</div>
+          <div class="scorecard-subtext">
+            <span>Unleveraged Free-and-Clear Annual Yield</span>
+          </div>
+        </div>
+
+        <!-- Rental NOI & Metrics Card -->
+        <div class="results-card">
+          <h3>📊 Real Estate Operating Breakdown</h3>
+          <table class="breakdown-table">
+            <tbody>
+              <tr>
+                <td>Effective Gross Revenue (EGR):</td>
+                <td class="value-col" id="outEGR">$142,500 /yr</td>
+              </tr>
+              <tr>
+                <td>Operating Expense Ratio (OER):</td>
+                <td class="value-col" id="outOER">31.6%</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>Net Operating Income (NOI):</td>
+                <td class="value-col" id="outNOI">$97,500 /yr</td>
+              </tr>
+              <tr>
+                <td>Gross Rent Multiplier (GRM):</td>
+                <td class="value-col" id="outGRM">10.0x</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Comparative Explanation Box -->
+        <div class="callout-box">
+          <h4>💡 Cap Rate vs. Interest Rate Cap</h4>
+          <p>
+            <strong>Rental Cap Rate (6.50%):</strong> Measures the return generated by the real estate asset itself.<br>
+            <strong>Interest Rate Cap:</strong> A derivative hedging contract purchased from institutions like Chatham Financial to protect your debt payments from rising above a designated strike rate.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       4. COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (1,800+ WORDS)
+  ======================================================== -->
+  <article class="guide-section">
+
+    <h2>Comprehensive Guide to Interest Rate Caps &amp; Chatham Benchmarks</h2>
+    <p>
+      In commercial real estate (CRE) finance, sponsors navigating floating-rate debt structures rely heavily on **interest rate caps** to protect against runaway debt service costs. As central banks adjust monetary policy and the benchmark Secured Overnight Financing Rate (SOFR) experiences volatility, rate caps serve as the primary institutional defense mechanism for debt funds, commercial banks, Fannie Mae, and Freddie Mac loans.
+    </p>
+
+    <!-- Side-by-side table: Rate Cap vs Cap Rate -->
+    <div class="callout-box">
+      <h4>Clarifying Industry Terminology: Rate Cap vs. Capitalization Rate</h4>
+      <p>
+        Real estate professionals frequently search for terms like <em>chatham rate cap calculator</em> alongside <em>cap rate calculator rental</em>. While both contain the phrase "cap rate," they represent completely distinct financial concepts:
+      </p>
+    </div>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Metric / Tool</th>
+            <th>Primary Purpose</th>
+            <th>Core Formula</th>
+            <th>Key Market Providers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Interest Rate Cap</strong></td>
+            <td>Derivative contract placing a ceiling on floating-rate debt (SOFR / LIBOR)</td>
+            <td>$$\text{Payout} = \max(0, \text{Index} - \text{Strike}) \times \text{Notional}$$</td>
+            <td>Chatham Financial, Derivative Logic, Wells Fargo, J.P. Morgan</td>
+          </tr>
+          <tr>
+            <td><strong>Rental Cap Rate (Capitalization Rate)</strong></td>
+            <td>Measures the unleveraged rate of return of a rental property</td>
+            <td>$$\text{Cap Rate} = \frac{\text{Net Operating Income (NOI)}}{\text{Property Value}}$$</td>
+            <td>RealRefin, CBRE, JLL, Marcus &amp; Millichap</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>How Commercial Real Estate Interest Rate Caps Work</h2>
+    <p>
+      An **interest rate cap** is a series of European call options—known in quantitative finance as <em>caplets</em>—on a floating interest rate reference benchmark. Each caplet corresponds to an individual interest payment reset period (typically 30-day or 1-month intervals).
+    </p>
+    <p>
+      When a commercial borrower finances an apartment building, office complex, or industrial park with a floating-rate bridge loan, the total borrowing rate is structured as:
+    </p>
+    $$\text{All-In Interest Rate} = \text{1-Month Term SOFR} + \text{Lender Margin (Spread)}$$
+    <p>
+      For instance, if the loan spread is 2.75% and 1-Month SOFR is 4.80%, the borrower currently pays an all-in rate of 7.55%. If inflation flares and the Federal Reserve drives SOFR to 6.50%, the unhedged borrower would face an unsustainable 9.25% borrowing rate.
+    </p>
+    <p>
+      By purchasing a 3.50% strike SOFR rate cap, the maximum index rate the borrower will ever pay is capped at 3.50%. The all-in rate is permanently locked at a maximum ceiling of:
+    </p>
+    $$\text{Maximum Capped Rate} = 3.50\% \text{ (Strike)} + 2.75\% \text{ (Margin)} = 6.25\%$$
+    <p>
+      Whenever actual SOFR trades above 3.50%, the cap provider (counterparty financial institution) deposits the excess interest cost directly into the borrower’s account, neutralising the interest rate spike.
+    </p>
+
+    <h2>Why Chatham Financial Sets the Benchmark for Rate Cap Pricing</h2>
+    <p>
+      When commercial sponsors, mortgage brokers, and debt advisory firms model debt service, they frequently refer to a **Chatham financial rate cap calculator** or Chatham market pricing. Chatham Financial is the world's largest independent financial risk management and hedging advisory firm, executing hundreds of billions of dollars in interest rate derivatives annually.
+    </p>
+    <p>
+      Because interest rate caps are over-the-counter (OTC) bilateral financial contracts traded between institutional counterparties (such as Goldman Sachs, Bank of America, SMBC, or Commonwealth Bank), there is no public stock-exchange ticker for cap pricing. Chatham Financial aggregates interbank dealer bids, implied volatility surfaces, and forward SOFR swap curves to provide benchmark valuations.
+    </p>
+
+    <h3>Key Factors That Influence Rate Cap Costs:</h3>
+    <ul>
+      <li><strong>Strike Rate:</strong> The lower the strike rate relative to the current SOFR forward curve ("in-the-money" caps), the higher the upfront premium. A 2.50% strike cap costs significantly more than a 4.50% strike cap.</li>
+      <li><strong>Cap Tenor (Term Length):</strong> Longer maturities dramatically increase option premium costs due to compounded time decay ($\Theta$) and heightened forward uncertainty. A 3-year cap can cost three to four times more than a 1-year cap.</li>
+      <li><strong>Implied SOFR Volatility:</strong> Market expectations regarding future rate adjustments by the Federal Reserve heavily impact the option's time value. In volatile rate cycles, option premiums surge.</li>
+      <li><strong>Counterparty Credit Rating:</strong> Fannie Mae, Freddie Mac, and institutional debt funds mandate that cap providers maintain high creditworthiness (typically at least A- by S&amp;P or Fitch, and A3 by Moody’s), which carries strict collateral posting agreements under standard ISDA (International Swaps and Derivatives Association) documentation.</li>
+    </ul>
+
+    <h2>Lender Replacement Escrow Reserves Explained</h2>
+    <p>
+      A major hurdle for real estate syndicators and developers is the **lender replacement cap escrow reserve**. When taking out a 3-year or 5-year bridge loan, lenders rarely permit the borrower to buy a single 1-year cap without protections for years 2 through 5.
+    </p>
+    <p>
+      To prevent the borrower from being unable to afford a replacement cap when the initial hedge matures, lenders establish an escrow reserve. Lenders calculate the hypothetical cost of buying the replacement cap at the future date using the forward SOFR curve and require the borrower to fund this reserve in equal monthly installments across the initial term.
+    </p>
+
+    <!-- FAQ SECTION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is the difference between an interest rate cap and an interest rate swap?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          An <strong>interest rate cap</strong> is an option contract requiring a one-time upfront cash premium. It protects against rising rates while allowing the borrower to fully benefit if benchmark rates fall below the strike. An <strong>interest rate swap</strong>, on the other hand, requires no upfront premium but locks in a fixed rate; if market interest rates collapse, the borrower is locked into the higher swapped rate and may face severe mark-to-market termination liabilities.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I sell or terminate my interest rate cap early if rates drop or I sell the property?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes. Interest rate caps maintain residual mark-to-market value based on remaining time to maturity and current forward SOFR curves. If you sell the property or refinance into a fixed-rate loan before the cap expires, you can terminate the contract and receive a cash payout from the counterparty for the cap's fair market value.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How did the sunset of USD LIBOR affect interest rate caps?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Following the cessation of USD LIBOR on June 30, 2023, all legacy commercial loans and rate caps transitioned to the Secured Overnight Financing Rate (SOFR). New commercial mortgage rate caps are almost exclusively indexed to CME 1-Month Term SOFR or 30-Day Average SOFR with Fallback compounding conventions.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Why is a Chatham Financial rate cap calculator so popular among commercial brokers?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Chatham Financial is recognized as the institutional gold standard for real estate derivative pricing and risk management. Commercial mortgage brokers, debt funds, and syndicators use Chatham's daily rate sheets and pricer tools to establish accurate underwriting assumptions for loan sizing, lender escrows, and investor pitch decks.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How does an interest rate cap affect my Debt Service Coverage Ratio (DSCR)?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Commercial underwriters calculate DSCR using the maximum capped rate (Strike Rate + Lender Margin) rather than the volatile floating rate. This ensures the underwritten property maintains a passing DSCR (typically 1.15x to 1.25x) under the worst-case scenario, unlocking maximum loan proceeds for the borrower.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealRefin Platform</h4>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+            Institutional financial analytics and automated underwriting engines for residential real estate investors, mortgage originators, and commercial capital sponsors.
+          </p>
+          <p style="font-size: 0.8rem; color: var(--text-light);">
+            © 2026 RealRefin.com. All rights reserved.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Investor &amp; Debt Suite</h4>
+          <ul>
+            <li><a href="/interest-rate-cap-calculator">Interest Rate Cap Calculator</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Underwriter</a></li>
+            <li><a href="/hard-money-loan-calculator">Hard Money Calculator</a></li>
+            <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Modeler</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Creative &amp; Refinance</h4>
+          <ul>
+            <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out vs HELOC</a></li>
+            <li><a href="/subto-calculator">SubTo Creative Finance</a></li>
+            <li><a href="/1031-exchange-tax-calculator">1031 Exchange Tax</a></li>
+            <li><a href="/cost-segregation-study-calculator">Cost Segregation Study</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Financial Disclaimer</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators and market benchmarks are for educational and financial modeling purposes only. Interest rate derivative pricing is subject to live market volatility. Consult a licensed capital markets advisor or ISDA counterparty prior to derivative execution.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Tabs
+  const tabRateCap = document.getElementById('tabRateCap');
+  const tabRentalCap = document.getElementById('tabRentalCap');
+  const paneRateCap = document.getElementById('paneRateCap');
+  const paneRentalCap = document.getElementById('paneRentalCap');
+
+  tabRateCap.addEventListener('click', () => {
+    tabRateCap.classList.add('active');
+    tabRentalCap.classList.remove('active');
+    paneRateCap.style.display = 'block';
+    paneRentalCap.style.display = 'none';
+  });
+
+  tabRentalCap.addEventListener('click', () => {
+    tabRentalCap.classList.add('active');
+    tabRateCap.classList.remove('active');
+    paneRateCap.style.display = 'none';
+    paneRentalCap.style.display = 'block';
+  });
+
+  // Inputs: Mode 1 (Rate Cap)
+  const inpNotional = document.getElementById('inpNotional');
+  const badgeNotional = document.getElementById('badgeNotional');
+  const inpSOFR = document.getElementById('inpSOFR');
+  const rngSOFR = document.getElementById('rngSOFR');
+  const inpMargin = document.getElementById('inpMargin');
+  const rngMargin = document.getElementById('rngMargin');
+  const inpStrike = document.getElementById('inpStrike');
+  const badgeTerm = document.getElementById('badgeTerm');
+  const inpEscrowMonths = document.getElementById('inpEscrowMonths');
+
+  // Outputs: Mode 1
+  const outPremiumDollars = document.getElementById('outPremiumDollars');
+  const outPremiumBps = document.getElementById('outPremiumBps');
+  const outTermLabel = document.getElementById('outTermLabel');
+  const outMaxRate = document.getElementById('outMaxRate');
+  const outUnhedgedRate = document.getElementById('outUnhedgedRate');
+  const outEffectiveRate = document.getElementById('outEffectiveRate');
+  const outUnhedgedPayment = document.getElementById('outUnhedgedPayment');
+  const outCappedPayment = document.getElementById('outCappedPayment');
+  const outMonthlyPayout = document.getElementById('outMonthlyPayout');
+  const outAnnualPayout = document.getElementById('outAnnualPayout');
+  const outBreakevenMonths = document.getElementById('outBreakevenMonths');
+  const outEscrowTotal = document.getElementById('outEscrowTotal');
+  const outEscrowMonthly = document.getElementById('outEscrowMonthly');
+  const outEscrowHorizon = document.getElementById('outEscrowHorizon');
+  const outStrikeEcho = document.getElementById('outStrikeEcho');
+  const scenarioTableBody = document.getElementById('scenarioTableBody');
+
+  // State Variables
+  let selectedTenor = 2; // Years
+  let selectedVol = 0.38; // Volatility
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, dec = 2) {
+    return Number(num).toFixed(dec);
+  }
+
+  // Notional Chips
+  document.querySelectorAll('.preset-chips-bar .chip-btn[data-val]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const parent = this.parentElement;
+      parent.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      if (parent.id === 'strikePresets') {
+        inpStrike.value = this.getAttribute('data-val');
+      } else {
+        inpNotional.value = this.getAttribute('data-val');
+      }
+      recalcRateCap();
+    });
+  });
+
+  // Tenor Toggles
+  document.querySelectorAll('#tenorToggles .toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#tenorToggles .toggle-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      selectedTenor = parseInt(this.getAttribute('data-tenor'), 10);
+      badgeTerm.textContent = `${selectedTenor * 12} Months`;
+      recalcRateCap();
+    });
+  });
+
+  // Volatility Toggles
+  document.querySelectorAll('#volToggles .toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#volToggles .toggle-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      selectedVol = parseFloat(this.getAttribute('data-vol'));
+      recalcRateCap();
+    });
+  });
+
+  // Sync Input & Range
+  function syncPair(numInp, rngInp) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      recalcRateCap();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      recalcRateCap();
+    });
+  }
+
+  syncPair(inpSOFR, rngSOFR);
+  syncPair(inpMargin, rngMargin);
+  inpNotional.addEventListener('input', recalcRateCap);
+  inpStrike.addEventListener('input', recalcRateCap);
+  inpEscrowMonths.addEventListener('input', recalcRateCap);
+
+  // Black-76 Caplet Pricing Approximation Model
+  function estimateCapPremium(notional, sofr, strike, tenorYears, vol) {
+    // Difference between forward reference rate and strike
+    const forwardDiff = (sofr - strike) / 100;
+    
+    // Approximate annualized basis points per year based on moneyness & volatility
+    let baseAnnualBps = 0;
+
+    if (forwardDiff >= 0) {
+      // In the money: Intrinsic value + Time value
+      const intrinsicBps = forwardDiff * 10000;
+      const timeValueBps = vol * 100 * Math.sqrt(tenorYears) * 12;
+      baseAnnualBps = intrinsicBps + timeValueBps;
+    } else {
+      // Out of the money: Strictly time value decaying exponentially with distance
+      const distance = Math.abs(forwardDiff);
+      const probFactor = Math.exp(-1.8 * (distance / (vol * 0.1)));
+      baseAnnualBps = probFactor * (vol * 100 * 22);
+    }
+
+    // Tenor term multiplier (incorporating forward curve slope & discount factor)
+    const tenorFactor = Math.pow(tenorYears, 0.88);
+    const totalBps = Math.max(15, baseAnnualBps * tenorFactor * 0.72);
+    const premiumDollars = notional * (totalBps / 10000);
+
+    return {
+      totalBps: totalBps,
+      premiumDollars: premiumDollars
+    };
+  }
+
+  // Recalculate Mode 1 (Rate Cap)
+  function recalcRateCap() {
+    const notional = Math.max(100000, parseFloat(inpNotional.value) || 0);
+    const sofr = Math.max(0, parseFloat(inpSOFR.value) || 0);
+    const margin = Math.max(0, parseFloat(inpMargin.value) || 0);
+    const strike = Math.max(0.1, parseFloat(inpStrike.value) || 0);
+    const escrowMonths = Math.max(1, parseInt(inpEscrowMonths.value, 10) || 12);
+
+    badgeNotional.textContent = formatMoney(notional);
+    outStrikeEcho.textContent = formatDecimal(strike, 2) + '%';
+    outTermLabel.textContent = `${selectedTenor}-Year Term`;
+
+    // Rates
+    const unhedgedRate = sofr + margin;
+    const maxCappedRate = strike + margin;
+    const effectiveRate = Math.min(sofr, strike) + margin;
+
+    outUnhedgedRate.textContent = formatDecimal(unhedgedRate, 2) + '%';
+    outMaxRate.textContent = formatDecimal(maxCappedRate, 2) + '%';
+    outEffectiveRate.textContent = formatDecimal(effectiveRate, 2) + '%';
+
+    // Premium Calculations
+    const capPricing = estimateCapPremium(notional, sofr, strike, selectedTenor, selectedVol);
+    outPremiumDollars.textContent = formatMoney(capPricing.premiumDollars);
+    outPremiumBps.textContent = `${formatDecimal(capPricing.totalBps, 1)} bps (${formatDecimal(capPricing.totalBps / 100, 2)}% of Notional)`;
+
+    // Monthly Debt Service
+    const monthlyUnhedged = (notional * (unhedgedRate / 100)) / 12;
+    const monthlyCapped = (notional * (maxCappedRate / 100)) / 12;
+    const monthlyPayout = Math.max(0, monthlyUnhedged - monthlyCapped);
+    const annualPayout = monthlyPayout * 12;
+
+    outUnhedgedPayment.textContent = `${formatMoney(monthlyUnhedged)} /mo`;
+    outCappedPayment.textContent = `${formatMoney(monthlyCapped)} /mo`;
+    outMonthlyPayout.textContent = monthlyPayout > 0 ? `+${formatMoney(monthlyPayout)} /mo` : '$0 /mo';
+    outAnnualPayout.textContent = annualPayout > 0 ? `+${formatMoney(annualPayout)} /yr` : '$0 /yr';
+
+    // Breakeven Months
+    if (monthlyPayout > 0) {
+      const beMonths = capPricing.premiumDollars / monthlyPayout;
+      outBreakevenMonths.textContent = `${formatDecimal(beMonths, 1)} Months`;
+    } else {
+      outBreakevenMonths.textContent = 'Out-of-the-Money';
+    }
+
+    // Escrow Replacement Reserve
+    // Model projected replacement cap (assumed 1-year forward replacement at +50 bps spread)
+    const replacementCapCost = capPricing.premiumDollars * 0.90;
+    const monthlyEscrow = replacementCapCost / escrowMonths;
+    outEscrowTotal.textContent = formatMoney(replacementCapCost);
+    outEscrowMonthly.textContent = `${formatMoney(monthlyEscrow)} /mo`;
+    outEscrowHorizon.textContent = `${escrowMonths} Months`;
+
+    // Render Scenario Table
+    renderScenarioTable(notional, margin, strike, sofr);
+  }
+
+  // Render Sensitivity Matrix
+  function renderScenarioTable(notional, margin, strike, currentSOFR) {
+    const testRates = [3.00, 3.50, 4.00, 4.80, 5.50, 6.00, 7.00];
+    let html = '';
+
+    testRates.forEach(rate => {
+      const isCurrent = Math.abs(rate - currentSOFR) < 0.05;
+      const unhedged = rate + margin;
+      const capped = Math.min(rate, strike) + margin;
+      const monthlyPmt = (notional * (capped / 100)) / 12;
+      const payoutMonthly = Math.max(0, (notional * (Math.max(0, rate - strike) / 100)) / 12);
+
+      html += `
+        <tr class="${isCurrent ? 'current-env' : ''}">
+          <td><strong>${formatDecimal(rate, 2)}%</strong> ${isCurrent ? '<span style="color:var(--accent-emerald-dark); font-size:0.75rem;">(Current)</span>' : ''}</td>
+          <td>${formatDecimal(unhedged, 2)}%</td>
+          <td style="font-weight:700; color:var(--accent-emerald-dark);">${formatDecimal(capped, 2)}%</td>
+          <td>${formatMoney(monthlyPmt)} /mo</td>
+          <td>${payoutMonthly > 0 ? `<span class="tag-payout">+${formatMoney(payoutMonthly)} /mo</span>` : '<span class="tag-no-payout">$0</span>'}</td>
+        </tr>
+      `;
+    });
+
+    scenarioTableBody.innerHTML = html;
+  }
+
+  // Inputs & Outputs: Mode 2 (Rental Cap Rate)
+  const inpPropPrice = document.getElementById('inpPropPrice');
+  const rngPropPrice = document.getElementById('rngPropPrice');
+  const inpGrossRent = document.getElementById('inpGrossRent');
+  const rngGrossRent = document.getElementById('rngGrossRent');
+  const inpVacancy = document.getElementById('inpVacancy');
+  const inpOpex = document.getElementById('inpOpex');
+
+  const outRentalCapRate = document.getElementById('outRentalCapRate');
+  const outEGR = document.getElementById('outEGR');
+  const outOER = document.getElementById('outOER');
+  const outNOI = document.getElementById('outNOI');
+  const outGRM = document.getElementById('outGRM');
+
+  function syncPairRental(numInp, rngInp) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      recalcRentalCap();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      recalcRentalCap();
+    });
+  }
+
+  syncPairRental(inpPropPrice, rngPropPrice);
+  syncPairRental(inpGrossRent, rngGrossRent);
+  inpVacancy.addEventListener('input', recalcRentalCap);
+  inpOpex.addEventListener('input', recalcRentalCap);
+
+  function recalcRentalCap() {
+    const price = Math.max(1000, parseFloat(inpPropPrice.value) || 0);
+    const grossRent = Math.max(0, parseFloat(inpGrossRent.value) || 0);
+    const vacancyPct = Math.max(0, parseFloat(inpVacancy.value) || 0);
+    const opex = Math.max(0, parseFloat(inpOpex.value) || 0);
+
+    const vacancyAmount = grossRent * (vacancyPct / 100);
+    const egr = grossRent - vacancyAmount;
+    const noi = egr - opex;
+    const capRate = price > 0 ? (noi / price) * 100 : 0;
+    const grm = grossRent > 0 ? price / grossRent : 0;
+    const oer = egr > 0 ? (opex / egr) * 100 : 0;
+
+    outRentalCapRate.textContent = formatDecimal(capRate, 2) + '%';
+    outEGR.textContent = `${formatMoney(egr)} /yr`;
+    outOER.textContent = `${formatDecimal(oer, 1)}%`;
+    outNOI.textContent = `${formatMoney(noi)} /yr`;
+    outGRM.textContent = `${formatDecimal(grm, 1)}x`;
+  }
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('notional', inpNotional.value);
+    url.searchParams.set('sofr', inpSOFR.value);
+    url.searchParams.set('margin', inpMargin.value);
+    url.searchParams.set('strike', inpStrike.value);
+    url.searchParams.set('tenor', selectedTenor);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL Params
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('notional')) inpNotional.value = p.get('notional');
+    if (p.has('sofr')) {
+      inpSOFR.value = p.get('sofr');
+      rngSOFR.value = p.get('sofr');
+    }
+    if (p.has('margin')) {
+      inpMargin.value = p.get('margin');
+      rngMargin.value = p.get('margin');
+    }
+    if (p.has('strike')) inpStrike.value = p.get('strike');
+    if (p.has('tenor')) {
+      selectedTenor = parseInt(p.get('tenor'), 10);
+      document.querySelectorAll('#tenorToggles .toggle-btn').forEach(b => {
+        b.classList.toggle('active', parseInt(b.getAttribute('data-tenor'), 10) === selectedTenor);
+      });
+      badgeTerm.textContent = `${selectedTenor * 12} Months`;
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  recalcRateCap();
+  recalcRentalCap();
+
+})();
+</script>
+
+</body>
+</html>

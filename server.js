@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/interest-rate-cap-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/house-hacking-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -443,6 +449,14 @@ const FILE_MAP = {
   '/va-irrrl-calculator.html': 'va-irrrl-calculator.html',
   '/rental-yield-calculator': 'rental-yield-calculator.html',
   '/rental-yield-calculator.html': 'rental-yield-calculator.html',
+  '/interest-rate-cap-calculator': 'interest-rate-cap-calculator.html',
+  '/interest-rate-cap-calculator.html': 'interest-rate-cap-calculator.html',
+  '/chatham-rate-cap-calculator': 'interest-rate-cap-calculator.html',
+  '/chatham-rate-cap-calculator.html': 'interest-rate-cap-calculator.html',
+  '/chatham-interest-rate-cap-calculator': 'interest-rate-cap-calculator.html',
+  '/chatham-interest-rate-cap-calculator.html': 'interest-rate-cap-calculator.html',
+  '/rate-cap-calculator': 'interest-rate-cap-calculator.html',
+  '/rate-cap-calculator.html': 'interest-rate-cap-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',
