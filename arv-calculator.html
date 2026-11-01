@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARV Calculator | Free Real Estate After Repair Value &amp; Wholesaling Tool</title>
+  <meta name="description" content="Free real estate ARV calculator. Calculate After Repair Value by address or comparable sales (comps), model wholesaling assignment fees, AI rehab cost tiers, and fix &amp; flip profits without a paywall.">
+  <meta name="keywords" content="arv calculator, free arv calculator, arv calculator free, arv calculator by address, biggerpockets arv calculator, how to calculate arv wholesaling, ai arv calculator, arv real estate calculator, after repair value calculator, 70 rule arv calculator">
+  <link rel="canonical" href="https://realrefin.com/arv-calculator">
+  
+  <meta property="og:title" content="ARV Calculator | Free Real Estate After Repair Value &amp; Wholesaling Tool">
+  <meta property="og:description" content="Calculate After Repair Value (ARV) using comps, 70% rule, wholesaling assignment spreads, and AI rehab cost tiers. 100% free with no sign-up or paywall.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/arv-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/arv-calculator#app",
+        "name": "RealRefin Free ARV Calculator & Wholesaling Modeler",
+        "url": "https://realrefin.com/arv-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional-grade After Repair Value (ARV) calculator for real estate flippers, wholesalers, and investors. Calculates ARV from neighborhood comps, the 70% rule, AI rehab estimates, and wholesaling assignment fees.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Wholesaling Suite",
+            "item": "https://realrefin.com/#tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "ARV Calculator",
+            "item": "https://realrefin.com/arv-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is ARV in real estate and how is it calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After Repair Value (ARV) is the estimated fair market value of a distressed property once it has been completely renovated, upgraded, and brought to market standards. ARV is calculated using the Comparable Sales (Comps) method: find 3 to 5 recently sold renovated homes nearby with similar square footage, calculate their average sale price per square foot, multiply by your subject property's square footage, and adjust for differences such as extra bedrooms, bathrooms, or lot size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do real estate wholesalers calculate ARV?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wholesalers calculate ARV to establish their Maximum Allowable Offer (MAO) to the seller while locking in their wholesale assignment fee. The standard formula is: Maximum Contract Offer = (ARV × Investor Discount Percentage, usually 70%) − Estimated Rehab Cost − Desired Wholesale Assignment Fee. This ensures the end-buyer cash investor gets an attractive deal with built-in equity while the wholesaler secures a guaranteed assignment profit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 70% rule in real estate investing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 70% rule states that an investor should pay no more than 70% of a property's estimated After Repair Value (ARV), minus the cost of needed repairs. The remaining 30% margin covers holding costs, buying/selling closing fees, financing interest, and the investor's minimum target profit margin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does this free ARV calculator compare to BiggerPockets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike BiggerPockets, which restricts free users to 5 lifetime calculator runs and requires a paid Pro subscription ($39/mo) to unlock full reporting, RealRefin's ARV Calculator is 100% free forever with unlimited comp adjustments, wholesaling margin modeling, AI rehab cost tiers, and zero account sign-up requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do AI ARV calculators estimate property value?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI ARV calculators leverage Automated Valuation Models (AVMs), public MLS transaction feeds, satellite imagery, and regional repair cost algorithms. They evaluate recent closed sales within 0.5 to 1.0 miles, apply square-footage weighting, and integrate localized renovation cost benchmarks (e.g., $20/sqft for cosmetic vs. $75/sqft for gut rehabs) to generate instant valuation ranges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I calculate ARV by address?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. When calculating ARV by address, underwriters examine properties sold within the same subdivision or radius (0.5 miles) in the last 90 to 180 days. Key attributes to match include property type, year built (within 10 years), square footage (within 15%), and finished basement/garage status."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & NAVY
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-purple: #7C3AED;
+      --accent-purple-light: #F5F3FF;
+      --accent-purple-border: #DDD6FE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FFFBEB;
+      --accent-amber-border: #FDE68A;
+
+      --accent-danger: #EF4444;
+      --accent-danger-light: #FEF2F2;
+      --accent-danger-border: #FECACA;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --text-white: #FFFFFF;
+
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.45rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 950px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 860px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-stat p {
+      font-size: 0.825rem;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MODE SELECTOR (TABS)
+    ----------------------------------------------------------- */
+    .mode-switch-wrapper {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+    }
+
+    .mode-tab-pill {
+      flex: 1;
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .mode-tab-pill.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-tab-pill span.sublabel {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .pane-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-title-wrap span.icon {
+      font-size: 1.35rem;
+    }
+
+    .btn-auto-sample {
+      background: var(--accent-purple-light);
+      border: 1px solid var(--accent-purple-border);
+      color: var(--accent-purple);
+      font-size: 0.775rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-auto-sample:hover {
+      background: var(--accent-purple);
+      color: #ffffff;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix {
+      left: 1rem;
+    }
+
+    .input-suffix {
+      right: 1rem;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.25rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.65rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 5px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Property Address Field */
+    .address-input-wrapper {
+      position: relative;
+    }
+
+    .address-icon {
+      position: absolute;
+      left: 1rem;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      z-index: 2;
+    }
+
+    .address-input {
+      padding-left: 2.5rem !important;
+    }
+
+    /* Comps Table in Input Pane */
+    .comps-table-wrap {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .comps-input-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.825rem;
+    }
+
+    .comps-input-table th {
+      background: #f1f5f9;
+      color: var(--primary-navy);
+      padding: 0.55rem 0.65rem;
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .comps-input-table td {
+      padding: 0.55rem 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .table-field {
+      width: 100%;
+      height: 34px;
+      padding: 0 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background: #ffffff;
+      color: var(--primary-navy);
+      font-family: inherit;
+    }
+
+    .table-field:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+    }
+
+    /* AI Rehab Tier Chips */
+    .rehab-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .rehab-chip {
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      border: 1.5px solid var(--border-color);
+      background: #f8fafc;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .rehab-chip:hover {
+      border-color: #cbd5e1;
+    }
+
+    .rehab-chip.active {
+      border-color: var(--accent-emerald);
+      background: #f0fdf4;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    .rehab-chip h5 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .rehab-chip span {
+      font-size: 0.725rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 700;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR RESULTS PANE
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Primary Scorecard */
+    .scorecard-banner {
+      background: #ffffff;
+      border: 2px solid var(--accent-emerald-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      text-align: center;
+    }
+
+    .scorecard-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    .scorecard-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-value {
+      font-size: 3.25rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .scorecard-subtext {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    /* Metrics Overview Grid */
+    .metrics-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .metrics-overview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-card .metric-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Detailed Breakdown Card */
+    .results-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .results-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+    }
+
+    .breakdown-table tr {
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .breakdown-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-table td {
+      padding: 0.75rem 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .breakdown-table td.value-col {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .breakdown-table tr.highlight-row {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .breakdown-table tr.highlight-row td {
+      color: var(--accent-emerald-dark);
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Action Buttons */
+    .calc-actions-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    .btn-action-primary {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+    ----------------------------------------------------------- */
+    .guide-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .guide-section {
+        padding: 2.25rem 1.5rem;
+      }
+    }
+
+    .guide-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-section p {
+      color: #334155;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .guide-section ul, .guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+
+    .guide-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+
+    .guide-section strong {
+      color: var(--primary-navy);
+    }
+
+    .callout-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Comparison Table (RealRefin vs BiggerPockets) */
+    .guide-table-wrap {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.925rem;
+    }
+
+    .guide-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.85rem 1.15rem;
+      font-weight: 700;
+    }
+
+    .guide-table td {
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    .guide-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.15rem 1.25rem;
+      text-align: left;
+      background: #ffffff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-icon {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent-emerald-dark);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.25rem 1.25rem;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      background: #fcfdfe;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 1.25rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.15rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Usability Optimization */
+    @media (max-width: 768px) {
+      input, select, textarea, .input-control {
+        font-size: 16px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rr-container {
+        padding: 1rem 0.85rem 3rem !important;
+      }
+      .calc-header-banner {
+        padding: 1.5rem 1.15rem !important;
+      }
+      .calc-header-banner h1 {
+        font-size: 1.7rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#tools">All Calculators</a></li>
+      <li><a href="/maximum-allowable-offer-calculator">MAO Offer</a></li>
+      <li><a href="/hard-money-loan-calculator">Hard Money</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="btn-nav-cta">Contact Us</a></li>
+    </ul>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#tools">Investor &amp; Wholesaling Suite</a>
+    <span class="separator">/</span>
+    <span class="current">ARV Calculator</span>
+  </nav>
+
+  <!-- ========================================================
+       1. HERO BANNER
+  ======================================================== -->
+  <section class="calc-header-banner">
+    <div class="badge-pill-tag">
+      <span>⚡</span> 100% Free • Unlimited Comps &amp; AI Rehab Estimator
+    </div>
+    <h1>
+      ARV Calculator <span>&amp; Wholesaling Deal Analyzer</span>
+    </h1>
+    <p>
+      Calculate the exact After Repair Value (ARV) for residential real estate investments. Underwrite neighborhood sold comps, model the 70% rule, apply AI square-footage rehab benchmarks, and calculate wholesale assignment fee spreads with zero subscription paywalls.
+    </p>
+
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>Comps-Weighted Math</h4>
+        <p>Price-per-SqFt + Dollar Adjustments</p>
+      </div>
+      <div class="trust-stat">
+        <h4>70% Rule Formula</h4>
+        <p>Fix &amp; Flip Maximum Allowable Offer</p>
+      </div>
+      <div class="trust-stat">
+        <h4>Wholesale Margins</h4>
+        <p>End-Buyer &amp; Assignment Spread</p>
+      </div>
+      <div class="trust-stat">
+        <h4>100% Free Forever</h4>
+        <p>No BiggerPockets Pro Paywall Limit</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CALCULATOR MODE SELECTOR (TABS)
+  ======================================================== -->
+  <div class="mode-switch-wrapper">
+    <button type="button" class="mode-tab-pill active" id="tabCompsARV">
+      <span>🏡 Comps &amp; ARV Valuation</span>
+      <span class="sublabel">Square Footage &amp; Adjustment Engine</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabWholesaling">
+      <span>💰 Wholesaling &amp; 70% Rule</span>
+      <span class="sublabel">Assignment Fee &amp; Max Seller Offer</span>
+    </button>
+    <button type="button" class="mode-tab-pill" id="tabFixFlip">
+      <span>🔨 Fix &amp; Flip Profit &amp; ROI</span>
+      <span class="sublabel">Holding, Financing &amp; Net Flip Yield</span>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       2. INTERACTIVE CALCULATOR ENGINE
+  ======================================================== -->
+  <div class="calc-grid">
+
+    <!-- LEFT: USER INPUTS PANE -->
+    <div class="calc-inputs-pane">
+
+      <!-- MODE 1: COMPS & ARV VALUATION -->
+      <div id="sectionComps">
+        <div class="pane-section-header">
+          <div class="pane-title-wrap">
+            <span class="icon">📍</span>
+            <h2>Subject Property &amp; Neighborhood Comps</h2>
+          </div>
+          <button type="button" class="btn-auto-sample" id="btnLoadSampleComps">
+            ✨ AI Sample Comps
+          </button>
+        </div>
+
+        <!-- Property Address (Optional) -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpSubjectAddress">Subject Property Address (Optional)</label>
+            <span class="input-helper-badge">ARV by Address</span>
+          </div>
+          <div class="input-control-box address-input-wrapper">
+            <span class="address-icon">📍</span>
+            <input type="text" id="inpSubjectAddress" class="form-input address-input no-prefix" value="742 Evergreen Terrace, Springfield" placeholder="Enter property street address, city, state">
+          </div>
+        </div>
+
+        <!-- Subject Property Square Footage -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpSubjectSqFt">Subject Living Area (Sq Ft)</label>
+            <span class="input-helper-badge" id="badgeSubjectSqFt">1,850 Sq Ft</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpSubjectSqFt" class="form-input no-prefix has-suffix" value="1850" min="400" max="15000" step="50">
+            <span class="input-suffix">Sq Ft</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngSubjectSqFt" class="custom-range" value="1850" min="600" max="5000" step="50">
+          </div>
+        </div>
+
+        <!-- Sold Comps Table -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">Recently Sold Renovated Comps (3 Comps)</label>
+            <span class="input-helper-badge">Within 0.5 - 1.0 Mile</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            Enter sold price, living area, and condition/feature adjustments (+/- for pools, beds, baths, garage):
+          </p>
+          <div class="comps-table-wrap">
+            <table class="comps-input-table">
+              <thead>
+                <tr>
+                  <th>Comp #</th>
+                  <th>Sold Price ($)</th>
+                  <th>Sq Ft</th>
+                  <th>Adjustments ($)</th>
+                  <th>Adj. Price/SqFt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Comp 1</strong></td>
+                  <td><input type="number" id="c1Price" class="table-field" value="385000" step="1000"></td>
+                  <td><input type="number" id="c1SqFt" class="table-field" value="1800" step="10"></td>
+                  <td><input type="number" id="c1Adj" class="table-field" value="5000" step="500"></td>
+                  <td id="c1Result" style="font-weight:700; color:var(--primary-navy);">$216.67</td>
+                </tr>
+                <tr>
+                  <td><strong>Comp 2</strong></td>
+                  <td><input type="number" id="c2Price" class="table-field" value="415000" step="1000"></td>
+                  <td><input type="number" id="c2SqFt" class="table-field" value="1950" step="10"></td>
+                  <td><input type="number" id="c2Adj" class="table-field" value="-10000" step="500"></td>
+                  <td id="c2Result" style="font-weight:700; color:var(--primary-navy);">$207.69</td>
+                </tr>
+                <tr>
+                  <td><strong>Comp 3</strong></td>
+                  <td><input type="number" id="c3Price" class="table-field" value="395000" step="1000"></td>
+                  <td><input type="number" id="c3SqFt" class="table-field" value="1820" step="10"></td>
+                  <td><input type="number" id="c3Adj" class="table-field" value="0" step="500"></td>
+                  <td id="c3Result" style="font-weight:700; color:var(--primary-navy);">$217.03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- AI Rehab Cost Benchmark Tiers -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label">AI Estimated Rehab Cost Benchmark</label>
+            <span class="input-helper-badge" id="badgeRehabLevel">Moderate Rehab ($45/sqft)</span>
+          </div>
+          <div class="rehab-tier-grid" id="rehabTiers">
+            <div class="rehab-chip" data-rate="20" data-label="Cosmetic / Paint &amp; Flooring">
+              <h5>🎨 Cosmetic</h5>
+              <span>$20 / Sq Ft</span>
+            </div>
+            <div class="rehab-chip active" data-rate="45" data-label="Moderate / Kitchen &amp; Baths">
+              <h5>🔨 Moderate</h5>
+              <span>$45 / Sq Ft</span>
+            </div>
+            <div class="rehab-chip" data-rate="75" data-label="Heavy Gut / Roof &amp; MEP">
+              <h5>🏗️ Full Gut</h5>
+              <span>$75 / Sq Ft</span>
+            </div>
+          </div>
+          <div class="input-control-box" style="margin-top: 0.75rem;">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpEstimatedRehab" class="form-input" value="83250" min="0" max="1000000" step="1000">
+          </div>
+        </div>
+      </div>
+
+      <!-- MODE 2: WHOLESALING & 70% RULE -->
+      <div id="sectionWholesaling" style="display: none;">
+        <div class="pane-section-header">
+          <div class="pane-title-wrap">
+            <span class="icon">💼</span>
+            <h2>Wholesale Contract &amp; Assignment Spread</h2>
+          </div>
+        </div>
+
+        <!-- Target Assignment Fee -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpAssignmentFee">Target Wholesaler Assignment Fee</label>
+            <span class="input-helper-badge">Wholesaler Net Profit</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpAssignmentFee" class="form-input" value="15000" min="1000" max="200000" step="1000">
+          </div>
+        </div>
+
+        <!-- Investor Discount Rule (70% standard) -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpInvestorRule">End-Buyer Rule Percentage</label>
+            <span class="input-helper-badge">Standard: 70% Rule</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpInvestorRule" class="form-input no-prefix has-suffix" value="70" min="50" max="90" step="1">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="range-slider-wrap">
+            <input type="range" id="rngInvestorRule" class="custom-range" value="70" min="60" max="85" step="1">
+          </div>
+        </div>
+
+        <!-- Manual ARV Override if desired -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpManualARV">Underwritten ARV Baseline</label>
+            <span class="input-helper-badge">Auto-Synced from Comps</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpManualARV" class="form-input" value="395500" min="50000" max="5000000" step="5000">
+          </div>
+        </div>
+      </div>
+
+      <!-- MODE 3: FIX & FLIP PROFIT & ROI -->
+      <div id="sectionFixFlip" style="display: none;">
+        <div class="pane-section-header">
+          <div class="pane-title-wrap">
+            <span class="icon">📈</span>
+            <h2>Fix &amp; Flip Financing &amp; Holding Costs</h2>
+          </div>
+        </div>
+
+        <!-- Purchase Price Offered -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpFlipPurchase">Acquisition Purchase Price</label>
+            <span class="input-helper-badge">Contract Buy Price</span>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpFlipPurchase" class="form-input" value="193600" min="20000" max="5000000" step="5000">
+          </div>
+        </div>
+
+        <!-- Holding Period & Monthly Costs -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpHoldingMonths">Holding &amp; Renovation Timeline</label>
+            <span class="input-helper-badge">Project Duration</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpHoldingMonths" class="form-input no-prefix has-suffix" value="6" min="1" max="24" step="1">
+            <span class="input-suffix">Months</span>
+          </div>
+        </div>
+
+        <!-- Hard Money Interest & Points -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpHardMoneyRate">Loan Interest Rate (Annualized)</label>
+            <span class="input-helper-badge">Hard Money / Private Debt</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpHardMoneyRate" class="form-input no-prefix has-suffix" value="11.5" min="0" max="25" step="0.5">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <!-- Resale Agent & Title Closing Costs -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label class="input-label" for="inpSellingCostPct">Resale Disposition &amp; Realtor Fees</label>
+            <span class="input-helper-badge">Commissions + Title + Transfer</span>
+          </div>
+          <div class="input-control-box">
+            <input type="number" id="inpSellingCostPct" class="form-input no-prefix has-suffix" value="6.5" min="0" max="15" step="0.5">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: OUTPUT RESULTS PANE -->
+    <div class="calc-results-pane">
+
+      <!-- Main ARV Scorecard Banner -->
+      <div class="scorecard-banner">
+        <div class="scorecard-tag">Estimated After Repair Value</div>
+        <div class="scorecard-label">Subject Property ARV</div>
+        <div class="scorecard-value" id="outARV">$395,500</div>
+        <div class="scorecard-subtext">
+          <span id="outPricePerSqFt">$213.78 / Sq Ft</span> • 
+          <span id="outCompAverage" style="color: var(--accent-emerald-dark); font-weight:800;">3 Comps Average</span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-overview-grid">
+        <div class="metric-card">
+          <h5>70% Rule Max Offer</h5>
+          <div class="metric-num" id="out70RuleOffer" style="color: var(--accent-emerald-dark);">$193,600</div>
+          <div class="metric-desc">(ARV × 70%) − Rehab</div>
+        </div>
+        <div class="metric-card">
+          <h5>Wholesale Contract</h5>
+          <div class="metric-num" id="outWholesaleOffer" style="color: var(--accent-blue);">$178,600</div>
+          <div class="metric-desc">Max Seller Offer ($15k Fee)</div>
+        </div>
+        <div class="metric-card">
+          <h5>Gross Equity Spread</h5>
+          <div class="metric-num" id="outGrossSpread" style="color: var(--primary-navy);">$118,650</div>
+          <div class="metric-desc">ARV − (Buy + Rehab)</div>
+        </div>
+      </div>
+
+      <!-- Detailed Financial Breakdown Card -->
+      <div class="results-card">
+        <h3>📋 Deal Underwriting &amp; Capital Breakdown</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Underwritten After Repair Value (ARV):</td>
+              <td class="value-col" id="rowARV">$395,500</td>
+            </tr>
+            <tr>
+              <td>Estimated Renovation Budget:</td>
+              <td class="value-col" id="rowRehab" style="color: var(--accent-danger);">-$83,250</td>
+            </tr>
+            <tr>
+              <td>Cash Investor 70% Rule Target:</td>
+              <td class="value-col" id="rowInvestorTarget">$276,850</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Maximum Allowable Offer (MAO to Seller):</td>
+              <td class="value-col" id="rowMAO">$178,600</td>
+            </tr>
+            <tr>
+              <td>Wholesaler Assignment Spread:</td>
+              <td class="value-col" id="rowAssignment" style="color: var(--accent-emerald-dark); font-weight:800;">+$15,000</td>
+            </tr>
+            <tr>
+              <td>Projected Resale Disposition Costs (6.5%):</td>
+              <td class="value-col" id="rowSellingCosts">-$25,708</td>
+            </tr>
+            <tr>
+              <td>Estimated 6-Month Holding &amp; Financing:</td>
+              <td class="value-col" id="rowHoldingCosts">-$15,919</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>Net Fix &amp; Flip Profit:</td>
+              <td class="value-col" id="rowNetProfit" style="color: var(--accent-emerald-dark); font-size:1.1rem; font-weight:900;">+$77,023</td>
+            </tr>
+            <tr>
+              <td>Projected Return on Investment (ROI):</td>
+              <td class="value-col" id="rowROI" style="color: var(--primary-navy); font-weight:800;">26.3%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Comp Valuation Range Sensitivity -->
+      <div class="results-card">
+        <h3>📊 Valuation Sensitivity &amp; Range</h3>
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td>Conservative ARV (-5% market shift):</td>
+              <td class="value-col" id="outConservativeARV">$375,725</td>
+            </tr>
+            <tr>
+              <td>Base Underwritten ARV:</td>
+              <td class="value-col" id="outBaseARV" style="font-weight:800; color:var(--accent-emerald-dark);">$395,500</td>
+            </tr>
+            <tr>
+              <td>Aggressive ARV (+5% high comp ceiling):</td>
+              <td class="value-col" id="outAggressiveARV">$415,275</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="calc-actions-row">
+        <button type="button" class="btn-action btn-action-primary" id="btnShareDeal">
+          🔗 Copy Shareable Deal Link
+        </button>
+        <button type="button" class="btn-action btn-action-outline" onclick="window.print()">
+          🖨️ Print Investment Memo
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       3. COMPREHENSIVE SEO EDUCATIONAL GUIDE & FAQ (2,000+ WORDS)
+  ======================================================== -->
+  <article class="guide-section">
+
+    <h2>Comprehensive Guide: How to Calculate ARV in Real Estate &amp; Wholesaling</h2>
+    <p>
+      In residential real estate investing, few metrics carry as much financial weight as **After Repair Value (ARV)**. Whether you are a real estate wholesaler calculating your contract assignment spread, a fix &amp; flipper securing hard money loan leverage, or a BRRRR investor executing a cash-out refinance takeout, ARV represents the economic anchor of the entire transaction.
+    </p>
+
+    <div class="callout-box">
+      <h4>What is After Repair Value (ARV)?</h4>
+      <p>
+        <strong>After Repair Value (ARV)</strong> is the estimated fair market value of a distressed or dated residential property after all necessary repairs, capital improvements, cosmetic modernizations, and structural renovations have been completed.
+      </p>
+    </div>
+
+    <h2>The Mathematical Formula for Calculating ARV</h2>
+    <p>
+      Professional appraisers and institutional underwriters determine ARV using the **Sales Comparison Approach (Comps Method)**. The formula evaluates nearby recently sold renovated homes:
+    </p>
+    $$\text{Average Price per Sq Ft} = \frac{\sum (\text{Adjusted Comp Sale Price})}{\sum (\text{Comp Square Footage})}$$
+    $$\text{Subject Property ARV} = (\text{Subject Living Area Sq Ft} \times \text{Average Price per Sq Ft}) \pm \text{Net Subject Adjustments}$$
+    <p>
+      For example, if the average adjusted price per square foot of three nearby renovated comps is $215/sqft and your subject property has 1,850 square feet of finished living area, the baseline ARV is:
+    </p>
+    $$\text{ARV} = 1,850 \text{ sq ft} \times \$215.00/\text{sq ft} = \$397,750$$
+
+    <h2>How to Calculate ARV for Wholesaling (The Wholesaler's Spread)</h2>
+    <p>
+      Real estate wholesalers do not purchase homes to live in or renovate themselves. Instead, they secure a distressed property under contract with a motivated seller and assign that contractual right to a cash buyer (end investor) for a fee.
+    </p>
+    <p>
+      To prevent contracting an unsellable deal, wholesalers must reverse-engineer their purchase offer starting strictly from the ARV:
+    </p>
+
+    <h3>The Wholesaling ARV Formula:</h3>
+    $$\text{End-Buyer Purchase Price} = (\text{ARV} \times 70\%) - \text{Estimated Renovation Costs}$$
+    $$\text{Maximum Wholesaler Offer to Seller} = \text{End-Buyer Purchase Price} - \text{Target Assignment Fee}$$
+    
+    <p>
+      <strong>Step-by-Step Wholesaling Example:</strong>
+    </p>
+    <ol>
+      <li><strong>Determine ARV:</strong> Neighborhood sold comps indicate a fully renovated value of <strong>$400,000</strong>.</li>
+      <li><strong>Estimate Rehab Costs:</strong> The property requires a moderate rehab ($45/sqft on 1,800 sqft) = <strong>$81,000</strong>.</li>
+      <li><strong>Apply the 70% Rule:</strong> $\$400,000 \times 0.70 = \$280,000$.</li>
+      <li><strong>Subtract Rehab:</strong> $\$280,000 - \$81,000 = \$199,000$ (This is the maximum your cash buyer will pay).</li>
+      <li><strong>Deduct Wholesaler Assignment Fee:</strong> If your target profit is <strong>$15,000</strong>, your maximum allowable offer to the motivated seller is:
+        $$\$199,000 - \$15,000 = \$184,000$$
+      </li>
+    </ol>
+
+    <h2>How RealRefin Free ARV Calculator Compares to BiggerPockets</h2>
+    <p>
+      Many real estate investors begin their journey searching for a <em>biggerpockets arv calculator</em> or a <em>free arv calculator</em>. While BiggerPockets popularized real estate calculator software, their model restricts free users to five total calculations before requiring a recurring paid Pro subscription ($39/month or $390/year).
+    </p>
+
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Feature &amp; Underwriting Capability</th>
+            <th>RealRefin ARV Calculator</th>
+            <th>BiggerPockets ARV Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Usage Limits &amp; Cost</strong></td>
+            <td><strong>100% Free Forever</strong> (Unlimited Deals)</td>
+            <td>5 Free Calculations (Requires $39/mo Pro)</td>
+          </tr>
+          <tr>
+            <td><strong>Account Registration Required?</strong></td>
+            <td><strong>Zero Sign-Up Required</strong> (Instant Access)</td>
+            <td>Mandatory Email &amp; Account Sign-Up</td>
+          </tr>
+          <tr>
+            <td><strong>Wholesaling Assignment Fee Modeling</strong></td>
+            <td><strong>Built-in Dedicated Tab</strong></td>
+            <td>Requires separate wholesale calculator</td>
+          </tr>
+          <tr>
+            <td><strong>AI Rehab Benchmark Tiers ($/SqFt)</strong></td>
+            <td><strong>Yes ($20, $45, $75/sqft dynamic)</strong></td>
+            <td>Manual lump-sum input only</td>
+          </tr>
+          <tr>
+            <td><strong>Shareable Dynamic Deal URL</strong></td>
+            <td><strong>Yes (1-Click Instant Share)</strong></td>
+            <td>Restricted to Pro members</td>
+          </tr>
+          <tr>
+            <td><strong>Printable Underwriting Summary</strong></td>
+            <td><strong>Free PDF / Browser Print</strong></td>
+            <td>Pro Subscription required for PDF reports</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>How to Find Accurate Real Estate Comps by Address</h2>
+    <p>
+      To calculate an accurate ARV by address, investors must follow strict appraisal comparability guidelines:
+    </p>
+    <ul>
+      <li><strong>Proximity (Radius):</strong> Comps must be located within 0.5 miles for urban/suburban single-family homes, and within 1.0 mile for rural tracts. Never cross major geographic barriers such as interstate highways, railroad tracks, or school district boundaries.</li>
+      <li><strong>Recency of Sale:</strong> Select properties that closed within the past 90 to 180 days. Older sales do not reflect current mortgage rate environments or seasonal buyer demand.</li>
+      <li><strong>Square Footage Variance:</strong> Comps should be within $\pm 15\%$ of the subject property's finished above-grade gross living area (GLA).</li>
+      <li><strong>Property Age &amp; Style:</strong> Compare ranches to ranches and two-stories to two-stories, keeping the year built within a 10 to 15-year window.</li>
+      <li><strong>Finished Renovation Condition:</strong> Ensure selected comps represent fully repaired, modernized homes with premium finishes (granite/quartz countertops, modern bathrooms, new HVAC, and updated flooring).</li>
+    </ul>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What is the difference between ARV and As-Is Value?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          <strong>As-Is Value</strong> is the current fair market price of a property in its present, unrepaired condition—often factoring in deferred maintenance, code violations, or outdated systems. <strong>After Repair Value (ARV)</strong> is the projected retail value of the property after all necessary renovations, structural repairs, and cosmetic modernizations are fully completed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I use Zillow Zestimate or Redfin Estimate as my ARV?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          No. Algorithmic automated valuation models like Zillow Zestimates or Redfin estimates evaluate current tax assessor data and active listings; they cannot see interior conditions. If a property is distressed with water damage or missing drywall, a generic automated estimate will dramatically overestimate the current value and fail to accurately model the post-renovation retail potential. Real investors always use verified sold comps.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much should I budget per square foot for rehab costs?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          In typical US housing markets:
+          <ul>
+            <li><strong>Cosmetic Rehab ($15 - $25/sqft):</strong> Interior paint, carpet/LVP flooring, light fixtures, hardware, and minor landscaping.</li>
+            <li><strong>Moderate Rehab ($35 - $55/sqft):</strong> Complete kitchen remodel, updated bathrooms, new roof, and modern appliances.</li>
+            <li><strong>Heavy / Gut Rehab ($65 - $90+/sqft):</strong> Foundation repairs, new plumbing/electrical, new HVAC system, framing alterations, and full architectural rebuilds.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How does ARV impact hard money loan financing?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Hard money and private lenders base their maximum loan exposure on the ARV—typically financing between 65% and 75% of the ARV (or up to 90% of Total Project Cost). A higher, well-supported ARV allows flippers to finance 100% of their renovation budget while minimizing out-of-pocket cash equity.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What adjustments should be made when comparing comps?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Standard rule-of-thumb appraisal adjustments include:
+          <ul>
+            <li><strong>Extra Bedroom:</strong> $\pm \$10,000 \text{ to } \$15,000$</li>
+            <li><strong>Extra Bathroom:</strong> $\pm \$8,000 \text{ to } \$12,000$</li>
+            <li><strong>Garage (2-Car vs. None):</strong> $\pm \$12,000 \text{ to } \$20,000$</li>
+            <li><strong>In-Ground Swimming Pool:</strong> $\pm \$15,000 \text{ to } \$30,000$ (depending on climate)</li>
+            <li><strong>Square Footage Difference:</strong> $\pm \$40 \text{ to } \$70 \text{ per square foot}$ for size discrepancies.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RealRefin Platform</h4>
+          <p style="font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem;">
+            Institutional financial analytics and automated underwriting engines for residential real estate investors, mortgage originators, and commercial capital sponsors.
+          </p>
+          <p style="font-size: 0.8rem; color: var(--text-light);">
+            © 2026 RealRefin.com. All rights reserved.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Investor &amp; Wholesaling</h4>
+          <ul>
+            <li><a href="/arv-calculator">ARV Calculator</a></li>
+            <li><a href="/maximum-allowable-offer-calculator">MAO Offer Modeler</a></li>
+            <li><a href="/hard-money-loan-calculator">Hard Money Calculator</a></li>
+            <li><a href="/subto-calculator">SubTo Creative Finance</a></li>
+            <li><a href="/brrrr-calculator">BRRRR Strategy Modeler</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Commercial &amp; Debt</h4>
+          <ul>
+            <li><a href="/interest-rate-cap-calculator">Interest Rate Cap &amp; SOFR</a></li>
+            <li><a href="/dscr-calculator">DSCR Loan Underwriter</a></li>
+            <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+            <li><a href="/cost-segregation-study-calculator">Cost Segregation Study</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Regulatory &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/disclaimer">Financial Disclaimer</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>
+          Disclaimer: RealRefin financial calculators, ARV models, and wholesale formulas are for educational and underwriting analysis only. Property valuations vary based on localized market conditions, contractor bids, and licensed appraisal inspections.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========================================================
+     INTERACTIVE JAVASCRIPT ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Switcher Tabs
+  const tabCompsARV = document.getElementById('tabCompsARV');
+  const tabWholesaling = document.getElementById('tabWholesaling');
+  const tabFixFlip = document.getElementById('tabFixFlip');
+
+  const sectionComps = document.getElementById('sectionComps');
+  const sectionWholesaling = document.getElementById('sectionWholesaling');
+  const sectionFixFlip = document.getElementById('sectionFixFlip');
+
+  tabCompsARV.addEventListener('click', () => {
+    tabCompsARV.classList.add('active');
+    tabWholesaling.classList.remove('active');
+    tabFixFlip.classList.remove('active');
+    sectionComps.style.display = 'block';
+    sectionWholesaling.style.display = 'none';
+    sectionFixFlip.style.display = 'none';
+  });
+
+  tabWholesaling.addEventListener('click', () => {
+    tabWholesaling.classList.add('active');
+    tabCompsARV.classList.remove('active');
+    tabFixFlip.classList.remove('active');
+    sectionComps.style.display = 'none';
+    sectionWholesaling.style.display = 'block';
+    sectionFixFlip.style.display = 'none';
+  });
+
+  tabFixFlip.addEventListener('click', () => {
+    tabFixFlip.classList.add('active');
+    tabCompsARV.classList.remove('active');
+    tabWholesaling.classList.remove('active');
+    sectionComps.style.display = 'none';
+    sectionWholesaling.style.display = 'none';
+    sectionFixFlip.style.display = 'block';
+  });
+
+  // Inputs: Comps
+  const inpSubjectSqFt = document.getElementById('inpSubjectSqFt');
+  const rngSubjectSqFt = document.getElementById('rngSubjectSqFt');
+  const badgeSubjectSqFt = document.getElementById('badgeSubjectSqFt');
+  const inpEstimatedRehab = document.getElementById('inpEstimatedRehab');
+  const badgeRehabLevel = document.getElementById('badgeRehabLevel');
+
+  // Comps Table Inputs
+  const c1Price = document.getElementById('c1Price');
+  const c1SqFt = document.getElementById('c1SqFt');
+  const c1Adj = document.getElementById('c1Adj');
+  const c1Result = document.getElementById('c1Result');
+
+  const c2Price = document.getElementById('c2Price');
+  const c2SqFt = document.getElementById('c2SqFt');
+  const c2Adj = document.getElementById('c2Adj');
+  const c2Result = document.getElementById('c2Result');
+
+  const c3Price = document.getElementById('c3Price');
+  const c3SqFt = document.getElementById('c3SqFt');
+  const c3Adj = document.getElementById('c3Adj');
+  const c3Result = document.getElementById('c3Result');
+
+  // Wholesaling Inputs
+  const inpAssignmentFee = document.getElementById('inpAssignmentFee');
+  const inpInvestorRule = document.getElementById('inpInvestorRule');
+  const rngInvestorRule = document.getElementById('rngInvestorRule');
+  const inpManualARV = document.getElementById('inpManualARV');
+
+  // Fix and Flip Inputs
+  const inpFlipPurchase = document.getElementById('inpFlipPurchase');
+  const inpHoldingMonths = document.getElementById('inpHoldingMonths');
+  const inpHardMoneyRate = document.getElementById('inpHardMoneyRate');
+  const inpSellingCostPct = document.getElementById('inpSellingCostPct');
+
+  // Outputs
+  const outARV = document.getElementById('outARV');
+  const outPricePerSqFt = document.getElementById('outPricePerSqFt');
+  const out70RuleOffer = document.getElementById('out70RuleOffer');
+  const outWholesaleOffer = document.getElementById('outWholesaleOffer');
+  const outGrossSpread = document.getElementById('outGrossSpread');
+
+  const rowARV = document.getElementById('rowARV');
+  const rowRehab = document.getElementById('rowRehab');
+  const rowInvestorTarget = document.getElementById('rowInvestorTarget');
+  const rowMAO = document.getElementById('rowMAO');
+  const rowAssignment = document.getElementById('rowAssignment');
+  const rowSellingCosts = document.getElementById('rowSellingCosts');
+  const rowHoldingCosts = document.getElementById('rowHoldingCosts');
+  const rowNetProfit = document.getElementById('rowNetProfit');
+  const rowROI = document.getElementById('rowROI');
+
+  const outConservativeARV = document.getElementById('outConservativeARV');
+  const outBaseARV = document.getElementById('outBaseARV');
+  const outAggressiveARV = document.getElementById('outAggressiveARV');
+
+  let activeRehabRate = 45; // $/sqft
+
+  // Formatters
+  function formatMoney(num) {
+    return '$' + Math.round(num).toLocaleString('en-US');
+  }
+
+  function formatDecimal(num, dec = 2) {
+    return Number(num).toFixed(dec);
+  }
+
+  // Sync Input & Range
+  function syncPair(numInp, rngInp, callback) {
+    numInp.addEventListener('input', () => {
+      rngInp.value = numInp.value;
+      if (callback) callback();
+    });
+    rngInp.addEventListener('input', () => {
+      numInp.value = rngInp.value;
+      if (callback) callback();
+    });
+  }
+
+  syncPair(inpSubjectSqFt, rngSubjectSqFt, () => {
+    badgeSubjectSqFt.textContent = `${Number(inpSubjectSqFt.value).toLocaleString()} Sq Ft`;
+    updateRehabFromTiers();
+    recalculate();
+  });
+
+  syncPair(inpInvestorRule, rngInvestorRule, recalculate);
+
+  // Rehab Tier Chips
+  document.querySelectorAll('#rehabTiers .rehab-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('#rehabTiers .rehab-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      activeRehabRate = parseFloat(this.getAttribute('data-rate'));
+      badgeRehabLevel.textContent = `${this.getAttribute('data-label')} ($${activeRehabRate}/sqft)`;
+      updateRehabFromTiers();
+      recalculate();
+    });
+  });
+
+  function updateRehabFromTiers() {
+    const sqft = Math.max(0, parseFloat(inpSubjectSqFt.value) || 0);
+    inpEstimatedRehab.value = Math.round(sqft * activeRehabRate);
+  }
+
+  // AI Sample Comps Button
+  document.getElementById('btnLoadSampleComps').addEventListener('click', () => {
+    const baseSqFt = parseFloat(inpSubjectSqFt.value) || 1850;
+    c1Price.value = Math.round(baseSqFt * 215);
+    c1SqFt.value = Math.round(baseSqFt * 0.96);
+    c1Adj.value = 5000;
+
+    c2Price.value = Math.round(baseSqFt * 222);
+    c2SqFt.value = Math.round(baseSqFt * 1.04);
+    c2Adj.value = -7500;
+
+    c3Price.value = Math.round(baseSqFt * 218);
+    c3SqFt.value = Math.round(baseSqFt * 0.99);
+    c3Adj.value = 2500;
+
+    recalculate();
+  });
+
+  // Event Listeners for Comps
+  [c1Price, c1SqFt, c1Adj, c2Price, c2SqFt, c2Adj, c3Price, c3SqFt, c3Adj, inpEstimatedRehab].forEach(el => {
+    el.addEventListener('input', recalculate);
+  });
+
+  // Event Listeners for Wholesaling & Flip
+  [inpAssignmentFee, inpManualARV, inpFlipPurchase, inpHoldingMonths, inpHardMoneyRate, inpSellingCostPct].forEach(el => {
+    el.addEventListener('input', recalculate);
+  });
+
+  // Main Calculation Function
+  function recalculate() {
+    const subjectSqFt = Math.max(100, parseFloat(inpSubjectSqFt.value) || 0);
+
+    // Calculate Individual Comps
+    function getCompMetrics(pInput, sInput, aInput, resCol) {
+      const p = parseFloat(pInput.value) || 0;
+      const s = Math.max(100, parseFloat(sInput.value) || 0);
+      const a = parseFloat(aInput.value) || 0;
+      const adjPrice = p + a;
+      const rate = adjPrice / s;
+      resCol.textContent = `$${formatDecimal(rate, 2)}`;
+      return { adjPrice, sqft: s, rate };
+    }
+
+    const comp1 = getCompMetrics(c1Price, c1SqFt, c1Adj, c1Result);
+    const comp2 = getCompMetrics(c2Price, c2SqFt, c2Adj, c2Result);
+    const comp3 = getCompMetrics(c3Price, c3SqFt, c3Adj, c3Result);
+
+    // Average Price per SqFt from 3 Comps
+    const avgPricePerSqFt = (comp1.rate + comp2.rate + comp3.rate) / 3;
+    const calculatedARV = Math.round(subjectSqFt * avgPricePerSqFt);
+
+    // Update manual ARV input if not focused
+    if (document.activeElement !== inpManualARV) {
+      inpManualARV.value = calculatedARV;
+    }
+
+    const finalARV = parseFloat(inpManualARV.value) || calculatedARV;
+    const rehab = Math.max(0, parseFloat(inpEstimatedRehab.value) || 0);
+    const assignmentFee = Math.max(0, parseFloat(inpAssignmentFee.value) || 0);
+    const rulePct = Math.max(40, Math.min(90, parseFloat(inpInvestorRule.value) || 70)) / 100;
+
+    // 70% Rule Formula
+    const investorTargetBuyPrice = Math.round(finalARV * rulePct);
+    const seventyRuleOffer = Math.max(0, investorTargetBuyPrice - rehab);
+
+    // Wholesaling Maximum Offer to Seller
+    const wholesaleOffer = Math.max(0, seventyRuleOffer - assignmentFee);
+    const grossSpread = Math.max(0, finalARV - (wholesaleOffer + rehab));
+
+    // Update flip purchase input if default
+    if (document.activeElement !== inpFlipPurchase && inpFlipPurchase.dataset.userEdited !== 'true') {
+      inpFlipPurchase.value = seventyRuleOffer;
+    }
+
+    const actualFlipPurchase = parseFloat(inpFlipPurchase.value) || seventyRuleOffer;
+    const holdingMonths = Math.max(1, parseFloat(inpHoldingMonths.value) || 6);
+    const hardMoneyRate = Math.max(0, parseFloat(inpHardMoneyRate.value) || 0) / 100;
+    const sellingCostPct = Math.max(0, parseFloat(inpSellingCostPct.value) || 0) / 100;
+
+    // Flip Underwriting
+    const sellingCosts = finalARV * sellingCostPct;
+    // Loan interest on Purchase + Rehab financed
+    const loanAmount = (actualFlipPurchase + rehab) * 0.85; // 85% LTC typical
+    const holdingCostInterest = (loanAmount * hardMoneyRate * (holdingMonths / 12));
+    const holdingUtilitiesInsurance = holdingMonths * 450; // $450/mo holding
+    const totalHolding = holdingCostInterest + holdingUtilitiesInsurance;
+
+    const totalProjectCost = actualFlipPurchase + rehab + sellingCosts + totalHolding;
+    const netFlipProfit = finalARV - totalProjectCost;
+    const investedCash = (actualFlipPurchase + rehab) - loanAmount + sellingCosts + totalHolding;
+    const roiPct = investedCash > 0 ? (netFlipProfit / investedCash) * 100 : 0;
+
+    // Render Primary Outputs
+    outARV.textContent = formatMoney(finalARV);
+    outPricePerSqFt.textContent = `$${formatDecimal(avgPricePerSqFt, 2)} / Sq Ft`;
+    out70RuleOffer.textContent = formatMoney(seventyRuleOffer);
+    outWholesaleOffer.textContent = formatMoney(wholesaleOffer);
+    outGrossSpread.textContent = formatMoney(grossSpread);
+
+    // Breakdown Table Rows
+    rowARV.textContent = formatMoney(finalARV);
+    rowRehab.textContent = `-${formatMoney(rehab)}`;
+    rowInvestorTarget.textContent = formatMoney(investorTargetBuyPrice);
+    rowMAO.textContent = formatMoney(wholesaleOffer);
+    rowAssignment.textContent = `+${formatMoney(assignmentFee)}`;
+    rowSellingCosts.textContent = `-${formatMoney(sellingCosts)}`;
+    rowHoldingCosts.textContent = `-${formatMoney(totalHolding)}`;
+    rowNetProfit.textContent = `${netFlipProfit >= 0 ? '+' : ''}${formatMoney(netFlipProfit)}`;
+    rowNetProfit.style.color = netFlipProfit >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-danger)';
+    rowROI.textContent = `${formatDecimal(roiPct, 1)}%`;
+
+    // Valuation Sensitivity
+    outConservativeARV.textContent = formatMoney(finalARV * 0.95);
+    outBaseARV.textContent = formatMoney(finalARV);
+    outAggressiveARV.textContent = formatMoney(finalARV * 1.05);
+  }
+
+  inpFlipPurchase.addEventListener('input', function() {
+    this.dataset.userEdited = 'true';
+    recalculate();
+  });
+
+  // Share Button
+  document.getElementById('btnShareDeal').addEventListener('click', function() {
+    const url = new URL(window.location);
+    url.searchParams.set('sqft', inpSubjectSqFt.value);
+    url.searchParams.set('rehab', inpEstimatedRehab.value);
+    url.searchParams.set('fee', inpAssignmentFee.value);
+    url.searchParams.set('rule', inpInvestorRule.value);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '✓ Copied Shareable Link!';
+      this.style.background = 'var(--accent-emerald-dark)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = 'var(--primary-navy)';
+      }, 2500);
+    }).catch(() => {
+      alert('URL: ' + url.toString());
+    });
+  });
+
+  // Load from URL State
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('sqft')) {
+      inpSubjectSqFt.value = p.get('sqft');
+      rngSubjectSqFt.value = p.get('sqft');
+    }
+    if (p.has('rehab')) inpEstimatedRehab.value = p.get('rehab');
+    if (p.has('fee')) inpAssignmentFee.value = p.get('fee');
+    if (p.has('rule')) {
+      inpInvestorRule.value = p.get('rule');
+      rngInvestorRule.value = p.get('rule');
+    }
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Init
+  loadUrlState();
+  updateRehabFromTiers();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>

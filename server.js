@@ -19,6 +19,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/arv-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/house-hacking-calculator</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -457,6 +463,22 @@ const FILE_MAP = {
   '/chatham-interest-rate-cap-calculator.html': 'interest-rate-cap-calculator.html',
   '/rate-cap-calculator': 'interest-rate-cap-calculator.html',
   '/rate-cap-calculator.html': 'interest-rate-cap-calculator.html',
+  '/arv-calculator': 'arv-calculator.html',
+  '/arv-calculator.html': 'arv-calculator.html',
+  '/free-arv-calculator': 'arv-calculator.html',
+  '/free-arv-calculator.html': 'arv-calculator.html',
+  '/arv-calculator-free': 'arv-calculator.html',
+  '/arv-calculator-free.html': 'arv-calculator.html',
+  '/arv-calculator-by-address': 'arv-calculator.html',
+  '/arv-calculator-by-address.html': 'arv-calculator.html',
+  '/biggerpockets-arv-calculator': 'arv-calculator.html',
+  '/biggerpockets-arv-calculator.html': 'arv-calculator.html',
+  '/how-to-calculate-arv-wholesaling': 'arv-calculator.html',
+  '/how-to-calculate-arv-wholesaling.html': 'arv-calculator.html',
+  '/ai-arv-calculator': 'arv-calculator.html',
+  '/ai-arv-calculator.html': 'arv-calculator.html',
+  '/arv-real-estate-calculator': 'arv-calculator.html',
+  '/arv-real-estate-calculator.html': 'arv-calculator.html',
   '/about': 'about.html',
   '/about.html': 'about.html',
   '/contact': 'contact.html',
