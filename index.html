@@ -303,6 +303,9 @@
       --accent-indigo-light: #eef2ff;
       --accent-gold: #d4af37;
       --accent-gold-light: #fffbeb;
+      --accent-excel: #107C41;
+      --accent-excel-dark: #0b5c30;
+      --accent-excel-light: #e8f5e9;
       
       --text-main: #0f172a;
       --text-muted: #64748b;
@@ -738,6 +741,12 @@
       border: 1px solid #fde68a;
     }
 
+    .suite-excel .suite-badge-tag {
+      background: var(--accent-excel-light);
+      color: var(--accent-excel-dark);
+      border: 1px solid #c8e6c9;
+    }
+
     /* Tool Cards Grid */
     .tools-grid {
       display: grid;
@@ -1047,10 +1056,10 @@
       border: 1px solid var(--border-color);
     }
 
-    /* 4-Category Suite Columns Grid */
+    /* 5-Category Suite Columns Grid */
     .footer-categories-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 2.25rem;
       margin-bottom: 3.5rem;
     }
@@ -1192,9 +1201,10 @@
       <li><a href="#suite-investor">Investors</a></li>
       <li><a href="#suite-buyer">Buyers</a></li>
       <li><a href="#suite-military">Military &amp; VA</a></li>
+      <li><a href="#suite-excel" style="color: var(--accent-excel); font-weight: 700;">📊 Excel Models</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="#suites-directory" class="btn-nav-cta">Explore 4 Suites →</a></li>
+      <li><a href="#suites-directory" class="btn-nav-cta">Explore 5 Suites →</a></li>
     </ul>
   </header>
 
@@ -1209,32 +1219,33 @@
       Smarter Real Estate Investment &amp; Debt Decisions <span>in Seconds</span>
     </h1>
     <p class="hero-lead">
-      Underwrite property acquisitions, debt restructuring, and equity velocity with institutional precision. Free, real-time calculators organized across 4 specialized financial suites for investors in the United States, United Kingdom, and Australia.
+      Underwrite property acquisitions, debt restructuring, and equity velocity with institutional precision. Free, real-time calculators organized across 5 specialized financial suites for investors in the United States, United Kingdom, and Australia.
     </p>
 
     <!-- Quick Search Launcher -->
     <div class="hero-search-wrap">
       <span class="hero-search-icon">🔍</span>
-      <input type="text" id="toolSearchInput" class="hero-search-input" placeholder="Search any calculator (e.g. Cash-Out vs HELOC, 1031 Exchange, PMI Removal, SubTo, BAH, DSCR, 2-1 Buydown)..." autocomplete="off">
+      <input type="text" id="toolSearchInput" class="hero-search-input" placeholder="Search any calculator (e.g. Refinance Excel, Lease Amortization, Cash-Out vs HELOC, 1031 Exchange, DSCR, 2-1 Buydown)..." autocomplete="off">
     </div>
 
-    <!-- 4 Suite Quick Navigation Pills -->
+    <!-- 5 Suite Quick Navigation Pills -->
     <div class="hero-suite-pills">
-      <a href="#suite-refinance" class="suite-pill-link">🔄 1. Refinance &amp; Mortgage (5)</a>
-      <a href="#suite-investor" class="suite-pill-link">🏢 2. Investor &amp; Rental (13)</a>
+      <a href="#suite-refinance" class="suite-pill-link">🔄 1. Refinance &amp; Mortgage (7)</a>
+      <a href="#suite-investor" class="suite-pill-link">🏢 2. Investor &amp; Rental (14)</a>
       <a href="#suite-buyer" class="suite-pill-link">🏡 3. Home Buyer &amp; Seller (7)</a>
       <a href="#suite-military" class="suite-pill-link">🎖️ 4. Military &amp; VA Loans (4)</a>
+      <a href="#suite-excel" class="suite-pill-link" style="background: rgba(16, 124, 65, 0.25); border-color: #6ee7b7; color: #a7f3d0;">📊 5. Excel Models &amp; Templates (6)</a>
     </div>
 
     <!-- Live Trust Bar -->
     <div class="hero-trust-bar">
       <div class="trust-stat">
-        <h4>29 Engines</h4>
+        <h4>35+ Engines</h4>
         <p>Specialized Modeling Tools</p>
       </div>
       <div class="trust-stat">
-        <h4>3 Regions</h4>
-        <p>USD ($), GBP (£), AUD (A$)</p>
+        <h4>Free .XLSX</h4>
+        <p>Pre-Built Excel Templates</p>
       </div>
       <div class="trust-stat">
         <h4>100% Client-Side</h4>
@@ -1253,19 +1264,22 @@
   <div class="filter-sticky-container" id="suites-directory">
     <div class="suite-filter-bar">
       <button class="filter-tab active" data-filter="all">
-        🌐 All Suites <span class="count-pill">29</span>
+        🌐 All Suites <span class="count-pill">35+</span>
       </button>
       <button class="filter-tab" data-filter="suite-refinance">
-        🔄 1. Refinance &amp; Mortgage <span class="count-pill">5</span>
+        🔄 1. Refinance &amp; Mortgage <span class="count-pill">7</span>
       </button>
       <button class="filter-tab" data-filter="suite-investor">
-        🏢 2. Investor &amp; Rental <span class="count-pill">13</span>
+        🏢 2. Investor &amp; Rental <span class="count-pill">14</span>
       </button>
       <button class="filter-tab" data-filter="suite-buyer">
         🏡 3. Home Buyer &amp; Seller <span class="count-pill">7</span>
       </button>
       <button class="filter-tab" data-filter="suite-military">
         🎖️ 4. Military &amp; VA Loans <span class="count-pill">4</span>
+      </button>
+      <button class="filter-tab" data-filter="suite-excel" style="color: var(--accent-excel); font-weight: 800;">
+        📊 5. Excel &amp; Spreadsheets <span class="count-pill" style="background: #e8f5e9; color: #107C41;">6</span>
       </button>
     </div>
   </div>
@@ -2066,6 +2080,138 @@
   </section>
 
   <!-- ========================================================
+       SUITE 5: EXCEL FINANCIAL MODELS & SPREADSHEETS SUITE
+  ======================================================== -->
+  <section class="suite-block suite-excel" id="suite-excel" aria-label="Excel Financial Models & Spreadsheets Suite">
+    <div class="suite-header-wrap">
+      <div class="suite-title-group">
+        <h2><span>📊</span> Suite 5: Excel Financial Models &amp; Free Templates</h2>
+        <p>
+          Download institutional Microsoft Excel (.xlsx) financial workbooks, pre-built formulas (=PMT, =PV, =NPER), 30-year amortization tables, ASC 842 lease schedules, and investor cash flow spreadsheets. 100% free with instant client-side generation.
+        </p>
+      </div>
+      <span class="suite-badge-tag" style="background: var(--accent-excel-light); color: var(--accent-excel-dark); border: 1px solid #c8e6c9;">
+        6 Downloadable Excel Models
+      </span>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- Excel Tool 1: Mortgage Refinance Calculator (Excel) -->
+      <div class="tool-card featured" data-keywords="mortgage refinance calculator excel refinance calculator excel excel refinance calculator mortgage refinance calculator excel template refinance break even calculator excel mortgage refinance break even calculator excel cash out refinance calculator excel mortgage cash-out refinance calculator excel refinance comparison calculator excel refinance excel calculator" style="border: 2px solid #107C41;">
+        <span class="tool-featured-tag" style="background: #107C41;">📊 Rate &amp; Term vs Cash-Out | Free .XLSX Model</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #e8f5e9; color: #107C41;">📉</div>
+          <h3>Mortgage Refinance &amp; Cash-Out (Excel)</h3>
+          <p>
+            Model rate-and-term savings, closing cost break-even recovery months, and 80% LTV cash-out equity extraction. Download a customized Excel spreadsheet with native PMT formulas in one click.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Rate-and-Term &amp; Cash-Out Dual Underwriting Mode</li>
+            <li><span>✓</span> Exact Closing Cost Break-Even Payback Period Math</li>
+            <li><span>✓</span> 80% LTV Equity Extraction &amp; Net Cash in Hand</li>
+            <li><span>✓</span> 1-Click Multi-Tab Microsoft Excel (.xlsx) Download</li>
+          </ul>
+        </div>
+        <a href="/mortgage-refinance-calculator" class="btn-tool-launch" style="background: #107C41;">Download Refi Excel Model →</a>
+      </div>
+
+      <!-- Excel Tool 2: Lease Amortization Schedule in Excel -->
+      <div class="tool-card featured" data-keywords="how to create a lease amortization schedule in excel lease amortization schedule excel lease amortization schedule in excel lease amortization schedule excel template free capital lease amortization schedule excel template amortization schedule in excel template asc 842 lease amortization schedule excel finance lease amortization excel" style="border: 2px solid #107C41;">
+        <span class="tool-featured-tag" style="background: #107C41;">📐 ASC 842 / IFRS 16 | Free Excel (.xlsx) Model</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #e8f5e9; color: #107C41;">📋</div>
+          <h3>Lease Amortization Schedule in Excel</h3>
+          <p>
+            Master how to create capital and finance lease amortization schedules in Excel. Calculate initial Present Value (PV) of lease liabilities, monthly interest expense, and download a pre-built Excel template.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Step-by-Step Excel Formula Guide (=PV, Interest, Liability)</li>
+            <li><span>✓</span> Advance (Annuity Due) vs Arrears Payment Timing Math</li>
+            <li><span>✓</span> FASB ASC 842 &amp; IFRS 16 Balance Sheet Capitalization</li>
+            <li><span>✓</span> 1-Click Multi-Tab Microsoft Excel (.xlsx) File Download</li>
+          </ul>
+        </div>
+        <a href="/lease-amortization-schedule-excel" class="btn-tool-launch" style="background: #107C41;">Download Lease Excel Model →</a>
+      </div>
+
+      <!-- Excel Tool 3: 2-1 Buydown & Excel Generator -->
+      <div class="tool-card featured" data-keywords="2 1 buydown 3 2 1 buydown temporary rate buydown excel seller concession excel schedule" style="border: 2px solid #10b981;">
+        <span class="tool-featured-tag" style="background: #10b981;">📉 Rate Concessions | Free Excel Schedule</span>
+        <div>
+          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #10b981;">📊</div>
+          <h3>2-1 &amp; 3/2/1 Buydown &amp; Excel Generator</h3>
+          <p>
+            Calculate upfront seller concession escrow costs, buyer monthly payment savings across Years 1, 2, and 3, and verify statutory Fannie Mae/FHA IPC limits. Download free Excel schedule.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> 2-1, 3/2/1, and 1-0 Dynamic Buydown Structures</li>
+            <li><span>✓</span> Exact Seller Escrow Subsidy Lump-Sum Math</li>
+            <li><span>✓</span> Fannie Mae &amp; Freddie Mac IPC Contribution Check</li>
+            <li><span>✓</span> 1-Click Automated Excel Spreadsheet (.csv/.xlsx) Download</li>
+          </ul>
+        </div>
+        <a href="/2-1-buydown-calculator" class="btn-tool-launch" style="background: #047857;">Calculate 2-1 Buydown →</a>
+      </div>
+
+      <!-- Excel Tool 4: Mortgage Payoff vs Investing (Excel Export) -->
+      <div class="tool-card" data-keywords="mortgage payoff vs investing calculator excel mortgage payoff vs investment calculator pay off mortgage or invest calculator pay off mortgage early vs invest calculator extra mortgage payment vs investing calculator mortgage vs investing calculator excel csv export">
+        <div>
+          <div class="tool-icon-wrapper" style="background: #ecfdf5; color: #047857;">⚖️</div>
+          <h3>Mortgage Payoff vs. Investing (Excel)</h3>
+          <p>
+            Should you make extra mortgage payments or invest that surplus cash in equities? Model 30-year wealth trajectories, guaranteed interest saved, and export full comparative schedules to Excel.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Dual-Phase 30-Year Apples-to-Apples Wealth Modeler</li>
+            <li><span>✓</span> Guaranteed Risk-Free Interest Saved &amp; Early Payoff Timeline</li>
+            <li><span>✓</span> Exact Tax-Adjusted Breakeven Market Return Rate ($R_{\text{breakeven}}$)</li>
+            <li><span>✓</span> 50/50 Balanced Hybrid Strategy &amp; Excel CSV Schedule Export</li>
+          </ul>
+        </div>
+        <a href="/mortgage-payoff-vs-investing-calculator" class="btn-tool-launch" style="background: #047857;">Compare Payoff vs Investing →</a>
+      </div>
+
+      <!-- Excel Tool 5: Airbnb Profit Calculator (Excel) -->
+      <div class="tool-card" data-keywords="airbnb profit calculator excel str calculator excel airbnb revenue spreadsheet short term rental cash flow excel airbnb roi calculator">
+        <div>
+          <div class="tool-icon-wrapper" style="background: #eff6ff; color: #2563eb;">🏖️</div>
+          <h3>Airbnb Profit &amp; STR Cash Flow (Excel)</h3>
+          <p>
+            Underwrite short-term rental acquisitions, average daily rates (ADR), seasonal occupancy curves, cleaning fees, and platform commissions. Model cap rates and download spreadsheet projections.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Dynamic ADR &amp; Seasonal Occupancy Modeling</li>
+            <li><span>✓</span> Cleaning Fees, Linen &amp; Turn Cost Deduction Engine</li>
+            <li><span>✓</span> Net Cash Flow, Cap Rate &amp; Cash-on-Cash Return</li>
+            <li><span>✓</span> Investor-Ready Underwriting &amp; Excel Modeling</li>
+          </ul>
+        </div>
+        <a href="/airbnb-profit-calculator" class="btn-tool-launch" style="background: #2563eb;">Launch Airbnb Calculator →</a>
+      </div>
+
+      <!-- Excel Tool 6: Rental Yield & Investment Underwriting Engine -->
+      <div class="tool-card" data-keywords="rental yield calculator excel real estate investment spreadsheet rental property cash flow excel gross net yield cap rate calculator">
+        <div>
+          <div class="tool-icon-wrapper" style="background: #e8f5e9; color: #107C41;">🏢</div>
+          <h3>Rental Yield &amp; Cap Rate Engine</h3>
+          <p>
+            Calculate Gross Rental Yield, Net Rental Yield, and Annual Net Cash Flow with deductions for property taxes, management, insurance, and maintenance reserves across US, UK, and Australia.
+          </p>
+          <ul class="tool-feature-list">
+            <li><span>✓</span> Gross &amp; Net Rental Yield Institutional Formulas</li>
+            <li><span>✓</span> Multi-Currency Interactive Toggle ($ USD, £ GBP, A$ AUD)</li>
+            <li><span>✓</span> Comprehensive Operating Expense &amp; Reserve Deductions</li>
+            <li><span>✓</span> Dynamic Visual Performance Badge (High/Solid/Caution)</li>
+          </ul>
+        </div>
+        <a href="/rental-yield-calculator" class="btn-tool-launch" style="background: #107C41;">Calculate Rental Yield →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
        3. WHY REALREFIN FEATURE HIGHLIGHTS
   ======================================================== -->
   <section class="features-band">
@@ -2316,6 +2462,25 @@
           <li><a href="/va-irrrl-calculator">🔄 VA IRRRL Streamline Refinance</a></li>
           <li><a href="/assumable-mortgage-calculator#va">🇺🇸 VA Assumable Entitlement Substitution</a></li>
           <li><a href="#suite-military" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 4 Details →</a></li>
+        </ul>
+      </div>
+
+      <!-- Category 5: Excel Financial Models Suite -->
+      <div class="footer-cat-col">
+        <div class="footer-cat-header">
+          <div class="footer-cat-title" style="color: var(--accent-excel-dark);">
+            <span class="cat-icon">📊</span> Suite 5: Excel Models
+          </div>
+          <span class="footer-cat-count" style="background: #e8f5e9; color: #107C41;">6 Tools</span>
+        </div>
+        <ul>
+          <li><a href="/mortgage-refinance-calculator">📉 Mortgage Refinance (Excel)</a></li>
+          <li><a href="/lease-amortization-schedule-excel">📋 Lease Amortization (Excel)</a></li>
+          <li><a href="/2-1-buydown-calculator">📊 2-1 Buydown Schedule (Excel)</a></li>
+          <li><a href="/mortgage-payoff-vs-investing-calculator">⚖️ Payoff vs Investing (.CSV/.XLSX)</a></li>
+          <li><a href="/airbnb-profit-calculator">🏖️ Airbnb Profit Model (Excel)</a></li>
+          <li><a href="/rental-yield-calculator">🏢 Rental Yield Cash Flow Model</a></li>
+          <li><a href="#suite-excel" style="color: var(--accent-excel-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 5 Details →</a></li>
         </ul>
       </div>
 
