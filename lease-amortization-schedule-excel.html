@@ -1142,6 +1142,58 @@
       Whether you are an accountant complying with <strong>FASB ASC 842</strong>, an auditor verifying <strong>IFRS 16</strong> standards, or a commercial real estate tenant modeling equipment or property rent, here is the complete step-by-step formula blueprint to construct a lease amortization schedule in Microsoft Excel or Google Sheets.
     </p>
 
+    <!-- GOOGLE FEATURED SNIPPET & AI OVERVIEW TARGET BOX -->
+    <div class="featured-snippet-box" style="background: #f0fdf4; border: 2px solid #10b981; border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+        <span>⚡</span> Quick Answer: How to Create a Lease Amortization Schedule in Excel
+      </div>
+      <p style="font-size: 1rem; color: #065f46; line-height: 1.6; margin-bottom: 0.85rem;">
+        To create a lease amortization schedule in Excel under ASC 842 / IFRS 16 in 5 simple steps:
+      </p>
+      <ol style="margin-left: 1.5rem; color: #065f46; font-size: 0.95rem; line-height: 1.75;">
+        <li><strong>Input Lease Variables:</strong> Enter Monthly Payment in cell <code>B1</code>, Annual Rate (IBR) in <code>B2</code>, and Term in Months in <code>B3</code>.</li>
+        <li><strong>Calculate Initial Lease Liability:</strong> In cell <code>B6</code>, write <code>=PV(B2/12, B3, -B1, 0, 1)</code> for advance rent (Type 1).</li>
+        <li><strong>Set Up Table Headers:</strong> Label columns <em>Period (Col A)</em>, <em>Beginning Liability (Col B)</em>, <em>Payment (Col C)</em>, <em>Interest (Col D)</em>, <em>Principal Reduction (Col E)</em>, and <em>Ending Liability (Col F)</em>.</li>
+        <li><strong>Apply Row Formulas:</strong> Interest: <code>=B11*(B$2/12)</code> | Principal Reduction: <code>=C11-D11</code> | Ending Liability: <code>=B11-E11</code>.</li>
+        <li><strong>Fill Down:</strong> Drag formulas across all lease periods until ending balance reaches exactly <code>$0.00</code>.</li>
+      </ol>
+    </div>
+
+    <!-- EXCEL FORMULA CHEAT SHEET TABLE -->
+    <div style="margin-bottom: 2rem; overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+        <thead>
+          <tr style="background: #0F172A; color: #ffffff; text-align: left;">
+            <th style="padding: 0.75rem 1rem;">Calculation Step</th>
+            <th style="padding: 0.75rem 1rem;">Excel Function / Formula</th>
+            <th style="padding: 0.75rem 1rem;">Example Cell Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Day-1 Initial Lease Liability</td>
+            <td style="padding: 0.75rem 1rem;"><code>=PV(rate/12, nper, -pmt, [fv], [type])</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=PV(B2/12, B3, -B1, 0, 1)</code></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0; background: #fafbfc;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Monthly Interest Expense</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Beginning_Liability * (Annual_Rate / 12)</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=B11 * ($B$2 / 12)</code></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Principal Liability Reduction</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Lease_Payment - Interest_Expense</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=C11 - D11</code></td>
+          </tr>
+          <tr style="background: #fafbfc;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Ending Lease Liability</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Beginning_Liability - Principal_Reduction</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=B11 - E11</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- STEP 1 -->
     <div class="step-box">
       <div class="step-heading">
