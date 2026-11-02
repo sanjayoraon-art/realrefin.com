@@ -1056,89 +1056,139 @@
       border: 1px solid var(--border-color);
     }
 
-    /* 5-Category Suite Columns Grid */
+    /* 5-Category Suite Columns Grid - Balanced Heights */
     .footer-categories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 2.25rem;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1.5rem;
       margin-bottom: 3.5rem;
+      align-items: stretch;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1100px) {
       .footer-categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
       }
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 768px) {
+      .footer-categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 500px) {
       .footer-categories-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.25rem;
       }
     }
 
     .footer-cat-col {
       display: flex;
       flex-direction: column;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      transition: all 0.2s ease;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .footer-cat-col:hover {
+      border-color: #cbd5e1;
+      background: #ffffff;
+      box-shadow: 0 4px 14px -3px rgba(15, 23, 42, 0.07);
     }
 
     .footer-cat-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       padding-bottom: 0.65rem;
       border-bottom: 2px solid #e2e8f0;
     }
 
     .footer-cat-title {
-      font-size: 0.95rem;
+      font-size: 0.885rem;
       font-weight: 800;
       color: var(--primary-navy);
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.4rem;
       letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .footer-cat-title span.cat-icon {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
+      flex-shrink: 0;
     }
 
     .footer-cat-count {
-      font-size: 0.725rem;
+      font-size: 0.7rem;
       font-weight: 800;
       color: var(--accent-emerald-dark);
       background: var(--accent-emerald-light);
-      padding: 0.15rem 0.55rem;
+      padding: 0.15rem 0.5rem;
       border-radius: 20px;
+      flex-shrink: 0;
     }
 
     .footer-cat-col ul {
       list-style: none;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.75rem;
+      padding: 0;
     }
 
     .footer-cat-col li {
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.55rem;
     }
 
     .footer-cat-col a {
       color: #475569;
       text-decoration: none;
-      font-size: 0.885rem;
+      font-size: 0.825rem;
       font-weight: 500;
       transition: all 0.15s ease;
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      line-height: 1.45;
+      gap: 0.3rem;
+      line-height: 1.4;
     }
 
     .footer-cat-col a:hover {
       color: var(--accent-emerald-dark);
-      transform: translateX(3px);
+      transform: translateX(2px);
       font-weight: 600;
+    }
+
+    .footer-cat-col .footer-explore-link {
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px dashed #e2e8f0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .footer-cat-col .footer-explore-link:hover {
+      color: var(--primary-navy);
+      transform: translateX(2px);
     }
 
     /* Sub-Footer Legal & Compliance Bar */
@@ -2361,127 +2411,119 @@
           Real<span>Refin</span>.com
         </a>
         <p>
-          Institutional-grade real estate financial modeling software, debt analytics, and investment calculators organized across 4 specialized suites for property investors, refinancers, and home buyers.
+          Institutional-grade real estate financial modeling software, debt analytics, and investment calculators organized across 5 specialized suites for property investors, refinancers, and home buyers.
         </p>
       </div>
 
       <div class="footer-trust-pills">
-        <span class="footer-trust-pill">⚡ 23 Specialized Engines</span>
+        <span class="footer-trust-pill">⚡ 36 Specialized Engines</span>
         <span class="footer-trust-pill">🛡️ 100% Client-Side Math</span>
         <span class="footer-trust-pill">🌐 US ($) • UK (£) • AU (A$)</span>
       </div>
     </div>
 
-    <!-- 4 Specialized Financial Categories Grid -->
+    <!-- 5 Balanced Financial Categories Grid -->
     <div class="footer-categories-grid">
 
-      <!-- Category 1: Refinance & Mortgage Suite -->
+      <!-- Category 1: Refinance & Debt Restructuring -->
       <div class="footer-cat-col">
         <div class="footer-cat-header">
           <div class="footer-cat-title">
-            <span class="cat-icon">🔄</span> Suite 1: Refinance
+            <span class="cat-icon">🔄</span> Refinance &amp; Debt
           </div>
           <span class="footer-cat-count">7 Tools</span>
         </div>
         <ul>
-          <li><a href="/mortgage-refinance-calculator">📊 Mortgage Refinance &amp; Cash-Out (Excel)</a></li>
-          <li><a href="/203k-loan-calculator">🛠️ FHA 203(k) Rehab Loan Calculator</a></li>
-          <li><a href="/10-year-heloc-payment-calculator">💳 10-Year HELOC &amp; Extra Payments</a></li>
-          <li><a href="/mortgage-payoff-vs-investing-calculator">⚖️ Mortgage Payoff vs. Investing</a></li>
+          <li><a href="/mortgage-refinance-calculator">📊 Mortgage Refinance (Excel)</a></li>
           <li><a href="/cash-out-refinance-vs-heloc-calculator">⚖️ Cash-Out Refi vs. HELOC</a></li>
-          <li><a href="/pmi-removal-calculator">🛡️ PMI Removal Calculator (80/78%)</a></li>
-          <li><a href="/assumable-mortgage-calculator">🔑 Assumable Mortgage &amp; Blended Rate</a></li>
-          <li><a href="/2-1-buydown-calculator">📊 2-1 &amp; 3/2/1 Rate Buydowns</a></li>
-          <li><a href="#suite-refinance" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 1 Details →</a></li>
+          <li><a href="/10-year-heloc-payment-calculator">💳 10-Year HELOC &amp; Payments</a></li>
+          <li><a href="/203k-loan-calculator">🛠️ FHA 203(k) Rehab Loan</a></li>
+          <li><a href="/pmi-removal-calculator">🛡️ PMI Removal Calculator</a></li>
+          <li><a href="/mortgage-payoff-vs-investing-calculator">⚖️ Payoff vs. Investing</a></li>
+          <li><a href="/assumable-mortgage-calculator">🔑 Assumable &amp; Blended Rate</a></li>
         </ul>
+        <a href="#suite-refinance" class="footer-explore-link">Explore Refinance Suite →</a>
       </div>
 
-      <!-- Category 2: Investor & Rental Suite -->
+      <!-- Category 2: Rental & Income Property -->
       <div class="footer-cat-col">
         <div class="footer-cat-header">
           <div class="footer-cat-title">
-            <span class="cat-icon">🏢</span> Suite 2: Investor &amp; Rental
-          </div>
-          <span class="footer-cat-count">18 Tools</span>
-        </div>
-        <ul>
-          <li><a href="/lease-amortization-schedule-excel">📋 Lease Amortization Schedule (Excel)</a></li>
-          <li><a href="/adu-cost-calculator">🏡 ADU Cost &amp; SoCal Guide</a></li>
-          <li><a href="/wholesale-real-estate-calculator">💰 Wholesale Real Estate &amp; MAO</a></li>
-          <li><a href="/seller-financing-calculator">🤝 Seller Financing &amp; Owner Carry</a></li>
-          <li><a href="/arv-calculator">🏡 ARV Calculator &amp; Wholesaling</a></li>
-          <li><a href="/interest-rate-cap-calculator">🛡️ Interest Rate Cap &amp; Chatham SOFR</a></li>
-          <li><a href="/cost-segregation-study-calculator">⚡ Cost Segregation &amp; Bonus Deprec</a></li>
-          <li><a href="/real-estate-capital-gains-tax-calculator">🏛️ Real Estate Capital Gains Tax</a></li>
-          <li><a href="/real-estate-commission-calculator">💼 Real Estate Commission &amp; Split</a></li>
-          <li><a href="/airbnb-profit-calculator">🏖️ Airbnb Profit Calculator (Excel)</a></li>
-          <li><a href="/hard-money-loan-calculator">💰 Hard Money Loan Calculator</a></li>
-          <li><a href="/maximum-allowable-offer-calculator">🎯 Maximum Allowable Offer (MAO)</a></li>
-          <li><a href="/1031-exchange-tax-calculator">🏛️ 1031 Exchange Tax Calculator</a></li>
-          <li><a href="/subto-calculator">🏠 SubTo &amp; Subject-To Deal Analyzer</a></li>
-          <li><a href="/creative-financing-calculator">⚡ Creative Financing &amp; Seller Carry</a></li>
-          <li><a href="/dscr-calculator">📈 DSCR Loan &amp; Commercial Non-QM</a></li>
-          <li><a href="/section-8-rental-calculator">🏘️ Section 8 Rental Assistance (HAP)</a></li>
-          <li><a href="/brrrr-calculator">🔄 BRRRR Method Takeout Modeler</a></li>
-          <li><a href="/rental-yield-calculator">📊 Rental Yield &amp; Cap Rate Engine</a></li>
-          <li><a href="#suite-investor" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 2 Details →</a></li>
-        </ul>
-      </div>
-
-      <!-- Category 3: Home Buyer & Seller Suite -->
-      <div class="footer-cat-col">
-        <div class="footer-cat-header">
-          <div class="footer-cat-title">
-            <span class="cat-icon">🏡</span> Suite 3: Buyer &amp; Seller
+            <span class="cat-icon">🏢</span> Rental &amp; Income
           </div>
           <span class="footer-cat-count">7 Tools</span>
         </div>
         <ul>
-          <li><a href="/house-hacking-calculator">🏡 House Hacking Calculator</a></li>
-          <li><a href="/calculate-debt-to-income-ratio-for-mortgage">📊 Debt-to-Income (DTI) Ratio</a></li>
-          <li><a href="/seller-net-sheet-calculator">📋 Seller Net Sheet &amp; Proceeds</a></li>
-          <li><a href="/rent-vs-buy-calculator">⚖️ Renting vs. Buying Calculator</a></li>
-          <li><a href="/rent-to-own-calculator">🔑 Rent to Own Mortgage Calculator</a></li>
-          <li><a href="/home-affordability-calculator">🏡 Home Affordability (28/36 DTI)</a></li>
-          <li><a href="/2-1-buydown-calculator">📉 Temporary Rate Buydowns</a></li>
-          <li><a href="#suite-buyer" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 3 Details →</a></li>
+          <li><a href="/dscr-calculator">📈 DSCR Loan &amp; Non-QM</a></li>
+          <li><a href="/brrrr-calculator">🔄 BRRRR Method Modeler</a></li>
+          <li><a href="/rental-yield-calculator">📊 Rental Yield &amp; Cap Rate</a></li>
+          <li><a href="/airbnb-profit-calculator">🏖️ Airbnb Profit Model (Excel)</a></li>
+          <li><a href="/section-8-rental-calculator">🏘️ Section 8 Rental (HAP)</a></li>
+          <li><a href="/adu-cost-calculator">🏡 ADU Cost &amp; Investment</a></li>
+          <li><a href="/lease-amortization-schedule-excel">📋 Lease Amortization (ASC 842)</a></li>
         </ul>
+        <a href="#suite-investor" class="footer-explore-link">Explore Rental Suite →</a>
       </div>
 
-      <!-- Category 4: Military & VA Loans Suite -->
+      <!-- Category 3: Creative Financing & Wholesaling -->
       <div class="footer-cat-col">
         <div class="footer-cat-header">
           <div class="footer-cat-title">
-            <span class="cat-icon">🎖️</span> Suite 4: Military &amp; VA
+            <span class="cat-icon">🤝</span> Creative &amp; Wholesale
           </div>
-          <span class="footer-cat-count">4 Tools</span>
+          <span class="footer-cat-count">7 Tools</span>
         </div>
         <ul>
-          <li><a href="/bah-mortgage-calculator">🎖️ BAH Mortgage Calculator 2026</a></li>
-          <li><a href="/va-bonus-entitlement-calculator">⭐ VA Bonus Entitlement Calculator</a></li>
-          <li><a href="/va-irrrl-calculator">🔄 VA IRRRL Streamline Refinance</a></li>
-          <li><a href="/assumable-mortgage-calculator#va">🇺🇸 VA Assumable Entitlement Substitution</a></li>
-          <li><a href="#suite-military" style="color: var(--accent-emerald-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 4 Details →</a></li>
+          <li><a href="/wholesale-real-estate-calculator">💰 Wholesale Real Estate &amp; Fee</a></li>
+          <li><a href="/maximum-allowable-offer-calculator">🎯 Maximum Allowable Offer (MAO)</a></li>
+          <li><a href="/arv-calculator">🏡 ARV Calculator &amp; 70% Rule</a></li>
+          <li><a href="/subto-calculator">🏠 SubTo &amp; Subject-To Analyzer</a></li>
+          <li><a href="/seller-financing-calculator">🤝 Seller Financing &amp; Note</a></li>
+          <li><a href="/creative-financing-calculator">⚡ Creative Financing &amp; Carry</a></li>
+          <li><a href="/hard-money-loan-calculator">💰 Hard Money Loan Modeler</a></li>
         </ul>
+        <a href="#suite-investor" class="footer-explore-link">Explore Creative Suite →</a>
       </div>
 
-      <!-- Category 5: Excel Financial Models Suite -->
+      <!-- Category 4: Taxes, Valuation & Commercial -->
       <div class="footer-cat-col">
         <div class="footer-cat-header">
-          <div class="footer-cat-title" style="color: var(--accent-excel-dark);">
-            <span class="cat-icon">📊</span> Suite 5: Excel Models
+          <div class="footer-cat-title">
+            <span class="cat-icon">🏛️</span> Tax &amp; Commercial
           </div>
-          <span class="footer-cat-count" style="background: #e8f5e9; color: #107C41;">6 Tools</span>
+          <span class="footer-cat-count">7 Tools</span>
         </div>
         <ul>
-          <li><a href="/mortgage-refinance-calculator">📉 Mortgage Refinance (Excel)</a></li>
-          <li><a href="/lease-amortization-schedule-excel">📋 Lease Amortization (Excel)</a></li>
-          <li><a href="/2-1-buydown-calculator">📊 2-1 Buydown Schedule (Excel)</a></li>
-          <li><a href="/mortgage-payoff-vs-investing-calculator">⚖️ Payoff vs Investing (.CSV/.XLSX)</a></li>
-          <li><a href="/airbnb-profit-calculator">🏖️ Airbnb Profit Model (Excel)</a></li>
-          <li><a href="/rental-yield-calculator">🏢 Rental Yield Cash Flow Model</a></li>
-          <li><a href="#suite-excel" style="color: var(--accent-excel-dark); font-weight: 700; margin-top: 0.35rem;">Explore Suite 5 Details →</a></li>
+          <li><a href="/1031-exchange-tax-calculator">🏛️ 1031 Exchange Tax Deferral</a></li>
+          <li><a href="/cost-segregation-study-calculator">⚡ Cost Segregation Study (MACRS)</a></li>
+          <li><a href="/real-estate-capital-gains-tax-calculator">🏛️ Capital Gains &amp; Sec 121</a></li>
+          <li><a href="/real-estate-commission-calculator">💼 Real Estate Commission Split</a></li>
+          <li><a href="/interest-rate-cap-calculator">🛡️ Interest Rate Cap &amp; SOFR</a></li>
+          <li><a href="/seller-net-sheet-calculator">📋 Seller Net Sheet &amp; Proceeds</a></li>
+          <li><a href="/2-1-buydown-calculator">📊 2-1 &amp; 3/2/1 Rate Buydowns</a></li>
         </ul>
+        <a href="#suite-excel" class="footer-explore-link">Explore Tax &amp; Excel Models →</a>
+      </div>
+
+      <!-- Category 5: Home Buyer & VA Loans -->
+      <div class="footer-cat-col">
+        <div class="footer-cat-header">
+          <div class="footer-cat-title">
+            <span class="cat-icon">🏡</span> Buyer &amp; VA Loans
+          </div>
+          <span class="footer-cat-count">8 Tools</span>
+        </div>
+        <ul>
+          <li><a href="/home-affordability-calculator">🏡 Home Affordability (28/36)</a></li>
+          <li><a href="/calculate-debt-to-income-ratio-for-mortgage">📊 Debt-to-Income (DTI) Ratio</a></li>
+          <li><a href="/rent-vs-buy-calculator">⚖️ Renting vs. Buying Modeler</a></li>
+          <li><a href="/rent-to-own-calculator">🔑 Rent to Own Calculator</a></li>
+          <li><a href="/house-hacking-calculator">🏡 House Hacking Multi-Unit</a></li>
+          <li><a href="/bah-mortgage-calculator">🎖️ BAH Mortgage Calculator</a></li>
+          <li><a href="/va-bonus-entitlement-calculator">⭐ VA Bonus Entitlement</a></li>
+          <li><a href="/va-irrrl-calculator">🔄 VA IRRRL Streamline Refi</a></li>
+        </ul>
+        <a href="#suite-military" class="footer-explore-link">Explore Buyer &amp; VA Suites →</a>
       </div>
 
     </div>
