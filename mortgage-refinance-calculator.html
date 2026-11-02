@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Refinance &amp; Cash-Out Calculator with Free Excel (.xlsx) Template</title>
+  <meta name="description" content="Free mortgage refinance and cash-out calculator with instant break-even analysis, monthly payment comparison, and 1-click Excel (.xlsx) spreadsheet download with pre-built formulas.">
+  <meta name="keywords" content="mortgage refinance calculator excel, refinance calculator excel, excel refinance calculator, mortgage refinance calculator excel template, refinance break even calculator excel, mortgage refinance break even calculator excel, cash out refinance calculator excel, mortgage cash-out refinance calculator excel, refinance comparison calculator excel, refinance excel calculator">
+  <link rel="canonical" href="https://realrefin.com/mortgage-refinance-calculator">
+  <meta property="og:title" content="Mortgage Refinance &amp; Cash-Out Calculator with Free Excel (.xlsx) Template">
+  <meta property="og:description" content="Calculate monthly refinance savings, break-even payback period, and 80% LTV cash-out equity. Download your pre-built Excel refinance model in one click.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/mortgage-refinance-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for mathematical formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- SheetJS for dynamic Client-Side Excel (.xlsx) export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage, HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/mortgage-refinance-calculator#app",
+        "name": "RealRefin Mortgage Refinance & Cash-Out Calculator with Excel Template",
+        "url": "https://realrefin.com/mortgage-refinance-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free institutional mortgage refinance calculator. Computes monthly payment reductions, amortization schedules, closing cost break-even recovery months, cash-out equity limits, and downloads a complete Excel spreadsheet.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Refinance & Mortgage Suite",
+            "item": "https://realrefin.com/#suite-refinance"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mortgage Refinance Calculator Excel",
+            "item": "https://realrefin.com/mortgage-refinance-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Calculate Mortgage Refinance and Break-Even in Excel",
+        "description": "A step-by-step formula guide to modeling mortgage refinance savings and break-even recovery points in Microsoft Excel.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Current and New Monthly Payments with PMT",
+            "text": "Use =PMT(Rate/12, Term*12, -LoanAmount) to determine your existing and newly proposed monthly principal and interest payments in Excel."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Net Monthly Payment Reduction",
+            "text": "Subtract the new monthly payment from the old monthly payment: =Old_Payment - New_Payment."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate the Break-Even Horizon in Months",
+            "text": "Divide total upfront closing costs by the net monthly savings: =Closing_Costs / Net_Monthly_Savings."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Maximum Cash-Out Equity",
+            "text": "Multiply appraised property value by maximum lender LTV (typically 80%) and subtract existing loan balance: =(Property_Value * 0.80) - Current_Balance."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the mortgage refinance break-even calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The break-even point is the exact number of months required for your monthly mortgage payment savings to exceed the upfront closing costs paid to complete the refinance. The formula is: Break-Even Months = Total Closing Costs ÷ Monthly Payment Savings. For instance, if closing costs are $5,000 and your monthly payment drops by $200, you break even in exactly 25 months ($5,000 ÷ $200 = 25)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I export this refinance calculator to Microsoft Excel (.xlsx)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Clicking our 'Download Excel (.xlsx) Template' button automatically generates and downloads a fully functional Microsoft Excel spreadsheet populated with your exact loan parameters, built-in =PMT() formulas, rate-and-term comparisons, cash-out equity calculations, and complete amortization schedules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a Rate-and-Term Refinance and a Cash-Out Refinance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Rate-and-Term Refinance changes only the interest rate, the loan duration (such as refinancing from a 30-year to a 15-year term), or both, without withdrawing home equity as cash. A Cash-Out Refinance replaces your existing mortgage with a larger loan balance (up to 80% LTV on conventional loans) and pays you the difference in a tax-free cash lump sum."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I roll refinance closing costs into the loan or pay upfront?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paying closing costs upfront preserves your equity and minimizes total interest charges over the life of the loan. Rolling closing costs into your new balance eliminates out-of-pocket cash needs today, but increases your new principal balance, slightly raising your monthly payment and total interest paid over 30 years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Excel calculate mortgage payments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Excel uses the financial function =PMT(rate, nper, pv). For monthly mortgages: rate is the annual interest rate divided by 12, nper is total loan duration in years multiplied by 12, and pv is the negative loan principal (e.g., =PMT(6.5%/12, 30*12, -400000))."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       REALREFIN FINTECH DESIGN SYSTEM - REFINANCE & EXCEL SUITE
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #059669;
+      --accent-emerald-light: #ecfdf5;
+      --accent-blue: #2563EB;
+      --accent-blue-dark: #1d4ed8;
+      --accent-blue-light: #eff6ff;
+      --accent-amber: #D97706;
+      --accent-amber-light: #fffbeb;
+      --accent-red: #DC2626;
+      --accent-excel: #107C41;
+      --accent-excel-dark: #0b5c30;
+      --accent-excel-light: #e8f5e9;
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* NAVBAR */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    /* HERO */
+    .page-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .badge-pill-excel {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent-excel-light);
+      color: var(--accent-excel);
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 0.95rem;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+      border: 1px solid #c8e6c9;
+    }
+
+    .page-title {
+      font-size: 2.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 920px;
+      line-height: 1.6;
+    }
+
+    /* MODE TOGGLE TABS */
+    .mode-tab-bar {
+      display: flex;
+      background: #e2e8f0;
+      padding: 0.35rem;
+      border-radius: var(--radius-lg);
+      gap: 0.35rem;
+      margin-bottom: 2rem;
+      max-width: 650px;
+    }
+
+    .mode-tab-btn {
+      flex: 1;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .mode-tab-btn.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* MAIN CALCULATOR GRID */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 1040px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARD STYLES */
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      background: #fafbfc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h2, .card-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* INPUT CONTROLS */
+    .step-section {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .step-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      .input-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group label span.hint {
+      font-size: 0.775rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 0.9rem; }
+    .input-suffix { right: 0.9rem; }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      transition: all 0.15s ease;
+    }
+
+    .calc-input.has-prefix { padding-left: 1.85rem; }
+    .calc-input.has-suffix { padding-right: 2rem; }
+
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .range-slider {
+      width: 100%;
+      margin-top: 0.45rem;
+      accent-color: var(--accent-blue);
+      cursor: pointer;
+    }
+
+    select.calc-input {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.85rem center;
+      background-size: 1rem;
+    }
+
+    /* RADIO CHIPS */
+    .radio-chips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .chip-label {
+      cursor: pointer;
+    }
+
+    .chip-label input {
+      display: none;
+    }
+
+    .chip-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: center;
+      transition: all 0.15s ease;
+      background: #ffffff;
+    }
+
+    .chip-label input:checked + .chip-text {
+      background: #eff6ff;
+      border-color: var(--accent-blue);
+      color: var(--accent-blue-dark);
+      font-weight: 700;
+    }
+
+    /* TOGGLE SWITCH */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      margin-top: 0.5rem;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 26px;
+    }
+
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+
+    .slider-toggle {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1;
+      transition: .3s;
+      border-radius: 34px;
+    }
+
+    .slider-toggle:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider-toggle { background-color: var(--accent-emerald); }
+    input:checked + .slider-toggle:before { transform: translateX(22px); }
+
+    /* RESULTS SECTION */
+    .verdict-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #ffffff;
+      padding: 2rem 1.75rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.75rem;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+    }
+
+    .verdict-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .verdict-summary {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+
+    /* METRIC SCORECARDS */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 680px) {
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      text-align: center;
+    }
+
+    .metric-card.highlight {
+      background: var(--accent-emerald-light);
+      border-color: #a7f3d0;
+    }
+
+    .metric-label {
+      font-size: 0.775rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .metric-val.emerald { color: var(--accent-emerald-dark); }
+    .metric-val.blue { color: var(--accent-blue-dark); }
+
+    .metric-sub {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* SIDE BY SIDE LOAN COMPARISON TABLE */
+    .comparison-box {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .comp-header {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      background: #f1f5f9;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comp-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border-color);
+      align-items: center;
+    }
+
+    .comp-row:nth-child(even) { background: #fafbfc; }
+
+    .comp-label {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .comp-val-old {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .comp-val-new {
+      color: var(--accent-emerald-dark);
+      font-weight: 700;
+    }
+
+    /* ACTION BUTTONS: EXCEL & REPORT */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 580px) {
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-excel-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      background: var(--accent-excel);
+      color: #ffffff;
+      border: none;
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px -1px rgba(16, 124, 65, 0.2);
+    }
+
+    .btn-excel-download:hover {
+      background: var(--accent-excel-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px -2px rgba(16, 124, 65, 0.3);
+    }
+
+    .btn-copy-report {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      background: #ffffff;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy-report:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* EXCEL FORMULA GUIDE BAND */
+    .excel-guide-band {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .excel-guide-band {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .excel-guide-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-excel-light);
+      color: var(--accent-excel-dark);
+      font-size: 0.775rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .guide-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .formula-snippet-box {
+      background: #0F172A;
+      color: #f8fafc;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 1.25rem 0;
+      overflow-x: auto;
+      border-left: 4px solid var(--accent-excel);
+    }
+
+    .formula-snippet-box .comment { color: #94a3b8; }
+    .formula-snippet-box .func { color: #38bdf8; font-weight: bold; }
+    .formula-snippet-box .val { color: #34d399; }
+
+    /* CONTENT SECTIONS */
+    .editorial-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .editorial-section h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .editorial-section h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin: 2rem 0 0.85rem;
+    }
+
+    .editorial-section p {
+      font-size: 1rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .editorial-section ul {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: #334155;
+    }
+
+    .editorial-section li {
+      margin-bottom: 0.65rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-wrapper {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+      transition: all 0.15s ease;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.15rem 1.35rem;
+      background: transparent;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question span.arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.25rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question span.arrow { transform: rotate(180deg); }
+
+    /* RELATED TOOLS */
+    .related-tools-band {
+      margin-bottom: 3.5rem;
+    }
+
+    .related-tools-band h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .rel-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .rel-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .rel-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .rel-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .rel-link {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .rel-link:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 0 2.5rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.65rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#suite-refinance" class="active">Refinance</a></li>
+      <li><a href="/#suite-investor">Investors</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military &amp; VA</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/#suites-directory" class="btn-nav-cta">Explore 4 Suites →</a></li>
+    </ul>
+  </header>
+
+  <!-- ========================================================
+       BREADCRUMB
+  ======================================================== -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#suite-refinance">Refinance &amp; Mortgage Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Mortgage Refinance Calculator Excel</span>
+  </nav>
+
+  <!-- ========================================================
+       HERO HEADER
+  ======================================================== -->
+  <section class="page-header">
+    <div class="badge-pill-excel">
+      <span>📊</span> Free Interactive Calculator &amp; Pre-Built Excel (.xlsx) Model
+    </div>
+    <h1 class="page-title">
+      Mortgage Refinance &amp; Cash-Out Calculator with Free Excel Template
+    </h1>
+    <p class="page-subtitle">
+      Evaluate rate-and-term savings, exact closing cost break-even recovery months, and 80% LTV cash-out equity extraction. Download your customized, pre-built Excel spreadsheet with native PMT formulas in one click.
+    </p>
+  </section>
+
+  <!-- ========================================================
+       MODE TOGGLE TABS
+  ======================================================== -->
+  <div class="mode-tab-bar" role="tablist">
+    <button class="mode-tab-btn active" id="tabRateTerm" type="button" role="tab" aria-selected="true">
+      <span>📉</span> 1. Rate &amp; Term Refinance
+    </button>
+    <button class="mode-tab-btn" id="tabCashOut" type="button" role="tab" aria-selected="false">
+      <span>💵</span> 2. Cash-Out Refinance (80% LTV)
+    </button>
+  </div>
+
+  <!-- ========================================================
+       MAIN CALCULATOR ENGINE (INPUTS + RESULTS)
+  ======================================================== -->
+  <main class="calc-layout">
+
+    <!-- INPUTS COLUMN -->
+    <div class="calc-card">
+      <div class="card-header">
+        <h2><span>⚙️</span> Refinance Underwriting Inputs</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-excel); background: var(--accent-excel-light); padding: 0.2rem 0.6rem; border-radius: 20px;">
+          .XLSX Sync Ready
+        </span>
+      </div>
+      <div class="card-body">
+
+        <!-- STEP 1: CURRENT MORTGAGE -->
+        <div class="step-section">
+          <div class="step-label">
+            <span>1</span> Current First Mortgage
+          </div>
+
+          <div class="form-group">
+            <label for="currentBalance">
+              Current Mortgage Balance
+              <span class="hint">Remaining principal payoff</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="currentBalance" class="calc-input has-prefix" value="380000" min="10000" max="3000000" step="5000">
+            </div>
+            <input type="range" id="currentBalanceSlider" class="range-slider" min="50000" max="1500000" step="10000" value="380000">
+          </div>
+
+          <div class="input-row">
+            <div class="form-group">
+              <label for="currentRate">Current Interest Rate</label>
+              <div class="input-wrap">
+                <input type="number" id="currentRate" class="calc-input has-suffix" value="7.125" min="1.0" max="15.0" step="0.125">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="currentRemainingYears">Remaining Term</label>
+              <div class="input-wrap">
+                <input type="number" id="currentRemainingYears" class="calc-input has-suffix" value="27" min="1" max="40" step="1">
+                <span class="input-suffix">Yrs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: CASH-OUT EQUITY (DYNAMIC FOR CASH-OUT TAB) -->
+        <div class="step-section" id="cashOutStepSection" style="display: none;">
+          <div class="step-label" style="color: var(--accent-emerald-dark);">
+            <span>2</span> Cash-Out Equity Extraction
+          </div>
+
+          <div class="form-group">
+            <label for="homeValue">
+              Current Appraised Home Value
+              <span class="hint">Current fair market value</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="homeValue" class="calc-input has-prefix" value="550000" min="50000" max="5000000" step="10000">
+            </div>
+            <input type="range" id="homeValueSlider" class="range-slider" min="100000" max="2000000" step="25000" value="550000">
+          </div>
+
+          <div class="input-row">
+            <div class="form-group">
+              <label for="cashOutAmount">Cash Needed</label>
+              <div class="input-wrap">
+                <span class="input-prefix">$</span>
+                <input type="number" id="cashOutAmount" class="calc-input has-prefix" value="60000" min="5000" max="1000000" step="5000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="maxLtvSelect">Lender Max LTV Ceiling</label>
+              <select id="maxLtvSelect" class="calc-input">
+                <option value="0.80" selected>80% LTV (Conventional Standard)</option>
+                <option value="0.75">75% LTV (Investment Property / Jumbo)</option>
+                <option value="0.85">85% LTV (FHA Cash-Out Ceiling)</option>
+                <option value="1.00">100% LTV (VA Cash-Out Special)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.85rem; color: #065f46; margin-top: 0.5rem;">
+            Maximum Net Cash Available: <strong id="dispMaxEquityOut">$60,000</strong> (<span id="dispLtvPercent">80%</span> Max LTV Limit).
+          </div>
+        </div>
+
+        <!-- STEP 3: NEW REFINANCE TERMS -->
+        <div class="step-section">
+          <div class="step-label">
+            <span>3</span> Proposed New Refinance Terms
+          </div>
+
+          <div class="input-row">
+            <div class="form-group">
+              <label for="newRate">New Interest Rate</label>
+              <div class="input-wrap">
+                <input type="number" id="newRate" class="calc-input has-suffix" value="5.875" min="1.0" max="15.0" step="0.125">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="newTermSelect">New Loan Term</label>
+              <select id="newTermSelect" class="calc-input">
+                <option value="30" selected>30-Year Fixed</option>
+                <option value="20">20-Year Fixed</option>
+                <option value="15">15-Year Fixed</option>
+                <option value="10">10-Year Fixed</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CLOSING COSTS -->
+          <div class="form-group">
+            <label for="closingCosts">
+              Estimated Closing Costs
+              <span class="hint">Origination, appraisal, title, escrow</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="closingCosts" class="calc-input has-prefix" value="6500" min="0" max="50000" step="250">
+            </div>
+          </div>
+
+          <!-- ROLL CLOSING COSTS TOGGLE -->
+          <div class="toggle-row">
+            <div>
+              <strong style="font-size: 0.9rem; color: var(--primary-navy);">Roll Closing Costs into New Loan?</strong>
+              <div style="font-size: 0.775rem; color: var(--text-muted);">Finance fees instead of paying out-of-pocket cash today</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="rollCostsToggle" checked>
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESULTS COLUMN -->
+    <div class="results-column">
+
+      <!-- DYNAMIC VERDICT CARD -->
+      <div class="verdict-hero" id="verdictHeroCard">
+        <div class="verdict-badge" id="verdictBadge">
+          <span>✓</span> REFINANCE RECOMMENDED
+        </div>
+        <h3 class="verdict-title" id="verdictHeadline">
+          Saves $278 / Month ($100,080 Over Term)
+        </h3>
+        <p class="verdict-summary" id="verdictBody">
+          By dropping your interest rate from 7.125% to 5.875%, your $6,500 closing costs break even in exactly 24 months. After Month 24, all savings are pure equity profit.
+        </p>
+      </div>
+
+      <!-- KEY METRIC SCORECARDS -->
+      <div class="metric-grid">
+        <div class="metric-card highlight">
+          <div class="metric-label">Monthly Savings</div>
+          <div class="metric-val emerald" id="resMonthlySavings">$278</div>
+          <div class="metric-sub" id="resMonthlySub">P&amp;I payment reduction</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Break-Even Point</div>
+          <div class="metric-val blue" id="resBreakEvenMonths">24 Mo</div>
+          <div class="metric-sub" id="resBreakEvenYears">~2.0 Years to Recoup</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">Lifetime Interest Saved</div>
+          <div class="metric-val" id="resLifetimeSavings">$68,432</div>
+          <div class="metric-sub">Net of all closing costs</div>
+        </div>
+      </div>
+
+      <!-- SIDE-BY-SIDE UNDERWRITING TABLE -->
+      <div class="comparison-box">
+        <div class="comp-header">
+          <div>Loan Metric</div>
+          <div>Current Loan</div>
+          <div>New Refinance</div>
+        </div>
+
+        <div class="comp-row">
+          <div class="comp-label">Principal Balance</div>
+          <div class="comp-val-old" id="compBalOld">$380,000</div>
+          <div class="comp-val-new" id="compBalNew">$386,500</div>
+        </div>
+
+        <div class="comp-row">
+          <div class="comp-label">Interest Rate</div>
+          <div class="comp-val-old" id="compRateOld">7.125%</div>
+          <div class="comp-val-new" id="compRateNew">5.875%</div>
+        </div>
+
+        <div class="comp-row">
+          <div class="comp-label">Monthly P&amp;I Payment</div>
+          <div class="comp-val-old" id="compPmtOld">$2,564 /mo</div>
+          <div class="comp-val-new" id="compPmtNew">$2,286 /mo</div>
+        </div>
+
+        <div class="comp-row">
+          <div class="comp-label">Total Remaining Payments</div>
+          <div class="comp-val-old" id="compTotalPaidOld">$830,736</div>
+          <div class="comp-val-new" id="compTotalPaidNew">$822,960</div>
+        </div>
+
+        <div class="comp-row">
+          <div class="comp-label">Total Remaining Interest</div>
+          <div class="comp-val-old" id="compTotalIntOld">$450,736</div>
+          <div class="comp-val-new" id="compTotalIntNew">$436,460</div>
+        </div>
+
+        <div class="comp-row" id="compCashOutRow" style="display: none; background: #ecfdf5;">
+          <div class="comp-label">Net Cash Extracted</div>
+          <div class="comp-val-old">$0</div>
+          <div class="comp-val-new" id="compCashOutNet" style="color: #059669; font-weight: 800;">+$60,000</div>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS: DOWNLOAD EXCEL & COPY REPORT -->
+      <div class="actions-grid">
+        <button type="button" class="btn-excel-download" id="btnDownloadExcel">
+          <span>📥</span> Download Excel (.xlsx) Model
+        </button>
+        <button type="button" class="btn-copy-report" id="btnCopyReport">
+          <span>📋</span> Copy Underwriting Summary
+        </button>
+      </div>
+
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
+        ⚡ Instant client-side generation. Includes full 30-year amortization schedule &amp; native Excel formulas.
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ========================================================
+       EXCEL FORMULA & STEP-BY-STEP MODELLING GUIDE
+  ======================================================== -->
+  <section class="excel-guide-band">
+    <div class="excel-guide-badge">
+      <span>📐</span> Financial Engineering &amp; Spreadsheet Formulas
+    </div>
+    <h2 class="guide-title">
+      How to Calculate Mortgage Refinance in Excel (Step-by-Step)
+    </h2>
+    <p style="font-size: 1.05rem; color: #475569; line-height: 1.7; margin-bottom: 1.25rem;">
+      Whether you are building your own financial model in Microsoft Excel, Google Sheets, or using our pre-built downloadable template, mortgage refinance calculations rely on five fundamental financial equations.
+    </p>
+
+    <!-- FORMULA 1: PMT -->
+    <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary-navy); margin-top: 1.5rem;">
+      1. Calculating Monthly Payment: The <code>=PMT()</code> Formula
+    </h3>
+    <p style="font-size: 0.95rem; color: #475569;">
+      Excel calculates amortized monthly payments using the standard annuity formula:
+    </p>
+
+    <div style="margin: 1rem 0; overflow-x: auto;">
+      $$M = P \frac{r(1+r)^n}{(1+r)^n - 1}$$
+    </div>
+
+    <p style="font-size: 0.95rem; color: #475569;">
+      In Excel, write:
+    </p>
+    <div class="formula-snippet-box">
+<span class="comment"># Excel Syntax: =PMT(annual_rate / 12, term_years * 12, -loan_principal)</span>
+=<span class="func">PMT</span>(<span class="val">B4</span>/12, <span class="val">B5</span>*12, -<span class="val">B3</span>)
+    </div>
+
+    <!-- FORMULA 2: BREAK EVEN -->
+    <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary-navy); margin-top: 1.5rem;">
+      2. The Break-Even Recovery Period Formula
+    </h3>
+    <p style="font-size: 0.95rem; color: #475569;">
+      The break-even point is the exact duration in months before cumulative monthly interest savings repay your upfront loan origination and closing costs:
+    </p>
+
+    <div style="margin: 1rem 0; overflow-x: auto;">
+      $$\text{Break-Even Months} = \frac{\text{Closing Costs}}{\text{Current Monthly Payment} - \text{New Monthly Payment}}$$
+    </div>
+
+    <div class="formula-snippet-box">
+<span class="comment"># Excel Formula: In cell B12</span>
+=<span class="val">B8</span> / (<span class="val">B6</span> - <span class="val">B7</span>)
+    </div>
+
+    <!-- FORMULA 3: CASH-OUT 80% LTV -->
+    <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary-navy); margin-top: 1.5rem;">
+      3. Calculating Maximum Cash-Out Equity (80% LTV Limit)
+    </h3>
+    <p style="font-size: 0.95rem; color: #475569;">
+      Lenders enforce maximum loan-to-value limits (typically 80% on conventional single-family homes). In Excel:
+    </p>
+
+    <div style="margin: 1rem 0; overflow-x: auto;">
+      $$\text{Max Cash-Out} = (\text{Appraised Home Value} \times 0.80) - \text{Existing Loan Balance}$$
+    </div>
+
+    <div class="formula-snippet-box">
+<span class="comment"># Excel Formula: In cell B16</span>
+=<span class="func">MAX</span>(0, (<span class="val">B14</span> * 0.80) - <span class="val">B3</span>)
+    </div>
+  </section>
+
+  <!-- ========================================================
+       EDITORIAL GUIDE & STRATEGY
+  ======================================================== -->
+  <article class="editorial-section">
+    <h2>Institutional Guide: Rate-and-Term vs. Cash-Out Refinancing</h2>
+
+    <p>
+      Refinancing a residential mortgage is one of the highest-stakes financial decisions a property owner or real estate investor makes. While standard bank calculators solely highlight the headline monthly payment decrease, institutional underwriting requires examining <strong>closing cost friction</strong>, <strong>amortization timeline resets</strong>, and <strong>opportunity cost of capital</strong>.
+    </p>
+
+    <h3>1. When Does a Rate-and-Term Refinance Make Mathematical Sense?</h3>
+    <p>
+      Historically, mortgage professionals cited the "1% Rule"—advising borrowers to only refinance if the prevailing interest rate is at least 100 basis points (1.00%) below their current note rate. However, modern underwriting proves that loan balance heavily dictates viability:
+    </p>
+    <ul>
+      <li><strong>Large Loan Balances ($500,000+):</strong> A drop of just 0.50% (50 bps) on a $600,000 loan reduces monthly payments by approximately $190/mo ($2,280/year). At a $4,500 closing cost, the break-even period is under 24 months, making the refinance exceptionally profitable.</li>
+      <li><strong>Modest Loan Balances ($150,000 or less):</strong> Even a full 1.50% rate drop may only yield $110/mo in savings. If closing costs total $5,000, recouping costs takes over 45 months (nearly 4 years). If the homeowner relocates or sells before Year 4, they suffer a net financial loss.</li>
+    </ul>
+
+    <h3>2. Beware the "Amortization Reset Trap"</h3>
+    <p>
+      If you have already paid down 7 years of a 30-year mortgage, your monthly payments are significantly tilted toward principal paydown. If you refinance into a brand-new 30-year term to capture a lower monthly payment, you reset your amortization back to Year 1, where interest constitutes the vast majority of every payment. To counter this, savvy borrowers either:
+    </p>
+    <ul>
+      <li>Refinance into a <strong>20-year or 15-year fixed loan</strong> to lock in lower rates while maintaining or accelerating equity build-up.</li>
+      <li>Keep paying their old higher monthly payment on the new lower-rate 30-year loan, directing 100% of the surplus toward <strong>monthly principal curtailment</strong>.</li>
+    </ul>
+
+    <h3>3. Cash-Out Refinance vs. Junior Liens (HELOC &amp; Home Equity Loans)</h3>
+    <p>
+      If your primary mortgage rate was locked in between 2020 and 2021 at sub-3.5% historic lows, executing a full Cash-Out Refinance today forces you to surrender your ultra-low interest rate on your entire existing balance. In that scenario, retaining your first lien and taking out a secondary <strong>HELOC (Home Equity Line of Credit)</strong> or <strong>Home Equity Loan</strong> delivers a drastically lower <em>weighted blended interest rate</em>. Use our companion <a href="/cash-out-refinance-vs-heloc-calculator" style="color: var(--accent-blue); font-weight: 700;">Cash-Out Refinance vs. HELOC Calculator</a> to model blended rates side-by-side.
+    </p>
+
+    <!-- FAQ SECTION -->
+    <h2 style="margin-top: 3.5rem;">Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-wrapper">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          How do I calculate my refinance break-even point in Excel?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          To calculate the break-even month in Excel: enter your total closing costs in cell B1 and your net monthly savings in cell B2. Then write <code>=B1 / B2</code>. If closing costs are $6,000 and your monthly payment drops by $250, <code>=6000 / 250</code> equals 24 months. You break even at the 2-year mark.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          What happens to my Excel spreadsheet if I roll closing costs into the loan?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          When closing costs are rolled into the loan, the new loan principal becomes: <code>New Principal = Existing Balance + Closing Costs</code>. In our downloadable Excel spreadsheet, the PMT formula dynamically adjusts this principal base, computing the slightly higher monthly payment and updated net interest savings automatically.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          What is the maximum cash-out refinance LTV limit in 2026?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          For conventional loans backed by Fannie Mae and Freddie Mac, the statutory maximum Loan-to-Value (LTV) limit for a cash-out refinance on a primary residence is 80%. FHA cash-out refinances permit up to 85% LTV, while VA cash-out loans permit eligible military veterans to tap up to 100% of their appraised home equity.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Is the cash extracted from a Cash-Out Refinance taxable as income?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          No. Cash-out proceeds are loan liabilities rather than earned income or capital gains, meaning the cash distributed to you at closing is 100% federal and state income tax-free. Furthermore, under IRS IRC § 163(h)(3), interest on the loan proceeds remains tax-deductible if the funds are used for capital improvements to the property.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can I download the 30-year amortization schedule into Microsoft Excel?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes! Clicking the "Download Excel (.xlsx) Model" button instantly compiles your custom parameters into a multi-tab workbook containing the executive underwriting scoreboard, loan parameters comparison, and complete 360-month amortization schedule with separate principal, interest, and remaining balance columns.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ========================================================
+       RELATED FINANCIAL TOOLS
+  ======================================================== -->
+  <section class="related-tools-band">
+    <h3>Related Refinance &amp; Mortgage Financial Suites</h3>
+    <div class="related-grid">
+
+      <div class="rel-card">
+        <div>
+          <h4>Cash-Out Refi vs. HELOC</h4>
+          <p>Should you replace your low 3% mortgage or add a junior HELOC? Compare blended interest rates and closing costs.</p>
+        </div>
+        <a href="/cash-out-refinance-vs-heloc-calculator" class="rel-link">Launch Comparison Tool →</a>
+      </div>
+
+      <div class="rel-card">
+        <div>
+          <h4>Mortgage Payoff vs. Investing</h4>
+          <p>Model guaranteed risk-free mortgage interest savings against stock market returns in the S&amp;P 500.</p>
+        </div>
+        <a href="/mortgage-payoff-vs-investing-calculator" class="rel-link">Compare Payoff vs Investing →</a>
+      </div>
+
+      <div class="rel-card">
+        <div>
+          <h4>PMI Removal Calculator</h4>
+          <p>Find the exact date private mortgage insurance drops off and generate a formal lender cancellation letter.</p>
+        </div>
+        <a href="/pmi-removal-calculator" class="rel-link">Calculate PMI Removal →</a>
+      </div>
+
+      <div class="rel-card">
+        <div>
+          <h4>10-Year HELOC Payment Calculator</h4>
+          <p>Model interest-only draw payments, year-10 reset payment shocks, and extra principal curtailment.</p>
+        </div>
+        <a href="/10-year-heloc-payment-calculator" class="rel-link">Calculate HELOC Payments →</a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      
+      <!-- Brand & Mission -->
+      <div class="footer-col">
+        <a href="/" class="rr-logo" style="margin-bottom: 0.85rem; display: inline-block;">Real<span>Refin</span>.com</a>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: #64748b; margin-bottom: 1.25rem;">
+          Institutional-grade real estate financial modeling software, debt analytics, and equity optimization tools for homeowners and investors.
+        </p>
+        <p style="font-size: 0.8rem; color: #94a3b8;">
+          Empowering smarter debt restructuring with zero-latency algorithmic underwriting and instant Excel models.
+        </p>
+      </div>
+
+      <!-- Financial Suites -->
+      <div class="footer-col">
+        <h4>Financial Suites</h4>
+        <ul>
+          <li><a href="/#suite-refinance">1. Refinance &amp; Mortgage</a></li>
+          <li><a href="/#suite-investor">2. Investor &amp; Rental</a></li>
+          <li><a href="/#suite-buyer">3. Home Buyer Affordability</a></li>
+          <li><a href="/#suite-military">4. Military &amp; VA Loans</a></li>
+        </ul>
+      </div>
+
+      <!-- Popular Calculators -->
+      <div class="footer-col">
+        <h4>Popular Calculators</h4>
+        <ul>
+          <li><a href="/mortgage-refinance-calculator">Mortgage Refinance Excel</a></li>
+          <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs HELOC</a></li>
+          <li><a href="/pmi-removal-calculator">PMI Removal Calculator</a></li>
+          <li><a href="/1031-exchange-tax-calculator">1031 Exchange Tax Calculator</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+          <li><a href="/assumable-mortgage-calculator">Assumable Mortgage Calculator</a></li>
+          <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Calculator</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Trust -->
+      <div class="footer-col">
+        <h4>Legal &amp; Trust</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/disclaimer">Financial Disclaimer</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+          <li><a href="/about">About RealRefin</a></li>
+          <li><a href="/contact">Contact Support</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Disclaimer -->
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 RealRefin.com. All rights reserved. Real Estate Investment Modeling Software.</p>
+      <p style="font-size: 0.775rem; color: #94a3b8; max-width: 900px; margin: 0.5rem auto 0; line-height: 1.5;">
+        Disclaimer: RealRefin.com provides educational computational tools and theoretical estimates. We are not a licensed mortgage lender, broker, CPA, or financial advisor. Mortgage rates, loan terms, and equity extraction guidelines are subject to underwriting approval and lender discretion.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================
+     CLIENT-SIDE JAVASCRIPT: REFINANCE & EXCEL ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Mode Tabs
+  const tabRateTerm = document.getElementById('tabRateTerm');
+  const tabCashOut = document.getElementById('tabCashOut');
+  const cashOutStepSection = document.getElementById('cashOutStepSection');
+  const compCashOutRow = document.getElementById('compCashOutRow');
+  let currentMode = 'rateTerm'; // 'rateTerm' or 'cashOut'
+
+  // Input Elements
+  const currentBalance = document.getElementById('currentBalance');
+  const currentBalanceSlider = document.getElementById('currentBalanceSlider');
+  const currentRate = document.getElementById('currentRate');
+  const currentRemainingYears = document.getElementById('currentRemainingYears');
+
+  const homeValue = document.getElementById('homeValue');
+  const homeValueSlider = document.getElementById('homeValueSlider');
+  const cashOutAmount = document.getElementById('cashOutAmount');
+  const maxLtvSelect = document.getElementById('maxLtvSelect');
+  const dispMaxEquityOut = document.getElementById('dispMaxEquityOut');
+  const dispLtvPercent = document.getElementById('dispLtvPercent');
+
+  const newRate = document.getElementById('newRate');
+  const newTermSelect = document.getElementById('newTermSelect');
+  const closingCosts = document.getElementById('closingCosts');
+  const rollCostsToggle = document.getElementById('rollCostsToggle');
+
+  // Outputs Elements
+  const verdictHeroCard = document.getElementById('verdictHeroCard');
+  const verdictBadge = document.getElementById('verdictBadge');
+  const verdictHeadline = document.getElementById('verdictHeadline');
+  const verdictBody = document.getElementById('verdictBody');
+
+  const resMonthlySavings = document.getElementById('resMonthlySavings');
+  const resMonthlySub = document.getElementById('resMonthlySub');
+  const resBreakEvenMonths = document.getElementById('resBreakEvenMonths');
+  const resBreakEvenYears = document.getElementById('resBreakEvenYears');
+  const resLifetimeSavings = document.getElementById('resLifetimeSavings');
+
+  const compBalOld = document.getElementById('compBalOld');
+  const compBalNew = document.getElementById('compBalNew');
+  const compRateOld = document.getElementById('compRateOld');
+  const compRateNew = document.getElementById('compRateNew');
+  const compPmtOld = document.getElementById('compPmtOld');
+  const compPmtNew = document.getElementById('compPmtNew');
+  const compTotalPaidOld = document.getElementById('compTotalPaidOld');
+  const compTotalPaidNew = document.getElementById('compTotalPaidNew');
+  const compTotalIntOld = document.getElementById('compTotalIntOld');
+  const compTotalIntNew = document.getElementById('compTotalIntNew');
+  const compCashOutNet = document.getElementById('compCashOutNet');
+
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+  const btnCopyReport = document.getElementById('btnCopyReport');
+
+  // Format Helpers
+  function fmtUSD(val) {
+    if (isNaN(val) || !isFinite(val)) return '$0';
+    return '$' + Math.round(val).toLocaleString('en-US');
+  }
+
+  function fmtPct(val) {
+    if (isNaN(val) || !isFinite(val)) return '0.00%';
+    return val.toFixed(3).replace(/\.?0+$/, '') + '%';
+  }
+
+  // Monthly Amortizing Payment PMT formula
+  function calcPmt(principal, annualRatePct, years) {
+    if (principal <= 0 || years <= 0) return 0;
+    const r = (annualRatePct / 100) / 12;
+    const n = years * 12;
+    if (r === 0) return principal / n;
+    return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  // Full Amortization Calculation
+  function calcAmortizationSchedule(principal, annualRatePct, years) {
+    const r = (annualRatePct / 100) / 12;
+    const totalMonths = Math.round(years * 12);
+    const pmt = calcPmt(principal, annualRatePct, years);
+    let balance = principal;
+    let totalInterest = 0;
+    let totalPaid = 0;
+    const schedule = [];
+
+    for (let m = 1; m <= totalMonths; m++) {
+      const interestPmt = balance * r;
+      const principalPmt = pmt - interestPmt;
+      totalInterest += interestPmt;
+      totalPaid += pmt;
+      balance -= principalPmt;
+      if (balance < 0) balance = 0;
+
+      schedule.push({
+        month: m,
+        payment: pmt,
+        principal: principalPmt,
+        interest: interestPmt,
+        totalInterestToDate: totalInterest,
+        remainingBalance: balance
+      });
+      if (balance <= 0) break;
+    }
+
+    return { pmt, totalPaid, totalInterest, schedule };
+  }
+
+  // Main Calculation Execution
+  function calculate() {
+    const curBal = parseFloat(currentBalance.value) || 0;
+    const curRateVal = parseFloat(currentRate.value) || 0;
+    const curRemYrs = parseFloat(currentRemainingYears.value) || 25;
+
+    const hValue = parseFloat(homeValue.value) || 0;
+    const maxLtvVal = parseFloat(maxLtvSelect.value) || 0.80;
+    dispLtvPercent.textContent = Math.round(maxLtvVal * 100) + '%';
+    const maxAllowedTotalLoan = hValue * maxLtvVal;
+    const maxAvailableCash = Math.max(0, maxAllowedTotalLoan - curBal);
+    dispMaxEquityOut.textContent = fmtUSD(maxAvailableCash);
+
+    let cashExtracted = 0;
+    if (currentMode === 'cashOut') {
+      cashExtracted = parseFloat(cashOutAmount.value) || 0;
+    }
+
+    const newRateVal = parseFloat(newRate.value) || 0;
+    const newYrs = parseFloat(newTermSelect.value) || 30;
+    const fees = parseFloat(closingCosts.value) || 0;
+    const rollCosts = rollCostsToggle.checked;
+
+    // Base new loan amount
+    const baseNewPrincipal = curBal + cashExtracted;
+    const totalNewPrincipal = rollCosts ? (baseNewPrincipal + fees) : baseNewPrincipal;
+
+    // Calculations
+    const oldLoan = calcAmortizationSchedule(curBal, curRateVal, curRemYrs);
+    const newLoan = calcAmortizationSchedule(totalNewPrincipal, newRateVal, newYrs);
+
+    const monthlyDiff = oldLoan.pmt - newLoan.pmt;
+    const upfrontOutflow = rollCosts ? 0 : fees;
+    
+    // Break-even months: upfront closing fees / monthly savings
+    let breakEvenMonths = 0;
+    if (monthlyDiff > 0) {
+      breakEvenMonths = Math.ceil(fees / monthlyDiff);
+    }
+
+    // Net Lifetime Savings = Total remaining old payments - (Total new payments + upfront fees - cash-out proceeds)
+    // Note: If cash-out, we adjust for cash in hand
+    const netLifetimeSavings = (oldLoan.totalPaid) - (newLoan.totalPaid + upfrontOutflow - cashExtracted);
+
+    // Render Metric Cards
+    if (monthlyDiff >= 0) {
+      resMonthlySavings.textContent = fmtUSD(monthlyDiff);
+      resMonthlySavings.className = 'metric-val emerald';
+      resMonthlySub.textContent = 'Lower monthly P&I payment';
+    } else {
+      resMonthlySavings.textContent = '+' + fmtUSD(Math.abs(monthlyDiff));
+      resMonthlySavings.className = 'metric-val blue';
+      resMonthlySub.textContent = currentMode === 'cashOut' ? 'Increase due to cash pulled' : 'Higher payment (shorter term)';
+    }
+
+    if (monthlyDiff > 0) {
+      resBreakEvenMonths.textContent = breakEvenMonths + ' Mo';
+      resBreakEvenYears.textContent = '~' + (breakEvenMonths / 12).toFixed(1) + ' Years to Recoup Fees';
+    } else if (currentMode === 'cashOut') {
+      resBreakEvenMonths.textContent = 'N/A';
+      resBreakEvenYears.textContent = 'Cash-Out Equity Restructuring';
+    } else {
+      resBreakEvenMonths.textContent = 'Immediate';
+      resBreakEvenYears.textContent = 'Equity Acceleration Tradeoff';
+    }
+
+    resLifetimeSavings.textContent = fmtUSD(netLifetimeSavings);
+    resLifetimeSavings.style.color = netLifetimeSavings >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-amber)';
+
+    // Render Side by Side Table
+    compBalOld.textContent = fmtUSD(curBal);
+    compBalNew.textContent = fmtUSD(totalNewPrincipal) + (rollCosts ? ' (Fees Rolled In)' : '');
+    compRateOld.textContent = fmtPct(curRateVal);
+    compRateNew.textContent = fmtPct(newRateVal);
+    compPmtOld.textContent = fmtUSD(oldLoan.pmt) + ' /mo';
+    compPmtNew.textContent = fmtUSD(newLoan.pmt) + ' /mo';
+    compTotalPaidOld.textContent = fmtUSD(oldLoan.totalPaid);
+    compTotalPaidNew.textContent = fmtUSD(newLoan.totalPaid + upfrontOutflow);
+    compTotalIntOld.textContent = fmtUSD(oldLoan.totalInterest);
+    compTotalIntNew.textContent = fmtUSD(newLoan.totalInterest);
+
+    if (currentMode === 'cashOut') {
+      compCashOutRow.style.display = 'grid';
+      compCashOutNet.textContent = '+' + fmtUSD(cashExtracted);
+    } else {
+      compCashOutRow.style.display = 'none';
+    }
+
+    // Dynamic Headline & Verdict Logic
+    if (currentMode === 'cashOut') {
+      verdictBadge.innerHTML = '<span>💵</span> CASH-OUT REFINANCE UNDERWRITING';
+      verdictBadge.style.background = 'rgba(37, 99, 235, 0.2)';
+      verdictBadge.style.color = '#60a5fa';
+      verdictHeadline.textContent = `Extracts ${fmtUSD(cashExtracted)} at ${fmtPct(newRateVal)} Fixed`;
+      verdictBody.innerHTML = `Your new monthly payment is <strong>${fmtUSD(newLoan.pmt)}/mo</strong> (${monthlyDiff >= 0 ? fmtUSD(monthlyDiff) + '/mo lower' : '+' + fmtUSD(Math.abs(monthlyDiff)) + '/mo higher'} than current). You unlock <strong>${fmtUSD(cashExtracted)}</strong> in liquid equity while keeping your total LTV at <strong>${((totalNewPrincipal/hValue)*100).toFixed(1)}%</strong>.`;
+    } else if (monthlyDiff > 0 && breakEvenMonths <= 36) {
+      verdictBadge.innerHTML = '<span>🏆</span> REFINANCE STRONGLY RECOMMENDED';
+      verdictBadge.style.background = 'rgba(16, 185, 129, 0.2)';
+      verdictBadge.style.color = '#34d399';
+      verdictHeadline.textContent = `Saves ${fmtUSD(monthlyDiff)} / Mo ($${fmtUSD(netLifetimeSavings)} Net Lifetime)`;
+      verdictBody.innerHTML = `Dropping your rate from <strong>${fmtPct(curRateVal)}</strong> to <strong>${fmtPct(newRateVal)}</strong> recoups your <strong>${fmtUSD(fees)}</strong> closing costs in <strong>${breakEvenMonths} months (~${(breakEvenMonths/12).toFixed(1)} yrs)</strong>. If you stay in your home past month ${breakEvenMonths}, refinancing is pure profit.`;
+    } else if (monthlyDiff > 0) {
+      verdictBadge.innerHTML = '<span>⚠️</span> LONG BREAK-EVEN PERIOD';
+      verdictBadge.style.background = 'rgba(217, 119, 6, 0.2)';
+      verdictBadge.style.color = '#fbbf24';
+      verdictHeadline.textContent = `Saves ${fmtUSD(monthlyDiff)} / Mo (Recoups in ${breakEvenMonths} Months)`;
+      verdictBody.innerHTML = `While you save <strong>${fmtUSD(monthlyDiff)}/mo</strong>, it takes <strong>${(breakEvenMonths/12).toFixed(1)} years</strong> to recoup closing costs. Only proceed if you are confident you will not sell or refinance before Year ${Math.ceil(breakEvenMonths/12)}.`;
+    } else {
+      verdictBadge.innerHTML = '<span>⏱️</span> TERM REDUCTION / EQUITY ACCELERATION';
+      verdictBadge.style.background = 'rgba(99, 102, 241, 0.2)';
+      verdictBadge.style.color = '#a5b4fc';
+      verdictHeadline.textContent = `Pay Off Loan Faster (Saves ${fmtUSD(netLifetimeSavings)} in Total Interest)`;
+      verdictBody.innerHTML = `Your monthly payment increases by <strong>${fmtUSD(Math.abs(monthlyDiff))}/mo</strong> because you are shortening the term to <strong>${newYrs} years</strong>, but you slash your total lifetime interest by <strong>${fmtUSD(Math.abs(oldLoan.totalInterest - newLoan.totalInterest))}</strong>.`;
+    }
+  }
+
+  // TAB SWITCHING
+  tabRateTerm.addEventListener('click', function() {
+    currentMode = 'rateTerm';
+    tabRateTerm.classList.add('active');
+    tabCashOut.classList.remove('active');
+    tabRateTerm.setAttribute('aria-selected', 'true');
+    tabCashOut.setAttribute('aria-selected', 'false');
+    cashOutStepSection.style.display = 'none';
+    calculate();
+  });
+
+  tabCashOut.addEventListener('click', function() {
+    currentMode = 'cashOut';
+    tabCashOut.classList.add('active');
+    tabRateTerm.classList.remove('active');
+    tabCashOut.setAttribute('aria-selected', 'true');
+    tabRateTerm.setAttribute('aria-selected', 'false');
+    cashOutStepSection.style.display = 'block';
+    calculate();
+  });
+
+  // RANGE SLIDER SYNC
+  currentBalance.addEventListener('input', function() {
+    currentBalanceSlider.value = this.value;
+    calculate();
+  });
+  currentBalanceSlider.addEventListener('input', function() {
+    currentBalance.value = this.value;
+    calculate();
+  });
+
+  homeValue.addEventListener('input', function() {
+    homeValueSlider.value = this.value;
+    calculate();
+  });
+  homeValueSlider.addEventListener('input', function() {
+    homeValue.value = this.value;
+    calculate();
+  });
+
+  // ALL OTHER INPUT EVENTS
+  const allInputs = [
+    currentRate, currentRemainingYears, cashOutAmount,
+    maxLtvSelect, newRate, newTermSelect, closingCosts, rollCostsToggle
+  ];
+  allInputs.forEach(el => {
+    el.addEventListener('input', calculate);
+    el.addEventListener('change', calculate);
+  });
+
+  // ========================================================
+  // EXCEL (.XLSX) GENERATION ENGINE VIA SHEETJS
+  // ========================================================
+  btnDownloadExcel.addEventListener('click', function() {
+    if (typeof XLSX === 'undefined') {
+      alert("Excel generator library is loading, please try again in a moment.");
+      return;
+    }
+
+    const curBal = parseFloat(currentBalance.value) || 0;
+    const curRateVal = parseFloat(currentRate.value) || 0;
+    const curRemYrs = parseFloat(currentRemainingYears.value) || 25;
+
+    const newRateVal = parseFloat(newRate.value) || 0;
+    const newYrs = parseFloat(newTermSelect.value) || 30;
+    const fees = parseFloat(closingCosts.value) || 0;
+    const rollCosts = rollCostsToggle.checked;
+
+    let cashExtracted = 0;
+    if (currentMode === 'cashOut') {
+      cashExtracted = parseFloat(cashOutAmount.value) || 0;
+    }
+
+    const baseNewPrincipal = curBal + cashExtracted;
+    const totalNewPrincipal = rollCosts ? (baseNewPrincipal + fees) : baseNewPrincipal;
+
+    const oldLoan = calcAmortizationSchedule(curBal, curRateVal, curRemYrs);
+    const newLoan = calcAmortizationSchedule(totalNewPrincipal, newRateVal, newYrs);
+    const monthlyDiff = oldLoan.pmt - newLoan.pmt;
+    const breakEvenMonths = monthlyDiff > 0 ? Math.ceil(fees / monthlyDiff) : 'N/A';
+
+    // 1. Sheet 1: Executive Refinance Underwriting Model
+    const summaryData = [
+      ["REALREFIN.COM - INSTITUTIONAL REFINANCE & CASH-OUT FINANCIAL MODEL"],
+      ["Generated Date:", new Date().toLocaleDateString(), "Model Mode:", currentMode === 'cashOut' ? "Cash-Out Refinance (80% LTV)" : "Rate & Term Refinance"],
+      ["Website Link:", "https://realrefin.com/mortgage-refinance-calculator"],
+      [],
+      ["UNDERWRITING PARAMETERS", "CURRENT MORTGAGE", "NEW REFINANCED MORTGAGE", "VARIANCE / SAVINGS"],
+      ["Principal Balance", curBal, totalNewPrincipal, totalNewPrincipal - curBal],
+      ["Annual Interest Rate", curRateVal / 100, newRateVal / 100, (newRateVal - curRateVal) / 100],
+      ["Term Remaining (Years)", curRemYrs, newYrs, newYrs - curRemYrs],
+      ["Monthly P&I Payment (=PMT)", Math.round(oldLoan.pmt), Math.round(newLoan.pmt), Math.round(monthlyDiff)],
+      ["Total Upfront Closing Costs", 0, fees, -fees],
+      ["Financed into Loan?", "N/A", rollCosts ? "YES" : "NO", ""],
+      ["Total Remaining Interest", Math.round(oldLoan.totalInterest), Math.round(newLoan.totalInterest), Math.round(oldLoan.totalInterest - newLoan.totalInterest)],
+      ["Total Cost over Term", Math.round(oldLoan.totalPaid), Math.round(newLoan.totalPaid + (rollCosts ? 0 : fees)), Math.round(oldLoan.totalPaid - (newLoan.totalPaid + (rollCosts ? 0 : fees)))],
+      [],
+      ["EXECUTIVE BREAK-EVEN VERDICT"],
+      ["Net Monthly Cash Savings:", Math.round(monthlyDiff)],
+      ["Break-Even Payback Period:", breakEvenMonths + " Months (~" + (typeof breakEvenMonths === 'number' ? (breakEvenMonths/12).toFixed(1) : 0) + " Years)"],
+      ["Total Net Lifetime Savings:", Math.round(oldLoan.totalPaid - (newLoan.totalPaid + (rollCosts ? 0 : fees) - cashExtracted))],
+      [],
+      ["NATIVE EXCEL FORMULA GUIDE"],
+      ["Monthly Payment Formula:", "=PMT(Rate/12, Term_Years*12, -Principal)"],
+      ["Break-Even Month Formula:", "=Closing_Costs / (Old_Payment - New_Payment)"],
+      ["Max Cash-Out 80% LTV:", "=(Appraised_Home_Value * 0.80) - Current_Balance"]
+    ];
+
+    if (currentMode === 'cashOut') {
+      summaryData.splice(14, 0, 
+        ["Appraised Home Value", parseFloat(homeValue.value) || 0],
+        ["Net Cash Extracted in Hand", cashExtracted],
+        ["Post-Refinance LTV Ratio", ((totalNewPrincipal / (parseFloat(homeValue.value) || 1)) * 100).toFixed(2) + "%"]
+      );
+    }
+
+    // 2. Sheet 2: New Loan 360-Month Amortization Schedule
+    const amortHeaders = [
+      ["Month", "Payment ($)", "Principal ($)", "Interest ($)", "Cumulative Interest ($)", "Remaining Balance ($)"]
+    ];
+    const amortRows = newLoan.schedule.map(s => [
+      s.month,
+      Math.round(s.payment),
+      Math.round(s.principal),
+      Math.round(s.interest),
+      Math.round(s.totalInterestToDate),
+      Math.round(s.remainingBalance)
+    ]);
+    const fullAmortData = amortHeaders.concat(amortRows);
+
+    // Build Workbook
+    const wb = XLSX.utils.book_new();
+    const wsSummary = XLSX.utils.aoa_to_sheet(summaryData);
+    const wsAmort = XLSX.utils.aoa_to_sheet(fullAmortData);
+
+    // Column widths
+    wsSummary['!cols'] = [{ wch: 32 }, { wch: 22 }, { wch: 28 }, { wch: 22 }];
+    wsAmort['!cols'] = [{ wch: 10 }, { wch: 16 }, { wch: 16 }, { wch: 16 }, { wch: 24 }, { wch: 24 }];
+
+    XLSX.utils.book_append_sheet(wb, wsSummary, "Refinance Model");
+    XLSX.utils.book_append_sheet(wb, wsAmort, "Amortization Schedule");
+
+    // Trigger Download
+    const fileName = currentMode === 'cashOut'
+      ? "RealRefin_Cash_Out_Refinance_Model.xlsx"
+      : "RealRefin_Mortgage_Refinance_Model.xlsx";
+    XLSX.writeFile(wb, fileName);
+
+    // Visual Feedback
+    btnDownloadExcel.innerHTML = "<span>✓</span> Excel Template Downloaded!";
+    setTimeout(() => {
+      btnDownloadExcel.innerHTML = "<span>📥</span> Download Excel (.xlsx) Model";
+    }, 3000);
+  });
+
+  // COPY REPORT CLIPBOARD
+  btnCopyReport.addEventListener('click', function() {
+    const text = `--- RealRefin: Mortgage Refinance Underwriting Report ---
+Model Type: ${currentMode === 'cashOut' ? 'Cash-Out Refinance (80% LTV)' : 'Rate & Term Refinance'}
+Generated: ${new Date().toLocaleDateString()}
+
+CURRENT MORTGAGE:
+- Loan Balance: ${compBalOld.textContent}
+- Interest Rate: ${compRateOld.textContent}
+- Monthly Payment: ${compPmtOld.textContent}
+- Total Cost Remaining: ${compTotalPaidOld.textContent}
+
+NEW REFINANCED MORTGAGE:
+- New Loan Balance: ${compBalNew.textContent}
+- New Interest Rate: ${compRateNew.textContent}
+- New Monthly Payment: ${compPmtNew.textContent}
+- Upfront Closing Costs: ${fmtUSD(parseFloat(closingCosts.value) || 0)}
+- Total Cost Over Term: ${compTotalPaidNew.textContent}
+
+BOTTOM-LINE UNDERWRITING:
+- Monthly Payment Variance: ${resMonthlySavings.textContent}/mo
+- Break-Even Payback Horizon: ${resBreakEvenMonths.textContent} (${resBreakEvenYears.textContent})
+- Net Lifetime Savings: ${resLifetimeSavings.textContent}
+${currentMode === 'cashOut' ? '- Cash Extracted in Hand: ' + compCashOutNet.textContent : ''}
+
+Generated via RealRefin.com: https://realrefin.com/mortgage-refinance-calculator`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      btnCopyReport.innerHTML = "<span>✓</span> Summary Copied!";
+      setTimeout(() => {
+        btnCopyReport.innerHTML = "<span>📋</span> Copy Underwriting Summary";
+      }, 2500);
+    });
+  });
+
+  // FAQ ACCORDION HANDLERS
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const qBtn = item.querySelector('.faq-question');
+    qBtn.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+
+  // Initial Calculation Run
+  calculate();
+
+})();
+</script>
+
+</body>
+</html>

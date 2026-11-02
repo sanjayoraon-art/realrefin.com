@@ -8,9 +8,21 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://realrefin.com/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/mortgage-refinance-calculator</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/lease-amortization-schedule-excel</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://realrefin.com/interest-rate-cap-calculator</loc>
@@ -277,6 +289,26 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/mortgage-refinance-calculator': 'mortgage-refinance-calculator.html',
+  '/mortgage-refinance-calculator.html': 'mortgage-refinance-calculator.html',
+  '/refinance-calculator': 'mortgage-refinance-calculator.html',
+  '/refinance-calculator.html': 'mortgage-refinance-calculator.html',
+  '/refinance-calculator-excel': 'mortgage-refinance-calculator.html',
+  '/refinance-calculator-excel.html': 'mortgage-refinance-calculator.html',
+  '/mortgage-refinance-calculator-excel': 'mortgage-refinance-calculator.html',
+  '/mortgage-refinance-calculator-excel.html': 'mortgage-refinance-calculator.html',
+  '/refinance-break-even-calculator': 'mortgage-refinance-calculator.html',
+  '/refinance-break-even-calculator.html': 'mortgage-refinance-calculator.html',
+  '/cash-out-refinance-calculator': 'mortgage-refinance-calculator.html',
+  '/cash-out-refinance-calculator.html': 'mortgage-refinance-calculator.html',
+  '/lease-amortization-schedule-excel': 'lease-amortization-schedule-excel.html',
+  '/lease-amortization-schedule-excel.html': 'lease-amortization-schedule-excel.html',
+  '/how-to-create-a-lease-amortization-schedule-in-excel': 'lease-amortization-schedule-excel.html',
+  '/how-to-create-a-lease-amortization-schedule-in-excel.html': 'lease-amortization-schedule-excel.html',
+  '/capital-lease-amortization-schedule-excel-template': 'lease-amortization-schedule-excel.html',
+  '/capital-lease-amortization-schedule-excel-template.html': 'lease-amortization-schedule-excel.html',
+  '/lease-amortization-schedule': 'lease-amortization-schedule-excel.html',
+  '/lease-amortization-schedule.html': 'lease-amortization-schedule-excel.html',
   '/house-hacking-calculator': 'house-hacking-calculator.html',
   '/house-hacking-calculator.html': 'house-hacking-calculator.html',
   '/house-hack-calculator': 'house-hacking-calculator.html',
