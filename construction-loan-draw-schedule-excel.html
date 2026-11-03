@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Loan Draw Schedule Template Excel | Free .XLSX Download</title>
+  <meta name="description" content="Free construction loan draw schedule template in Excel. Calculate milestone disbursements, retainage holdbacks, cumulative interest-only accruals, and download ready-to-use .xlsx templates.">
+  <meta name="keywords" content="construction draw schedule template excel, construction loan draw schedule template excel, free construction draw schedule template excel, construction draw schedule excel, how to create a construction draw schedule in excel, construction loan interest only draw schedule excel, construction draw schedule excel template free">
+  <link rel="canonical" href="https://realrefin.com/construction-loan-draw-schedule-excel">
+  <meta property="og:title" content="Construction Loan Draw Schedule Template Excel (Free .XLSX Download)">
+  <meta property="og:description" content="Model phase-by-phase disbursements, 10% contractor retainage, and cumulative interest-only loan accruals. Download free pre-built Excel templates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/construction-loan-draw-schedule-excel">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for mathematical formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- SheetJS for dynamic client-side Excel (.xlsx) file generation -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Schema Markup: HowTo, WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "How to Create a Construction Draw Schedule in Excel",
+        "description": "Step-by-step instructions to model a milestone construction draw schedule with contractor retainage and cumulative interest accruals in Microsoft Excel.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Step 1: Set Up Project Budget & Loan Assumptions",
+            "text": "Define Total Construction Loan Amount, Construction Duration in Months, Annual Interest Rate, and Contractor Retainage Percentage (typically 10%)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Step 2: Define Schedule of Values (SOV) Milestones",
+            "text": "List milestone phases such as Site Prep & Foundation, Framing & Dry-In, Rough MEP, Drywall & Finishes, and Final Inspection with percentage allocations."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Step 3: Calculate Retainage Withholding and Net Disbursements",
+            "text": "For each draw request, calculate Retainage: =Gross_Draw * Retainage_Rate. Calculate Net Contractor Payment: =Gross_Draw - Retainage."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Step 4: Track Cumulative Outstanding Balance",
+            "text": "Sum all prior gross disbursements: =SUM($D$10:D10) to determine the exact loan balance currently accruing interest."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Step 5: Compute Monthly Interest-Only Debt Service",
+            "text": "Calculate monthly interest: =Cumulative_Drawn_Balance * (Annual_Rate / 12). Sum all monthly interest charges to establish the project's total capitalized interest reserve."
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/construction-loan-draw-schedule-excel#app",
+        "name": "RealRefin Construction Loan Draw Schedule Excel Calculator",
+        "url": "https://realrefin.com/construction-loan-draw-schedule-excel",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free institutional construction loan draw schedule generator. Calculates milestone draw disbursements, contractor retainage holdbacks, cumulative interest-only accruals, and exports ready-to-use Excel (.xlsx) templates.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Excel Financial Models Suite",
+            "item": "https://realrefin.com/#suite-excel"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Construction Draw Schedule Template Excel",
+            "item": "https://realrefin.com/construction-loan-draw-schedule-excel"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a construction draw schedule in Excel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A construction draw schedule is a detailed spreadsheet tracking the sequential release of loan funds from a lender to a builder as specific construction milestones are inspected and verified. It calculates gross draws, retainage holdbacks, net contractor payouts, and cumulative monthly interest charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is interest calculated on a construction loan draw schedule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Construction loan interest is interest-only and is calculated solely on the cumulative amount drawn to date, not the full loan commitment. The Excel formula is: Monthly Interest = Cumulative_Drawn_Balance * (Annual_Interest_Rate / 12)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is contractor retainage (holdback) in construction lending?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Retainage (typically 5% to 10%) is an amount withheld from each progress payment to protect the lender and owner against mechanics' liens, defective workmanship, or contractor abandonment. The accumulated retainage is released in full upon Certificate of Occupancy (CO) and receipt of final unconditional lien waivers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download this construction draw schedule as a free Excel (.xlsx) template?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Clicking our 'Download Free Excel (.xlsx) Template' button dynamically generates a multi-tab workbook containing project assumptions, the Schedule of Values (SOV), milestone disbursement schedules, and monthly cumulative interest accrual tables."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       REALREFIN FINTECH DESIGN SYSTEM - CONSTRUCTION EXCEL SUITE
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #059669;
+      --accent-emerald-light: #ecfdf5;
+      --accent-blue: #2563EB;
+      --accent-blue-dark: #1d4ed8;
+      --accent-blue-light: #eff6ff;
+      --accent-excel: #107C41;
+      --accent-excel-dark: #0b5c30;
+      --accent-excel-light: #e8f5e9;
+      --accent-amber: #D97706;
+      --accent-amber-light: #fffbeb;
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* NAVBAR */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span { color: var(--accent-emerald); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--accent-emerald-dark); }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover { color: var(--accent-emerald-dark); }
+    .breadcrumb-bar span.separator { color: var(--text-light); }
+    .breadcrumb-bar span.current { color: var(--primary-navy); font-weight: 700; }
+
+    /* HERO */
+    .page-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .badge-pill-excel {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent-excel-light);
+      color: var(--accent-excel);
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 0.95rem;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+      border: 1px solid #c8e6c9;
+    }
+
+    .page-title {
+      font-size: 2.45rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 950px;
+      line-height: 1.6;
+    }
+
+    /* MAIN CALCULATOR GRID */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 1040px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARD STYLES */
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      background: #fafbfc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h2, .card-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-body { padding: 1.5rem; }
+
+    /* FORM CONTROLS */
+    .form-group { margin-bottom: 1.2rem; }
+
+    .form-group label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group label span.hint {
+      font-size: 0.775rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 0.9rem; }
+    .input-suffix { right: 0.9rem; }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      transition: all 0.15s ease;
+    }
+
+    .calc-input.has-prefix { padding-left: 1.85rem; }
+    .calc-input.has-suffix { padding-right: 2.2rem; }
+
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .range-slider {
+      width: 100%;
+      margin-top: 0.45rem;
+      accent-color: var(--accent-excel);
+      cursor: pointer;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .input-row { grid-template-columns: 1fr; }
+    }
+
+    select.calc-input {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.85rem center;
+      background-size: 1rem;
+    }
+
+    /* PRESET BUTTONS */
+    .preset-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-preset {
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-preset:hover, .btn-preset.active {
+      background: var(--accent-excel-light);
+      border-color: var(--accent-excel);
+      color: var(--accent-excel-dark);
+      font-weight: 700;
+    }
+
+    /* RESULTS HERO & SCORECARDS */
+    .verdict-hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #ffffff;
+      padding: 1.75rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(16, 124, 65, 0.25);
+      color: #6ee7b7;
+      border: 1px solid rgba(110, 231, 183, 0.3);
+      padding: 0.3rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+    }
+
+    .verdict-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .verdict-summary {
+      font-size: 0.925rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .metric-grid { grid-template-columns: 1fr; }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .metric-card.highlight {
+      background: var(--accent-excel-light);
+      border-color: #a7f3d0;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .metric-val.excel { color: var(--accent-excel); }
+    .metric-val.amber { color: var(--accent-amber); }
+    .metric-val.blue { color: var(--accent-blue-dark); }
+
+    .metric-sub {
+      font-size: 0.725rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* DRAW TABLE PREVIEW */
+    .schedule-table-wrap {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      max-height: 400px;
+      margin-bottom: 1.5rem;
+      background: #ffffff;
+    }
+
+    .sched-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+
+    .sched-table th {
+      background: #f1f5f9;
+      color: var(--primary-navy);
+      padding: 0.65rem 0.85rem;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .sched-table td {
+      padding: 0.55rem 0.85rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+    }
+
+    .sched-table tr:nth-child(even) td { background: #fafbfc; }
+    .sched-table td:first-child, .sched-table th:first-child { text-align: left; }
+
+    /* ACTION BUTTONS */
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 580px) {
+      .actions-grid { grid-template-columns: 1fr; }
+    }
+
+    .btn-excel-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      background: var(--accent-excel);
+      color: #ffffff;
+      border: none;
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px -1px rgba(16, 124, 65, 0.2);
+    }
+
+    .btn-excel-download:hover {
+      background: var(--accent-excel-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px -2px rgba(16, 124, 65, 0.3);
+    }
+
+    .btn-copy-report {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      background: #ffffff;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+      padding: 0.9rem 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy-report:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* TUTORIAL & EDITORIAL */
+    .tutorial-band {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+      .tutorial-band { padding: 2rem 1.25rem; }
+    }
+
+    .tutorial-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-excel-light);
+      color: var(--accent-excel-dark);
+      font-size: 0.775rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .tutorial-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .step-box {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin: 1.75rem 0;
+      background: #fafbfc;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--accent-excel);
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+
+    .step-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .formula-snippet-box {
+      background: #0F172A;
+      color: #f8fafc;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 1rem 0;
+      overflow-x: auto;
+      border-left: 4px solid var(--accent-excel);
+    }
+
+    .formula-snippet-box .comment { color: #94a3b8; }
+    .formula-snippet-box .func { color: #38bdf8; font-weight: bold; }
+    .formula-snippet-box .val { color: #34d399; }
+
+    /* FAQ ACCORDION */
+    .faq-wrapper { margin-top: 2rem; }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+      background: #ffffff;
+      transition: all 0.15s ease;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.15rem 1.35rem;
+      background: transparent;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question span.arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.25rem;
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question span.arrow { transform: rotate(180deg); }
+
+    /* RELATED TOOLS */
+    .related-tools-band { margin-bottom: 3.5rem; }
+    .related-tools-band h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .rel-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .rel-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .rel-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .rel-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .rel-link {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 0 2.5rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.65rem; }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover { color: var(--accent-emerald-dark); }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+
+  <!-- ========================================================
+       NAVBAR
+  ======================================================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">
+      <img src="/favicon.svg" alt="RealRefin Logo" width="34" height="34" style="border-radius: 8px;">
+      Real<span>Refin</span>.com
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#suite-refinance">Refinance</a></li>
+      <li><a href="/#suite-investor">Investors</a></li>
+      <li><a href="/#suite-buyer">Buyers</a></li>
+      <li><a href="/#suite-military">Military &amp; VA</a></li>
+      <li><a href="/#suite-excel" class="active">Excel Models</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/#suites-directory" class="btn-nav-cta">Explore 5 Suites →</a></li>
+    </ul>
+  </header>
+
+  <!-- ========================================================
+       BREADCRUMB
+  ======================================================== -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#suite-excel">Excel Financial Models Suite</a>
+    <span class="separator">/</span>
+    <span class="current">Construction Draw Schedule Template Excel</span>
+  </nav>
+
+  <!-- ========================================================
+       HERO HEADER
+  ======================================================== -->
+  <section class="page-header">
+    <div class="badge-pill-excel">
+      <span>🏗️</span> Free Interactive Engine &amp; Downloadable Excel (.xlsx) Template
+    </div>
+    <h1 class="page-title">
+      Construction Loan Draw Schedule Template Excel
+    </h1>
+    <p class="page-subtitle">
+      Model milestone progress disbursements, 10% contractor retainage holdbacks, cumulative drawn loan balances, and monthly interest-only debt service. Download your customized, pre-built Excel draw schedule in one click.
+    </p>
+  </section>
+
+  <!-- ========================================================
+       INTERACTIVE CALCULATOR & LIVE SCHEDULE PREVIEW
+  ======================================================== -->
+  <main class="calc-layout">
+
+    <!-- INPUTS COLUMN -->
+    <div class="calc-card">
+      <div class="card-header">
+        <h2><span>⚙️</span> Construction Loan Parameters</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-excel); background: var(--accent-excel-light); padding: 0.2rem 0.6rem; border-radius: 20px;">
+          SOV &amp; Retainage
+        </span>
+      </div>
+      <div class="card-body">
+
+        <!-- PRESET BUTTONS -->
+        <div class="preset-bar">
+          <button type="button" class="btn-preset active" data-preset="custom">Custom Build</button>
+          <button type="button" class="btn-preset" data-preset="residential-single">Single Family ($450k / 6 Mo)</button>
+          <button type="button" class="btn-preset" data-preset="commercial-build">Commercial Shell ($1.2M / 12 Mo)</button>
+          <button type="button" class="btn-preset" data-preset="major-rehab">Major Gut Rehab ($250k / 5 Mo)</button>
+        </div>
+
+        <div class="form-group">
+          <label for="totalBudget">
+            Total Construction Loan Facility
+            <span class="hint">Approved project commitment</span>
+          </label>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" id="totalBudget" class="calc-input has-prefix" value="500000" min="25000" max="25000000" step="10000">
+          </div>
+          <input type="range" id="totalBudgetSlider" class="range-slider" min="50000" max="2000000" step="25000" value="500000">
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="interestRate">
+              Annual Interest Rate
+              <span class="hint">Prime + Margin (I/O)</span>
+            </label>
+            <div class="input-wrap">
+              <input type="number" id="interestRate" class="calc-input has-suffix" value="8.50" min="1.0" max="20.0" step="0.25">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="buildDuration">
+              Build Timeline
+              <span class="hint">Draw disbursement duration</span>
+            </label>
+            <div class="input-wrap">
+              <input type="number" id="buildDuration" class="calc-input has-suffix" value="6" min="2" max="24" step="1">
+              <span class="input-suffix">Mo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="form-group">
+            <label for="retainagePct">
+              Contractor Retainage Rate
+              <span class="hint">Held until CO / Lien Release</span>
+            </label>
+            <div class="input-wrap">
+              <input type="number" id="retainagePct" class="calc-input has-suffix" value="10.0" min="0" max="20" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contingencyPct">
+              Contingency Reserve
+              <span class="hint">Cost overrun cushion</span>
+            </label>
+            <div class="input-wrap">
+              <input type="number" id="contingencyPct" class="calc-input has-suffix" value="5.0" min="0" max="15" step="1">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 0.85rem 1rem; font-size: 0.85rem; color: #1e40af;">
+          💡 <strong>Banking Standard:</strong> You only pay interest on the funds actually drawn down to date, not the full loan commitment! Retainage is disbursed after the Certificate of Occupancy (CO) and final title date-down endorsement.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESULTS & SCHEDULE PREVIEW COLUMN -->
+    <div class="calc-card">
+      <div class="card-header">
+        <h2><span>📊</span> Cumulative Draw &amp; Interest Summary</h2>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-excel); background: var(--accent-excel-light); padding: 0.2rem 0.6rem; border-radius: 20px;">
+          Live Schedule of Values
+        </span>
+      </div>
+      <div class="card-body">
+
+        <!-- VERDICT HERO -->
+        <div class="verdict-hero">
+          <div class="verdict-badge">
+            <span>✓</span> DRAW FACILITY ACCRUAL SUMMARY
+          </div>
+          <div class="verdict-title" id="dispTotalInterest">$13,813 Total Interest</div>
+          <div class="verdict-summary" id="dispVerdictSummary">
+            By drawing down the <strong>$500,000</strong> facility in milestones over 6 months at 8.50%, you save over <strong>$7,437</strong> compared to paying interest on the full commitment from Day 1.
+          </div>
+        </div>
+
+        <!-- KEY METRICS -->
+        <div class="metric-grid">
+          <div class="metric-card highlight">
+            <div class="metric-label">Total Net Disbursed</div>
+            <div class="metric-val excel" id="metricNetDisbursed">$450,000</div>
+            <div class="metric-sub">Progress payments to builder</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Retainage Holdback</div>
+            <div class="metric-val amber" id="metricRetainageHeld">$50,000</div>
+            <div class="metric-sub">Released at final inspection</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Average Utilization</div>
+            <div class="metric-val blue" id="metricAvgBalance">65.0%</div>
+            <div class="metric-sub">Effective capital utilization</div>
+          </div>
+        </div>
+
+        <!-- LIVE SCHEDULE TABLE PREVIEW -->
+        <div class="schedule-table-wrap">
+          <table class="sched-table">
+            <thead>
+              <tr>
+                <th>Phase / Milestone</th>
+                <th>Gross Draw</th>
+                <th>Retainage</th>
+                <th>Net to Builder</th>
+                <th>Cumulative Balance</th>
+                <th>Monthly Interest</th>
+              </tr>
+            </thead>
+            <tbody id="drawTableBody">
+              <!-- Populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DOWNLOAD & COPY BUTTONS -->
+        <div class="actions-grid">
+          <button type="button" class="btn-excel-download" id="btnDownloadExcel">
+            <span>📥</span> Download Free Excel (.xlsx) Template
+          </button>
+          <button type="button" class="btn-copy-report" id="btnCopyReport">
+            <span>📋</span> Copy Draw Schedule
+          </button>
+        </div>
+
+        <div style="font-size: 0.775rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
+          ⚡ Downloads a pre-built Excel workbook with native <code>=SUM()</code>, retainage holdbacks, and interest-only formulas.
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================================
+       HOW TO CREATE A CONSTRUCTION DRAW SCHEDULE IN EXCEL
+  ======================================================== -->
+  <section class="tutorial-band">
+    <div class="tutorial-badge">
+      <span>📐</span> Spreadsheet Engineering &amp; Underwriting Guide
+    </div>
+    <h2 class="tutorial-title">
+      How to Create a Construction Draw Schedule in Excel (Formula Guide)
+    </h2>
+    <p style="font-size: 1.05rem; color: #475569; line-height: 1.7; margin-bottom: 1.5rem;">
+      Whether you are a custom home builder managing cash flow, a real estate investor renovating a commercial asset, or a lender underwriting progress inspections, here is the complete formula blueprint to build a construction loan draw schedule in Microsoft Excel or Google Sheets.
+    </p>
+
+    <!-- GOOGLE FEATURED SNIPPET & AI OVERVIEW TARGET BOX -->
+    <div class="featured-snippet-box" style="background: #f0fdf4; border: 2px solid #10b981; border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; color: #047857; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+        <span>⚡</span> Quick Answer: How to Create a Construction Draw Schedule in Excel
+      </div>
+      <p style="font-size: 1rem; color: #065f46; line-height: 1.6; margin-bottom: 0.85rem;">
+        To build a construction loan draw schedule template in Excel in 5 simple steps:
+      </p>
+      <ol style="margin-left: 1.5rem; color: #065f46; font-size: 0.95rem; line-height: 1.75;">
+        <li><strong>Set Up Project Assumptions:</strong> Enter Total Loan Commitment in cell <code>B1</code>, Annual Interest Rate in <code>B2</code>, and Retainage Rate (e.g., 10%) in <code>B3</code>.</li>
+        <li><strong>List Milestones (Schedule of Values):</strong> Create row headers for <em>Permits &amp; Foundation</em>, <em>Framing</em>, <em>Rough MEP</em>, <em>Drywall &amp; Finishes</em>, and <em>Final Inspection</em> with percentage allocations.</li>
+        <li><strong>Calculate Retainage and Net Payouts:</strong> In Column D, calculate retainage: <code>=Gross_Draw * $B$3</code>. In Column E, calculate Net Payment to Contractor: <code>=Gross_Draw - Retainage</code>.</li>
+        <li><strong>Compute Cumulative Drawn Balance:</strong> In Column F, sum all previous draws: <code>=SUM($C$10:C10)</code> to determine the current interest-bearing balance.</li>
+        <li><strong>Calculate Monthly Interest Accrual:</strong> In Column G, compute interest-only debt service: <code>=Cumulative_Balance * ($B$2 / 12)</code>.</li>
+      </ol>
+    </div>
+
+    <!-- EXCEL FORMULA CHEAT SHEET TABLE -->
+    <div style="margin-bottom: 2rem; overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+        <thead>
+          <tr style="background: #0F172A; color: #ffffff; text-align: left;">
+            <th style="padding: 0.75rem 1rem;">Construction Metric</th>
+            <th style="padding: 0.75rem 1rem;">Excel Function / Mathematical Logic</th>
+            <th style="padding: 0.75rem 1rem;">Example Cell Formula</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Gross Milestone Draw ($)</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Total_Loan_Commitment * Milestone_Percentage</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=$B$1 * C10</code></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0; background: #fafbfc;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Retainage Holdback ($)</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Gross_Draw * Retainage_Rate_Percentage</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=D10 * $B$3</code></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Net Contractor Disbursement ($)</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Gross_Draw - Retainage_Withheld</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=D10 - E10</code></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0; background: #fafbfc;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Cumulative Loan Drawn ($)</td>
+            <td style="padding: 0.75rem 1rem;"><code>=SUM($D$10:D10)</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=SUM($D$10:D10)</code></td>
+          </tr>
+          <tr style="background: #ffffff;">
+            <td style="padding: 0.75rem 1rem; font-weight: 600;">Monthly Interest Accrual ($)</td>
+            <td style="padding: 0.75rem 1rem;"><code>=Cumulative_Balance * (Annual_Rate / 12)</code></td>
+            <td style="padding: 0.75rem 1rem; color: var(--accent-excel); font-weight: 700;"><code>=G10 * ($B$2 / 12)</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IN-DEPTH EXPLANATION -->
+    <div class="step-box">
+      <div class="step-heading">
+        <span class="step-num">1</span> Schedule of Values (SOV) &amp; Progress Inspections
+      </div>
+      <p style="color: #475569; font-size: 0.95rem; line-height: 1.7;">
+        Before any funds are released, lenders require a detailed <strong>Schedule of Values (SOV)</strong>. Rather than paying based on time, draws are disbursed strictly against verified physical completion. A third-party inspector evaluates the site against the draw request, confirming that foundation concrete has cured, lumber has been framed to code, or rough-in plumbing has passed municipal pressure tests before approving the disbursement.
+      </p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-heading">
+        <span class="step-num">2</span> Why Lenders Enforce a 10% Retainage Holdback
+      </div>
+      <p style="color: #475569; font-size: 0.95rem; line-height: 1.7;">
+        Retainage protects both the project owner and the lender. By withholding 10% from every contractor invoice, the project maintains an escrow cushion. At the end of construction, the total retainage pool is only released once:
+      </p>
+      <ul style="margin: 0.5rem 0 0.5rem 1.5rem; color: #334155;">
+        <li>A formal <strong>Certificate of Occupancy (CO)</strong> is issued by the local building department.</li>
+        <li><strong>Final Unconditional Lien Waivers</strong> are signed by the general contractor and all major trade subcontractors.</li>
+        <li>A final title date-down endorsement confirms zero mechanic's liens have attached to the deed.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-heading">
+        <span class="step-num">3</span> Managing the Capitalized Interest Reserve (Dutch vs. Actual)
+      </div>
+      <p style="color: #475569; font-size: 0.95rem; line-height: 1.7;">
+        Because building projects generate zero revenue until completion, lenders commonly incorporate an <strong>Interest Reserve</strong> into the loan commitment. Each month, as interest accrues on cumulative drawn funds, the lender bills the interest reserve account automatically. Using our dynamic Excel schedule ensures you size your interest reserve accurately without over-borrowing.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ========================================================
+       FAQ ACCORDION
+  ======================================================== -->
+  <section class="tutorial-band">
+    <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 1.5rem;">
+      Frequently Asked Questions (FAQ)
+    </h2>
+
+    <div class="faq-wrapper">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          How do I build a construction draw schedule in Excel?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          To build a construction draw schedule in Excel: 1) Set up input cells for total loan commitment, interest rate, and retainage percentage, 2) Create columns for Phase Name, Percentage Completed, Gross Draw, 10% Retainage Withheld, Net Payout, Cumulative Loan Drawn, and Monthly Interest, 3) Use <code>=SUM($D$10:D10)</code> to calculate the cumulative drawn balance, and 4) Multiply the balance by <code>(Rate / 12)</code> to determine monthly interest debt service.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          What is the difference between a Draw Request and a Schedule of Values (SOV)?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          The Schedule of Values (SOV) is the master budget established before breaking ground that allocates the total project cost across individual building trades and milestones. A Draw Request (often submitted on AIA G702 / G703 forms) is an invoice requesting payment against specific line items on the SOV based on the percentage of work completed to date.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          How much can you save by drawing funds in phases vs taking a lump sum?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          On a $500,000, 12-month construction loan at 9.0% interest, taking a full lump sum on Day 1 results in $45,000 in annual interest. In contrast, drawing funds gradually across 6 or 12 milestones as work progresses yields an average outstanding balance of roughly 55% to 65%, slashing total interest incurred to approximately $26,000 to $29,000—saving the developer over $16,000.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can I download this draw schedule as a free Excel (.xlsx) template?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes! Clicking the "Download Free Excel (.xlsx) Template" button above instantly creates an institutional, pre-formatted Excel workbook containing your exact project parameters, Schedule of Values (SOV), retainage calculations, and month-by-month cumulative interest accrual tables with active formulas.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       RELATED FINANCIAL TOOLS
+  ======================================================== -->
+  <section class="related-tools-band">
+    <h3>Related Construction &amp; Debt Modeling Suites</h3>
+    <div class="related-grid">
+
+      <div class="rel-card">
+        <div>
+          <h4>FHA 203(k) Rehab Loan Calculator</h4>
+          <p>Model residential renovation loans, allowable contingency reserves, and consultant inspection fees.</p>
+        </div>
+        <a href="/203k-loan-calculator" class="rel-link">Calculate 203k Rehab →</a>
+      </div>
+
+      <div class="rel-card">
+        <div>
+          <h4>Hard Money Loan Calculator</h4>
+          <p>Calculate points, monthly interest-only payments, and holding costs for short-term fix and flip financing.</p>
+        </div>
+        <a href="/hard-money-loan-calculator" class="rel-link">Calculate Hard Money →</a>
+      </div>
+
+      <div class="rel-card">
+        <div>
+          <h4>Lease Amortization Schedule (Excel)</h4>
+          <p>Master how to build capital and finance lease amortization schedules under ASC 842 / IFRS 16.</p>
+        </div>
+        <a href="/lease-amortization-schedule-excel" class="rel-link">Launch Lease Tool →</a>
+      </div>
+
+      <div class="rel-card">
+        <div>
+          <h4>Mortgage Refinance &amp; Cash-Out (Excel)</h4>
+          <p>Calculate rate-and-term savings, break-even months, and download pre-built Excel amortization workbooks.</p>
+        </div>
+        <a href="/mortgage-refinance-calculator" class="rel-link">Launch Refi Tool →</a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      
+      <!-- Brand & Mission -->
+      <div class="footer-col">
+        <a href="/" class="rr-logo" style="margin-bottom: 0.85rem; display: inline-block;">Real<span>Refin</span>.com</a>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: #64748b; margin-bottom: 1.25rem;">
+          Institutional-grade real estate financial modeling software, debt analytics, and equity optimization tools for developers, lenders, and investors.
+        </p>
+        <p style="font-size: 0.8rem; color: #94a3b8;">
+          Empowering smarter construction draw tracking with zero-latency algorithmic underwriting and instant Excel templates.
+        </p>
+      </div>
+
+      <!-- Financial Suites -->
+      <div class="footer-col">
+        <h4>Financial Suites</h4>
+        <ul>
+          <li><a href="/#suite-refinance">1. Refinance &amp; Mortgage</a></li>
+          <li><a href="/#suite-investor">2. Investor &amp; Rental</a></li>
+          <li><a href="/#suite-buyer">3. Home Buyer Affordability</a></li>
+          <li><a href="/#suite-military">4. Military &amp; VA Loans</a></li>
+          <li><a href="/#suite-excel">5. Excel Models &amp; Templates</a></li>
+        </ul>
+      </div>
+
+      <!-- Popular Calculators -->
+      <div class="footer-col">
+        <h4>Popular Calculators</h4>
+        <ul>
+          <li><a href="/construction-loan-draw-schedule-excel">Construction Draw Schedule (Excel)</a></li>
+          <li><a href="/lease-amortization-schedule-excel">Lease Amortization Schedule (Excel)</a></li>
+          <li><a href="/mortgage-refinance-calculator">Mortgage Refinance (Excel)</a></li>
+          <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs HELOC</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/2-1-buydown-calculator">2-1 Buydown Calculator</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Trust -->
+      <div class="footer-col">
+        <h4>Legal &amp; Trust</h4>
+        <ul>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/disclaimer">Financial Disclaimer</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+          <li><a href="/about">About RealRefin</a></li>
+          <li><a href="/contact">Contact Support</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Disclaimer -->
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 RealRefin.com. All rights reserved. Real Estate Investment Modeling Software.</p>
+      <p style="font-size: 0.775rem; color: #94a3b8; max-width: 900px; margin: 0.5rem auto 0; line-height: 1.5;">
+        Disclaimer: RealRefin.com provides educational computational tools and construction draw templates. We are not a licensed general contractor, architect, bank, or loan servicer. Building inspections, AIA disbursement approvals, and title date-down endorsements must be certified by qualified professionals.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================
+     CLIENT-SIDE JAVASCRIPT: CONSTRUCTION DRAW ENGINE
+======================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  // Elements
+  const totalBudgetInput = document.getElementById('totalBudget');
+  const totalBudgetSlider = document.getElementById('totalBudgetSlider');
+  const interestRateInput = document.getElementById('interestRate');
+  const buildDurationInput = document.getElementById('buildDuration');
+  const retainagePctInput = document.getElementById('retainagePct');
+  const contingencyPctInput = document.getElementById('contingencyPct');
+
+  const dispTotalInterest = document.getElementById('dispTotalInterest');
+  const dispVerdictSummary = document.getElementById('dispVerdictSummary');
+  const metricNetDisbursed = document.getElementById('metricNetDisbursed');
+  const metricRetainageHeld = document.getElementById('metricRetainageHeld');
+  const metricAvgBalance = document.getElementById('metricAvgBalance');
+  const drawTableBody = document.getElementById('drawTableBody');
+
+  const btnDownloadExcel = document.getElementById('btnDownloadExcel');
+  const btnCopyReport = document.getElementById('btnCopyReport');
+  const presetButtons = document.querySelectorAll('.btn-preset');
+
+  // Milestone Presets
+  const DEFAULT_MILESTONES = [
+    { name: "1. Permits, Plans & Site Excavation", pct: 15 },
+    { name: "2. Foundation & Underground Utilities", pct: 15 },
+    { name: "3. Framing, Trusses & Roof Sheathing", pct: 25 },
+    { name: "4. Rough MEP (Plumbing/HVAC/Elec)", pct: 20 },
+    { name: "5. Drywall, Cabinets & Interior Finishes", pct: 15 },
+    { name: "6. Final Trim, Paint & CO Inspection", pct: 10 }
+  ];
+
+  function fmtUSD(val) {
+    if (isNaN(val) || !isFinite(val)) return '$0';
+    return '$' + Math.round(val).toLocaleString('en-US');
+  }
+
+  function fmtPct(val) {
+    if (isNaN(val) || !isFinite(val)) return '0.00%';
+    return val.toFixed(2) + '%';
+  }
+
+  // Calculate Draw Schedule Model
+  function calculateModel() {
+    const totalLoan = parseFloat(totalBudgetInput.value) || 0;
+    const rateVal = parseFloat(interestRateInput.value) || 0;
+    const durationMonths = parseInt(buildDurationInput.value, 10) || 6;
+    const retainageRate = (parseFloat(retainagePctInput.value) || 0) / 100;
+    const monthlyRate = (rateVal / 100) / 12;
+
+    // Distribute milestones across duration
+    const numDraws = Math.max(1, durationMonths);
+    const schedule = [];
+    let cumulativeDrawn = 0;
+    let totalInterest = 0;
+    let totalRetainage = 0;
+    let totalNetDisbursed = 0;
+
+    for (let m = 1; m <= durationMonths; m++) {
+      // Determine milestone label and allocation
+      let phaseName = "";
+      let phasePct = 0;
+
+      if (durationMonths === 6 && DEFAULT_MILESTONES[m - 1]) {
+        phaseName = DEFAULT_MILESTONES[m - 1].name;
+        phasePct = DEFAULT_MILESTONES[m - 1].pct;
+      } else {
+        phaseName = `Month ${m} Progress Draw`;
+        phasePct = 100 / durationMonths;
+      }
+
+      const grossDraw = totalLoan * (phasePct / 100);
+      const retainageWithheld = grossDraw * retainageRate;
+      const netPaid = grossDraw - retainageWithheld;
+
+      cumulativeDrawn += grossDraw;
+      // Monthly interest charged on cumulative drawn balance
+      const interestPmt = cumulativeDrawn * monthlyRate;
+
+      totalInterest += interestPmt;
+      totalRetainage += retainageWithheld;
+      totalNetDisbursed += netPaid;
+
+      schedule.push({
+        month: m,
+        phaseName: phaseName,
+        phasePct: phasePct,
+        grossDraw: grossDraw,
+        retainageWithheld: retainageWithheld,
+        netPaid: netPaid,
+        cumulativeDrawn: cumulativeDrawn,
+        interestPmt: interestPmt
+      });
+    }
+
+    // Benchmark: Interest if full loan was borrowed on Day 1
+    const lumpSumInterest = totalLoan * monthlyRate * durationMonths;
+    const interestSaved = Math.max(0, lumpSumInterest - totalInterest);
+    const avgUtilization = totalLoan > 0 ? ((cumulativeDrawn / (totalLoan * durationMonths)) * 100) : 0;
+
+    // Update UI Displays
+    dispTotalInterest.textContent = `${fmtUSD(totalInterest)} Total Interest`;
+    metricNetDisbursed.textContent = fmtUSD(totalNetDisbursed);
+    metricRetainageHeld.textContent = fmtUSD(totalRetainage);
+    metricAvgBalance.textContent = ((totalInterest / (lumpSumInterest || 1)) * 100).toFixed(1) + '%';
+
+    dispVerdictSummary.innerHTML = `By drawing down the <strong>${fmtUSD(totalLoan)}</strong> facility in ${durationMonths} milestone phases at <strong>${fmtPct(rateVal)}</strong>, you save approximately <strong>${fmtUSD(interestSaved)}</strong> in interest compared to paying on the full commitment from Day 1. Total contractor retainage held is <strong>${fmtUSD(totalRetainage)}</strong>.`;
+
+    // Render Table Body
+    drawTableBody.innerHTML = '';
+    schedule.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="text-align: left; font-weight: 600;">${item.phaseName}</td>
+        <td>${fmtUSD(item.grossDraw)}</td>
+        <td style="color: var(--accent-amber);">${fmtUSD(item.retainageWithheld)}</td>
+        <td style="color: var(--accent-excel); font-weight: 700;">${fmtUSD(item.netPaid)}</td>
+        <td><strong>${fmtUSD(item.cumulativeDrawn)}</strong></td>
+        <td style="color: #2563eb;">${fmtUSD(item.interestPmt)}</td>
+      `;
+      drawTableBody.appendChild(tr);
+    });
+
+    // Final Retainage Release Row
+    const trFinal = document.createElement('tr');
+    trFinal.style.background = '#ecfdf5';
+    trFinal.innerHTML = `
+      <td style="text-align: left; font-weight: 800; color: #047857;">🎉 Certificate of Occupancy: Retainage Release</td>
+      <td><strong>$0</strong></td>
+      <td style="color: #047857; font-weight: 800;">-${fmtUSD(totalRetainage)}</td>
+      <td style="color: #047857; font-weight: 800;">+${fmtUSD(totalRetainage)}</td>
+      <td><strong>${fmtUSD(totalLoan)}</strong></td>
+      <td style="color: var(--text-muted);">$0 (CO Final)</td>
+    `;
+    drawTableBody.appendChild(trFinal);
+
+    return { totalLoan, rateVal, durationMonths, retainageRate, totalInterest, totalRetainage, totalNetDisbursed, schedule };
+  }
+
+  // Range Slider Sync
+  totalBudgetInput.addEventListener('input', function() {
+    totalBudgetSlider.value = this.value;
+    calculateModel();
+  });
+  totalBudgetSlider.addEventListener('input', function() {
+    totalBudgetInput.value = this.value;
+    calculateModel();
+  });
+
+  // Event Listeners for All Inputs
+  [interestRateInput, buildDurationInput, retainagePctInput, contingencyPctInput].forEach(el => {
+    el.addEventListener('input', calculateModel);
+    el.addEventListener('change', calculateModel);
+  });
+
+  // Preset Handlers
+  presetButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      presetButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const preset = this.getAttribute('data-preset');
+      if (preset === 'residential-single') {
+        totalBudgetInput.value = 450000;
+        totalBudgetSlider.value = 450000;
+        buildDurationInput.value = 6;
+        interestRateInput.value = 8.25;
+        retainagePctInput.value = 10;
+      } else if (preset === 'commercial-build') {
+        totalBudgetInput.value = 1200000;
+        totalBudgetSlider.value = 1200000;
+        buildDurationInput.value = 12;
+        interestRateInput.value = 9.0;
+        retainagePctInput.value = 10;
+      } else if (preset === 'major-rehab') {
+        totalBudgetInput.value = 250000;
+        totalBudgetSlider.value = 250000;
+        buildDurationInput.value = 5;
+        interestRateInput.value = 10.5;
+        retainagePctInput.value = 5;
+      }
+      calculateModel();
+    });
+  });
+
+  // ========================================================
+  // EXCEL (.XLSX) GENERATION ENGINE
+  // ========================================================
+  btnDownloadExcel.addEventListener('click', function() {
+    if (typeof XLSX === 'undefined') {
+      alert("Excel generator library is loading, please try again in a moment.");
+      return;
+    }
+
+    const data = calculateModel();
+
+    // Sheet 1: Project Underwriting & Draw Assumptions
+    const summaryData = [
+      ["REALREFIN.COM - CONSTRUCTION LOAN DRAW SCHEDULE MODEL"],
+      ["Generated Date:", new Date().toLocaleDateString(), "Model:", "Milestone Schedule of Values (SOV) & Retainage Engine"],
+      ["Website URL:", "https://realrefin.com/construction-loan-draw-schedule-excel"],
+      [],
+      ["CONSTRUCTION LOAN ASSUMPTIONS", "VALUE", "BANKING & UNDERWRITING NOTES"],
+      ["Total Approved Facility Amount", data.totalLoan, "Total approved construction commitment"],
+      ["Annual Interest Rate (I/O)", data.rateVal / 100, "Interest-only rate on cumulative drawn balance"],
+      ["Construction Build Duration", data.durationMonths, data.durationMonths + " Months Scheduled Draw Timeline"],
+      ["Contractor Retainage Rate", data.retainageRate, "Withheld from progress draws until Certificate of Occupancy"],
+      [],
+      ["EXECUTIVE SUMMARY METRICS"],
+      ["Total Gross Draws Authorized:", Math.round(data.totalLoan), "100% of construction loan drawn"],
+      ["Total Net Disbursed to Builder:", Math.round(data.totalNetDisbursed), "Cumulative net payouts before final retainage release"],
+      ["Total Retainage Pool Held:", Math.round(data.totalRetainage), "Released upon Final CO and Unconditional Lien Waivers"],
+      ["Total Cumulative Financing Interest:", Math.round(data.totalInterest), "Required capitalized interest reserve sizing"],
+      [],
+      ["NATIVE EXCEL FORMULAS USED"],
+      ["Gross Draw Amount:", "=$B$6 * Milestone_Percentage"],
+      ["Retainage Withheld:", "=Gross_Draw * $B$9"],
+      ["Net Contractor Disbursement:", "=Gross_Draw - Retainage_Withheld"],
+      ["Cumulative Drawn Balance:", "=SUM($D$10:D10)"],
+      ["Monthly Interest-Only Charge:", "=Cumulative_Drawn_Balance * ($B$7 / 12)"]
+    ];
+
+    // Sheet 2: Schedule of Values (SOV) & Monthly Draw Schedule
+    const schedHeaders = [
+      ["Month", "Phase / Milestone Name", "Allocation %", "Gross Draw ($)", "Retainage Held ($)", "Net to Builder ($)", "Cumulative Drawn ($)", "Monthly Interest ($)"]
+    ];
+    const schedRows = data.schedule.map(s => [
+      s.month,
+      s.phaseName,
+      (s.phasePct / 100),
+      Math.round(s.grossDraw),
+      Math.round(s.retainageWithheld),
+      Math.round(s.netPaid),
+      Math.round(s.cumulativeDrawn),
+      Math.round(s.interestPmt)
+    ]);
+
+    // Append CO Retainage Release
+    schedRows.push([
+      "Final",
+      "Certificate of Occupancy: Retainage Release",
+      0,
+      0,
+      -Math.round(data.totalRetainage),
+      Math.round(data.totalRetainage),
+      Math.round(data.totalLoan),
+      0
+    ]);
+
+    const fullSchedData = schedHeaders.concat(schedRows);
+
+    // Build Workbook
+    const wb = XLSX.utils.book_new();
+    const wsSummary = XLSX.utils.aoa_to_sheet(summaryData);
+    const wsSchedule = XLSX.utils.aoa_to_sheet(fullSchedData);
+
+    wsSummary['!cols'] = [{ wch: 36 }, { wch: 20 }, { wch: 45 }];
+    wsSchedule['!cols'] = [{ wch: 8 }, { wch: 38 }, { wch: 14 }, { wch: 16 }, { wch: 18 }, { wch: 18 }, { wch: 22 }, { wch: 20 }];
+
+    XLSX.utils.book_append_sheet(wb, wsSummary, "Project Assumptions");
+    XLSX.utils.book_append_sheet(wb, wsSchedule, "Draw Schedule (SOV)");
+
+    XLSX.writeFile(wb, "RealRefin_Construction_Draw_Schedule.xlsx");
+
+    btnDownloadExcel.innerHTML = "<span>✓</span> Excel Template Downloaded!";
+    setTimeout(() => {
+      btnDownloadExcel.innerHTML = "<span>📥</span> Download Free Excel (.xlsx) Template";
+    }, 3000);
+  });
+
+  // COPY REPORT CLIPBOARD
+  btnCopyReport.addEventListener('click', function() {
+    const data = calculateModel();
+    const text = `--- RealRefin: Construction Loan Draw Schedule Report ---
+Total Construction Loan: ${fmtUSD(data.totalLoan)}
+Annual Interest Rate: ${fmtPct(data.rateVal)} (Interest-Only)
+Build Duration: ${data.durationMonths} Months
+Contractor Retainage Rate: ${fmtPct(data.retainageRate * 100)}
+
+DISBURSEMENT SUMMARY:
+- Total Net Cash to Builder: ${fmtUSD(data.totalNetDisbursed)}
+- Retainage Pool Held at CO: ${fmtUSD(data.totalRetainage)}
+- Total Capitalized Interest Incurred: ${fmtUSD(data.totalInterest)}
+
+MILESTONE DRAW BREAKDOWN:
+${data.schedule.map(s => `- Mo ${s.month} (${s.phaseName}): Gross ${fmtUSD(s.grossDraw)} | Net ${fmtUSD(s.netPaid)} | Cumulative Drawn: ${fmtUSD(s.cumulativeDrawn)} | Interest: ${fmtUSD(s.interestPmt)}`).join('\n')}
+
+Generated via RealRefin.com: https://realrefin.com/construction-loan-draw-schedule-excel`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      btnCopyReport.innerHTML = "<span>✓</span> Summary Copied!";
+      setTimeout(() => {
+        btnCopyReport.innerHTML = "<span>📋</span> Copy Draw Schedule";
+      }, 2500);
+    });
+  });
+
+  // FAQ ACCORDION HANDLERS
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const qBtn = item.querySelector('.faq-question');
+    qBtn.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+
+  // Initial Calculation Run
+  calculateModel();
+
+})();
+</script>
+
+</body>
+</html>

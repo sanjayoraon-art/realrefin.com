@@ -25,6 +25,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/construction-loan-draw-schedule-excel</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/interest-rate-cap-calculator</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -309,6 +315,14 @@ const FILE_MAP = {
   '/capital-lease-amortization-schedule-excel-template.html': 'lease-amortization-schedule-excel.html',
   '/lease-amortization-schedule': 'lease-amortization-schedule-excel.html',
   '/lease-amortization-schedule.html': 'lease-amortization-schedule-excel.html',
+  '/construction-loan-draw-schedule-excel': 'construction-loan-draw-schedule-excel.html',
+  '/construction-loan-draw-schedule-excel.html': 'construction-loan-draw-schedule-excel.html',
+  '/construction-draw-schedule-template-excel': 'construction-loan-draw-schedule-excel.html',
+  '/construction-draw-schedule-template-excel.html': 'construction-loan-draw-schedule-excel.html',
+  '/free-construction-draw-schedule-template-excel': 'construction-loan-draw-schedule-excel.html',
+  '/free-construction-draw-schedule-template-excel.html': 'construction-loan-draw-schedule-excel.html',
+  '/construction-draw-schedule-excel': 'construction-loan-draw-schedule-excel.html',
+  '/construction-draw-schedule-excel.html': 'construction-loan-draw-schedule-excel.html',
   '/house-hacking-calculator': 'house-hacking-calculator.html',
   '/house-hacking-calculator.html': 'house-hacking-calculator.html',
   '/house-hack-calculator': 'house-hacking-calculator.html',
