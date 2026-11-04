@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/house-flipping-calculator</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/va-closing-cost-calculator</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,6 +313,20 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/house-flipping-calculator': 'house-flipping-calculator.html',
+  '/house-flipping-calculator.html': 'house-flipping-calculator.html',
+  '/fix-and-flip-calculator': 'house-flipping-calculator.html',
+  '/fix-and-flip-calculator.html': 'house-flipping-calculator.html',
+  '/flip-calculator': 'house-flipping-calculator.html',
+  '/flip-calculator.html': 'house-flipping-calculator.html',
+  '/house-flip-calculator': 'house-flipping-calculator.html',
+  '/house-flip-calculator.html': 'house-flipping-calculator.html',
+  '/fix-flip-calculator': 'house-flipping-calculator.html',
+  '/fix-flip-calculator.html': 'house-flipping-calculator.html',
+  '/house-flip-calculator-excel': 'house-flipping-calculator.html',
+  '/house-flip-calculator-excel.html': 'house-flipping-calculator.html',
+  '/fix-and-flip-loan-calculator': 'house-flipping-calculator.html',
+  '/fix-and-flip-loan-calculator.html': 'house-flipping-calculator.html',
   '/va-closing-cost-calculator': 'va-closing-cost-calculator.html',
   '/va-closing-cost-calculator.html': 'va-closing-cost-calculator.html',
   '/closing-cost-calculator': 'va-closing-cost-calculator.html',
