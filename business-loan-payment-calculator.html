@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Loan Payment Calculator (2026) | Amortization &amp; Effective APR</title>
+  <meta name="description" content="Free business loan payment calculator. Calculate monthly, bi-weekly, and weekly payments, true effective APR with lender fees, SBA 7(a) & 504 rates, and complete amortization schedules.">
+  <meta name="keywords" content="business loan payment calculator, small business loan calculator, commercial loan payment calculator, sba loan payment calculator, business loan calculator amortization, business loan interest calculator, business loan payment formula, monthly business loan payment calculator, business loan payoff calculator">
+  <link rel="canonical" href="https://realrefin.com/business-loan-payment-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Business Loan Payment Calculator (2026) | Amortization &amp; Effective APR">
+  <meta property="og:description" content="Institutional-grade business loan payment calculator. Model SBA 7(a), bank term loans, equipment financing, true effective APR, early payoff savings, and complete amortization tables.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/business-loan-payment-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Chart.js CDN for Visual Settlement Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage, HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/business-loan-payment-calculator#app",
+        "name": "RealRefin Business Loan Payment Calculator",
+        "url": "https://realrefin.com/business-loan-payment-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Professional Business Loan Payment and Commercial Debt Calculator. Calculates monthly, bi-weekly, and weekly repayments, true Effective APR factoring origination fees, SBA 7(a) guaranty fees, early payoff interest savings, and full amortization schedules.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Investor & Rental Suite",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Business Loan Payment Calculator",
+            "item": "https://realrefin.com/business-loan-payment-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Calculate Business Loan Payments and True Cost of Capital",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Enter Principal Loan Amount & Term",
+            "text": "Input the total amount of capital required and the repayment term in years or months (e.g., $250,000 for 5 years / 60 months)."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Input Nominal Interest Rate & Payment Frequency",
+            "text": "Specify the annual stated interest rate and select your repayment cadence (Monthly, Bi-Weekly, or Weekly)."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Factor Upfront Origination & Lender Fees",
+            "text": "Include origination fees (typically 1% to 4%) and packaging fees to compute the true Annual Percentage Rate (Effective APR)."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Model Early Principal Prepayments",
+            "text": "Simulate adding monthly or one-time extra principal payments to identify total interest savings and accelerated debt freedom."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is a business loan payment calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Business loan payments are calculated using standard amortizing annuity math: Payment = Principal × [r(1+r)^n] ÷ [(1+r)^n - 1], where r is the periodic interest rate (annual interest divided by payment frequency) and n is the total number of periods over the term."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between nominal interest rate and Effective APR on a business loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The nominal interest rate reflects only the percentage charged on the outstanding loan balance. The Effective APR (Annual Percentage Rate) incorporates all mandatory upfront fees—including origination fees (1%–4%), application fees, and SBA guaranty fees—revealing the true annualized cost of capital."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are current typical interest rates for business loans in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In 2026, standard commercial bank term loans range from 7.5% to 11.5%. SBA 7(a) loans are pegged to the Wall Street Journal Prime Rate plus a lender spread (typically Prime + 2.25% to 2.75%, totaling ~10.25% to 11.50%). Online alternative business loans range from 12% to 35%+ APR depending on creditworthiness and revenue volume."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do some business lenders require weekly or bi-weekly payments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Online lenders, merchant cash advance providers, and short-term working capital lenders frequently require weekly or daily Automated Clearing House (ACH) withdrawals to reduce default risk and align debt payments directly with regular small business cash flow cycles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you pay off a business loan early to save interest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most traditional bank term loans and SBA loans permit early prepayments without penalty. However, SBA loans with terms of 15 years or longer (such as real estate loans) may carry a declining prepayment penalty during the first 3 years (5% in year 1, 3% in year 2, and 1% in year 3). Always check your promissory note for prepayment penalty clauses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What Debt Service Coverage Ratio (DSCR) do banks require for business loans?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Commercial lenders and underwriters generally require a minimum Debt Service Coverage Ratio (DSCR) of 1.15x to 1.35x, with 1.25x serving as the institutional industry benchmark. A DSCR of 1.25x means your business generates $1.25 of net operating income for every $1.00 of required principal and interest debt service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an SBA 7(a) Guaranty Fee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The US Small Business Administration charges an upfront guaranty fee on 7(a) loans to offset government backing costs. For loans over $150,000, fees generally range from 2.0% to 3.75% of the guaranteed portion, which is almost always financed directly into the total loan balance at closing."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       REALREFIN FINTECH DESIGN SYSTEM - EMERALD & DEEP SLATE
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --secondary-navy: #1E293B;
+      --dark-slate-deep: #090E17;
+      
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-dark: #1D4ED8;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #E11D48;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .currency-selector {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 2px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .curr-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn:hover {
+      color: var(--primary-navy);
+      background: #F1F5F9;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-emerald);
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HERO HEADER
+    ----------------------------------------------------------- */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .hero-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-header h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 940px;
+      line-height: 1.6;
+    }
+
+    /* -----------------------------------------------------------
+       PRESET SELECTOR BUTTONS
+    ----------------------------------------------------------- */
+    .loan-presets-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.75rem;
+      scrollbar-width: thin;
+    }
+
+    .preset-pill-btn {
+      white-space: nowrap;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 6px 14px;
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .preset-pill-btn:hover {
+      border-color: #94A3B8;
+      background: #F8FAFC;
+    }
+
+    .preset-pill-btn.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR LAYOUT: 2-COLUMN GRID
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: -0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Form Groups */
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .label-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.45rem;
+    }
+
+    .label-wrapper label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .label-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .input-addon-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-addon {
+      position: absolute;
+      left: 1rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 1.05rem;
+      pointer-events: none;
+    }
+
+    .input-addon-right {
+      position: absolute;
+      right: 1rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      padding: 0.5rem 1rem 0.5rem 2.25rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 2.5rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Sliders */
+    .range-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 9999px;
+      background: #E2E8F0;
+      outline: none;
+      margin-top: 0.65rem;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease;
+    }
+
+    .range-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Pills Row */
+    .pills-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .pill-opt {
+      background: #F1F5F9;
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 4px 10px;
+      font-size: 0.775rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .pill-opt:hover {
+      background: #E2E8F0;
+    }
+
+    .pill-opt.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    /* 2-Column Subgrid */
+    .input-row-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 580px) {
+      .input-row-duo {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Collapsible Fees & Extra Payments Sections */
+    .expand-section {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: #FAFAFC;
+      margin-top: 1.25rem;
+      overflow: hidden;
+    }
+
+    .expand-header {
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      user-select: none;
+    }
+
+    .expand-body {
+      padding: 1rem;
+      border-top: 1px solid var(--border-color);
+      display: none;
+      background: #FFFFFF;
+    }
+
+    .expand-body.open {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       RIGHT COLUMN: RESULTS & KPIS
+    ----------------------------------------------------------- */
+    .results-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      padding: 2rem;
+      position: sticky;
+      top: 1.5rem;
+    }
+
+    /* Hero Metric Box */
+    .hero-kpi-box {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-kpi-box::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 110px;
+      height: 110px;
+      background: radial-gradient(circle, rgba(16,185,129,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-kpi-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-kpi-val {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-kpi-val span.currency-prefix {
+      color: var(--accent-emerald);
+    }
+
+    .hero-kpi-sub {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill-tag {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34D399;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* Key Summary Metrics Row */
+    .kpi-row-triplet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-mini-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 0.65rem;
+      text-align: center;
+    }
+
+    .kpi-mini-title {
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .kpi-mini-num {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .kpi-mini-num.emerald {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* DSCR Affordability Indicator */
+    .dscr-indicator-box {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      background: #F8FAFC;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dscr-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .dscr-status-badge.pass {
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: var(--accent-emerald-dark);
+    }
+
+    .dscr-status-badge.caution {
+      background: var(--accent-amber-light);
+      border: 1px solid var(--accent-amber-border);
+      color: var(--accent-amber);
+    }
+
+    /* Breakdown Table */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-table td {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+    }
+
+    .summary-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* Action Buttons */
+    .action-row {
+      display: flex;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .btn-action {
+      flex: 1;
+      height: 44px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-action.primary {
+      background: var(--accent-emerald);
+      color: #FFFFFF;
+    }
+
+    .btn-action.primary:hover {
+      background: var(--accent-emerald-dark);
+    }
+
+    .btn-action.secondary {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      color: var(--secondary-navy);
+    }
+
+    .btn-action.secondary:hover {
+      background: #F1F5F9;
+      border-color: #94A3B8;
+    }
+
+    /* -----------------------------------------------------------
+       AMORTIZATION SCHEDULE SECTION
+    ----------------------------------------------------------- */
+    .amort-container {
+      background: #FFFFFF;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2rem;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .amort-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .amort-table-wrap {
+      overflow-x: auto;
+      max-height: 480px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .amort-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: right;
+    }
+
+    .amort-table th {
+      position: sticky;
+      top: 0;
+      background: #F1F5F9;
+      color: var(--primary-navy);
+      font-weight: 700;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--border-color);
+      z-index: 1;
+    }
+
+    .amort-table th:first-child,
+    .amort-table td:first-child {
+      text-align: left;
+    }
+
+    .amort-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--secondary-navy);
+    }
+
+    .amort-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    /* -----------------------------------------------------------
+       CONTENT / SEO GUIDE / FORMULAS
+    ----------------------------------------------------------- */
+    .seo-guide-section {
+      background: #FFFFFF;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .seo-guide-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .seo-guide-section h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .seo-guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin-top: 1.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .seo-guide-section p {
+      font-size: 1rem;
+      color: #334155;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .seo-guide-section ul, .seo-guide-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: #334155;
+    }
+
+    .seo-guide-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Formula Box */
+    .formula-callout {
+      background: #F8FAFC;
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .formula-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-emerald-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      margin-top: 1.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-emerald);
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--accent-emerald);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-top: 0.65rem;
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       PRINT STYLES
+    ----------------------------------------------------------- */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+      }
+      .rr-nav, .breadcrumb, .action-row, .pills-row, .loan-presets-bar, .expand-section, .seo-guide-section, .range-slider, .footer-section {
+        display: none !important;
+      }
+      .rr-container {
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .calc-grid {
+        display: block !important;
+      }
+      .calc-card, .results-card, .amort-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER
+    ----------------------------------------------------------- */
+    .footer-section {
+      margin-top: 4rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+  
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="rr-nav">
+    <a href="/" class="rr-logo">Real<span>Refin</span></a>
+    
+    <div class="nav-controls">
+      <!-- Currency Switcher -->
+      <div class="currency-selector" id="currSelector" aria-label="Currency Selector">
+        <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+        <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+        <button type="button" class="curr-btn" data-currency="EUR" data-symbol="€">€ EUR</button>
+        <button type="button" class="curr-btn" data-currency="CAD" data-symbol="C$">C$ CAD</button>
+        <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">A$ AUD</button>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/#suite-refinance">Refinance</a></li>
+          <li><a href="/#suite-investor" class="active">Investor &amp; Rental</a></li>
+          <li><a href="/#suite-buyer">Home Buyer</a></li>
+          <li><a href="/#suite-military">VA Loans</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== BREADCRUMBS ==================== -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/#suite-investor">Investor &amp; Rental Suite</a>
+    <span>›</span>
+    <span style="color: var(--primary-navy); font-weight: 600;">Business Loan Payment Calculator</span>
+  </nav>
+
+  <!-- ==================== HERO TITLE ==================== -->
+  <div class="hero-header">
+    <div class="badge-pill">
+      <span>●</span> 2026 Commercial Debt &amp; SBA Underwriting Standard
+    </div>
+    <h1>Business Loan Payment Calculator</h1>
+    <p>Calculate your exact business loan repayments, true effective APR with lender origination fees, SBA 7(a) &amp; 504 loan structures, and interactive month-by-month debt amortization schedules.</p>
+  </div>
+
+  <!-- ==================== PRESET LOAN TYPE BAR ==================== -->
+  <div class="loan-presets-bar" id="presetsBar">
+    <button type="button" class="preset-pill-btn active" data-type="bankTerm">
+      <span>🏦</span> Bank Term Loan (5-Yr @ 8.5%)
+    </button>
+    <button type="button" class="preset-pill-btn" data-type="sba7a">
+      <span>🏛️</span> SBA 7(a) Working Capital (10-Yr @ 10.75%)
+    </button>
+    <button type="button" class="preset-pill-btn" data-type="sba504">
+      <span>🏢</span> SBA 504 Real Estate (25-Yr @ 6.95%)
+    </button>
+    <button type="button" class="preset-pill-btn" data-type="equipment">
+      <span>🚜</span> Equipment Loan (4-Yr @ 9.0%)
+    </button>
+    <button type="button" class="preset-pill-btn" data-type="shortTerm">
+      <span>⚡</span> Short-Term Working Capital (18-Mo @ 16.0%)
+    </button>
+  </div>
+
+  <!-- ==================== CALCULATOR SECTION ==================== -->
+  <div class="calc-grid">
+    
+    <!-- LEFT COLUMN: INPUTS & CONTROLS -->
+    <div class="calc-card">
+      <div class="card-title">
+        <span>Loan Terms &amp; Structure</span>
+        <button type="button" id="btnReset" style="background:none; border:none; color:var(--text-muted); font-size:0.8rem; font-weight:600; cursor:pointer;">Reset</button>
+      </div>
+      <div class="card-subtitle">Model principal borrowing needs, stated interest rates, and loan maturity.</div>
+
+      <!-- Principal Loan Amount Input -->
+      <div class="form-group">
+        <div class="label-wrapper">
+          <label for="inputAmount">Loan Amount (Principal)</label>
+          <span class="label-hint">Capital Requested</span>
+        </div>
+        <div class="input-addon-group">
+          <span class="input-addon curr-sym">$</span>
+          <input type="number" id="inputAmount" class="form-input" value="250000" min="5000" max="25000000" step="5000">
+        </div>
+        <input type="range" id="sliderAmount" class="range-slider" min="10000" max="2000000" step="10000" value="250000">
+        
+        <!-- Quick Preset Amount Pills -->
+        <div class="pills-row" id="pillsAmount">
+          <button type="button" class="pill-opt" data-val="50000">$50k</button>
+          <button type="button" class="pill-opt" data-val="100000">$100k</button>
+          <button type="button" class="pill-opt active" data-val="250000">$250k</button>
+          <button type="button" class="pill-opt" data-val="500000">$500k</button>
+          <button type="button" class="pill-opt" data-val="1000000">$1M</button>
+          <button type="button" class="pill-opt" data-val="2500000">$2.5M</button>
+        </div>
+      </div>
+
+      <!-- Interest Rate & Term Row -->
+      <div class="input-row-duo">
+        
+        <!-- Interest Rate -->
+        <div class="form-group">
+          <div class="label-wrapper">
+            <label for="inputRate">Interest Rate</label>
+            <span class="label-hint">Nominal Annual %</span>
+          </div>
+          <div class="input-addon-group">
+            <input type="number" id="inputRate" class="form-input no-prefix has-suffix" value="8.50" min="1.0" max="50.0" step="0.05">
+            <span class="input-addon-right">%</span>
+          </div>
+          <input type="range" id="sliderRate" class="range-slider" min="3.0" max="25.0" step="0.25" value="8.50">
+        </div>
+
+        <!-- Loan Term -->
+        <div class="form-group">
+          <div class="label-wrapper">
+            <label for="inputTermYears">Loan Term</label>
+            <span class="label-hint">Maturity Horizon</span>
+          </div>
+          <div class="input-addon-group">
+            <input type="number" id="inputTermYears" class="form-input no-prefix has-suffix" value="5" min="0.5" max="30" step="0.5">
+            <span class="input-addon-right">Years</span>
+          </div>
+          
+          <div class="pills-row" id="pillsTerm">
+            <button type="button" class="pill-opt" data-term="1">1 Yr</button>
+            <button type="button" class="pill-opt" data-term="3">3 Yrs</button>
+            <button type="button" class="pill-opt active" data-term="5">5 Yrs</button>
+            <button type="button" class="pill-opt" data-term="7">7 Yrs</button>
+            <button type="button" class="pill-opt" data-term="10">10 Yrs</button>
+            <button type="button" class="pill-opt" data-term="25">25 Yrs</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Payment Cadence & Amortization Type -->
+      <div class="input-row-duo">
+        
+        <!-- Payment Frequency -->
+        <div class="form-group">
+          <div class="label-wrapper">
+            <label for="selectFrequency">Payment Frequency</label>
+            <span class="label-hint">Repayment Schedule</span>
+          </div>
+          <select id="selectFrequency" class="form-input no-prefix" style="font-weight:600;">
+            <option value="12" selected>Monthly (12 payments/year)</option>
+            <option value="26">Bi-Weekly (26 payments/year)</option>
+            <option value="52">Weekly (52 payments/year)</option>
+          </select>
+        </div>
+
+        <!-- Interest Only Toggle -->
+        <div class="form-group">
+          <div class="label-wrapper">
+            <label for="selectIoPeriod">Interest-Only Period</label>
+            <span class="label-hint">Deferred Principal</span>
+          </div>
+          <select id="selectIoPeriod" class="form-input no-prefix" style="font-weight:600;">
+            <option value="0" selected>None (Fully Amortizing)</option>
+            <option value="6">6 Months Interest-Only</option>
+            <option value="12">12 Months Interest-Only</option>
+            <option value="24">24 Months Interest-Only</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- COLLAPSIBLE: LENDER FEES & EFFECTIVE APR -->
+      <div class="expand-section">
+        <div class="expand-header" id="toggleFees">
+          <span><span>➕</span> Upfront Lender Fees &amp; Effective APR (Optional)</span>
+          <span id="arrowFees">▼</span>
+        </div>
+        <div class="expand-body" id="bodyFees">
+          <div class="input-row-duo">
+            <div class="form-group">
+              <label for="inputOrigPct" style="font-size:0.8rem; font-weight:700;">Origination Fee (%)</label>
+              <div class="input-addon-group" style="margin-top:4px;">
+                <input type="number" id="inputOrigPct" class="form-input no-prefix has-suffix" style="height:40px; font-size:0.95rem;" value="2.00" min="0" max="15" step="0.25">
+                <span class="input-addon-right">%</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputDocFees" style="font-size:0.8rem; font-weight:700;">Documentation / Closing Fees</label>
+              <div class="input-addon-group" style="margin-top:4px;">
+                <span class="input-addon curr-sym" style="font-size:0.9rem;">$</span>
+                <input type="number" id="inputDocFees" class="form-input" style="height:40px; font-size:0.95rem;" value="1500" min="0" step="250">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0.25rem;">
+            <label style="font-size:0.8rem; font-weight:700;">Fee Financing Option:</label>
+            <div style="display:flex; gap:1.25rem; margin-top:0.35rem; font-size:0.85rem;">
+              <label style="cursor:pointer; font-weight:600;"><input type="radio" name="feeFinance" value="roll" checked> Roll Fees Into Loan Balance (Financed)</label>
+              <label style="cursor:pointer; font-weight:600;"><input type="radio" name="feeFinance" value="deduct"> Deduct From Disbursed Cash (Paid Upfront)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLLAPSIBLE: EARLY PAYOFF & EXTRA PRINCIPAL -->
+      <div class="expand-section">
+        <div class="expand-header" id="toggleExtra">
+          <span><span>➕</span> Extra Principal Payments &amp; Early Payoff (Optional)</span>
+          <span id="arrowExtra">▼</span>
+        </div>
+        <div class="expand-body" id="bodyExtra">
+          <div class="input-row-duo">
+            <div class="form-group">
+              <label for="inputExtraPeriodic" style="font-size:0.8rem; font-weight:700;">Extra Periodic Payment</label>
+              <div class="input-addon-group" style="margin-top:4px;">
+                <span class="input-addon curr-sym" style="font-size:0.9rem;">$</span>
+                <input type="number" id="inputExtraPeriodic" class="form-input" style="height:40px; font-size:0.95rem;" value="0" min="0" step="50" placeholder="0">
+              </div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Added to each scheduled payment</span>
+            </div>
+
+            <div class="form-group">
+              <label for="inputLumpSum" style="font-size:0.8rem; font-weight:700;">One-Time Lump Sum Prepayment</label>
+              <div class="input-addon-group" style="margin-top:4px;">
+                <span class="input-addon curr-sym" style="font-size:0.9rem;">$</span>
+                <input type="number" id="inputLumpSum" class="form-input" style="height:40px; font-size:0.95rem;" value="0" min="0" step="1000" placeholder="0">
+              </div>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Applied at end of Year 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLLAPSIBLE: BUSINESS REVENUE & DSCR BENCHMARK -->
+      <div class="expand-section">
+        <div class="expand-header" id="toggleDscr">
+          <span><span>➕</span> Debt Service Coverage (DSCR) Affordability Check</span>
+          <span id="arrowDscr">▼</span>
+        </div>
+        <div class="expand-body" id="bodyDscr">
+          <div class="form-group" style="margin-bottom:0.25rem;">
+            <label for="inputAnnualNoi" style="font-size:0.8rem; font-weight:700;">Annual Net Operating Income (NOI) / Cash Flow</label>
+            <div class="input-addon-group" style="margin-top:4px;">
+              <span class="input-addon curr-sym" style="font-size:0.9rem;">$</span>
+              <input type="number" id="inputAnnualNoi" class="form-input" style="height:40px; font-size:0.95rem;" value="120000" min="0" step="5000">
+            </div>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Annual cash flow available to service business debt</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: RESULTS & KPIS -->
+    <div class="results-card">
+      
+      <!-- HERO METRIC BOX -->
+      <div class="hero-kpi-box">
+        <div class="hero-kpi-label" id="kpiHeroFreqLabel">Estimated Monthly Payment</div>
+        <div class="hero-kpi-val">
+          <span class="currency-prefix curr-sym">$</span><span id="kpiPeriodicPayment">5,127.18</span>
+        </div>
+        <div class="hero-kpi-sub">
+          <span>Stated Rate: <strong id="kpiStatedRate">8.50%</strong></span>
+          <span>•</span>
+          <span class="hero-pill-tag" id="kpiAprPill">Effective APR: 9.42%</span>
+        </div>
+      </div>
+
+      <!-- METRICS TRIPLET -->
+      <div class="kpi-row-triplet">
+        <div class="kpi-mini-card">
+          <div class="kpi-mini-title">Total Interest</div>
+          <div class="kpi-mini-num" id="kpiTotalInterest">$57,631</div>
+          <div style="font-size:0.7rem; color:var(--text-muted);" id="kpiInterestRatio">23.1% of debt</div>
+        </div>
+
+        <div class="kpi-mini-card">
+          <div class="kpi-mini-title">Total Loan Cost</div>
+          <div class="kpi-mini-num emerald" id="kpiTotalCost">$314,131</div>
+          <div style="font-size:0.7rem; color:var(--text-muted);">Principal + Int + Fees</div>
+        </div>
+
+        <div class="kpi-mini-card">
+          <div class="kpi-mini-title">Net Cash Disbursed</div>
+          <div class="kpi-mini-num" id="kpiNetProceeds">$243,500</div>
+          <div style="font-size:0.7rem; color:var(--text-muted);">In-Hand Capital</div>
+        </div>
+      </div>
+
+      <!-- DSCR AFFORDABILITY GAUGE -->
+      <div class="dscr-indicator-box">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--text-muted);">Coverage Ratio (DSCR)</div>
+          <div style="font-size:1.25rem; font-weight:800; color:var(--primary-navy);" id="kpiDscrVal">1.95x</div>
+        </div>
+        <div class="dscr-status-badge pass" id="kpiDscrBadge">
+          <span>✓</span> Strong Bank Approval Zone (&gt;1.25x)
+        </div>
+      </div>
+
+      <!-- SUMMARY ITEM TABLE -->
+      <table class="summary-table">
+        <tbody>
+          <tr>
+            <td>Base Principal Requested</td>
+            <td id="tblBasePrincipal">$250,000.00</td>
+          </tr>
+          <tr>
+            <td>Total Financed Origination Fees</td>
+            <td id="tblFinancedFees">$6,500.00</td>
+          </tr>
+          <tr>
+            <td>Total Starting Loan Balance</td>
+            <td id="tblStartingLoan">$256,500.00</td>
+          </tr>
+          <tr>
+            <td>Total Scheduled Payments</td>
+            <td id="tblNumPayments">60 Payments</td>
+          </tr>
+          <tr id="rowEarlyPayoffSavings" style="display:none; color:var(--accent-emerald-dark); font-weight:700;">
+            <td>Early Payoff Interest Saved</td>
+            <td id="tblInterestSaved">$0.00</td>
+          </tr>
+          <tr id="rowMonthsSaved" style="display:none; color:var(--accent-emerald-dark); font-weight:700;">
+            <td>Debt Freedom Accelerated By</td>
+            <td id="tblMonthsSaved">0 Months</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- VISUAL DOUGHNUT CHART -->
+      <div style="height: 185px; margin-bottom: 1.25rem; position: relative;">
+        <canvas id="loanDoughnutChart"></canvas>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-row">
+        <button type="button" class="btn-action primary" id="btnPrintProposal">
+          <span>🖨️</span> Print Bank Term Sheet
+        </button>
+        <button type="button" class="btn-action secondary" id="btnExportAmort">
+          <span>📊</span> Export CSV
+        </button>
+        <button type="button" class="btn-action secondary" id="btnShareDeal">
+          <span>🔗</span> Share Deal
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ==================== AMORTIZATION SCHEDULE SECTION ==================== -->
+  <section class="amort-container">
+    <div class="amort-header">
+      <div>
+        <h3 style="font-size:1.35rem; font-weight:800; color:var(--primary-navy);">Complete Debt Amortization Schedule</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted);">Detailed period-by-period breakdown of principal equity reduction and interest expense.</p>
+      </div>
+      <div style="display:flex; gap:0.5rem; align-items:center;">
+        <button type="button" id="btnToggleViewMode" class="pill-opt active" style="padding:6px 14px; font-size:0.825rem;">Annual Summary View</button>
+        <button type="button" id="btnToggleAllMonths" class="pill-opt" style="padding:6px 14px; font-size:0.825rem;">All Periods View</button>
+      </div>
+    </div>
+
+    <div class="amort-table-wrap">
+      <table class="amort-table">
+        <thead>
+          <tr>
+            <th id="thPeriodCol">Period / Year</th>
+            <th>Payment Amount</th>
+            <th>Principal Paid</th>
+            <th>Interest Paid</th>
+            <th>Extra Prepayment</th>
+            <th>Ending Balance</th>
+          </tr>
+        </thead>
+        <tbody id="amortTableBody">
+          <!-- Dynamically populated via JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== IN-DEPTH FINANCIAL & LEGAL GUIDE ==================== -->
+  <article class="seo-guide-section">
+    <h2>How to Calculate Business Loan Payments: The 2026 Commercial Underwriting Guide</h2>
+    
+    <p>Securing debt financing for a small business or commercial property acquisition requires precise capital budgeting. Unlike personal consumer loans, business loans encompass an intricate landscape of loan structures—from government-backed <strong>SBA 7(a) and 504 loans</strong> to traditional bank commercial term loans, asset-based equipment lines, and high-velocity working capital facilities.</p>
+
+    <p>Understanding the exact relationship between the <strong>nominal interest rate</strong>, <strong>upfront origination points</strong>, and <strong>repayment frequency</strong> is critical to evaluating your true cost of capital and ensuring your business maintains a safe Debt Service Coverage Ratio (DSCR).</p>
+
+    <!-- FORMULA BOX 1 -->
+    <div class="formula-callout">
+      <div class="formula-title">Standard Fully Amortizing Business Loan Formula</div>
+      $$\text{Periodic Payment } (M) = P \times \left[ \frac{r(1+r)^n}{(1+r)^n - 1} \right]$$
+      <div style="font-size:0.85rem; color:#475569; margin-top:0.5rem;">
+        Where $P$ is the financed principal loan amount, $r$ is the periodic interest rate (annual interest rate $\div$ payment periods per year), and $n$ is the total number of compounding periods ($Years \times Periods$).
+      </div>
+    </div>
+
+    <h3>Nominal Interest Rate vs. Effective APR: Uncovering Hidden Loan Costs</h3>
+    <p>Many business owners evaluate a loan solely by its advertised nominal interest rate. However, commercial lenders often impose mandatory closing fees that dramatically increase the true annual borrowing cost:</p>
+
+    <ul>
+      <li>
+        <strong>Origination Fees (1% to 4%):</strong> A upfront fee charged by lenders for underwriting and processing the debt. On a $500,000 loan, a 3% origination fee equals $15,000 deducted from your usable proceeds or tacked onto your debt balance.
+      </li>
+      <li>
+        <strong>SBA Guaranty Fees:</strong> The Small Business Administration guarantees up to 85% of qualifying 7(a) loans, charging a statutory fee (typically 2% to 3.75%) that offsets taxpayer exposure.
+      </li>
+      <li>
+        <strong>Documentation &amp; Underwriting Charges:</strong> Legal preparation, environmental assessments, and UCC lien filing expenses.
+      </li>
+    </ul>
+
+    <p>Our calculator computes the <strong>True Effective APR</strong> by solving for the internal rate of return (IRR) that equates net disbursed cash proceeds to the stream of future debt service payments.</p>
+
+    <!-- FORMULA BOX 2 -->
+    <div class="formula-callout">
+      <div class="formula-title">Debt Service Coverage Ratio (DSCR) Formula</div>
+      $$\text{DSCR} = \frac{\text{Annual Net Operating Income (NOI)}}{\text{Annual Principal \& Interest Debt Service}}$$
+      <div style="font-size:0.85rem; color:#475569; margin-top:0.5rem;">
+        Commercial banks and SBA underwriters mandate a minimum DSCR of $1.15\text{x}$ to $1.35\text{x}$ ($1.25\text{x}$ standard) to ensure adequate cash flow cushion against economic downturns.
+      </div>
+    </div>
+
+    <h3>SBA 7(a) vs. SBA 504 vs. Conventional Bank Loans</h3>
+    <table class="summary-table" style="margin: 1.5rem 0;">
+      <thead>
+        <tr style="background:#F1F5F9; font-weight:700;">
+          <th style="padding:10px; text-align:left;">Loan Program</th>
+          <th style="padding:10px; text-align:left;">Max Term</th>
+          <th style="padding:10px; text-align:left;">Typical 2026 Rate</th>
+          <th style="padding:10px; text-align:left;">Best Used For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SBA 7(a) Loan</strong></td>
+          <td>10 Yrs (Working Cap) / 25 Yrs (RE)</td>
+          <td>Prime + 2.25% – 2.75% (~10.75%)</td>
+          <td>Working capital, partner buyouts, business acquisitions</td>
+        </tr>
+        <tr>
+          <td><strong>SBA 504 Loan</strong></td>
+          <td>10, 20, or 25 Years Fixed</td>
+          <td>Fixed Rate (~6.75% – 7.25%)</td>
+          <td>Owner-occupied commercial real estate &amp; major machinery</td>
+        </tr>
+        <tr>
+          <td><strong>Bank Commercial Term</strong></td>
+          <td>3 to 7 Years</td>
+          <td>7.50% – 10.50%</td>
+          <td>Established companies with strong balance sheets</td>
+        </tr>
+        <tr>
+          <td><strong>Equipment Financing</strong></td>
+          <td>3 to 7 Years</td>
+          <td>8.00% – 12.00%</td>
+          <td>Vehicles, medical equipment, construction hardware</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <h2>Frequently Asked Questions About Business Loan Payments</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I calculate a monthly business loan payment?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          To calculate your payment manually, divide your annual interest rate by 12 to find the monthly rate $r$. Then multiply the total loan amount by $[r(1+r)^n] \div [(1+r)^n - 1]$, where $n$ is total months. Alternatively, use our interactive business loan calculator to automate this math along with origination fees and amortization schedules.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is the difference between nominal rate and Effective APR?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          The nominal interest rate is the percentage applied to your loan balance. The Effective APR (Annual Percentage Rate) incorporates upfront lender points, origination fees, closing costs, and compounding frequency, showing the true all-in cost of every dollar borrowed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Why do online business lenders use weekly or bi-weekly payments?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Alternative online lenders and merchant cash advance providers frequently debit payments weekly or even daily via ACH. This ensures smaller, more manageable deductions aligned with everyday business cash flow and reduces the risk of default compared to large lump-sum monthly payments.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I pay off my business loan early without penalty?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Most short-term working capital loans and standard bank term loans under 5 years allow early payoff with zero prepayment penalty. However, real estate loans and 25-year SBA 504 or 7(a) loans typically enforce a 3-year declining penalty (5% in Year 1, 3% in Year 2, 1% in Year 3) to protect lender yield.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What credit score and revenue do I need for a business loan?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Traditional commercial banks and SBA lenders typically require a personal FICO credit score of 680+ and at least 2 years in business with positive net operating income. Alternative online lenders may approve loans with credit scores as low as 600, provided the business demonstrates strong consistent monthly revenue ($15,000+/month).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What is a good DSCR ratio for a commercial business loan?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          An institutional DSCR of 1.25x or higher is considered healthy and widely approved by commercial underwriters. A DSCR of 1.0x indicates the business just breaks even on its debt service, while a ratio below 1.0x represents negative debt coverage and almost certain bank rejection.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer-section">
+    <div class="footer-links">
+      <a href="/">All Calculators</a>
+      <a href="/prorated-rent-calculator">Prorated Rent Calculator</a>
+      <a href="/calculate-fha-mortgage-insurance">FHA Mortgage Insurance Calculator</a>
+      <a href="/house-flipping-calculator">House Flipping Calculator</a>
+      <a href="/va-closing-cost-calculator">VA Closing Cost Calculator</a>
+      <a href="/dscr-calculator">DSCR Loan Calculator</a>
+      <a href="/lease-amortization-schedule-excel">Lease Amortization Schedule</a>
+      <a href="/about">About RealRefin</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <p>© 2026 RealRefin.com. Institutional-Grade Real Estate &amp; Debt Modeling Software. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<!-- ==================== SCRIPT ENGINE ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // DOM Elements
+  const inputAmount = document.getElementById('inputAmount');
+  const sliderAmount = document.getElementById('sliderAmount');
+  const inputRate = document.getElementById('inputRate');
+  const sliderRate = document.getElementById('sliderRate');
+  const inputTermYears = document.getElementById('inputTermYears');
+  const selectFrequency = document.getElementById('selectFrequency');
+  const selectIoPeriod = document.getElementById('selectIoPeriod');
+  
+  // Fees
+  const inputOrigPct = document.getElementById('inputOrigPct');
+  const inputDocFees = document.getElementById('inputDocFees');
+  const toggleFees = document.getElementById('toggleFees');
+  const bodyFees = document.getElementById('bodyFees');
+  const arrowFees = document.getElementById('arrowFees');
+
+  // Extra Prepayments
+  const inputExtraPeriodic = document.getElementById('inputExtraPeriodic');
+  const inputLumpSum = document.getElementById('inputLumpSum');
+  const toggleExtra = document.getElementById('toggleExtra');
+  const bodyExtra = document.getElementById('bodyExtra');
+  const arrowExtra = document.getElementById('arrowExtra');
+
+  // DSCR
+  const inputAnnualNoi = document.getElementById('inputAnnualNoi');
+  const toggleDscr = document.getElementById('toggleDscr');
+  const bodyDscr = document.getElementById('bodyDscr');
+  const arrowDscr = document.getElementById('arrowDscr');
+
+  // KPI Outputs
+  const kpiHeroFreqLabel = document.getElementById('kpiHeroFreqLabel');
+  const kpiPeriodicPayment = document.getElementById('kpiPeriodicPayment');
+  const kpiStatedRate = document.getElementById('kpiStatedRate');
+  const kpiAprPill = document.getElementById('kpiAprPill');
+  const kpiTotalInterest = document.getElementById('kpiTotalInterest');
+  const kpiInterestRatio = document.getElementById('kpiInterestRatio');
+  const kpiTotalCost = document.getElementById('kpiTotalCost');
+  const kpiNetProceeds = document.getElementById('kpiNetProceeds');
+  const kpiDscrVal = document.getElementById('kpiDscrVal');
+  const kpiDscrBadge = document.getElementById('kpiDscrBadge');
+
+  // Table Outputs
+  const tblBasePrincipal = document.getElementById('tblBasePrincipal');
+  const tblFinancedFees = document.getElementById('tblFinancedFees');
+  const tblStartingLoan = document.getElementById('tblStartingLoan');
+  const tblNumPayments = document.getElementById('tblNumPayments');
+  const rowEarlyPayoffSavings = document.getElementById('rowEarlyPayoffSavings');
+  const tblInterestSaved = document.getElementById('tblInterestSaved');
+  const rowMonthsSaved = document.getElementById('rowMonthsSaved');
+  const tblMonthsSaved = document.getElementById('tblMonthsSaved');
+
+  // Amortization Table Elements
+  const amortTableBody = document.getElementById('amortTableBody');
+  const thPeriodCol = document.getElementById('thPeriodCol');
+  const btnToggleViewMode = document.getElementById('btnToggleViewMode');
+  const btnToggleAllMonths = document.getElementById('btnToggleAllMonths');
+
+  // State Variables
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let amortViewMode = 'annual'; // 'annual' or 'all'
+  let loanChart = null;
+
+  // Preset Configurations
+  const presets = {
+    bankTerm: { amount: 250000, rate: 8.50, term: 5, freq: 12, orig: 2.0, doc: 1500, io: 0 },
+    sba7a: { amount: 500000, rate: 10.75, term: 10, freq: 12, orig: 2.75, doc: 2500, io: 0 },
+    sba504: { amount: 1200000, rate: 6.95, term: 25, freq: 12, orig: 1.5, doc: 3500, io: 0 },
+    equipment: { amount: 150000, rate: 9.00, term: 4, freq: 12, orig: 1.0, doc: 750, io: 0 },
+    shortTerm: { amount: 75000, rate: 16.00, term: 1.5, freq: 52, orig: 3.5, doc: 500, io: 0 }
+  };
+
+  // Helper: Format Money
+  function formatMoney(amount, decimals = 2) {
+    return activeSymbol + Number(amount).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+
+  // Update Currency Symbols
+  function updateCurrencySymbols() {
+    document.querySelectorAll('.curr-sym').forEach(el => el.textContent = activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      updateCurrencySymbols();
+      calculateLoan();
+    });
+  });
+
+  // Preset Buttons
+  document.querySelectorAll('.preset-pill-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cfg = presets[btn.getAttribute('data-type')];
+      if (cfg) {
+        inputAmount.value = cfg.amount;
+        sliderAmount.value = cfg.amount;
+        inputRate.value = cfg.rate.toFixed(2);
+        sliderRate.value = cfg.rate;
+        inputTermYears.value = cfg.term;
+        selectFrequency.value = cfg.freq;
+        inputOrigPct.value = cfg.orig.toFixed(2);
+        inputDocFees.value = cfg.doc;
+        selectIoPeriod.value = cfg.io;
+        calculateLoan();
+      }
+    });
+  });
+
+  // Sliders and Inputs Sync
+  inputAmount.addEventListener('input', () => {
+    sliderAmount.value = inputAmount.value;
+    calculateLoan();
+  });
+  sliderAmount.addEventListener('input', () => {
+    inputAmount.value = sliderAmount.value;
+    calculateLoan();
+  });
+
+  inputRate.addEventListener('input', () => {
+    sliderRate.value = inputRate.value;
+    calculateLoan();
+  });
+  sliderRate.addEventListener('input', () => {
+    inputRate.value = sliderRate.value;
+    calculateLoan();
+  });
+
+  // Quick Amount Pills
+  document.querySelectorAll('#pillsAmount .pill-opt').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('#pillsAmount .pill-opt').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      inputAmount.value = pill.getAttribute('data-val');
+      sliderAmount.value = pill.getAttribute('data-val');
+      calculateLoan();
+    });
+  });
+
+  // Quick Term Pills
+  document.querySelectorAll('#pillsTerm .pill-opt').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('#pillsTerm .pill-opt').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      inputTermYears.value = pill.getAttribute('data-term');
+      calculateLoan();
+    });
+  });
+
+  // Change Listeners
+  [inputTermYears, selectFrequency, selectIoPeriod, inputOrigPct, inputDocFees, inputExtraPeriodic, inputLumpSum, inputAnnualNoi].forEach(el => {
+    el.addEventListener('input', calculateLoan);
+    el.addEventListener('change', calculateLoan);
+  });
+
+  document.querySelectorAll('input[name="feeFinance"]').forEach(el => {
+    el.addEventListener('change', calculateLoan);
+  });
+
+  // Collapsible Toggles
+  function setupAccordion(toggleEl, bodyEl, arrowEl) {
+    toggleEl.addEventListener('click', () => {
+      bodyEl.classList.toggle('open');
+      arrowEl.textContent = bodyEl.classList.contains('open') ? '▲' : '▼';
+    });
+  }
+  setupAccordion(toggleFees, bodyFees, arrowFees);
+  setupAccordion(toggleExtra, bodyExtra, arrowExtra);
+  setupAccordion(toggleDscr, bodyDscr, arrowDscr);
+
+  // Amortization View Mode Switch
+  btnToggleViewMode.addEventListener('click', () => {
+    amortViewMode = 'annual';
+    btnToggleViewMode.classList.add('active');
+    btnToggleAllMonths.classList.remove('active');
+    calculateLoan();
+  });
+  btnToggleAllMonths.addEventListener('click', () => {
+    amortViewMode = 'all';
+    btnToggleAllMonths.classList.add('active');
+    btnToggleViewMode.classList.remove('active');
+    calculateLoan();
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+
+  // Reset Button
+  document.getElementById('btnReset').addEventListener('click', () => {
+    const d = presets.bankTerm;
+    inputAmount.value = d.amount;
+    sliderAmount.value = d.amount;
+    inputRate.value = d.rate.toFixed(2);
+    sliderRate.value = d.rate;
+    inputTermYears.value = d.term;
+    selectFrequency.value = d.freq;
+    inputOrigPct.value = d.orig.toFixed(2);
+    inputDocFees.value = d.doc;
+    selectIoPeriod.value = d.io;
+    inputExtraPeriodic.value = 0;
+    inputLumpSum.value = 0;
+    inputAnnualNoi.value = 120000;
+    
+    document.querySelectorAll('.preset-pill-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.preset-pill-btn[data-type="bankTerm"]').classList.add('active');
+    
+    calculateLoan();
+  });
+
+  // ==================== CORE LOAN CALCULATION ENGINE ====================
+  function calculateLoan() {
+    const basePrincipal = parseFloat(inputAmount.value) || 0;
+    const annualRate = (parseFloat(inputRate.value) || 0) / 100;
+    const termYears = parseFloat(inputTermYears.value) || 1;
+    const periodsPerYear = parseInt(selectFrequency.value) || 12;
+    const ioMonths = parseInt(selectIoPeriod.value) || 0;
+    
+    if (basePrincipal <= 0 || annualRate <= 0 || termYears <= 0) return;
+
+    // Fees
+    const origPct = (parseFloat(inputOrigPct.value) || 0) / 100;
+    const docFees = parseFloat(inputDocFees.value) || 0;
+    const origFeeAmount = basePrincipal * origPct;
+    const totalFees = origFeeAmount + docFees;
+
+    const feeFinanceMethod = document.querySelector('input[name="feeFinance"]:checked')?.value || 'roll';
+    
+    let startingLoanBalance = basePrincipal;
+    let netDisbursedProceeds = basePrincipal;
+
+    if (feeFinanceMethod === 'roll') {
+      startingLoanBalance = basePrincipal + totalFees;
+      netDisbursedProceeds = basePrincipal;
+    } else {
+      startingLoanBalance = basePrincipal;
+      netDisbursedProceeds = Math.max(0, basePrincipal - totalFees);
+    }
+
+    const totalPeriods = Math.round(termYears * periodsPerYear);
+    const periodicRate = annualRate / periodsPerYear;
+
+    // Convert IO months to periods
+    const ioPeriods = Math.round((ioMonths / 12) * periodsPerYear);
+    const amortizingPeriods = Math.max(1, totalPeriods - ioPeriods);
+
+    // Standard Payment Math for Amortizing portion
+    // M = P * [r(1+r)^n] / [(1+r)^n - 1]
+    let basePeriodicPayment = 0;
+    if (periodicRate > 0) {
+      basePeriodicPayment = startingLoanBalance * (periodicRate * Math.pow(1 + periodicRate, amortizingPeriods)) / (Math.pow(1 + periodicRate, amortizingPeriods) - 1);
+    } else {
+      basePeriodicPayment = startingLoanBalance / amortizingPeriods;
+    }
+
+    // IO payment during IO period
+    const ioPeriodicPayment = startingLoanBalance * periodicRate;
+
+    // Extra Payments
+    const extraPerPeriod = parseFloat(inputExtraPeriodic.value) || 0;
+    const lumpSumAtPeriod = periodsPerYear; // applied after 1 year
+    const lumpSumAmount = parseFloat(inputLumpSum.value) || 0;
+
+    // Frequency Label
+    const freqLabels = {
+      '12': 'Monthly Payment',
+      '26': 'Bi-Weekly Payment',
+      '52': 'Weekly Payment'
+    };
+    kpiHeroFreqLabel.textContent = `Estimated ${freqLabels[selectFrequency.value]}`;
+
+    // RUN AMORTIZATION SIMULATION (BASE WITHOUT EXTRAS)
+    let simBalBase = startingLoanBalance;
+    let baseTotalInterest = 0;
+    for (let p = 1; p <= totalPeriods; p++) {
+      let isIo = p <= ioPeriods;
+      let interestP = simBalBase * periodicRate;
+      baseTotalInterest += interestP;
+      let princP = isIo ? 0 : (basePeriodicPayment - interestP);
+      simBalBase -= princP;
+      if (simBalBase <= 0) break;
+    }
+
+    // RUN REAL AMORTIZATION WITH EXTRA PAYMENTS
+    let balance = startingLoanBalance;
+    let totalInterestPaid = 0;
+    let totalPrincipalPaid = 0;
+    let totalExtraPaid = 0;
+    let actualPeriodsToPayoff = 0;
+
+    const schedule = []; // Array of period objects
+
+    for (let p = 1; p <= totalPeriods; p++) {
+      if (balance <= 0.01) break;
+      actualPeriodsToPayoff++;
+
+      const isIo = p <= ioPeriods;
+      const interestPayment = balance * periodicRate;
+      let regularPrincipal = isIo ? 0 : Math.max(0, basePeriodicPayment - interestPayment);
+      
+      let extra = extraPerPeriod;
+      if (p === lumpSumAtPeriod) extra += lumpSumAmount;
+
+      // Prevent overpayment
+      if (regularPrincipal + extra > balance) {
+        if (regularPrincipal > balance) {
+          regularPrincipal = balance;
+          extra = 0;
+        } else {
+          extra = balance - regularPrincipal;
+        }
+      }
+
+      const totalPeriodPrincipal = regularPrincipal + extra;
+      const scheduledPayment = isIo ? (ioPeriodicPayment + extra) : (regularPrincipal + interestPayment + extra);
+      balance -= totalPeriodPrincipal;
+
+      totalInterestPaid += interestPayment;
+      totalPrincipalPaid += regularPrincipal;
+      totalExtraPaid += extra;
+
+      schedule.push({
+        period: p,
+        year: Math.ceil(p / periodsPerYear),
+        payment: scheduledPayment,
+        principal: regularPrincipal,
+        interest: interestPayment,
+        extra: extra,
+        endingBalance: Math.max(0, balance)
+      });
+    }
+
+    // Effective APR Calculation using Binary Search IRR
+    function computeApr() {
+      if (netDisbursedProceeds <= 0) return annualRate * 100;
+      let low = 0.0001;
+      let high = 2.0; // 200% APR cap
+      let estApr = annualRate;
+
+      for (let iter = 0; iter < 40; iter++) {
+        let mid = (low + high) / 2;
+        let midPeriodic = mid / periodsPerYear;
+        let npv = -netDisbursedProceeds;
+        
+        for (let i = 0; i < schedule.length; i++) {
+          npv += schedule[i].payment / Math.pow(1 + midPeriodic, schedule[i].period);
+        }
+
+        if (Math.abs(npv) < 0.1) {
+          estApr = mid;
+          break;
+        }
+        if (npv > 0) {
+          low = mid;
+        } else {
+          high = mid;
+        }
+        estApr = mid;
+      }
+      return estApr * 100;
+    }
+
+    const effectiveApr = computeApr();
+
+    // Early Payoff Savings
+    const interestSaved = Math.max(0, baseTotalInterest - totalInterestPaid);
+    const periodsSaved = Math.max(0, totalPeriods - actualPeriodsToPayoff);
+    const monthsSaved = Math.round((periodsSaved / periodsPerYear) * 12);
+
+    // DSCR Calculation
+    const annualNoi = parseFloat(inputAnnualNoi.value) || 0;
+    const annualDebtService = basePeriodicPayment * periodsPerYear;
+    const dscr = annualDebtService > 0 ? (annualNoi / annualDebtService) : 0;
+
+    // Total Cost
+    const totalLoanCost = startingLoanBalance + totalInterestPaid + (feeFinanceMethod === 'deduct' ? totalFees : 0);
+
+    // ==================== UPDATE UI KPIS ====================
+    const displayPayment = ioPeriods > 0 ? ioPeriodicPayment : basePeriodicPayment;
+    kpiPeriodicPayment.textContent = displayPayment.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    kpiStatedRate.textContent = `${(annualRate * 100).toFixed(2)}%`;
+    kpiAprPill.textContent = `Effective APR: ${effectiveApr.toFixed(2)}%`;
+    
+    kpiTotalInterest.textContent = formatMoney(totalInterestPaid, 0);
+    const interestRatioPct = ((totalInterestPaid / basePrincipal) * 100).toFixed(1);
+    kpiInterestRatio.textContent = `${interestRatioPct}% of principal`;
+
+    kpiTotalCost.textContent = formatMoney(totalLoanCost, 0);
+    kpiNetProceeds.textContent = formatMoney(netDisbursedProceeds, 0);
+
+    // DSCR Badge
+    kpiDscrVal.textContent = `${dscr.toFixed(2)}x`;
+    if (dscr >= 1.25) {
+      kpiDscrBadge.className = 'dscr-status-badge pass';
+      kpiDscrBadge.innerHTML = '<span>✓</span> Strong Bank Approval Zone (&gt;1.25x)';
+    } else if (dscr >= 1.0) {
+      kpiDscrBadge.className = 'dscr-status-badge caution';
+      kpiDscrBadge.innerHTML = '<span>⚠</span> Moderate Risk (1.0x – 1.25x)';
+    } else {
+      kpiDscrBadge.className = 'dscr-status-badge caution';
+      kpiDscrBadge.style.background = '#FFF1F2';
+      kpiDscrBadge.style.color = '#E11D48';
+      kpiDscrBadge.style.borderColor = '#FECDD3';
+      kpiDscrBadge.innerHTML = '<span>✕</span> Danger: Cash Flow Insufficient (&lt;1.0x)';
+    }
+
+    // Summary Table
+    tblBasePrincipal.textContent = formatMoney(basePrincipal);
+    tblFinancedFees.textContent = formatMoney(feeFinanceMethod === 'roll' ? totalFees : 0);
+    tblStartingLoan.textContent = formatMoney(startingLoanBalance);
+    tblNumPayments.textContent = `${actualPeriodsToPayoff} Payments (${(actualPeriodsToPayoff / periodsPerYear).toFixed(1)} Yrs)`;
+
+    if (interestSaved > 10) {
+      rowEarlyPayoffSavings.style.display = 'table-row';
+      tblInterestSaved.textContent = formatMoney(interestSaved);
+      rowMonthsSaved.style.display = 'table-row';
+      tblMonthsSaved.textContent = `${monthsSaved} Months (${(monthsSaved / 12).toFixed(1)} Yrs)`;
+    } else {
+      rowEarlyPayoffSavings.style.display = 'none';
+      rowMonthsSaved.style.display = 'none';
+    }
+
+    // RENDER AMORTIZATION SCHEDULE TABLE
+    renderAmortTable(schedule, periodsPerYear);
+
+    // RENDER VISUAL CHART
+    renderChart(startingLoanBalance, totalInterestPaid, totalFees);
+  }
+
+  // RENDER AMORTIZATION TABLE
+  function renderAmortTable(schedule, periodsPerYear) {
+    let rowsHtml = '';
+
+    if (amortViewMode === 'annual') {
+      thPeriodCol.textContent = 'Year';
+      // Group by Year
+      const yearMap = {};
+      schedule.forEach(item => {
+        if (!yearMap[item.year]) {
+          yearMap[item.year] = { payment: 0, principal: 0, interest: 0, extra: 0, endBal: item.endingBalance };
+        }
+        yearMap[item.year].payment += item.payment;
+        yearMap[item.year].principal += item.principal;
+        yearMap[item.year].interest += item.interest;
+        yearMap[item.year].extra += item.extra;
+        yearMap[item.year].endBal = item.endingBalance;
+      });
+
+      Object.keys(yearMap).forEach(y => {
+        const item = yearMap[y];
+        rowsHtml += `
+          <tr>
+            <td style="font-weight:700;">Year ${y}</td>
+            <td>${formatMoney(item.payment)}</td>
+            <td style="color:var(--accent-emerald-dark); font-weight:700;">${formatMoney(item.principal)}</td>
+            <td>${formatMoney(item.interest)}</td>
+            <td>${item.extra > 0 ? formatMoney(item.extra) : '—'}</td>
+            <td style="font-weight:700;">${formatMoney(item.endBal)}</td>
+          </tr>
+        `;
+      });
+    } else {
+      thPeriodCol.textContent = 'Period #';
+      schedule.forEach(item => {
+        rowsHtml += `
+          <tr>
+            <td style="font-weight:700;">Payment ${item.period}</td>
+            <td>${formatMoney(item.payment)}</td>
+            <td style="color:var(--accent-emerald-dark); font-weight:700;">${formatMoney(item.principal)}</td>
+            <td>${formatMoney(item.interest)}</td>
+            <td>${item.extra > 0 ? formatMoney(item.extra) : '—'}</td>
+            <td style="font-weight:700;">${formatMoney(item.endingBalance)}</td>
+          </tr>
+        `;
+      });
+    }
+
+    amortTableBody.innerHTML = rowsHtml;
+  }
+
+  // RENDER CHART.JS VISUAL BREAKDOWN
+  function renderChart(principal, interest, fees) {
+    const ctx = document.getElementById('loanDoughnutChart').getContext('2d');
+    
+    const labels = ['Principal Borrowed', 'Total Interest', 'Lender Fees'];
+    const dataVals = [Math.round(principal), Math.round(interest), Math.round(fees)];
+    const bgColors = ['#0F172A', '#10B981', '#3B82F6'];
+
+    if (loanChart) {
+      loanChart.data.labels = labels;
+      loanChart.data.datasets[0].data = dataVals;
+      loanChart.update();
+      return;
+    }
+
+    loanChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: dataVals,
+          backgroundColor: bgColors,
+          borderWidth: 2,
+          borderColor: '#FFFFFF',
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, weight: '600' },
+              color: '#475569',
+              padding: 10
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const val = context.raw || 0;
+                return ` ${label}: ${formatMoney(val, 0)}`;
+              }
+            }
+          }
+        },
+        cutout: '68%'
+      }
+    });
+  }
+
+  // DOWNLOAD CSV HANDLER
+  document.getElementById('btnExportAmort').addEventListener('click', () => {
+    let csv = `RealRefin Business Loan Amortization Schedule\n`;
+    csv += `Date Generated: ${new Date().toLocaleDateString()}\n`;
+    csv += `Loan Amount: ${inputAmount.value}, Stated Rate: ${inputRate.value}%, Term: ${inputTermYears.value} Years\n\n`;
+
+    csv += `Period,Payment,Principal,Interest,Extra Prepayment,Ending Balance\n`;
+    const rows = amortTableBody.querySelectorAll('tr');
+    rows.forEach(r => {
+      const cols = Array.from(r.querySelectorAll('td')).map(td => `"${td.textContent.trim()}"`);
+      csv += cols.join(',') + '\n';
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Business-Loan-Schedule-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // PRINT PROPOSAL HANDLER
+  document.getElementById('btnPrintProposal').addEventListener('click', () => {
+    window.print();
+  });
+
+  // SHARE DEAL HANDLER
+  document.getElementById('btnShareDeal').addEventListener('click', () => {
+    const params = new URLSearchParams({
+      amt: inputAmount.value,
+      rate: inputRate.value,
+      term: inputTermYears.value,
+      freq: selectFrequency.value,
+      orig: inputOrigPct.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const btn = document.getElementById('btnShareDeal');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => btn.innerHTML = orig, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // LOAD URL QUERY PARAMS
+  function loadQueryParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('amt')) {
+      inputAmount.value = urlParams.get('amt');
+      sliderAmount.value = urlParams.get('amt');
+    }
+    if (urlParams.has('rate')) {
+      inputRate.value = urlParams.get('rate');
+      sliderRate.value = urlParams.get('rate');
+    }
+    if (urlParams.has('term')) inputTermYears.value = urlParams.get('term');
+    if (urlParams.has('freq')) selectFrequency.value = urlParams.get('freq');
+    if (urlParams.has('orig')) inputOrigPct.value = urlParams.get('orig');
+    if (urlParams.has('curr')) {
+      const c = urlParams.get('curr').toUpperCase();
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  // Initial Calculation Run
+  loadQueryParams();
+  calculateLoan();
+});
+</script>
+
+</body>
+</html>
