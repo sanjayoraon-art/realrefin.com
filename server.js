@@ -8,9 +8,21 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://realrefin.com/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/va-closing-cost-calculator</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/closing-cost-calculator</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://realrefin.com/mortgage-refinance-calculator</loc>
@@ -295,6 +307,20 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/va-closing-cost-calculator': 'va-closing-cost-calculator.html',
+  '/va-closing-cost-calculator.html': 'va-closing-cost-calculator.html',
+  '/closing-cost-calculator': 'va-closing-cost-calculator.html',
+  '/closing-cost-calculator.html': 'va-closing-cost-calculator.html',
+  '/buyer-closing-cost-calculator': 'va-closing-cost-calculator.html',
+  '/buyer-closing-cost-calculator.html': 'va-closing-cost-calculator.html',
+  '/closing-costs-calculator-for-seller': 'va-closing-cost-calculator.html',
+  '/closing-costs-calculator-for-seller.html': 'va-closing-cost-calculator.html',
+  '/closing-cost-calculator-tn': 'va-closing-cost-calculator.html',
+  '/closing-cost-calculator-tn.html': 'va-closing-cost-calculator.html',
+  '/tennessee-closing-cost-calculator': 'va-closing-cost-calculator.html',
+  '/tennessee-closing-cost-calculator.html': 'va-closing-cost-calculator.html',
+  '/cash-to-close-calculator': 'va-closing-cost-calculator.html',
+  '/cash-to-close-calculator.html': 'va-closing-cost-calculator.html',
   '/mortgage-refinance-calculator': 'mortgage-refinance-calculator.html',
   '/mortgage-refinance-calculator.html': 'mortgage-refinance-calculator.html',
   '/refinance-calculator': 'mortgage-refinance-calculator.html',
