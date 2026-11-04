@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/calculate-fha-mortgage-insurance</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/house-flipping-calculator</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -313,6 +319,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/calculate-fha-mortgage-insurance': 'calculate-fha-mortgage-insurance.html',
+  '/calculate-fha-mortgage-insurance.html': 'calculate-fha-mortgage-insurance.html',
+  '/fha-mortgage-insurance-calculator': 'calculate-fha-mortgage-insurance.html',
+  '/fha-mortgage-insurance-calculator.html': 'calculate-fha-mortgage-insurance.html',
+  '/fha-mip-calculator': 'calculate-fha-mortgage-insurance.html',
+  '/fha-mip-calculator.html': 'calculate-fha-mortgage-insurance.html',
+  '/upfront-mip-calculator': 'calculate-fha-mortgage-insurance.html',
+  '/upfront-mip-calculator.html': 'calculate-fha-mortgage-insurance.html',
+  '/fha-monthly-mortgage-insurance-calculator': 'calculate-fha-mortgage-insurance.html',
+  '/fha-monthly-mortgage-insurance-calculator.html': 'calculate-fha-mortgage-insurance.html',
+  '/fha-mortgage-calculator-with-mip': 'calculate-fha-mortgage-insurance.html',
+  '/fha-mortgage-calculator-with-mip.html': 'calculate-fha-mortgage-insurance.html',
   '/house-flipping-calculator': 'house-flipping-calculator.html',
   '/house-flipping-calculator.html': 'house-flipping-calculator.html',
   '/fix-and-flip-calculator': 'house-flipping-calculator.html',
