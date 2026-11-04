@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/cost-per-square-foot-to-build-a-house-in-alabama</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/business-loan-payment-calculator</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,6 +337,12 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/cost-per-square-foot-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
+  '/cost-per-square-foot-to-build-a-house-in-alabama.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
+  '/cost-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
+  '/cost-to-build-a-house-in-alabama.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
+  '/cost-per-square-foot-to-build-a-house': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
+  '/cost-per-square-foot-to-build-a-house.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/business-loan-payment-calculator': 'business-loan-payment-calculator.html',
   '/business-loan-payment-calculator.html': 'business-loan-payment-calculator.html',
   '/business-loan-calculator': 'business-loan-payment-calculator.html',
