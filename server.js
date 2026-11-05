@@ -794,8 +794,16 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // 3. Known File Mapping
-  const targetFileName = FILE_MAP[reqUrl] || (reqUrl.startsWith('/') ? reqUrl.substring(1) : reqUrl);
+  // 3. Known File Mapping & Dynamic .html Resolution
+  let targetFileName = FILE_MAP[reqUrl] || FILE_MAP[reqUrl.replace(/\/$/, '')];
+  if (!targetFileName) {
+    const cleanUrl = reqUrl.startsWith('/') ? reqUrl.substring(1) : reqUrl;
+    if (cleanUrl && fs.existsSync(path.join(__dirname, cleanUrl + '.html'))) {
+      targetFileName = cleanUrl + '.html';
+    } else {
+      targetFileName = cleanUrl;
+    }
+  }
   const filePath = path.join(__dirname, targetFileName);
 
   fs.readFile(filePath, (err, data) => {
