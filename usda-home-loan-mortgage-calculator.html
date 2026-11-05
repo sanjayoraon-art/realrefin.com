@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USDA Home Loan Mortgage Calculator (2026) | 0% Down &amp; Fee Engine</title>
+  <meta name="description" content="Free USDA home loan mortgage calculator. Calculate your 0% down payment, 1.0% upfront guarantee fee, 0.35% monthly annual fee, 29/41 DTI qualification ratios, and total monthly PITI payments.">
+  <meta name="keywords" content="usda home loan mortgage calculator, usda loan calculator, usda mortgage calculator, usda home loan calculator, usda rural housing loan calculator, usda guarantee fee calculator, usda monthly payment calculator, usda 0 down mortgage, usda upfront guarantee fee">
+  <link rel="canonical" href="https://realrefin.com/usda-home-loan-mortgage-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="USDA Home Loan Mortgage Calculator (2026) | 0% Down &amp; Fee Engine">
+  <meta property="og:description" content="Calculate your exact monthly payment with 100% financing (0% down). Models the 1.00% upfront guarantee fee, 0.35% annual fee, 29/41 DTI ratios, and USDA vs FHA vs Conventional comparison.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/usda-home-loan-mortgage-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Chart.js CDN for Visual Payment Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/usda-home-loan-mortgage-calculator#app",
+        "name": "RealRefin USDA Home Loan Mortgage Calculator",
+        "url": "https://realrefin.com/usda-home-loan-mortgage-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional USDA Rural Development Section 502 guaranteed loan calculator. Computes 0% down payment financing, 1.00% upfront guarantee fee, 0.35% annual fee, 29/41 DTI ratio underwriting qualification, and full PITI monthly payment breakdown.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer & Mortgage Suite",
+            "item": "https://realrefin.com/#suite-buyer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "USDA Home Loan Mortgage Calculator",
+            "item": "https://realrefin.com/usda-home-loan-mortgage-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a USDA home loan mortgage calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A USDA home loan mortgage calculator computes your monthly payments based on 100% financing (0% down payment). It incorporates the USDA statutory 1.00% upfront guarantee fee (which is typically financed into the loan balance), the 0.35% annual guarantee fee (divided into 12 monthly payments), property taxes, homeowners insurance, and checks your debt-to-income (DTI) ratio against standard 29/41 guidelines."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the fees for a USDA home loan in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "USDA Section 502 Guaranteed loans carry two mandatory fees: (1) An Upfront Guarantee Fee of 1.00% of the base loan amount (e.g., $3,000 on a $300,000 loan, which can be financed), and (2) An Annual Guarantee Fee of 0.35% of the average unpaid principal balance, billed in monthly installments of roughly $29 per $100,000 borrowed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the USDA debt-to-income (DTI) ratio requirement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The benchmark USDA qualifying DTI ratios are 29/41. This means your monthly housing payment (PITI + USDA fee) should not exceed 29% of your gross monthly household income (front-end ratio), and your total monthly debt payments (housing plus credit cards, auto loans, student loans) should not exceed 41% of gross income (back-end ratio). Borrowers with credit scores above 680 or strong automated GUS approvals may exceed these benchmarks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do USDA loans have a maximum loan limit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike FHA and Conforming loans, USDA Section 502 Guaranteed loans do not have a set statutory maximum loan limit. Instead, your maximum loan amount is determined by your household income eligibility and your ability to meet the 29/41 DTI debt service ratios within county-specific income limits (typically 115% of the Area Median Income)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can closing costs be financed into a USDA loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but only if the home appraises for more than the purchase price. Under USDA guidelines, if the appraised value exceeds the contract sales price, the borrower is permitted to finance eligible closing costs and prepaid items up to the appraised value. Additionally, sellers can contribute up to 6% of the purchase price toward buyer closing costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What properties qualify for a USDA loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To qualify, the property must be located in an eligible rural or suburban area as defined by the USDA (generally communities with a population under 35,000). The home must be modest in size, structurally sound, meet HUD Minimum Property Standards, and serve as the borrower's primary residence. Income-producing working farms and commercial properties are ineligible."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       FINTECH SAAS DESIGN SYSTEM - REALREFIN INSTITUTIONAL NAVY
+       Primary: Deep Slate / Midnight Navy (#0F172A)
+       Accents: USDA Agricultural Forest Green (#059669) & Emerald (#10B981)
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --primary-slate: #1E293B;
+      --primary-border: #334155;
+      
+      --accent-usda: #059669;
+      --accent-usda-dark: #047857;
+      --accent-usda-light: #ECFDF5;
+      --accent-usda-border: #A7F3D0;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #E11D48;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #059669;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-usda);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-navy);
+    }
+
+    .nav-badge-pill {
+      background: var(--accent-usda-light);
+      color: var(--accent-usda-dark);
+      border: 1px solid var(--accent-usda-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HEADER
+    ----------------------------------------------------------- */
+    .breadcrumb-nav {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--primary-navy);
+      text-decoration: underline;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #ECFDF5;
+      color: #047857;
+      border: 1px solid #A7F3D0;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.55;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MAIN GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .currency-switch-box {
+      display: flex;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .curr-btn {
+      border: none;
+      background: transparent;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* FORM CONTROLS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 0.9rem; }
+    .input-suffix { right: 0.9rem; }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .calc-input.has-prefix { padding-left: 2rem; }
+    .calc-input.has-suffix { padding-right: 2.2rem; }
+
+    .calc-input:focus {
+      border-color: var(--accent-usda);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+    }
+
+    .calc-select {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .calc-select:focus {
+      border-color: var(--accent-usda);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+    }
+
+    /* Range slider */
+    .slider-control {
+      margin-top: 0.45rem;
+    }
+
+    .calc-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-usda);
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.1s ease;
+    }
+
+    .calc-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .presets-container {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-top: 0.45rem;
+    }
+
+    .preset-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      padding: 0.22rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      border-color: var(--primary-navy);
+    }
+
+    /* TOGGLE BOX / CHECKBOX */
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .checkbox-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+    }
+
+    .checkbox-sub {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .calc-checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent-usda);
+      cursor: pointer;
+    }
+
+    /* ADVANCED TOGGLE */
+    .advanced-toggle-wrap {
+      border-top: 1px dashed var(--border-color);
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+    }
+
+    .btn-toggle-advanced {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1.25rem;
+      padding-top: 0.5rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* DTI QUALIFICATION STATUS CARD */
+    .dti-status-card {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .dti-status-card.warning {
+      background: #FEF3C7;
+      border-color: #FDE68A;
+    }
+
+    .dti-status-card.danger {
+      background: #FEF2F2;
+      border-color: #FECACA;
+    }
+
+    .dti-badge-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.2rem;
+    }
+
+    .dti-status-card.warning .dti-badge-title { color: #92400E; }
+    .dti-status-card.danger .dti-badge-title { color: #991B1B; }
+
+    .dti-badge-text {
+      font-size: 0.78rem;
+      color: #14532D;
+      line-height: 1.45;
+    }
+
+    .dti-status-card.warning .dti-badge-text { color: #78350F; }
+    .dti-status-card.danger .dti-badge-text { color: #7F1D1D; }
+
+    /* -----------------------------------------------------------
+       OUTPUT PANEL / HERO SUMMARY BANNER
+    ----------------------------------------------------------- */
+    .output-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-result-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.25);
+    }
+
+    .hero-result-banner::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(5, 150, 105, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-main-val {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-main-val span.sub-mo {
+      font-size: 1.25rem;
+      color: #34D399;
+      font-weight: 700;
+      margin-left: 0.25rem;
+    }
+
+    .hero-highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(5, 150, 105, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6EE7B7;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 0.4rem;
+    }
+
+    .hero-subtext {
+      font-size: 0.86rem;
+      color: #CBD5E1;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* KPI METRICS 2x2 GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      transition: transform 0.12s ease;
+    }
+
+    .kpi-box:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
+    /* WATERFALL TABLE */
+    .waterfall-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-header {
+      background: var(--bg-light);
+      padding: 0.65rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .waterfall-row.total {
+      background: #F8FAFC;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      border-top: 2px solid var(--primary-navy);
+    }
+
+    .waterfall-label {
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .waterfall-badge {
+      font-size: 0.72rem;
+      background: #ECFDF5;
+      color: #047857;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .waterfall-val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* CHART CONTAINER */
+    .chart-container-wrap {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .chart-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.75rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .chart-box {
+      position: relative;
+      height: 210px;
+      width: 100%;
+    }
+
+    /* ACTION BUTTON ROW */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn-action {
+      padding: 0.65rem 0.75rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       3-WAY COMPARISON: USDA VS FHA VS CONVENTIONAL
+    ----------------------------------------------------------- */
+    .comparison-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .comp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comp-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comp-card.recommended {
+      border-color: var(--accent-usda);
+      box-shadow: 0 8px 20px -4px rgba(5, 150, 105, 0.18);
+    }
+
+    .comp-badge {
+      position: absolute;
+      top: -12px;
+      left: 1.25rem;
+      background: var(--accent-usda);
+      color: #FFFFFF;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .comp-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .comp-metric-big {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .comp-subline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .comp-list {
+      list-style: none;
+      font-size: 0.85rem;
+    }
+
+    .comp-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .comp-list li:last-child {
+      border-bottom: none;
+    }
+
+    .comp-list span.bold {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDE
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-article h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin: 2.25rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bg-light);
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-slate);
+      margin: 1.5rem 0 0.65rem;
+    }
+
+    .guide-article p {
+      font-size: 0.98rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 1.15rem;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin: 0 0 1.25rem 1.4rem;
+      color: #334155;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.4rem;
+    }
+
+    .formula-callout {
+      background: #F1F5F9;
+      border-left: 4px solid var(--accent-usda);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .formula-box {
+      font-size: 1.05rem;
+      margin: 0.75rem 0;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--bg-light);
+    }
+
+    .faq-arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* RELATED TOOLS */
+    .related-section {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 800px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tool-link-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+
+    .tool-link-card:hover {
+      border-color: var(--primary-navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tool-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .tool-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* SITE FOOTER */
+    .rr-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-navy);
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body { background: #FFFFFF; }
+      .rr-nav, .presets-container, .action-btn-row, .advanced-toggle-wrap, 
+      .slider-control, .related-section, .rr-footer, .guide-article, .comparison-section {
+        display: none !important;
+      }
+      .calc-layout { display: block; }
+      .output-card { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+  
+  <!-- SITE NAVIGATION -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">
+      RealRefin<span>.com</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">All Tools</a></li>
+      <li><a href="/calculate-fha-mortgage-insurance">FHA MIP</a></li>
+      <li><a href="/va-closing-cost-calculator">VA Loans</a></li>
+      <li><a href="/home-affordability-calculator">Affordability</a></li>
+      <li><span class="nav-badge-pill">USDA RD 2026 Ready</span></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-nav">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/#suite-buyer">Home Buyer &amp; Mortgage Suite</a>
+    <span>›</span>
+    <span>USDA Home Loan Mortgage Calculator</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="hero-badge-tag">
+      <span>🌾</span> USDA Section 502 Guaranteed Housing Loan
+    </div>
+    <h1 class="page-title">USDA Home Loan Mortgage Calculator</h1>
+    <p class="page-subtitle">
+      Calculate your exact monthly mortgage payment with <strong>0% down payment financing</strong> through the USDA Rural Development loan program. Models the statutory <strong>1.00% upfront guarantee fee</strong>, <strong>0.35% monthly annual fee</strong>, 29/41 DTI underwriting ratios, and full PITI breakdown.
+    </p>
+  </header>
+
+  <!-- CALCULATOR MAIN APPLICATION INTERFACE -->
+  <main class="calc-layout">
+
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <div class="calc-card">
+      <div class="section-title">
+        <span>Loan &amp; Property Parameters</span>
+        <div class="currency-switch-box">
+          <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+          <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+          <button type="button" class="curr-btn" data-currency="CAD" data-symbol="C$">C$</button>
+          <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">A$</button>
+        </div>
+      </div>
+
+      <!-- Home Purchase Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputPrice">Home Purchase Price</label>
+          <span class="form-hint">No statutory loan ceiling</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputPrice" class="calc-input has-prefix" value="285000" min="50000" max="1500000" step="5000">
+        </div>
+        <div class="slider-control">
+          <input type="range" id="sliderPrice" class="calc-range" min="100000" max="750000" step="5000" value="285000">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill" data-price="200000">$200k</button>
+          <button type="button" class="preset-pill active" data-price="285000">$285k (Median)</button>
+          <button type="button" class="preset-pill" data-price="350000">$350k</button>
+          <button type="button" class="preset-pill" data-price="450000">$450k</button>
+        </div>
+      </div>
+
+      <!-- Down Payment (Default 0% for USDA 100% Financing) -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputDownPct">Down Payment</label>
+          <span class="form-hint" style="color: var(--accent-usda); font-weight: 700;">USDA Allows 0% Down</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-wrapper">
+            <input type="number" id="inputDownPct" class="calc-input has-suffix" value="0" min="0" max="50" step="0.5">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputDownAmount" class="calc-input has-prefix" value="0" min="0" step="500">
+          </div>
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill down-pill active" data-down="0">0% Down (100% Loan)</button>
+          <button type="button" class="preset-pill down-pill" data-down="3">3% Down</button>
+          <button type="button" class="preset-pill down-pill" data-down="5">5% Down</button>
+          <button type="button" class="preset-pill down-pill" data-down="10">10% Down</button>
+        </div>
+      </div>
+
+      <!-- Interest Rate & Loan Term -->
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.75rem;">
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputRate">Interest Rate</label>
+            <span class="form-hint">30-Yr Fixed</span>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="inputRate" class="calc-input has-suffix" value="6.25" min="2.0" max="12.0" step="0.125">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="selectTerm">Loan Term</label>
+          </div>
+          <select id="selectTerm" class="calc-select">
+            <option value="30" selected>30 Years</option>
+            <option value="15">15 Years</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- USDA 1.00% Upfront Guarantee Fee Financing Checkbox -->
+      <div class="checkbox-row">
+        <div>
+          <label for="checkFinanceUpfront" class="checkbox-label">Finance 1.00% Upfront Guarantee Fee</label>
+          <div class="checkbox-sub">Standard practice: Rolls <span id="dispUpfrontFee">$2,850</span> into your loan with $0 cash out of pocket</div>
+        </div>
+        <input type="checkbox" id="checkFinanceUpfront" class="calc-checkbox" checked>
+      </div>
+
+      <!-- DTI QUALIFICATION CALCULATOR (29/41 BENCHMARK) -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" class="btn-toggle-advanced" id="btnToggleDti">
+          <span>📊 Check USDA DTI Ratio Qualification (29/41 Benchmark)</span>
+          <span id="dtiToggleIcon">▼</span>
+        </button>
+
+        <div class="advanced-content" id="dtiContent">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputGrossIncome">Gross Monthly Income</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputGrossIncome" class="calc-input has-prefix" value="7500" min="1000" step="100">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputMonthlyDebt">Other Monthly Debt</label>
+                <span class="form-hint">Auto, student, cards</span>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputMonthlyDebt" class="calc-input has-prefix" value="650" min="0" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="selectHouseholdSize">Household Size (Income Limit Check)</label>
+              <span class="form-hint">115% Median Income</span>
+            </div>
+            <select id="selectHouseholdSize" class="calc-select">
+              <option value="1-4" selected>1 to 4 Persons (National Limit: ~$110,650/yr)</option>
+              <option value="5-8">5 to 8 Persons (National Limit: ~$146,050/yr)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic DTI Status Notification Box -->
+      <div id="dtiStatusBox" class="dti-status-card">
+        <span style="font-size: 1.35rem; line-height: 1;">✅</span>
+        <div>
+          <div class="dti-badge-title" id="dtiBadgeTitle">Strong USDA Underwriting Qualification</div>
+          <div class="dti-badge-text" id="dtiBadgeText">
+            Front-End DTI is <strong>27.8%</strong> (Under 29% limit) and Back-End DTI is <strong>36.5%</strong> (Under 41% limit). You comfortably satisfy standard USDA Section 502 automated underwriting criteria.
+          </div>
+        </div>
+      </div>
+
+      <!-- ADVANCED COLLAPSIBLE: TAXES, INSURANCE & HOA -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" class="btn-toggle-advanced" id="btnToggleEscrow">
+          <span>⚙️ Advanced: Taxes, Insurance &amp; USDA Fee Settings</span>
+          <span id="escrowToggleIcon">▼</span>
+        </button>
+
+        <div class="advanced-content" id="escrowContent">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualTax">Annual Taxes</label>
+                <span class="form-hint">~1.1% avg</span>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputAnnualTax" class="calc-input has-prefix" value="3135" min="0" step="50">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualIns">Hazard Insurance</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputAnnualIns" class="calc-input has-prefix" value="1450" min="0" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputMonthlyHoa">Monthly HOA Dues</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputMonthlyHoa" class="calc-input has-prefix" value="0" min="0" step="25">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualFeeRate">USDA Annual Fee</label>
+                <span class="form-hint">Statutory 35 bps</span>
+              </div>
+              <div class="input-wrapper">
+                <input type="number" id="inputAnnualFeeRate" class="calc-input has-suffix" value="0.35" step="0.05" readonly style="background: #F1F5F9; color: var(--text-muted);">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: OUTPUT ENGINE & RESULTS -->
+    <div class="output-card">
+      <div class="section-title">
+        <span>Payment &amp; Loan Results</span>
+        <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-usda); background: var(--accent-usda-light); padding: 0.2rem 0.5rem; border-radius: 4px;">100% Financing</span>
+      </div>
+
+      <!-- HERO RESULT BANNER -->
+      <div class="hero-result-banner">
+        <div class="hero-top-label">
+          <span>🏡</span> Total Estimated Monthly Payment (PITI + Fee)
+        </div>
+        <div class="hero-main-val">
+          <span id="heroMonthlyPmt">$2,228</span>
+          <span class="sub-mo">/ month</span>
+        </div>
+        <div class="hero-highlight-pill">
+          <span>✓</span> Down Payment Required: $0.00 (100% Financed)
+        </div>
+        <div class="hero-subtext" id="heroBannerSub">
+          Includes <strong>$1,770</strong> Principal &amp; Interest, <strong>$84</strong> Monthly USDA Annual Fee (0.35%), <strong>$261</strong> Property Taxes, and <strong>$121</strong> Hazard Insurance.
+        </div>
+      </div>
+
+      <!-- 2x2 PRIMARY KPI CARDS -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-title">Monthly USDA Fee</div>
+          <div class="kpi-value" id="kpiMonthlyFee" style="color: var(--accent-usda-dark);">$84/mo</div>
+          <div class="kpi-sub">0.35% Annual Guarantee Fee</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">1.0% Upfront Fee</div>
+          <div class="kpi-value" id="kpiUpfrontFee">$2,850</div>
+          <div class="kpi-sub" id="kpiUpfrontFinanced">Financed into Mortgage</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Total Financed Loan</div>
+          <div class="kpi-value" id="kpiTotalLoan">$287,850</div>
+          <div class="kpi-sub" id="kpiBaseLoan">Base Loan: $285,000</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">DTI Underwriting</div>
+          <div class="kpi-value" id="kpiDtiValue">27.8% / 36.5%</div>
+          <div class="kpi-sub" id="kpiDtiStatus">Front &lt; 29% • Back &lt; 41%</div>
+        </div>
+      </div>
+
+      <!-- WATERFALL PAYMENT BREAKDOWN -->
+      <div class="waterfall-card">
+        <div class="waterfall-header">
+          <span>Itemized Monthly Payment Waterfall</span>
+          <span>Monthly Cost</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Principal &amp; Interest (P&amp;I)</span>
+          <span class="waterfall-val" id="wfPi">$1,770</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            USDA Annual Guarantee Fee
+            <span class="waterfall-badge">0.35% / 12</span>
+          </span>
+          <span class="waterfall-val" id="wfFee" style="color: var(--accent-usda-dark);">$84</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Property Taxes (Escrow)</span>
+          <span class="waterfall-val" id="wfTaxes">$261</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Homeowners / Hazard Insurance</span>
+          <span class="waterfall-val" id="wfIns">$121</span>
+        </div>
+
+        <div class="waterfall-row" id="rowHoa" style="display: none;">
+          <span class="waterfall-label">Monthly HOA Dues</span>
+          <span class="waterfall-val" id="wfHoa">$0</span>
+        </div>
+
+        <div class="waterfall-row total">
+          <span class="waterfall-label">Total Monthly Housing Outlay</span>
+          <span class="waterfall-val" id="wfTotalPmt" style="color: #059669;">$2,228</span>
+        </div>
+      </div>
+
+      <!-- VISUAL PAYMENT DOUGHNUT CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-title">Payment Breakdown ($ vs %)</div>
+        <div class="chart-box">
+          <canvas id="usdaPieChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" class="btn-action" id="btnDownloadCsv">
+          <span>📥</span> Download Excel
+        </button>
+        <button type="button" class="btn-action" id="btnPrintReport">
+          <span>🖨️</span> Print PDF
+        </button>
+        <button type="button" class="btn-action" id="btnShareDeal">
+          <span>🔗</span> Share Deal
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- SIDE-BY-SIDE 3-WAY COMPARISON: USDA VS FHA VS CONVENTIONAL -->
+  <section class="comparison-section">
+    <div class="section-title">
+      <span>Compare Low Down Payment Options: USDA (0%) vs. FHA (3.5%) vs. Conventional (3%)</span>
+    </div>
+    <div class="comp-grid">
+      
+      <!-- Option 1: USDA Loan -->
+      <div class="comp-card recommended">
+        <div class="comp-badge">Lowest Cash Needed</div>
+        <h3 class="comp-title">USDA RD Loan</h3>
+        <div class="comp-metric-big" id="compUsdaDown" style="color: var(--accent-usda-dark);">$0 Cash Down</div>
+        <div class="comp-subline">0% Down Payment (100% Financing)</div>
+        <ul class="comp-list">
+          <li><span>Upfront Mortgage Fee:</span> <span class="bold" id="compUsdaUpfront">1.00% ($2,850)</span></li>
+          <li><span>Monthly Insurance Fee:</span> <span class="bold" id="compUsdaMonthlyFee" style="color: var(--accent-usda-dark);">0.35% ($84/mo)</span></li>
+          <li><span>Total Estimated Payment:</span> <span class="bold" id="compUsdaTotalPmt">$2,228 / mo</span></li>
+          <li><span>Geographic Limitation:</span> <span class="bold">Rural / Suburban Only</span></li>
+          <li><span>Household Income Cap:</span> <span class="bold">115% Median Income</span></li>
+        </ul>
+      </div>
+
+      <!-- Option 2: FHA Loan -->
+      <div class="comp-card">
+        <h3 class="comp-title">FHA Loan (HUD 203b)</h3>
+        <div class="comp-metric-big" id="compFhaDown">$9,975 Cash Down</div>
+        <div class="comp-subline">3.5% Minimum Down Payment</div>
+        <ul class="comp-list">
+          <li><span>Upfront Mortgage Fee:</span> <span class="bold" id="compFhaUpfront" style="color: var(--accent-coral);">1.75% ($4,813)</span></li>
+          <li><span>Monthly Insurance Fee:</span> <span class="bold" id="compFhaMonthlyFee" style="color: var(--accent-coral);">0.55% ($126/mo)</span></li>
+          <li><span>Total Estimated Payment:</span> <span class="bold" id="compFhaTotalPmt">$2,260 / mo</span></li>
+          <li><span>Geographic Limitation:</span> <span class="bold">Anywhere in US</span></li>
+          <li><span>Household Income Cap:</span> <span class="bold">None</span></li>
+        </ul>
+      </div>
+
+      <!-- Option 3: Conventional HomeReady / Home Possible -->
+      <div class="comp-card">
+        <h3 class="comp-title">Conventional 3% Down</h3>
+        <div class="comp-metric-big" id="compConvDown">$8,550 Cash Down</div>
+        <div class="comp-subline">3.0% Minimum Down Payment</div>
+        <ul class="comp-list">
+          <li><span>Upfront Mortgage Fee:</span> <span class="bold" style="color: var(--accent-usda-dark);">$0 (No Upfront Fee)</span></li>
+          <li><span>Monthly PMI (Credit 720+):</span> <span class="bold" id="compConvMonthlyFee">~0.58% ($134/mo)</span></li>
+          <li><span>Total Estimated Payment:</span> <span class="bold" id="compConvTotalPmt">$2,265 / mo</span></li>
+          <li><span>PMI Cancellation:</span> <span class="bold">Cancels at 20% Equity</span></li>
+          <li><span>Credit Score Minimum:</span> <span class="bold">620+ (680+ for best PMI)</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE 1,500+ WORD INSTITUTIONAL GUIDE -->
+  <article class="guide-article">
+    <h2>Complete Guide to USDA Home Loan Mortgages (Section 502 Guaranteed Loans)</h2>
+    <p>
+      The <strong>USDA Rural Development Guaranteed Housing Loan Program</strong>, authorized under Section 502 of Title V of the Housing Act of 1949 and administered by the United States Department of Agriculture (USDA), is one of the nation's only government-insured loan programs that offers <strong>100% financing with zero down payment required</strong>. Designed to stimulate homeownership in suburban and rural communities, the USDA home loan provides affordable interest rates and low monthly mortgage insurance costs to low-to-moderate-income families.
+    </p>
+
+    <h2>How the USDA Home Loan Mortgage Calculator Works</h2>
+    <p>
+      Our institutional USDA loan calculator precisely replicates the statutory underwriting algorithms enforced by the USDA Rural Housing Service (RHS) and automated Guaranteed Underwriting System (GUS):
+    </p>
+
+    <div class="formula-callout">
+      <strong>Mathematical Model for USDA Monthly Housing Payment:</strong>
+      <div class="formula-box">
+        $$\text{Base Loan Amount} = \text{Purchase Price} - \text{Down Payment}$$
+        $$\text{Upfront Guarantee Fee} = \text{Base Loan Amount} \times 1.00\%$$
+        $$\text{Total Financed Mortgage} = \text{Base Loan Amount} + \text{Upfront Guarantee Fee}$$
+        $$\text{Monthly P\&I} = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$$
+        $$\text{Monthly USDA Fee} = \frac{\text{Unpaid Principal Balance} \times 0.35\%}{12}$$
+        $$\text{Total Monthly Payment} = \text{Monthly P\&I} + \text{Monthly USDA Fee} + \text{Property Taxes} + \text{Hazard Insurance}$$
+      </div>
+      <p style="font-size: 0.85rem; color: #475569; margin-top: 0.5rem; margin-bottom: 0;">
+        Where $P$ is the total financed mortgage balance, $r$ is the monthly note rate ($\text{Annual Rate} / 12$), and $n$ is 360 months for standard 30-year amortization.
+      </p>
+    </div>
+
+    <h2>Understanding USDA Guarantee Fees (Upfront vs. Annual)</h2>
+    <p>
+      To sustain the insurance fund without direct taxpayer subsidies, the USDA assesses two distinct statutory fees:
+    </p>
+
+    <h3>1. Upfront Guarantee Fee (1.00%)</h3>
+    <p>
+      The USDA assesses an upfront guarantee fee equal to <strong>1.00% of the base loan amount</strong>. On a $250,000 home purchase with 0% down, the upfront fee is $2,500. Under USDA administrative rules (7 CFR § 3555.107), this fee does NOT need to be paid out of pocket in cash—it is almost universally financed directly into the final mortgage amount, resulting in a total beginning loan balance of $252,500.
+    </p>
+
+    <h3>2. Annual Guarantee Fee (0.35%)</h3>
+    <p>
+      The USDA annual fee serves as ongoing monthly mortgage insurance. Set at <strong>0.35% (35 basis points)</strong> of the average unpaid principal balance, this fee is divided into 12 equal monthly installments and collected alongside your principal, interest, taxes, and insurance (PITI). For comparison:
+    </p>
+    <ul>
+      <li><strong>USDA Annual Fee:</strong> 0.35% of loan balance ($29.17/month per $100,000 borrowed).</li>
+      <li><strong>FHA Monthly MIP:</strong> 0.55% of loan balance ($45.83/month per $100,000 borrowed)—nearly <strong>60% more expensive</strong> than USDA!</li>
+      <li><strong>Conventional PMI:</strong> Typically 0.50% to 1.50% depending heavily on credit score.</li>
+    </ul>
+
+    <h2>USDA Underwriting Qualification: The 29/41 DTI Benchmark</h2>
+    <p>
+      To ensure borrowers do not take on excessive financial leverage, the USDA evaluates two debt-to-income (DTI) ratios:
+    </p>
+    <ol>
+      <li><strong>Front-End DTI (29% Benchmark):</strong> Your proposed total monthly housing expense (Principal, Interest, 0.35% USDA Fee, Property Taxes, Hazard Insurance, and HOA fees) divided by your gross monthly household income. Ideally, this should not exceed <strong>29.0%</strong>.</li>
+      <li><strong>Back-End DTI (41% Benchmark):</strong> Your proposed total monthly housing expense PLUS all recurring monthly consumer debts (credit card minimum payments, auto loans, student loans, child support, personal loans) divided by your gross monthly income. Ideally, this should not exceed <strong>41.0%</strong>.</li>
+    </ol>
+    <p>
+      <strong>Can DTI exceed 29/41?</strong> Yes! If your loan is submitted through USDA's automated Guaranteed Underwriting System (GUS) and receives an "Accept" recommendation (common for borrowers with FICO credit scores of 680 or higher and proven cash reserves), USDA will permit back-end DTI ratios reaching 44% to 46% without requiring a manual underwriting exception.
+    </p>
+
+    <h2>USDA Eligibility Requirements: Property &amp; Income Rules</h2>
+    <p>
+      Unlike Conventional or FHA mortgages which can be used on virtually any residential parcel, USDA loans carry two statutory filters:
+    </p>
+
+    <h3>1. Geographic Property Location</h3>
+    <p>
+      The home must be located in an officially designated USDA-eligible rural or suburban area. Approximately <strong>97% of the United States landmass</strong> is eligible for USDA financing, encompassing suburbs on the outer edges of major metropolitan areas, small towns, and rural counties. Generally, towns with populations under 35,000 qualify. You can verify any specific street address on the official USDA Rural Development property eligibility map.
+    </p>
+
+    <h3>2. Household Income Limits (115% AMI)</h3>
+    <p>
+      Because USDA loans are intended for moderate-income families, your combined household income (the income of all adults living in the residence, regardless of whether they are on the loan note) cannot exceed <strong>115% of the Area Median Income (AMI)</strong> for the county in which the property is located.
+    </p>
+    <ul>
+      <li><strong>1 to 4 Person Households:</strong> Standard national baseline limit is approximately <strong>$110,650</strong> per year (higher in designated high-cost counties such as California, Washington, Colorado, and the Northeast).</li>
+      <li><strong>5 to 8 Person Households:</strong> Standard national baseline limit is approximately <strong>$146,050</strong> per year.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I really buy a home with 0% down using a USDA loan?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes! A USDA loan provides 100% financing, meaning you do not have to make any down payment toward the purchase price. However, you will still need funds for standard third-party closing costs (such as lender origination, appraisal, title search, escrow fees, and prepaid homeowners insurance), unless you negotiate for the seller to pay up to 6% in seller concessions, or the home appraises for higher than the contract price.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the minimum credit score for a USDA home loan?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        While the USDA does not establish an official minimum credit score by statute, most lenders enforce a minimum benchmark of 640 to qualify for automated underwriting through the USDA Guaranteed Underwriting System (GUS). Borrowers with scores between 580 and 639 may still qualify under manual underwriting rules if they demonstrate clean 12-month rental payment verification and compensating factors.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Does the USDA annual guarantee fee ever cancel?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        No. Under current USDA regulations, the 0.35% annual guarantee fee remains in effect for the entire life of the 30-year mortgage, regardless of how much equity you accumulate. To eliminate the monthly fee in the future, you must refinance your mortgage into a Conventional loan once your property reaches at least 20% home equity.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I buy an investment property or second home with a USDA loan?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        No. USDA Section 502 loans can only be used to purchase a single-family home that serves as the borrower's legal, permanent primary residence. Commercial properties, income-producing working agricultural farms, vacation homes, and short-term Airbnb rentals are strictly prohibited under federal regulations.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How does USDA compare to an FHA mortgage?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        USDA is generally superior for qualifying suburban/rural buyers because it requires 0% down payment (versus 3.5% down for FHA), charges a lower upfront fee of 1.00% (versus 1.75% for FHA), and charges a much lower annual fee of 0.35% (versus 0.55% for FHA). However, FHA has no geographic boundaries and no household income ceiling.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED FINANCIAL TOOLS -->
+  <section class="related-section">
+    <div class="section-title">
+      <span>Explore Related Low Down Payment &amp; Government Loan Calculators</span>
+    </div>
+    <div class="related-grid">
+      <a href="/calculate-fha-mortgage-insurance" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Calculate FHA Mortgage Insurance (MIP)</div>
+          <div class="tool-card-desc">Model the 1.75% upfront UFMIP, 0.55% monthly MIP tiers, and HUD 11-year vs life-of-loan cancellation rules.</div>
+        </div>
+        <span style="color: var(--accent-usda); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Calculate FHA MIP →</span>
+      </a>
+
+      <a href="/va-closing-cost-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">VA Closing Cost &amp; Funding Fee Calculator</div>
+          <div class="tool-card-desc">0% down military home buying with exact funding fee tiers and 100% disability waiver rules.</div>
+        </div>
+        <span style="color: var(--accent-usda); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Calculate VA Costs →</span>
+      </a>
+
+      <a href="/home-affordability-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Home Affordability Calculator</div>
+          <div class="tool-card-desc">Calculate maximum home purchasing power using standard 28/36 and 29/41 DTI debt service ratios.</div>
+        </div>
+        <span style="color: var(--accent-usda); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Check Affordability →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes. Final USDA Section 502 loan approval and income limits are established by USDA Rural Development and your approved lender.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT CALCULATION & INTERACTIVE ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Currency State
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let usdaChart = null;
+
+  // DOM Elements - Inputs
+  const inputPrice = document.getElementById('inputPrice');
+  const sliderPrice = document.getElementById('sliderPrice');
+  const inputDownPct = document.getElementById('inputDownPct');
+  const inputDownAmount = document.getElementById('inputDownAmount');
+  const inputRate = document.getElementById('inputRate');
+  const selectTerm = document.getElementById('selectTerm');
+  const checkFinanceUpfront = document.getElementById('checkFinanceUpfront');
+  const dispUpfrontFee = document.getElementById('dispUpfrontFee');
+
+  // DTI Elements
+  const btnToggleDti = document.getElementById('btnToggleDti');
+  const dtiContent = document.getElementById('dtiContent');
+  const dtiToggleIcon = document.getElementById('dtiToggleIcon');
+  const inputGrossIncome = document.getElementById('inputGrossIncome');
+  const inputMonthlyDebt = document.getElementById('inputMonthlyDebt');
+  const selectHouseholdSize = document.getElementById('selectHouseholdSize');
+  const dtiStatusBox = document.getElementById('dtiStatusBox');
+  const dtiBadgeTitle = document.getElementById('dtiBadgeTitle');
+  const dtiBadgeText = document.getElementById('dtiBadgeText');
+
+  // Escrow Elements
+  const btnToggleEscrow = document.getElementById('btnToggleEscrow');
+  const escrowContent = document.getElementById('escrowContent');
+  const escrowToggleIcon = document.getElementById('escrowToggleIcon');
+  const inputAnnualTax = document.getElementById('inputAnnualTax');
+  const inputAnnualIns = document.getElementById('inputAnnualIns');
+  const inputMonthlyHoa = document.getElementById('inputMonthlyHoa');
+
+  // Output Elements
+  const heroMonthlyPmt = document.getElementById('heroMonthlyPmt');
+  const heroBannerSub = document.getElementById('heroBannerSub');
+  const kpiMonthlyFee = document.getElementById('kpiMonthlyFee');
+  const kpiUpfrontFee = document.getElementById('kpiUpfrontFee');
+  const kpiUpfrontFinanced = document.getElementById('kpiUpfrontFinanced');
+  const kpiTotalLoan = document.getElementById('kpiTotalLoan');
+  const kpiBaseLoan = document.getElementById('kpiBaseLoan');
+  const kpiDtiValue = document.getElementById('kpiDtiValue');
+  const kpiDtiStatus = document.getElementById('kpiDtiStatus');
+
+  // Waterfall Elements
+  const wfPi = document.getElementById('wfPi');
+  const wfFee = document.getElementById('wfFee');
+  const wfTaxes = document.getElementById('wfTaxes');
+  const wfIns = document.getElementById('wfIns');
+  const rowHoa = document.getElementById('rowHoa');
+  const wfHoa = document.getElementById('wfHoa');
+  const wfTotalPmt = document.getElementById('wfTotalPmt');
+
+  // Comparison Elements
+  const compUsdaDown = document.getElementById('compUsdaDown');
+  const compUsdaUpfront = document.getElementById('compUsdaUpfront');
+  const compUsdaMonthlyFee = document.getElementById('compUsdaMonthlyFee');
+  const compUsdaTotalPmt = document.getElementById('compUsdaTotalPmt');
+
+  const compFhaDown = document.getElementById('compFhaDown');
+  const compFhaUpfront = document.getElementById('compFhaUpfront');
+  const compFhaMonthlyFee = document.getElementById('compFhaMonthlyFee');
+  const compFhaTotalPmt = document.getElementById('compFhaTotalPmt');
+
+  const compConvDown = document.getElementById('compConvDown');
+  const compConvMonthlyFee = document.getElementById('compConvMonthlyFee');
+  const compConvTotalPmt = document.getElementById('compConvTotalPmt');
+
+  // Formatting Helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'CAD' ? 'CAD' : (activeCurrency === 'AUD' ? 'AUD' : 'USD')),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateUsdaLoan();
+    });
+  });
+
+  // Price Sync
+  inputPrice.addEventListener('input', () => {
+    sliderPrice.value = inputPrice.value;
+    updateDownAmountFromPct();
+    calculateUsdaLoan();
+  });
+  sliderPrice.addEventListener('input', () => {
+    inputPrice.value = sliderPrice.value;
+    updateDownAmountFromPct();
+    calculateUsdaLoan();
+  });
+
+  // Down Payment Sync
+  function updateDownAmountFromPct() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const pct = Math.max(0, parseFloat(inputDownPct.value) || 0);
+    inputDownAmount.value = Math.round(price * (pct / 100));
+  }
+
+  function updateDownPctFromAmount() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const amt = Math.max(0, parseFloat(inputDownAmount.value) || 0);
+    if (price > 0) {
+      inputDownPct.value = ((amt / price) * 100).toFixed(1);
+    }
+  }
+
+  inputDownPct.addEventListener('input', () => {
+    updateDownAmountFromPct();
+    calculateUsdaLoan();
+  });
+
+  inputDownAmount.addEventListener('input', () => {
+    updateDownPctFromAmount();
+    calculateUsdaLoan();
+  });
+
+  // Preset Price Pills
+  document.querySelectorAll('.preset-pill[data-price]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill[data-price]').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-price'));
+      inputPrice.value = val;
+      sliderPrice.value = Math.min(750000, val);
+      updateDownAmountFromPct();
+      calculateUsdaLoan();
+    });
+  });
+
+  // Preset Down Payment Pills
+  document.querySelectorAll('.down-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.down-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-down'));
+      inputDownPct.value = val;
+      updateDownAmountFromPct();
+      calculateUsdaLoan();
+    });
+  });
+
+  // Collapsible Toggles
+  btnToggleDti.addEventListener('click', () => {
+    dtiContent.classList.toggle('open');
+    dtiToggleIcon.textContent = dtiContent.classList.contains('open') ? '▲' : '▼';
+  });
+
+  btnToggleEscrow.addEventListener('click', () => {
+    escrowContent.classList.toggle('open');
+    escrowToggleIcon.textContent = escrowContent.classList.contains('open') ? '▲' : '▼';
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Input Listeners
+  [inputRate, selectTerm, checkFinanceUpfront, inputGrossIncome, inputMonthlyDebt, selectHouseholdSize, inputAnnualTax, inputAnnualIns, inputMonthlyHoa].forEach(el => {
+    if (el) {
+      el.addEventListener('input', calculateUsdaLoan);
+      el.addEventListener('change', calculateUsdaLoan);
+    }
+  });
+
+  // MAIN CALCULATION FUNCTION
+  function calculateUsdaLoan() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const downAmount = Math.max(0, parseFloat(inputDownAmount.value) || 0);
+    const baseLoan = Math.max(0, price - downAmount);
+
+    const termYears = parseInt(selectTerm.value, 10) || 30;
+    const termMonths = termYears * 12;
+    const annualRate = Math.max(0.1, parseFloat(inputRate.value) || 6.25);
+    const monthlyRate = (annualRate / 100) / 12;
+
+    // 1. Upfront Guarantee Fee (1.00% of Base Loan)
+    const upfrontFee = Math.round(baseLoan * 0.01);
+    dispUpfrontFee.textContent = formatMoney(upfrontFee);
+
+    const isUpfrontFinanced = checkFinanceUpfront.checked;
+    const totalFinancedLoan = isUpfrontFinanced ? (baseLoan + upfrontFee) : baseLoan;
+
+    // 2. Monthly Principal & Interest (P&I)
+    let monthlyPi = 0;
+    if (monthlyRate > 0 && totalFinancedLoan > 0) {
+      monthlyPi = Math.round(totalFinancedLoan * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1));
+    } else if (termMonths > 0) {
+      monthlyPi = Math.round(totalFinancedLoan / termMonths);
+    }
+
+    // 3. Monthly USDA Annual Guarantee Fee (0.35% / 12 of unpaid balance)
+    const monthlyFee = Math.round((baseLoan * 0.0035) / 12);
+
+    // 4. Property Taxes, Insurance & HOA
+    const annualTaxes = Math.max(0, parseFloat(inputAnnualTax.value) || 0);
+    const monthlyTaxes = Math.round(annualTaxes / 12);
+    const annualIns = Math.max(0, parseFloat(inputAnnualIns.value) || 0);
+    const monthlyIns = Math.round(annualIns / 12);
+    const monthlyHoa = Math.max(0, parseFloat(inputMonthlyHoa.value) || 0);
+
+    const totalMonthlyPayment = monthlyPi + monthlyFee + monthlyTaxes + monthlyIns + monthlyHoa;
+
+    // 5. DTI Qualification (29% Front / 41% Back Benchmark)
+    const grossIncome = Math.max(1, parseFloat(inputGrossIncome.value) || 7500);
+    const otherDebt = Math.max(0, parseFloat(inputMonthlyDebt.value) || 0);
+
+    const frontDti = (totalMonthlyPayment / grossIncome) * 100;
+    const backDti = ((totalMonthlyPayment + otherDebt) / grossIncome) * 100;
+
+    // Update DTI Status Badge
+    if (frontDti <= 29.0 && backDti <= 41.0) {
+      dtiStatusBox.className = 'dti-status-card';
+      dtiStatusBox.querySelector('span').textContent = '✅';
+      dtiBadgeTitle.textContent = 'Strong USDA Underwriting Qualification';
+      dtiBadgeText.innerHTML = `Front-End DTI is <strong>${frontDti.toFixed(1)}%</strong> (≤ 29% benchmark) and Back-End DTI is <strong>${backDti.toFixed(1)}%</strong> (≤ 41% benchmark). You comfortably satisfy standard automated GUS underwriting criteria.`;
+      kpiDtiStatus.textContent = 'Passes 29/41 Benchmark';
+      kpiDtiStatus.style.color = '#047857';
+    } else if (frontDti <= 32.0 && backDti <= 44.0) {
+      dtiStatusBox.className = 'dti-status-card warning';
+      dtiStatusBox.querySelector('span').textContent = '⚠️';
+      dtiBadgeTitle.textContent = 'Moderate DTI: May Require Automated GUS Approval (680+ FICO)';
+      dtiBadgeText.innerHTML = `Front-End DTI is <strong>${frontDti.toFixed(1)}%</strong> and Back-End DTI is <strong>${backDti.toFixed(1)}%</strong>. Slightly above standard 29/41 limits, but readily approvable through USDA automated GUS system with credit scores ≥ 680 and cash reserves.`;
+      kpiDtiStatus.textContent = 'Requires GUS / 680+ FICO';
+      kpiDtiStatus.style.color = '#B45309';
+    } else {
+      dtiStatusBox.className = 'dti-status-card danger';
+      dtiStatusBox.querySelector('span').textContent = '❌';
+      dtiBadgeTitle.textContent = 'High DTI: Exceeds USDA Standards';
+      dtiBadgeText.innerHTML = `Front-End DTI is <strong>${frontDti.toFixed(1)}%</strong> and Back-End DTI is <strong>${backDti.toFixed(1)}%</strong>. Exceeds standard USDA limits. Consider reducing consumer debts, adding a co-borrower, or making a small down payment.`;
+      kpiDtiStatus.textContent = 'Exceeds Standard Guidelines';
+      kpiDtiStatus.style.color = '#B91C1C';
+    }
+
+    // -------------------------------------------------------------
+    // UPDATE DOM OUTPUTS
+    // -------------------------------------------------------------
+    heroMonthlyPmt.textContent = formatMoney(totalMonthlyPayment);
+    heroBannerSub.innerHTML = `Includes <strong>${formatMoney(monthlyPi)}</strong> Principal &amp; Interest, <strong>${formatMoney(monthlyFee)}</strong> Monthly USDA Annual Fee (0.35%), <strong>${formatMoney(monthlyTaxes)}</strong> Property Taxes, and <strong>${formatMoney(monthlyIns)}</strong> Hazard Insurance.`;
+
+    kpiMonthlyFee.textContent = `${formatMoney(monthlyFee)}/mo`;
+    kpiUpfrontFee.textContent = formatMoney(upfrontFee);
+    kpiUpfrontFinanced.textContent = isUpfrontFinanced ? 'Financed into Mortgage' : 'Paid in Cash at Close';
+    kpiTotalLoan.textContent = formatMoney(totalFinancedLoan);
+    kpiBaseLoan.textContent = `Base Loan: ${formatMoney(baseLoan)}`;
+    kpiDtiValue.textContent = `${frontDti.toFixed(1)}% / ${backDti.toFixed(1)}%`;
+
+    // Waterfall Table
+    wfPi.textContent = formatMoney(monthlyPi);
+    wfFee.textContent = formatMoney(monthlyFee);
+    wfTaxes.textContent = formatMoney(monthlyTaxes);
+    wfIns.textContent = formatMoney(monthlyIns);
+    wfTotalPmt.textContent = formatMoney(totalMonthlyPayment);
+
+    if (monthlyHoa > 0) {
+      rowHoa.style.display = 'flex';
+      wfHoa.textContent = formatMoney(monthlyHoa);
+    } else {
+      rowHoa.style.display = 'none';
+    }
+
+    // -------------------------------------------------------------
+    // 3-WAY COMPARISON DATA (USDA vs FHA vs Conventional)
+    // -------------------------------------------------------------
+    // 1. USDA
+    compUsdaDown.textContent = downAmount > 0 ? formatMoney(downAmount) : '$0 Cash Down';
+    compUsdaUpfront.textContent = `1.00% (${formatMoney(upfrontFee)})`;
+    compUsdaMonthlyFee.textContent = `0.35% (${formatMoney(monthlyFee)}/mo)`;
+    compUsdaTotalPmt.textContent = `${formatMoney(totalMonthlyPayment)} / mo`;
+
+    // 2. FHA (3.5% down, 1.75% UFMIP, 0.55% annual MIP)
+    const fhaDown = Math.round(price * 0.035);
+    const fhaBaseLoan = price - fhaDown;
+    const fhaUfmip = Math.round(fhaBaseLoan * 0.0175);
+    const fhaTotalLoan = fhaBaseLoan + fhaUfmip;
+    const fhaPi = Math.round(fhaTotalLoan * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1));
+    const fhaMonthlyMip = Math.round((fhaBaseLoan * 0.0055) / 12);
+    const fhaTotalPmt = fhaPi + fhaMonthlyMip + monthlyTaxes + monthlyIns + monthlyHoa;
+
+    compFhaDown.textContent = `${formatMoney(fhaDown)} (3.5%)`;
+    compFhaUpfront.textContent = `1.75% (${formatMoney(fhaUfmip)})`;
+    compFhaMonthlyFee.textContent = `0.55% (${formatMoney(fhaMonthlyMip)}/mo)`;
+    compFhaTotalPmt.textContent = `${formatMoney(fhaTotalPmt)} / mo`;
+
+    // 3. Conventional (3.0% down, $0 upfront fee, ~0.58% PMI)
+    const convDown = Math.round(price * 0.030);
+    const convBaseLoan = price - convDown;
+    const convPi = Math.round(convBaseLoan * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1));
+    const convMonthlyPmi = Math.round((convBaseLoan * 0.0058) / 12);
+    const convTotalPmt = convPi + convMonthlyPmi + monthlyTaxes + monthlyIns + monthlyHoa;
+
+    compConvDown.textContent = `${formatMoney(convDown)} (3.0%)`;
+    compConvMonthlyFee.textContent = `~0.58% (${formatMoney(convMonthlyPmi)}/mo)`;
+    compConvTotalPmt.textContent = `${formatMoney(convTotalPmt)} / mo`;
+
+    // Visual Chart Update
+    renderChart([
+      { label: 'Principal & Interest', value: monthlyPi, color: '#0F172A' },
+      { label: 'USDA Monthly Fee (0.35%)', value: monthlyFee, color: '#059669' },
+      { label: 'Property Taxes', value: monthlyTaxes, color: '#2563EB' },
+      { label: 'Hazard Insurance', value: monthlyIns, color: '#D97706' },
+      ...(monthlyHoa > 0 ? [{ label: 'HOA Dues', value: monthlyHoa, color: '#7C3AED' }] : [])
+    ]);
+  }
+
+  // CHART.JS DOUGHNUT RENDERER
+  function renderChart(dataPoints) {
+    const ctx = document.getElementById('usdaPieChart');
+    if (!ctx) return;
+
+    const labels = dataPoints.map(d => d.label);
+    const data = dataPoints.map(d => Math.max(0, d.value));
+    const bgColors = dataPoints.map(d => d.color);
+
+    if (usdaChart) {
+      usdaChart.destroy();
+    }
+
+    usdaChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: data,
+          backgroundColor: bgColors,
+          borderWidth: 2,
+          borderColor: '#FFFFFF',
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, family: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto' },
+              color: '#475569',
+              padding: 10
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const val = context.raw || 0;
+                return ` ${label}: ${formatMoney(val)}`;
+              }
+            }
+          }
+        },
+        cutout: '68%'
+      }
+    });
+  }
+
+  // DOWNLOAD CSV / EXCEL HANDLER
+  document.getElementById('btnDownloadCsv').addEventListener('click', () => {
+    let csv = `RealRefin.com - USDA Rural Development Home Loan Statement\n`;
+    csv += `Date Generated: ${new Date().toLocaleDateString()}\n`;
+    csv += `Purchase Price: ${inputPrice.value}, Down Payment: ${inputDownPct.value}%\n\n`;
+
+    csv += `Section,Item,Amount\n`;
+    csv += `Loan Structure,Home Purchase Price,"${inputPrice.value}"\n`;
+    csv += `Loan Structure,Down Payment Amount,"${inputDownAmount.value}"\n`;
+    csv += `Loan Structure,Base USDA Loan Amount,"${kpiBaseLoan.textContent}"\n`;
+    csv += `Loan Structure,Upfront Guarantee Fee (1.00%),"${kpiUpfrontFee.textContent}"\n`;
+    csv += `Loan Structure,Total Financed Mortgage,"${kpiTotalLoan.textContent}"\n`;
+    csv += `Monthly Outlay,Principal & Interest (P&I),"${wfPi.textContent}"\n`;
+    csv += `Monthly Outlay,USDA Monthly Guarantee Fee (0.35%),"${wfFee.textContent}"\n`;
+    csv += `Monthly Outlay,Monthly Property Taxes,"${wfTaxes.textContent}"\n`;
+    csv += `Monthly Outlay,Monthly Hazard Insurance,"${wfIns.textContent}"\n`;
+    if (parseFloat(inputMonthlyHoa.value) > 0) csv += `Monthly Outlay,Monthly HOA Dues,"${wfHoa.textContent}"\n`;
+    csv += `Monthly Outlay,Total Monthly PITI Payment,"${heroMonthlyPmt.textContent}"\n`;
+    csv += `Underwriting,Front-End & Back-End DTI,"${kpiDtiValue.textContent}"\n`;
+    csv += `Underwriting,Underwriting Assessment,"${kpiDtiStatus.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-USDA-Mortgage-Statement-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // PRINT PDF HANDLER
+  document.getElementById('btnPrintReport').addEventListener('click', () => {
+    window.print();
+  });
+
+  // SHARE DEAL LINK HANDLER
+  document.getElementById('btnShareDeal').addEventListener('click', () => {
+    const params = new URLSearchParams({
+      price: inputPrice.value,
+      down: inputDownPct.value,
+      rate: inputRate.value,
+      term: selectTerm.value,
+      income: inputGrossIncome.value,
+      debt: inputMonthlyDebt.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const btn = document.getElementById('btnShareDeal');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => btn.innerHTML = orig, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // LOAD URL QUERY PARAMS
+  function loadQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('price')) {
+      inputPrice.value = params.get('price');
+      sliderPrice.value = Math.min(750000, parseFloat(params.get('price')));
+    }
+    if (params.has('down')) inputDownPct.value = params.get('down');
+    if (params.has('rate')) inputRate.value = params.get('rate');
+    if (params.has('term')) selectTerm.value = params.get('term');
+    if (params.has('income')) inputGrossIncome.value = params.get('income');
+    if (params.has('debt')) inputMonthlyDebt.value = params.get('debt');
+    if (params.has('curr')) {
+      const c = params.get('curr').toUpperCase();
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  // INITIALIZE
+  loadQueryParams();
+  updateDownAmountFromPct();
+  calculateUsdaLoan();
+});
+</script>
+
+</body>
+</html>

@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/usda-home-loan-mortgage-calculator</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/reverse-mortgage-purchase-calculator</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -355,6 +361,18 @@ const FILE_MAP = {
   '/reverse-mortgage-calculator-sc.html': 'reverse-mortgage-purchase-calculator.html',
   '/hecm-for-purchase-calculator': 'reverse-mortgage-purchase-calculator.html',
   '/hecm-for-purchase-calculator.html': 'reverse-mortgage-purchase-calculator.html',
+  '/usda-home-loan-mortgage-calculator': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-home-loan-mortgage-calculator.html': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-loan-calculator': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-loan-calculator.html': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-mortgage-calculator': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-mortgage-calculator.html': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-home-loan-calculator': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-home-loan-calculator.html': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-guarantee-fee-calculator': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-guarantee-fee-calculator.html': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-rural-development-loan-calculator': 'usda-home-loan-mortgage-calculator.html',
+  '/usda-rural-development-loan-calculator.html': 'usda-home-loan-mortgage-calculator.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
