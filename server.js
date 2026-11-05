@@ -8,9 +8,15 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://realrefin.com/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/reverse-mortgage-purchase-calculator</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://realrefin.com/cost-per-square-foot-to-build-a-house-in-alabama</loc>
@@ -337,6 +343,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/reverse-mortgage-purchase-calculator': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-purchase-calculator.html': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-purchase-down-payment-calculator': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-purchase-down-payment-calculator.html': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-calculator-for-purchase': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-calculator-for-purchase.html': 'reverse-mortgage-purchase-calculator.html',
+  '/south-carolina-reverse-mortgage-calculator': 'reverse-mortgage-purchase-calculator.html',
+  '/south-carolina-reverse-mortgage-calculator.html': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-calculator-sc': 'reverse-mortgage-purchase-calculator.html',
+  '/reverse-mortgage-calculator-sc.html': 'reverse-mortgage-purchase-calculator.html',
+  '/hecm-for-purchase-calculator': 'reverse-mortgage-purchase-calculator.html',
+  '/hecm-for-purchase-calculator.html': 'reverse-mortgage-purchase-calculator.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',

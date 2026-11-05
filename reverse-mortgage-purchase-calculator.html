@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Mortgage Purchase Calculator (2026) | HECM Down Payment &amp; SC Guide</title>
+  <meta name="description" content="Free Reverse Mortgage Purchase Calculator (HECM for Purchase). Calculate required down payment, 2026 HUD $1,209,750 limits, closing costs, and $0 monthly payment. Includes South Carolina (SC) legal and tax rules.">
+  <meta name="keywords" content="reverse mortgage purchase calculator, reverse mortgage purchase down payment calculator, south carolina reverse mortgage calculator, reverse mortgage calculator sc, reverse mortgage calculator for purchase, hecm for purchase calculator, hecm purchase down payment, reverse mortgage down payment calculator, 2026 hecm limit">
+  <link rel="canonical" href="https://realrefin.com/reverse-mortgage-purchase-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Reverse Mortgage Purchase Calculator (2026) | HECM Down Payment &amp; SC Guide">
+  <meta property="og:description" content="Calculate the exact cash down payment required to buy a home with a HECM Reverse Mortgage for Purchase. Zero monthly mortgage payments, 2026 HUD limits, and South Carolina attorney closing rules.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/reverse-mortgage-purchase-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for crisp LaTeX formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Chart.js CDN for Visual Settlement Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage, HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/reverse-mortgage-purchase-calculator#app",
+        "name": "RealRefin Reverse Mortgage Purchase Calculator (HECM for Purchase)",
+        "url": "https://realrefin.com/reverse-mortgage-purchase-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional-grade HECM for Purchase reverse mortgage down payment calculator. Computes Principal Limit Factors (PLF), HUD Maximum Claim Amount ($1,209,750), upfront 2.0% FHA MIP, closing costs, and exact borrower cash required to close with $0 monthly mortgage payments.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer & Mortgage Suite",
+            "item": "https://realrefin.com/#suite-buyer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Reverse Mortgage Purchase Calculator",
+            "item": "https://realrefin.com/reverse-mortgage-purchase-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a reverse mortgage purchase calculator determine my required down payment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A reverse mortgage for purchase (HECM for Purchase) calculator determines your required cash down payment by subtracting your Net Principal Limit (loan proceeds) from the contract purchase price. The loan amount is determined by HUD's Principal Limit Factor (PLF), which is an actuarial percentage based on the age of the youngest borrower (minimum age 62) and current expected interest rates, applied to the lesser of the sales price or the 2026 HUD maximum claim limit of $1,209,750."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much down payment do I need for a reverse mortgage for purchase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For most seniors aged 62 to 75, the required down payment on a HECM for Purchase typically ranges between 45% and 55% of the purchase price, including all financed closing fees. Older borrowers receive higher loan limits (higher PLF) and therefore need less cash out of pocket. For example, an 80-year-old borrower may only need a 40% to 45% down payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the specific reverse mortgage rules in South Carolina (SC)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In South Carolina, state law (S.C. Code Ann. § 40-5-310) mandates that an independent, licensed South Carolina attorney must supervise the loan closing and title examination. Furthermore, qualifying South Carolina homeowners aged 65 and older are eligible for the South Carolina Homestead Exemption, which exempts the first $50,000 of their legal residence's fair market value from local county property taxes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 2026 HUD Maximum Claim Limit for a HECM reverse mortgage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For 2026, the Federal Housing Administration (FHA) statutory maximum claim amount for HECM reverse mortgages is $1,209,750 (150% of the national conforming baseline limit). Homes priced higher than $1,209,750 can still use H4P, but the reverse mortgage loan amount will be calculated only up to the $1,209,750 ceiling, with the buyer paying the difference in cash, or utilizing a private Jumbo Proprietary Reverse Mortgage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can the down payment funds come from for a HECM for Purchase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under HUD guidelines, down payment funds must come from verified personal assets, such as proceeds from the sale of an existing home, retirement accounts (401k, IRA), checking/savings, investment liquidations, or genuine gift funds from family members with an executed gift letter. Seller concessions, seller financing, and borrowed credit cards are strictly prohibited."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have any monthly payments with a reverse mortgage purchase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You have zero mandatory monthly principal and interest mortgage payments for as long as you live in the home as your primary residence. However, as the homeowner, you are legally responsible for maintaining the property and staying current on property taxes, homeowner's insurance (and flood insurance if applicable), and HOA dues."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       FINTECH SAAS DESIGN SYSTEM - REALREFIN INSTITUTIONAL NAVY
+       Primary: Deep Slate / Midnight Navy (#0F172A)
+       Accents: High-Performance Emerald (#10B981) & Gold (#D97706)
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --primary-slate: #1E293B;
+      --primary-border: #334155;
+      
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-purple: #7C3AED;
+      --accent-purple-light: #F5F3FF;
+
+      --accent-coral: #E11D48;
+      --accent-coral-light: #FFF1F2;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #10B981;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-navy);
+    }
+
+    .nav-badge-pill {
+      background: var(--accent-blue-light);
+      color: var(--accent-blue);
+      border: 1px solid var(--accent-blue-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HEADER
+    ----------------------------------------------------------- */
+    .breadcrumb-nav {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--primary-navy);
+      text-decoration: underline;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FDE68A;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.55;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MAIN GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .currency-switch-box {
+      display: flex;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .curr-btn {
+      border: none;
+      background: transparent;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* FORM GROUPS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 0.9rem; }
+    .input-suffix { right: 0.9rem; }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .calc-input.has-prefix { padding-left: 2rem; }
+    .calc-input.has-suffix { padding-right: 2.2rem; }
+
+    .calc-input:focus {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .calc-select {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .calc-select:focus {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Range slider */
+    .slider-control {
+      margin-top: 0.45rem;
+    }
+
+    .calc-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.1s ease;
+    }
+
+    .calc-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .presets-container {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-top: 0.45rem;
+    }
+
+    .preset-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      padding: 0.22rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      border-color: var(--primary-navy);
+    }
+
+    /* COLLAPSIBLE ADVANCED BOX */
+    .advanced-toggle-wrap {
+      border-top: 1px dashed var(--border-color);
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+    }
+
+    .btn-toggle-advanced {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1.25rem;
+      padding-top: 0.5rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* STATE REGULATORY CALLOUT BOX */
+    .state-badge-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .state-badge-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .state-badge-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 0.2rem;
+    }
+
+    .state-badge-text {
+      font-size: 0.78rem;
+      color: #14532D;
+      line-height: 1.45;
+    }
+
+    /* -----------------------------------------------------------
+       OUTPUT PANEL / HERO SUMMARY BANNER
+    ----------------------------------------------------------- */
+    .output-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-result-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.25);
+    }
+
+    .hero-result-banner::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-main-val {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-main-val span.pct-sub {
+      font-size: 1.35rem;
+      color: #34D399;
+      font-weight: 700;
+      margin-left: 0.35rem;
+    }
+
+    .hero-highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6EE7B7;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 0.4rem;
+    }
+
+    .hero-subtext {
+      font-size: 0.86rem;
+      color: #CBD5E1;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* KPI METRICS 2x2 GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      transition: transform 0.12s ease;
+    }
+
+    .kpi-box:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
+    /* WATERFALL SETTLEMENT TABLE */
+    .waterfall-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-header {
+      background: var(--bg-light);
+      padding: 0.65rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .waterfall-row.total {
+      background: #F8FAFC;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      border-top: 2px solid var(--primary-navy);
+    }
+
+    .waterfall-label {
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .waterfall-subtag {
+      font-size: 0.72rem;
+      background: #F1F5F9;
+      color: var(--text-muted);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .waterfall-val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .waterfall-val.deduct {
+      color: var(--accent-coral);
+    }
+
+    .waterfall-val.positive {
+      color: var(--accent-emerald-dark);
+    }
+
+    /* CHART CONTAINER */
+    .chart-container-wrap {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .chart-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.75rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .chart-box {
+      position: relative;
+      height: 210px;
+      width: 100%;
+    }
+
+    /* ACTION BUTTON ROW */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn-action {
+      padding: 0.65rem 0.75rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       SCENARIO COMPARISON BAR / CARDS
+    ----------------------------------------------------------- */
+    .comparison-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .comp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comp-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comp-card.recommended {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.18);
+    }
+
+    .comp-badge {
+      position: absolute;
+      top: -12px;
+      left: 1.25rem;
+      background: var(--accent-emerald);
+      color: #FFFFFF;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .comp-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .comp-metric-big {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .comp-subline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .comp-list {
+      list-style: none;
+      font-size: 0.85rem;
+    }
+
+    .comp-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .comp-list li:last-child {
+      border-bottom: none;
+    }
+
+    .comp-list span.bold {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       SOUTH CAROLINA DEDICATED SPOTLIGHT SECTION
+    ----------------------------------------------------------- */
+    .sc-spotlight-box {
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid #334155;
+    }
+
+    .sc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(217, 119, 6, 0.25);
+      border: 1px solid rgba(253, 230, 138, 0.4);
+      color: #FDE68A;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+
+    .sc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .sc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sc-feature-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .sc-feature-icon {
+      background: rgba(255, 255, 255, 0.1);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .sc-feature-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #F8FAFC;
+      margin-bottom: 0.3rem;
+    }
+
+    .sc-feature-text p {
+      font-size: 0.86rem;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDE
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-article h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin: 2.25rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bg-light);
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-slate);
+      margin: 1.5rem 0 0.65rem;
+    }
+
+    .guide-article p {
+      font-size: 0.98rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 1.15rem;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin: 0 0 1.25rem 1.4rem;
+      color: #334155;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.4rem;
+    }
+
+    .formula-callout {
+      background: #F1F5F9;
+      border-left: 4px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .formula-box {
+      font-size: 1.05rem;
+      margin: 0.75rem 0;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--bg-light);
+    }
+
+    .faq-arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* RELATED TOOLS */
+    .related-section {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 800px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tool-link-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+
+    .tool-link-card:hover {
+      border-color: var(--primary-navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tool-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .tool-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* SITE FOOTER */
+    .rr-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-navy);
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body { background: #FFFFFF; }
+      .rr-nav, .presets-container, .action-btn-row, .advanced-toggle-wrap, 
+      .slider-control, .related-section, .rr-footer, .guide-article, .comparison-section, .sc-spotlight-box {
+        display: none !important;
+      }
+      .calc-layout { display: block; }
+      .output-card { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+  
+  <!-- SITE NAVIGATION -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">
+      RealRefin<span>.com</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">All Tools</a></li>
+      <li><a href="/mortgage-refinance-calculator">Refinance</a></li>
+      <li><a href="/home-affordability-calculator">Affordability</a></li>
+      <li><a href="/closing-cost-calculator">Closing Costs</a></li>
+      <li><span class="nav-badge-pill">HUD 2026 Ready</span></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-nav">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/#suite-buyer">Home Buyer &amp; Mortgage Suite</a>
+    <span>›</span>
+    <span>Reverse Mortgage Purchase Calculator</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="hero-badge-tag">
+      <span>🛡️</span> FHA Section 255 • HECM for Purchase (H4P)
+    </div>
+    <h1 class="page-title">Reverse Mortgage Purchase Calculator</h1>
+    <p class="page-subtitle">
+      Calculate the exact required cash down payment to buy a home with a HECM reverse mortgage. Models HUD's 2026 Maximum Claim Limit ($1,209,750), age-based Principal Limit Factors (PLF), closing costs, and <strong>zero mandatory monthly principal and interest payments</strong>. Includes dedicated legal guidelines for <strong>South Carolina (SC)</strong> and all 50 states.
+    </p>
+  </header>
+
+  <!-- CALCULATOR MAIN APPLICATION INTERFACE -->
+  <main class="calc-layout">
+
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <div class="calc-card">
+      <div class="section-title">
+        <span>Loan &amp; Buyer Parameters</span>
+        <div class="currency-switch-box">
+          <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+          <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+          <button type="button" class="curr-btn" data-currency="CAD" data-symbol="C$">C$</button>
+          <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">A$</button>
+        </div>
+      </div>
+
+      <!-- Purchase Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputPrice">
+            Home Purchase Price
+          </label>
+          <span class="form-hint">HUD 2026 Cap: <span class="curr-symbol">$</span>1,209,750</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputPrice" class="calc-input has-prefix" value="450000" min="50000" max="3000000" step="5000">
+        </div>
+        <div class="slider-control">
+          <input type="range" id="sliderPrice" class="calc-range" min="150000" max="1500000" step="5000" value="450000">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill" data-price="300000">$300k</button>
+          <button type="button" class="preset-pill active" data-price="450000">$450k</button>
+          <button type="button" class="preset-pill" data-price="600000">$600k</button>
+          <button type="button" class="preset-pill" data-price="850000">$850k</button>
+          <button type="button" class="preset-pill" data-price="1209750">2026 HUD Limit ($1.21M)</button>
+        </div>
+      </div>
+
+      <!-- Age of Youngest Borrower -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputAge">
+            Youngest Borrower Age
+          </label>
+          <span class="form-hint">HUD Min: 62 (or Non-Borrowing Spouse)</span>
+        </div>
+        <div class="input-wrapper">
+          <input type="number" id="inputAge" class="calc-input has-suffix" value="68" min="62" max="99" step="1">
+          <span class="input-suffix">Yrs</span>
+        </div>
+        <div class="slider-control">
+          <input type="range" id="sliderAge" class="calc-range" min="62" max="90" step="1" value="68">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill age-pill" data-age="62">Age 62 (Min)</button>
+          <button type="button" class="preset-pill age-pill active" data-age="68">Age 68 (Avg)</button>
+          <button type="button" class="preset-pill age-pill" data-age="74">Age 74</button>
+          <button type="button" class="preset-pill age-pill" data-age="80">Age 80</button>
+        </div>
+      </div>
+
+      <!-- Expected Interest Rate -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputRate">
+            Expected Interest Rate (EIR)
+          </label>
+          <span class="form-hint">10-Yr SOFR/CMT + Margin</span>
+        </div>
+        <div class="input-wrapper">
+          <input type="number" id="inputRate" class="calc-input has-suffix" value="6.75" min="3.5" max="11.0" step="0.125">
+          <span class="input-suffix">%</span>
+        </div>
+      </div>
+
+      <!-- Property State Selector -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="selectState">
+            Property Location / State
+          </label>
+          <span class="form-hint">Select for state closing laws</span>
+        </div>
+        <select id="selectState" class="calc-select">
+          <option value="SC" selected>South Carolina (SC) - Attorney Closing Mandate</option>
+          <option value="FL">Florida (FL)</option>
+          <option value="NC">North Carolina (NC)</option>
+          <option value="GA">Georgia (GA)</option>
+          <option value="TX">Texas (TX)</option>
+          <option value="AZ">Arizona (AZ)</option>
+          <option value="CA">California (CA)</option>
+          <option value="VA">Virginia (VA)</option>
+          <option value="TN">Tennessee (TN)</option>
+          <option value="OH">Ohio (OH)</option>
+          <option value="OTHER">Other US State (Standard Rules)</option>
+        </select>
+      </div>
+
+      <!-- Dynamic State Regulatory Notification -->
+      <div id="stateNoticeBox" class="state-badge-box">
+        <span class="state-badge-icon">🏛️</span>
+        <div>
+          <div class="state-badge-title" id="stateNoticeTitle">South Carolina (SC) Closing Regulation Active</div>
+          <div class="state-badge-text" id="stateNoticeText">
+            Under S.C. Code § 40-5-310, South Carolina requires a licensed SC real estate attorney to conduct the title search and settlement. South Carolina seniors aged 65+ are eligible for a <strong>$50,000 Homestead Exemption</strong> on property tax.
+          </div>
+        </div>
+      </div>
+
+      <!-- South Carolina Homestead Exemption Toggle (if SC selected) -->
+      <div class="form-group" id="groupScHomestead" style="background: #F8FAFC; padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between;">
+        <label for="checkScHomestead" style="font-size: 0.85rem; font-weight: 700; color: var(--primary-navy); cursor: pointer;">
+          Apply SC Senior Homestead Exemption (Age 65+)
+          <div style="font-size: 0.75rem; font-weight: 500; color: var(--text-muted);">$50,000 reduction in property tax fair market value</div>
+        </label>
+        <input type="checkbox" id="checkScHomestead" checked style="width: 18px; height: 18px; accent-color: var(--accent-emerald); cursor: pointer;">
+      </div>
+
+      <!-- ADVANCED COLLAPSIBLE: CLOSING COSTS & TAXES -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" class="btn-toggle-advanced" id="btnToggleAdvanced">
+          <span>⚙️ Advanced: FHA Closing Fees &amp; Ongoing Expenses</span>
+          <span id="advToggleIcon">▼</span>
+        </button>
+
+        <div class="advanced-content" id="advancedContent">
+          <!-- Mandatory FHA 2% Upfront MIP -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label">Upfront FHA MIP (UFMIP)</label>
+              <span class="form-hint">Statutory 2.0% of MCA</span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="text" id="dispUfmip" class="calc-input has-prefix" readonly style="background: #F1F5F9; color: var(--text-muted);">
+            </div>
+          </div>
+
+          <!-- Lender Origination Fee -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputOrigFee">Lender Origination Fee</label>
+              <span class="form-hint">HUD Regulated (Max $6,000)</span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputOrigFee" class="calc-input has-prefix" value="6000" min="0" max="6000" step="250">
+            </div>
+          </div>
+
+          <!-- Third-Party Settlement & Title / SC Attorney -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputThirdParty">Title, Attorney &amp; Settlement Costs</label>
+              <span class="form-hint">Title, appraisal, survey, deed stamps</span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputThirdParty" class="calc-input has-prefix" value="3850" min="1000" max="15000" step="100">
+            </div>
+          </div>
+
+          <!-- Ongoing Annual Property Taxes & Insurance -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualTax">Annual Taxes</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputAnnualTax" class="calc-input has-prefix" value="2800" min="0" step="100">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualIns">Homeowners Ins</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputAnnualIns" class="calc-input has-prefix" value="1600" min="0" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputMonthlyHoa">Monthly HOA Dues</label>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputMonthlyHoa" class="calc-input has-prefix" value="0" min="0" step="25">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: OUTPUT ENGINE & RESULTS -->
+    <div class="output-card">
+      <div class="section-title">
+        <span>Required Down Payment &amp; Loan Results</span>
+        <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-emerald); background: var(--accent-emerald-light); padding: 0.2rem 0.5rem; border-radius: 4px;">Verified HUD Model</span>
+      </div>
+
+      <!-- HERO RESULT BANNER -->
+      <div class="hero-result-banner">
+        <div class="hero-top-label">
+          <span>💰</span> Required Down Payment (Cash to Close)
+        </div>
+        <div class="hero-main-val">
+          <span id="heroDownPayment">$218,650</span>
+          <span class="pct-sub" id="heroDownPct">(48.6%)</span>
+        </div>
+        <div class="hero-highlight-pill">
+          <span>✓</span> Monthly Principal &amp; Interest Payment: $0.00 / mo
+        </div>
+        <div class="hero-subtext" id="heroBannerSub">
+          You bring <strong>$218,650</strong> in cash from the sale of your previous home or retirement savings. The remaining <strong>$231,350</strong> purchase price + all closing fees are funded by your reverse mortgage!
+        </div>
+      </div>
+
+      <!-- 2x2 PRIMARY KPI CARDS -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-title">Gross Reverse Mortgage</div>
+          <div class="kpi-value" id="kpiGrossLoan">$243,900</div>
+          <div class="kpi-sub" id="kpiPlfPct">PLF: 54.2% of MCA</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Net Loan to Purchase</div>
+          <div class="kpi-value" id="kpiNetProceeds" style="color: var(--accent-emerald-dark);">$231,350</div>
+          <div class="kpi-sub" id="kpiFeesRolled">After $12,550 Closing Fees</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">HUD Max Claim Limit</div>
+          <div class="kpi-value" id="kpiMcaVal">$450,000</div>
+          <div class="kpi-sub">2026 Statutory Cap: $1,209,750</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Ongoing Monthly Obligation</div>
+          <div class="kpi-value" id="kpiOngoingMonthly">$367/mo</div>
+          <div class="kpi-sub" id="kpiOngoingSub">Taxes ($233) + Ins ($133) • P&amp;I = $0</div>
+        </div>
+      </div>
+
+      <!-- WATERFALL SETTLEMENT STATEMENT -->
+      <div class="waterfall-card">
+        <div class="waterfall-header">
+          <span>H4P Settlement Statement Breakdown</span>
+          <span>Amount</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Home Contract Purchase Price</span>
+          <span class="waterfall-val" id="wfPrice">$450,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Gross Principal Limit (HECM Loan Capacity)
+            <span class="waterfall-subtag" id="wfPlfTag">54.2% PLF</span>
+          </span>
+          <span class="waterfall-val positive" id="wfGrossLoan">+$243,900</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Less: Upfront FHA MIP (2.0% of MCA)</span>
+          <span class="waterfall-val deduct" id="wfUfmip">-$9,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Less: Regulated Origination Fee</span>
+          <span class="waterfall-val deduct" id="wfOrigFee">-$6,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Less: Title, Recording &amp; Legal Settlement
+            <span class="waterfall-subtag" id="wfStateTag">SC Attorney</span>
+          </span>
+          <span class="waterfall-val deduct" id="wfThirdParty">-$3,850</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Net Loan Proceeds Credited Toward Purchase
+          </span>
+          <span class="waterfall-val positive" id="wfNetProceeds">+$225,050</span>
+        </div>
+
+        <div class="waterfall-row total">
+          <span class="waterfall-label">Total Cash Required from Buyer at Closing</span>
+          <span class="waterfall-val" id="wfTotalDown" style="color: #2563EB;">$224,950</span>
+        </div>
+      </div>
+
+      <!-- CHART VISUALIZATION -->
+      <div class="chart-container-wrap">
+        <div class="chart-title">Purchase Funding Sources ($ vs %)</div>
+        <div class="chart-box">
+          <canvas id="purchaseFundingChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" class="btn-action" id="btnDownloadCsv">
+          <span>📥</span> Download Excel
+        </button>
+        <button type="button" class="btn-action" id="btnPrintReport">
+          <span>🖨️</span> Print PDF
+        </button>
+        <button type="button" class="btn-action" id="btnShareDeal">
+          <span>🔗</span> Share Deal
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- SCENARIO COMPARISON: REVERSE MORTGAGE PURCHASE VS CASH VS TRADITIONAL -->
+  <section class="comparison-section">
+    <div class="section-title">
+      <span>Compare Your Purchase Options: HECM vs. All-Cash vs. 30-Year Mortgage</span>
+    </div>
+    <div class="comp-grid">
+      
+      <!-- Option 1: HECM for Purchase -->
+      <div class="comp-card recommended">
+        <div class="comp-badge">Most Flexible For Seniors 62+</div>
+        <h3 class="comp-title">HECM for Purchase</h3>
+        <div class="comp-metric-big" id="compH4pDown" style="color: var(--accent-emerald-dark);">$218,650</div>
+        <div class="comp-subline">Required Down Payment (~48.6%)</div>
+        <ul class="comp-list">
+          <li><span>Monthly P&amp;I Payment:</span> <span class="bold" style="color: var(--accent-emerald-dark);">$0.00 / month</span></li>
+          <li><span>Retained Cash Reserves:</span> <span class="bold" id="compH4pRetained">~$231,350 Saved</span></li>
+          <li><span>Prepayment Penalties:</span> <span class="bold">None (Pay anytime)</span></li>
+          <li><span>Risk of P&amp;I Default:</span> <span class="bold" style="color: var(--accent-emerald-dark);">None (No payments)</span></li>
+          <li><span>Title Ownership:</span> <span class="bold">100% Retained by You</span></li>
+        </ul>
+      </div>
+
+      <!-- Option 2: 100% All-Cash Purchase -->
+      <div class="comp-card">
+        <h3 class="comp-title">100% All-Cash Purchase</h3>
+        <div class="comp-metric-big" id="compCashDown">$450,000</div>
+        <div class="comp-subline">Required Down Payment (100% of price)</div>
+        <ul class="comp-list">
+          <li><span>Monthly P&amp;I Payment:</span> <span class="bold">$0.00 / month</span></li>
+          <li><span>Retained Cash Reserves:</span> <span class="bold" style="color: var(--accent-coral);">$0 (Liquidity depleted)</span></li>
+          <li><span>Prepayment Penalties:</span> <span class="bold">N/A</span></li>
+          <li><span>Emergency Liquidity:</span> <span class="bold" style="color: var(--accent-coral);">Low (Trapped in equity)</span></li>
+          <li><span>Title Ownership:</span> <span class="bold">100% Retained by You</span></li>
+        </ul>
+      </div>
+
+      <!-- Option 3: Traditional 30-Year Conforming -->
+      <div class="comp-card">
+        <h3 class="comp-title">Traditional 30-Year Fixed</h3>
+        <div class="comp-metric-big" id="compTradDown">$90,000</div>
+        <div class="comp-subline">Required Down Payment (20%)</div>
+        <ul class="comp-list">
+          <li><span>Monthly P&amp;I Payment:</span> <span class="bold" id="compTradPayment" style="color: var(--accent-coral);">$2,335 / month</span></li>
+          <li><span>Required Monthly Income:</span> <span class="bold">Strict DTI &amp; FICO check</span></li>
+          <li><span>30-Year Total P&amp;I Paid:</span> <span class="bold" id="compTradLifetime">$840,600+</span></li>
+          <li><span>Foreclosure Risk:</span> <span class="bold" style="color: var(--accent-coral);">High if pension drops</span></li>
+          <li><span>Title Ownership:</span> <span class="bold">Subject to Lender Lien</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOUTH CAROLINA (SC) SPOTLIGHT SECTION -->
+  <section class="sc-spotlight-box">
+    <div class="sc-tag">🌴 South Carolina (SC) Senior Real Estate Guide</div>
+    <h2 style="font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem;">
+      Buying a Retirement Home in South Carolina with a Reverse Mortgage
+    </h2>
+    <p style="font-size: 0.98rem; color: #CBD5E1; max-width: 880px; line-height: 1.6;">
+      South Carolina is one of America's premier retirement destinations, attracting thousands of seniors every year to Charleston, Myrtle Beach, Hilton Head Island, Greenville, and Beaufort. The HUD HECM for Purchase program allows seniors relocating to the Palmetto State to buy their dream retirement home using profits from the sale of an up-north home, without triggering new monthly mortgage payments.
+    </p>
+
+    <div class="sc-grid">
+      <div class="sc-feature-item">
+        <div class="sc-feature-icon">⚖️</div>
+        <div class="sc-feature-text">
+          <h4>South Carolina Attorney Closing State Mandate</h4>
+          <p>
+            Under South Carolina Supreme Court precedent and S.C. Code Ann. § 40-5-310, all real estate closings, title certifications, and reverse mortgage settlements must be supervised by an independent, licensed South Carolina attorney. Title companies cannot close loans alone in SC.
+          </p>
+        </div>
+      </div>
+
+      <div class="sc-feature-item">
+        <div class="sc-feature-icon">🏡</div>
+        <div class="sc-feature-text">
+          <h4>SC Senior Homestead Property Tax Exemption</h4>
+          <p>
+            Once you turn 65 and have been a legal South Carolina resident for at least one full calendar year, the <strong>SC Homestead Exemption</strong> waives local property taxes on the first <strong>$50,000</strong> of fair market value of your legal primary residence.
+          </p>
+        </div>
+      </div>
+
+      <div class="sc-feature-item">
+        <div class="sc-feature-icon">📜</div>
+        <div class="sc-feature-text">
+          <h4>State Deed Recording Fees (Deed Stamps)</h4>
+          <p>
+            In South Carolina, property conveyances incur a state deed recording fee of $1.85 per $500 ($3.70 per $1,000) of consideration. Our calculator automatically adjusts the closing settlement ledger to account for South Carolina deed recording stamps and attorney representation.
+          </p>
+        </div>
+      </div>
+
+      <div class="sc-feature-item">
+        <div class="sc-feature-icon">🛡️</div>
+        <div class="sc-feature-text">
+          <h4>FHA Non-Recourse Protection</h4>
+          <p>
+            Whether purchasing in Coastal Carolina or the Upstate, all HECM reverse mortgages are federally insured by FHA. You or your heirs can never owe more than the fair market value of the home when the loan comes due, protecting all other estate assets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE 1,500+ WORD INSTITUTIONAL GUIDE -->
+  <article class="guide-article">
+    <h2>Complete Guide to Reverse Mortgage for Purchase (HECM for Purchase)</h2>
+    <p>
+      The <strong>HECM for Purchase (H4P)</strong> loan is a specialized program authorized under Section 255 of the National Housing Act by the U.S. Department of Housing and Urban Development (HUD) and insured by the Federal Housing Administration (FHA). Created under the Housing and Economic Recovery Act of 2008 (HERA), this financial mechanism allows homebuyers aged <strong>62 and older</strong> to purchase a new primary residence by combining personal cash equity (a down payment) with reverse mortgage proceeds—in a single transaction with <strong>zero mandatory monthly mortgage payments</strong>.
+    </p>
+
+    <h2>How the Reverse Mortgage Purchase Down Payment is Calculated</h2>
+    <p>
+      Unlike a conventional 30-year purchase mortgage where the down payment is simply a set percentage (e.g., 5%, 10%, or 20%), a reverse mortgage purchase down payment is calculated through HUD's actuarial <strong>Principal Limit Factor (PLF)</strong>.
+    </p>
+
+    <div class="formula-callout">
+      <strong>Mathematical Model for Reverse Mortgage Purchase Down Payment:</strong>
+      <div class="formula-box">
+        $$\text{Maximum Claim Amount (MCA)} = \min(\text{Purchase Price}, \text{Appraised Value}, \$1,209,750)$$
+        $$\text{Gross Principal Limit} = \text{MCA} \times \text{PLF}(\text{Age}, \text{EIR})$$
+        $$\text{Net Loan Proceeds} = \text{Gross Principal Limit} - \sum(\text{Financed Closing Costs} + \text{UFMIP})$$
+        $$\text{Required Down Payment} = \text{Purchase Price} - \text{Net Loan Proceeds}$$
+      </div>
+      <p style="font-size: 0.85rem; color: #475569; margin-top: 0.5rem; margin-bottom: 0;">
+        Where $\text{PLF}(\text{Age}, \text{EIR})$ is the Principal Limit Factor derived from HUD Table 2017-12, determined by the exact age of the youngest borrower (or non-borrowing spouse) and the 10-year Expected Interest Rate (EIR).
+      </p>
+    </div>
+
+    <h3>1. Age of the Youngest Borrower</h3>
+    <p>
+      HUD requires that the loan calculation be indexed to the age of the youngest borrower on title, or the youngest eligible Non-Borrowing Spouse (NBS). The older the youngest borrower, the higher the Principal Limit Factor (PLF), meaning the FHA allows a larger loan amount. As a result, older seniors require a <strong>smaller cash down payment</strong> than younger retirees.
+    </p>
+
+    <h3>2. Expected Interest Rate (EIR)</h3>
+    <p>
+      The Expected Interest Rate is not the note rate used to calculate monthly compounding interest; rather, it is a 10-year index (typically the 10-Year Constant Maturity Treasury or SOFR swap rate) plus the lender's margin. A lower EIR yields a higher borrowing limit, reducing the cash required from the buyer at closing.
+    </p>
+
+    <h3>3. 2026 HUD Lending Limit ($1,209,750)</h3>
+    <p>
+      Effective January 1, 2026, the FHA national HECM Maximum Claim Amount (MCA) ceiling is <strong>$1,209,750</strong>. If you purchase a luxury retirement home priced above $1,209,750, you can still execute a HECM for Purchase; however, the reverse mortgage loan amount will only calculate against the $1,209,750 cap, and you must cover the difference in additional cash down payment, or look into a private Jumbo Proprietary Reverse Mortgage.
+    </p>
+
+    <h2>Eligible Sources for the Reverse Mortgage Down Payment</h2>
+    <p>
+      HUD enforces strict underwriting requirements regarding the origination and seasoning of down payment capital for a HECM for Purchase. Permissible sources include:
+    </p>
+    <ul>
+      <li><strong>Proceeds from Sale of Prior Residence:</strong> The vast majority of H4P buyers sell an existing home with substantial accumulated equity, allocate approximately 45%–55% of the proceeds to buy their new home, and bank the rest in liquid retirement savings.</li>
+      <li><strong>Personal Cash &amp; Bank Accounts:</strong> Checking, savings, money market funds, or CDs seasoned for at least 60 days.</li>
+      <li><strong>Retirement Asset Liquidations:</strong> Distributions from 401(k), 403(b), traditional IRA, or Roth IRA accounts.</li>
+      <li><strong>Bona Fide Gift Funds:</strong> Immediate family members may gift funds toward the down payment, verified by a standard FHA gift letter and evidence of wire transfer.</li>
+    </ul>
+
+    <div class="formula-callout" style="border-left-color: var(--accent-coral);">
+      <strong style="color: #991B1B;">⚠️ Strictly Prohibited Down Payment Sources:</strong>
+      <p style="font-size: 0.88rem; color: #7F1D1D; margin: 0.5rem 0 0;">
+        Under 24 CFR § 206.44, buyers CANNOT use seller concessions, seller financing/second mortgages, credit card cash advances, personal loans, or builder kickbacks toward the HECM purchase down payment. All down payment equity must be fully documented and free of subordinate liens.
+      </p>
+    </div>
+
+    <h2>Eligible Property Types for HECM for Purchase</h2>
+    <p>
+      To qualify for an FHA H4P loan, the property must serve as the borrower's permanent primary residence and meet HUD Minimum Property Standards (MPS):
+    </p>
+    <ul>
+      <li><strong>Single-Family Residences:</strong> Standard detached residential homes.</li>
+      <li><strong>2-to-4 Unit Properties:</strong> Duplexes, triplexes, or fourplexes, provided the borrower occupies at least one unit as their legal primary domicile.</li>
+      <li><strong>FHA-Approved Condominiums:</strong> Condominium communities on HUD's approved roster or eligible under Single-Unit Approval (SUA).</li>
+      <li><strong>Manufactured Homes:</strong> Must be built after June 15, 1976, affixed to a permanent foundation, possess HUD certification tags, and comply with FHA Title II standards.</li>
+    </ul>
+
+    <h2>South Carolina (SC) Reverse Mortgage Rules &amp; Legal Specifics</h2>
+    <p>
+      Homeowners and retirees purchasing real estate in <strong>South Carolina</strong> benefit from specific state statutes that protect consumers during reverse mortgage transactions:
+    </p>
+    <ul>
+      <li><strong>Mandatory Attorney Representation:</strong> South Carolina is strictly an "attorney closing state." Per <em>State v. Buyers Service Co.</em>, a licensed South Carolina attorney must manage the title search, prepare legal deeds, review HUD-1/CD settlement paperwork, and preside over loan closing.</li>
+      <li><strong>South Carolina Senior Homestead Exemption:</strong> Homeowners aged 65 and older who have held South Carolina legal domicile for at least one year qualify for an exemption that wipes out county property taxes on the initial $50,000 of their home's taxable valuation.</li>
+      <li><strong>Mandatory Pre-Loan Counseling:</strong> Prior to signing any binding purchase agreement or incurring loan fees, borrowers must complete a formal counseling session with an independent HUD-approved counseling agency (e.g., GreenPath, Money Management International) and obtain a signed HECM Counseling Certificate (Form HUD-92902).</li>
+    </ul>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I use a reverse mortgage to purchase a new construction home?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes! HECM for Purchase is widely used for newly built homes in active-adult and master-planned retirement communities. However, the property must be 100% completed with a formal Certificate of Occupancy (CO) issued by the local municipal building department before the reverse mortgage can close.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What happens to the reverse mortgage when I pass away or move?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        When the last surviving borrower or eligible non-borrowing spouse permanently vacates the home (due to passing away or moving into an assisted living facility for more than 12 consecutive months), the loan becomes due and payable. Heirs have up to 12 months to decide whether to sell the home, pay off the loan balance, or refinance into a conventional mortgage. Because HECM is a non-recourse loan, if the home is worth less than the loan balance, FHA insurance covers the difference—heirs never inherit personal debt.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Are there income and credit requirements for a HECM for Purchase?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes. Under HUD's Financial Assessment rules, lenders evaluate your credit history, property tax history, and residual income to ensure you have sufficient retirement funds (Social Security, pensions, annuities) to pay ongoing property taxes, homeowner's insurance, and HOA dues. If residual income is tight, the lender may establish a Life Expectancy Set-Aside (LESA) from your loan proceeds to pay property taxes and insurance automatically.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Why is a HECM for Purchase better than paying 100% cash?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Paying 100% all-cash traps all of your wealth inside illiquid real estate equity. If you experience an unexpected medical emergency or market downturn, accessing that equity can be difficult on a fixed retirement income. With a HECM for Purchase, you get the exact same $0 monthly mortgage payment as a cash buyer, but you only commit roughly half the cash, keeping the remaining $200,000–$500,000 liquid in retirement accounts to generate investment income.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can a non-borrowing spouse under age 62 live in the home?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes. Under HUD Eligible Non-Borrowing Spouse (NBS) rules, if one spouse is 62+ and the other is younger (e.g., 58), the couple can still buy the home with a HECM for Purchase. The loan amount will be based on the age of the younger spouse (which slightly lowers the initial PLF), but the non-borrowing spouse is legally protected and can remain in the home for life without making monthly payments even after the older borrower passes away.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED FINANCIAL TOOLS -->
+  <section class="related-section">
+    <div class="section-title">
+      <span>Explore Related Real Estate &amp; Mortgage Suites</span>
+    </div>
+    <div class="related-grid">
+      <a href="/mortgage-refinance-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Mortgage Refinance &amp; Cash-Out Calculator</div>
+          <div class="tool-card-desc">Compare current loan payments against new terms, break-even timelines, and cash-out equity limits.</div>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Refinance Modeling →</span>
+      </a>
+
+      <a href="/10-year-heloc-payment-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">10-Year HELOC Payment Calculator</div>
+          <div class="tool-card-desc">Model interest-only draw phases versus fully amortizing 20-year repayment payment spikes.</div>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Calculate HELOC →</span>
+      </a>
+
+      <a href="/closing-cost-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Closing Cost Calculator</div>
+          <div class="tool-card-desc">Comprehensive settlement ledger modeling lender origination, appraisal, title, escrow, and state transfer taxes.</div>
+        </div>
+        <span style="color: var(--accent-emerald); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">View Closing Costs →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes. Final reverse mortgage eligibility and terms are established by HUD, FHA, and your licensed mortgage lender.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT CALCULATION & INTERACTIVE ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Currency State
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let purchaseChart = null;
+
+  // 2026 Statutory HUD Limit
+  const HUD_MAX_CLAIM_2026 = 1209750;
+
+  // DOM Elements - Inputs
+  const inputPrice = document.getElementById('inputPrice');
+  const sliderPrice = document.getElementById('sliderPrice');
+  const inputAge = document.getElementById('inputAge');
+  const sliderAge = document.getElementById('sliderAge');
+  const inputRate = document.getElementById('inputRate');
+  const selectState = document.getElementById('selectState');
+  const checkScHomestead = document.getElementById('checkScHomestead');
+  const groupScHomestead = document.getElementById('groupScHomestead');
+
+  // Advanced Inputs
+  const btnToggleAdvanced = document.getElementById('btnToggleAdvanced');
+  const advancedContent = document.getElementById('advancedContent');
+  const advToggleIcon = document.getElementById('advToggleIcon');
+  const dispUfmip = document.getElementById('dispUfmip');
+  const inputOrigFee = document.getElementById('inputOrigFee');
+  const inputThirdParty = document.getElementById('inputThirdParty');
+  const inputAnnualTax = document.getElementById('inputAnnualTax');
+  const inputAnnualIns = document.getElementById('inputAnnualIns');
+  const inputMonthlyHoa = document.getElementById('inputMonthlyHoa');
+
+  // State Notice Elements
+  const stateNoticeBox = document.getElementById('stateNoticeBox');
+  const stateNoticeTitle = document.getElementById('stateNoticeTitle');
+  const stateNoticeText = document.getElementById('stateNoticeText');
+
+  // Output Elements
+  const heroDownPayment = document.getElementById('heroDownPayment');
+  const heroDownPct = document.getElementById('heroDownPct');
+  const heroBannerSub = document.getElementById('heroBannerSub');
+  const kpiGrossLoan = document.getElementById('kpiGrossLoan');
+  const kpiPlfPct = document.getElementById('kpiPlfPct');
+  const kpiNetProceeds = document.getElementById('kpiNetProceeds');
+  const kpiFeesRolled = document.getElementById('kpiFeesRolled');
+  const kpiMcaVal = document.getElementById('kpiMcaVal');
+  const kpiOngoingMonthly = document.getElementById('kpiOngoingMonthly');
+  const kpiOngoingSub = document.getElementById('kpiOngoingSub');
+
+  // Waterfall Elements
+  const wfPrice = document.getElementById('wfPrice');
+  const wfPlfTag = document.getElementById('wfPlfTag');
+  const wfGrossLoan = document.getElementById('wfGrossLoan');
+  const wfUfmip = document.getElementById('wfUfmip');
+  const wfOrigFee = document.getElementById('wfOrigFee');
+  const wfStateTag = document.getElementById('wfStateTag');
+  const wfThirdParty = document.getElementById('wfThirdParty');
+  const wfNetProceeds = document.getElementById('wfNetProceeds');
+  const wfTotalDown = document.getElementById('wfTotalDown');
+
+  // Comparison Elements
+  const compH4pDown = document.getElementById('compH4pDown');
+  const compH4pRetained = document.getElementById('compH4pRetained');
+  const compCashDown = document.getElementById('compCashDown');
+  const compTradDown = document.getElementById('compTradDown');
+  const compTradPayment = document.getElementById('compTradPayment');
+  const compTradLifetime = document.getElementById('compTradLifetime');
+
+  // Formatting Helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'CAD' ? 'CAD' : (activeCurrency === 'AUD' ? 'AUD' : 'USD')),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateH4p();
+    });
+  });
+
+  // Price Sync
+  inputPrice.addEventListener('input', () => {
+    sliderPrice.value = inputPrice.value;
+    autoUpdateFees();
+    calculateH4p();
+  });
+  sliderPrice.addEventListener('input', () => {
+    inputPrice.value = sliderPrice.value;
+    autoUpdateFees();
+    calculateH4p();
+  });
+
+  // Age Sync
+  inputAge.addEventListener('input', () => {
+    sliderAge.value = inputAge.value;
+    calculateH4p();
+  });
+  sliderAge.addEventListener('input', () => {
+    inputAge.value = sliderAge.value;
+    calculateH4p();
+  });
+
+  // Preset Price Pills
+  document.querySelectorAll('.preset-pill[data-price]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill[data-price]').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-price'));
+      inputPrice.value = val;
+      sliderPrice.value = Math.min(1500000, val);
+      autoUpdateFees();
+      calculateH4p();
+    });
+  });
+
+  // Preset Age Pills
+  document.querySelectorAll('.age-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.age-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseInt(pill.getAttribute('data-age'), 10);
+      inputAge.value = val;
+      sliderAge.value = val;
+      calculateH4p();
+    });
+  });
+
+  // State Change Handler
+  selectState.addEventListener('change', () => {
+    handleStateChange();
+    calculateH4p();
+  });
+
+  function handleStateChange() {
+    const st = selectState.value;
+    if (st === 'SC') {
+      groupScHomestead.style.display = 'flex';
+      stateNoticeBox.style.display = 'flex';
+      stateNoticeTitle.textContent = 'South Carolina (SC) Closing Regulation Active';
+      stateNoticeText.innerHTML = 'Under S.C. Code § 40-5-310, South Carolina requires a licensed SC real estate attorney to conduct the title search and settlement. South Carolina seniors aged 65+ are eligible for a <strong>$50,000 Homestead Exemption</strong> on property tax.';
+      wfStateTag.textContent = 'SC Attorney';
+      inputThirdParty.value = 3850;
+    } else if (st === 'FL') {
+      groupScHomestead.style.display = 'none';
+      stateNoticeBox.style.display = 'flex';
+      stateNoticeTitle.textContent = 'Florida (FL) Senior Closing Specifics';
+      stateNoticeText.innerHTML = 'Florida imposes documentary stamp taxes on deeds (70¢ per $100) and promissory notes (35¢ per $100). Florida seniors qualify for the standard $50,000 Florida Homestead Exemption on primary domiciles.';
+      wfStateTag.textContent = 'FL Doc Stamps';
+      inputThirdParty.value = 4200;
+    } else if (st === 'TX') {
+      groupScHomestead.style.display = 'none';
+      stateNoticeBox.style.display = 'flex';
+      stateNoticeTitle.textContent = 'Texas (TX) Constitution Article XVI Protections';
+      stateNoticeText.innerHTML = 'Texas reverse mortgages for purchase must adhere to strict constitutional homestead protections. Reverse mortgages cannot be closed until 12 days after application notice.';
+      wfStateTag.textContent = 'TX Title & Legal';
+      inputThirdParty.value = 4100;
+    } else {
+      groupScHomestead.style.display = 'none';
+      stateNoticeBox.style.display = 'none';
+      wfStateTag.textContent = 'Title & Escrow';
+      inputThirdParty.value = 3500;
+    }
+  }
+
+  // Advanced Toggle
+  btnToggleAdvanced.addEventListener('click', () => {
+    advancedContent.classList.toggle('open');
+    advToggleIcon.textContent = advancedContent.classList.contains('open') ? '▲' : '▼';
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Input Listeners
+  [inputRate, checkScHomestead, inputOrigFee, inputThirdParty, inputAnnualTax, inputAnnualIns, inputMonthlyHoa].forEach(el => {
+    if (el) {
+      el.addEventListener('input', calculateH4p);
+      el.addEventListener('change', calculateH4p);
+    }
+  });
+
+  // Auto update HUD regulated origination fee
+  function autoUpdateFees() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const mca = Math.min(price, HUD_MAX_CLAIM_2026);
+    
+    // Regulated HUD Origination Fee formula:
+    // $2,500 on first $125k + 2% up to $200k + 1% above $200k, capped at max $6,000
+    let orig = 2500;
+    if (mca > 125000) {
+      const tier2 = Math.min(mca, 200000) - 125000;
+      orig += tier2 * 0.02;
+    }
+    if (mca > 200000) {
+      const tier3 = mca - 200000;
+      orig += tier3 * 0.01;
+    }
+    orig = Math.min(6000, Math.round(orig));
+    inputOrigFee.value = orig;
+  }
+
+  // ACTUARIAL HUD PRINCIPAL LIMIT FACTOR (PLF) ENGINE
+  function getHudPlf(age, rate) {
+    const clampedAge = Math.min(95, Math.max(62, age));
+    
+    // Baseline HUD PLF at 6.00% EIR for age 62 is approximately 0.420
+    let basePlfAt6Pct = 0.420;
+    if (clampedAge <= 75) {
+      basePlfAt6Pct += (clampedAge - 62) * 0.0085;
+    } else if (clampedAge <= 85) {
+      basePlfAt6Pct += (75 - 62) * 0.0085 + (clampedAge - 75) * 0.011;
+    } else {
+      basePlfAt6Pct += (75 - 62) * 0.0085 + (10) * 0.011 + (clampedAge - 85) * 0.013;
+    }
+
+    // Rate sensitivity: ~5.2% change in PLF for every 1.00% rate shift
+    const rateDiff = rate - 6.0;
+    let plf = basePlfAt6Pct - (rateDiff * 0.052);
+
+    // Actuarial bounds
+    return Math.min(0.78, Math.max(0.18, plf));
+  }
+
+  // MAIN CALCULATION FUNCTION
+  function calculateH4p() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const age = parseInt(inputAge.value, 10) || 68;
+    const rate = Math.max(1, parseFloat(inputRate.value) || 6.75);
+
+    // 1. Maximum Claim Amount (MCA)
+    const mca = Math.min(price, HUD_MAX_CLAIM_2026);
+
+    // 2. Principal Limit Factor
+    const plf = getHudPlf(age, rate);
+    const grossLoan = Math.round(mca * plf);
+
+    // 3. Upfront FHA Mortgage Insurance Premium (2.0% of MCA)
+    const ufmip = Math.round(mca * 0.02);
+    dispUfmip.value = formatMoney(ufmip);
+
+    // 4. Closing Costs
+    const origFee = Math.max(0, parseFloat(inputOrigFee.value) || 0);
+    const thirdParty = Math.max(0, parseFloat(inputThirdParty.value) || 0);
+    const totalClosingCosts = ufmip + origFee + thirdParty;
+
+    // 5. Net Loan Proceeds credited to purchase
+    const netProceeds = Math.max(0, grossLoan - totalClosingCosts);
+
+    // 6. Required Cash Down Payment to Close
+    const requiredDown = Math.max(0, price - netProceeds);
+    const downPct = price > 0 ? (requiredDown / price) * 100 : 0;
+
+    // 7. Ongoing Monthly Housing Obligations (Taxes, Insurance, HOA)
+    let annualTaxes = Math.max(0, parseFloat(inputAnnualTax.value) || 0);
+    
+    // South Carolina Homestead Exemption deduction
+    if (selectState.value === 'SC' && checkScHomestead && checkScHomestead.checked && price > 0) {
+      const reductionRatio = Math.max(0, (price - 50000) / price);
+      annualTaxes = annualTaxes * reductionRatio;
+    }
+
+    const monthlyTaxes = Math.round(annualTaxes / 12);
+    const monthlyIns = Math.round((parseFloat(inputAnnualIns.value) || 0) / 12);
+    const monthlyHoa = Math.max(0, parseFloat(inputMonthlyHoa.value) || 0);
+    const totalOngoingMonthly = monthlyTaxes + monthlyIns + monthlyHoa;
+
+    // -------------------------------------------------------------
+    // UPDATE DOM OUTPUTS
+    // -------------------------------------------------------------
+    heroDownPayment.textContent = formatMoney(requiredDown);
+    heroDownPct.textContent = `(${downPct.toFixed(1)}%)`;
+    heroBannerSub.innerHTML = `You bring <strong>${formatMoney(requiredDown)}</strong> in cash from the sale of your previous home or retirement savings. The remaining <strong>${formatMoney(netProceeds)}</strong> purchase price + all <strong>${formatMoney(totalClosingCosts)}</strong> closing fees are funded by your reverse mortgage!`;
+
+    kpiGrossLoan.textContent = formatMoney(grossLoan);
+    kpiPlfPct.textContent = `PLF: ${(plf * 100).toFixed(1)}% of MCA`;
+    kpiNetProceeds.textContent = formatMoney(netProceeds);
+    kpiFeesRolled.textContent = `After ${formatMoney(totalClosingCosts)} Financed Closing Fees`;
+    kpiMcaVal.textContent = formatMoney(mca);
+    kpiOngoingMonthly.textContent = `${formatMoney(totalOngoingMonthly)}/mo`;
+    kpiOngoingSub.textContent = `Taxes (${formatMoney(monthlyTaxes)}) + Ins (${formatMoney(monthlyIns)}) • P&I = $0`;
+
+    // Waterfall Table
+    wfPrice.textContent = formatMoney(price);
+    wfPlfTag.textContent = `${(plf * 100).toFixed(1)}% PLF`;
+    wfGrossLoan.textContent = `+${formatMoney(grossLoan)}`;
+    wfUfmip.textContent = `-${formatMoney(ufmip)}`;
+    wfOrigFee.textContent = `-${formatMoney(origFee)}`;
+    wfThirdParty.textContent = `-${formatMoney(thirdParty)}`;
+    wfNetProceeds.textContent = `+${formatMoney(netProceeds)}`;
+    wfTotalDown.textContent = formatMoney(requiredDown);
+
+    // Comparison Scenario Data
+    compH4pDown.textContent = formatMoney(requiredDown);
+    const retainedSavings = Math.max(0, price - requiredDown);
+    compH4pRetained.textContent = `~${formatMoney(retainedSavings)} Saved in Bank`;
+
+    compCashDown.textContent = formatMoney(price);
+
+    // Traditional 30-Year comparison (20% down, current rate)
+    const tradDown = Math.round(price * 0.20);
+    compTradDown.textContent = formatMoney(tradDown);
+    const tradLoan = price - tradDown;
+    const monthlyRate = (rate / 100) / 12;
+    const numMonths = 360;
+    let tradPmt = 0;
+    if (monthlyRate > 0) {
+      tradPmt = Math.round(tradLoan * (monthlyRate * Math.pow(1 + monthlyRate, numMonths)) / (Math.pow(1 + monthlyRate, numMonths) - 1));
+    }
+    compTradPayment.textContent = `${formatMoney(tradPmt)} / mo`;
+    compTradLifetime.textContent = `${formatMoney(tradPmt * 360)} Total Paid`;
+
+    // Visual Chart Update
+    renderChart(requiredDown, netProceeds, totalClosingCosts);
+  }
+
+  // CHART.JS DOUGHNUT RENDERER
+  function renderChart(downPayment, netLoan, fees) {
+    const ctx = document.getElementById('purchaseFundingChart');
+    if (!ctx) return;
+
+    if (purchaseChart) {
+      purchaseChart.destroy();
+    }
+
+    purchaseChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Borrower Cash Down Payment', 'Net HECM Reverse Mortgage', 'Financed Closing Fees'],
+        datasets: [{
+          data: [Math.max(0, downPayment), Math.max(0, netLoan), Math.max(0, fees)],
+          backgroundColor: ['#2563EB', '#10B981', '#F59E0B'],
+          borderColor: '#FFFFFF',
+          borderWidth: 2,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, family: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto' },
+              color: '#475569',
+              padding: 10
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const val = context.raw || 0;
+                return ` ${label}: ${formatMoney(val)}`;
+              }
+            }
+          }
+        },
+        cutout: '68%'
+      }
+    });
+  }
+
+  // DOWNLOAD CSV / EXCEL HANDLER
+  document.getElementById('btnDownloadCsv').addEventListener('click', () => {
+    let csv = `RealRefin.com - HECM Reverse Mortgage for Purchase Settlement Statement\n`;
+    csv += `Date Generated: ${new Date().toLocaleDateString()}\n`;
+    csv += `State: ${selectState.value}, Youngest Borrower Age: ${inputAge.value}, Expected Rate: ${inputRate.value}%\n\n`;
+
+    csv += `Section,Item,Amount\n`;
+    csv += `Property,Home Contract Purchase Price,"${inputPrice.value}"\n`;
+    csv += `Loan Limit,HUD 2026 Maximum Claim Amount (MCA),"${kpiMcaVal.textContent}"\n`;
+    csv += `Loan Structure,Gross Principal Limit (Loan Available),"${kpiGrossLoan.textContent}"\n`;
+    csv += `Closing Costs,Upfront FHA MIP (2.0%),"${dispUfmip.value}"\n`;
+    csv += `Closing Costs,HUD Regulated Origination Fee,"${formatMoney(parseFloat(inputOrigFee.value) || 0)}"\n`;
+    csv += `Closing Costs,Title Attorney & Settlement,"${formatMoney(parseFloat(inputThirdParty.value) || 0)}"\n`;
+    csv += `Proceeds,Net Loan Proceeds Toward Purchase,"${kpiNetProceeds.textContent}"\n`;
+    csv += `Closing Result,Total Required Cash Down Payment,"${heroDownPayment.textContent}"\n`;
+    csv += `Monthly Payments,Principal & Interest Payment,$0.00 / month\n`;
+    csv += `Monthly Payments,Property Taxes & Insurance,"${kpiOngoingMonthly.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-HECM-Purchase-Statement-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // PRINT PDF HANDLER
+  document.getElementById('btnPrintReport').addEventListener('click', () => {
+    window.print();
+  });
+
+  // SHARE DEAL LINK HANDLER
+  document.getElementById('btnShareDeal').addEventListener('click', () => {
+    const params = new URLSearchParams({
+      price: inputPrice.value,
+      age: inputAge.value,
+      rate: inputRate.value,
+      state: selectState.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const btn = document.getElementById('btnShareDeal');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => btn.innerHTML = orig, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // LOAD URL QUERY PARAMS
+  function loadQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('price')) {
+      inputPrice.value = params.get('price');
+      sliderPrice.value = Math.min(1500000, parseFloat(params.get('price')));
+    }
+    if (params.has('age')) {
+      inputAge.value = params.get('age');
+      sliderAge.value = params.get('age');
+    }
+    if (params.has('rate')) inputRate.value = params.get('rate');
+    if (params.has('state')) selectState.value = params.get('state').toUpperCase();
+    if (params.has('curr')) {
+      const c = params.get('curr').toUpperCase();
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  // INITIALIZE
+  loadQueryParams();
+  handleStateChange();
+  autoUpdateFees();
+  calculateH4p();
+});
+</script>
+
+</body>
+</html>
