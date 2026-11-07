@@ -841,30 +841,157 @@
     /* ACTION BUTTON ROW */
     .action-btn-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.75rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.65rem;
       margin-top: 1.25rem;
     }
 
+    @media (max-width: 600px) {
+      .action-btn-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     .btn-action {
-      padding: 0.65rem 0.75rem;
+      padding: 0.65rem 0.5rem;
       background: #FFFFFF;
       border: 1.5px solid var(--border-color);
       border-radius: var(--radius-md);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--primary-navy);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       transition: all 0.15s ease;
+      white-space: nowrap;
     }
 
     .btn-action:hover {
       background: var(--bg-light);
       border-color: var(--primary-navy);
+    }
+
+    /* EMBED MODAL STYLES */
+    .embed-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .embed-modal-content {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      max-width: 620px;
+      width: 100%;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      animation: modalScaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalScaleIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .embed-modal-header {
+      padding: 1.15rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-light);
+    }
+
+    .embed-modal-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn-modal-close {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0 0.35rem;
+    }
+
+    .btn-modal-close:hover { color: var(--primary-navy); }
+
+    .embed-modal-body {
+      padding: 1.5rem;
+    }
+
+    .embed-code-textarea {
+      width: 100%;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.82rem;
+      background: #0F172A;
+      color: #38BDF8;
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #334155;
+      resize: none;
+      line-height: 1.45;
+      outline: none;
+    }
+
+    .btn-copy-embed {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 0.65rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-copy-embed:hover {
+      background: var(--accent-blue);
+    }
+
+    /* IFRAME EMBED MODE STYLING */
+    body.is-embedded {
+      background: #FFFFFF !important;
+    }
+    body.is-embedded .rr-nav,
+    body.is-embedded .breadcrumb-nav,
+    body.is-embedded .page-header,
+    body.is-embedded .guide-article,
+    body.is-embedded .related-section,
+    body.is-embedded .comparison-section,
+    body.is-embedded .rr-footer {
+      display: none !important;
+    }
+    body.is-embedded .rr-container {
+      max-width: 100% !important;
+      padding: 0.75rem !important;
+    }
+    body.is-embedded .calc-layout {
+      margin-bottom: 0 !important;
     }
 
     /* -----------------------------------------------------------
@@ -1448,11 +1575,38 @@
         <button type="button" class="btn-action" id="btnShareDeal">
           <span>🔗</span> Share Deal
         </button>
+        <button type="button" class="btn-action" id="btnEmbedCode">
+          <span>&lt;/&gt;</span> Embed
+        </button>
       </div>
 
     </div>
 
   </main>
+
+  <!-- EMBED CALCULATOR MODAL -->
+  <div class="embed-modal-overlay" id="embedModal" style="display: none;">
+    <div class="embed-modal-content">
+      <div class="embed-modal-header">
+        <div class="embed-modal-title">
+          <span>&lt;/&gt;</span> Embed This Calculator On Your Website
+        </div>
+        <button type="button" class="btn-modal-close" id="btnCloseEmbedModal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="embed-modal-body">
+        <p style="font-size:0.88rem; color:#475569; margin-bottom:0.75rem; line-height:1.5;">
+          Copy and paste this HTML code directly into your blog, financial website, or real estate page to provide your readers with this free interactive auto loan payment calculator.
+        </p>
+        <textarea class="embed-code-textarea" id="embedCodeTextarea" rows="4" readonly></textarea>
+        <div style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+          <span style="font-size:0.78rem; color:#64748B;">Includes live interactive calculator &amp; attribution backlink</span>
+          <button type="button" class="btn-copy-embed" id="btnCopyEmbed">
+            <span>📋</span> Copy Embed Code
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- LOAN TERM COMPARISON MATRIX (36, 48, 60, 72, 84 MONTHS) -->
   <section class="comparison-section">
@@ -2043,6 +2197,50 @@ Total Interest = (${formatMoney(monthlyPmt)} * ${termMonths}) - ${formatMoney(to
       prompt('Copy deal link:', shareUrl);
     });
   });
+
+  // EMBED MODAL LOGIC
+  const embedModal = document.getElementById('embedModal');
+  const btnEmbedCode = document.getElementById('btnEmbedCode');
+  const btnCloseEmbedModal = document.getElementById('btnCloseEmbedModal');
+  const btnCopyEmbed = document.getElementById('btnCopyEmbed');
+  const embedCodeTextarea = document.getElementById('embedCodeTextarea');
+
+  function generateEmbedSnippet() {
+    const pageUrl = window.location.origin + window.location.pathname;
+    const embedUrl = pageUrl + '?embed=true';
+    return `<iframe src="${embedUrl}" width="100%" height="820" frameborder="0" style="border:1px solid #E2E8F0; border-radius:12px; max-width:980px; width:100%; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05);" title="Auto Loan Payment Calculator" loading="lazy"></iframe>\n<div style="font-size:12px; text-align:right; font-family:sans-serif; margin-top:4px;"><a href="${pageUrl}" target="_blank" rel="noopener" style="color:#2563EB; text-decoration:none; font-weight:600;">Powered by RealRefin Calculators</a></div>`;
+  }
+
+  if (btnEmbedCode && embedModal) {
+    btnEmbedCode.addEventListener('click', () => {
+      embedCodeTextarea.value = generateEmbedSnippet();
+      embedModal.style.display = 'flex';
+    });
+
+    btnCloseEmbedModal.addEventListener('click', () => {
+      embedModal.style.display = 'none';
+    });
+
+    embedModal.addEventListener('click', (e) => {
+      if (e.target === embedModal) embedModal.style.display = 'none';
+    });
+
+    btnCopyEmbed.addEventListener('click', () => {
+      embedCodeTextarea.select();
+      navigator.clipboard.writeText(embedCodeTextarea.value).then(() => {
+        const orig = btnCopyEmbed.innerHTML;
+        btnCopyEmbed.innerHTML = '<span>✓</span> Copied to Clipboard!';
+        setTimeout(() => btnCopyEmbed.innerHTML = orig, 2500);
+      }).catch(() => {
+        prompt('Copy embed code:', embedCodeTextarea.value);
+      });
+    });
+  }
+
+  // IFRAME EMBED MODE DETECTION
+  if (window.location.search.includes('embed=true') || window.self !== window.top) {
+    document.body.classList.add('is-embedded');
+  }
 
   // LOAD URL QUERY PARAMS
   function loadQueryParams() {
