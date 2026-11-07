@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Statement Loan Calculator (2026) | Income &amp; Mortgage Payment Engine</title>
+  <meta name="description" content="Free bank statement loan calculator for self-employed borrowers. Calculate qualifying monthly income from 12 or 24 months of bank deposits, expense factors, max purchasing power, and Non-QM mortgage payments.">
+  <meta name="keywords" content="bank statement loan calculator, bank statement mortgage loan calculator, bank statement loan income calculator, bank statement mortgage calculator, self employed mortgage calculator, non qm loan calculator, 12 month bank statement mortgage, 24 month bank statement loan">
+  <link rel="canonical" href="https://realrefin.com/bank-statement-loan-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Bank Statement Loan Calculator (2026) | Income &amp; Mortgage Engine">
+  <meta property="og:description" content="Calculate your qualifying self-employed income and monthly Non-QM mortgage payments with 12 or 24 months of business or personal bank statements. No tax returns required.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/bank-statement-loan-calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Chart.js CDN for Visual Payment Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/bank-statement-loan-calculator#app",
+        "name": "RealRefin Bank Statement Loan & Income Calculator",
+        "url": "https://realrefin.com/bank-statement-loan-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional Non-QM bank statement loan and income calculator. Computes qualifying self-employed income from 12 or 24 months of business or personal bank deposits, accounts for lender expense ratios (50% standard or CPA P&L letter), computes maximum loan purchasing power up to 50% DTI, and models monthly mortgage payments with $0 PMI.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Home Buyer & Mortgage Suite",
+            "item": "https://realrefin.com/#suite-buyer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Bank Statement Loan Calculator",
+            "item": "https://realrefin.com/bank-statement-loan-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a bank statement loan income calculator determine qualifying income?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A bank statement loan income calculator aggregates 12 or 24 consecutive months of eligible bank deposits, subtracts disallowed transactions (such as intra-account transfers, owner capital infusions, and loan proceeds), applies an expense factor (typically 50% standard default, or 10%–35% verified by a CPA-prepared Profit & Loss letter for business accounts, or 0% for personal accounts), multiplies by your business ownership percentage, and divides by 12 or 24 to establish your official qualifying monthly gross income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between 12-month and 24-month bank statement programs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 12-month bank statement program requires only the most recent one year of bank records, which is ideal for rapidly growing businesses whose recent revenue significantly exceeds the prior year. A 24-month program averages deposits across two full years; lenders view this as lower risk and often offer slightly lower interest rates (typically 0.25% to 0.50% lower) and higher loan-to-value (LTV) limits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the standard expense factor on a business bank statement mortgage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most Non-QM lenders apply a default 50% expense ratio to business bank deposits, assuming half of incoming revenue covers business overhead. However, service-based businesses (such as consultants, software developers, real estate agents, attorneys, and medical professionals) can provide a third-party CPA or licensed tax preparer letter with a custom P&L demonstrating actual expense ratios as low as 10% to 30%, which significantly increases qualifying monthly income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do bank statement loans require private mortgage insurance (PMI)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Bank statement loans are Non-QM (Non-Qualified Mortgage) products and never charge monthly private mortgage insurance (PMI), even if your down payment is only 10% (90% LTV). The lender absorbs credit risk through a slightly higher interest rate rather than a separate monthly PMI surcharge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the debt-to-income (DTI) and credit score limits for a bank statement loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most Non-QM lenders allow a maximum back-end DTI of 45% to 50%, which is more generous than conventional Fannie Mae limits (typically capped at 43% to 45%). Minimum credit score guidelines typically start at 620 to 660, with the best interest rates and lowest down payments (10% to 20% down) available to borrowers with credit scores of 700 or higher."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many months of liquid reserves are required for a bank statement mortgage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lenders typically require between 3 and 12 months of post-closing principal, interest, taxes, and insurance (PITI) reserves in a verified checking, savings, money market, or retirement account (401k/IRA discounted at 60%–70%). Higher loan amounts (e.g., above $1.5M) or lower credit scores generally require 6 to 12 months of reserves."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       FINTECH SAAS DESIGN SYSTEM - REALREFIN INSTITUTIONAL NAVY
+       Primary: Deep Slate / Midnight Navy (#0F172A)
+       Accents: Non-QM Indigo (#4F46E5) & High-Performance Emerald (#10B981)
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --primary-slate: #1E293B;
+      --primary-border: #334155;
+      
+      --accent-nonqm: #4F46E5;
+      --accent-nonqm-dark: #4338CA;
+      --accent-nonqm-light: #EEF2FF;
+      --accent-nonqm-border: #C7D2FE;
+
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-blue: #2563EB;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #E11D48;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #4F46E5;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-nonqm);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-navy);
+    }
+
+    .nav-badge-pill {
+      background: var(--accent-nonqm-light);
+      color: var(--accent-nonqm);
+      border: 1px solid var(--accent-nonqm-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HEADER
+    ----------------------------------------------------------- */
+    .breadcrumb-nav {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--primary-navy);
+      text-decoration: underline;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #EEF2FF;
+      color: #4338CA;
+      border: 1px solid #C7D2FE;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 880px;
+      line-height: 1.55;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MAIN GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .currency-switch-box {
+      display: flex;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .curr-btn {
+      border: none;
+      background: transparent;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* SEGMENTED TOGGLE SWITCH (Business vs Personal / 12 vs 24 mo) */
+    .segmented-control {
+      display: flex;
+      background: var(--bg-light);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 3px;
+      margin-bottom: 1.25rem;
+      gap: 3px;
+    }
+
+    .segmented-btn {
+      flex: 1;
+      padding: 0.6rem 0.75rem;
+      border: none;
+      background: transparent;
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .segmented-btn.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* FORM CONTROLS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 0.9rem; }
+    .input-suffix { right: 0.9rem; }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .calc-input.has-prefix { padding-left: 2rem; }
+    .calc-input.has-suffix { padding-right: 2.2rem; }
+
+    .calc-input:focus {
+      border-color: var(--accent-nonqm);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    .calc-select {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .calc-select:focus {
+      border-color: var(--accent-nonqm);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    /* Range slider */
+    .slider-control {
+      margin-top: 0.45rem;
+    }
+
+    .calc-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-nonqm);
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.1s ease;
+    }
+
+    .calc-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .presets-container {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-top: 0.45rem;
+    }
+
+    .preset-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      padding: 0.22rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      border-color: var(--primary-navy);
+    }
+
+    /* ADVANCED TOGGLE */
+    .advanced-toggle-wrap {
+      border-top: 1px dashed var(--border-color);
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+    }
+
+    .btn-toggle-advanced {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1.25rem;
+      padding-top: 0.5rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* INCOME VERIFIED NOTIFICATION CARD */
+    .income-stat-card {
+      background: #F5F3FF;
+      border: 1.5px solid #DDD6FE;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .income-stat-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #5B21B6;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .income-stat-val {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #4C1D95;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .income-stat-sub {
+      font-size: 0.76rem;
+      color: #6D28D9;
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       OUTPUT PANEL / HERO SUMMARY BANNER
+    ----------------------------------------------------------- */
+    .output-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-result-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.25);
+    }
+
+    .hero-result-banner::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-main-val {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-main-val span.sub-mo {
+      font-size: 1.25rem;
+      color: #A5B4FC;
+      font-weight: 700;
+      margin-left: 0.25rem;
+    }
+
+    .hero-highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(99, 102, 241, 0.22);
+      border: 1px solid rgba(165, 180, 252, 0.4);
+      color: #C7D2FE;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 0.4rem;
+    }
+
+    .hero-subtext {
+      font-size: 0.86rem;
+      color: #CBD5E1;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* KPI METRICS 2x2 GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      transition: transform 0.12s ease;
+    }
+
+    .kpi-box:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
+    /* WATERFALL TABLE */
+    .waterfall-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-header {
+      background: var(--bg-light);
+      padding: 0.65rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .waterfall-row.total {
+      background: #F8FAFC;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      border-top: 2px solid var(--primary-navy);
+    }
+
+    .waterfall-label {
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .waterfall-badge {
+      font-size: 0.72rem;
+      background: #EEF2FF;
+      color: #4F46E5;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .waterfall-val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* CHART CONTAINER */
+    .chart-container-wrap {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .chart-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.75rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .chart-box {
+      position: relative;
+      height: 210px;
+      width: 100%;
+    }
+
+    /* ACTION BUTTON ROW */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn-action {
+      padding: 0.65rem 0.75rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       3-WAY COMPARISON: BANK STATEMENT VS CONVENTIONAL VS DSCR
+    ----------------------------------------------------------- */
+    .comparison-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .comp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comp-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comp-card.recommended {
+      border-color: var(--accent-nonqm);
+      box-shadow: 0 8px 20px -4px rgba(79, 70, 229, 0.18);
+    }
+
+    .comp-badge {
+      position: absolute;
+      top: -12px;
+      left: 1.25rem;
+      background: var(--accent-nonqm);
+      color: #FFFFFF;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .comp-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .comp-metric-big {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .comp-subline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .comp-list {
+      list-style: none;
+      font-size: 0.85rem;
+    }
+
+    .comp-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .comp-list li:last-child {
+      border-bottom: none;
+    }
+
+    .comp-list span.bold {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDE
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-article h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin: 2.25rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bg-light);
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-slate);
+      margin: 1.5rem 0 0.65rem;
+    }
+
+    .guide-article p {
+      font-size: 0.98rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 1.15rem;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin: 0 0 1.25rem 1.4rem;
+      color: #334155;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.4rem;
+    }
+
+    .formula-callout {
+      background: #F1F5F9;
+      border-left: 4px solid var(--accent-nonqm);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .formula-box {
+      font-size: 1.05rem;
+      margin: 0.75rem 0;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--bg-light);
+    }
+
+    .faq-arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* RELATED TOOLS */
+    .related-section {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 800px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tool-link-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+
+    .tool-link-card:hover {
+      border-color: var(--primary-navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tool-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .tool-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* SITE FOOTER */
+    .rr-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-navy);
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body { background: #FFFFFF; }
+      .rr-nav, .presets-container, .action-btn-row, .advanced-toggle-wrap, 
+      .slider-control, .related-section, .rr-footer, .guide-article, .comparison-section, .segmented-control {
+        display: none !important;
+      }
+      .calc-layout { display: block; }
+      .output-card { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+  
+  <!-- SITE NAVIGATION -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">
+      RealRefin<span>.com</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">All Tools</a></li>
+      <li><a href="/dscr-calculator">DSCR Loans</a></li>
+      <li><a href="/mortgage-refinance-calculator">Refinance</a></li>
+      <li><a href="/calculate-debt-to-income-ratio-for-mortgage">DTI Ratios</a></li>
+      <li><span class="nav-badge-pill">Non-QM 2026 Ready</span></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-nav">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/#suite-buyer">Home Buyer &amp; Mortgage Suite</a>
+    <span>›</span>
+    <span>Bank Statement Loan Calculator</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="hero-badge-tag">
+      <span>📑</span> Non-QM Self-Employed Mortgage Engine
+    </div>
+    <h1 class="page-title">Bank Statement Loan Calculator</h1>
+    <p class="page-subtitle">
+      Calculate qualifying self-employed income and monthly mortgage payments using <strong>12 or 24 months of business or personal bank deposits</strong>. Includes customizable expense ratios (50% standard default or 10%–35% CPA P&amp;L letters), DTI qualification up to 50%, and zero private mortgage insurance ($0 PMI).
+    </p>
+  </header>
+
+  <!-- CALCULATOR MAIN APPLICATION INTERFACE -->
+  <main class="calc-layout">
+
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <div class="calc-card">
+      <div class="section-title">
+        <span>Income &amp; Bank Statement Data</span>
+        <div class="currency-switch-box">
+          <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+          <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+          <button type="button" class="curr-btn" data-currency="CAD" data-symbol="C$">C$</button>
+          <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">A$</button>
+        </div>
+      </div>
+
+      <!-- Segmented Control: Business vs Personal Account -->
+      <div class="form-label" style="margin-bottom: 0.4rem;">Bank Account Type</div>
+      <div class="segmented-control" id="accountTypeSegment">
+        <button type="button" class="segmented-btn active" data-account="business">
+          <span>🏢</span> Business Account
+        </button>
+        <button type="button" class="segmented-btn" data-account="personal">
+          <span>👤</span> Personal Account
+        </button>
+      </div>
+
+      <!-- Segmented Control: 12 vs 24 Months -->
+      <div class="form-label" style="margin-bottom: 0.4rem;">Statement Documentation Period</div>
+      <div class="segmented-control" id="periodSegment">
+        <button type="button" class="segmented-btn active" data-period="12">
+          <span>📅</span> 12 Months Statements
+        </button>
+        <button type="button" class="segmented-btn" data-period="24">
+          <span>📅</span> 24 Months Statements
+        </button>
+      </div>
+
+      <!-- Total Gross Deposits over Period -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputGrossDeposits">
+            Total Gross Deposits (<span id="lblPeriodMonths">12 Months</span>)
+          </label>
+          <span class="form-hint">Total credits across statements</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputGrossDeposits" class="calc-input has-prefix" value="480000" min="50000" max="10000000" step="5000">
+        </div>
+        <div class="slider-control">
+          <input type="range" id="sliderGrossDeposits" class="calc-range" min="100000" max="1500000" step="10000" value="480000">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill" data-deposits="250000">$250k</button>
+          <button type="button" class="preset-pill active" data-deposits="480000">$480k ($40k/mo)</button>
+          <button type="button" class="preset-pill" data-deposits="750000">$750k</button>
+          <button type="button" class="preset-pill" data-deposits="1200000">$1.2M ($100k/mo)</button>
+        </div>
+      </div>
+
+      <!-- Disallowed Deposits (Transfers, loans, infusions) -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputDisallowed">
+            Disallowed / Ineligible Deposits
+          </label>
+          <span class="form-hint">Transfers, loans, tax refunds, capital infusions</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputDisallowed" class="calc-input has-prefix" value="20000" min="0" max="1000000" step="1000">
+        </div>
+      </div>
+
+      <!-- Expense Factor Selection (Business Only) -->
+      <div class="form-group" id="groupExpenseFactor">
+        <div class="form-label-wrap">
+          <label class="form-label" for="selectExpenseMode">Expense Factor Method</label>
+          <span class="form-hint" id="lblExpenseHint">50% Standard Lender Overlay</span>
+        </div>
+        <select id="selectExpenseMode" class="calc-select">
+          <option value="50" selected>Standard 50% Expense Factor (No CPA Letter Required)</option>
+          <option value="cpa">CPA / EA Letter or P&amp;L (10% to 35% Custom)</option>
+          <option value="personal_zero" style="display: none;">100% Personal Deposits (0% Expense Factor)</option>
+        </select>
+
+        <div id="boxCustomExpense" style="display: none; margin-top: 0.75rem;">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputCustomExpense">CPA-Verified Expense Ratio</label>
+            <span class="form-hint" id="lblCustomExpVal">25%</span>
+          </div>
+          <div class="slider-control">
+            <input type="range" id="inputCustomExpense" class="calc-range" min="10" max="45" step="1" value="25">
+          </div>
+        </div>
+      </div>
+
+      <!-- Ownership Percentage -->
+      <div class="form-group" id="groupOwnership">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputOwnership">Business Ownership Percentage</label>
+          <span class="form-hint" id="lblOwnershipVal">100%</span>
+        </div>
+        <div class="slider-control">
+          <input type="range" id="inputOwnership" class="calc-range" min="25" max="100" step="5" value="100">
+        </div>
+      </div>
+
+      <!-- REAL-TIME QUALIFYING INCOME BANNER -->
+      <div class="income-stat-card">
+        <div>
+          <div class="income-stat-label">Qualifying Monthly Income</div>
+          <div class="income-stat-val" id="dispQualifyingIncome">$19,167 / mo</div>
+          <div class="income-stat-sub" id="dispIncomeSub">Net Annual Qualifying: $230,000 / yr</div>
+        </div>
+        <span style="font-size: 2.2rem; line-height: 1;">💼</span>
+      </div>
+
+      <!-- TARGET PROPERTY & MORTGAGE SETTINGS -->
+      <div class="section-title" style="margin-top: 1.5rem;">
+        <span>Target Property &amp; Loan Setup</span>
+      </div>
+
+      <!-- Purchase Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputPrice">Target Home Purchase Price</label>
+          <span class="form-hint">Non-QM loan sizes up to $3M–$5M</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputPrice" class="calc-input has-prefix" value="750000" min="100000" max="5000000" step="10000">
+        </div>
+        <div class="slider-control">
+          <input type="range" id="sliderPrice" class="calc-range" min="250000" max="2000000" step="10000" value="750000">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill price-pill" data-price="500000">$500k</button>
+          <button type="button" class="preset-pill price-pill active" data-price="750000">$750k</button>
+          <button type="button" class="preset-pill price-pill" data-price="1000000">$1.0M</button>
+          <button type="button" class="preset-pill price-pill" data-price="1500000">$1.5M</button>
+        </div>
+      </div>
+
+      <!-- Down Payment -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputDownPct">Down Payment</label>
+          <span class="form-hint" style="color: var(--accent-nonqm); font-weight: 700;">$0 PMI on Non-QM</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-wrapper">
+            <input type="number" id="inputDownPct" class="calc-input has-suffix" value="20" min="10" max="50" step="1">
+            <span class="input-suffix">%</span>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputDownAmount" class="calc-input has-prefix" value="150000" min="0" step="5000">
+          </div>
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill down-pill" data-down="10">10% Down (90% LTV)</button>
+          <button type="button" class="preset-pill down-pill" data-down="15">15% Down (85% LTV)</button>
+          <button type="button" class="preset-pill down-pill active" data-down="20">20% Down (80% LTV)</button>
+          <button type="button" class="preset-pill down-pill" data-down="25">25% Down</button>
+        </div>
+      </div>
+
+      <!-- Interest Rate & Loan Term -->
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.75rem;">
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputRate">Interest Rate</label>
+            <span class="form-hint">Non-QM Note Rate</span>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="inputRate" class="calc-input has-suffix" value="7.375" min="4.0" max="13.0" step="0.125">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="selectTerm">Loan Program</label>
+          </div>
+          <select id="selectTerm" class="calc-select">
+            <option value="30_fixed" selected>30-Yr Fixed Amortizing</option>
+            <option value="40_fixed">40-Yr Fixed Amortizing</option>
+            <option value="30_io">30-Yr (10-Yr Interest Only)</option>
+            <option value="15_fixed">15-Yr Fixed Amortizing</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ADVANCED COLLAPSIBLE: DTI & ESCROWS -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" class="btn-toggle-advanced" id="btnToggleEscrow">
+          <span>⚙️ Advanced: Consumer Debts, Taxes &amp; Reserves</span>
+          <span id="escrowToggleIcon">▼</span>
+        </button>
+
+        <div class="advanced-content" id="escrowContent">
+          <!-- Monthly Personal Debts -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputMonthlyDebt">Monthly Personal Consumer Debts</label>
+              <span class="form-hint">Auto loans, credit cards, student loans</span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputMonthlyDebt" class="calc-input has-prefix" value="850" min="0" step="50">
+            </div>
+          </div>
+
+          <!-- Max Allowed DTI -->
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="selectMaxDti">Lender Max Allowable DTI</label>
+              <span class="form-hint">Non-QM standard: 50%</span>
+            </div>
+            <select id="selectMaxDti" class="calc-select">
+              <option value="50" selected>50% Max DTI (Standard Non-QM)</option>
+              <option value="45">45% Max DTI (Conservative)</option>
+              <option value="43">43% Max DTI (Conforming Style)</option>
+            </select>
+          </div>
+
+          <!-- Property Taxes & Insurance -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualTax">Annual Taxes</label>
+                <span class="form-hint">~1.2%</span>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputAnnualTax" class="calc-input has-prefix" value="9000" min="0" step="100">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputAnnualIns">Hazard Insurance</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputAnnualIns" class="calc-input has-prefix" value="2400" min="0" step="50">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label-wrap">
+              <label class="form-label" for="inputMonthlyHoa">Monthly HOA Dues</label>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix curr-symbol">$</span>
+              <input type="number" id="inputMonthlyHoa" class="calc-input has-prefix" value="0" min="0" step="25">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: OUTPUT ENGINE & RESULTS -->
+    <div class="output-card">
+      <div class="section-title">
+        <span>Payment &amp; Affordability Results</span>
+        <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-nonqm); background: var(--accent-nonqm-light); padding: 0.2rem 0.5rem; border-radius: 4px;">Zero Tax Returns</span>
+      </div>
+
+      <!-- HERO RESULT BANNER -->
+      <div class="hero-result-banner">
+        <div class="hero-top-label">
+          <span>🏡</span> Estimated Monthly Housing Payment (PITI)
+        </div>
+        <div class="hero-main-val">
+          <span id="heroMonthlyPmt">$5,096</span>
+          <span class="sub-mo">/ month</span>
+        </div>
+        <div class="hero-highlight-pill">
+          <span>✓</span> Private Mortgage Insurance (PMI): $0.00 / month
+        </div>
+        <div class="hero-subtext" id="heroBannerSub">
+          Includes <strong>$4,146</strong> Principal &amp; Interest on a $600,000 loan, <strong>$750</strong> Property Taxes, and <strong>$200</strong> Hazard Insurance. Back-End DTI is <strong>31.0%</strong>.
+        </div>
+      </div>
+
+      <!-- 2x2 PRIMARY KPI CARDS -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-title">Max Purchasing Power</div>
+          <div class="kpi-value" id="kpiMaxPurchase" style="color: var(--accent-emerald-dark);">$1,265,000</div>
+          <div class="kpi-sub" id="kpiMaxLoanSub">Max Loan: $1,012,000 at 50% DTI</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Back-End DTI Ratio</div>
+          <div class="kpi-value" id="kpiDtiValue">31.0%</div>
+          <div class="kpi-sub" id="kpiDtiStatus" style="color: #047857;">Under 50% Max Guideline</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Loan Amount (LTV)</div>
+          <div class="kpi-value" id="kpiLoanAmount">$600,000</div>
+          <div class="kpi-sub" id="kpiLtvSub">80% LTV • $150,000 Down</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Required Bank Reserves</div>
+          <div class="kpi-value" id="kpiReserves">$30,576</div>
+          <div class="kpi-sub">6 Months PITI Post-Close</div>
+        </div>
+      </div>
+
+      <!-- WATERFALL PAYMENT BREAKDOWN -->
+      <div class="waterfall-card">
+        <div class="waterfall-header">
+          <span>Monthly Housing Expense Waterfall</span>
+          <span>Monthly Cost</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Principal &amp; Interest (<span id="wfProgramLabel">30-Yr Amort</span>)
+          </span>
+          <span class="waterfall-val" id="wfPi">$4,146</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Private Mortgage Insurance (PMI)
+            <span class="waterfall-badge">Non-QM $0 PMI</span>
+          </span>
+          <span class="waterfall-val" style="color: #059669;">$0.00</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Monthly Property Taxes</span>
+          <span class="waterfall-val" id="wfTaxes">$750</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Hazard Homeowners Insurance</span>
+          <span class="waterfall-val" id="wfIns">$200</span>
+        </div>
+
+        <div class="waterfall-row" id="rowHoa" style="display: none;">
+          <span class="waterfall-label">Monthly HOA Dues</span>
+          <span class="waterfall-val" id="wfHoa">$0</span>
+        </div>
+
+        <div class="waterfall-row total">
+          <span class="waterfall-label">Total Monthly Housing Outlay (PITI)</span>
+          <span class="waterfall-val" id="wfTotalPmt" style="color: #4F46E5;">$5,096</span>
+        </div>
+      </div>
+
+      <!-- VISUAL PAYMENT DOUGHNUT CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-title">Monthly PITI Allocation ($ vs %)</div>
+        <div class="chart-box">
+          <canvas id="bankStatementPieChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" class="btn-action" id="btnDownloadCsv">
+          <span>📥</span> Download Excel
+        </button>
+        <button type="button" class="btn-action" id="btnPrintReport">
+          <span>🖨️</span> Print PDF
+        </button>
+        <button type="button" class="btn-action" id="btnShareDeal">
+          <span>🔗</span> Share Deal
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 3-WAY COMPARISON: BANK STATEMENT NON-QM VS CONVENTIONAL VS DSCR -->
+  <section class="comparison-section">
+    <div class="section-title">
+      <span>Compare Financing Avenues for Self-Employed Borrowers &amp; Investors</span>
+    </div>
+    <div class="comp-grid">
+      
+      <!-- Option 1: Bank Statement Loan -->
+      <div class="comp-card recommended">
+        <div class="comp-badge">Best For Self-Employed (Primary)</div>
+        <h3 class="comp-title">Bank Statement Non-QM</h3>
+        <div class="comp-metric-big" id="compBsQualifying" style="color: var(--accent-nonqm);">$19,167 / mo</div>
+        <div class="comp-subline">Qualifying Income (No Tax Returns)</div>
+        <ul class="comp-list">
+          <li><span>Documentation:</span> <span class="bold">12 or 24 Mo Bank Statements</span></li>
+          <li><span>Tax Return Write-Offs:</span> <span class="bold" style="color: var(--accent-emerald-dark);">Ignored (Gross Deposits Used)</span></li>
+          <li><span>Max Allowable DTI:</span> <span class="bold">Up to 50% DTI</span></li>
+          <li><span>Monthly PMI:</span> <span class="bold" style="color: var(--accent-emerald-dark);">$0 (Never Required)</span></li>
+          <li><span>Occupancy Allowed:</span> <span class="bold">Primary, Second Home, Investment</span></li>
+        </ul>
+      </div>
+
+      <!-- Option 2: Conventional W-2 (Tax Returns) -->
+      <div class="comp-card">
+        <h3 class="comp-title">Conventional Fannie/Freddie</h3>
+        <div class="comp-metric-big" style="color: var(--text-muted);">$8,333 / mo</div>
+        <div class="comp-subline">Net Taxable Line 31 (After Write-Offs)</div>
+        <ul class="comp-list">
+          <li><span>Documentation:</span> <span class="bold">2 Years Form 1040 + K-1s</span></li>
+          <li><span>Tax Return Write-Offs:</span> <span class="bold" style="color: var(--accent-coral);">Reduces Borrowing Power</span></li>
+          <li><span>Max Allowable DTI:</span> <span class="bold">43% – 45% Strict Cap</span></li>
+          <li><span>Monthly PMI:</span> <span class="bold">Required if Down &lt; 20%</span></li>
+          <li><span>Occupancy Allowed:</span> <span class="bold">Primary, Second Home, Investment</span></li>
+        </ul>
+      </div>
+
+      <!-- Option 3: DSCR Investor Loan -->
+      <div class="comp-card">
+        <h3 class="comp-title">DSCR Loan (Debt-Service)</h3>
+        <div class="comp-metric-big" style="color: #059669;">Rent ≥ PITI</div>
+        <div class="comp-subline">Property Cash Flow Ratio (1.00x - 1.25x)</div>
+        <ul class="comp-list">
+          <li><span>Documentation:</span> <span class="bold">Lease Agreement / Form 1007</span></li>
+          <li><span>Personal Income Checked:</span> <span class="bold" style="color: var(--accent-emerald-dark);">None ($0 Income Verification)</span></li>
+          <li><span>Max Allowable DTI:</span> <span class="bold">N/A (Property DTI Only)</span></li>
+          <li><span>Monthly PMI:</span> <span class="bold" style="color: var(--accent-emerald-dark);">$0 (Never Required)</span></li>
+          <li><span>Occupancy Allowed:</span> <span class="bold" style="color: var(--accent-coral);">Strictly Investment Only</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE 1,500+ WORD INSTITUTIONAL GUIDE -->
+  <article class="guide-article">
+    <h2>Complete Guide to Bank Statement Loans &amp; Income Underwriting</h2>
+    <p>
+      For millions of entrepreneurs, freelance 1099 contractors, small business owners, real estate agents, gig economy workers, and corporate founders, qualifying for a conventional mortgage via traditional Fannie Mae or Freddie Mac guidelines is notoriously difficult. Under federal Qualified Mortgage (QM) standards, lenders must review two full years of federal tax returns (IRS Form 1040, Schedule C, Form 1120-S, or Form 1065). Because savvy business owners utilize legitimate IRS tax deductions, depreciation, and business expense write-offs to reduce their taxable net income, their tax returns often show minimal net earnings—even when their company generates hundreds of thousands of dollars in healthy gross cash flow.
+    </p>
+    <p>
+      The <strong>Bank Statement Loan</strong>, classified as a <strong>Non-Qualified Mortgage (Non-QM)</strong>, completely solves this dilemma. Rather than verifying tax returns or W-2 stubs, Non-QM lenders underwrite the borrower's true revenue by analyzing <strong>12 or 24 consecutive months of bank statements</strong>.
+    </p>
+
+    <h2>How the Bank Statement Loan Income Calculator Computes Cash Flow</h2>
+    <p>
+      Underwriting algorithms for bank statement mortgages follow a rigorous, standardized five-step sequence:
+    </p>
+
+    <div class="formula-callout">
+      <strong>Mathematical Model for Bank Statement Qualifying Income:</strong>
+      <div class="formula-box">
+        $$\text{Net Eligible Deposits} = \sum(\text{Gross Deposits}) - \sum(\text{Disallowed Transactions})$$
+        $$\text{Qualifying Monthly Income} = \frac{\text{Net Eligible Deposits} \times (1 - \text{Expense Factor}) \times \text{Ownership \%}}{\text{Documentation Period (12 or 24 Months)}}$$
+        $$\text{Max Allowable Housing PITI} = (\text{Qualifying Monthly Income} \times \text{Max DTI}) - \text{Personal Monthly Debts}$$
+      </div>
+      <p style="font-size: 0.85rem; color: #475569; margin-top: 0.5rem; margin-bottom: 0;">
+        Where $\text{Expense Factor}$ is standard 50% or custom CPA-certified (10% to 35%), and $\text{Max DTI}$ is up to 50% for Non-QM programs.
+      </p>
+    </div>
+
+    <h3>1. Ineligible / Disallowed Deposits</h3>
+    <p>
+      Lenders do not simply sum every single credit transaction. Under strict Non-QM underwriting standards, the following deposits are automatically disqualified and subtracted from gross revenue:
+    </p>
+    <ul>
+      <li><strong>Transfers Between Accounts:</strong> Transfers between the borrower's own business or personal accounts (cross-account transfers).</li>
+      <li><strong>Owner Capital Infusions:</strong> Irregular large lump-sum personal funds deposited into the business account.</li>
+      <li><strong>Loan Proceeds:</strong> Deposits originating from SBA loans, line of credit draws, merchant cash advances (MCA), or personal loans.</li>
+      <li><strong>Tax Refunds &amp; Insurance Reimbursements:</strong> One-time non-operational windfalls.</li>
+    </ul>
+
+    <h3>2. The Business Expense Factor (50% Standard vs. CPA P&amp;L Letter)</h3>
+    <p>
+      Because revenue deposited into a business bank account must cover operating expenses (payroll, inventory, rent, software, equipment), lenders never credit 100% of business deposits as take-home personal income. There are two primary methods to establish the expense ratio:
+    </p>
+    <ul>
+      <li><strong>Standard Default 50% Expense Ratio:</strong> The default option utilized by most Non-QM loan programs. Lenders assume 50% of revenue goes toward operating expenses and the remaining 50% counts as net personal income. No CPA letter or tax documentation is required.</li>
+      <li><strong>Custom CPA / Licensed Tax Preparer P&amp;L Letter (10%–35%):</strong> If your business operates with low overhead (common for consultants, real estate brokers, IT professionals, remote agencies, therapists, and attorneys), a licensed Certified Public Accountant (CPA) or Enrolled Agent (EA) can certify a Profit &amp; Loss statement reflecting your true historical expense ratio (e.g., 20% or 25%). This dramatically increases your qualifying income.</li>
+    </ul>
+
+    <h3>3. Personal Bank Statement Programs (100% Deposit Credit)</h3>
+    <p>
+      If a self-employed borrower maintains separate business and personal bank accounts and regularly transfers money from the business into personal accounts, lenders can underwrite based strictly on <strong>Personal Bank Statements</strong>. When personal accounts are used, lenders typically credit <strong>100% of verified qualifying deposits</strong> with a 0% expense factor, provided the borrower provides 2 to 3 months of business statements proving the business account is healthy and self-sustaining.
+    </p>
+
+    <h2>Non-QM Underwriting Criteria: DTI, Down Payments &amp; Reserves</h2>
+    <p>
+      Bank statement mortgages offer flexible underwriting guidelines designed to accommodate non-traditional borrowers:
+    </p>
+    <ol>
+      <li><strong>Debt-to-Income (DTI) Ratios Up to 50%:</strong> While Fannie Mae restricts conventional DTI to 43%–45%, Non-QM bank statement lenders comfortably approve borrowers up to 50% back-end DTI, expanding purchasing power by $100,000 to $300,000+.</li>
+      <li><strong>Down Payment Requirements (10% to 20%):</strong> Borrowers with credit scores of 700+ can purchase a home with as little as 10% down (90% LTV). Borrowers with scores between 640 and 680 generally require 15% to 20% down.</li>
+      <li><strong>Zero Private Mortgage Insurance ($0 PMI):</strong> Even with only 10% down, Non-QM bank statement loans never assess monthly PMI premiums, saving borrowers $200–$600 per month compared to conventional loans with under 20% down.</li>
+      <li><strong>Post-Closing Liquidity Reserves:</strong> Lenders require evidence of liquid cash reserves (checking, savings, CDs, or retirement funds) after paying the down payment and closing costs. Typical reserve guidelines are 3 months PITI for loan amounts under $1M, and 6 to 12 months PITI for jumbo loans exceeding $1.5M.</li>
+    </ol>
+
+    <h2>Eligible Property Types for Bank Statement Mortgages</h2>
+    <p>
+      Bank statement loans are versatile and can be used across multiple residential property categories:
+    </p>
+    <ul>
+      <li><strong>Primary Residences:</strong> Single-family homes, townhomes, planned unit developments (PUDs), and warrantable or non-warrantable condominiums.</li>
+      <li><strong>Second Homes &amp; Vacation Properties:</strong> Luxury vacation retreats in resort communities.</li>
+      <li><strong>2-to-4 Unit Residential Properties:</strong> Duplexes, triplexes, and fourplexes.</li>
+      <li><strong>Investment Properties:</strong> Long-term rental properties and short-term vacation rentals (Airbnb/VRBO).</li>
+    </ul>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Do I need to submit any tax returns for a bank statement loan?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        No! That is the defining benefit of a bank statement mortgage. You are not required to provide IRS Form 1040s, W-2s, Schedule Cs, corporate returns, or tax transcripts (Form 4506-C). The lender evaluates your qualification solely on your bank deposits, business ownership verification, credit score, and liquid assets.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How long do I need to be self-employed to qualify?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Standard Non-QM guidelines require a minimum of two years (24 months) of verified self-employment in the same line of business. However, some lenders offer exceptions for borrowers with at least one year (12 months) of self-employment if they worked in the exact same industry for at least two to three years prior as a W-2 employee.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I combine bank statement income with a co-borrower's W-2 income?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes! Non-QM programs frequently accommodate "hybrid" loan files where one spouse is self-employed and qualifies via bank statements, while the other spouse is a salaried W-2 employee verified through standard pay stubs and W-2s. Both income streams are combined to establish your total household qualifying capacity.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Are interest rates higher on bank statement loans?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Because Non-QM loans are held in private portfolios or private mortgage-backed securities rather than backed by Fannie Mae or Freddie Mac, interest rates are typically 0.50% to 1.50% higher than conventional conforming rates. However, because there is zero private mortgage insurance (PMI) even with low down payments, the net monthly payment difference is often surprisingly modest.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can 1099 independent contractors use a bank statement loan?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes. 1099 contractors can either use a standard 12 or 24-month bank statement program, or a specialized "1099-Only" mortgage program where lenders take the gross amount reported on your 1099 statements and apply a standard 10% to 15% expense factor to compute qualifying income.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED FINANCIAL TOOLS -->
+  <section class="related-section">
+    <div class="section-title">
+      <span>Explore Related Creative Financing &amp; Investor Tools</span>
+    </div>
+    <div class="related-grid">
+      <a href="/dscr-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">DSCR Loan Calculator</div>
+          <div class="tool-card-desc">Calculate Debt-Service Coverage Ratios for rental investments without personal income or tax verification.</div>
+        </div>
+        <span style="color: var(--accent-nonqm); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Calculate DSCR →</span>
+      </a>
+
+      <a href="/calculate-debt-to-income-ratio-for-mortgage" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Debt-to-Income (DTI) Ratio Calculator</div>
+          <div class="tool-card-desc">Model front-end and back-end DTI debt service ratios across Conventional, FHA, VA, and Non-QM limits.</div>
+        </div>
+        <span style="color: var(--accent-nonqm); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Check DTI Ratios →</span>
+      </a>
+
+      <a href="/mortgage-refinance-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Mortgage Refinance &amp; Cash-Out Calculator</div>
+          <div class="tool-card-desc">Evaluate rate-and-term savings, cash-out equity limits, and break-even recovery horizons.</div>
+        </div>
+        <span style="color: var(--accent-nonqm); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Model Refinance →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes. Final bank statement loan eligibility and interest rates are determined by your licensed Non-QM mortgage lender.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT CALCULATION & INTERACTIVE ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Currency State
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let bsChart = null;
+
+  // State Variables
+  let currentAccount = 'business'; // 'business' or 'personal'
+  let currentPeriod = 12; // 12 or 24 months
+
+  // DOM Elements - Inputs
+  const inputGrossDeposits = document.getElementById('inputGrossDeposits');
+  const sliderGrossDeposits = document.getElementById('sliderGrossDeposits');
+  const inputDisallowed = document.getElementById('inputDisallowed');
+  const selectExpenseMode = document.getElementById('selectExpenseMode');
+  const boxCustomExpense = document.getElementById('boxCustomExpense');
+  const inputCustomExpense = document.getElementById('inputCustomExpense');
+  const lblCustomExpVal = document.getElementById('lblCustomExpVal');
+  const lblExpenseHint = document.getElementById('lblExpenseHint');
+  const groupExpenseFactor = document.getElementById('groupExpenseFactor');
+  const groupOwnership = document.getElementById('groupOwnership');
+  const inputOwnership = document.getElementById('inputOwnership');
+  const lblOwnershipVal = document.getElementById('lblOwnershipVal');
+  const lblPeriodMonths = document.getElementById('lblPeriodMonths');
+
+  // Property Inputs
+  const inputPrice = document.getElementById('inputPrice');
+  const sliderPrice = document.getElementById('sliderPrice');
+  const inputDownPct = document.getElementById('inputDownPct');
+  const inputDownAmount = document.getElementById('inputDownAmount');
+  const inputRate = document.getElementById('inputRate');
+  const selectTerm = document.getElementById('selectTerm');
+
+  // Escrow / Advanced Inputs
+  const btnToggleEscrow = document.getElementById('btnToggleEscrow');
+  const escrowContent = document.getElementById('escrowContent');
+  const escrowToggleIcon = document.getElementById('escrowToggleIcon');
+  const inputMonthlyDebt = document.getElementById('inputMonthlyDebt');
+  const selectMaxDti = document.getElementById('selectMaxDti');
+  const inputAnnualTax = document.getElementById('inputAnnualTax');
+  const inputAnnualIns = document.getElementById('inputAnnualIns');
+  const inputMonthlyHoa = document.getElementById('inputMonthlyHoa');
+
+  // Outputs
+  const dispQualifyingIncome = document.getElementById('dispQualifyingIncome');
+  const dispIncomeSub = document.getElementById('dispIncomeSub');
+  const heroMonthlyPmt = document.getElementById('heroMonthlyPmt');
+  const heroBannerSub = document.getElementById('heroBannerSub');
+
+  const kpiMaxPurchase = document.getElementById('kpiMaxPurchase');
+  const kpiMaxLoanSub = document.getElementById('kpiMaxLoanSub');
+  const kpiDtiValue = document.getElementById('kpiDtiValue');
+  const kpiDtiStatus = document.getElementById('kpiDtiStatus');
+  const kpiLoanAmount = document.getElementById('kpiLoanAmount');
+  const kpiLtvSub = document.getElementById('kpiLtvSub');
+  const kpiReserves = document.getElementById('kpiReserves');
+
+  const wfPi = document.getElementById('wfPi');
+  const wfProgramLabel = document.getElementById('wfProgramLabel');
+  const wfTaxes = document.getElementById('wfTaxes');
+  const wfIns = document.getElementById('wfIns');
+  const rowHoa = document.getElementById('rowHoa');
+  const wfHoa = document.getElementById('wfHoa');
+  const wfTotalPmt = document.getElementById('wfTotalPmt');
+
+  const compBsQualifying = document.getElementById('compBsQualifying');
+
+  // Formatting Helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'CAD' ? 'CAD' : (activeCurrency === 'AUD' ? 'AUD' : 'USD')),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateBankStatementLoan();
+    });
+  });
+
+  // Account Type Segmented Control
+  document.querySelectorAll('#accountTypeSegment .segmented-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#accountTypeSegment .segmented-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentAccount = btn.getAttribute('data-account');
+      if (currentAccount === 'personal') {
+        groupExpenseFactor.style.display = 'none';
+        groupOwnership.style.display = 'none';
+      } else {
+        groupExpenseFactor.style.display = 'block';
+        groupOwnership.style.display = 'block';
+      }
+      calculateBankStatementLoan();
+    });
+  });
+
+  // Documentation Period Segmented Control (12 vs 24 mo)
+  document.querySelectorAll('#periodSegment .segmented-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#periodSegment .segmented-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const newPeriod = parseInt(btn.getAttribute('data-period'), 10);
+      
+      // Auto-scale deposit default if period changes
+      if (newPeriod === 24 && currentPeriod === 12) {
+        inputGrossDeposits.value = parseFloat(inputGrossDeposits.value) * 2;
+        sliderGrossDeposits.max = 3000000;
+        sliderGrossDeposits.value = inputGrossDeposits.value;
+      } else if (newPeriod === 12 && currentPeriod === 24) {
+        inputGrossDeposits.value = Math.round(parseFloat(inputGrossDeposits.value) / 2);
+        sliderGrossDeposits.max = 1500000;
+        sliderGrossDeposits.value = inputGrossDeposits.value;
+      }
+      currentPeriod = newPeriod;
+      lblPeriodMonths.textContent = `${currentPeriod} Months`;
+      calculateBankStatementLoan();
+    });
+  });
+
+  // Expense Mode Selector
+  selectExpenseMode.addEventListener('change', () => {
+    if (selectExpenseMode.value === 'cpa') {
+      boxCustomExpense.style.display = 'block';
+      lblExpenseHint.textContent = 'CPA P&L Letter Custom Ratio';
+    } else {
+      boxCustomExpense.style.display = 'none';
+      lblExpenseHint.textContent = '50% Standard Lender Overlay';
+    }
+    calculateBankStatementLoan();
+  });
+
+  inputCustomExpense.addEventListener('input', () => {
+    lblCustomExpVal.textContent = `${inputCustomExpense.value}%`;
+    calculateBankStatementLoan();
+  });
+
+  // Ownership slider
+  inputOwnership.addEventListener('input', () => {
+    lblOwnershipVal.textContent = `${inputOwnership.value}%`;
+    calculateBankStatementLoan();
+  });
+
+  // Gross Deposits Sync
+  inputGrossDeposits.addEventListener('input', () => {
+    sliderGrossDeposits.value = inputGrossDeposits.value;
+    calculateBankStatementLoan();
+  });
+  sliderGrossDeposits.addEventListener('input', () => {
+    inputGrossDeposits.value = sliderGrossDeposits.value;
+    calculateBankStatementLoan();
+  });
+
+  // Preset Deposit Pills
+  document.querySelectorAll('.preset-pill[data-deposits]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill[data-deposits]').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      let val = parseFloat(pill.getAttribute('data-deposits'));
+      if (currentPeriod === 24) val *= 2;
+      inputGrossDeposits.value = val;
+      sliderGrossDeposits.value = val;
+      calculateBankStatementLoan();
+    });
+  });
+
+  // Price Sync
+  inputPrice.addEventListener('input', () => {
+    sliderPrice.value = inputPrice.value;
+    updateDownAmountFromPct();
+    calculateBankStatementLoan();
+  });
+  sliderPrice.addEventListener('input', () => {
+    inputPrice.value = sliderPrice.value;
+    updateDownAmountFromPct();
+    calculateBankStatementLoan();
+  });
+
+  // Down Payment Sync
+  function updateDownAmountFromPct() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const pct = Math.max(0, parseFloat(inputDownPct.value) || 0);
+    inputDownAmount.value = Math.round(price * (pct / 100));
+  }
+
+  function updateDownPctFromAmount() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const amt = Math.max(0, parseFloat(inputDownAmount.value) || 0);
+    if (price > 0) {
+      inputDownPct.value = ((amt / price) * 100).toFixed(1);
+    }
+  }
+
+  inputDownPct.addEventListener('input', () => {
+    updateDownAmountFromPct();
+    calculateBankStatementLoan();
+  });
+
+  inputDownAmount.addEventListener('input', () => {
+    updateDownPctFromAmount();
+    calculateBankStatementLoan();
+  });
+
+  // Preset Price Pills
+  document.querySelectorAll('.price-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.price-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-price'));
+      inputPrice.value = val;
+      sliderPrice.value = val;
+      updateDownAmountFromPct();
+      calculateBankStatementLoan();
+    });
+  });
+
+  // Preset Down Payment Pills
+  document.querySelectorAll('.down-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.down-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-down'));
+      inputDownPct.value = val;
+      updateDownAmountFromPct();
+      calculateBankStatementLoan();
+    });
+  });
+
+  // Collapsible Toggles
+  btnToggleEscrow.addEventListener('click', () => {
+    escrowContent.classList.toggle('open');
+    escrowToggleIcon.textContent = escrowContent.classList.contains('open') ? '▲' : '▼';
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Input Listeners
+  [inputDisallowed, inputRate, selectTerm, inputMonthlyDebt, selectMaxDti, inputAnnualTax, inputAnnualIns, inputMonthlyHoa].forEach(el => {
+    if (el) {
+      el.addEventListener('input', calculateBankStatementLoan);
+      el.addEventListener('change', calculateBankStatementLoan);
+    }
+  });
+
+  // MAIN CALCULATION FUNCTION
+  function calculateBankStatementLoan() {
+    // -------------------------------------------------------------
+    // 1. QUALIFYING INCOME ENGINE (Bank Statement Income Calculator)
+    // -------------------------------------------------------------
+    const grossDeposits = Math.max(0, parseFloat(inputGrossDeposits.value) || 0);
+    const disallowed = Math.max(0, parseFloat(inputDisallowed.value) || 0);
+    const netDeposits = Math.max(0, grossDeposits - disallowed);
+
+    let expenseFactor = 0.50; // default 50%
+    let ownershipPct = 1.0;
+
+    if (currentAccount === 'personal') {
+      expenseFactor = 0.0; // 100% of personal qualifying deposits count
+      ownershipPct = 1.0;
+    } else {
+      if (selectExpenseMode.value === 'cpa') {
+        expenseFactor = (parseFloat(inputCustomExpense.value) || 25) / 100;
+      } else {
+        expenseFactor = 0.50;
+      }
+      ownershipPct = (parseFloat(inputOwnership.value) || 100) / 100;
+    }
+
+    // Qualifying Monthly Income = (Net Deposits * (1 - Expense Factor) * Ownership) / Months
+    const totalQualifyingAnnualIncome = netDeposits * (1 - expenseFactor) * ownershipPct;
+    const monthlyQualifyingIncome = Math.round(totalQualifyingAnnualIncome / currentPeriod);
+
+    dispQualifyingIncome.textContent = `${formatMoney(monthlyQualifyingIncome)} / mo`;
+    dispIncomeSub.textContent = `Net Annual Qualifying: ${formatMoney(totalQualifyingAnnualIncome)} / yr (Based on ${currentPeriod} Mo ${currentAccount === 'business' ? `Business (${(expenseFactor*100).toFixed(0)}% Exp)` : 'Personal (0% Exp)'})`;
+    compBsQualifying.textContent = `${formatMoney(monthlyQualifyingIncome)} / mo`;
+
+    // -------------------------------------------------------------
+    // 2. MORTGAGE PAYMENT & LOAN ENGINE
+    // -------------------------------------------------------------
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const downAmount = Math.max(0, parseFloat(inputDownAmount.value) || 0);
+    const loanAmount = Math.max(0, price - downAmount);
+    const ltv = price > 0 ? (loanAmount / price) * 100 : 80;
+
+    const annualRate = Math.max(0.1, parseFloat(inputRate.value) || 7.375);
+    const monthlyRate = (annualRate / 100) / 12;
+
+    const program = selectTerm.value;
+    let termMonths = 360;
+    let isInterestOnly = false;
+
+    if (program === '40_fixed') termMonths = 480;
+    else if (program === '15_fixed') termMonths = 180;
+    else if (program === '30_io') {
+      termMonths = 360;
+      isInterestOnly = true;
+    }
+
+    // Monthly Principal & Interest (P&I)
+    let monthlyPi = 0;
+    if (isInterestOnly) {
+      monthlyPi = Math.round(loanAmount * monthlyRate);
+      wfProgramLabel.textContent = '10-Yr Interest Only';
+    } else {
+      if (monthlyRate > 0 && loanAmount > 0) {
+        monthlyPi = Math.round(loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1));
+      } else if (termMonths > 0) {
+        monthlyPi = Math.round(loanAmount / termMonths);
+      }
+      wfProgramLabel.textContent = program === '40_fixed' ? '40-Yr Amort' : (program === '15_fixed' ? '15-Yr Amort' : '30-Yr Amort');
+    }
+
+    // Taxes, Insurance & HOA
+    const annualTaxes = Math.max(0, parseFloat(inputAnnualTax.value) || 0);
+    const monthlyTaxes = Math.round(annualTaxes / 12);
+    const annualIns = Math.max(0, parseFloat(inputAnnualIns.value) || 0);
+    const monthlyIns = Math.round(annualIns / 12);
+    const monthlyHoa = Math.max(0, parseFloat(inputMonthlyHoa.value) || 0);
+
+    const totalMonthlyPiti = monthlyPi + monthlyTaxes + monthlyIns + monthlyHoa;
+
+    // -------------------------------------------------------------
+    // 3. DTI UNDERWRITING & MAXIMUM PURCHASING POWER
+    // -------------------------------------------------------------
+    const personalMonthlyDebt = Math.max(0, parseFloat(inputMonthlyDebt.value) || 0);
+    const maxDtiPct = parseFloat(selectMaxDti.value) || 50;
+
+    const totalBackEndObligation = totalMonthlyPiti + personalMonthlyDebt;
+    const backEndDti = monthlyQualifyingIncome > 0 ? (totalBackEndObligation / monthlyQualifyingIncome) * 100 : 0;
+
+    // Max Housing Payment Allowed = (Income * Max DTI) - Debts
+    const maxAllowableHousingPayment = Math.max(0, (monthlyQualifyingIncome * (maxDtiPct / 100)) - personalMonthlyDebt);
+    
+    // Reverse calculate Max Loan from max allowable housing payment (minus taxes/ins)
+    const maxAllowablePi = Math.max(0, maxAllowableHousingPayment - (monthlyTaxes + monthlyIns + monthlyHoa));
+    let maxLoanAmount = 0;
+    if (isInterestOnly) {
+      maxLoanAmount = monthlyRate > 0 ? Math.round(maxAllowablePi / monthlyRate) : 0;
+    } else {
+      if (monthlyRate > 0) {
+        maxLoanAmount = Math.round(maxAllowablePi * (Math.pow(1 + monthlyRate, termMonths) - 1) / (monthlyRate * Math.pow(1 + monthlyRate, termMonths)));
+      }
+    }
+    const downRatio = price > 0 ? (downAmount / price) : 0.20;
+    const maxPurchasePrice = downRatio < 1 ? Math.round(maxLoanAmount / (1 - downRatio)) : maxLoanAmount;
+
+    // Post-Closing Reserves (6 Months PITI standard)
+    const requiredReserves = totalMonthlyPiti * 6;
+
+    // -------------------------------------------------------------
+    // 4. UPDATE DOM OUTPUTS
+    // -------------------------------------------------------------
+    heroMonthlyPmt.textContent = formatMoney(totalMonthlyPiti);
+    heroBannerSub.innerHTML = `Includes <strong>${formatMoney(monthlyPi)}</strong> Principal &amp; Interest on a ${formatMoney(loanAmount)} loan (${ltv.toFixed(0)}% LTV), <strong>${formatMoney(monthlyTaxes)}</strong> Property Taxes, and <strong>${formatMoney(monthlyIns)}</strong> Hazard Insurance. Back-End DTI is <strong>${backEndDti.toFixed(1)}%</strong>.`;
+
+    kpiMaxPurchase.textContent = formatMoney(maxPurchasePrice);
+    kpiMaxLoanSub.textContent = `Max Loan: ${formatMoney(maxLoanAmount)} at ${maxDtiPct}% DTI`;
+
+    kpiDtiValue.textContent = `${backEndDti.toFixed(1)}%`;
+    if (backEndDti <= maxDtiPct) {
+      kpiDtiStatus.textContent = `Under ${maxDtiPct}% Max Guideline`;
+      kpiDtiStatus.style.color = '#047857';
+    } else {
+      kpiDtiStatus.textContent = `Exceeds ${maxDtiPct}% Max Guideline`;
+      kpiDtiStatus.style.color = '#B91C1C';
+    }
+
+    kpiLoanAmount.textContent = formatMoney(loanAmount);
+    kpiLtvSub.textContent = `${ltv.toFixed(0)}% LTV • ${formatMoney(downAmount)} Down (${(100 - ltv).toFixed(0)}%)`;
+
+    kpiReserves.textContent = formatMoney(requiredReserves);
+
+    // Waterfall Table
+    wfPi.textContent = formatMoney(monthlyPi);
+    wfTaxes.textContent = formatMoney(monthlyTaxes);
+    wfIns.textContent = formatMoney(monthlyIns);
+    wfTotalPmt.textContent = formatMoney(totalMonthlyPiti);
+
+    if (monthlyHoa > 0) {
+      rowHoa.style.display = 'flex';
+      wfHoa.textContent = formatMoney(monthlyHoa);
+    } else {
+      rowHoa.style.display = 'none';
+    }
+
+    // Visual Chart Update
+    renderChart([
+      { label: 'Principal & Interest', value: monthlyPi, color: '#4F46E5' },
+      { label: 'Property Taxes', value: monthlyTaxes, color: '#2563EB' },
+      { label: 'Hazard Insurance', value: monthlyIns, color: '#D97706' },
+      ...(monthlyHoa > 0 ? [{ label: 'HOA Dues', value: monthlyHoa, color: '#10B981' }] : [])
+    ]);
+  }
+
+  // CHART.JS DOUGHNUT RENDERER
+  function renderChart(dataPoints) {
+    const ctx = document.getElementById('bankStatementPieChart');
+    if (!ctx) return;
+
+    const labels = dataPoints.map(d => d.label);
+    const data = dataPoints.map(d => Math.max(0, d.value));
+    const bgColors = dataPoints.map(d => d.color);
+
+    if (bsChart) {
+      bsChart.destroy();
+    }
+
+    bsChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: data,
+          backgroundColor: bgColors,
+          borderWidth: 2,
+          borderColor: '#FFFFFF',
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, family: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto' },
+              color: '#475569',
+              padding: 10
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const val = context.raw || 0;
+                return ` ${label}: ${formatMoney(val)}`;
+              }
+            }
+          }
+        },
+        cutout: '68%'
+      }
+    });
+  }
+
+  // DOWNLOAD CSV / EXCEL HANDLER
+  document.getElementById('btnDownloadCsv').addEventListener('click', () => {
+    let csv = `RealRefin.com - Self-Employed Bank Statement Mortgage Schedule\n`;
+    csv += `Date Generated: ${new Date().toLocaleDateString()}\n`;
+    csv += `Account Type: ${currentAccount.toUpperCase()}, Period: ${currentPeriod} Months\n\n`;
+
+    csv += `Section,Item,Amount\n`;
+    csv += `Income Analysis,Total Gross Deposits,"${inputGrossDeposits.value}"\n`;
+    csv += `Income Analysis,Disallowed Ineligible Deposits,"${inputDisallowed.value}"\n`;
+    csv += `Income Analysis,Expense Factor Applied,"${currentAccount === 'personal' ? '0%' : (selectExpenseMode.value === 'cpa' ? inputCustomExpense.value + '%' : '50%')}"\n`;
+    csv += `Income Analysis,Ownership Percentage,"${currentAccount === 'personal' ? '100%' : inputOwnership.value + '%'}"\n`;
+    csv += `Income Analysis,Qualifying Monthly Gross Income,"${dispQualifyingIncome.textContent}"\n`;
+    csv += `Mortgage Structure,Target Property Value,"${inputPrice.value}"\n`;
+    csv += `Mortgage Structure,Down Payment Amount,"${inputDownAmount.value}"\n`;
+    csv += `Mortgage Structure,Net Loan Amount,"${kpiLoanAmount.textContent}"\n`;
+    csv += `Mortgage Structure,Private Mortgage Insurance (PMI),$0.00 (No PMI)\n`;
+    csv += `Monthly Payment,Principal & Interest (P&I),"${wfPi.textContent}"\n`;
+    csv += `Monthly Payment,Property Taxes & Hazard Insurance,"${formatMoney((parseFloat(inputAnnualTax.value)||0)/12 + (parseFloat(inputAnnualIns.value)||0)/12)}"\n`;
+    csv += `Monthly Payment,Total Monthly Housing Outlay,"${heroMonthlyPmt.textContent}"\n`;
+    csv += `Underwriting,Back-End DTI Ratio,"${kpiDtiValue.textContent}"\n`;
+    csv += `Underwriting,Max Purchasing Power Capacity,"${kpiMaxPurchase.textContent}"\n`;
+    csv += `Underwriting,Required 6-Month Post-Close Reserves,"${kpiReserves.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Bank-Statement-Mortgage-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // PRINT PDF HANDLER
+  document.getElementById('btnPrintReport').addEventListener('click', () => {
+    window.print();
+  });
+
+  // SHARE DEAL LINK HANDLER
+  document.getElementById('btnShareDeal').addEventListener('click', () => {
+    const params = new URLSearchParams({
+      deposits: inputGrossDeposits.value,
+      account: currentAccount,
+      period: currentPeriod,
+      price: inputPrice.value,
+      down: inputDownPct.value,
+      rate: inputRate.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const btn = document.getElementById('btnShareDeal');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => btn.innerHTML = orig, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // LOAD URL QUERY PARAMS
+  function loadQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('deposits')) {
+      inputGrossDeposits.value = params.get('deposits');
+      sliderGrossDeposits.value = params.get('deposits');
+    }
+    if (params.has('account')) {
+      const acct = params.get('account').toLowerCase();
+      const targetBtn = document.querySelector(`#accountTypeSegment .segmented-btn[data-account="${acct}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+    if (params.has('period')) {
+      const prd = params.get('period');
+      const targetBtn = document.querySelector(`#periodSegment .segmented-btn[data-period="${prd}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+    if (params.has('price')) {
+      inputPrice.value = params.get('price');
+      sliderPrice.value = params.get('price');
+    }
+    if (params.has('down')) inputDownPct.value = params.get('down');
+    if (params.has('rate')) inputRate.value = params.get('rate');
+    if (params.has('curr')) {
+      const c = params.get('curr').toUpperCase();
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  // INITIALIZE
+  loadQueryParams();
+  updateDownAmountFromPct();
+  calculateBankStatementLoan();
+});
+</script>
+
+</body>
+</html>

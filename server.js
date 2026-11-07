@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/bank-statement-loan-calculator</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/usda-home-loan-mortgage-calculator</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -373,6 +379,16 @@ const FILE_MAP = {
   '/usda-guarantee-fee-calculator.html': 'usda-home-loan-mortgage-calculator.html',
   '/usda-rural-development-loan-calculator': 'usda-home-loan-mortgage-calculator.html',
   '/usda-rural-development-loan-calculator.html': 'usda-home-loan-mortgage-calculator.html',
+  '/bank-statement-loan-calculator': 'bank-statement-loan-calculator.html',
+  '/bank-statement-loan-calculator.html': 'bank-statement-loan-calculator.html',
+  '/bank-statement-mortgage-loan-calculator': 'bank-statement-loan-calculator.html',
+  '/bank-statement-mortgage-loan-calculator.html': 'bank-statement-loan-calculator.html',
+  '/bank-statement-loan-income-calculator': 'bank-statement-loan-calculator.html',
+  '/bank-statement-loan-income-calculator.html': 'bank-statement-loan-calculator.html',
+  '/bank-statement-mortgage-calculator': 'bank-statement-loan-calculator.html',
+  '/bank-statement-mortgage-calculator.html': 'bank-statement-loan-calculator.html',
+  '/non-qm-bank-statement-calculator': 'bank-statement-loan-calculator.html',
+  '/non-qm-bank-statement-calculator.html': 'bank-statement-loan-calculator.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
