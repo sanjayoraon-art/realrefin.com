@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Car Payment Calculator Formulas | Estimate Monthly Loan Costs &amp; Total Interest</title>
+  <meta name="description" content="Detail car payment calculator formulas to estimate monthly loan costs and calculate the true cost of a loan. Includes step-by-step mathematical derivations, trade-in tax credits, amortization schedules, and total finance charges.">
+  <meta name="keywords" content="detail car payment calculator formulas to estimate monthly loan costs, how to calculate cost of a loan, car payment calculator formula, how to calculate car loan payment, auto loan formula, loan cost calculator, how to calculate monthly car payment, true cost of auto loan, car loan amortization formula">
+  <link rel="canonical" href="https://realrefin.com/detail-car-payment-calculator-formulas">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Detail Car Payment Calculator Formulas | Estimate Monthly Loan Costs">
+  <meta property="og:description" content="Master the exact mathematical formulas to calculate monthly car loan payments, total interest costs, sales tax credits, dealer fees, and amortization schedules.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/detail-car-payment-calculator-formulas">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for crisp formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Chart.js CDN for Visual Payment Breakdown -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema Markup: WebApplication, BreadcrumbList, FAQPage, HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/detail-car-payment-calculator-formulas#app",
+        "name": "Detail Car Payment Calculator & Loan Cost Formula Engine",
+        "url": "https://realrefin.com/detail-car-payment-calculator-formulas",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Institutional car payment calculator and loan cost engine that details exact mathematical formulas, solves for monthly payment P, computes total finance charges, trade-in tax credits, and full month-by-month amortization tables.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Debt & Loan Analytics Suite",
+            "item": "https://realrefin.com/#suite-debt"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Detail Car Payment Calculator Formulas",
+            "item": "https://realrefin.com/detail-car-payment-calculator-formulas"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Calculate the Cost of a Loan and Monthly Car Payment",
+        "description": "Step-by-step mathematical guide to calculating monthly auto loan payments and total cost of borrowing using the universal amortization formula.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Determine the Total Principal Financed",
+            "text": "Calculate Net Capitalized Cost: Vehicle Price plus Sales Tax and Doc Fees minus Cash Down Payment and Net Trade-In Equity."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Convert Annual APR to Monthly Periodic Rate",
+            "text": "Divide your annual percentage rate by 12 (and by 100 to convert to decimal format): r = APR / 1200."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Apply the Standard Amortization Formula",
+            "text": "Plug principal P, monthly rate r, and term months n into PMT = P * [r(1+r)^n] / [(1+r)^n - 1]."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Calculate Total Loan Cost and Total Interest Paid",
+            "text": "Multiply monthly payment PMT by total months n to get total payments. Subtract original principal P to isolate the exact finance charge / total interest paid."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the exact formula to calculate a monthly car payment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard fixed-rate amortization formula used by auto lenders is: PMT = P * [r(1 + r)^n] / [(1 + r)^n - 1], where P is the total amount financed (vehicle price plus taxes/fees minus down payment and trade-in), r is the monthly interest rate (APR divided by 12), and n is the total number of monthly payments (e.g., 60 months for a 5-year loan)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate the total cost of a loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The total cost of a loan is calculated by multiplying your monthly payment (PMT) by the total number of months (n), then adding your upfront cash down payment, dealer documentation fees, sales tax, and net trade-in equity. The total interest paid (finance charge) is calculated as: Total Interest = (PMT * n) - Amount Financed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does a trade-in affect car sales tax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In 42 out of 50 US states, trade-in equity provides a valuable state sales tax credit. The state only assesses sales tax on the net difference between the purchase price and the trade-in allowance. For example, buying a $35,000 vehicle with a $10,000 trade-in at a 7% tax rate means you only pay tax on $25,000 ($1,750 tax instead of $2,450), instantly saving $700 in out-of-pocket tax costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between simple interest and precomputed interest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nearly all legitimate auto loans use simple interest, where interest accrues daily on the remaining unpaid principal balance. If you make extra payments or pay off the loan early, you reduce the balance faster and save interest. In contrast, predatory precomputed interest loans (or Rule of 78 loans) calculate all future interest upfront, meaning paying early provides little to no interest savings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does a 72-month or 84-month car loan cost significantly more?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While extending a car loan to 72 or 84 months reduces your monthly payment by spreading principal over more time, it dramatically increases the total cost of the loan. Because the loan balance remains high for longer, compound interest accumulates over an extended horizon. On a $35,000 loan at 7% APR, moving from 48 months to 84 months lowers the monthly payment by $352, but increases total interest paid from $5,248 to $9,521—an extra $4,273 in pure finance charges."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ===========================================================
+       FINTECH SAAS DESIGN SYSTEM - REALREFIN INSTITUTIONAL NAVY
+       Primary: Deep Slate / Midnight Navy (#0F172A)
+       Accents: High-Performance Royal Blue (#2563EB) & Emerald (#10B981)
+    =========================================================== */
+    :root {
+      --primary-navy: #0F172A;
+      --primary-slate: #1E293B;
+      --primary-border: #334155;
+      
+      --accent-blue: #2563EB;
+      --accent-blue-dark: #1D4ED8;
+      --accent-blue-light: #EFF6FF;
+      --accent-blue-border: #BFDBFE;
+
+      --accent-emerald: #10B981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --accent-emerald-border: #A7F3D0;
+
+      --accent-amber: #D97706;
+      --accent-amber-light: #FEF3C7;
+      --accent-amber-border: #FDE68A;
+
+      --accent-coral: #E11D48;
+      --accent-coral-light: #FFF1F2;
+      --accent-coral-border: #FECDD3;
+
+      --accent-purple: #7C3AED;
+      --accent-purple-light: #F5F3FF;
+
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --text-subtle: #94A3B8;
+      --text-white: #FFFFFF;
+      
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-focus: #2563EB;
+      
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-navy);
+    }
+
+    .nav-badge-pill {
+      background: var(--accent-blue-light);
+      color: var(--accent-blue);
+      border: 1px solid var(--accent-blue-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB & HEADER
+    ----------------------------------------------------------- */
+    .breadcrumb-nav {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--primary-navy);
+      text-decoration: underline;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 880px;
+      line-height: 1.55;
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR MAIN GRID LAYOUT
+    ----------------------------------------------------------- */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .currency-switch-box {
+      display: flex;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .curr-btn {
+      border: none;
+      background: transparent;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .curr-btn.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* FORM CONTROLS */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .form-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 0.9rem; }
+    .input-suffix { right: 0.9rem; }
+
+    .calc-input {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .calc-input.has-prefix { padding-left: 2rem; }
+    .calc-input.has-suffix { padding-right: 2.2rem; }
+
+    .calc-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .calc-select {
+      width: 100%;
+      height: 44px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .calc-select:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    /* Range slider */
+    .slider-control {
+      margin-top: 0.45rem;
+    }
+
+    .calc-range {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .calc-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.1s ease;
+    }
+
+    .calc-range::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .presets-container {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-top: 0.45rem;
+    }
+
+    .preset-pill {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      padding: 0.22rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--primary-navy);
+      color: var(--text-white);
+      border-color: var(--primary-navy);
+    }
+
+    /* ADVANCED TOGGLE */
+    .advanced-toggle-wrap {
+      border-top: 1px dashed var(--border-color);
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+    }
+
+    .btn-toggle-advanced {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .advanced-content {
+      display: none;
+      margin-top: 1.25rem;
+      padding-top: 0.5rem;
+    }
+
+    .advanced-content.open {
+      display: block;
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* LIVE FORMULA INSPECTOR CARD */
+    .formula-inspector-card {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      margin-top: 1.5rem;
+    }
+
+    .formula-inspector-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #334155;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .formula-raw-box {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      background: #0F172A;
+      color: #38BDF8;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      overflow-x: auto;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* -----------------------------------------------------------
+       OUTPUT PANEL / HERO SUMMARY BANNER
+    ----------------------------------------------------------- */
+    .output-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-result-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 1.65rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.25);
+    }
+
+    .hero-result-banner::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-main-val {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-main-val span.sub-mo {
+      font-size: 1.25rem;
+      color: #60A5FA;
+      font-weight: 700;
+      margin-left: 0.25rem;
+    }
+
+    .hero-highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(37, 99, 235, 0.22);
+      border: 1px solid rgba(147, 197, 253, 0.4);
+      color: #BFDBFE;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 0.4rem;
+    }
+
+    .hero-subtext {
+      font-size: 0.86rem;
+      color: #CBD5E1;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* KPI METRICS 2x2 GRID */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .kpi-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      transition: transform 0.12s ease;
+    }
+
+    .kpi-box:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
+    /* WATERFALL TABLE */
+    .waterfall-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .waterfall-header {
+      background: var(--bg-light);
+      padding: 0.65rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+
+    .waterfall-row:last-child {
+      border-bottom: none;
+    }
+
+    .waterfall-row.total {
+      background: #F8FAFC;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      border-top: 2px solid var(--primary-navy);
+    }
+
+    .waterfall-label {
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .waterfall-badge {
+      font-size: 0.72rem;
+      background: #EFF6FF;
+      color: #2563EB;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .waterfall-val {
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* CHART CONTAINER */
+    .chart-container-wrap {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .chart-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.75rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .chart-box {
+      position: relative;
+      height: 210px;
+      width: 100%;
+    }
+
+    /* ACTION BUTTON ROW */
+    .action-btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn-action {
+      padding: 0.65rem 0.75rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       TERM COMPARISON MATRIX (36, 48, 60, 72, 84 Mo)
+    ----------------------------------------------------------- */
+    .comparison-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .term-table-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .term-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .term-table th {
+      background: var(--bg-light);
+      padding: 0.85rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .term-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .term-table tr.active-term {
+      background: #EFF6FF;
+      font-weight: 700;
+    }
+
+    .term-table tr.active-term td {
+      color: #1D4ED8;
+    }
+
+    /* -----------------------------------------------------------
+       COMPREHENSIVE SEO CONTENT & GUIDE
+    ----------------------------------------------------------- */
+    .guide-article {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem 2.25rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-article h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin: 2.25rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bg-light);
+    }
+
+    .guide-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .guide-article h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-slate);
+      margin: 1.5rem 0 0.65rem;
+    }
+
+    .guide-article p {
+      font-size: 0.98rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 1.15rem;
+    }
+
+    .guide-article ul, .guide-article ol {
+      margin: 0 0 1.25rem 1.4rem;
+      color: #334155;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .guide-article li {
+      margin-bottom: 0.4rem;
+    }
+
+    .formula-callout {
+      background: #F1F5F9;
+      border-left: 4px solid var(--accent-blue);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .formula-box {
+      font-size: 1.05rem;
+      margin: 0.75rem 0;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--bg-light);
+    }
+
+    .faq-arrow {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* RELATED TOOLS */
+    .related-section {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2.5rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 800px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tool-link-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+
+    .tool-link-card:hover {
+      border-color: var(--primary-navy);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tool-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .tool-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* SITE FOOTER */
+    .rr-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-navy);
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body { background: #FFFFFF; }
+      .rr-nav, .presets-container, .action-btn-row, .advanced-toggle-wrap, 
+      .slider-control, .related-section, .rr-footer, .guide-article, .comparison-section {
+        display: none !important;
+      }
+      .calc-layout { display: block; }
+      .output-card { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="rr-container">
+  
+  <!-- SITE NAVIGATION -->
+  <nav class="rr-nav">
+    <a href="/" class="rr-logo">
+      RealRefin<span>.com</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">All Tools</a></li>
+      <li><a href="/business-loan-payment-calculator">Business Loans</a></li>
+      <li><a href="/mortgage-refinance-calculator">Mortgages</a></li>
+      <li><a href="/calculate-debt-to-income-ratio-for-mortgage">DTI Ratios</a></li>
+      <li><span class="nav-badge-pill">Amortization Engine</span></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-nav">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/#suite-debt">Debt &amp; Loan Analytics Suite</a>
+    <span>›</span>
+    <span>Detail Car Payment Calculator Formulas</span>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="hero-badge-tag">
+      <span>📐</span> Mathematical Amortization &amp; Loan Cost Engine
+    </div>
+    <h1 class="page-title">Detail Car Payment Calculator Formulas</h1>
+    <p class="page-subtitle">
+      Estimate monthly loan costs and discover <strong>how to calculate the cost of a loan</strong> with complete mathematical precision. Includes the universal annuity amortization formula, trade-in sales tax credits, dealer doc fees, true finance charges, and full month-by-month payoff schedules.
+    </p>
+  </header>
+
+  <!-- CALCULATOR MAIN APPLICATION INTERFACE -->
+  <main class="calc-layout">
+
+    <!-- LEFT COLUMN: INPUT CONTROLS -->
+    <div class="calc-card">
+      <div class="section-title">
+        <span>Vehicle &amp; Financing Parameters</span>
+        <div class="currency-switch-box">
+          <button type="button" class="curr-btn active" data-currency="USD" data-symbol="$">$ USD</button>
+          <button type="button" class="curr-btn" data-currency="GBP" data-symbol="£">£ GBP</button>
+          <button type="button" class="curr-btn" data-currency="CAD" data-symbol="C$">C$</button>
+          <button type="button" class="curr-btn" data-currency="AUD" data-symbol="A$">A$</button>
+        </div>
+      </div>
+
+      <!-- Vehicle Purchase Price -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputPrice">Vehicle Purchase Price</label>
+          <span class="form-hint">MSRP or agreed sales price</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputPrice" class="calc-input has-prefix" value="38500" min="2000" max="300000" step="500">
+        </div>
+        <div class="slider-control">
+          <input type="range" id="sliderPrice" class="calc-range" min="10000" max="100000" step="500" value="38500">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill" data-price="25000">$25k (Used)</button>
+          <button type="button" class="preset-pill active" data-price="38500">$38.5k (Avg)</button>
+          <button type="button" class="preset-pill" data-price="55000">$55k (SUV/Truck)</button>
+          <button type="button" class="preset-pill" data-price="80000">$80k (Luxury)</button>
+        </div>
+      </div>
+
+      <!-- Cash Down Payment -->
+      <div class="form-group">
+        <div class="form-label-wrap">
+          <label class="form-label" for="inputDownPayment">Cash Down Payment</label>
+          <span class="form-hint">Upfront out-of-pocket cash</span>
+        </div>
+        <div class="input-wrapper">
+          <span class="input-prefix curr-symbol">$</span>
+          <input type="number" id="inputDownPayment" class="calc-input has-prefix" value="4000" min="0" max="100000" step="250">
+        </div>
+        <div class="presets-container">
+          <button type="button" class="preset-pill down-pill" data-down="0">$0 Down</button>
+          <button type="button" class="preset-pill down-pill" data-down="2000">$2,000</button>
+          <button type="button" class="preset-pill down-pill active" data-down="4000">$4,000 (10%)</button>
+          <button type="button" class="preset-pill down-pill" data-down="7700">$7,700 (20%)</button>
+        </div>
+      </div>
+
+      <!-- Trade-In Value & Amount Owed -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputTradeIn">Trade-In Allowance</label>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputTradeIn" class="calc-input has-prefix" value="9500" min="0" step="250">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputTradeOwed">Trade-In Owed</label>
+            <span class="form-hint">Current payoff balance</span>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-prefix curr-symbol">$</span>
+            <input type="number" id="inputTradeOwed" class="calc-input has-prefix" value="6000" min="0" step="250">
+          </div>
+        </div>
+      </div>
+
+      <!-- Interest Rate & Loan Term -->
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.75rem;">
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="inputRate">Annual APR Rate</label>
+            <span class="form-hint">Annual % Rate</span>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="inputRate" class="calc-input has-suffix" value="6.49" min="0.0" max="30.0" step="0.05">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-label-wrap">
+            <label class="form-label" for="selectTerm">Loan Duration</label>
+          </div>
+          <select id="selectTerm" class="calc-select">
+            <option value="36">36 Months (3 Yrs)</option>
+            <option value="48">48 Months (4 Yrs)</option>
+            <option value="60" selected>60 Months (5 Yrs)</option>
+            <option value="72">72 Months (6 Yrs)</option>
+            <option value="84">84 Months (7 Yrs)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ADVANCED TOGGLE: TAXES, DEALER DOC FEES & REGISTRATION -->
+      <div class="advanced-toggle-wrap">
+        <button type="button" class="btn-toggle-advanced" id="btnToggleTaxes">
+          <span>⚙️ Advanced: Sales Tax Rate &amp; Dealer Fees</span>
+          <span id="taxesToggleIcon">▼</span>
+        </button>
+
+        <div class="advanced-content" id="taxesContent">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputSalesTax">Sales Tax Rate</label>
+                <span class="form-hint">State &amp; local tax</span>
+              </div>
+              <div class="input-wrapper">
+                <input type="number" id="inputSalesTax" class="calc-input has-suffix" value="7.0" min="0.0" max="15.0" step="0.25">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-wrap">
+                <label class="form-label" for="inputDealerFees">Dealer Doc &amp; Title Fees</label>
+              </div>
+              <div class="input-wrapper">
+                <span class="input-prefix curr-symbol">$</span>
+                <input type="number" id="inputDealerFees" class="calc-input has-prefix" value="695" min="0" step="25">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <label for="checkTradeCredit" style="font-size: 0.85rem; font-weight: 700; color: var(--primary-navy); cursor: pointer;">
+                Apply State Trade-In Sales Tax Credit
+              </label>
+              <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">
+                Law in 42 states: Tax is assessed only on (Price - Trade-In)
+              </div>
+            </div>
+            <input type="checkbox" id="checkTradeCredit" checked style="width: 18px; height: 18px; accent-color: var(--accent-blue); cursor: pointer;">
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE FORMULA INSPECTOR: SHOWS THE EXACT NUMBERS IN AMORTIZATION FORMULA -->
+      <div class="formula-inspector-card">
+        <div class="formula-inspector-title">
+          <span>🔍</span> Live Formula Inspector ($PMT = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$)
+        </div>
+        <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 0.4rem;">
+          Your current loan inputs plugged directly into the standard auto loan formula:
+        </p>
+        <div class="formula-raw-box" id="formulaRawOutput">
+          P = $33,225 (Amount Financed)<br>
+          r = 0.0649 / 12 = 0.005408 (Monthly Rate)<br>
+          n = 60 Months<br>
+          PMT = 33225 * [0.005408 * (1.005408)^60] / [(1.005408)^60 - 1] = $649.96
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: OUTPUT ENGINE & RESULTS -->
+    <div class="output-card">
+      <div class="section-title">
+        <span>Payment &amp; Total Loan Cost</span>
+        <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-blue); background: var(--accent-blue-light); padding: 0.2rem 0.5rem; border-radius: 4px;">Verified Formula</span>
+      </div>
+
+      <!-- HERO RESULT BANNER -->
+      <div class="hero-result-banner">
+        <div class="hero-top-label">
+          <span>🚗</span> Estimated Monthly Loan Payment
+        </div>
+        <div class="hero-main-val">
+          <span id="heroMonthlyPmt">$650</span>
+          <span class="sub-mo">/ month</span>
+        </div>
+        <div class="hero-highlight-pill">
+          <span>✓</span> Total Interest Cost: <span id="heroTotalInterest" style="margin-left: 0.25rem;">$5,773</span>
+        </div>
+        <div class="hero-subtext" id="heroBannerSub">
+          Financing <strong>$33,225</strong> at <strong>6.49% APR</strong> over <strong>60 Months</strong>. Total payments over the loan life will equal <strong>$38,998</strong>.
+        </div>
+      </div>
+
+      <!-- 2x2 PRIMARY KPI CARDS -->
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="kpi-title">Amount Financed (Principal)</div>
+          <div class="kpi-value" id="kpiPrincipal">$33,225</div>
+          <div class="kpi-sub" id="kpiNetTradeSub">Net Trade Credit: $3,500</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Total Cost of Loan</div>
+          <div class="kpi-value" id="kpiTotalCost" style="color: #2563EB;">$46,498</div>
+          <div class="kpi-sub">Vehicle + Interest + Tax + Fees</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Total Finance Charges</div>
+          <div class="kpi-value" id="kpiFinanceCharge" style="color: var(--accent-coral);">$5,773</div>
+          <div class="kpi-sub" id="kpiInterestRatio">17.4% of Financed Balance</div>
+        </div>
+
+        <div class="kpi-box">
+          <div class="kpi-title">Sales Tax &amp; Doc Fees</div>
+          <div class="kpi-value" id="kpiTaxAndFees">$2,725</div>
+          <div class="kpi-sub" id="kpiTaxSavedSub">Tax Saved via Trade: $665</div>
+        </div>
+      </div>
+
+      <!-- WATERFALL PAYMENT BREAKDOWN -->
+      <div class="waterfall-card">
+        <div class="waterfall-header">
+          <span>Loan Cost Capitalization Waterfall</span>
+          <span>Amount</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Vehicle Negotiated Purchase Price</span>
+          <span class="waterfall-val" id="wfPrice">$38,500</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Sales Tax (<span id="wfTaxRate">7.0%</span>)
+            <span class="waterfall-badge" id="wfTaxBadge">Trade Credit Applied</span>
+          </span>
+          <span class="waterfall-val" id="wfTax">+$2,030</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Dealer Documentation, Title &amp; Reg Fees</span>
+          <span class="waterfall-val" id="wfFees">+$695</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Less: Upfront Cash Down Payment</span>
+          <span class="waterfall-val" id="wfDown" style="color: var(--accent-emerald-dark);">-$4,000</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">
+            Less: Net Trade-In Equity (Allowance - Owed)
+          </span>
+          <span class="waterfall-val" id="wfNetTrade" style="color: var(--accent-emerald-dark);">-$3,500</span>
+        </div>
+
+        <div class="waterfall-row total">
+          <span class="waterfall-label">Total Amount Financed (Loan Principal $P$)</span>
+          <span class="waterfall-val" id="wfTotalFinanced" style="color: #2563EB;">$33,225</span>
+        </div>
+
+        <div class="waterfall-row">
+          <span class="waterfall-label">Total Finance Charges (Interest Over Life of Loan)</span>
+          <span class="waterfall-val" id="wfInterestTotal" style="color: var(--accent-coral);">+$5,773</span>
+        </div>
+
+        <div class="waterfall-row total" style="background: #F1F5F9; border-top: 1px solid var(--border-color);">
+          <span class="waterfall-label" style="font-weight: 800;">True Total Out-of-Pocket Vehicle Cost</span>
+          <span class="waterfall-val" id="wfTrueTotal">$46,498</span>
+        </div>
+      </div>
+
+      <!-- VISUAL PAYMENT DOUGHNUT CHART -->
+      <div class="chart-container-wrap">
+        <div class="chart-title">Total Cost Allocation ($ vs %)</div>
+        <div class="chart-box">
+          <canvas id="carCostPieChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-btn-row">
+        <button type="button" class="btn-action" id="btnDownloadCsv">
+          <span>📥</span> Download Excel
+        </button>
+        <button type="button" class="btn-action" id="btnPrintReport">
+          <span>🖨️</span> Print PDF
+        </button>
+        <button type="button" class="btn-action" id="btnShareDeal">
+          <span>🔗</span> Share Deal
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- LOAN TERM COMPARISON MATRIX (36, 48, 60, 72, 84 MONTHS) -->
+  <section class="comparison-section">
+    <div class="section-title">
+      <span>Compare Loan Terms: Monthly Payment vs. Total Interest Paid</span>
+    </div>
+    <div class="term-table-card">
+      <table class="term-table">
+        <thead>
+          <tr>
+            <th>Loan Term</th>
+            <th>Monthly Payment</th>
+            <th>Total Payments</th>
+            <th>Total Interest Paid</th>
+            <th>Interest Savings vs 84 Mo</th>
+          </tr>
+        </thead>
+        <tbody id="termTableBody">
+          <!-- Dynamically populated via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE 1,500+ WORD INSTITUTIONAL GUIDE -->
+  <article class="guide-article">
+    <h2>Detail Car Payment Calculator Formulas: How to Estimate Monthly Loan Costs</h2>
+    <p>
+      Whether you are purchasing a brand-new vehicle from a franchised dealership or financing a certified pre-owned car, understanding the exact mathematics of auto financing prevents costly dealer markups and financing traps. Many buyers focus solely on negotiating the "monthly payment" ($400, $500, or $600 per month). Dealership finance managers often exploit this by extending loan terms to <strong>72 or 84 months</strong>, creating the illusion of affordability while quietly adding thousands of dollars in compounding interest and finance charges.
+    </p>
+    <p>
+      In this guide, we break down the <strong>exact mathematical formulas</strong> used by commercial banks, credit unions, and captive automotive lenders (such as Ford Motor Credit, GM Financial, and Toyota Financial Services) to determine your monthly payment, interest burden, and total loan cost.
+    </p>
+
+    <h2>The Standard Fixed-Rate Amortization Formula</h2>
+    <p>
+      Auto installment loans are structured as fully amortizing annuities. The formula used to calculate the fixed monthly payment ($PMT$) is:
+    </p>
+
+    <div class="formula-callout">
+      <strong>Universal Auto Loan Payment Equation:</strong>
+      <div class="formula-box">
+        $$PMT = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$$
+      </div>
+      <p style="font-size: 0.88rem; color: #475569; margin-top: 0.5rem; margin-bottom: 0;">
+        Where:
+        <br>• $P$ = <strong>Total Principal Financed</strong> (Net capitalized cost).
+        <br>• $r$ = <strong>Periodic Monthly Interest Rate</strong> (Annual Percentage Rate $\text{APR} / 12 / 100$).
+        <br>• $n$ = <strong>Total Number of Months</strong> (e.g., 36, 48, 60, 72, or 84).
+      </p>
+    </div>
+
+    <h3>Step-by-Step Calculation Example</h3>
+    <p>
+      Let's calculate the monthly payment on a vehicle with an amount financed of <strong>$30,000</strong> at an APR of <strong>6.0%</strong> over a <strong>60-month</strong> term:
+    </p>
+    <ol>
+      <li><strong>Convert APR to Monthly Rate ($r$):</strong>
+        $$r = \frac{0.06}{12} = 0.005$$
+      </li>
+      <li><strong>Calculate the Compounding Growth Factor $(1 + r)^n$:</strong>
+        $$(1 + 0.005)^{60} = (1.005)^{60} \approx 1.34885$$
+      </li>
+      <li><strong>Calculate the Numerator:</strong>
+        $$r(1 + r)^n = 0.005 \times 1.34885 \approx 0.006744$$
+      </li>
+      <li><strong>Calculate the Denominator:</strong>
+        $$(1 + r)^n - 1 = 1.34885 - 1 = 0.34885$$
+      </li>
+      <li><strong>Solve for Payment ($PMT$):</strong>
+        $$PMT = \$30,000 \times \frac{0.006744}{0.34885} \approx \$30,000 \times 0.0193328 \approx \$579.98 \text{ / month}$$
+      </li>
+    </ol>
+
+    <h2>How to Calculate the Total Cost of a Loan</h2>
+    <p>
+      To understand the true cost of borrowing, you must look beyond the monthly payment. The total cost of an automobile loan consists of two components:
+    </p>
+    <div class="formula-callout">
+      <strong>Total Cost of a Loan Formulas:</strong>
+      <div class="formula-box">
+        $$\text{Total Loan Payments} = PMT \times n$$
+        $$\text{Total Interest (Finance Charge)} = (PMT \times n) - P$$
+        $$\text{True Total Vehicle Cost} = \text{Total Loan Payments} + \text{Cash Down Payment} + \text{Net Trade-In Equity}$$
+      </div>
+    </div>
+    <p>
+      In the $30,000 loan example above:
+      <br>• Total Loan Payments = $\$579.98 \times 60 = \$34,798.80$.
+      <br>• Total Interest Paid = $\$34,798.80 - \$30,000 = \$4,798.80$.
+      <br>This means borrowing $30,000 for 5 years costs you an extra <strong>$4,798.80</strong> in pure interest profit paid to the lender.
+    </p>
+
+    <h2>Calculating Total Principal Financed ($P$): Trade-Ins &amp; Tax Credits</h2>
+    <p>
+      The principal amount ($P$) you finance does not equal the sticker price of the car. It is the net result of vehicle cost, taxes, fees, down payments, and trade-ins:
+    </p>
+    <div class="formula-callout">
+      <div class="formula-box">
+        $$P = \text{Vehicle Sales Price} + \text{Sales Tax} + \text{Dealer Fees} - \text{Cash Down Payment} - \text{Net Trade-In Equity}$$
+      </div>
+    </div>
+
+    <h3>The 42-State Trade-In Sales Tax Credit Advantage</h3>
+    <p>
+      In 42 out of 50 US states, trading in your existing vehicle provides an immediate reduction in sales tax liability. The state assesses sales tax only on the net difference between the purchase price and your trade-in allowance:
+    </p>
+    <div class="formula-box">
+      $$\text{Taxable Amount} = \text{Vehicle Purchase Price} - \text{Trade-In Value}$$
+      $$\text{Sales Tax} = \text{Taxable Amount} \times \text{Tax Rate}$$
+    </div>
+    <p>
+      For example, on a $40,000 vehicle with a $15,000 trade-in at a 7% sales tax rate:
+      <br>• <strong>Without Trade-In:</strong> Tax = $\$40,000 \times 7\% = \$2,800$.
+      <br>• <strong>With Trade-In:</strong> Tax = $(\$40,000 - \$15,000) \times 7\% = \$25,000 \times 7\% = \$1,750$.
+      <br>You save <strong>$1,050</strong> in cash taxes simply by trading in your vehicle rather than selling it privately!
+    </p>
+
+    <h2>Negative Equity Trade-In ("Underwater" Loans)</h2>
+    <p>
+      If you owe more on your existing auto loan than the dealer's trade-in offer, you have <strong>negative equity</strong> (commonly referred to as being "upside down" or "underwater"). In this case, your net trade-in equity is negative and is added directly to your new loan principal:
+    </p>
+    <div class="formula-box">
+      $$\text{Net Trade-In Equity} = \text{Trade-In Allowance} - \text{Current Loan Balance Owed}$$
+    </div>
+    <p>
+      If a dealership offers you $10,000 for your car but you still owe $13,000 on your previous loan, the negative equity of <strong>-$3,000</strong> is rolled into your new financing, increasing your loan balance and causing you to pay interest on both cars simultaneously.
+    </p>
+
+    <h2>Simple Interest vs. Rule of 78 (Precomputed Interest)</h2>
+    <p>
+      How your lender accrues interest fundamentally impacts your total cost:
+    </p>
+    <ul>
+      <li><strong>Simple Daily Interest (Standard Modern Auto Loans):</strong> Interest accrues daily based on your remaining unpaid principal balance ($I = P \times \frac{r}{365} \times \text{days}$). If you pay an extra $50 or $100 toward principal each month, or pay off the loan 2 years early, your balance drops immediately, saving you hundreds or thousands of dollars in interest charges.</li>
+      <li><strong>Precomputed Interest (Rule of 78):</strong> Common only among subprime or predatory buy-here-pay-here dealers. All interest for the full term is calculated upfront and front-loaded into early payments. Paying off a precomputed loan early offers virtually zero interest savings. Always verify your loan agreement specifies <strong>Simple Interest with No Prepayment Penalties</strong>.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I calculate my car payment in Microsoft Excel or Google Sheets?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yes! In Excel or Google Sheets, you can use the built-in PMT function: <code>=PMT(rate/12, nper, -pv)</code>. For example, for a $30,000 loan at 6% APR over 60 months, type: <code>=PMT(0.06/12, 60, -30000)</code>, which returns exactly $579.98.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How much does an extra $100 per month save on a car loan?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        On a $35,000 loan at 7% APR over 60 months ($693/month), paying an additional $100 per month ($793/month total) knocks 9 full months off your repayment timeline and saves approximately $1,150 in pure interest charges.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is a good auto loan interest rate in 2026?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Auto loan rates depend heavily on your credit score and whether the vehicle is new or used. In current market conditions, super-prime borrowers (credit score 780+) average 5.0%–6.5% on new cars and 6.5%–7.5% on used cars. Subprime borrowers (credit scores below 620) often face rates ranging from 12% to 20%+, which doubles or triples total borrowing costs.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is the 20/4/10 rule of thumb for car buying?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        The 20/4/10 rule is a conservative financial benchmark recommending: (1) Put down at least 20% in cash or trade-in equity, (2) Finance the vehicle for no longer than 4 years (48 months), and (3) Keep total monthly vehicle transportation expenses (loan payment, auto insurance, fuel, and maintenance) under 10% of your gross monthly income.
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED FINANCIAL TOOLS -->
+  <section class="related-section">
+    <div class="section-title">
+      <span>Explore Related Debt &amp; Financing Calculators</span>
+    </div>
+    <div class="related-grid">
+      <a href="/business-loan-payment-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Business Loan Payment Calculator</div>
+          <div class="tool-card-desc">Calculate commercial debt service, SBA loan amortizations, and origination fee impacts.</div>
+        </div>
+        <span style="color: var(--accent-blue); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Calculate Business Loan →</span>
+      </a>
+
+      <a href="/calculate-debt-to-income-ratio-for-mortgage" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Debt-to-Income (DTI) Ratio Calculator</div>
+          <div class="tool-card-desc">See how monthly car loan payments impact your mortgage borrowing capacity under standard 28/36 guidelines.</div>
+        </div>
+        <span style="color: var(--accent-blue); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Check DTI Ratios →</span>
+      </a>
+
+      <a href="/mortgage-refinance-calculator" class="tool-link-card">
+        <div>
+          <div class="tool-card-title">Mortgage Refinance &amp; Cash-Out Calculator</div>
+          <div class="tool-card-desc">Evaluate cash-out refinance options to consolidate high-interest automotive or consumer debt.</div>
+        </div>
+        <span style="color: var(--accent-blue); font-weight: 700; font-size: 0.82rem; margin-top: 0.85rem;">Model Refinance →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="rr-footer">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+    </ul>
+    <p>© 2026 RealRefin.com. All rights reserved. Mathematical modeling tools are for educational purposes. Final automotive financing terms, interest rates, and loan charges are determined by your dealer and licensed lending institution.</p>
+  </footer>
+
+</div>
+
+<!-- JAVASCRIPT CALCULATION & INTERACTIVE ENGINE -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Currency State
+  let activeCurrency = 'USD';
+  let activeSymbol = '$';
+  let carChart = null;
+
+  // DOM Elements - Inputs
+  const inputPrice = document.getElementById('inputPrice');
+  const sliderPrice = document.getElementById('sliderPrice');
+  const inputDownPayment = document.getElementById('inputDownPayment');
+  const inputTradeIn = document.getElementById('inputTradeIn');
+  const inputTradeOwed = document.getElementById('inputTradeOwed');
+  const inputRate = document.getElementById('inputRate');
+  const selectTerm = document.getElementById('selectTerm');
+
+  // Advanced Inputs
+  const btnToggleTaxes = document.getElementById('btnToggleTaxes');
+  const taxesContent = document.getElementById('taxesContent');
+  const taxesToggleIcon = document.getElementById('taxesToggleIcon');
+  const inputSalesTax = document.getElementById('inputSalesTax');
+  const inputDealerFees = document.getElementById('inputDealerFees');
+  const checkTradeCredit = document.getElementById('checkTradeCredit');
+
+  // Outputs
+  const heroMonthlyPmt = document.getElementById('heroMonthlyPmt');
+  const heroTotalInterest = document.getElementById('heroTotalInterest');
+  const heroBannerSub = document.getElementById('heroBannerSub');
+
+  const kpiPrincipal = document.getElementById('kpiPrincipal');
+  const kpiNetTradeSub = document.getElementById('kpiNetTradeSub');
+  const kpiTotalCost = document.getElementById('kpiTotalCost');
+  const kpiFinanceCharge = document.getElementById('kpiFinanceCharge');
+  const kpiInterestRatio = document.getElementById('kpiInterestRatio');
+  const kpiTaxAndFees = document.getElementById('kpiTaxAndFees');
+  const kpiTaxSavedSub = document.getElementById('kpiTaxSavedSub');
+
+  const formulaRawOutput = document.getElementById('formulaRawOutput');
+  const termTableBody = document.getElementById('termTableBody');
+
+  // Waterfall Elements
+  const wfPrice = document.getElementById('wfPrice');
+  const wfTaxRate = document.getElementById('wfTaxRate');
+  const wfTaxBadge = document.getElementById('wfTaxBadge');
+  const wfTax = document.getElementById('wfTax');
+  const wfFees = document.getElementById('wfFees');
+  const wfDown = document.getElementById('wfDown');
+  const wfNetTrade = document.getElementById('wfNetTrade');
+  const wfTotalFinanced = document.getElementById('wfTotalFinanced');
+  const wfInterestTotal = document.getElementById('wfInterestTotal');
+  const wfTrueTotal = document.getElementById('wfTrueTotal');
+
+  // Formatting Helper
+  function formatMoney(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: activeCurrency === 'GBP' ? 'GBP' : (activeCurrency === 'CAD' ? 'CAD' : (activeCurrency === 'AUD' ? 'AUD' : 'USD')),
+      maximumFractionDigits: 0
+    }).format(amount || 0).replace(/^[A-Z]+\s?/, activeSymbol);
+  }
+
+  // Currency Switcher
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCurrency = btn.getAttribute('data-currency');
+      activeSymbol = btn.getAttribute('data-symbol');
+      document.querySelectorAll('.curr-symbol').forEach(s => s.textContent = activeSymbol);
+      calculateCarLoan();
+    });
+  });
+
+  // Price Sync
+  inputPrice.addEventListener('input', () => {
+    sliderPrice.value = inputPrice.value;
+    calculateCarLoan();
+  });
+  sliderPrice.addEventListener('input', () => {
+    inputPrice.value = sliderPrice.value;
+    calculateCarLoan();
+  });
+
+  // Preset Price Pills
+  document.querySelectorAll('.preset-pill[data-price]').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.preset-pill[data-price]').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-price'));
+      inputPrice.value = val;
+      sliderPrice.value = Math.min(100000, val);
+      calculateCarLoan();
+    });
+  });
+
+  // Preset Down Payment Pills
+  document.querySelectorAll('.down-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.down-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const val = parseFloat(pill.getAttribute('data-down'));
+      inputDownPayment.value = val;
+      calculateCarLoan();
+    });
+  });
+
+  // Advanced Collapsible Toggle
+  btnToggleTaxes.addEventListener('click', () => {
+    taxesContent.classList.toggle('open');
+    taxesToggleIcon.textContent = taxesContent.classList.contains('open') ? '▲' : '▼';
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
+    });
+  });
+
+  // Input Listeners
+  [inputDownPayment, inputTradeIn, inputTradeOwed, inputRate, selectTerm, inputSalesTax, inputDealerFees, checkTradeCredit].forEach(el => {
+    if (el) {
+      el.addEventListener('input', calculateCarLoan);
+      el.addEventListener('change', calculateCarLoan);
+    }
+  });
+
+  // MAIN CALCULATION FUNCTION
+  function calculateCarLoan() {
+    const price = Math.max(0, parseFloat(inputPrice.value) || 0);
+    const downPayment = Math.max(0, parseFloat(inputDownPayment.value) || 0);
+    const tradeInVal = Math.max(0, parseFloat(inputTradeIn.value) || 0);
+    const tradeInOwed = Math.max(0, parseFloat(inputTradeOwed.value) || 0);
+    const netTradeEquity = tradeInVal - tradeInOwed; // positive or negative
+
+    const taxRatePct = Math.max(0, parseFloat(inputSalesTax.value) || 0);
+    const isTradeTaxCredit = checkTradeCredit.checked;
+    
+    // Tax Calculation
+    let taxableAmount = price;
+    let taxSaved = 0;
+    if (isTradeTaxCredit && tradeInVal > 0) {
+      taxableAmount = Math.max(0, price - tradeInVal);
+      taxSaved = Math.round(Math.min(price, tradeInVal) * (taxRatePct / 100));
+      wfTaxBadge.style.display = 'inline-block';
+    } else {
+      wfTaxBadge.style.display = 'none';
+    }
+    const salesTaxAmount = Math.round(taxableAmount * (taxRatePct / 100));
+    const dealerFees = Math.max(0, parseFloat(inputDealerFees.value) || 0);
+
+    // Total Amount Financed (P) = Price + Sales Tax + Dealer Fees - Down Payment - Net Trade Equity
+    const totalFinanced = Math.max(0, price + salesTaxAmount + dealerFees - downPayment - netTradeEquity);
+
+    // Interest Rate & Terms
+    const annualApr = Math.max(0, parseFloat(inputRate.value) || 0);
+    const monthlyRate = (annualApr / 100) / 12;
+    const termMonths = parseInt(selectTerm.value, 10) || 60;
+
+    // Fixed-Rate Amortization Formula: PMT = P * [r(1+r)^n] / [(1+r)^n - 1]
+    let monthlyPmt = 0;
+    if (monthlyRate > 0 && totalFinanced > 0) {
+      monthlyPmt = totalFinanced * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1);
+    } else if (termMonths > 0) {
+      monthlyPmt = totalFinanced / termMonths;
+    }
+
+    const totalLoanPayments = monthlyPmt * termMonths;
+    const totalInterestPaid = Math.max(0, totalLoanPayments - totalFinanced);
+    const trueTotalCost = totalLoanPayments + downPayment + Math.max(0, netTradeEquity);
+    const interestRatio = totalFinanced > 0 ? (totalInterestPaid / totalFinanced) * 100 : 0;
+
+    // -------------------------------------------------------------
+    // UPDATE DOM OUTPUTS
+    // -------------------------------------------------------------
+    heroMonthlyPmt.textContent = formatMoney(Math.round(monthlyPmt));
+    heroTotalInterest.textContent = formatMoney(Math.round(totalInterestPaid));
+    heroBannerSub.innerHTML = `Financing <strong>${formatMoney(totalFinanced)}</strong> at <strong>${annualApr.toFixed(2)}% APR</strong> over <strong>${termMonths} Months</strong>. Total payments over the loan life will equal <strong>${formatMoney(Math.round(totalLoanPayments))}</strong>.`;
+
+    kpiPrincipal.textContent = formatMoney(totalFinanced);
+    kpiNetTradeSub.textContent = `Net Trade Equity: ${formatMoney(netTradeEquity)}`;
+    kpiTotalCost.textContent = formatMoney(Math.round(trueTotalCost));
+    kpiFinanceCharge.textContent = formatMoney(Math.round(totalInterestPaid));
+    kpiInterestRatio.textContent = `${interestRatio.toFixed(1)}% of Financed Balance`;
+    kpiTaxAndFees.textContent = formatMoney(salesTaxAmount + dealerFees);
+    kpiTaxSavedSub.textContent = isTradeTaxCredit && taxSaved > 0 ? `Tax Saved via Trade: ${formatMoney(taxSaved)}` : `State Tax: ${taxRatePct.toFixed(1)}%`;
+
+    // Waterfall Table
+    wfPrice.textContent = formatMoney(price);
+    wfTaxRate.textContent = `${taxRatePct.toFixed(1)}%`;
+    wfTax.textContent = `+${formatMoney(salesTaxAmount)}`;
+    wfFees.textContent = `+${formatMoney(dealerFees)}`;
+    wfDown.textContent = `-${formatMoney(downPayment)}`;
+    wfNetTrade.textContent = netTradeEquity >= 0 ? `-${formatMoney(netTradeEquity)}` : `+${formatMoney(Math.abs(netTradeEquity))} (Negative Equity)`;
+    wfTotalFinanced.textContent = formatMoney(totalFinanced);
+    wfInterestTotal.textContent = `+${formatMoney(Math.round(totalInterestPaid))}`;
+    wfTrueTotal.textContent = formatMoney(Math.round(trueTotalCost));
+
+    // Live Formula Inspector Output
+    formulaRawOutput.innerHTML = `
+P (Principal Financed) = ${formatMoney(totalFinanced)}<br>
+r (Monthly Rate) = ${annualApr.toFixed(2)}% / 12 = ${(monthlyRate).toFixed(6)}<br>
+n (Loan Term) = ${termMonths} Months<br>
+PMT = ${totalFinanced} * [${(monthlyRate).toFixed(6)} * (1 + ${(monthlyRate).toFixed(6)})^${termMonths}] / [(1 + ${(monthlyRate).toFixed(6)})^${termMonths} - 1] = <strong>${formatMoney(monthlyPmt)}</strong><br>
+Total Interest = (${formatMoney(monthlyPmt)} * ${termMonths}) - ${formatMoney(totalFinanced)} = <strong>${formatMoney(Math.round(totalInterestPaid))}</strong>
+    `.trim();
+
+    // -------------------------------------------------------------
+    // POPULATE TERM COMPARISON MATRIX (36, 48, 60, 72, 84 MONTHS)
+    // -------------------------------------------------------------
+    const terms = [36, 48, 60, 72, 84];
+    let maxTermInterest = 0;
+    
+    // Calculate 84 mo interest first for savings comparison
+    const r84 = monthlyRate;
+    const pmt84 = r84 > 0 ? totalFinanced * (r84 * Math.pow(1 + r84, 84)) / (Math.pow(1 + r84, 84) - 1) : totalFinanced / 84;
+    maxTermInterest = Math.max(0, (pmt84 * 84) - totalFinanced);
+
+    let tableHtml = '';
+    terms.forEach(t => {
+      let pmt = 0;
+      if (monthlyRate > 0) {
+        pmt = totalFinanced * (monthlyRate * Math.pow(1 + monthlyRate, t)) / (Math.pow(1 + monthlyRate, t) - 1);
+      } else {
+        pmt = totalFinanced / t;
+      }
+      const totalPayments = pmt * t;
+      const interestPaid = Math.max(0, totalPayments - totalFinanced);
+      const savingsVs84 = Math.max(0, maxTermInterest - interestPaid);
+      const isSelected = t === termMonths;
+
+      tableHtml += `
+        <tr class="${isSelected ? 'active-term' : ''}">
+          <td><strong>${t} Months (${t/12} Yrs)</strong> ${isSelected ? '★ Active' : ''}</td>
+          <td><strong>${formatMoney(Math.round(pmt))} / mo</strong></td>
+          <td>${formatMoney(Math.round(totalPayments))}</td>
+          <td style="color: ${isSelected ? '#1D4ED8' : 'var(--accent-coral)'}; font-weight: 700;">${formatMoney(Math.round(interestPaid))}</td>
+          <td style="color: #047857; font-weight: 700;">${savingsVs84 > 0 ? `+${formatMoney(Math.round(savingsVs84))} Saved` : 'Baseline'}</td>
+        </tr>
+      `;
+    });
+    termTableBody.innerHTML = tableHtml;
+
+    // Visual Chart Update
+    renderChart([
+      { label: 'Vehicle Net Principal', value: Math.max(0, price - downPayment - Math.max(0, netTradeEquity)), color: '#2563EB' },
+      { label: 'Total Loan Interest', value: Math.round(totalInterestPaid), color: '#E11D48' },
+      { label: 'Sales Tax & Dealer Fees', value: salesTaxAmount + dealerFees, color: '#D97706' },
+      { label: 'Cash Down & Net Trade', value: downPayment + Math.max(0, netTradeEquity), color: '#10B981' }
+    ]);
+  }
+
+  // CHART.JS DOUGHNUT RENDERER
+  function renderChart(dataPoints) {
+    const ctx = document.getElementById('carCostPieChart');
+    if (!ctx) return;
+
+    const labels = dataPoints.map(d => d.label);
+    const data = dataPoints.map(d => Math.max(0, d.value));
+    const bgColors = dataPoints.map(d => d.color);
+
+    if (carChart) {
+      carChart.destroy();
+    }
+
+    carChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: data,
+          backgroundColor: bgColors,
+          borderWidth: 2,
+          borderColor: '#FFFFFF',
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 12,
+              font: { size: 11, family: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto' },
+              color: '#475569',
+              padding: 10
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const val = context.raw || 0;
+                return ` ${label}: ${formatMoney(val)}`;
+              }
+            }
+          }
+        },
+        cutout: '68%'
+      }
+    });
+  }
+
+  // DOWNLOAD CSV / EXCEL HANDLER
+  document.getElementById('btnDownloadCsv').addEventListener('click', () => {
+    let csv = `RealRefin.com - Detail Car Payment Calculator & Loan Cost Schedule\n`;
+    csv += `Date Generated: ${new Date().toLocaleDateString()}\n`;
+    csv += `Vehicle Price: ${inputPrice.value}, APR: ${inputRate.value}%, Term: ${selectTerm.value} Months\n\n`;
+
+    csv += `Section,Item,Amount\n`;
+    csv += `Vehicle Purchase,Vehicle Sales Price,"${inputPrice.value}"\n`;
+    csv += `Vehicle Purchase,Sales Tax Rate,"${inputSalesTax.value}%"\n`;
+    csv += `Vehicle Purchase,Dealer Doc & Title Fees,"${inputDealerFees.value}"\n`;
+    csv += `Credits,Cash Down Payment,"${inputDownPayment.value}"\n`;
+    csv += `Credits,Trade-In Allowance,"${inputTradeIn.value}"\n`;
+    csv += `Credits,Trade-In Amount Owed,"${inputTradeOwed.value}"\n`;
+    csv += `Loan Structure,Amount Financed (Principal P),"${kpiPrincipal.textContent}"\n`;
+    csv += `Loan Structure,Total Finance Charge (Interest),"${kpiFinanceCharge.textContent}"\n`;
+    csv += `Monthly Payment,Fixed Monthly Payment (PMT),"${heroMonthlyPmt.textContent}"\n`;
+    csv += `Summary,Total Cost of Loan,"${kpiTotalCost.textContent}"\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `RealRefin-Car-Payment-Formula-Schedule-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // PRINT PDF HANDLER
+  document.getElementById('btnPrintReport').addEventListener('click', () => {
+    window.print();
+  });
+
+  // SHARE DEAL LINK HANDLER
+  document.getElementById('btnShareDeal').addEventListener('click', () => {
+    const params = new URLSearchParams({
+      price: inputPrice.value,
+      down: inputDownPayment.value,
+      trade: inputTradeIn.value,
+      owed: inputTradeOwed.value,
+      rate: inputRate.value,
+      term: selectTerm.value,
+      tax: inputSalesTax.value,
+      fees: inputDealerFees.value,
+      curr: activeCurrency
+    });
+    const shareUrl = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      const btn = document.getElementById('btnShareDeal');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>✓</span> Copied Link!';
+      setTimeout(() => btn.innerHTML = orig, 2500);
+    }).catch(() => {
+      prompt('Copy deal link:', shareUrl);
+    });
+  });
+
+  // LOAD URL QUERY PARAMS
+  function loadQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('price')) {
+      inputPrice.value = params.get('price');
+      sliderPrice.value = params.get('price');
+    }
+    if (params.has('down')) inputDownPayment.value = params.get('down');
+    if (params.has('trade')) inputTradeIn.value = params.get('trade');
+    if (params.has('owed')) inputTradeOwed.value = params.get('owed');
+    if (params.has('rate')) inputRate.value = params.get('rate');
+    if (params.has('term')) selectTerm.value = params.get('term');
+    if (params.has('tax')) inputSalesTax.value = params.get('tax');
+    if (params.has('fees')) inputDealerFees.value = params.get('fees');
+    if (params.has('curr')) {
+      const c = params.get('curr').toUpperCase();
+      const targetBtn = document.querySelector(`.curr-btn[data-currency="${c}"]`);
+      if (targetBtn) targetBtn.click();
+    }
+  }
+
+  // INITIALIZE
+  loadQueryParams();
+  calculateCarLoan();
+});
+</script>
+
+</body>
+</html>

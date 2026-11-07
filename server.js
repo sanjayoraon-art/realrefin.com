@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/detail-car-payment-calculator-formulas</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/bank-statement-loan-calculator</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -389,6 +395,16 @@ const FILE_MAP = {
   '/bank-statement-mortgage-calculator.html': 'bank-statement-loan-calculator.html',
   '/non-qm-bank-statement-calculator': 'bank-statement-loan-calculator.html',
   '/non-qm-bank-statement-calculator.html': 'bank-statement-loan-calculator.html',
+  '/detail-car-payment-calculator-formulas': 'detail-car-payment-calculator-formulas.html',
+  '/detail-car-payment-calculator-formulas.html': 'detail-car-payment-calculator-formulas.html',
+  '/car-payment-calculator-formulas': 'detail-car-payment-calculator-formulas.html',
+  '/car-payment-calculator-formulas.html': 'detail-car-payment-calculator-formulas.html',
+  '/how-to-calculate-cost-of-a-loan': 'detail-car-payment-calculator-formulas.html',
+  '/how-to-calculate-cost-of-a-loan.html': 'detail-car-payment-calculator-formulas.html',
+  '/how-to-calculate-car-loan-payment': 'detail-car-payment-calculator-formulas.html',
+  '/how-to-calculate-car-loan-payment.html': 'detail-car-payment-calculator-formulas.html',
+  '/auto-loan-payment-calculator-formulas': 'detail-car-payment-calculator-formulas.html',
+  '/auto-loan-payment-calculator-formulas.html': 'detail-car-payment-calculator-formulas.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-per-square-foot-to-build-a-house-in-alabama.html': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
   '/cost-to-build-a-house-in-alabama': 'cost-per-square-foot-to-build-a-house-in-alabama.html',
