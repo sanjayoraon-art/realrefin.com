@@ -1110,6 +1110,184 @@
         font-size: 1.45rem !important;
       }
     }
+  
+    /* ========================================================
+       EMBED THIS CALCULATOR WIDGET STYLING & IFRAME HIDING
+    ======================================================== */
+    .rr-embed-widget-card {
+      max-width: 1200px;
+      margin: 2.5rem auto;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+    }
+    .rr-embed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .rr-embed-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .rr-embed-icon {
+      width: 40px;
+      height: 40px;
+      background: #EFF6FF;
+      color: #2563EB;
+      border: 1px solid #BFDBFE;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 1.05rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .rr-embed-title {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.3;
+    }
+    .rr-embed-desc {
+      margin: 0.25rem 0 0 0;
+      font-size: 0.86rem;
+      color: #475569;
+      line-height: 1.45;
+    }
+    .rr-embed-badge {
+      background: #ECFDF5;
+      color: #059669;
+      border: 1px solid #A7F3D0;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+    .rr-embed-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+    .rr-embed-code {
+      width: 100%;
+      box-sizing: border-box;
+      background: #0F172A;
+      color: #38BDF8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      resize: vertical;
+      min-height: 75px;
+      outline: none;
+    }
+    .rr-embed-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .rr-embed-info {
+      font-size: 0.8rem;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .rr-embed-info .rr-embed-check {
+      color: #10B981;
+      font-weight: 800;
+    }
+    .btn-copy-widget-embed {
+      background: #0F172A;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.15s ease;
+    }
+    .btn-copy-widget-embed:hover {
+      background: #2563EB;
+    }
+    @media (max-width: 768px) {
+      .rr-embed-widget-card {
+        margin: 1.5rem 1rem;
+        padding: 1.15rem;
+      }
+      .rr-embed-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .rr-embed-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn-copy-widget-embed {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    /* IFRAME EMBED MODE STYLING - HIDES CHROME & WIDGET WHEN EMBEDDED */
+    body.is-embedded {
+      background: #FFFFFF !important;
+    }
+    body.is-embedded nav,
+    body.is-embedded .rr-nav,
+    body.is-embedded header,
+    body.is-embedded .breadcrumb-nav,
+    body.is-embedded .page-header,
+    body.is-embedded .guide-article,
+    body.is-embedded .guide-section,
+    body.is-embedded .seo-article,
+    body.is-embedded .seo-section,
+    body.is-embedded .seo-guide-section,
+    body.is-embedded .seo-content-article,
+    body.is-embedded .related-section,
+    body.is-embedded .related-tools-section,
+    body.is-embedded .comparison-section,
+    body.is-embedded .rr-embed-widget-card,
+    body.is-embedded .embed-modal-overlay,
+    body.is-embedded footer,
+    body.is-embedded .rr-footer,
+    body.is-embedded .footer-section {
+      display: none !important;
+    }
+    body.is-embedded .rr-container,
+    body.is-embedded .container,
+    body.is-embedded main,
+    body.is-embedded .calc-layout,
+    body.is-embedded .calc-card-wrapper {
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0.5rem !important;
+    }
+
   </style>
 </head>
 <body>
@@ -1376,6 +1554,38 @@
   <!-- ========================================================
        3. COMPREHENSIVE SEO EDUCATIONAL GUIDE & EXCEL DOCS (1,500+ WORDS)
   ======================================================== -->
+  
+  <!-- ========================================================
+       EMBED THIS CALCULATOR WIDGET (PASSIVE BACKLINK ENGINE)
+  ======================================================== -->
+  <section class="rr-embed-widget-card" aria-label="Embed This Calculator">
+    <div class="rr-embed-header">
+      <div class="rr-embed-title-wrap">
+        <div class="rr-embed-icon">&lt;/&gt;</div>
+        <div>
+          <h3 class="rr-embed-title">Embed This Free Calculator On Your Website</h3>
+          <p class="rr-embed-desc">Add this live interactive calculator to your real estate blog, brokerage site, or mortgage portal. Free to use with automatic updates.</p>
+        </div>
+      </div>
+      <span class="rr-embed-badge">✓ 100% Free &amp; Responsive</span>
+    </div>
+    
+    <div class="rr-embed-body">
+      <label class="rr-embed-label">Copy and paste this HTML code directly into your website (WordPress, Webflow, Squarespace, or custom code):</label>
+      <textarea class="rr-embed-code" rows="3" readonly>&lt;iframe src="https://realrefin.com/2-1-buydown-calculator?embed=true" width="100%" height="700" frameborder="0" style="border:1px solid #E2E8F0;border-radius:12px;width:100%;max-width:960px;" title="2 1 Buydown Calculator" loading="lazy"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:12px;font-family:sans-serif;text-align:right;margin-top:4px;"&gt;&lt;small&gt;Powered by &lt;a href="https://realrefin.com/2-1-buydown-calculator" target="_blank" rel="noopener" style="color:#2563EB;text-decoration:none;font-weight:600;"&gt;RealRefin Calculators&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</textarea>
+      
+      <div class="rr-embed-footer">
+        <div class="rr-embed-info">
+          <span class="rr-embed-check">✓</span> Live calculations &amp; dofollow backlink included automatically
+        </div>
+        <button type="button" class="btn-copy-widget-embed" onclick="copyWidgetEmbedCode(this)">
+          <span>📋</span> Copy Embed Code
+        </button>
+      </div>
+    </div>
+  </section>
+
   <article class="guide-section" aria-label="Complete Guide to 2-1 Buydowns and Excel Amortization">
 
     <h2>What Is a 2-1 Buydown and How Does It Work?</h2>
@@ -1987,5 +2197,37 @@
 })();
 </script>
 
+<script>
+
+// ========================================================
+// EMBED WIDGET & IFRAME DETECTION HANDLER
+// ========================================================
+function copyWidgetEmbedCode(btn) {
+  var container = btn.closest('.rr-embed-widget-card');
+  if (!container) return;
+  var textarea = container.querySelector('.rr-embed-code');
+  if (!textarea) return;
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(textarea.value).then(function() {
+    var origHtml = btn.innerHTML;
+    btn.innerHTML = '<span>✓</span> Copied to Clipboard!';
+    btn.style.background = '#059669';
+    setTimeout(function() {
+      btn.innerHTML = origHtml;
+      btn.style.background = '';
+    }, 2500);
+  }).catch(function() {
+    prompt('Copy embed code:', textarea.value);
+  });
+}
+
+if (typeof window !== 'undefined') {
+  if (window.location.search.indexOf('embed=true') !== -1 || window.self !== window.top) {
+    document.body.classList.add('is-embedded');
+  }
+}
+
+</script>
 </body>
 </html>
