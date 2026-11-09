@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/divorce-house-buyout-calculator</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/barndominium-cost-calculator</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -367,6 +373,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/divorce-house-buyout-calculator': 'divorce-house-buyout-calculator.html',
+  '/divorce-house-buyout-calculator.html': 'divorce-house-buyout-calculator.html',
+  '/how-is-house-buyout-calculated-in-a-divorce': 'divorce-house-buyout-calculator.html',
+  '/how-is-house-buyout-calculated-in-a-divorce.html': 'divorce-house-buyout-calculator.html',
+  '/how-to-calculate-house-buyout-in-divorce': 'divorce-house-buyout-calculator.html',
+  '/how-to-calculate-house-buyout-in-divorce.html': 'divorce-house-buyout-calculator.html',
+  '/how-to-calculate-divorce-house-buyout': 'divorce-house-buyout-calculator.html',
+  '/how-to-calculate-divorce-house-buyout.html': 'divorce-house-buyout-calculator.html',
+  '/home-equity-buyout-calculator-divorce': 'divorce-house-buyout-calculator.html',
+  '/home-equity-buyout-calculator-divorce.html': 'divorce-house-buyout-calculator.html',
   '/barndominium-cost-calculator': 'barndominium-cost-calculator.html',
   '/barndominium-cost-calculator.html': 'barndominium-cost-calculator.html',
   '/barndominium-build-cost-calculator': 'barndominium-cost-calculator.html',
