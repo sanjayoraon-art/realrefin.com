@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mid Term Rental Calculator | 2026 MTR Cash Flow &amp; Profit Estimator</title>
+  <meta name="description" content="Free mid term rental calculator. Accurately model MTR cash flow, Furnished Finder revenue, travel nurse housing, furnishing payback periods, all-inclusive utilities, and MTR vs LTR returns.">
+  <meta name="keywords" content="mid term rental calculator, mid-term rental calculator, mtr calculator, travel nurse housing calculator, furnished finder calculator, mid term rental profit calculator, mid term rental vs long term rental calculator, how to calculate mid term rental cash flow">
+  <link rel="canonical" href="https://realrefin.com/mid-term-rental-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mid Term Rental Calculator | 2026 MTR Cash Flow &amp; Profit Estimator">
+  <meta property="og:description" content="Underwrite your 30+ day furnished rentals. Model travel nurse contracts, corporate relocations, utility costs, furnishing amortization, and Cash-on-Cash returns.">
+  <meta property="og:url" content="https://realrefin.com/mid-term-rental-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mid Term Rental Calculator | RealRefin">
+  <meta name="twitter:description" content="Calculate MTR profitability, Furnished Finder occupancy, utility bills, and payback periods on furniture investments.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <!-- Structured Data: WebApplication, FAQPage, HowTo, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/mid-term-rental-calculator#app",
+        "name": "RealRefin Mid Term Rental Calculator & MTR Modeler",
+        "url": "https://realrefin.com/mid-term-rental-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "Comprehensive mid term rental calculator. Models 30+ day furnished rental cash flow, Furnished Finder pricing, travel healthcare contracts, all-inclusive tenant utilities, upfront furnishing startup amortization, and side-by-side MTR vs LTR net ROI.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/mid-term-rental-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://realrefin.com/#calculators"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mid Term Rental Calculator",
+            "item": "https://realrefin.com/mid-term-rental-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://realrefin.com/mid-term-rental-calculator#howto",
+        "name": "How to Calculate Mid Term Rental Cash Flow and Profitability",
+        "description": "Step-by-step methodology to underwrite 30-day to 90-day furnished rental properties targeting travel nurses, corporate housing, and insurance displacement.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Determine Monthly Furnished Rental Rate & Occupancy",
+            "text": "Research comparable 30+ day listings on Furnished Finder and Airbnb (with monthly discount). Factor a realistic 85% to 92% occupancy rate to account for 1 to 2 week vacancy gaps between multi-month contracts."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Budget Upfront Furnishing & Staging Costs",
+            "text": "Itemize setup expenses including commercial-grade mattresses, linens, kitchen essentials, ergonomic Wi-Fi workstations, smart locks, and decor ($5,000 to $15,000 total)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Account for All-Inclusive Tenant Utilities",
+            "text": "Because MTR landlords cover all utilities, budget accurately for electricity, water/sewer/trash, natural gas/heating, gigabit Wi-Fi, and streaming subscriptions ($350 to $650/month)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Deduct Mortgage Debt Service & Operating Reserves",
+            "text": "Subtract monthly principal and interest, property taxes, landlord insurance, and a 5% to 8% maintenance/CapEx reserve."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Evaluate Furnishing Payback Period & LTR Spread",
+            "text": "Calculate how many months of MTR cash flow are required to recoup your initial furniture investment compared to leasing the unit unfurnished on a traditional 12-month lease."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/mid-term-rental-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a mid term rental (MTR)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A mid term rental (MTR) is a fully furnished residential property leased for stays typically ranging between 30 days and 6 months (averaging 60 to 90 days). Unlike short-term vacation rentals (Airbnb/VRBO), MTRs primarily serve traveling nurses, corporate relocations, digital nomads, and families temporarily displaced by insurance claims (ALE). Because stays exceed 30 days, MTRs are legally exempt from local hotel/transient occupancy taxes (TOT) and municipal short-term rental bans in most US cities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much more do mid term rentals make compared to long term rentals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A well-positioned mid term rental typically generates 35% to 75% more gross monthly revenue than an unfurnished long-term rental (LTR). For example, a 2-bedroom apartment that rents for $1,800 unfurnished can frequently command $2,800 to $3,400 per month on Furnished Finder. Even after paying all-inclusive utilities ($400/month), the landlord yields $600 to $1,200 in extra net cash flow per month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good occupancy rate for a mid term rental?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A realistic occupancy rate for an MTR is between 82% and 92% (equating to 10 to 11 occupied months per year). While standard travel nurse contracts last 13 weeks (approximately 3 months), landlords typically experience 7 to 14 days of turnover vacancy between tenants for deep cleaning, minor maintenance, and marketing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost to furnish a mid term rental?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Furnishing a mid term rental typically costs between $4,000 and $7,000 for a 1-bedroom unit, $7,000 to $11,000 for a 2-bedroom home, and $12,000 to $18,000 for a 3-bedroom/2-bath single-family house. Key high-ROI investments include memory foam mattresses, blackout curtains, high-speed Wi-Fi, fully stocked kitchens (Keurig, Instapot, baking sheets), and dedicated standing desks for remote professionals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who pays the utility bills in a mid term rental?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In a mid term rental, the landlord pays all recurring utility expenses, including electricity, natural gas, water, trash, and high-speed internet. To protect against excessive air conditioning or heating usage, experienced MTR landlords insert a utility cap clause in the lease (typically $150 to $250/month), requiring the tenant to reimburse any utility overages beyond the contracted threshold."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best platform to list mid term rentals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The premier platforms for mid term rentals are: (1) Furnished Finder, the undisputed industry standard for traveling healthcare professionals with over 150,000 monthly active tenants; (2) Airbnb and VRBO using 30+ day monthly discount settings; (3) Corporate Housing by Owner (CHBO); and (4) Direct relationships with insurance housing relocation companies (such as ALE Solutions and Temporary Housing Directory)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Mid Term Rental Arbitrage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mid term rental arbitrage is an investment strategy where an operator signs a standard 12-month master lease on an unfurnished apartment or home (with written landlord permission), furnishes the interior, and subleases it to 30+ day traveling professionals at a substantial markup without owning the underlying real estate."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       CORE COLOR SYSTEM & VARIABLES
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-blue: #2563eb;
+      --accent-blue-light: #eff6ff;
+      --accent-amber: #d97706;
+      --accent-amber-light: #fffbeb;
+      --accent-danger: #dc2626;
+      --accent-teal: #0d9488;
+      --accent-teal-light: #f0fdfa;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --bg-app: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    /* -----------------------------------------------------------
+       NAVIGATION BAR
+    ----------------------------------------------------------- */
+    .rr-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .rr-logo {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-emerald-dark);
+    }
+
+    .btn-nav-cta {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease !important;
+    }
+
+    .btn-nav-cta:hover {
+      background: var(--secondary-navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 860px) {
+      .rr-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB STRIP
+    ----------------------------------------------------------- */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .breadcrumb-bar span.separator {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-bar span.current {
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .calc-header-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #115e59 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xl);
+      border-bottom: 5px solid var(--accent-emerald);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .calc-header-banner h1 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 980px;
+    }
+
+    .calc-header-banner h1 span {
+      background: linear-gradient(90deg, #34d399 0%, #2dd4bf 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calc-header-banner p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 880px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .header-trust-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-stat h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+    }
+
+    .trust-stat h4 span {
+      color: #34d399;
+    }
+
+    .trust-stat p {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      margin-bottom: 0;
+    }
+
+    /* -----------------------------------------------------------
+       SCENARIO PRESET PILLS
+    ----------------------------------------------------------- */
+    .scenario-tabs-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .scenario-pill-btn {
+      background: #ffffff;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 1.15rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .scenario-pill-btn:hover {
+      border-color: var(--accent-teal);
+      color: var(--primary-navy);
+      transform: translateY(-1px);
+    }
+
+    .scenario-pill-btn.active {
+      background: var(--accent-teal-light);
+      border-color: var(--accent-teal);
+      color: var(--accent-teal);
+      box-shadow: 0 0 0 1px var(--accent-teal);
+    }
+
+    /* -----------------------------------------------------------
+       CALCULATOR GRID & LAYOUT
+    ----------------------------------------------------------- */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.05fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs-pane {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pane-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .pane-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .pane-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .pane-title-wrap span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Section Subheadings */
+    .inputs-subhead {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 1.75rem 0 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .inputs-subhead:first-of-type {
+      margin-top: 0;
+    }
+
+    /* Input Groups */
+    .input-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .input-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .input-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .input-helper-badge {
+      font-size: 0.75rem;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      background: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .input-control-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .input-prefix { left: 1rem; }
+    .input-suffix { right: 1rem; }
+
+    .form-input, .form-select {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      padding-left: 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .form-select {
+      padding-left: 1rem;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.15em;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .form-input.no-prefix {
+      padding-left: 1rem;
+    }
+
+    .form-input.has-suffix {
+      padding-right: 3.5rem;
+    }
+
+    /* Range Sliders */
+    .range-slider-wrap {
+      margin-top: 0.5rem;
+    }
+
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      border: 2.5px solid #ffffff;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .custom-range::-webkit-slider-thumb:hover {
+      transform: scale(1.18);
+    }
+
+    /* 2-Column Utility Sub-Grid */
+    .utilities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .utilities-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       RESULTS DISPLAY PANE (STICKY DESKTOP)
+    ----------------------------------------------------------- */
+    .calc-results-pane {
+      position: sticky;
+      top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .main-summary-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      border-top: 4px solid var(--accent-emerald);
+      position: relative;
+    }
+
+    .summary-hero-row {
+      text-align: center;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+
+    .summary-hero-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .summary-hero-cost {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent-emerald-dark);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .summary-hero-range {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: var(--accent-emerald-light);
+      display: inline-block;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+    }
+
+    /* 3-Col Key Metrics Strip */
+    .key-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      text-align: center;
+    }
+
+    .metric-cell {
+      background: #f8fafc;
+      padding: 0.9rem 0.6rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .metric-cell span.lbl {
+      display: block;
+      font-size: 0.725rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-cell span.val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: block;
+    }
+
+    /* MTR vs LTR Delta Box */
+    .delta-comparison-box {
+      background: var(--accent-teal-light);
+      border: 1.5px solid #ccfbf1;
+      border-radius: var(--radius-lg);
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .delta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .delta-header h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #115e59;
+    }
+
+    .delta-badge {
+      background: #0d9488;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .delta-metrics-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #134e4a;
+      margin-bottom: 0.35rem;
+    }
+
+    .delta-metrics-row span.strong-val {
+      font-weight: 800;
+    }
+
+    /* Itemized Phase Table */
+    .phase-breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.75rem;
+      font-size: 0.875rem;
+    }
+
+    .phase-breakdown-table th {
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .phase-breakdown-table td {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--text-main);
+    }
+
+    .phase-breakdown-table td.cost-num {
+      text-align: right;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* Results Action Buttons */
+    .results-actions-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .btn-action-primary {
+      background: var(--accent-emerald-dark);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-action-primary:hover {
+      background: #065f46;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-action-secondary {
+      background: #f1f5f9;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .btn-action-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* -----------------------------------------------------------
+       SEO ARTICLE CONTENT & GUIDES
+    ----------------------------------------------------------- */
+    .seo-content-container {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 3.5rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) {
+      .seo-content-container {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+
+    .seo-content-container h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.025em;
+      margin-top: 2.75rem;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .seo-content-container h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .seo-content-container h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--secondary-navy);
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-content-container p {
+      color: #334155;
+      font-size: 1.05rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .seo-content-container ul, .seo-content-container ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: #334155;
+      font-size: 1.05rem;
+    }
+
+    .seo-content-container li {
+      margin-bottom: 0.5rem;
+    }
+
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    .seo-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .seo-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .seo-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .seo-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .callout-box-quote {
+      background: var(--accent-teal-light);
+      border-left: 4px solid var(--accent-teal);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.75rem 0;
+    }
+
+    .callout-box-quote h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #115e59;
+      margin-bottom: 0.35rem;
+    }
+
+    .callout-box-quote p {
+      font-size: 0.95rem;
+      color: #134e4a;
+      margin-bottom: 0;
+    }
+
+    /* -----------------------------------------------------------
+       FAQ ACCORDION
+    ----------------------------------------------------------- */
+    .faq-accordion-wrap {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.2rem 1.35rem;
+      text-align: left;
+      background: none;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+
+    .faq-icon-arrow {
+      font-size: 1.25rem;
+      color: var(--accent-emerald-dark);
+      transition: transform 0.2s ease;
+      font-weight: 800;
+    }
+
+    .faq-item.active .faq-icon-arrow {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.35rem 1.35rem;
+      font-size: 0.98rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       FOOTER & COPYRIGHT
+    ----------------------------------------------------------- */
+    .rr-footer {
+      border-top: 1px solid var(--border-color);
+      margin-top: 4rem;
+      padding-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-col h5 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVIGATION -->
+  <nav class="rr-nav" aria-label="Main Navigation">
+    <a href="/" class="rr-logo">
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/rental-yield-calculator">Rental Yield</a></li>
+      <li><a href="/mid-term-rental-calculator" class="active">Mid Term Rental</a></li>
+      <li><a href="/airbnb-profit-calculator">Airbnb Profit</a></li>
+      <li><a href="/dscr-calculator">DSCR Loan</a></li>
+      <li><a href="/barndominium-cost-calculator">Barndominium</a></li>
+      <li><a href="/#calculators" class="btn-nav-cta">All Calculators</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMBS -->
+  <div class="breadcrumb-bar">
+    <a href="/">Home</a>
+    <span class="separator">/</span>
+    <a href="/#calculators">Calculators</a>
+    <span class="separator">/</span>
+    <span class="current">Mid Term Rental Calculator</span>
+  </div>
+
+  <!-- HERO BANNER -->
+  <header class="calc-header-banner">
+    <div class="badge-pill-tag">💼 30+ Day Furnished Housing Modeler</div>
+    <h1>Mid Term Rental Calculator</h1>
+    <p>Model <strong>mid term rental (MTR) cash flow and profit</strong> for Furnished Finder, corporate housing, and travel nurse contracts. Calculate all-inclusive utility expenses, furnishing setup payback periods, and compare net returns against traditional long-term rentals (LTR).</p>
+    
+    <div class="header-trust-bar">
+      <div class="trust-stat">
+        <h4>1.5x - 2.2x <span>Gross Rent</span></h4>
+        <p>MTR vs. LTR Revenue Lift</p>
+      </div>
+      <div class="trust-stat">
+        <h4>0% <span>Hotel Tax</span></h4>
+        <p>Exempt on 30+ Day Stays</p>
+      </div>
+      <div class="trust-stat">
+        <h4>85% - 92% <span>Occupancy</span></h4>
+        <p>Realistic 13-Week Contracts</p>
+      </div>
+      <div class="trust-stat">
+        <h4>4 - 8 <span>Months</span></h4>
+        <p>Avg Furniture Payback Time</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK SCENARIOS -->
+  <section class="scenario-tabs-container" aria-label="Quick Scenario Selectors">
+    <button type="button" class="scenario-pill-btn" data-rent="2200" data-occ="90" data-furnish="6000" data-ltr="1400" data-mortgage="1150" data-util="320">
+      <span>🏥</span> 1-Bed Travel Nurse Condo
+    </button>
+    <button type="button" class="scenario-pill-btn active" data-rent="3300" data-occ="88" data-furnish="9500" data-ltr="1950" data-mortgage="1650" data-util="420">
+      <span>🏡</span> 2-Bed / 2-Bath Townhome (Sweet Spot)
+    </button>
+    <button type="button" class="scenario-pill-btn" data-rent="4500" data-occ="85" data-furnish="14000" data-ltr="2600" data-mortgage="2300" data-util="560">
+      <span>👨‍👩‍👧</span> 3-Bed Insurance Displacement Home
+    </button>
+    <button type="button" class="scenario-pill-btn" data-rent="3100" data-occ="88" data-furnish="8000" data-ltr="1750" data-mortgage="0" data-lease="1750" data-util="390">
+      <span>🔄</span> MTR Rental Arbitrage (Master Lease)
+    </button>
+  </section>
+
+  <!-- MAIN CALCULATOR GRID -->
+  <main class="calc-grid">
+
+    <!-- LEFT: INPUTS -->
+    <section class="calc-inputs-pane" aria-label="Mid Term Rental Inputs">
+      <div class="pane-section-header">
+        <div class="pane-title-wrap">
+          <span class="icon">🧮</span>
+          <h2>MTR Revenue &amp; Expense Parameters</h2>
+        </div>
+        <button type="button" id="btnResetCalc" style="background:none;border:none;color:var(--text-muted);font-size:0.8rem;cursor:pointer;font-weight:600;">Reset Defaults</button>
+      </div>
+
+      <div class="inputs-subhead">1. Monthly Revenue &amp; Occupancy</div>
+
+      <!-- Target Monthly MTR Rent -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpMonthlyMTRRent" class="input-label">Projected Monthly Furnished MTR Rent</label>
+          <span class="input-helper-badge">Furnished Finder / Airbnb 30+</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpMonthlyMTRRent" class="form-input" value="3300" step="50" min="500">
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngMonthlyMTRRent" class="custom-range" min="1000" max="8000" step="50" value="3300">
+        </div>
+      </div>
+
+      <!-- Projected Occupancy Rate -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpOccupancyRate" class="input-label">Projected Annual Occupancy Rate (%)</label>
+          <span class="input-helper-badge" id="badgeOccupancyWeeks">~45.7 Weeks / Year</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpOccupancyRate" class="form-input no-prefix has-suffix" value="88" min="40" max="100" step="1">
+          <span class="input-suffix">%</span>
+        </div>
+        <div class="range-slider-wrap">
+          <input type="range" id="rngOccupancyRate" class="custom-range" min="50" max="100" step="1" value="88">
+        </div>
+      </div>
+
+      <!-- Comparison: Baseline Long-Term Unfurnished Rent -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpBaselineLTRRent" class="input-label">Baseline Unfurnished Long-Term Rent (LTR)</label>
+          <span class="input-helper-badge">For Comparison Benchmark</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpBaselineLTRRent" class="form-input" value="1950" step="25" min="300">
+        </div>
+      </div>
+
+      <div class="inputs-subhead">2. Initial Furnishing &amp; Setup Capital</div>
+
+      <!-- Furnishing & Staging Cost -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpFurnishingCost" class="input-label">Upfront Furnishing &amp; Setup Budget</label>
+          <span class="input-helper-badge">Mattresses, Desks, Linens, Kitchen</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpFurnishingCost" class="form-input" value="9500" step="250" min="0">
+        </div>
+      </div>
+
+      <!-- Total Equity / Down Payment Invested -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpTotalCashInvested" class="input-label">Total Acquisition Equity / Cash Invested</label>
+          <span class="input-helper-badge">Down Payment + Closing (or $0 if Arbitrage)</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpTotalCashInvested" class="form-input" value="65000" step="2500" min="0">
+        </div>
+      </div>
+
+      <div class="inputs-subhead">3. Monthly All-Inclusive Utilities (Landlord Pays)</div>
+
+      <div class="utilities-grid">
+        <!-- Power / Electric -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label for="inpUtilElectric" class="input-label">Electric / Power</label>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpUtilElectric" class="form-input" value="175" step="10" min="0">
+          </div>
+        </div>
+
+        <!-- Water, Sewer & Trash -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label for="inpUtilWater" class="input-label">Water, Sewer &amp; Trash</label>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpUtilWater" class="form-input" value="85" step="5" min="0">
+          </div>
+        </div>
+
+        <!-- Gas / Heating -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label for="inpUtilGas" class="input-label">Gas / Heating</label>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpUtilGas" class="form-input" value="65" step="5" min="0">
+          </div>
+        </div>
+
+        <!-- High-Speed Gigabit Wi-Fi -->
+        <div class="input-group">
+          <div class="input-label-row">
+            <label for="inpUtilWifi" class="input-label">Gigabit Wi-Fi &amp; Stream</label>
+          </div>
+          <div class="input-control-box">
+            <span class="input-prefix">$</span>
+            <input type="number" id="inpUtilWifi" class="form-input" value="80" step="5" min="0">
+          </div>
+        </div>
+      </div>
+
+      <div class="inputs-subhead">4. Fixed Housing Debt &amp; Maintenance Reserves</div>
+
+      <!-- Monthly Mortgage Debt Service / Master Lease -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpMonthlyDebt" class="input-label">Monthly Mortgage P&amp;I (or Master Lease Rent)</label>
+          <span class="input-helper-badge">Principal &amp; Interest Only</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpMonthlyDebt" class="form-input" value="1350" step="25" min="0">
+        </div>
+      </div>
+
+      <!-- Property Taxes & Insurance -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpTaxesInsurance" class="input-label">Monthly Property Taxes &amp; Landlord Insurance</label>
+          <span class="input-helper-badge">Escrow / Insurance</span>
+        </div>
+        <div class="input-control-box">
+          <span class="input-prefix">$</span>
+          <input type="number" id="inpTaxesInsurance" class="form-input" value="300" step="15" min="0">
+        </div>
+      </div>
+
+      <!-- Maintenance, CapEx & Turnover Reserve % -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <label for="inpMaintPct" class="input-label">Maintenance, Turnover &amp; CapEx Reserve (%)</label>
+          <span class="input-helper-badge" id="badgeMaintDollar">$165 / mo</span>
+        </div>
+        <div class="input-control-box">
+          <input type="number" id="inpMaintPct" class="form-input no-prefix has-suffix" value="5" min="0" max="25" step="1">
+          <span class="input-suffix">%</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT: LIVE RESULTS & COMPARISON PANE -->
+    <aside class="calc-results-pane" aria-label="MTR Calculation Results">
+      
+      <div class="main-summary-card">
+        <div class="summary-hero-row">
+          <div class="summary-hero-label">Net Monthly Cash Flow (After All Expenses)</div>
+          <div class="summary-hero-cost" id="dispNetMonthlyCashFlow">$704</div>
+          <div class="summary-hero-range" id="dispAnnualCashFlow">$8,448 Net Annual Cash Flow</div>
+        </div>
+
+        <!-- 3-Column Metrics Strip -->
+        <div class="key-metrics-grid">
+          <div class="metric-cell">
+            <span class="lbl">Cash on Cash</span>
+            <span class="val" id="dispCoCReturn" style="color:var(--accent-emerald-dark);">11.3%</span>
+          </div>
+          <div class="metric-cell">
+            <span class="lbl">Furnish Payback</span>
+            <span class="val" id="dispFurnishPayback">11.8 mo</span>
+          </div>
+          <div class="metric-cell">
+            <span class="lbl">Net Cap Rate</span>
+            <span class="val" id="dispCapRate">8.2%</span>
+          </div>
+        </div>
+
+        <!-- MTR vs. LTR Profit Delta Box -->
+        <div class="delta-comparison-box">
+          <div class="delta-header">
+            <h4>MTR Premium vs. Unfurnished LTR</h4>
+            <span class="delta-badge" id="badgeMTRLift">+52% Profit Lift</span>
+          </div>
+          <div class="delta-metrics-row">
+            <span>MTR Effective Gross Income:</span>
+            <span class="strong-val" id="dispEffectiveMTR">$2,904 / mo</span>
+          </div>
+          <div class="delta-metrics-row">
+            <span>Standard LTR Rent (Unfurnished):</span>
+            <span class="strong-val" id="dispLTRRent">$1,950 / mo</span>
+          </div>
+          <div class="delta-metrics-row" style="border-top: 1px dashed #99f6e4; padding-top: 0.35rem; margin-top: 0.35rem;">
+            <span>Extra Net Profit Gained via MTR:</span>
+            <span class="strong-val" style="color:#0f766e;" id="dispExtraProfit">+$405 / mo</span>
+          </div>
+        </div>
+
+        <!-- Itemized Financial Breakdown Table -->
+        <table class="phase-breakdown-table">
+          <thead>
+            <tr>
+              <th>Monthly Cash Flow Waterfall</th>
+              <th style="text-align:right;">Monthly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Contract Furnished Rent</td>
+              <td class="cost-num" id="rowGrossRent">$3,300</td>
+            </tr>
+            <tr>
+              <td>Less: Vacancy &amp; Turnover Loss (<span id="txtVacancyPct">12%</span>)</td>
+              <td class="cost-num" id="rowVacancyLoss" style="color:var(--accent-danger);">-$396</td>
+            </tr>
+            <tr style="font-weight:700;">
+              <td>Effective Gross Income (EGI)</td>
+              <td class="cost-num" id="rowEGI">$2,904</td>
+            </tr>
+            <tr>
+              <td>All-Inclusive Tenant Utilities (Electric, Water, Gas, Wi-Fi)</td>
+              <td class="cost-num" id="rowTotalUtilities" style="color:var(--accent-danger);">-$405</td>
+            </tr>
+            <tr>
+              <td>Property Taxes &amp; Landlord Insurance</td>
+              <td class="cost-num" id="rowTaxesIns" style="color:var(--accent-danger);">-$300</td>
+            </tr>
+            <tr>
+              <td>Maintenance &amp; Turnover Reserve</td>
+              <td class="cost-num" id="rowMaintReserve" style="color:var(--accent-danger);">-$145</td>
+            </tr>
+            <tr style="border-top: 1px dashed var(--border-color); font-weight:700;">
+              <td>Net Operating Income (NOI)</td>
+              <td class="cost-num" id="rowNOI">$2,054</td>
+            </tr>
+            <tr>
+              <td>Less: Mortgage Principal &amp; Interest Debt</td>
+              <td class="cost-num" id="rowMortgageDebt" style="color:var(--accent-danger);">-$1,350</td>
+            </tr>
+            <tr style="border-top: 2px solid var(--primary-navy); font-weight: 800;">
+              <td>FINAL NET MONTHLY CASH FLOW</td>
+              <td class="cost-num" id="rowFinalCashFlow" style="font-size: 1.1rem; color: var(--accent-emerald-dark);">$704</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Actions -->
+        <div class="results-actions-bar">
+          <button type="button" class="btn-action-primary" id="btnDownloadCSV">
+            <span>📥</span> Download Excel (.CSV)
+          </button>
+          <button type="button" class="btn-action-secondary" id="btnCopyShareLink">
+            <span>🔗</span> Share Modeler
+          </button>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- COMPREHENSIVE SEO CONTENT & UNDERWRITING GUIDE -->
+  <article class="seo-content-container">
+
+    <h2>What is a Mid Term Rental (MTR) and Why Is It Booming?</h2>
+    <p>A <strong>mid term rental (MTR)</strong> is a fully furnished residential property leased for flexible stays ranging between <strong>30 days and 6 months</strong> (averaging 90 days). In the post-2024 real estate landscape, the mid-term rental strategy has emerged as the premier sweet spot between traditional long-term rentals (LTR) and highly regulated short-term rentals (STR / Airbnb).</p>
+
+    <p>Using our institutional <strong>mid term rental calculator</strong>, real estate investors and master lease operators can underwrite travel nurse housing, corporate relocation contracts, insurance displacement assignments, all-inclusive utility expenses, and upfront furniture ROI with surgical precision.</p>
+
+    <div class="callout-box-quote">
+      <h4>💡 The MTR Regulatory &amp; Tax Advantage</h4>
+      <p>Because mid-term rental leases strictly exceed 30 consecutive days, they are legally classified as residential tenancies in nearly all US municipal codes. This exempts your property from municipal short-term rental bans, strict Airbnb lottery permits, and expensive 10%–15% local hotel / transient occupancy taxes (TOT).</p>
+    </div>
+
+    <h2>How to Calculate Mid Term Rental Cash Flow</h2>
+    <p>Calculating accurate cash flow on an MTR requires accounting for unique operating dynamics that traditional rental calculators ignore:</p>
+
+    <h3>1. Effective Gross Income &amp; Realistic Occupancy</h3>
+    <p>Travel nurses and corporate executives typically sign 13-week contracts (approximately 90 days). Landlords experience a 7 to 14 day turnover vacancy window between tenants for cleaning, staging maintenance, and lease execution. A conservative, institutional-grade underwriting model applies an <strong>85% to 90% occupancy rate</strong> (equivalent to 10 to 11 occupied months per year) rather than assuming 100% full-year occupancy.</p>
+
+    <h3>2. Landlord All-Inclusive Utilities</h3>
+    <p>In mid term rentals, the landlord pays all utilities to provide a turnkey move-in experience. Your monthly budget must include electric, natural gas, water/sewer/trash, streaming subscriptions, and high-speed gigabit Wi-Fi (a mandatory requirement for remote workers). To mitigate utility abuse, experienced operators incorporate an <strong>excess utility clause</strong> capping monthly electrical and gas usage at $150 to $250, billing the guest for any overages.</p>
+
+    <h3>3. Upfront Furnishing Amortization &amp; Payback Period</h3>
+    <p>The upfront cost to furnish a property ($6,000 to $15,000) represents the primary barrier to entry. Our calculator computes your exact <strong>Furniture Payback Period</strong>: the number of months required for your extra MTR cash flow (over a baseline unfurnished long-term lease) to fully repay your out-of-pocket setup capital.</p>
+
+    <h2>Mid Term Rental vs. Long Term Rental vs. Short Term Rental</h2>
+    <p>The table below summarizes the key financial and operational trade-offs across all three rental strategies:</p>
+
+    <div class="comparison-table-wrapper">
+      <table class="seo-table">
+        <thead>
+          <tr>
+            <th>Rental Strategy</th>
+            <th>Average Stay Length</th>
+            <th>Gross Revenue Potential</th>
+            <th>Operating Headaches &amp; Turnover</th>
+            <th>Municipal Regulations &amp; Taxes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mid Term Rental (MTR)</strong></td>
+            <td>30 – 120 Days</td>
+            <td><strong>1.4x – 2.0x of LTR</strong></td>
+            <td>Low (3 to 4 tenant turnovers per year; professional corporate &amp; healthcare guests).</td>
+            <td>Favorable. Exempt from short-term rental bans &amp; hotel taxes in 95% of US cities.</td>
+          </tr>
+          <tr>
+            <td><strong>Long Term Rental (LTR)</strong></td>
+            <td>12 – 24 Months</td>
+            <td>1.0x (Baseline)</td>
+            <td>Very Low. Tenant covers utilities and brings own furniture.</td>
+            <td>Minimal. Standard landlord-tenant fair housing statutes apply.</td>
+          </tr>
+          <tr>
+            <td><strong>Short Term Rental (STR)</strong></td>
+            <td>2 – 5 Days</td>
+            <td>1.8x – 3.0x of LTR</td>
+            <td>Very High. Constant linen washing, messaging guests, party risks, and weekend cleaning.</td>
+            <td>Severe. Strict zoning caps, HOA restrictions, and 12%+ transient occupancy taxes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Top 4 High-Demand Mid Term Rental Tenant Avatars</h2>
+    <p>To maximize occupancy on Furnished Finder and Airbnb 30+, align your property's amenities with one of these primary MTR tenant profiles:</p>
+    <ul>
+      <li><strong>Traveling Healthcare Professionals:</strong> Travel nurses, locum tenens physicians, and physical therapists seeking 13-week furnished leases within a 15-minute commute of major hospital centers. Priority amenities: blackout bedroom curtains, in-unit washer/dryer, and ultra-quiet sleeping environments.</li>
+      <li><strong>Insurance Displacement (ALE Housing):</strong> Families displaced by house fires, water pipe bursts, or storm damage whose temporary living expenses (ALE) are funded directly by insurance carriers (State Farm, Allstate, Travelers). These represent the highest-paying MTR contracts ($4,000 to $8,000+/month), often extending for 4 to 9 months.</li>
+      <li><strong>Corporate Relocations &amp; Remote Executives:</strong> Digital nomads, corporate transferees, and consultants on multi-month project assignments. Priority amenities: dedicated ergonomic workspace, dual-monitor setup, standing desk, and verified 300+ Mbps Wi-Fi.</li>
+      <li><strong>Home Renovators &amp; In-Between Buyers:</strong> Local homeowners undergoing major kitchen or whole-home remodeling projects, or home buyers waiting for custom home construction or escrow closings.</li>
+    </ul>
+
+    <!-- FAQ ACCORDION -->
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-accordion-wrap">
+
+      <div class="faq-item active">
+        <button type="button" class="faq-question">
+          <span>What is a mid term rental calculator?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          A mid term rental calculator is a real estate financial underwriting tool designed specifically for 30+ day furnished rentals. It models projected monthly rent from platforms like Furnished Finder, accounts for all-inclusive tenant utility costs (electric, gas, water, gigabit Wi-Fi), factors in realistic vacancy between multi-month contracts, amortizes upfront furniture purchases, and compares net cash flow against traditional unfurnished 12-month leases.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much more profitable is a mid term rental than a long term rental?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          On average, an MTR produces <strong>35% to 75% more gross monthly revenue</strong> than an unfurnished long-term rental. After subtracting $350 to $500 per month in landlord-paid utilities and setting aside reserves for furniture wear-and-tear, most operators yield between $400 and $1,200 in extra net monthly profit per property compared to traditional leasing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>What occupancy rate should I assume for a mid term rental?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Professional MTR operators underwrite between <strong>82% and 90% occupancy</strong> (equivalent to roughly 10 to 10.8 occupied months per calendar year). This conservative baseline builds in a realistic 1 to 2 week vacancy buffer between 13-week tenant contracts for turnover deep cleans, maintenance, and platform messaging.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>How much does it cost to furnish a mid term rental?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Furnishing an MTR typically averages <strong>$4,500 to $7,000 for a 1-bedroom condo</strong>, $7,500 to $11,000 for a 2-bedroom unit, and $12,000 to $17,000 for a 3-bedroom single-family home. Because MTR guests stay for months at a time, prioritize durable, commercial-grade mattresses, quality cookware, high-speed Wi-Fi mesh routers, and dedicated workstations.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Can I do mid term rental arbitrage?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes! In MTR rental arbitrage, you sign a 12-month master lease on an unfurnished property with written landlord authorization, furnish the interior, and sublease it to traveling medical professionals or corporate relocations for 30+ days. This allows you to generate positive monthly cash flow without purchasing the underlying real estate or qualifying for a mortgage.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question">
+          <span>Do I need a special lease agreement for a mid term rental?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes. Unlike a short-term booking platform receipt, MTR tenants establish legal residency after 30 consecutive days in most states. You should always execute a formal written 30+ day lease agreement that includes a background/credit check, security deposit terms, an explicit utility cap clause, a strict no-smoking policy, and clear move-out dates aligned with their employment contract.
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="rr-footer">
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h5>RealRefin Rental Suite</h5>
+        <ul>
+          <li><a href="/mid-term-rental-calculator">Mid Term Rental Calculator</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          <li><a href="/airbnb-profit-calculator">Airbnb Profit Modeler</a></li>
+          <li><a href="/dscr-calculator">DSCR Investment Loan</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Strategy Modeler</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Refinance &amp; Equity</h5>
+        <ul>
+          <li><a href="/mortgage-refinance-calculator">Mortgage Refinance Calculator</a></li>
+          <li><a href="/divorce-house-buyout-calculator">Divorce House Buyout</a></li>
+          <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out vs. HELOC</a></li>
+          <li><a href="/10-year-heloc-payment-calculator">10-Year HELOC Payment</a></li>
+          <li><a href="/pmi-removal-calculator">PMI Removal Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Construction &amp; Flips</h5>
+        <ul>
+          <li><a href="/barndominium-cost-calculator">Barndominium Cost Calculator</a></li>
+          <li><a href="/adu-cost-calculator">ADU Cost &amp; Investment</a></li>
+          <li><a href="/house-flipping-calculator">House Flipping Calculator</a></li>
+          <li><a href="/wholesale-real-estate-calculator">Wholesale Real Estate</a></li>
+          <li><a href="/closing-cost-calculator">Closing Cost Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company &amp; Legal</h5>
+        <ul>
+          <li><a href="/about">About RealRefin</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 RealRefin.com. All rights reserved. For informational and educational purposes only.</p>
+      <p>Institutional Real Estate &amp; Rental Investment Underwriting Engines.</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- CORE CALCULATION SCRIPT -->
+<script>
+(function() {
+  'use strict';
+
+  // DOM Elements
+  const inpMonthlyMTRRent = document.getElementById('inpMonthlyMTRRent');
+  const rngMonthlyMTRRent = document.getElementById('rngMonthlyMTRRent');
+  const inpOccupancyRate = document.getElementById('inpOccupancyRate');
+  const rngOccupancyRate = document.getElementById('rngOccupancyRate');
+  const badgeOccupancyWeeks = document.getElementById('badgeOccupancyWeeks');
+  const inpBaselineLTRRent = document.getElementById('inpBaselineLTRRent');
+
+  const inpFurnishingCost = document.getElementById('inpFurnishingCost');
+  const inpTotalCashInvested = document.getElementById('inpTotalCashInvested');
+
+  const inpUtilElectric = document.getElementById('inpUtilElectric');
+  const inpUtilWater = document.getElementById('inpUtilWater');
+  const inpUtilGas = document.getElementById('inpUtilGas');
+  const inpUtilWifi = document.getElementById('inpUtilWifi');
+
+  const inpMonthlyDebt = document.getElementById('inpMonthlyDebt');
+  const inpTaxesInsurance = document.getElementById('inpTaxesInsurance');
+  const inpMaintPct = document.getElementById('inpMaintPct');
+  const badgeMaintDollar = document.getElementById('badgeMaintDollar');
+
+  // Outputs
+  const dispNetMonthlyCashFlow = document.getElementById('dispNetMonthlyCashFlow');
+  const dispAnnualCashFlow = document.getElementById('dispAnnualCashFlow');
+  const dispCoCReturn = document.getElementById('dispCoCReturn');
+  const dispFurnishPayback = document.getElementById('dispFurnishPayback');
+  const dispCapRate = document.getElementById('dispCapRate');
+
+  const badgeMTRLift = document.getElementById('badgeMTRLift');
+  const dispEffectiveMTR = document.getElementById('dispEffectiveMTR');
+  const dispLTRRent = document.getElementById('dispLTRRent');
+  const dispExtraProfit = document.getElementById('dispExtraProfit');
+
+  const rowGrossRent = document.getElementById('rowGrossRent');
+  const txtVacancyPct = document.getElementById('txtVacancyPct');
+  const rowVacancyLoss = document.getElementById('rowVacancyLoss');
+  const rowEGI = document.getElementById('rowEGI');
+  const rowTotalUtilities = document.getElementById('rowTotalUtilities');
+  const rowTaxesIns = document.getElementById('rowTaxesIns');
+  const rowMaintReserve = document.getElementById('rowMaintReserve');
+  const rowNOI = document.getElementById('rowNOI');
+  const rowMortgageDebt = document.getElementById('rowMortgageDebt');
+  const rowFinalCashFlow = document.getElementById('rowFinalCashFlow');
+
+  const btnResetCalc = document.getElementById('btnResetCalc');
+  const btnDownloadCSV = document.getElementById('btnDownloadCSV');
+  const btnCopyShareLink = document.getElementById('btnCopyShareLink');
+
+  function formatMoney(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  // SYNC INPUTS AND SLIDERS
+  function syncPair(inp, rng) {
+    inp.addEventListener('input', () => {
+      rng.value = inp.value;
+      recalculate();
+    });
+    rng.addEventListener('input', () => {
+      inp.value = rng.value;
+      recalculate();
+    });
+  }
+
+  syncPair(inpMonthlyMTRRent, rngMonthlyMTRRent);
+  syncPair(inpOccupancyRate, rngOccupancyRate);
+
+  // EVENT LISTENERS
+  [inpBaselineLTRRent, inpFurnishingCost, inpTotalCashInvested, inpUtilElectric, inpUtilWater, inpUtilGas, inpUtilWifi, inpMonthlyDebt, inpTaxesInsurance, inpMaintPct].forEach(el => {
+    el.addEventListener('input', recalculate);
+    el.addEventListener('change', recalculate);
+  });
+
+  // QUICK SCENARIOS
+  document.querySelectorAll('.scenario-pill-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.scenario-pill-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const rent = parseFloat(this.getAttribute('data-rent')) || 3300;
+      const occ = parseFloat(this.getAttribute('data-occ')) || 88;
+      const furnish = parseFloat(this.getAttribute('data-furnish')) || 9500;
+      const ltr = parseFloat(this.getAttribute('data-ltr')) || 1950;
+      const mortgage = parseFloat(this.getAttribute('data-mortgage')) || 1350;
+      const lease = parseFloat(this.getAttribute('data-lease')) || 0;
+      const util = parseFloat(this.getAttribute('data-util')) || 400;
+
+      inpMonthlyMTRRent.value = rent;
+      rngMonthlyMTRRent.value = rent;
+      inpOccupancyRate.value = occ;
+      rngOccupancyRate.value = occ;
+      inpFurnishingCost.value = furnish;
+      inpBaselineLTRRent.value = ltr;
+
+      if (lease > 0) {
+        inpMonthlyDebt.value = lease;
+        inpTotalCashInvested.value = furnish + (lease * 2); // Security deposit + 1st mo + furniture
+        inpTaxesInsurance.value = 40; // Renter insurance only
+      } else {
+        inpMonthlyDebt.value = mortgage;
+        inpTotalCashInvested.value = 65000;
+        inpTaxesInsurance.value = 300;
+      }
+
+      inpUtilElectric.value = Math.round(util * 0.42);
+      inpUtilWater.value = Math.round(util * 0.22);
+      inpUtilGas.value = Math.round(util * 0.16);
+      inpUtilWifi.value = Math.round(util * 0.20);
+
+      recalculate();
+    });
+  });
+
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // RESET BUTTON
+  btnResetCalc.addEventListener('click', () => {
+    inpMonthlyMTRRent.value = 3300;
+    rngMonthlyMTRRent.value = 3300;
+    inpOccupancyRate.value = 88;
+    rngOccupancyRate.value = 88;
+    inpBaselineLTRRent.value = 1950;
+    inpFurnishingCost.value = 9500;
+    inpTotalCashInvested.value = 65000;
+
+    inpUtilElectric.value = 175;
+    inpUtilWater.value = 85;
+    inpUtilGas.value = 65;
+    inpUtilWifi.value = 80;
+
+    inpMonthlyDebt.value = 1350;
+    inpTaxesInsurance.value = 300;
+    inpMaintPct.value = 5;
+
+    document.querySelectorAll('.scenario-pill-btn').forEach((b, idx) => {
+      b.classList.toggle('active', idx === 1);
+    });
+
+    recalculate();
+  });
+
+  // RECALCULATE ENGINE
+  function recalculate() {
+    const grossRent = Math.max(0, parseFloat(inpMonthlyMTRRent.value) || 0);
+    const occPct = Math.max(0, Math.min(100, parseFloat(inpOccupancyRate.value) || 0));
+    const vacancyPct = 100 - occPct;
+
+    const weeksOccupied = (52 * (occPct / 100)).toFixed(1);
+    badgeOccupancyWeeks.textContent = `~${weeksOccupied} Weeks / Year`;
+    txtVacancyPct.textContent = `${vacancyPct}%`;
+
+    const vacancyLoss = grossRent * (vacancyPct / 100);
+    const effectiveMTRGross = grossRent - vacancyLoss;
+
+    // All-Inclusive Utilities
+    const uElectric = Math.max(0, parseFloat(inpUtilElectric.value) || 0);
+    const uWater = Math.max(0, parseFloat(inpUtilWater.value) || 0);
+    const uGas = Math.max(0, parseFloat(inpUtilGas.value) || 0);
+    const uWifi = Math.max(0, parseFloat(inpUtilWifi.value) || 0);
+    const totalMonthlyUtilities = uElectric + uWater + uGas + uWifi;
+
+    // Fixed & Reserves
+    const taxesIns = Math.max(0, parseFloat(inpTaxesInsurance.value) || 0);
+    const maintPct = Math.max(0, Math.min(100, parseFloat(inpMaintPct.value) || 0)) / 100;
+    const maintDollar = effectiveMTRGross * maintPct;
+    badgeMaintDollar.textContent = `${formatMoney(maintDollar)} / mo`;
+
+    // Net Operating Income (NOI)
+    const monthlyOpex = totalMonthlyUtilities + taxesIns + maintDollar;
+    const monthlyNOI = effectiveMTRGross - monthlyOpex;
+    const annualNOI = monthlyNOI * 12;
+
+    // Debt Service
+    const monthlyDebt = Math.max(0, parseFloat(inpMonthlyDebt.value) || 0);
+    const finalMonthlyCashFlow = monthlyNOI - monthlyDebt;
+    const finalAnnualCashFlow = finalMonthlyCashFlow * 12;
+
+    // Cash on Cash Return
+    const totalCashInvested = Math.max(1, parseFloat(inpTotalCashInvested.value) || 1);
+    const cocReturn = (finalAnnualCashFlow / totalCashInvested) * 100;
+
+    // Baseline LTR Comparison
+    const baselineLTR = Math.max(0, parseFloat(inpBaselineLTRRent.value) || 0);
+    // In LTR, tenant pays all utilities, vacancy is ~5%, maint ~5%
+    const ltrOpex = (baselineLTR * 0.05) + taxesIns;
+    const ltrNOI = (baselineLTR * 0.95) - ltrOpex;
+    const ltrCashFlow = ltrNOI - monthlyDebt;
+
+    const extraMonthlyProfit = finalMonthlyCashFlow - ltrCashFlow;
+    const furnishingCost = Math.max(0, parseFloat(inpFurnishingCost.value) || 0);
+
+    let paybackMonths = 'N/A';
+    if (extraMonthlyProfit > 0 && furnishingCost > 0) {
+      paybackMonths = (furnishingCost / extraMonthlyProfit).toFixed(1) + ' mo';
+    } else if (furnishingCost === 0) {
+      paybackMonths = '0.0 mo (Already Furnished)';
+    }
+
+    const profitLiftPct = ltrCashFlow > 0 ? ((extraMonthlyProfit / ltrCashFlow) * 100).toFixed(0) : 'N/A';
+
+    // UI Displays
+    dispNetMonthlyCashFlow.textContent = formatMoney(finalMonthlyCashFlow);
+    dispNetMonthlyCashFlow.style.color = finalMonthlyCashFlow >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-danger)';
+    dispAnnualCashFlow.textContent = `${formatMoney(finalAnnualCashFlow)} Net Annual Cash Flow`;
+
+    dispCoCReturn.textContent = `${cocReturn.toFixed(1)}%`;
+    dispFurnishPayback.textContent = paybackMonths;
+
+    const estimatedValue = totalCashInvested * 4; // Approx asset valuation if mortgaged
+    const capRate = estimatedValue > 0 ? (annualNOI / estimatedValue) * 100 : 0;
+    dispCapRate.textContent = `${Math.max(0, capRate).toFixed(1)}%`;
+
+    badgeMTRLift.textContent = profitLiftPct !== 'N/A' ? `+${profitLiftPct}% Profit Lift` : 'High MTR Premium';
+    dispEffectiveMTR.textContent = `${formatMoney(effectiveMTRGross)} / mo`;
+    dispLTRRent.textContent = `${formatMoney(baselineLTR)} / mo`;
+    dispExtraProfit.textContent = `${extraMonthlyProfit >= 0 ? '+' : ''}${formatMoney(extraMonthlyProfit)} / mo`;
+
+    // Table Rows
+    rowGrossRent.textContent = formatMoney(grossRent);
+    rowVacancyLoss.textContent = `-${formatMoney(vacancyLoss)}`;
+    rowEGI.textContent = formatMoney(effectiveMTRGross);
+    rowTotalUtilities.textContent = `-${formatMoney(totalMonthlyUtilities)}`;
+    rowTaxesIns.textContent = `-${formatMoney(taxesIns)}`;
+    rowMaintReserve.textContent = `-${formatMoney(maintDollar)}`;
+    rowNOI.textContent = formatMoney(monthlyNOI);
+    rowMortgageDebt.textContent = `-${formatMoney(monthlyDebt)}`;
+    rowFinalCashFlow.textContent = formatMoney(finalMonthlyCashFlow);
+    rowFinalCashFlow.style.color = finalMonthlyCashFlow >= 0 ? 'var(--accent-emerald-dark)' : 'var(--accent-danger)';
+  }
+
+  // DOWNLOAD CSV
+  btnDownloadCSV.addEventListener('click', () => {
+    let csv = `REAL REFIN - MID TERM RENTAL (MTR) CASH FLOW & INVESTMENT UNDERWRITING SPREADSHEET\n`;
+    csv += `Official Source: https://realrefin.com/mid-term-rental-calculator\n`;
+    csv += `Generated Date: ${new Date().toISOString().substring(0, 10)}\n\n`;
+
+    csv += `SECTION 1: MTR REVENUE SPECIFICATIONS,VALUE,NOTES\n`;
+    csv += `Contract Furnished Monthly Rent,$"${rowGrossRent.textContent.replace('$', '')}",Furnished Finder benchmark\n`;
+    csv += `Annual Occupancy Rate,${inpOccupancyRate.value}%,${badgeOccupancyWeeks.textContent}\n`;
+    csv += `Effective Gross Monthly Income (EGI),$"${rowEGI.textContent.replace('$', '')}",Adjusted for contract vacancy\n`;
+    csv += `Baseline Unfurnished Long-Term Rent (LTR),$"${inpBaselineLTRRent.value}",Comparison rate\n`;
+    csv += `Extra Monthly Profit via MTR,"${dispExtraProfit.textContent}",Net monthly gain over LTR\n\n`;
+
+    csv += `SECTION 2: ALL-INCLUSIVE MONTHLY EXPENSES (LANDLORD PAID),AMOUNT,CATEGORY\n`;
+    csv += `Electric / Power Bill,$"${inpUtilElectric.value}",Tenant utilities\n`;
+    csv += `Water Sewer & Trash,$"${inpUtilWater.value}",Tenant utilities\n`;
+    csv += `Natural Gas / Heating,$"${inpUtilGas.value}",Tenant utilities\n`;
+    csv += `Gigabit Wi-Fi & Streaming,$"${inpUtilWifi.value}",Mandatory remote work\n`;
+    csv += `Property Taxes & Landlord Insurance,$"${inpTaxesInsurance.value}",Fixed escrow\n`;
+    csv += `Turnover & Maintenance Reserve (5%),"${rowMaintReserve.textContent}",CapEx & touchups\n`;
+    csv += `Mortgage Debt Service (P&I),$"${inpMonthlyDebt.value}",Monthly debt\n\n`;
+
+    csv += `SECTION 3: NET BOTTOM-LINE INVESTMENT RETURNS,VALUE,METRIC\n`;
+    csv += `Net Operating Income (NOI - Monthly),${rowNOI.textContent},Unlevered cash flow\n`;
+    csv += `Final Net Monthly Cash Flow,${rowFinalCashFlow.textContent},Net in pocket\n`;
+    csv += `Net Annual Cash Flow,${dispAnnualCashFlow.textContent},Annualized\n`;
+    csv += `Cash on Cash Return (CoC %),${dispCoCReturn.textContent},Cash Flow / Invested Capital\n`;
+    csv += `Furniture Investment Payback Period,${dispFurnishPayback.textContent},Months to recoup setup cost\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `realrefin-mid-term-rental-model-${inpMonthlyMTRRent.value}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
+
+  // COPY SHAREABLE LINK
+  btnCopyShareLink.addEventListener('click', function() {
+    const url = new URL(window.location.href);
+    url.searchParams.set('rent', inpMonthlyMTRRent.value);
+    url.searchParams.set('occ', inpOccupancyRate.value);
+    url.searchParams.set('furnish', inpFurnishingCost.value);
+    url.searchParams.set('ltr', inpBaselineLTRRent.value);
+    url.searchParams.set('debt', inpMonthlyDebt.value);
+
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      const orig = this.innerHTML;
+      this.innerHTML = '<span>✅</span> Link Copied!';
+      this.style.background = 'var(--accent-emerald-light)';
+      this.style.borderColor = 'var(--accent-emerald)';
+      setTimeout(() => {
+        this.innerHTML = orig;
+        this.style.background = '';
+        this.style.borderColor = '';
+      }, 2500);
+    }).catch(() => {
+      prompt('Copy shareable URL:', url.toString());
+    });
+  });
+
+  // RESTORE FROM URL SEARCH PARAMS
+  function loadUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('rent')) {
+      inpMonthlyMTRRent.value = p.get('rent');
+      rngMonthlyMTRRent.value = p.get('rent');
+    }
+    if (p.has('occ')) {
+      inpOccupancyRate.value = p.get('occ');
+      rngOccupancyRate.value = p.get('occ');
+    }
+    if (p.has('furnish')) inpFurnishingCost.value = p.get('furnish');
+    if (p.has('ltr')) inpBaselineLTRRent.value = p.get('ltr');
+    if (p.has('debt')) inpMonthlyDebt.value = p.get('debt');
+  }
+
+  // INITIALIZE
+  loadUrlState();
+  recalculate();
+
+})();
+</script>
+
+</body>
+</html>

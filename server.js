@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/mid-term-rental-calculator</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/divorce-house-buyout-calculator</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -373,6 +379,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/mid-term-rental-calculator': 'mid-term-rental-calculator.html',
+  '/mid-term-rental-calculator.html': 'mid-term-rental-calculator.html',
+  '/midterm-rental-calculator': 'mid-term-rental-calculator.html',
+  '/midterm-rental-calculator.html': 'mid-term-rental-calculator.html',
+  '/mtr-calculator': 'mid-term-rental-calculator.html',
+  '/mtr-calculator.html': 'mid-term-rental-calculator.html',
+  '/travel-nurse-housing-calculator': 'mid-term-rental-calculator.html',
+  '/travel-nurse-housing-calculator.html': 'mid-term-rental-calculator.html',
+  '/furnished-finder-calculator': 'mid-term-rental-calculator.html',
+  '/furnished-finder-calculator.html': 'mid-term-rental-calculator.html',
   '/divorce-house-buyout-calculator': 'divorce-house-buyout-calculator.html',
   '/divorce-house-buyout-calculator.html': 'divorce-house-buyout-calculator.html',
   '/how-is-house-buyout-calculated-in-a-divorce': 'divorce-house-buyout-calculator.html',
