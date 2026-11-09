@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/barndominium-cost-calculator</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/detail-car-payment-calculator-formulas</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -361,6 +367,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/barndominium-cost-calculator': 'barndominium-cost-calculator.html',
+  '/barndominium-cost-calculator.html': 'barndominium-cost-calculator.html',
+  '/barndominium-build-cost-calculator': 'barndominium-cost-calculator.html',
+  '/barndominium-build-cost-calculator.html': 'barndominium-cost-calculator.html',
+  '/barndominium-cost-to-build-calculator': 'barndominium-cost-calculator.html',
+  '/barndominium-cost-to-build-calculator.html': 'barndominium-cost-calculator.html',
+  '/cost-to-build-a-barndominium-calculator': 'barndominium-cost-calculator.html',
+  '/cost-to-build-a-barndominium-calculator.html': 'barndominium-cost-calculator.html',
+  '/cost-to-build-barndominium-calculator': 'barndominium-cost-calculator.html',
+  '/cost-to-build-barndominium-calculator.html': 'barndominium-cost-calculator.html',
+  '/barndominium-cost-calculator-oklahoma': 'barndominium-cost-calculator.html',
+  '/barndominium-cost-calculator-oklahoma.html': 'barndominium-cost-calculator.html',
   '/reverse-mortgage-purchase-calculator': 'reverse-mortgage-purchase-calculator.html',
   '/reverse-mortgage-purchase-calculator.html': 'reverse-mortgage-purchase-calculator.html',
   '/reverse-mortgage-purchase-down-payment-calculator': 'reverse-mortgage-purchase-calculator.html',
