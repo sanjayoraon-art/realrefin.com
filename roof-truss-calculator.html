@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roof Truss Calculator &amp; Roofing Material Calculator 2026</title>
+  <meta name="description" content="Free roof truss calculator and roofing material calculator. Estimate truss count, 16&quot; and 24&quot; on-center spacing, peak rise, roofing squares, shingle bundles, underlayment rolls, and materials with instant 1-click presets.">
+  <meta name="keywords" content="roof truss calculator, roofing material calculator, roof truss count calculator, roof truss spacing calculator, how many roof trusses do i need, roofing material estimator, shingle bundle calculator, roofing squares calculator">
+  <link rel="canonical" href="https://realrefin.com/roof-truss-calculator">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Roof Truss Calculator &amp; Roofing Material Calculator">
+  <meta property="og:description" content="Accurately calculate roof truss counts, spacing, rafter slope, roofing squares, shingle bundles, underlayment, and metal drip edge in seconds.">
+  <meta property="og:url" content="https://realrefin.com/roof-truss-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roof Truss Calculator &amp; Roofing Material Calculator | RealRefin">
+  <meta name="twitter:description" content="Free roof truss and roofing materials calculator. Get instant truss count, peak height, shingle bundles, and complete lumberyard BOM.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <!-- Structured Data: WebApplication, FAQPage, HowTo, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/roof-truss-calculator#app",
+        "name": "RealRefin Roof Truss Calculator & Roofing Material Estimator",
+        "url": "https://realrefin.com/roof-truss-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "Comprehensive roof truss calculator and roofing material calculator. Calculates truss count for 16-inch and 24-inch on-center spacing, rafter slope, roof surface area, roofing squares, shingle bundles, underlayment, and drip edge with live visual SVG diagram.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/roof-truss-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Construction & Building Calculators",
+            "item": "https://realrefin.com/#suite-investor"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Roof Truss Calculator",
+            "item": "https://realrefin.com/roof-truss-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://realrefin.com/roof-truss-calculator#howto",
+        "name": "How to Calculate Roof Trusses and Roofing Materials",
+        "description": "Step-by-step formula to calculate how many roof trusses and roofing shingle bundles are required for a building.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Determine Building Length and Truss Spacing",
+            "text": "Convert building length into inches and divide by the on-center truss spacing (typically 24 inches for residential, or 16 inches for heavy snow loads). Add 1 to account for the starting end truss: Number of Trusses = (Building Length in Feet × 12 ÷ Spacing in Inches) + 1."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Account for Gable End Trusses",
+            "text": "For standard gable roof designs, 2 of the total trusses are gable end trusses (featuring vertical studs spaced at 16 or 24 inches to support siding or sheathing), and the remainder are standard common trusses."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Calculate Roof Surface Area with Pitch Multiplier",
+            "text": "Multiply base building footprint (accounting for eaves and overhangs) by the roof pitch slope factor (e.g., 1.118 for a 6/12 pitch, or 1.202 for an 8/12 pitch)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Convert Square Footage to Roofing Squares and Bundles",
+            "text": "Divide total roof square footage by 100 to determine Roofing Squares. Multiply squares by 3 to find total shingle bundles needed, adding a 10% waste buffer."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/roof-truss-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many roof trusses do I need for a 40 ft building?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For a 40-foot building with standard 24-inch (2-foot) on-center spacing, you need 21 roof trusses: (40 ÷ 2) + 1 = 21 trusses. This typically consists of 2 gable end trusses and 19 common trusses. If building with 16-inch spacing for heavy snow or attic storage, you need (40 × 12 ÷ 16) + 1 = 31 trusses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the standard spacing for roof trusses (16 vs 24 inches)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The international residential building code (IRC) standard for manufactured roof trusses is 24 inches on-center (O.C.). This provides an optimal balance of structural strength, material cost, and thermal efficiency. Spacing of 16 inches O.C. is used primarily in regions with heavy ground snow loads (over 50 psf), high wind zones, hurricane coastlines, or when constructing usable attic storage trusses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do manufactured roof trusses cost in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Manufactured residential wood roof trusses typically cost between $5.50 and $9.50 per foot of building span. For example, a 24-foot span common truss costs $130 to $220 each, while a 30-foot span truss costs $170 to $280 each. Gable end trusses cost 20% to 30% more due to additional vertical stud framing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many bundles of shingles do I need per roofing square?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One roofing square equals 100 square feet of roof surface. Standard 3-tab and architectural laminated shingles require exactly 3 bundles per square (each bundle covers approximately 33.3 square feet). Heavyweight luxury designer shingles may require 4 or 5 bundles per square."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much underlayment and drip edge do I need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One standard roll of synthetic roof underlayment covers 1,000 square feet (10 squares) raw, or approximately 850 to 900 square feet net after factoring in the required 4-to-6-inch horizontal and vertical overlaps. Metal drip edge comes in 10-foot lengths; calculate total perimeter of eaves and gable rakes, divide by 9.5 (accounting for 6-inch joints), and round up."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What roof pitch factor multiplier should I use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To convert flat horizontal ceiling area to actual sloped roof area, multiply by the pitch factor: 3/12 = 1.031; 4/12 = 1.054; 5/12 = 1.083; 6/12 = 1.118; 7/12 = 1.158; 8/12 = 1.202; 9/12 = 1.250; 10/12 = 1.302; 12/12 = 1.414."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* -----------------------------------------------------------
+       CORE COLOR SYSTEM & VARIABLES
+    ----------------------------------------------------------- */
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-blue: #2563eb;
+      --accent-blue-dark: #1d4ed8;
+      --accent-blue-light: #eff6ff;
+      --accent-amber: #d97706;
+      --accent-amber-dark: #b45309;
+      --accent-amber-light: #fffbeb;
+      --accent-emerald: #10b981;
+      --accent-emerald-light: #ecfdf5;
+      --accent-wood: #854d0e;
+      --accent-wood-light: #fefce8;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --bg-app: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --border-focus: #2563eb;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.03);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 10px 10px -5px rgba(0,0,0,0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--accent-blue-dark);
+      text-decoration: underline;
+    }
+
+    /* -----------------------------------------------------------
+       GLOBAL SITE HEADER
+    ----------------------------------------------------------- */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .brand-link:hover { text-decoration: none; }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.15s ease;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       BREADCRUMB BAR
+    ----------------------------------------------------------- */
+    .breadcrumb-nav {
+      max-width: 1280px;
+      margin: 1rem auto 0;
+      padding: 0 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .breadcrumb-nav ol {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav li+li::before {
+      content: "/";
+      color: var(--text-light);
+      margin-right: 0.5rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--accent-blue);
+    }
+
+    /* -----------------------------------------------------------
+       HERO BANNER
+    ----------------------------------------------------------- */
+    .hero-section {
+      max-width: 1280px;
+      margin: 1.5rem auto 1.75rem;
+      padding: 0 1.5rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2.25rem;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      color: #bfdbfe;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 880px;
+      line-height: 1.6;
+    }
+
+    .hero-badges-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* -----------------------------------------------------------
+       MAIN APP LAYOUT
+    ----------------------------------------------------------- */
+    .calc-container {
+      max-width: 1280px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+    }
+
+    .card-title-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+
+    .card-title-bar h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* -----------------------------------------------------------
+       1-CLICK PRESETS
+    ----------------------------------------------------------- */
+    .presets-container {
+      margin-bottom: 2rem;
+    }
+
+    .presets-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .presets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .preset-chip {
+      background: #ffffff;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .preset-chip:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .preset-chip.active {
+      background: #eff6ff;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 1px var(--accent-blue);
+    }
+
+    .preset-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent-blue-dark);
+      background: var(--accent-blue-light);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.3rem;
+    }
+
+    .preset-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: block;
+    }
+
+    .preset-dim {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* -----------------------------------------------------------
+       FORM INPUTS & SLIDERS
+    ----------------------------------------------------------- */
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-group-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .input-field-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .field-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .field-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-blue-dark);
+      background: var(--accent-blue-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .input-with-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .num-stepper-btn {
+      width: 42px;
+      height: 42px;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s ease;
+      user-select: none;
+    }
+
+    .num-stepper-btn:hover {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+
+    .text-input {
+      flex: 1;
+      height: 42px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0 0.85rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .text-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .range-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #cbd5e1;
+      outline: none;
+      margin-top: 0.35rem;
+      accent-color: var(--accent-blue);
+      cursor: pointer;
+    }
+
+    /* -----------------------------------------------------------
+       SPACING & PITCH SELECTORS
+    ----------------------------------------------------------- */
+    .spacing-pills-row {
+      display: flex;
+      gap: 0.65rem;
+      margin-top: 0.35rem;
+    }
+
+    .spacing-pill-btn {
+      flex: 1;
+      padding: 0.65rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .spacing-pill-btn:hover {
+      border-color: var(--accent-blue);
+    }
+
+    .spacing-pill-btn.active {
+      background: #eff6ff;
+      border-color: var(--accent-blue);
+      color: var(--accent-blue-dark);
+      font-weight: 800;
+      box-shadow: 0 0 0 1px var(--accent-blue);
+    }
+
+    .select-dropdown {
+      width: 100%;
+      height: 42px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #ffffff;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* -----------------------------------------------------------
+       DYNAMIC SVG TRUSS DIAGRAM
+    ----------------------------------------------------------- */
+    .diagram-card {
+      margin-top: 1.75rem;
+      padding: 1.25rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+
+    .diagram-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .diagram-header h4 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .diagram-svg-wrap {
+      width: 100%;
+      height: 180px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .diagram-legend-row {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .legend-color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* -----------------------------------------------------------
+       RIGHT COLUMN: LIVE RESULTS PANEL
+    ----------------------------------------------------------- */
+    .results-panel {
+      position: sticky;
+      top: 5.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .results-hero-card {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .results-hero-card::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .results-tab-switch {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 3px;
+      margin-bottom: 1.25rem;
+    }
+
+    .res-tab-btn {
+      flex: 1;
+      padding: 0.55rem;
+      border: none;
+      background: transparent;
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .res-tab-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .stat-label-dim {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+    }
+
+    .stat-main-number {
+      font-size: 2.75rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      margin: 0.35rem 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-range-text {
+      font-size: 0.95rem;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .results-micro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .micro-stat-box {
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.85rem;
+    }
+
+    .micro-label {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+
+    .micro-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 0.2rem;
+    }
+
+    /* MATERIAL REQUIREMENTS CARD */
+    .materials-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 1.5rem;
+    }
+
+    .materials-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .materials-card p.subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .material-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .material-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .material-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .mat-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mat-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    .mat-note {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .mat-quantity {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent-blue-dark);
+      background: var(--accent-blue-light);
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    /* ACTION BUTTONS */
+    .actions-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .btn-action-primary {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      background: var(--primary-navy);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.15s;
+      font-family: inherit;
+    }
+
+    .btn-action-primary:hover {
+      background: #1e293b;
+    }
+
+    .btn-action-secondary {
+      padding: 0.8rem 1rem;
+      background: #f1f5f9;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .btn-action-secondary:hover {
+      background: #e2e8f0;
+      color: var(--primary-navy);
+    }
+
+    /* -----------------------------------------------------------
+       EDUCATIONAL / SEO CONTENT
+    ----------------------------------------------------------- */
+    .content-container {
+      max-width: 1280px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .seo-article {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 3rem 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .seo-article {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .seo-article h2 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin: 2.25rem 0 1rem;
+    }
+    .seo-article h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .seo-article h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--secondary-navy);
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    .seo-article p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .seo-article ul, .seo-article ol {
+      margin: 0.5rem 0 1.5rem 1.5rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .seo-article li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* COMPARISON TABLE */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.75rem 0 2.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .benchmark-table th {
+      background: #f8fafc;
+      padding: 0.9rem 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .benchmark-table td {
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .benchmark-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .benchmark-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    .benchmark-table strong {
+      color: var(--primary-navy);
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .faq-item {
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #ffffff;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item.active {
+      border-color: var(--accent-blue);
+    }
+
+    .faq-question {
+      padding: 1.1rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      display: none;
+      border-top: 1px solid #f1f5f9;
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* -----------------------------------------------------------
+       GLOBAL SITE FOOTER
+    ----------------------------------------------------------- */
+    .site-footer {
+      background: var(--primary-navy);
+      color: #94a3b8;
+      padding: 3.5rem 1.5rem 2.5rem;
+      border-top: 1px solid #334155;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      max-width: 340px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2.5rem auto 0;
+      padding-top: 1.75rem;
+      border-top: 1px solid #334155;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand-link">
+        <span>RealRefin</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#suite-refinance">Mortgage</a></li>
+        <li><a href="/#suite-investor">Investors</a></li>
+        <li><a href="/concrete-calculator-yards">Concrete Yards</a></li>
+        <li><a href="/epoxy-flooring-cost-calculator">Epoxy Calculator</a></li>
+        <li><a href="/roof-truss-calculator" style="color: var(--accent-blue); font-weight: 800;">Truss &amp; Roofing</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#suite-investor">Construction &amp; Building Calculators</a></li>
+      <li aria-current="page">Roof Truss &amp; Roofing Material Calculator</li>
+    </ol>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-card">
+      <div class="hero-pill-badge">
+        <span>🏗️ Dual-Engine Estimator</span>
+        <span>•</span>
+        <span>Trusses &amp; Materials</span>
+      </div>
+      <h1 class="hero-title">Roof Truss Calculator &amp; Roofing Material Calculator</h1>
+      <p class="hero-subtitle">
+        Accurately calculate how many roof trusses you need for 16" and 24" on-center spacing, peak rise height, rafter slope, roofing squares, shingle bundles, underlayment rolls, and drip edge with a live visual diagram.
+      </p>
+
+      <div class="hero-badges-row">
+        <div class="hero-badge-item">📐 16" &amp; 24" On-Center Spacing</div>
+        <div class="hero-badge-item">📦 Shingle Bundles &amp; Squares (100 sq ft)</div>
+        <div class="hero-badge-item">⚡ 1-Click Shed, Garage &amp; Home Presets</div>
+        <div class="hero-badge-item">📋 Complete Lumberyard Bill of Materials</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CALCULATOR APP -->
+  <main class="calc-container">
+
+    <!-- LEFT COLUMN: INPUTS & CONFIGURATION -->
+    <div class="calc-card">
+      <div class="card-title-bar">
+        <h2>📐 Building Dimensions &amp; Pitch</h2>
+      </div>
+
+      <!-- 1-CLICK PRESETS -->
+      <div class="presets-container">
+        <div class="presets-label">
+          <span>⚡ Popular Building Presets</span>
+          <span style="font-size:0.75rem; font-weight:600; text-transform:none; color:var(--text-light);">Tap to auto-fill</span>
+        </div>
+        <div class="presets-grid">
+          <button type="button" class="preset-chip" data-len="16" data-span="12" data-pitch="4" data-space="24" data-oh="12">
+            <span class="preset-tag">Storage Shed</span>
+            <span class="preset-title">12' × 16' Shed</span>
+            <span class="preset-dim">24" O.C. • 4/12 Pitch</span>
+          </button>
+          <button type="button" class="preset-chip" data-len="24" data-span="20" data-pitch="5" data-space="24" data-oh="12">
+            <span class="preset-tag">2-Car Garage</span>
+            <span class="preset-title">20' × 24' Garage</span>
+            <span class="preset-dim">24" O.C. • 5/12 Pitch</span>
+          </button>
+          <button type="button" class="preset-chip active" data-len="40" data-span="24" data-pitch="6" data-space="24" data-oh="12">
+            <span class="preset-tag">Ranch Home</span>
+            <span class="preset-title">24' × 40' House</span>
+            <span class="preset-dim">24" O.C. • 6/12 Pitch</span>
+          </button>
+          <button type="button" class="preset-chip" data-len="50" data-span="30" data-pitch="4" data-space="24" data-oh="18">
+            <span class="preset-tag">Pole Barn</span>
+            <span class="preset-title">30' × 50' Workshop</span>
+            <span class="preset-dim">24" O.C. • 4/12 Pitch</span>
+          </button>
+          <button type="button" class="preset-chip" data-len="60" data-span="36" data-pitch="6" data-space="24" data-oh="24">
+            <span class="preset-tag">Commercial</span>
+            <span class="preset-title">36' × 60' Farm Shop</span>
+            <span class="preset-dim">24" O.C. • 6/12 Pitch</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- BUILDING LENGTH & SPAN (WIDTH) -->
+      <div class="form-group-row">
+        <div class="input-field-wrap">
+          <label class="field-label" for="inpLength">
+            <span>Building Length (Along Ridge)</span>
+            <span class="field-badge" id="badgeLength">40 ft</span>
+          </label>
+          <div class="input-with-controls">
+            <button type="button" class="num-stepper-btn" id="btnDecLength">-</button>
+            <input type="number" id="inpLength" class="text-input" value="40" min="6" max="300" step="2">
+            <button type="button" class="num-stepper-btn" id="btnIncLength">+</button>
+          </div>
+          <input type="range" id="rngLength" class="range-slider" min="10" max="100" value="40">
+        </div>
+
+        <div class="input-field-wrap">
+          <label class="field-label" for="inpSpan">
+            <span>Building Width (Truss Span)</span>
+            <span class="field-badge" id="badgeSpan">24 ft</span>
+          </label>
+          <div class="input-with-controls">
+            <button type="button" class="num-stepper-btn" id="btnDecSpan">-</button>
+            <input type="number" id="inpSpan" class="text-input" value="24" min="8" max="100" step="2">
+            <button type="button" class="num-stepper-btn" id="btnIncSpan">+</button>
+          </div>
+          <input type="range" id="rngSpan" class="range-slider" min="10" max="60" value="24">
+        </div>
+      </div>
+
+      <!-- TRUSS SPACING & ROOF PITCH -->
+      <div class="form-group-row">
+        <div class="input-field-wrap">
+          <label class="field-label">Truss Spacing (On-Center)</label>
+          <div class="spacing-pills-row">
+            <button type="button" class="spacing-pill-btn active" data-space="24">24" O.C.<br><span style="font-size:0.7rem; font-weight:500;">Standard</span></button>
+            <button type="button" class="spacing-pill-btn" data-space="16">16" O.C.<br><span style="font-size:0.7rem; font-weight:500;">Heavy Load</span></button>
+            <button type="button" class="spacing-pill-btn" data-space="19.2">19.2" O.C.<br><span style="font-size:0.7rem; font-weight:500;">Engineered</span></button>
+          </div>
+        </div>
+
+        <div class="input-field-wrap">
+          <label class="field-label" for="selPitch">Roof Pitch (Slope)</label>
+          <select id="selPitch" class="select-dropdown">
+            <option value="3">3/12 (Low Slope - 14.0°)</option>
+            <option value="4">4/12 (Standard Low - 18.4°)</option>
+            <option value="5">5/12 (Standard Moderate - 22.6°)</option>
+            <option value="6" selected>6/12 (Standard Residential - 26.6°)</option>
+            <option value="7">7/12 (Moderate Steep - 30.3°)</option>
+            <option value="8">8/12 (Steep - 33.7°)</option>
+            <option value="9">9/12 (Very Steep - 36.9°)</option>
+            <option value="10">10/12 (Steep Alpine - 39.8°)</option>
+            <option value="12">12/12 (45° Angle Steep)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- OVERHANG & WASTE FACTOR -->
+      <div class="form-group-row">
+        <div class="input-field-wrap">
+          <label class="field-label" for="selOverhang">Eaves Overhang</label>
+          <select id="selOverhang" class="select-dropdown">
+            <option value="0">0 Inches (Flush Gable)</option>
+            <option value="6">6 Inches (Compact)</option>
+            <option value="12" selected>12 Inches (Standard 1 ft)</option>
+            <option value="18">18 Inches (Architectural)</option>
+            <option value="24">24 Inches (Wide Soffit 2 ft)</option>
+          </select>
+        </div>
+
+        <div class="input-field-wrap">
+          <label class="field-label" for="selWaste">Roofing Material Waste Buffer</label>
+          <select id="selWaste" class="select-dropdown">
+            <option value="5">5% (Simple Gable Roof)</option>
+            <option value="10" selected>10% (Recommended Standard)</option>
+            <option value="15">15% (Valleys / Hips / Dormers)</option>
+            <option value="20">20% (Complex Roof Geometry)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- DYNAMIC SVG DIAGRAM -->
+      <div class="diagram-card">
+        <div class="diagram-header">
+          <h4>Truss Profile &amp; Dimensions</h4>
+          <span id="diagramInfo" style="font-size:0.8rem; font-weight:700; color:var(--accent-blue-dark);">Span: 24' • Rise: 6.0' • Slope: 13.4'</span>
+        </div>
+        <div class="diagram-svg-wrap">
+          <svg id="trussSvg" viewBox="0 0 400 160" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dynamic SVG content drawn via JavaScript -->
+          </svg>
+        </div>
+        <div class="diagram-legend-row">
+          <div class="legend-item">
+            <span class="legend-color-dot" style="background:#854d0e;"></span>
+            <span>Truss Top &amp; Bottom Chords</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color-dot" style="background:#2563eb;"></span>
+            <span>Internal Web Bracing (Fink)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color-dot" style="background:#dc2626;"></span>
+            <span>Peak Rise &amp; Overhang Tails</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: RESULTS PANEL -->
+    <div class="results-panel">
+
+      <!-- HERO STAT CARD -->
+      <div class="results-hero-card">
+        <div class="results-tab-switch">
+          <button type="button" class="res-tab-btn active" id="tabResTrusses">🏗️ Roof Truss Package</button>
+          <button type="button" class="res-tab-btn" id="tabResMaterials">📦 Roofing Materials</button>
+        </div>
+
+        <div id="viewTrusses">
+          <div class="stat-label-dim">TOTAL TRUSSES NEEDED</div>
+          <div class="stat-main-number" id="resTotalTrusses">21 Trusses</div>
+          <div class="stat-range-text" id="resTrussBreakdown">19 Common Trusses + 2 Gable End Trusses</div>
+
+          <div class="results-micro-grid">
+            <div class="micro-stat-box">
+              <div class="micro-label">Truss Peak Rise</div>
+              <div class="micro-val" id="resPeakRise">6.0 ft</div>
+            </div>
+            <div class="micro-stat-box">
+              <div class="micro-label">Rafter Slope Length</div>
+              <div class="micro-val" id="resRafterSlope">14.5 ft</div>
+            </div>
+            <div class="micro-stat-box">
+              <div class="micro-label">Truss Spacing</div>
+              <div class="micro-val" id="resSpacingText">24" O.C.</div>
+            </div>
+            <div class="micro-stat-box">
+              <div class="micro-label">Estimated Truss Cost</div>
+              <div class="micro-val" id="resTrussCost">$3,650</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewMaterials" style="display:none;">
+          <div class="stat-label-dim">TOTAL SHINGLE BUNDLES NEEDED</div>
+          <div class="stat-main-number" id="resShingleBundles">39 Bundles</div>
+          <div class="stat-range-text" id="resSquaresText">12.8 Roofing Squares (100 sq ft each)</div>
+
+          <div class="results-micro-grid">
+            <div class="micro-stat-box">
+              <div class="micro-label">Total Roof Area</div>
+              <div class="micro-val" id="resRoofArea">1,280 sq ft</div>
+            </div>
+            <div class="micro-stat-box">
+              <div class="micro-label">Synthetic Underlayment</div>
+              <div class="micro-val" id="resUnderlayment">2 Rolls</div>
+            </div>
+            <div class="micro-stat-box">
+              <div class="micro-label">Ridge Cap Bundles</div>
+              <div class="micro-val" id="resRidgeBundles">2 Bundles</div>
+            </div>
+            <div class="micro-stat-box">
+              <div class="micro-label">Est. Shingle Material Cost</div>
+              <div class="micro-val" id="resMaterialCost">$1,850</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COMPLETE BILL OF MATERIALS CARD -->
+      <div class="materials-card">
+        <h3>📋 Complete Bill of Materials (BOM)</h3>
+        <p class="subtitle">Complete order list for lumberyards and roofing suppliers.</p>
+
+        <div class="material-items-list">
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Common Roof Trusses</span>
+              <span class="mat-note" id="noteCommonTruss">24' Span • 6/12 Pitch • 24" O.C.</span>
+            </div>
+            <span class="mat-quantity" id="bomCommonTrusses">19 Trusses</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Gable End Trusses</span>
+              <span class="mat-note">With vertical 16" O.C. framing studs</span>
+            </div>
+            <span class="mat-quantity" id="bomGableTrusses">2 Trusses</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Asphalt Architectural Shingles</span>
+              <span class="mat-note">3 bundles per 100 sq ft square (+10% waste)</span>
+            </div>
+            <span class="mat-quantity" id="bomShingleBundles">39 Bundles</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Synthetic Roof Underlayment</span>
+              <span class="mat-note">1,000 sq ft rolls (covers ~900 sq ft net)</span>
+            </div>
+            <span class="mat-quantity" id="bomUnderlayment">2 Rolls</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Ridge Cap Shingles</span>
+              <span class="mat-note">Covers 30 linear feet per bundle</span>
+            </div>
+            <span class="mat-quantity" id="bomRidgeCap">2 Bundles</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Starter Strip Shingles</span>
+              <span class="mat-note">Covers 105 linear feet per roll/bundle</span>
+            </div>
+            <span class="mat-quantity" id="bomStarter">1 Bundle</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Metal Drip Edge (10-ft Sticks)</span>
+              <span class="mat-note">Eaves &amp; rakes perimeter with 6" overlap</span>
+            </div>
+            <span class="mat-quantity" id="bomDripEdge">15 Sticks</span>
+          </div>
+
+          <div class="material-row">
+            <div class="mat-info">
+              <span class="mat-name">Coil Roofing Nails</span>
+              <span class="mat-note">1-1/4" galvanized ring shank nails</span>
+            </div>
+            <span class="mat-quantity" id="bomNails">1 Box (7,200)</span>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button type="button" class="btn-action-primary" id="btnExportCsv">
+            <span>📥 Export BOM as CSV</span>
+          </button>
+          <button type="button" class="btn-action-secondary" id="btnShareUrl" title="Copy shareable link">
+            <span>🔗 Share</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- EDUCATIONAL SEO & GUIDE SECTION -->
+  <section class="content-container">
+    <article class="seo-article">
+      <h2>Complete Roof Truss &amp; Roofing Material Guide (2026)</h2>
+      <p>
+        Building a sound, code-compliant roof requires precision calculations for both the underlying framing structure (roof trusses) and the exterior weatherproofing envelope (roofing materials). Whether you are framing a detached backyard workshop, a two-car garage, an agricultural pole barn, or a new custom home, understanding truss spacing, pitch slope multipliers, and shingle bundle calculations prevents costly material shortages and structural framing delays.
+      </p>
+
+      <h2>How to Calculate Roof Truss Count Formula</h2>
+      <p>
+        To determine how many roof trusses are needed to frame a building, use the standard framing formula:
+      </p>
+      <div style="background:#f1f5f9; padding:1.25rem; border-radius:var(--radius-md); font-family:monospace; font-size:1rem; margin-bottom:1.25rem;">
+        Number of Trusses = ⌊(Building Length in Feet × 12) ÷ Truss Spacing in Inches⌋ + 1
+      </div>
+      <p>
+        <strong>Why add 1?</strong> If you have a 40-foot building and divide 40 by 2-foot spacing, you get 20 bays. However, you need a truss at both the beginning and the end of each bay, meaning you need 21 physical trusses.
+      </p>
+      <ul>
+        <li><strong>Standard Common Trusses:</strong> These form the interior repetitive roof structure. In a 21-truss package, 19 are standard common trusses.</li>
+        <li><strong>Gable End Trusses:</strong> Positioned at the two outer ends of the building. Gable trusses feature vertical framing studs spaced at 16 or 24 inches on-center to allow exterior plywood sheathing, housewrap, and siding to be directly fastened.</li>
+      </ul>
+
+      <h2>Roof Truss Spacing: 24 Inches vs. 16 Inches On-Center</h2>
+      <div class="table-wrapper">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Spacing Configuration</th>
+              <th>Typical Applications</th>
+              <th>Roof Sheathing Thickness Required</th>
+              <th>Advantages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>24 Inches On-Center (O.C.)</strong></td>
+              <td>Standard residential homes, garages, sheds, pole barns</td>
+              <td>7/16" or 1/2" OSB / Plywood with H-clips</td>
+              <td>Fastest installation, lowest lumber cost, optimal thermal insulation cavity</td>
+            </tr>
+            <tr>
+              <td><strong>16 Inches On-Center (O.C.)</strong></td>
+              <td>Heavy snow zones (>50 psf), coastal hurricane zones, attic storage trusses</td>
+              <td>1/2" or 5/8" OSB / Plywood</td>
+              <td>Superior structural load rating, eliminates roof deck sagging between chords</td>
+            </tr>
+            <tr>
+              <td><strong>19.2 Inches On-Center (O.C.)</strong></td>
+              <td>Engineered modular framing (divides evenly into 8-foot sheet goods)</td>
+              <td>1/2" OSB / Plywood</td>
+              <td>Midway compromise between 16" and 24" spacing for specialized spans</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Roof Pitch Multipliers for Material Calculation</h2>
+      <p>
+        Because roofs are sloped, the physical surface area that needs shingles, underlayment, and sheathing is larger than the flat horizontal footprint of the building. To find the exact sloped square footage, multiply the flat horizontal area (including overhangs) by the pitch factor:
+      </p>
+
+      <div class="table-wrapper">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Roof Pitch</th>
+              <th>Slope Angle</th>
+              <th>Pitch Multiplier</th>
+              <th>Roof Type Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>3/12</strong></td>
+              <td>14.0°</td>
+              <td>1.031</td>
+              <td>Low Slope (Requires double underlayment)</td>
+            </tr>
+            <tr>
+              <td><strong>4/12</strong></td>
+              <td>18.4°</td>
+              <td>1.054</td>
+              <td>Standard Low Pitch (Minimum for standard shingle warranty)</td>
+            </tr>
+            <tr>
+              <td><strong>5/12</strong></td>
+              <td>22.6°</td>
+              <td>1.083</td>
+              <td>Moderate Residential Pitch</td>
+            </tr>
+            <tr>
+              <td><strong>6/12</strong></td>
+              <td>26.6°</td>
+              <td>1.118</td>
+              <td>Most Common American Residential Pitch</td>
+            </tr>
+            <tr>
+              <td><strong>7/12</strong></td>
+              <td>30.3°</td>
+              <td>1.158</td>
+              <td>Moderate Steep</td>
+            </tr>
+            <tr>
+              <td><strong>8/12</strong></td>
+              <td>33.7°</td>
+              <td>1.202</td>
+              <td>Steep Pitch (Enhanced architectural curb appeal)</td>
+            </tr>
+            <tr>
+              <td><strong>10/12</strong></td>
+              <td>39.8°</td>
+              <td>1.302</td>
+              <td>Steep Alpine / Mountain Cabin</td>
+            </tr>
+            <tr>
+              <td><strong>12/12</strong></td>
+              <td>45.0°</td>
+              <td>1.414</td>
+              <td>True 45° Pitch (Requires special safety toe boards and harnesses)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>How many roof trusses do I need for a 40 ft building?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            For a 40-foot building with standard 24-inch (2-foot) on-center spacing, you need 21 roof trusses: (40 ÷ 2) + 1 = 21 trusses. This typically consists of 2 gable end trusses and 19 common trusses. If building with 16-inch spacing for heavy snow or attic storage, you need (40 × 12 ÷ 16) + 1 = 31 trusses.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is the standard spacing for roof trusses (16 vs 24 inches)?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            The international residential building code (IRC) standard for manufactured roof trusses is 24 inches on-center (O.C.). This provides an optimal balance of structural strength, material cost, and thermal efficiency. Spacing of 16 inches O.C. is used primarily in regions with heavy ground snow loads (over 50 psf), high wind zones, hurricane coastlines, or when constructing usable attic storage trusses.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much do manufactured roof trusses cost in 2026?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Manufactured residential wood roof trusses typically cost between $5.50 and $9.50 per foot of building span. For example, a 24-foot span common truss costs $130 to $220 each, while a 30-foot span truss costs $170 to $280 each. Gable end trusses cost 20% to 30% more due to additional vertical stud framing.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How many bundles of shingles do I need per roofing square?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            One roofing square equals 100 square feet of roof surface. Standard 3-tab and architectural laminated shingles require exactly 3 bundles per square (each bundle covers approximately 33.3 square feet). Heavyweight luxury designer shingles may require 4 or 5 bundles per square.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much underlayment and drip edge do I need?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            One standard roll of synthetic roof underlayment covers 1,000 square feet (10 squares) raw, or approximately 850 to 900 square feet net after factoring in the required 4-to-6-inch horizontal and vertical overlaps. Metal drip edge comes in 10-foot lengths; calculate total perimeter of eaves and gable rakes, divide by 9.5 (accounting for 6-inch joints), and round up.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What roof pitch factor multiplier should I use?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            To convert flat horizontal ceiling area to actual sloped roof area, multiply by the pitch factor: 3/12 = 1.031; 4/12 = 1.054; 5/12 = 1.083; 6/12 = 1.118; 7/12 = 1.158; 8/12 = 1.202; 9/12 = 1.250; 10/12 = 1.302; 12/12 = 1.414.
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </section>
+
+  <!-- GLOBAL SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>RealRefin</h3>
+        <p>
+          High-precision financial, real estate, and construction modeling tools designed for homeowners, builders, and real estate investors.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Build &amp; Construction</h4>
+        <ul>
+          <li><a href="/roof-truss-calculator">Roof Truss &amp; Material Calculator</a></li>
+          <li><a href="/concrete-calculator-yards">Concrete Calculator Yards</a></li>
+          <li><a href="/epoxy-flooring-cost-calculator">Epoxy Flooring Calculator</a></li>
+          <li><a href="/barndominium-cost-calculator">Barndominium Cost Estimator</a></li>
+          <li><a href="/construction-loan-draw-schedule-excel">Construction Draw Schedule</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Real Estate Investment</h4>
+        <ul>
+          <li><a href="/mid-term-rental-calculator">Mid Term Rental (MTR) Modeler</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Method Modeler</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          <li><a href="/airbnb-profit-calculator">Airbnb Profit Model</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mortgage &amp; Equity</h4>
+        <ul>
+          <li><a href="/divorce-house-buyout-calculator">Divorce House Buyout Calculator</a></li>
+          <li><a href="/seller-net-sheet-calculator">Seller Net Sheet</a></li>
+          <li><a href="/home-affordability-calculator">Home Affordability (28/36)</a></li>
+          <li><a href="/calculate-debt-to-income-ratio-for-mortgage">Debt-to-Income Ratio</a></li>
+          <li><a href="/2-1-buydown-calculator">2-1 Rate Buydowns</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 RealRefin.com. All rights reserved. Calculations are estimates for budgeting and framing planning purposes.
+    </div>
+  </footer>
+
+  <!-- CALCULATOR SCRIPT -->
+  <script>
+  (function() {
+    'use strict';
+
+    // PITCH MULTIPLIERS MAP
+    const PITCH_FACTORS = {
+      3: { mult: 1.031, angle: '14.0°' },
+      4: { mult: 1.054, angle: '18.4°' },
+      5: { mult: 1.083, angle: '22.6°' },
+      6: { mult: 1.118, angle: '26.6°' },
+      7: { mult: 1.158, angle: '30.3°' },
+      8: { mult: 1.202, angle: '33.7°' },
+      9: { mult: 1.250, angle: '36.9°' },
+      10: { mult: 1.302, angle: '39.8°' },
+      12: { mult: 1.414, angle: '45.0°' }
+    };
+
+    // STATE
+    let currentSpacing = 24; // 24, 16, or 19.2
+    let activeView = 'trusses'; // 'trusses' or 'materials'
+
+    // DOM ELEMENTS
+    const inpLength = document.getElementById('inpLength');
+    const rngLength = document.getElementById('rngLength');
+    const badgeLength = document.getElementById('badgeLength');
+    const btnDecLength = document.getElementById('btnDecLength');
+    const btnIncLength = document.getElementById('btnIncLength');
+
+    const inpSpan = document.getElementById('inpSpan');
+    const rngSpan = document.getElementById('rngSpan');
+    const badgeSpan = document.getElementById('badgeSpan');
+    const btnDecSpan = document.getElementById('btnDecSpan');
+    const btnIncSpan = document.getElementById('btnIncSpan');
+
+    const selPitch = document.getElementById('selPitch');
+    const selOverhang = document.getElementById('selOverhang');
+    const selWaste = document.getElementById('selWaste');
+
+    const tabResTrusses = document.getElementById('tabResTrusses');
+    const tabResMaterials = document.getElementById('tabResMaterials');
+    const viewTrusses = document.getElementById('viewTrusses');
+    const viewMaterials = document.getElementById('viewMaterials');
+
+    const resTotalTrusses = document.getElementById('resTotalTrusses');
+    const resTrussBreakdown = document.getElementById('resTrussBreakdown');
+    const resPeakRise = document.getElementById('resPeakRise');
+    const resRafterSlope = document.getElementById('resRafterSlope');
+    const resSpacingText = document.getElementById('resSpacingText');
+    const resTrussCost = document.getElementById('resTrussCost');
+
+    const resShingleBundles = document.getElementById('resShingleBundles');
+    const resSquaresText = document.getElementById('resSquaresText');
+    const resRoofArea = document.getElementById('resRoofArea');
+    const resUnderlayment = document.getElementById('resUnderlayment');
+    const resRidgeBundles = document.getElementById('resRidgeBundles');
+    const resMaterialCost = document.getElementById('resMaterialCost');
+
+    const bomCommonTrusses = document.getElementById('bomCommonTrusses');
+    const bomGableTrusses = document.getElementById('bomGableTrusses');
+    const noteCommonTruss = document.getElementById('noteCommonTruss');
+    const bomShingleBundles = document.getElementById('bomShingleBundles');
+    const bomUnderlayment = document.getElementById('bomUnderlayment');
+    const bomRidgeCap = document.getElementById('bomRidgeCap');
+    const bomStarter = document.getElementById('bomStarter');
+    const bomDripEdge = document.getElementById('bomDripEdge');
+    const bomNails = document.getElementById('bomNails');
+
+    const trussSvg = document.getElementById('trussSvg');
+    const diagramInfo = document.getElementById('diagramInfo');
+    const btnExportCsv = document.getElementById('btnExportCsv');
+    const btnShareUrl = document.getElementById('btnShareUrl');
+
+    // DRAW DYNAMIC SVG TRUSS (FINK WEBBING)
+    function drawTrussSvg(spanFt, pitch, overhangIn) {
+      const pitchVal = parseFloat(pitch);
+      const halfSpan = spanFt / 2;
+      const riseFt = halfSpan * (pitchVal / 12);
+
+      // SVG coordinates
+      const paddingX = 40;
+      const baseWidth = 320;
+      const baseY = 135;
+      
+      // Calculate dynamic peak Y
+      // Scale height so it stays within [30, 115]
+      const maxRiseRatio = 12 / 12; // 1.0
+      const currentRatio = (pitchVal / 12) * (spanFt / 30);
+      const scaledHeight = Math.min(105, Math.max(30, currentRatio * 65));
+      const peakY = baseY - scaledHeight;
+      const peakX = 200;
+
+      const leftX = paddingX;
+      const rightX = paddingX + baseWidth;
+
+      // Overhang tail extensions
+      const ohScale = Math.min(18, (overhangIn / 12) * 12);
+      const ohLeftX = leftX - ohScale;
+      const ohLeftY = baseY + (ohScale * (pitchVal / 12));
+      const ohRightX = rightX + ohScale;
+      const ohRightY = baseY + (ohScale * (pitchVal / 12));
+
+      // Fink truss web node points (1/3rd and 2/3rds along bottom chord)
+      const bNode1X = leftX + (baseWidth / 3);
+      const bNode2X = leftX + (2 * baseWidth / 3);
+
+      // Top chord midpoints
+      const topMid1X = (leftX + peakX) / 2;
+      const topMid1Y = (baseY + peakY) / 2;
+      const topMid2X = (rightX + peakX) / 2;
+      const topMid2Y = (baseY + peakY) / 2;
+
+      trussSvg.innerHTML = `
+        <!-- BOTTOM CHORD -->
+        <line x1="${leftX}" y1="${baseY}" x2="${rightX}" y2="${baseY}" stroke="#854d0e" stroke-width="4" stroke-linecap="round" />
+        
+        <!-- TOP CHORDS & OVERHANG TAILS -->
+        <line x1="${ohLeftX}" y1="${ohLeftY}" x2="${peakX}" y2="${peakY}" stroke="#854d0e" stroke-width="4" stroke-linecap="round" />
+        <line x1="${peakX}" y1="${peakY}" x2="${ohRightX}" y2="${ohRightY}" stroke="#854d0e" stroke-width="4" stroke-linecap="round" />
+
+        <!-- FINK INTERNAL WEBBING -->
+        <line x1="${bNode1X}" y1="${baseY}" x2="${topMid1X}" y2="${topMid1Y}" stroke="#2563eb" stroke-width="2" />
+        <line x1="${bNode1X}" y1="${baseY}" x2="${peakX}" y2="${peakY}" stroke="#2563eb" stroke-width="2" />
+        <line x1="${bNode2X}" y1="${baseY}" x2="${peakX}" y2="${peakY}" stroke="#2563eb" stroke-width="2" />
+        <line x1="${bNode2X}" y1="${baseY}" x2="${topMid2X}" y2="${topMid2Y}" stroke="#2563eb" stroke-width="2" />
+
+        <!-- PEAK INDICATOR -->
+        <circle cx="${peakX}" cy="${peakY}" r="4" fill="#dc2626" />
+        <line x1="${peakX}" y1="${peakY}" x2="${peakX}" y2="${baseY}" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3" />
+
+        <!-- SPAN DIMENSION LINE -->
+        <line x1="${leftX}" y1="${baseY + 14}" x2="${rightX}" y2="${baseY + 14}" stroke="#64748b" stroke-width="1.5" />
+        <text x="200" y="${baseY + 24}" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">SPAN: ${spanFt} FT</text>
+
+        <!-- RISE DIMENSION TEXT -->
+        <text x="${peakX + 6}" y="${(baseY + peakY) / 2}" font-size="9.5" font-weight="700" fill="#dc2626">RISE: ${riseFt.toFixed(1)}'</text>
+      `;
+    }
+
+    // MAIN RECALCULATION
+    function recalculate() {
+      const lengthFt = Math.max(4, parseFloat(inpLength.value) || 40);
+      const spanFt = Math.max(6, parseFloat(inpSpan.value) || 24);
+      const pitch = parseInt(selPitch.value, 10);
+      const overhangIn = parseInt(selOverhang.value, 10);
+      const wastePct = parseInt(selWaste.value, 10);
+
+      const pitchData = PITCH_FACTORS[pitch] || { mult: 1.118, angle: '26.6°' };
+
+      // 1. TRUSS CALCULATIONS
+      const lengthIn = lengthFt * 12;
+      const totalTrusses = Math.floor(lengthIn / currentSpacing) + 1;
+      const gableTrusses = Math.min(2, totalTrusses);
+      const commonTrusses = Math.max(0, totalTrusses - gableTrusses);
+
+      // Geometry
+      const halfSpanFt = spanFt / 2;
+      const overhangFt = overhangIn / 12;
+      const peakRiseFt = halfSpanFt * (pitch / 12);
+      
+      // Rafter slope (including overhang)
+      const rafterRunFt = halfSpanFt + overhangFt;
+      const rafterSlopeFt = rafterRunFt * pitchData.mult;
+
+      // Estimated Truss Cost ($7.00 per ft of span approx for standard manufactured truss)
+      const costPerCommon = spanFt * 7.25;
+      const costPerGable = spanFt * 9.25;
+      const totalTrussCost = (commonTrusses * costPerCommon) + (gableTrusses * costPerGable);
+
+      // 2. ROOFING MATERIAL CALCULATIONS
+      // Actual footprint with overhangs
+      const roofLengthFt = lengthFt + (2 * overhangFt);
+      const roofWidthRunFt = spanFt + (2 * overhangFt);
+      const flatAreaSqft = roofLengthFt * roofWidthRunFt;
+      
+      // Sloped roof area
+      const slopedAreaSqft = flatAreaSqft * pitchData.mult;
+      const totalAreaWithWaste = Math.round(slopedAreaSqft * (1 + (wastePct / 100)));
+
+      // Roofing Squares (100 sq ft)
+      const squares = totalAreaWithWaste / 100;
+      const shingleBundles = Math.ceil(squares * 3);
+
+      // Synthetic Underlayment (10 squares / 1000 sq ft roll, covers ~875-900 sq ft net)
+      const underlaymentRolls = Math.max(1, Math.ceil(slopedAreaSqft / 875));
+
+      // Ridge Cap (covers 30 LF per bundle)
+      const ridgeLengthFt = roofLengthFt;
+      const ridgeCapBundles = Math.max(1, Math.ceil(ridgeLengthFt / 30));
+
+      // Starter Strip (eaves perimeter: 2 * roofLengthFt)
+      const eavesLengthFt = 2 * roofLengthFt;
+      const starterBundles = Math.max(1, Math.ceil(eavesLengthFt / 105));
+
+      // Drip Edge (total perimeter of eaves + 4 rafter slope rakes)
+      const totalPerimeterFt = (2 * roofLengthFt) + (4 * rafterSlopeFt);
+      const dripEdgeSticks = Math.ceil(totalPerimeterFt / 9.5); // 10-ft pieces with 6" lap
+
+      // Nails: ~320 nails per square (1 box of 7,200 nails covers ~22 squares)
+      const nailBoxes = Math.max(1, Math.ceil(squares / 22));
+
+      // Estimated Material Cost: Shingles ~$38/bundle + underlayment $90/roll + ridge $55/bundle + drip edge $12/stick
+      const estShingleCost = (shingleBundles * 38) + (underlaymentRolls * 95) + (ridgeCapBundles * 58) + (starterBundles * 45) + (dripEdgeSticks * 13) + (nailBoxes * 65);
+
+      // UPDATE STATS & DISPLAYS
+      resTotalTrusses.textContent = `${totalTrusses} Trusses`;
+      resTrussBreakdown.textContent = `${commonTrusses} Common Trusses + ${gableTrusses} Gable End Trusses`;
+      resPeakRise.textContent = `${peakRiseFt.toFixed(1)} ft`;
+      resRafterSlope.textContent = `${rafterSlopeFt.toFixed(1)} ft`;
+      resSpacingText.textContent = `${currentSpacing}" O.C.`;
+      resTrussCost.textContent = `$${Math.round(totalTrussCost).toLocaleString()}`;
+
+      resShingleBundles.textContent = `${shingleBundles} Bundles`;
+      resSquaresText.textContent = `${squares.toFixed(1)} Roofing Squares (100 sq ft each)`;
+      resRoofArea.textContent = `${totalAreaWithWaste.toLocaleString()} sq ft`;
+      resUnderlayment.textContent = `${underlaymentRolls} Roll${underlaymentRolls > 1 ? 's' : ''}`;
+      resRidgeBundles.textContent = `${ridgeCapBundles} Bundle${ridgeCapBundles > 1 ? 's' : ''}`;
+      resMaterialCost.textContent = `$${Math.round(estShingleCost).toLocaleString()}`;
+
+      // BOM TABLE UPDATE
+      bomCommonTrusses.textContent = `${commonTrusses} Trusses`;
+      noteCommonTruss.textContent = `${spanFt}' Span • ${pitch}/12 Pitch • ${currentSpacing}" O.C.`;
+      bomGableTrusses.textContent = `${gableTrusses} Trusses`;
+      bomShingleBundles.textContent = `${shingleBundles} Bundles`;
+      bomUnderlayment.textContent = `${underlaymentRolls} Roll${underlaymentRolls > 1 ? 's' : ''}`;
+      bomRidgeCap.textContent = `${ridgeCapBundles} Bundle${ridgeCapBundles > 1 ? 's' : ''}`;
+      bomStarter.textContent = `${starterBundles} Bundle${starterBundles > 1 ? 's' : ''}`;
+      bomDripEdge.textContent = `${dripEdgeSticks} Sticks (10')`;
+      bomNails.textContent = `${nailBoxes} Box${nailBoxes > 1 ? 'es' : ''} (7,200/ea)`;
+
+      // UPDATE DIAGRAM
+      diagramInfo.textContent = `Span: ${spanFt}' • Rise: ${peakRiseFt.toFixed(1)}' • Slope: ${rafterSlopeFt.toFixed(1)}' • ${pitchData.angle}`;
+      drawTrussSvg(spanFt, pitch, overhangIn);
+    }
+
+    // SPACING BUTTONS
+    document.querySelectorAll('.spacing-pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.spacing-pill-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSpacing = parseFloat(btn.getAttribute('data-space'));
+        clearPresetActive();
+        recalculate();
+      });
+    });
+
+    // VIEW SWITCH (TRUSSES vs MATERIALS)
+    tabResTrusses.addEventListener('click', () => {
+      activeView = 'trusses';
+      tabResTrusses.classList.add('active');
+      tabResMaterials.classList.remove('active');
+      viewTrusses.style.display = 'block';
+      viewMaterials.style.display = 'none';
+    });
+
+    tabResMaterials.addEventListener('click', () => {
+      activeView = 'materials';
+      tabResMaterials.classList.add('active');
+      tabResTrusses.classList.remove('active');
+      viewTrusses.style.display = 'none';
+      viewMaterials.style.display = 'block';
+    });
+
+    // LENGTH CONTROLS
+    function syncLength(val) {
+      val = Math.max(6, Math.min(300, parseInt(val, 10) || 40));
+      inpLength.value = val;
+      rngLength.value = Math.min(val, 100);
+      badgeLength.textContent = `${val} ft`;
+      clearPresetActive();
+      recalculate();
+    }
+    inpLength.addEventListener('input', e => syncLength(e.target.value));
+    rngLength.addEventListener('input', e => syncLength(e.target.value));
+    btnDecLength.addEventListener('click', () => syncLength(parseInt(inpLength.value, 10) - 2));
+    btnIncLength.addEventListener('click', () => syncLength(parseInt(inpLength.value, 10) + 2));
+
+    // SPAN CONTROLS
+    function syncSpan(val) {
+      val = Math.max(8, Math.min(100, parseInt(val, 10) || 24));
+      inpSpan.value = val;
+      rngSpan.value = Math.min(val, 60);
+      badgeSpan.textContent = `${val} ft`;
+      clearPresetActive();
+      recalculate();
+    }
+    inpSpan.addEventListener('input', e => syncSpan(e.target.value));
+    rngSpan.addEventListener('input', e => syncSpan(e.target.value));
+    btnDecSpan.addEventListener('click', () => syncSpan(parseInt(inpSpan.value, 10) - 2));
+    btnIncSpan.addEventListener('click', () => syncSpan(parseInt(inpSpan.value, 10) + 2));
+
+    // SELECT DROPDOWNS
+    selPitch.addEventListener('change', () => { clearPresetActive(); recalculate(); });
+    selOverhang.addEventListener('change', () => { clearPresetActive(); recalculate(); });
+    selWaste.addEventListener('change', recalculate);
+
+    // PRESET BUTTONS
+    function clearPresetActive() {
+      document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+    }
+
+    document.querySelectorAll('.preset-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearPresetActive();
+        btn.classList.add('active');
+
+        const len = parseInt(btn.getAttribute('data-len'), 10);
+        const span = parseInt(btn.getAttribute('data-span'), 10);
+        const pitch = btn.getAttribute('data-pitch');
+        const space = parseFloat(btn.getAttribute('data-space'));
+        const oh = btn.getAttribute('data-oh');
+
+        inpLength.value = len;
+        rngLength.value = Math.min(len, 100);
+        badgeLength.textContent = `${len} ft`;
+
+        inpSpan.value = span;
+        rngSpan.value = Math.min(span, 60);
+        badgeSpan.textContent = `${span} ft`;
+
+        selPitch.value = pitch;
+        selOverhang.value = oh;
+
+        currentSpacing = space;
+        document.querySelectorAll('.spacing-pill-btn').forEach(b => {
+          b.classList.toggle('active', parseFloat(b.getAttribute('data-space')) === space);
+        });
+
+        recalculate();
+      });
+    });
+
+    // FAQ ACCORDION
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // EXPORT CSV
+    btnExportCsv.addEventListener('click', () => {
+      const len = inpLength.value;
+      const span = inpSpan.value;
+      const pitch = selPitch.value;
+      const spacing = currentSpacing;
+
+      const rows = [
+        ['RealRefin Roof Truss & Roofing Material Estimate (BOM)'],
+        ['Generated At', new Date().toLocaleDateString()],
+        ['Building Length', `${len} Feet`],
+        ['Building Span (Width)', `${span} Feet`],
+        ['Roof Pitch', `${pitch}/12`],
+        ['Truss Spacing', `${spacing} Inches On-Center`],
+        ['Eaves Overhang', `${selOverhang.value} Inches`],
+        ['Roofing Material Waste Buffer', `${selWaste.value}%`],
+        [''],
+        ['Item Description', 'Quantity', 'Notes'],
+        ['Common Roof Trusses', bomCommonTrusses.textContent, noteCommonTruss.textContent],
+        ['Gable End Trusses', bomGableTrusses.textContent, '16" O.C. vertical framing studs'],
+        ['Peak Rise (Height)', resPeakRise.textContent, 'From bottom chord to apex'],
+        ['Rafter Slope Length', resRafterSlope.textContent, 'Top chord length including overhang'],
+        ['Estimated Truss Cost', resTrussCost.textContent, 'Manufactured wood package'],
+        ['Roofing Squares', resSquaresText.textContent, '100 sq ft each'],
+        ['Total Roof Surface Area', resRoofArea.textContent, 'Includes pitch factor & waste'],
+        ['Architectural Shingles', bomShingleBundles.textContent, '3 bundles per square'],
+        ['Synthetic Underlayment', bomUnderlayment.textContent, '1,000 sq ft rolls'],
+        ['Ridge Cap Shingles', bomRidgeCap.textContent, '30 LF coverage per bundle'],
+        ['Starter Shingles', bomStarter.textContent, '105 LF coverage per bundle'],
+        ['Metal Drip Edge', bomDripEdge.textContent, '10-ft sticks (eaves & rakes)'],
+        ['Coil Roofing Nails', bomNails.textContent, '1-1/4" ring shank galvanized'],
+        ['Estimated Roofing Material Cost', resMaterialCost.textContent, 'Shingles + underlayment + flashings']
+      ];
+
+      const csvContent = 'data:text/csv;charset=utf-8,' + rows.map(e => e.map(i => `"${i}"`).join(',')).join('\n');
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement('a');
+      link.setAttribute('href', encodedUri);
+      link.setAttribute('download', `RealRefin_Roof_Truss_BOM_${span}x${len}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    // SHARE LINK WITH URL PARAMS
+    btnShareUrl.addEventListener('click', () => {
+      const url = new URL(window.location.href);
+      url.searchParams.set('len', inpLength.value);
+      url.searchParams.set('span', inpSpan.value);
+      url.searchParams.set('pitch', selPitch.value);
+      url.searchParams.set('space', currentSpacing);
+      url.searchParams.set('oh', selOverhang.value);
+
+      navigator.clipboard.writeText(url.toString()).then(() => {
+        btnShareUrl.textContent = '✅ Copied!';
+        setTimeout(() => {
+          btnShareUrl.innerHTML = '<span>🔗 Share</span>';
+        }, 2000);
+      }).catch(() => {
+        alert('URL: ' + url.toString());
+      });
+    });
+
+    // LOAD URL PARAMS
+    function loadUrlParams() {
+      const p = new URLSearchParams(window.location.search);
+      if (p.has('len')) syncLength(p.get('len'));
+      if (p.has('span')) syncSpan(p.get('span'));
+      if (p.has('pitch')) selPitch.value = p.get('pitch');
+      if (p.has('oh')) selOverhang.value = p.get('oh');
+      if (p.has('space')) {
+        const s = parseFloat(p.get('space'));
+        if (s === 16 || s === 24 || s === 19.2) {
+          currentSpacing = s;
+          document.querySelectorAll('.spacing-pill-btn').forEach(b => {
+            b.classList.toggle('active', parseFloat(b.getAttribute('data-space')) === s);
+          });
+        }
+      }
+    }
+
+    // INITIALIZE
+    loadUrlParams();
+    recalculate();
+
+  })();
+  </script>
+
+</body>
+</html>

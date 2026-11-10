@@ -13,6 +13,18 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/roof-truss-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/roofing-material-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/epoxy-flooring-cost-calculator</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -391,6 +403,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/roof-truss-calculator': 'roof-truss-calculator.html',
+  '/roof-truss-calculator.html': 'roof-truss-calculator.html',
+  '/roofing-material-calculator': 'roof-truss-calculator.html',
+  '/roofing-material-calculator.html': 'roof-truss-calculator.html',
+  '/roof-truss-count-calculator': 'roof-truss-calculator.html',
+  '/roof-truss-count-calculator.html': 'roof-truss-calculator.html',
+  '/roofing-material-estimator': 'roof-truss-calculator.html',
+  '/roofing-material-estimator.html': 'roof-truss-calculator.html',
   '/epoxy-flooring-cost-calculator': 'epoxy-flooring-cost-calculator.html',
   '/epoxy-flooring-cost-calculator.html': 'epoxy-flooring-cost-calculator.html',
   '/epoxy-garage-floor-cost-calculator': 'epoxy-flooring-cost-calculator.html',
