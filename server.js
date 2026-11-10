@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/concrete-calculator-yards</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/mid-term-rental-calculator</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -379,6 +385,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/concrete-calculator-yards': 'concrete-calculator-yards.html',
+  '/concrete-calculator-yards.html': 'concrete-calculator-yards.html',
+  '/concrete-yardage-calculator': 'concrete-calculator-yards.html',
+  '/concrete-yardage-calculator.html': 'concrete-calculator-yards.html',
+  '/concrete-slab-calculator': 'concrete-calculator-yards.html',
+  '/concrete-slab-calculator.html': 'concrete-calculator-yards.html',
+  '/cubic-yards-concrete-calculator': 'concrete-calculator-yards.html',
+  '/cubic-yards-concrete-calculator.html': 'concrete-calculator-yards.html',
   '/mid-term-rental-calculator': 'mid-term-rental-calculator.html',
   '/mid-term-rental-calculator.html': 'mid-term-rental-calculator.html',
   '/midterm-rental-calculator': 'mid-term-rental-calculator.html',
