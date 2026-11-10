@@ -13,6 +13,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/epoxy-flooring-cost-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/concrete-calculator-yards</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -385,6 +391,12 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/epoxy-flooring-cost-calculator': 'epoxy-flooring-cost-calculator.html',
+  '/epoxy-flooring-cost-calculator.html': 'epoxy-flooring-cost-calculator.html',
+  '/epoxy-garage-floor-cost-calculator': 'epoxy-flooring-cost-calculator.html',
+  '/epoxy-garage-floor-cost-calculator.html': 'epoxy-flooring-cost-calculator.html',
+  '/garage-floor-epoxy-calculator': 'epoxy-flooring-cost-calculator.html',
+  '/garage-floor-epoxy-calculator.html': 'epoxy-flooring-cost-calculator.html',
   '/concrete-calculator-yards': 'concrete-calculator-yards.html',
   '/concrete-calculator-yards.html': 'concrete-calculator-yards.html',
   '/concrete-yardage-calculator': 'concrete-calculator-yards.html',
