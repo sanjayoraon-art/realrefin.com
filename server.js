@@ -13,6 +13,18 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/fence-post-distance-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/vinyl-fencing-cost-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/roof-truss-calculator</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -403,6 +415,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/fence-post-distance-calculator': 'fence-post-distance-calculator.html',
+  '/fence-post-distance-calculator.html': 'fence-post-distance-calculator.html',
+  '/vinyl-fencing-cost-calculator': 'fence-post-distance-calculator.html',
+  '/vinyl-fencing-cost-calculator.html': 'fence-post-distance-calculator.html',
+  '/fence-post-spacing-calculator': 'fence-post-distance-calculator.html',
+  '/fence-post-spacing-calculator.html': 'fence-post-distance-calculator.html',
+  '/vinyl-fence-cost-calculator': 'fence-post-distance-calculator.html',
+  '/vinyl-fence-cost-calculator.html': 'fence-post-distance-calculator.html',
   '/roof-truss-calculator': 'roof-truss-calculator.html',
   '/roof-truss-calculator.html': 'roof-truss-calculator.html',
   '/roofing-material-calculator': 'roof-truss-calculator.html',
