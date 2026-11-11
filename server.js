@@ -13,6 +13,24 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/driveway-gravel-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/gravel-calculator-for-driveway</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/gravel-driveway-cost-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/fence-post-distance-calculator</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -415,6 +433,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/driveway-gravel-calculator': 'driveway-gravel-calculator.html',
+  '/driveway-gravel-calculator.html': 'driveway-gravel-calculator.html',
+  '/gravel-calculator-for-driveway': 'driveway-gravel-calculator.html',
+  '/gravel-calculator-for-driveway.html': 'driveway-gravel-calculator.html',
+  '/gravel-driveway-cost-calculator': 'driveway-gravel-calculator.html',
+  '/gravel-driveway-cost-calculator.html': 'driveway-gravel-calculator.html',
+  '/gravel-calculator-driveway': 'driveway-gravel-calculator.html',
+  '/gravel-calculator-driveway.html': 'driveway-gravel-calculator.html',
+  '/gravel-driveway-calculator': 'driveway-gravel-calculator.html',
+  '/gravel-driveway-calculator.html': 'driveway-gravel-calculator.html',
   '/fence-post-distance-calculator': 'fence-post-distance-calculator.html',
   '/fence-post-distance-calculator.html': 'fence-post-distance-calculator.html',
   '/vinyl-fencing-cost-calculator': 'fence-post-distance-calculator.html',
