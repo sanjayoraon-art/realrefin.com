@@ -13,6 +13,24 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/crawl-space-encapsulation-cost-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/crawl-space-vapor-barrier-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/crawl-space-waterproofing-cost-calculator</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/driveway-gravel-calculator</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -433,6 +451,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/crawl-space-encapsulation-cost-calculator': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-encapsulation-cost-calculator.html': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-cost-calculator': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-cost-calculator.html': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-vapor-barrier-calculator': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-vapor-barrier-calculator.html': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-waterproofing-cost-calculator': 'crawl-space-encapsulation-cost-calculator.html',
+  '/crawl-space-waterproofing-cost-calculator.html': 'crawl-space-encapsulation-cost-calculator.html',
   '/driveway-gravel-calculator': 'driveway-gravel-calculator.html',
   '/driveway-gravel-calculator.html': 'driveway-gravel-calculator.html',
   '/gravel-calculator-for-driveway': 'driveway-gravel-calculator.html',
