@@ -13,6 +13,24 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/timbertech-deck-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/deck-paint-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/deck-stairs-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/paver-patio-cost-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -499,6 +517,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/timbertech-deck-cost-calculator': 'timbertech-deck-cost-calculator.html',
+  '/timbertech-deck-cost-calculator.html': 'timbertech-deck-cost-calculator.html',
+  '/deck-paint-cost-calculator': 'timbertech-deck-cost-calculator.html',
+  '/deck-paint-cost-calculator.html': 'timbertech-deck-cost-calculator.html',
+  '/deck-stairs-cost-calculator': 'timbertech-deck-cost-calculator.html',
+  '/deck-stairs-cost-calculator.html': 'timbertech-deck-cost-calculator.html',
+  '/composite-deck-cost-calculator': 'timbertech-deck-cost-calculator.html',
+  '/composite-deck-cost-calculator.html': 'timbertech-deck-cost-calculator.html',
+  '/deck-cost-calculator': 'timbertech-deck-cost-calculator.html',
+  '/deck-cost-calculator.html': 'timbertech-deck-cost-calculator.html',
   '/paver-patio-cost-calculator': 'paver-patio-cost-calculator.html',
   '/paver-patio-cost-calculator.html': 'paver-patio-cost-calculator.html',
   '/calculate-paver-sand': 'paver-patio-cost-calculator.html',
