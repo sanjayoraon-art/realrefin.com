@@ -13,6 +13,36 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/spray-foam-insulation-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/spray-foam-insulation-calculator-cost</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/cost-of-spray-foam-insulation-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/spray-foam-insulation-cost-per-sq-ft-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/closed-cell-spray-foam-insulation-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/timbertech-deck-cost-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -517,6 +547,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/spray-foam-insulation-cost-calculator': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-insulation-cost-calculator.html': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-insulation-calculator-cost': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-insulation-calculator-cost.html': 'spray-foam-insulation-cost-calculator.html',
+  '/cost-of-spray-foam-insulation-calculator': 'spray-foam-insulation-cost-calculator.html',
+  '/cost-of-spray-foam-insulation-calculator.html': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-insulation-cost-per-sq-ft-calculator': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-insulation-cost-per-sq-ft-calculator.html': 'spray-foam-insulation-cost-calculator.html',
+  '/closed-cell-spray-foam-insulation-cost-calculator': 'spray-foam-insulation-cost-calculator.html',
+  '/closed-cell-spray-foam-insulation-cost-calculator.html': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-calculator': 'spray-foam-insulation-cost-calculator.html',
+  '/spray-foam-calculator.html': 'spray-foam-insulation-cost-calculator.html',
   '/timbertech-deck-cost-calculator': 'timbertech-deck-cost-calculator.html',
   '/timbertech-deck-cost-calculator.html': 'timbertech-deck-cost-calculator.html',
   '/deck-paint-cost-calculator': 'timbertech-deck-cost-calculator.html',
