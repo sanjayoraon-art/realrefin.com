@@ -13,6 +13,30 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/paint-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/painting-estimate-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/interior-paint-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/cost-to-paint-a-room-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/spray-foam-insulation-cost-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -547,6 +571,14 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/paint-cost-calculator': 'paint-cost-calculator.html',
+  '/paint-cost-calculator.html': 'paint-cost-calculator.html',
+  '/painting-estimate-calculator': 'paint-cost-calculator.html',
+  '/painting-estimate-calculator.html': 'paint-cost-calculator.html',
+  '/interior-paint-calculator': 'paint-cost-calculator.html',
+  '/interior-paint-calculator.html': 'paint-cost-calculator.html',
+  '/cost-to-paint-a-room-calculator': 'paint-cost-calculator.html',
+  '/cost-to-paint-a-room-calculator.html': 'paint-cost-calculator.html',
   '/spray-foam-insulation-cost-calculator': 'spray-foam-insulation-cost-calculator.html',
   '/spray-foam-insulation-cost-calculator.html': 'spray-foam-insulation-cost-calculator.html',
   '/spray-foam-insulation-calculator-cost': 'spray-foam-insulation-cost-calculator.html',
