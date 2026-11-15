@@ -13,6 +13,30 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/paver-patio-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/calculate-paver-sand</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/paver-sand-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/paver-calculator-with-spacing</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/drywall-installation-cost-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -475,6 +499,16 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/paver-patio-cost-calculator': 'paver-patio-cost-calculator.html',
+  '/paver-patio-cost-calculator.html': 'paver-patio-cost-calculator.html',
+  '/calculate-paver-sand': 'paver-patio-cost-calculator.html',
+  '/calculate-paver-sand.html': 'paver-patio-cost-calculator.html',
+  '/paver-sand-calculator': 'paver-patio-cost-calculator.html',
+  '/paver-sand-calculator.html': 'paver-patio-cost-calculator.html',
+  '/paver-calculator-with-spacing': 'paver-patio-cost-calculator.html',
+  '/paver-calculator-with-spacing.html': 'paver-patio-cost-calculator.html',
+  '/paver-calculator': 'paver-patio-cost-calculator.html',
+  '/paver-calculator.html': 'paver-patio-cost-calculator.html',
   '/drywall-installation-cost-calculator': 'drywall-installation-cost-calculator.html',
   '/drywall-installation-cost-calculator.html': 'drywall-installation-cost-calculator.html',
   '/drywall-cost-calculator': 'drywall-installation-cost-calculator.html',
