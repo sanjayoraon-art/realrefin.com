@@ -13,6 +13,30 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/drywall-installation-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/labor-cost-to-hang-and-finish-drywall-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/drywall-material-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/how-to-calculate-drywall</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/crawl-space-encapsulation-cost-calculator</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -451,6 +475,18 @@ const MIME_TYPES = {
 const FILE_MAP = {
   '/': 'index.html',
   '/index.html': 'index.html',
+  '/drywall-installation-cost-calculator': 'drywall-installation-cost-calculator.html',
+  '/drywall-installation-cost-calculator.html': 'drywall-installation-cost-calculator.html',
+  '/drywall-cost-calculator': 'drywall-installation-cost-calculator.html',
+  '/drywall-cost-calculator.html': 'drywall-installation-cost-calculator.html',
+  '/drywall-calculator': 'drywall-installation-cost-calculator.html',
+  '/drywall-calculator.html': 'drywall-installation-cost-calculator.html',
+  '/labor-cost-to-hang-and-finish-drywall-calculator': 'drywall-installation-cost-calculator.html',
+  '/labor-cost-to-hang-and-finish-drywall-calculator.html': 'drywall-installation-cost-calculator.html',
+  '/drywall-material-calculator': 'drywall-installation-cost-calculator.html',
+  '/drywall-material-calculator.html': 'drywall-installation-cost-calculator.html',
+  '/how-to-calculate-drywall': 'drywall-installation-cost-calculator.html',
+  '/how-to-calculate-drywall.html': 'drywall-installation-cost-calculator.html',
   '/crawl-space-encapsulation-cost-calculator': 'crawl-space-encapsulation-cost-calculator.html',
   '/crawl-space-encapsulation-cost-calculator.html': 'crawl-space-encapsulation-cost-calculator.html',
   '/crawl-space-cost-calculator': 'crawl-space-encapsulation-cost-calculator.html',
