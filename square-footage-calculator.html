@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Footage Calculator | How is Square Footage Calculated (Sq Ft Engine)</title>
+  <meta name="description" content="Free square footage calculator. Calculate sq ft for rooms, rectangles, L-shapes, triangles, and circles. Convert sq ft to sq yards, sq meters, and acres with cost per sq ft.">
+  <meta name="keywords" content="how is square footage calculated, square footage calculator, sq ft calculator, how to calculate square footage, square foot calculator for rooms, square footage formula, convert square feet to square yards">
+  <link rel="canonical" href="https://realrefin.com/square-footage-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Square Footage Calculator | RealRefin">
+  <meta property="og:description" content="Calculate square footage for any room, property, or land area. Supports rectangles, L-shapes, circles, triangles, unit conversions, and cost per sq ft.">
+  <meta property="og:url" content="https://realrefin.com/square-footage-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Square Footage Calculator (Universal Sq Ft Engine)">
+  <meta name="twitter:description" content="Free multi-space square footage calculator. Instant calculations for rectangles, L-shapes, circles, and acres.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Structured Data: WebApplication, FAQPage, HowTo, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/square-footage-calculator#app",
+        "name": "Universal Square Footage Calculator",
+        "url": "https://realrefin.com/square-footage-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "High-precision square footage calculator for residential rooms, flooring, painting, real estate appraisal, and land. Supports multiple spaces, rectangular, L-shaped, triangular, and circular geometries, unit conversions (sq yards, sq meters, acres), and price per square foot modeling.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/square-footage-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Construction & Trade Calculators",
+            "item": "https://realrefin.com/#trade-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Square Footage Calculator",
+            "item": "https://realrefin.com/square-footage-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://realrefin.com/square-footage-calculator#howto",
+        "name": "How is Square Footage Calculated?",
+        "description": "Step-by-step mathematical guide to measuring and calculating the square footage of any room or space.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Measure Length and Width in Feet",
+            "text": "Using a laser distance measurer or tape measure, measure the length and width of the space in feet. For inches, divide by 12 (e.g., 10 feet 6 inches = 10.5 feet)."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Multiply Length by Width",
+            "text": "For rectangular areas, multiply Length × Width. Formula: Area (sq ft) = Length (ft) × Width (ft). Example: A 12 ft by 15 ft room equals 180 square feet."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Break Complex Shapes into Sub-Rectangles",
+            "text": "For L-shaped, T-shaped, or irregular spaces, divide the floor plan into separate simple rectangles, calculate the square footage of each, and sum them together."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Convert Units if Necessary",
+            "text": "To convert square feet to square yards (carpeting), divide by 9. To convert square feet to square meters, divide by 10.764. To convert to acres, divide by 43,560."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/square-footage-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is square footage calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Square footage is calculated by multiplying the length of an area in feet by its width in feet. For example, if a bedroom is 12 feet long and 14 feet wide, its square footage is 12 × 14 = 168 square feet (sq ft). If your measurements are in inches, multiply length (in) by width (in) and divide the result by 144."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate square footage with inches?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate square footage when measurements include inches, you have two options: 1) Convert inches to decimal feet by dividing inches by 12 (for example, 6 inches = 0.5 feet, so 10 ft 6 in is 10.5 ft), then multiply Length × Width. 2) Multiply total inches of length by total inches of width, then divide by 144 (because there are 144 square inches in one square foot)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate square footage of an L-shaped room?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate the square footage of an L-shaped room, divide the L-shape into two separate non-overlapping rectangles (Section A and Section B). Measure the length and width of Section A, then measure Section B. Calculate the square footage of each section independently and add them together: Total Sq Ft = Area(A) + Area(B)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many square feet are in a square yard and an acre?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There are exactly 9 square feet in 1 square yard (3 ft × 3 ft). There are 10.7639 square feet in 1 square meter. In land measurement, there are 43,560 square feet in 1 acre."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-indigo: #6366f1;
+      --accent-indigo-dark: #4338ca;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .rr-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .rr-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--primary-navy);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo svg {
+      width: 28px;
+      height: 28px;
+    }
+    .rr-logo span {
+      color: var(--accent-emerald-dark);
+    }
+    .rr-nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      align-items: center;
+    }
+    .rr-nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .rr-nav-links a:hover {
+      color: var(--accent-emerald-dark);
+    }
+    .btn-nav-primary {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600 !important;
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 3rem 1.25rem 2.5rem;
+      text-align: center;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero-banner h1 {
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-banner h1 span {
+      color: #818cf8;
+    }
+    .hero-banner p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #cbd5e1;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .main-wrap {
+      max-width: 1200px;
+      margin: -1.5rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .card-header h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* SHAPE SELECTOR */
+    .shape-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+    .btn-shape {
+      border: 1px solid var(--border-color);
+      background: var(--bg-light);
+      padding: 0.65rem 0.4rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      transition: all 0.15s;
+    }
+    .btn-shape:hover {
+      border-color: var(--accent-indigo);
+    }
+    .btn-shape.active {
+      border-color: var(--accent-indigo);
+      background: #eef2ff;
+      color: var(--accent-indigo-dark);
+      box-shadow: 0 0 0 1px var(--accent-indigo);
+    }
+    .btn-shape .icon {
+      font-size: 1.25rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* SPACE LIST */
+    .space-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .space-item {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      position: relative;
+    }
+    .space-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .space-title {
+      font-size: 0.925rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-remove-space {
+      background: transparent;
+      border: none;
+      color: #ef4444;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    .btn-remove-space:hover {
+      background: #fee2e2;
+    }
+    .dim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 600px) {
+      .dim-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-wrapper input, .input-wrapper select {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .input-wrapper input:focus, .input-wrapper select:focus {
+      border-color: var(--accent-indigo);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+    .input-wrapper .unit {
+      position: absolute;
+      right: 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .btn-add-space {
+      width: 100%;
+      background: #ffffff;
+      border: 1.5px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+      color: var(--secondary-navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.15s;
+      margin-bottom: 1.5rem;
+    }
+    .btn-add-space:hover {
+      border-color: var(--accent-indigo);
+      background: #eef2ff;
+      color: var(--accent-indigo-dark);
+    }
+
+    /* SUMMARY DASHBOARD */
+    .summary-box {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .summary-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.75rem;
+    }
+    .summary-header h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .total-cost-display {
+      text-align: center;
+      padding: 1rem 0 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.25rem;
+    }
+    .total-cost-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #a5b4fc;
+      margin-bottom: 0.35rem;
+    }
+    .total-cost-value {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: -0.02em;
+    }
+    .cost-range-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-top: 0.25rem;
+    }
+
+    .conversion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .stat-pill {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+    }
+    .stat-pill-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.2rem;
+    }
+    .stat-pill-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    /* BOM TABLE */
+    .bom-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+    .bom-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+    .bom-table td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--primary-navy);
+    }
+    .bom-table td.cost-col {
+      text-align: right;
+      font-weight: 700;
+    }
+    .bom-table tr.total-row td {
+      font-weight: 800;
+      background: #f0fdf4;
+      color: var(--accent-emerald-dark);
+      border-top: 2px solid var(--accent-emerald);
+    }
+
+    .svg-visualizer-container {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .svg-visualizer-container svg {
+      width: 100%;
+      max-height: 180px;
+    }
+
+    .btn-action-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.75rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--secondary-navy);
+      transition: all 0.15s;
+    }
+    .btn-action:hover {
+      background: var(--bg-light);
+      border-color: var(--accent-indigo);
+      color: var(--accent-indigo-dark);
+    }
+
+    .embed-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+    }
+    .embed-card textarea {
+      width: 100%;
+      height: 70px;
+      padding: 0.5rem;
+      font-family: monospace;
+      font-size: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      resize: none;
+      background: #ffffff;
+      margin-bottom: 0.5rem;
+      color: #334155;
+    }
+    .embed-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .editorial-section {
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.25rem;
+    }
+    .editorial-content {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .editorial-content h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+      margin: 2rem 0 1rem;
+    }
+    .editorial-content h2:first-child {
+      margin-top: 0;
+    }
+    .editorial-content h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.5rem 0 0.75rem;
+    }
+    .editorial-content p {
+      font-size: 1rem;
+      color: #334155;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .editorial-content ul, .editorial-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+      color: #334155;
+      line-height: 1.7;
+    }
+    .editorial-content li {
+      margin-bottom: 0.5rem;
+    }
+    .formula-callout {
+      background: #eef2ff;
+      border-left: 4px solid var(--accent-indigo);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 1.5rem 0;
+    }
+    .formula-callout code {
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-indigo-dark);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .comparison-table th {
+      background: #1e1b4b;
+      color: #ffffff;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .comparison-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .faq-list {
+      margin-top: 1.5rem;
+    }
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1rem 1.25rem;
+      background: #f8fafc;
+      font-weight: 700;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      padding: 1.25rem;
+      background: #ffffff;
+      color: #334155;
+      line-height: 1.7;
+      display: none;
+      border-top: 1px solid var(--border-color);
+    }
+    .faq-answer.open {
+      display: block;
+    }
+
+    .site-footer {
+      background: #0f172a;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
+      padding: 4rem 1.25rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 850px) {
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 500px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: #34d399;
+    }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <nav class="rr-nav">
+    <div class="rr-nav-inner">
+      <a href="/" class="rr-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#0F172A"/>
+          <path d="M7 23V9L15 16L7 23Z" fill="#10B981"/>
+          <path d="M15 9H25V13H15V9Z" fill="#FFFFFF"/>
+          <path d="M15 15H22V19H15V15Z" fill="#FFFFFF" fill-opacity="0.8"/>
+          <path d="M15 21H19V25H15V21Z" fill="#10B981"/>
+        </svg>
+        Real<span>Refin</span>
+      </a>
+      <ul class="rr-nav-links">
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/hardwood-floor-refinishing-cost-calculator">Hardwood Floors</a></li>
+        <li><a href="/laminate-flooring-calculator">Laminate Flooring</a></li>
+        <li><a href="/countertop-square-footage-calculator">Countertops</a></li>
+        <li><a href="/" class="btn-nav-primary">Explore 50+ Tools</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <header class="hero-banner">
+    <div class="hero-inner">
+      <div class="badge-pill">📐 Universal Area Engine • Unit Conversions &amp; Budgeting</div>
+      <h1>Square Footage <span>Calculator</span></h1>
+      <p>
+        Accurately calculate square footage for rooms, rectangles, L-shaped spaces, triangles, and circles. Convert between sq ft, sq yards, sq meters, and acres with cost per sq ft estimation.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="main-wrap">
+    <div class="calc-layout">
+
+      <!-- LEFT COLUMN: INPUTS -->
+      <div>
+        <div class="card">
+          <div class="card-header">
+            <h2><span>📐</span> 1. Select Geometry &amp; Enter Dimensions</h2>
+          </div>
+          <div class="card-body">
+
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 0.5rem; display: block;">
+              Select Area Shape:
+            </label>
+            <div class="shape-grid">
+              <button type="button" class="btn-shape active" data-shape="rect">
+                <span class="icon">▭</span> Rectangle
+              </button>
+              <button type="button" class="btn-shape" data-shape="lshape">
+                <span class="icon">┗</span> L-Shape
+              </button>
+              <button type="button" class="btn-shape" data-shape="circle">
+                <span class="icon">◯</span> Circle
+              </button>
+              <button type="button" class="btn-shape" data-shape="triangle">
+                <span class="icon">△</span> Triangle
+              </button>
+            </div>
+
+            <div class="space-list" id="spaceList">
+              <!-- Dynamically populated spaces -->
+            </div>
+
+            <button type="button" class="btn-add-space" id="btnAddSpace">
+              <span>➕ Add Another Room or Area</span>
+            </button>
+
+            <!-- UNIT INPUT PREFERENCE & COST -->
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1.25rem;">
+              <label style="font-size: 0.85rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 0.5rem; display: block;">
+                💲 Optional Price / Cost Estimation
+              </label>
+
+              <div class="dim-grid">
+                <div class="form-group">
+                  <label>Cost Rate</label>
+                  <div class="input-wrapper">
+                    <input type="number" id="inCostPerSqFt" value="4.50" min="0" max="1000" step="0.25">
+                    <span class="unit">$/sq ft</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Waste / Scrap Allowance</label>
+                  <div class="input-wrapper">
+                    <select id="selWasteAllowance">
+                      <option value="0" selected>0% (Exact Net Area)</option>
+                      <option value="0.05">5% (Light Waste)</option>
+                      <option value="0.10">10% (Flooring / Tile Standard)</option>
+                      <option value="0.15">15% (Diagonal / High Waste)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Measurement Unit</label>
+                  <div class="input-wrapper">
+                    <select id="selInputUnit">
+                      <option value="feet" selected>Feet (ft)</option>
+                      <option value="inches">Inches (in)</option>
+                      <option value="meters">Meters (m)</option>
+                      <option value="yards">Yards (yd)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: RESULTS & CONVERSIONS -->
+      <div>
+        <div class="summary-box">
+          <div class="summary-header">
+            <h3>📊 Total Area &amp; Conversions</h3>
+            <span style="font-size: 0.775rem; background: rgba(165, 180, 252, 0.2); color: #c7d2fe; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">
+              Multi-Unit
+            </span>
+          </div>
+
+          <div class="total-cost-display">
+            <div class="total-cost-label">Total Square Footage</div>
+            <div class="total-cost-value" id="valTotalSqFt">480.0 <span style="font-size: 1.5rem; font-weight: 600;">sq ft</span></div>
+            <div class="cost-range-sub" id="valEstimatedCost">Estimated Cost: $2,160.00</div>
+          </div>
+
+          <div class="conversion-grid">
+            <div class="stat-pill">
+              <div class="stat-pill-label">Square Yards</div>
+              <div class="stat-pill-val" id="valSqYards">53.33 <span style="font-size: 0.75rem; font-weight: 500;">sq yd</span></div>
+            </div>
+            <div class="stat-pill">
+              <div class="stat-pill-label">Square Meters</div>
+              <div class="stat-pill-val" id="valSqMeters">44.59 <span style="font-size: 0.75rem; font-weight: 500;">m²</span></div>
+            </div>
+            <div class="stat-pill">
+              <div class="stat-pill-label">Acres</div>
+              <div class="stat-pill-val" id="valAcres">0.011 <span style="font-size: 0.75rem; font-weight: 500;">acres</span></div>
+            </div>
+            <div class="stat-pill">
+              <div class="stat-pill-label">Square Inches</div>
+              <div class="stat-pill-val" id="valSqInches">69,120 <span style="font-size: 0.75rem; font-weight: 500;">sq in</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2><span>📋</span> Itemized Area Breakdown</h2>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Summary Table</span>
+          </div>
+          <div class="card-body">
+            <div class="svg-visualizer-container">
+              <svg id="schematicSvg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+                <!-- Dynamically generated SVG -->
+              </svg>
+            </div>
+
+            <table class="bom-table">
+              <thead>
+                <tr>
+                  <th>Space / Room Name</th>
+                  <th>Geometry &amp; Dims</th>
+                  <th class="cost-col">Square Footage</th>
+                </tr>
+              </thead>
+              <tbody id="bomTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+
+            <div class="btn-action-group">
+              <button type="button" class="btn-action" id="btnExportCsv">
+                <span>📥</span> Export Area CSV
+              </button>
+              <button type="button" class="btn-action" id="btnShareEstimate">
+                <span>🔗</span> Copy Share Link
+              </button>
+            </div>
+
+            <!-- EMBED WIDGET -->
+            <div class="embed-card">
+              <label style="font-size: 0.75rem; font-weight: 700; color: var(--primary-navy); display: block; margin-bottom: 0.35rem;">
+                Embed This Free Square Footage Calculator:
+              </label>
+              <textarea readonly>&lt;iframe src="https://realrefin.com/square-footage-calculator" width="100%" height="700" frameborder="0" style="border:1px solid #E2E8F0;border-radius:12px;width:100%;max-width:960px;" title="Free Square Footage Calculator" loading="lazy"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:12px;font-family:sans-serif;text-align:right;margin-top:4px;"&gt;&lt;small&gt;Powered by &lt;a href="https://realrefin.com/square-footage-calculator" target="_blank" rel="nofollow noopener" style="color:#4338ca;text-decoration:none;font-weight:600;"&gt;RealRefin Calculators&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</textarea>
+              <div class="embed-card-footer">
+                <span>✓ Responsive Embed Widget</span>
+                <span style="color: var(--accent-indigo-dark); font-weight: 600;">Compliant rel="nofollow noopener"</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- EDITORIAL CONTENT -->
+  <section class="editorial-section">
+    <div class="editorial-content">
+      <h2>How is Square Footage Calculated? (Formulas &amp; Methods)</h2>
+      <p>
+        Square footage is a measurement of two-dimensional area. In the United States and Canada, square footage is the standard metric used in real estate home appraisals, carpet and flooring estimation, painting projects, and construction blueprints.
+      </p>
+
+      <div class="formula-callout">
+        <code>Square Footage (ft²) = Length (ft) × Width (ft)</code>
+        <p style="margin: 0; font-size: 0.925rem; color: #3730a3;">
+          If measurements are in inches, multiply Length (in) × Width (in) and divide by 144: <code>Sq Ft = (Length × Width) ÷ 144</code>.
+        </p>
+      </div>
+
+      <h3>Formulas for Different Room Geometries</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Shape</th>
+            <th>Area Formula</th>
+            <th>Example Calculation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rectangle / Square</strong></td>
+            <td><code>Length × Width</code></td>
+            <td>12 ft × 15 ft = <strong>180 sq ft</strong></td>
+          </tr>
+          <tr>
+            <td><strong>L-Shaped Room</strong></td>
+            <td><code>(L1 × W1) + (L2 × W2)</code></td>
+            <td>(10 × 12) + (8 × 10) = <strong>200 sq ft</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Triangle</strong></td>
+            <td><code>(Base × Height) ÷ 2</code></td>
+            <td>(16 ft × 10 ft) ÷ 2 = <strong>80 sq ft</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Circle (Patio/Turf)</strong></td>
+            <td><code>π × Radius² (3.14159 × r²)</code></td>
+            <td>3.14159 × (7 ft)² = <strong>153.94 sq ft</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Unit Conversion Quick Reference Guide</h3>
+      <ul>
+        <li><strong>Square Feet to Square Yards:</strong> Divide by <strong>9</strong> (e.g., 450 sq ft ÷ 9 = 50 sq yards of carpet).</li>
+        <li><strong>Square Feet to Square Meters:</strong> Divide by <strong>10.7639</strong> (e.g., 1,000 sq ft ÷ 10.7639 = 92.9 m²).</li>
+        <li><strong>Square Feet to Acres:</strong> Divide by <strong>43,560</strong> (e.g., 21,780 sq ft ÷ 43,560 = 0.5 acres).</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What counts toward a home's gross living area (GLA) square footage?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            Under ANSI (American National Standards Institute) real estate appraisal guidelines, finished square footage must be heated, cooled, fully contiguous, and above-grade with ceiling heights of at least 7 feet. Unfinished basements, garages, detached sheds, and open air porches cannot be included in official MLS heated square footage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you calculate square footage with fractional inches?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            Convert inches to decimal fractions of a foot by dividing inches by 12: 3 inches = 0.25 ft, 6 inches = 0.50 ft, 9 inches = 0.75 ft. For example, a room measuring 11 feet 3 inches by 14 feet 6 inches equals 11.25 ft × 14.5 ft = 163.125 square feet.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you calculate the square footage of walls for painting?</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            Calculate the room perimeter (2 × [Length + Width]) and multiply by the ceiling height. Then subtract the area of doors (standard 21 sq ft per door) and windows (standard 15 sq ft per window). For a dedicated estimator, use our <a href="/paint-cost-calculator" style="color:var(--accent-indigo); font-weight:700;">Paint Cost &amp; Estimate Calculator</a>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GLOBAL SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>RealRefin</h3>
+        <p>
+          High-precision financial, real estate, and construction modeling tools designed for homeowners, builders, and real estate investors.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Build &amp; Construction</h4>
+        <ul>
+          <li><a href="/square-footage-calculator">Square Footage Calculator</a></li>
+          <li><a href="/hardwood-floor-refinishing-cost-calculator">Hardwood Refinishing Calculator</a></li>
+          <li><a href="/laminate-flooring-calculator">Laminate Flooring Calculator</a></li>
+          <li><a href="/countertop-square-footage-calculator">Countertop Sq Ft Calculator</a></li>
+          <li><a href="/epoxy-flooring-cost-calculator">Epoxy Flooring Cost</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Real Estate Investment</h4>
+        <ul>
+          <li><a href="/mid-term-rental-calculator">Mid Term Rental (MTR) Modeler</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Method Modeler</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          <li><a href="/airbnb-profit-calculator">Airbnb Profit Model</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mortgage &amp; Equity</h4>
+        <ul>
+          <li><a href="/divorce-house-buyout-calculator">Divorce House Buyout Calculator</a></li>
+          <li><a href="/seller-net-sheet-calculator">Seller Net Sheet</a></li>
+          <li><a href="/home-affordability-calculator">Home Affordability (28/36)</a></li>
+          <li><a href="/calculate-debt-to-income-ratio-for-mortgage">Debt-to-Income Ratio</a></li>
+          <li><a href="/2-1-buydown-calculator">2-1 Rate Buydowns</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 RealRefin.com. All rights reserved. Calculations are estimates for budgeting and planning purposes.
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+  (function() {
+    'use strict';
+
+    let currentShape = 'rect'; // 'rect', 'lshape', 'circle', 'triangle'
+    let spaces = [
+      { id: 1, name: 'Living Room', shape: 'rect', dimA: 20, dimB: 15, dimC: 0, dimD: 0 },
+      { id: 2, name: 'Dining Room', shape: 'rect', dimA: 12, dimB: 15, dimC: 0, dimD: 0 }
+    ];
+    let nextSpaceId = 3;
+
+    const btnShapes = document.querySelectorAll('.btn-shape');
+    const spaceList = document.getElementById('spaceList');
+    const btnAddSpace = document.getElementById('btnAddSpace');
+    const inCostPerSqFt = document.getElementById('inCostPerSqFt');
+    const selWasteAllowance = document.getElementById('selWasteAllowance');
+    const selInputUnit = document.getElementById('selInputUnit');
+
+    const valTotalSqFt = document.getElementById('valTotalSqFt');
+    const valEstimatedCost = document.getElementById('valEstimatedCost');
+    const valSqYards = document.getElementById('valSqYards');
+    const valSqMeters = document.getElementById('valSqMeters');
+    const valAcres = document.getElementById('valAcres');
+    const valSqInches = document.getElementById('valSqInches');
+    const bomTableBody = document.getElementById('bomTableBody');
+    const schematicSvg = document.getElementById('schematicSvg');
+    const btnExportCsv = document.getElementById('btnExportCsv');
+    const btnShareEstimate = document.getElementById('btnShareEstimate');
+
+    // FAQ ACCORDION
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const ans = q.nextElementSibling;
+        ans.classList.toggle('open');
+        const icon = q.querySelector('span:last-child');
+        icon.textContent = ans.classList.contains('open') ? '−' : '+';
+      });
+    });
+
+    btnShapes.forEach(b => {
+      b.addEventListener('click', () => {
+        btnShapes.forEach(btn => btn.classList.remove('active'));
+        b.classList.add('active');
+        currentShape = b.dataset.shape;
+        if (spaces.length > 0) {
+          spaces[0].shape = currentShape;
+        }
+        renderSpaces();
+        recalculate();
+      });
+    });
+
+    function renderSpaces() {
+      spaceList.innerHTML = '';
+      const unit = selInputUnit.value;
+      const unitLabel = unit === 'feet' ? 'ft' : (unit === 'inches' ? 'in' : (unit === 'meters' ? 'm' : 'yd'));
+
+      spaces.forEach((s, idx) => {
+        const item = document.createElement('div');
+        item.className = 'space-item';
+        
+        let inputsHtml = '';
+        if (s.shape === 'rect') {
+          inputsHtml = `
+            <div class="dim-grid">
+              <div class="form-group">
+                <label>Length</label>
+                <div class="input-wrapper">
+                  <input type="number" class="in-dima" value="${s.dimA}" min="0.1" max="10000" step="0.5">
+                  <span class="unit">${unitLabel}</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Width</label>
+                <div class="input-wrapper">
+                  <input type="number" class="in-dimb" value="${s.dimB}" min="0.1" max="10000" step="0.5">
+                  <span class="unit">${unitLabel}</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Calculated Area</label>
+                <div class="input-wrapper">
+                  <input type="text" readonly value="${calcSpaceSqFt(s).toFixed(1)} sq ft" style="background:#f1f5f9; font-weight:700;">
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (s.shape === 'lshape') {
+          inputsHtml = `
+            <div class="dim-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+              <div class="form-group">
+                <label>Main Len</label>
+                <div class="input-wrapper"><input type="number" class="in-dima" value="${s.dimA || 16}"><span class="unit">${unitLabel}</span></div>
+              </div>
+              <div class="form-group">
+                <label>Main Wid</label>
+                <div class="input-wrapper"><input type="number" class="in-dimb" value="${s.dimB || 12}"><span class="unit">${unitLabel}</span></div>
+              </div>
+              <div class="form-group">
+                <label>Ext Len</label>
+                <div class="input-wrapper"><input type="number" class="in-dimc" value="${s.dimC || 8}"><span class="unit">${unitLabel}</span></div>
+              </div>
+              <div class="form-group">
+                <label>Ext Wid</label>
+                <div class="input-wrapper"><input type="number" class="in-dimd" value="${s.dimD || 6}"><span class="unit">${unitLabel}</span></div>
+              </div>
+            </div>
+          `;
+        } else if (s.shape === 'circle') {
+          inputsHtml = `
+            <div class="dim-grid" style="grid-template-columns: 1fr 1fr;">
+              <div class="form-group">
+                <label>Radius (Center to Edge)</label>
+                <div class="input-wrapper"><input type="number" class="in-dima" value="${s.dimA || 10}"><span class="unit">${unitLabel}</span></div>
+              </div>
+              <div class="form-group">
+                <label>Diameter</label>
+                <div class="input-wrapper"><input type="text" readonly value="${((s.dimA || 10) * 2).toFixed(1)} ${unitLabel}" style="background:#f1f5f9;"></div>
+              </div>
+            </div>
+          `;
+        } else if (s.shape === 'triangle') {
+          inputsHtml = `
+            <div class="dim-grid" style="grid-template-columns: 1fr 1fr;">
+              <div class="form-group">
+                <label>Base Length</label>
+                <div class="input-wrapper"><input type="number" class="in-dima" value="${s.dimA || 15}"><span class="unit">${unitLabel}</span></div>
+              </div>
+              <div class="form-group">
+                <label>Height</label>
+                <div class="input-wrapper"><input type="number" class="in-dimb" value="${s.dimB || 10}"><span class="unit">${unitLabel}</span></div>
+              </div>
+            </div>
+          `;
+        }
+
+        item.innerHTML = `
+          <div class="space-item-header">
+            <span class="space-title">
+              <span>Space ${idx + 1}:</span>
+              <input type="text" value="${escapeHtml(s.name)}" class="in-space-name" style="border:none; background:transparent; font-weight:700; font-size:0.925rem; color:var(--primary-navy); border-bottom:1px dashed #cbd5e1; outline:none; padding:0.1rem 0.25rem;">
+            </span>
+            ${spaces.length > 1 ? `<button type="button" class="btn-remove-space" data-remove="${s.id}">✕ Remove</button>` : ''}
+          </div>
+          ${inputsHtml}
+        `;
+        spaceList.appendChild(item);
+      });
+
+      // Bind events
+      spaceList.querySelectorAll('.in-space-name').forEach((inp, i) => {
+        inp.addEventListener('input', e => spaces[i].name = e.target.value);
+      });
+      spaceList.querySelectorAll('.in-dima').forEach((inp, i) => {
+        inp.addEventListener('input', e => {
+          spaces[i].dimA = parseFloat(e.target.value) || 0;
+          recalculate();
+        });
+      });
+      spaceList.querySelectorAll('.in-dimb').forEach((inp, i) => {
+        inp.addEventListener('input', e => {
+          spaces[i].dimB = parseFloat(e.target.value) || 0;
+          recalculate();
+        });
+      });
+      spaceList.querySelectorAll('.in-dimc').forEach((inp, i) => {
+        inp.addEventListener('input', e => {
+          spaces[i].dimC = parseFloat(e.target.value) || 0;
+          recalculate();
+        });
+      });
+      spaceList.querySelectorAll('.in-dimd').forEach((inp, i) => {
+        inp.addEventListener('input', e => {
+          spaces[i].dimD = parseFloat(e.target.value) || 0;
+          recalculate();
+        });
+      });
+      spaceList.querySelectorAll('.btn-remove-space').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = parseInt(btn.dataset.remove, 10);
+          spaces = spaces.filter(sp => sp.id !== id);
+          renderSpaces();
+          recalculate();
+        });
+      });
+    }
+
+    function calcSpaceSqFt(s) {
+      const unit = selInputUnit.value;
+      let toFeet = 1;
+      if (unit === 'inches') toFeet = 1 / 12;
+      else if (unit === 'meters') toFeet = 3.28084;
+      else if (unit === 'yards') toFeet = 3;
+
+      const a = (s.dimA || 0) * toFeet;
+      const b = (s.dimB || 0) * toFeet;
+      const c = (s.dimC || 0) * toFeet;
+      const d = (s.dimD || 0) * toFeet;
+
+      if (s.shape === 'rect') {
+        return a * b;
+      } else if (s.shape === 'lshape') {
+        return (a * b) + (c * d);
+      } else if (s.shape === 'circle') {
+        return Math.PI * (a * a);
+      } else if (s.shape === 'triangle') {
+        return (a * b) / 2;
+      }
+      return 0;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
+    }
+
+    btnAddSpace.addEventListener('click', () => {
+      spaces.push({
+        id: nextSpaceId++,
+        name: `Space ${spaces.length + 1}`,
+        shape: currentShape,
+        dimA: 15,
+        dimB: 12,
+        dimC: 0,
+        dimD: 0
+      });
+      renderSpaces();
+      recalculate();
+    });
+
+    [inCostPerSqFt, selWasteAllowance, selInputUnit].forEach(el => {
+      el.addEventListener('input', () => {
+        renderSpaces();
+        recalculate();
+      });
+      el.addEventListener('change', () => {
+        renderSpaces();
+        recalculate();
+      });
+    });
+
+    function recalculate() {
+      let totalNetSqFt = 0;
+
+      spaces.forEach(s => {
+        totalNetSqFt += calcSpaceSqFt(s);
+      });
+
+      const wastePct = parseFloat(selWasteAllowance.value) || 0;
+      const grossSqFt = totalNetSqFt * (1 + wastePct);
+
+      const costRate = parseFloat(inCostPerSqFt.value) || 0;
+      const totalCost = grossSqFt * costRate;
+
+      // Conversions
+      const sqYards = grossSqFt / 9;
+      const sqMeters = grossSqFt / 10.7639;
+      const acres = grossSqFt / 43560;
+      const sqInches = grossSqFt * 144;
+
+      valTotalSqFt.innerHTML = `${grossSqFt.toFixed(1)} <span style="font-size: 1.5rem; font-weight: 600;">sq ft</span>`;
+      valEstimatedCost.textContent = `Estimated Budget: $${Math.round(totalCost).toLocaleString()}${wastePct > 0 ? ` (incl. ${Math.round(wastePct * 100)}% waste)` : ''}`;
+      valSqYards.innerHTML = `${sqYards.toFixed(2)} <span style="font-size: 0.75rem; font-weight: 500;">sq yd</span>`;
+      valSqMeters.innerHTML = `${sqMeters.toFixed(2)} <span style="font-size: 0.75rem; font-weight: 500;">m²</span>`;
+      valAcres.innerHTML = `${acres.toFixed(4)} <span style="font-size: 0.75rem; font-weight: 500;">acres</span>`;
+      valSqInches.innerHTML = `${Math.round(sqInches).toLocaleString()} <span style="font-size: 0.75rem; font-weight: 500;">sq in</span>`;
+
+      // UPDATE TABLE
+      let rows = '';
+      spaces.forEach(s => {
+        const sqft = calcSpaceSqFt(s);
+        rows += `
+          <tr>
+            <td><strong>${escapeHtml(s.name)}</strong></td>
+            <td>${s.shape.toUpperCase()} (${s.dimA} × ${s.dimB})</td>
+            <td class="cost-col">${sqft.toFixed(1)} sq ft</td>
+          </tr>
+        `;
+      });
+
+      if (wastePct > 0) {
+        rows += `
+          <tr>
+            <td><strong>Waste Factor Allowance (${Math.round(wastePct * 100)}%)</strong></td>
+            <td>Contingency</td>
+            <td class="cost-col">+${(totalNetSqFt * wastePct).toFixed(1)} sq ft</td>
+          </tr>
+        `;
+      }
+
+      rows += `
+        <tr class="total-row">
+          <td><strong>Total Gross Square Footage</strong></td>
+          <td>Aggregated</td>
+          <td class="cost-col">${grossSqFt.toFixed(1)} sq ft</td>
+        </tr>
+      `;
+
+      bomTableBody.innerHTML = rows;
+
+      // UPDATE SVG SCHEMATIC
+      renderSvg();
+    }
+
+    function renderSvg() {
+      let svg = '<rect width="400" height="180" fill="#ffffff" />';
+      if (spaces.length === 1 && spaces[0].shape === 'circle') {
+        svg += `
+          <circle cx="200" cy="90" r="60" fill="#eef2ff" stroke="#6366f1" stroke-width="2.5" />
+          <text x="200" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#4338ca">Circle: ${calcSpaceSqFt(spaces[0]).toFixed(1)} sq ft</text>
+        `;
+      } else if (spaces.length === 1 && spaces[0].shape === 'triangle') {
+        svg += `
+          <polygon points="200,30 80,150 320,150" fill="#eef2ff" stroke="#6366f1" stroke-width="2.5" />
+          <text x="200" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#4338ca">Triangle: ${calcSpaceSqFt(spaces[0]).toFixed(1)} sq ft</text>
+        `;
+      } else {
+        const count = spaces.length;
+        const w = 340 / count;
+        spaces.forEach((s, idx) => {
+          const x = 30 + idx * w;
+          svg += `
+            <rect x="${x}" y="35" width="${w - 10}" height="110" rx="4" fill="#eef2ff" stroke="#6366f1" stroke-width="2" />
+            <text x="${x + (w - 10)/2}" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#1e1b4b">${escapeHtml(s.name)}</text>
+            <text x="${x + (w - 10)/2}" y="105" text-anchor="middle" font-size="10" font-weight="600" fill="#4338ca">${calcSpaceSqFt(s).toFixed(1)} sq ft</text>
+          `;
+        });
+      }
+      schematicSvg.innerHTML = svg;
+    }
+
+    // EXPORT CSV
+    btnExportCsv.addEventListener('click', () => {
+      let csv = 'data:text/csv;charset=utf-8,';
+      csv += 'RealRefin.com - Square Footage Calculation Report\r\n';
+      csv += `Generated Date: ${new Date().toISOString().split('T')[0]}\r\n\r\n`;
+      csv += 'Space Name,Geometry,Square Footage\r\n';
+
+      spaces.forEach(s => {
+        csv += `"${s.name}",${s.shape.toUpperCase()},${calcSpaceSqFt(s).toFixed(1)}\r\n`;
+      });
+
+      csv += `\r\nTotal Square Feet,${valTotalSqFt.textContent.trim()}\r\n`;
+      csv += `Square Yards,${valSqYards.textContent.trim()}\r\n`;
+      csv += `Square Meters,${valSqMeters.textContent.trim()}\r\n`;
+      csv += `Acres,${valAcres.textContent.trim()}\r\n`;
+      csv += `Estimated Cost,${valEstimatedCost.textContent.trim()}\r\n`;
+
+      const uri = encodeURI(csv);
+      const a = document.createElement('a');
+      a.setAttribute('href', uri);
+      a.setAttribute('download', 'Square_Footage_Report.csv');
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+
+    btnShareEstimate.addEventListener('click', () => {
+      const u = new URL(window.location.href);
+      u.searchParams.set('sqft', valTotalSqFt.textContent.trim());
+      navigator.clipboard.writeText(u.toString()).then(() => {
+        btnShareEstimate.innerHTML = '<span>✅ Copied!</span>';
+        setTimeout(() => btnShareEstimate.innerHTML = '<span>🔗 Copy Share Link</span>', 2000);
+      });
+    });
+
+    renderSpaces();
+    recalculate();
+
+  })();
+  </script>
+
+</body>
+</html>

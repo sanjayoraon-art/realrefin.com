@@ -158,6 +158,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/countertop-square-footage-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/crawl-space-encapsulation-cost-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -224,6 +230,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/hardwood-floor-refinishing-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/home-affordability-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -243,6 +255,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://realrefin.com/interest-rate-cap-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/laminate-flooring-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -375,6 +393,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
   <url>
     <loc>https://realrefin.com/spray-foam-insulation-cost-calculator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/square-footage-calculator</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -591,6 +615,8 @@ const ALIAS_REDIRECTS = {
   "/cost-to-build-barndominium-calculator.html": "/barndominium-cost-calculator",
   "/cost-to-paint-a-room-calculator": "/paint-cost-calculator",
   "/cost-to-paint-a-room-calculator.html": "/paint-cost-calculator",
+  "/cost-to-refinish-hardwood-floors": "/hardwood-floor-refinishing-cost-calculator",
+  "/countertop-calculator-square-footage-countertops": "/countertop-square-footage-calculator",
   "/crawl-space-cost-calculator": "/crawl-space-encapsulation-cost-calculator",
   "/crawl-space-cost-calculator.html": "/crawl-space-encapsulation-cost-calculator",
   "/crawl-space-vapor-barrier-calculator": "/crawl-space-encapsulation-cost-calculator",
@@ -642,6 +668,7 @@ const ALIAS_REDIRECTS = {
   "/fix-flip-calculator.html": "/house-flipping-calculator",
   "/flip-calculator": "/house-flipping-calculator",
   "/flip-calculator.html": "/house-flipping-calculator",
+  "/flooring-calculator": "/laminate-flooring-calculator",
   "/florida-seller-net-sheet-calculator": "/seller-net-sheet-calculator",
   "/florida-seller-net-sheet-calculator.html": "/seller-net-sheet-calculator",
   "/fourplex-house-hacking-calculator": "/house-hacking-calculator",
@@ -699,8 +726,11 @@ const ALIAS_REDIRECTS = {
   "/house-hacking-fha-loan-calculator.html": "/house-hacking-calculator",
   "/house-hacking-rent-calculator": "/house-hacking-calculator",
   "/house-hacking-rent-calculator.html": "/house-hacking-calculator",
+  "/how-do-you-calculate-countertop-square-footage": "/countertop-square-footage-calculator",
+  "/how-do-you-calculate-square-footage-of-a-countertop": "/countertop-square-footage-calculator",
   "/how-is-house-buyout-calculated-in-a-divorce": "/divorce-house-buyout-calculator",
   "/how-is-house-buyout-calculated-in-a-divorce.html": "/divorce-house-buyout-calculator",
+  "/how-is-square-footage-calculated": "/square-footage-calculator",
   "/how-to-calculate-arv-wholesaling": "/arv-calculator",
   "/how-to-calculate-arv-wholesaling.html": "/arv-calculator",
   "/how-to-calculate-bark-mulch-coverage": "/rubber-mulch-calculator",
@@ -725,6 +755,7 @@ const ALIAS_REDIRECTS = {
   "/how-to-calculate-interest-only-payments-on-a-heloc.html": "/10-year-heloc-payment-calculator",
   "/how-to-calculate-real-estate-commission": "/real-estate-commission-calculator",
   "/how-to-calculate-real-estate-commission.html": "/real-estate-commission-calculator",
+  "/how-to-calculate-square-footage": "/square-footage-calculator",
   "/how-to-calculate-wholesale-price-real-estate": "/wholesale-real-estate-calculator",
   "/how-to-create-a-lease-amortization-schedule-in-excel": "/lease-amortization-schedule-excel",
   "/how-to-create-a-lease-amortization-schedule-in-excel.html": "/lease-amortization-schedule-excel",
@@ -739,6 +770,7 @@ const ALIAS_REDIRECTS = {
   "/lease-option-calculator.html": "/rent-to-own-calculator",
   "/lease-to-own-calculator": "/rent-to-own-calculator",
   "/lease-to-own-calculator.html": "/rent-to-own-calculator",
+  "/lvp-flooring-calculator": "/laminate-flooring-calculator",
   "/mao-calculator": "/maximum-allowable-offer-calculator",
   "/mao-calculator.html": "/maximum-allowable-offer-calculator",
   "/midterm-rental-calculator": "/mid-term-rental-calculator",
@@ -863,6 +895,7 @@ const ALIAS_REDIRECTS = {
   "/spray-foam-insulation-calculator-cost.html": "/spray-foam-insulation-cost-calculator",
   "/spray-foam-insulation-cost-per-sq-ft-calculator": "/spray-foam-insulation-cost-calculator",
   "/spray-foam-insulation-cost-per-sq-ft-calculator.html": "/spray-foam-insulation-cost-calculator",
+  "/sq-ft-calculator": "/square-footage-calculator",
   "/tennessee-closing-cost-calculator": "/va-closing-cost-calculator",
   "/tennessee-closing-cost-calculator.html": "/va-closing-cost-calculator",
   "/travel-nurse-housing-calculator": "/mid-term-rental-calculator",
@@ -890,7 +923,9 @@ const ALIAS_REDIRECTS = {
   "/wholesale-mao-calculator": "/maximum-allowable-offer-calculator",
   "/wholesale-mao-calculator.html": "/maximum-allowable-offer-calculator",
   "/wholesale-real-estate-arv-calculator": "/wholesale-real-estate-calculator",
-  "/wholesale-real-estate-offer-calculator": "/wholesale-real-estate-calculator"
+  "/wholesale-real-estate-offer-calculator": "/wholesale-real-estate-calculator",
+  "/wood-floor-calculator": "/laminate-flooring-calculator",
+  "/wood-floor-refinishing-calculator": "/hardwood-floor-refinishing-cost-calculator"
 };
 
 const server = http.createServer((req, res) => {
