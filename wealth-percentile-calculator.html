@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wealth Percentile Calculator | The 1% Wealth Reality Check (US & India Game)</title>
+  <meta name="description" content="Are you in the Top 1%? Free interactive Wealth Percentile Calculator &amp; Reality Check Game. Compare your net worth and income against your age group in the US and India with our animated wealth pyramid and shareable flex card.">
+  <meta name="keywords" content="wealth percentile calculator, net worth percentile calculator, am i in the top 1 percent, wealth reality check, net worth by age calculator, top 1 percent net worth, net worth comparison game, wealth pyramid calculator, india vs us net worth">
+  <link rel="canonical" href="https://realrefin.com/wealth-percentile-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wealth Percentile Calculator | The 1% Wealth Reality Check">
+  <meta property="og:description" content="Are you in the Top 1%? Test your net worth &amp; income against your exact age group in the US and India. Climb the animated wealth pyramid!">
+  <meta property="og:url" content="https://realrefin.com/wealth-percentile-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The 1% Wealth Reality Check Game | RealRefin">
+  <meta name="twitter:description" content="See where your net worth ranks. Animated wealth pyramid, age benchmarks, and instant flex cards for LinkedIn and WhatsApp.">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for math formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Structured Data: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/wealth-percentile-calculator#app",
+        "name": "The 1% Wealth Reality Check & Percentile Calculator",
+        "url": "https://realrefin.com/wealth-percentile-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Interactive wealth percentile and net worth reality check tool. Benchmark your assets, savings, income, and home equity against official Federal Reserve SCF and AIDIS economic distributions across age brackets in the US and India.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/wealth-percentile-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wealth & Equity Tools",
+            "item": "https://realrefin.com/#equity-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Wealth Percentile Calculator",
+            "item": "https://realrefin.com/wealth-percentile-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/wealth-percentile-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What net worth is required to be in the Top 1% in the United States?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Across the entire US population, entering the Top 1% requires a household net worth of approximately $13.6 million. However, when benchmarked by age, the threshold changes drastically: under age 35 requires ~$2.8 million, ages 35-44 requires ~$6.5 million, and ages 55-64 requires ~$15.5 million according to Federal Reserve SCF data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What net worth puts you in the Top 1% in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In India, entering the overall national Top 1% requires a household net worth of approximately ₹3.2 Crore to ₹3.8 Crore ($380,000–$450,000). For younger earners under 30, a net worth exceeding ₹1.5 Crore places an individual in the elite Top 1% bracket."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does home equity impact my wealth percentile ranking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For the middle 60% of households, home equity represents over 65% of their total net worth. Homeowners who pay down their amortized mortgage balance or benefit from property appreciation build equity at an accelerated rate compared to non-homeowners, significantly elevating their wealth percentile rank over time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between median and average (mean) net worth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The median net worth represents the exact midpoint where 50% of the population has more wealth and 50% has less. The mean (average) is skewed heavily upward by ultra-wealthy billionaires and multi-millionaires. For example, in the US, the mean net worth is over $1,000,000, while the median net worth is approximately $192,000. Median is the more accurate measure for everyday reality checks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I improve my wealth percentile bracket faster?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The fastest wealth accelerations come from three pillars: (1) transitioning unrecoverable rent into residential home equity or real estate ownership, (2) refinancing high-interest debt to lower monthly carrying costs and investing the surplus in compounding index funds, and (3) optimizing Debt-to-Income (DTI) to access low-cost institutional mortgage capital."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-indigo: #6366f1;
+      --accent-indigo-dark: #4338ca;
+      --accent-gold: #f59e0b;
+      --accent-gold-dark: #d97706;
+      --accent-purple: #8b5cf6;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.12);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAVIGATION */
+    .rr-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .rr-nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rr-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+    .rr-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+    .rr-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+    .rr-nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .rr-nav-links a:hover {
+      color: var(--accent-indigo);
+    }
+    .btn-nav-primary {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600 !important;
+      transition: background 0.15s;
+    }
+    .btn-nav-primary:hover {
+      background: var(--accent-indigo) !important;
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+      background: linear-gradient(135deg, #090d16 0%, #1e1b4b 60%, #0f172a 100%);
+      color: #ffffff;
+      padding: 3.5rem 1.5rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(99, 102, 241, 0.25), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #38bdf8;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .hero-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-banner h1 span.gradient-text {
+      background: linear-gradient(90deg, #38bdf8 0%, #a78bfa 50%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-banner p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* MAIN CONTAINER */
+    .main-wrap {
+      max-width: 1280px;
+      margin: -2rem auto 4rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* GAME GRID LAYOUT */
+    .game-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .card-header {
+      background: #ffffff;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .card-header h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* COUNTRY TOGGLE */
+    .country-switch {
+      display: flex;
+      background: #f1f5f9;
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 4px;
+    }
+    .btn-country {
+      border: none;
+      background: transparent;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-country.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    /* INPUT FIELDS & SLIDERS */
+    .input-group {
+      margin-bottom: 1.35rem;
+    }
+    .input-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+    .input-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .input-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      background: #e0f2fe;
+      color: #0369a1;
+      border-radius: 999px;
+    }
+    .val-display {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--accent-indigo-dark);
+      font-feature-settings: "tnum";
+    }
+    .range-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+      transition: background 0.2s;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-indigo);
+      cursor: pointer;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(99, 102, 241, 0.4);
+      transition: transform 0.1s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* HOUSING RADIO SWITCH */
+    .housing-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .btn-toggle-box {
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+      background: #ffffff;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .btn-toggle-box.active {
+      border-color: var(--accent-indigo);
+      background: #f5f3ff;
+    }
+    .btn-toggle-box .title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .btn-toggle-box .subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .sub-input-row {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-top: 0.75rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .text-input-field {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #ffffff;
+      outline: none;
+    }
+    .text-input-field:focus {
+      border-color: var(--accent-indigo);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+
+    /* AVATAR SELECTOR */
+    .avatar-picker {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+    .avatar-btn {
+      font-size: 1.35rem;
+      border: 2px solid var(--border-color);
+      background: #ffffff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .avatar-btn.active {
+      border-color: var(--accent-indigo);
+      background: #eef2ff;
+      transform: scale(1.15);
+      box-shadow: 0 2px 8px rgba(99,102,241,0.3);
+    }
+
+    /* NET WORTH LIVE METER */
+    .networth-bar {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.25rem;
+    }
+    .networth-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+    .networth-amount {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #34d399;
+      font-feature-settings: "tnum";
+    }
+
+    /* RIGHT COLUMN: VISUAL PYRAMID & GAME RESULTS */
+    .visual-stage {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* WEALTH PYRAMID & LADDER */
+    .pyramid-card {
+      background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
+      color: #ffffff;
+      border: 1px solid #1e293b;
+      position: relative;
+      overflow: hidden;
+    }
+    .pyramid-container {
+      padding: 1.25rem 1.5rem;
+      position: relative;
+    }
+    .pyramid-header {
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .pyramid-header h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+    .pyramid-header p {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    /* PYRAMID LEVELS */
+    .pyramid-levels {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    .pyramid-row {
+      position: relative;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .tier-1 { width: 42%; background: linear-gradient(90deg, #d97706, #fbbf24); color: #000; box-shadow: 0 0 15px rgba(251, 191, 36, 0.4); }
+    .tier-5 { width: 54%; background: linear-gradient(90deg, #7c3aed, #a78bfa); color: #fff; }
+    .tier-10 { width: 66%; background: linear-gradient(90deg, #2563eb, #60a5fa); color: #fff; }
+    .tier-25 { width: 78%; background: linear-gradient(90deg, #059669, #34d399); color: #fff; }
+    .tier-50 { width: 90%; background: linear-gradient(90deg, #475569, #64748b); color: #fff; }
+    .tier-bottom { width: 100%; background: #1e293b; color: #94a3b8; border: 1px dashed #334155; }
+
+    .pyramid-row.active-tier {
+      transform: scale(1.04);
+      outline: 3px solid #38bdf8;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+      z-index: 5;
+    }
+
+    /* CLIMBING AVATAR */
+    .avatar-climber {
+      position: absolute;
+      left: -32px;
+      font-size: 1.6rem;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+      z-index: 20;
+    }
+
+    /* PERCENTILE GAUGE / SPEEDOMETER */
+    .gauge-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .gauge-wrapper {
+      position: relative;
+      width: 200px;
+      height: 110px;
+      margin: 0 auto 0.5rem;
+      overflow: hidden;
+    }
+    .gauge-svg {
+      width: 200px;
+      height: 200px;
+      transform: rotate(-90deg);
+    }
+    .gauge-bg {
+      fill: none;
+      stroke: #e2e8f0;
+      stroke-width: 18;
+      stroke-dasharray: 314;
+      stroke-dashoffset: 0;
+    }
+    .gauge-fill {
+      fill: none;
+      stroke: url(#gaugeGrad);
+      stroke-width: 18;
+      stroke-dasharray: 314;
+      stroke-dashoffset: 157;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gauge-center-text {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+    .gauge-pct {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--primary-navy);
+      line-height: 1;
+    }
+    .gauge-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* REALITY CHECK EGO / CALLOUT CARD */
+    .reality-box {
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      text-align: left;
+    }
+    .reality-box.elite {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+    .reality-box.high {
+      background: #eff6ff;
+      border: 1px solid #93c5fd;
+      color: #1e40af;
+    }
+    .reality-box.mid {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+    .reality-box.building {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+    }
+    .reality-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+    }
+    .reality-headline {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+    }
+    .reality-desc {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* SHARE & FLEX ACTIONS */
+    .share-suite {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .btn-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+    }
+    .btn-whatsapp:hover {
+      background: #1eb956;
+      transform: translateY(-2px);
+    }
+    .btn-linkedin {
+      background: #0a66c2;
+      color: #ffffff;
+    }
+    .btn-linkedin:hover {
+      background: #084e96;
+      transform: translateY(-2px);
+    }
+    .btn-download-card {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+    .btn-download-card:hover {
+      background: var(--accent-indigo);
+      transform: translateY(-2px);
+    }
+
+    /* REFINANCE & EQUITY ACCELERATOR BRIDGE (MONETIZATION) */
+    .accelerator-box {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      color: #ffffff;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .accelerator-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #38bdf8;
+    }
+    .accelerator-box p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    .accelerator-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+    .accelerator-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.2s;
+      display: block;
+    }
+    .accelerator-card:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+      border-color: #38bdf8;
+    }
+    .accelerator-card .card-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #ffffff;
+    }
+    .accelerator-card .card-desc {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+
+    /* EDITORIAL CONTENT SECTION */
+    .editorial-section {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .editorial-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .editorial-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.5rem 0 0.75rem;
+    }
+    .editorial-section p {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    .editorial-section ul, .editorial-section ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+    .editorial-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* DATA BENCHMARK TABLES */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    .data-table th {
+      background: #f1f5f9;
+      color: var(--primary-navy);
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+      white-space: nowrap;
+    }
+    .data-table tr:hover {
+      background: #f8fafc;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #f8fafc;
+    }
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-answer {
+      padding: 0 1.25rem 1rem;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* EMBED WIDGET CODE */
+    .embed-card {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 2rem;
+    }
+    .embed-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.4rem;
+    }
+    .embed-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .embed-textarea {
+      width: 100%;
+      height: 65px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem;
+      resize: none;
+      color: #334155;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 4rem 1.5rem 2rem;
+      border-top: 1px solid #1e293b;
+      margin-top: 4rem;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #64748b;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: #38bdf8;
+    }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    /* CANVAS HIDDEN */
+    #shareCanvas {
+      display: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .game-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-banner h1 {
+        font-size: 1.9rem;
+      }
+      .sub-input-row {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+      .tier-1 { width: 55%; }
+      .tier-5 { width: 68%; }
+      .tier-10 { width: 80%; }
+      .tier-25 { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <nav class="rr-nav">
+    <div class="rr-nav-inner">
+      <a href="/" class="rr-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#0F172A"/>
+          <path d="M7 23V9L15 16L7 23Z" fill="#10B981"/>
+          <path d="M15 9H25V13H15V9Z" fill="#FFFFFF"/>
+          <path d="M15 15H22V19H15V15Z" fill="#FFFFFF" fill-opacity="0.8"/>
+          <path d="M15 21H19V25H15V21Z" fill="#10B981"/>
+        </svg>
+        Real<span>Refin</span>
+      </a>
+      <ul class="rr-nav-links">
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/rent-vs-buy-calculator">Rent vs Buy</a></li>
+        <li><a href="/mortgage-refinance-calculator">Mortgage Refinance</a></li>
+        <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs HELOC</a></li>
+        <li><a href="/" class="btn-nav-primary">Explore 50+ Tools</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <header class="hero-banner">
+    <div class="hero-inner">
+      <div class="badge-pill">🔥 The 1% Wealth Reality Check • Interactive Net Worth Game</div>
+      <h1>Wealth Percentile <span class="gradient-text">Calculator</span></h1>
+      <p>
+        Are you in the Top 1%, Top 5%, or Top 10%? Benchmark your income, savings, and home equity against your exact age group in the United States and India.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="main-wrap">
+    <div class="game-grid">
+
+      <!-- LEFT COLUMN: INPUT SLIDERS & GAME CONTROLS -->
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🎮</span> 1. Set Your Financial Profile</h2>
+          <div class="country-switch">
+            <button type="button" class="btn-country active" id="btnUS" data-country="US">
+              <span>🇺🇸</span> US ($)
+            </button>
+            <button type="button" class="btn-country" id="btnIN" data-country="IN">
+              <span>🇮🇳</span> India (₹)
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <!-- AVATAR PICKER -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <span class="input-label">Select Your Game Avatar:</span>
+            </div>
+            <div class="avatar-picker" id="avatarPicker">
+              <button type="button" class="avatar-btn active" data-avatar="🧑‍💼">🧑‍💼</button>
+              <button type="button" class="avatar-btn" data-avatar="👩‍💼">👩‍💼</button>
+              <button type="button" class="avatar-btn" data-avatar="🚀">🚀</button>
+              <button type="button" class="avatar-btn" data-avatar="🦁">🦁</button>
+              <button type="button" class="avatar-btn" data-avatar="👑">👑</button>
+            </div>
+          </div>
+
+          <!-- 1. AGE SLIDER -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="sliderAge">
+                <span>🎂</span> Your Current Age:
+              </label>
+              <span class="val-display" id="valAge">28 Years</span>
+            </div>
+            <div class="range-wrap">
+              <input type="range" id="sliderAge" min="18" max="75" value="28" step="1">
+              <div class="slider-ticks">
+                <span>18 (Young Pro)</span>
+                <span>35 (Prime Career)</span>
+                <span>50 (Peak Wealth)</span>
+                <span>75 (Retirement)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. MONTHLY / ANNUAL INCOME -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="sliderIncome">
+                <span>💼</span> Monthly Take-Home Income:
+              </label>
+              <span class="val-display" id="valIncome">$6,500 / mo</span>
+            </div>
+            <div class="range-wrap">
+              <input type="range" id="sliderIncome" min="1000" max="50000" value="6500" step="500">
+              <div class="slider-ticks">
+                <span id="incomeMinTick">$1k</span>
+                <span id="incomeMidTick">$15k</span>
+                <span id="incomeMaxTick">$50k+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. LIQUID SAVINGS & INVESTMENTS -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="sliderSavings">
+                <span>📈</span> Total Savings &amp; Investments:
+              </label>
+              <span class="val-display" id="valSavings">$45,000</span>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.4rem;">
+              Includes checking/savings, stocks, mutual funds, 401(k), IRA, EPF, crypto, and gold.
+            </p>
+            <div class="range-wrap">
+              <input type="range" id="sliderSavings" min="0" max="1000000" value="45000" step="5000">
+              <div class="slider-ticks">
+                <span id="savingsMinTick">$0</span>
+                <span id="savingsMidTick">$250k</span>
+                <span id="savingsMaxTick">$1M+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. HOUSING & PROPERTY EQUITY -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <span class="input-label"><span>🏠</span> Housing &amp; Real Estate:</span>
+            </div>
+            <div class="housing-toggle">
+              <div class="btn-toggle-box active" id="btnOwnHome" data-housing="own">
+                <span class="title">🏡 I Own a Home</span>
+                <span class="subtitle">Home Equity accelerates net worth</span>
+              </div>
+              <div class="btn-toggle-box" id="btnRentHome" data-housing="rent">
+                <span class="title">🏢 I Rent</span>
+                <span class="subtitle">Zero property equity</span>
+              </div>
+            </div>
+
+            <!-- HOMEOWNER CONDITIONAL INPUTS -->
+            <div class="sub-input-row" id="homeownerFields">
+              <div>
+                <label style="font-size: 0.75rem; font-weight: 700; color: var(--secondary-navy); display: block; margin-bottom: 0.25rem;">
+                  Property Market Value:
+                </label>
+                <input type="number" id="inputHomeValue" class="text-input-field" value="380000" step="5000">
+              </div>
+              <div>
+                <label style="font-size: 0.75rem; font-weight: 700; color: var(--secondary-navy); display: block; margin-bottom: 0.25rem;">
+                  Remaining Mortgage Loan:
+                </label>
+                <input type="number" id="inputMortgageBalance" class="text-input-field" value="260000" step="5000">
+              </div>
+            </div>
+
+            <!-- RENTER CONDITIONAL INPUTS -->
+            <div class="sub-input-row" id="renterFields" style="display: none;">
+              <div style="grid-column: span 2;">
+                <label style="font-size: 0.75rem; font-weight: 700; color: var(--secondary-navy); display: block; margin-bottom: 0.25rem;">
+                  Monthly Rent Paid:
+                </label>
+                <input type="number" id="inputMonthlyRent" class="text-input-field" value="1800" step="50">
+              </div>
+            </div>
+          </div>
+
+          <!-- OTHER DEBTS -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="inputDebts">
+                <span>💳</span> Other Unsecured Debts (Student/Auto/Credit Card):
+              </label>
+              <input type="number" id="inputDebts" class="text-input-field" style="width: 140px;" value="12000" step="1000">
+            </div>
+          </div>
+
+          <!-- COMPUTED NET WORTH BANNER -->
+          <div class="networth-bar">
+            <div>
+              <div class="networth-label">Calculated Total Net Worth</div>
+              <div style="font-size: 0.75rem; color: #94a3b8;">(Investments + Home Equity - Debts)</div>
+            </div>
+            <div class="networth-amount" id="displayNetWorth">$153,000</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: WEALTH PYRAMID, GAUGE & REALITY CHECK -->
+      <div class="visual-stage">
+
+        <!-- GAUGE CARD -->
+        <div class="gauge-card">
+          <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+            Your National Wealth Ranking
+          </div>
+
+          <!-- SVG SPEEDOMETER GAUGE -->
+          <div class="gauge-wrapper">
+            <svg class="gauge-svg" viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#3b82f6"/>
+                  <stop offset="50%" stop-color="#10b981"/>
+                  <stop offset="100%" stop-color="#f59e0b"/>
+                </linearGradient>
+              </defs>
+              <circle class="gauge-bg" cx="60" cy="60" r="45" />
+              <circle class="gauge-fill" id="gaugeCircle" cx="60" cy="60" r="45" />
+            </svg>
+            <div class="gauge-center-text">
+              <div class="gauge-pct" id="gaugePctText">Top 12%</div>
+              <div class="gauge-sub" id="gaugeSubText">In Age Group</div>
+            </div>
+          </div>
+
+          <!-- REALITY CHECK NOTIFICATION BOX -->
+          <div class="reality-box high" id="realityBox">
+            <span class="reality-badge" id="realityBadge">HIGH ACHIEVER TIER</span>
+            <div class="reality-headline" id="realityHeadline">You are in the Top 12% of your peers!</div>
+            <div class="reality-desc" id="realityDesc">
+              Your calculated net worth of $153,000 is higher than 88% of individuals aged 25–29. You are well ahead of the national median.
+            </div>
+          </div>
+
+          <!-- SHARE & VIRAL FLEX BUTTONS -->
+          <div class="share-suite">
+            <button type="button" class="btn-share btn-whatsapp" id="btnShareWhatsApp">
+              <span>💬</span> Share Rank on WhatsApp
+            </button>
+            <button type="button" class="btn-share btn-linkedin" id="btnShareLinkedIn">
+              <span>💼</span> Copy LinkedIn Flex Post
+            </button>
+            <button type="button" class="btn-share btn-download-card" id="btnDownloadCard">
+              <span>📸</span> Download Shareable Flex Card (PNG)
+            </button>
+          </div>
+        </div>
+
+        <!-- ANIMATED WEALTH PYRAMID -->
+        <div class="card pyramid-card">
+          <div class="pyramid-container">
+            <div class="pyramid-header">
+              <h3>Animated Wealth Pyramid</h3>
+              <p>Watch your avatar climb as your net worth increases</p>
+            </div>
+
+            <!-- PYRAMID LADDER -->
+            <div class="pyramid-levels" id="pyramidLevels">
+              <!-- AVATAR CLIMBER ELEMENT -->
+              <div class="avatar-climber" id="avatarClimber">🧑‍💼</div>
+
+              <div class="pyramid-row tier-1" id="rowTier1" data-tier="1">
+                <span>👑 Top 1%</span>
+                <span id="tier1Val">$2.8M+</span>
+              </div>
+
+              <div class="pyramid-row tier-5" id="rowTier5" data-tier="5">
+                <span>🏆 Top 5%</span>
+                <span id="tier5Val">$850k+</span>
+              </div>
+
+              <div class="pyramid-row tier-10" id="rowTier10" data-tier="10">
+                <span>🚀 Top 10%</span>
+                <span id="tier10Val">$450k+</span>
+              </div>
+
+              <div class="pyramid-row tier-25" id="rowTier25" data-tier="25">
+                <span>📈 Top 25%</span>
+                <span id="tier25Val">$150k+</span>
+              </div>
+
+              <div class="pyramid-row tier-50" id="rowTier50" data-tier="50">
+                <span>⚖️ Top 50% (Median)</span>
+                <span id="tier50Val">$39k+</span>
+              </div>
+
+              <div class="pyramid-row tier-bottom" id="rowTierBottom" data-tier="100">
+                <span>🧱 Base 50%</span>
+                <span>Starting Out</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STRATEGIC REALREFIN WEALTH ACCELERATOR -->
+    <div class="accelerator-box">
+      <h3><span>⚡</span> Accelerate Your Wealth: Move to the Next Tier</h3>
+      <p>
+        Building wealth is fundamentally about converting unsecured monthly expenses into compounding equity. Explore how optimizing your real estate and debt profile will elevate your wealth percentile bracket:
+      </p>
+      <div class="accelerator-links">
+        <a href="/cash-out-refinance-vs-heloc-calculator" class="accelerator-card">
+          <div class="card-title">Cash-Out Refi vs HELOC <span>→</span></div>
+          <div class="card-desc">Unlock trapped home equity to invest in higher-yielding assets.</div>
+        </a>
+        <a href="/rent-vs-buy-calculator" class="accelerator-card">
+          <div class="card-title">Rent vs Buy Breakeven <span>→</span></div>
+          <div class="card-desc">See the exact year buying a home beats paying endless rent.</div>
+        </a>
+        <a href="/mortgage-refinance-calculator" class="accelerator-card">
+          <div class="card-title">Mortgage Refinance Savings <span>→</span></div>
+          <div class="card-desc">Lower your monthly interest rate to direct surplus cash into investments.</div>
+        </a>
+        <a href="/calculate-debt-to-income-ratio-for-mortgage" class="accelerator-card">
+          <div class="card-title">Debt-to-Income (DTI) Optimizer <span>→</span></div>
+          <div class="card-desc">Optimize your borrowing capacity for institutional mortgages.</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- EDITORIAL & BENCHMARK TABLES -->
+    <article class="editorial-section">
+      <h2>How Does the Wealth Percentile Reality Check Work?</h2>
+      <p>
+        Net worth is the most definitive financial metric because it accounts for both accumulated assets and outstanding liabilities. Unlike income alone—which can be misleading due to high lifestyle creep or excessive debt—net worth measures the enduring economic cushion an individual or family possesses.
+      </p>
+
+      <h3>United States Net Worth Percentiles by Age Bracket (2026 Benchmarks)</h3>
+      <p>
+        Based on microdata from the <strong>Federal Reserve Survey of Consumer Finances (SCF)</strong>, here is how household net worth distributes across age categories in the United States:
+      </p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Age Bracket</th>
+              <th>Median (50th %)</th>
+              <th>Top 25%</th>
+              <th>Top 10%</th>
+              <th>Top 5%</th>
+              <th>Top 1%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Under 35</strong></td>
+              <td>$39,000</td>
+              <td>$150,000</td>
+              <td>$450,000</td>
+              <td>$850,000</td>
+              <td>$2,800,000</td>
+            </tr>
+            <tr>
+              <td><strong>35 – 44</strong></td>
+              <td>$135,600</td>
+              <td>$405,000</td>
+              <td>$1,120,000</td>
+              <td>$2,250,000</td>
+              <td>$6,500,000</td>
+            </tr>
+            <tr>
+              <td><strong>45 – 54</strong></td>
+              <td>$247,200</td>
+              <td>$760,000</td>
+              <td>$2,150,000</td>
+              <td>$4,100,000</td>
+              <td>$11,200,000</td>
+            </tr>
+            <tr>
+              <td><strong>55 – 64</strong></td>
+              <td>$364,500</td>
+              <td>$1,100,000</td>
+              <td>$2,950,000</td>
+              <td>$5,800,000</td>
+              <td>$15,500,000</td>
+            </tr>
+            <tr>
+              <td><strong>65 and Over</strong></td>
+              <td>$409,900</td>
+              <td>$1,320,000</td>
+              <td>$3,450,000</td>
+              <td>$6,550,000</td>
+              <td>$17,100,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>India Net Worth Percentiles by Age Bracket (2026 Benchmarks in INR)</h3>
+      <p>
+        In India, wealth distribution is evaluated through the <strong>All India Debt &amp; Investment Survey (AIDIS)</strong>, the <strong>Credit Suisse Global Wealth Databook</strong>, and Hurun wealth research:
+      </p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Age Bracket</th>
+              <th>Median (50th %)</th>
+              <th>Top 25%</th>
+              <th>Top 10%</th>
+              <th>Top 5%</th>
+              <th>Top 1%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Under 30</strong></td>
+              <td>₹4,50,000</td>
+              <td>₹18,00,000</td>
+              <td>₹50,00,000</td>
+              <td>₹1.2 Crore</td>
+              <td>₹3.5 Crore</td>
+            </tr>
+            <tr>
+              <td><strong>30 – 39</strong></td>
+              <td>₹15,00,000</td>
+              <td>₹55,00,000</td>
+              <td>₹1.6 Crore</td>
+              <td>₹3.8 Crore</td>
+              <td>₹9.5 Crore</td>
+            </tr>
+            <tr>
+              <td><strong>40 – 49</strong></td>
+              <td>₹32,00,000</td>
+              <td>₹1.2 Crore</td>
+              <td>₹3.5 Crore</td>
+              <td>₹8.2 Crore</td>
+              <td>₹22 Crore</td>
+            </tr>
+            <tr>
+              <td><strong>50 and Over</strong></td>
+              <td>₹52,00,000</td>
+              <td>₹2.1 Crore</td>
+              <td>₹6.5 Crore</td>
+              <td>₹15 Crore</td>
+              <td>₹38 Crore</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>The Role of Home Equity in Net Worth Accumulation</h3>
+      <p>
+        Empirical economic data shows that across the middle three quintiles of the population, residential real estate is the single largest component of household net worth. While financial markets offer liquidity and diversification, homeownership serves as an automatic forced-savings mechanism through monthly principal reduction:
+      </p>
+      $$\text{Net Worth} = (\text{Liquid Assets} + \text{Equities} + \text{Retirement}) + (\text{Property Market Value} - \text{Mortgage Debt}) - \text{Unsecured Liabilities}$$
+      <p>
+        Homeowners who manage their mortgage strategically—refinancing when interest rates drop, eliminating private mortgage insurance (PMI), or deploying equity into revenue-generating properties—move up the wealth ladder far quicker than individuals who maintain heavy consumer debts.
+      </p>
+
+      <!-- FREQUENTLY ASKED QUESTIONS -->
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">What net worth is required to be in the Top 1% in the United States? <span>+</span></div>
+          <div class="faq-answer">
+            Across the entire population, entering the Top 1% requires a household net worth of approximately $13.6 million. However, by age bracket: under age 35 requires ~$2.8 million, ages 35-44 requires ~$6.5 million, and ages 55-64 requires ~$15.5 million according to Federal Reserve SCF data.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What net worth puts you in the Top 1% in India? <span>+</span></div>
+          <div class="faq-answer">
+            In India, entering the overall national Top 1% requires a household net worth of approximately ₹3.2 Crore to ₹3.8 Crore ($380,000–$450,000). For younger earners under 30, a net worth exceeding ₹1.5 Crore places an individual in the elite Top 1% bracket.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How does home equity impact my wealth percentile ranking? <span>+</span></div>
+          <div class="faq-answer">
+            For the middle 60% of households, home equity represents over 65% of their total net worth. Homeowners build equity through both property appreciation and monthly principal amortization, giving them a structural wealth-building advantage over long-term renters who do not invest surplus funds.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the difference between median and average (mean) net worth? <span>+</span></div>
+          <div class="faq-answer">
+            The median represents the exact midpoint where 50% of the population has more wealth and 50% has less. The mean (average) is skewed heavily upward by ultra-wealthy individuals. For example, in the US, the mean net worth is over $1,000,000, while the median net worth is approximately $192,000.
+          </div>
+        </div>
+      </div>
+
+      <!-- EMBED CODE WIDGET COMPLIANT WITH LINK SCHEMES -->
+      <div class="embed-card">
+        <h4>Embed This Wealth Reality Check Game on Your Website</h4>
+        <p>You can embed this interactive tool on your blog or financial site with zero configuration:</p>
+        <textarea class="embed-textarea" readonly>&lt;iframe src="https://realrefin.com/wealth-percentile-calculator" width="100%" height="700" frameborder="0" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:12px;text-align:right;"&gt;Powered by &lt;a href="https://realrefin.com/wealth-percentile-calculator" rel="nofollow noopener" target="_blank"&gt;RealRefin Wealth Percentile Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- HIDDEN CANVAS FOR INSTANT SHARE CARD GENERATION -->
+  <canvas id="shareCanvas" width="800" height="600"></canvas>
+
+  <!-- GLOBAL SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>RealRefin</h3>
+        <p>
+          High-precision financial, real estate, and construction modeling tools designed for homeowners, builders, and real estate investors.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Wealth &amp; Equity</h4>
+        <ul>
+          <li><a href="/wealth-percentile-calculator">Wealth Percentile Calculator</a></li>
+          <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs HELOC</a></li>
+          <li><a href="/mortgage-refinance-calculator">Mortgage Refinance</a></li>
+          <li><a href="/calculate-debt-to-income-ratio-for-mortgage">Debt-to-Income (DTI) Ratio</a></li>
+          <li><a href="/divorce-house-buyout-calculator">Divorce House Buyout</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Home Buyer &amp; Investor</h4>
+        <ul>
+          <li><a href="/rent-vs-buy-calculator">Rent vs Buy Modeler</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Method Modeler</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          <li><a href="/airbnb-profit-calculator">Airbnb Profit Model</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mortgage Programs</h4>
+        <ul>
+          <li><a href="/va-irrrl-calculator">VA IRRRL Streamline</a></li>
+          <li><a href="/fha-loan-calculator">FHA Loan Calculator</a></li>
+          <li><a href="/2-1-buydown-calculator">2-1 Buydown Modeler</a></li>
+          <li><a href="/seller-net-sheet-calculator">Seller Net Sheet</a></li>
+          <li><a href="/closing-cost-calculator">Closing Cost Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 RealRefin.com. All rights reserved. Calculations are estimates for educational and planning purposes.
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+  (function() {
+    'use strict';
+
+    // State
+    let country = 'US'; // 'US' or 'IN'
+    let currentAvatar = '🧑‍💼';
+    let housingType = 'own'; // 'own' or 'rent'
+
+    // Benchmarks Data by Age Bracket (Under 35, 35-44, 45-54, 55-64, 65+)
+    const BENCHMARKS_US = {
+      under35: { p50: 39000, p75: 150000, p90: 450000, p95: 850000, p99: 2800000 },
+      age35_44: { p50: 135600, p75: 405000, p90: 1120000, p95: 2250000, p99: 6500000 },
+      age45_54: { p50: 247200, p75: 760000, p90: 2150000, p95: 4100000, p99: 11200000 },
+      age55_64: { p50: 364500, p75: 1100000, p90: 2950000, p95: 5800000, p99: 15500000 },
+      over65:   { p50: 409900, p75: 1320000, p90: 3450000, p95: 6550000, p99: 17100000 }
+    };
+
+    const BENCHMARKS_IN = {
+      under30:  { p50: 450000,  p75: 1800000,  p90: 5000000,  p95: 12000000, p99: 35000000 },
+      age30_39: { p50: 1500000, p75: 5500000,  p90: 16000000, p95: 38000000, p99: 95000000 },
+      age40_49: { p50: 3200000, p75: 12000000, p90: 35000000, p95: 82000000, p99: 220000000 },
+      over50:   { p50: 5200000, p75: 21000000, p90: 65000000, p95: 150000000, p99: 380000000 }
+    };
+
+    // DOM Elements
+    const btnUS = document.getElementById('btnUS');
+    const btnIN = document.getElementById('btnIN');
+    const avatarBtns = document.querySelectorAll('.avatar-btn');
+    const avatarClimber = document.getElementById('avatarClimber');
+
+    const sliderAge = document.getElementById('sliderAge');
+    const valAge = document.getElementById('valAge');
+    const sliderIncome = document.getElementById('sliderIncome');
+    const valIncome = document.getElementById('valIncome');
+    const sliderSavings = document.getElementById('sliderSavings');
+    const valSavings = document.getElementById('valSavings');
+
+    const btnOwnHome = document.getElementById('btnOwnHome');
+    const btnRentHome = document.getElementById('btnRentHome');
+    const homeownerFields = document.getElementById('homeownerFields');
+    const renterFields = document.getElementById('renterFields');
+    const inputHomeValue = document.getElementById('inputHomeValue');
+    const inputMortgageBalance = document.getElementById('inputMortgageBalance');
+    const inputMonthlyRent = document.getElementById('inputMonthlyRent');
+    const inputDebts = document.getElementById('inputDebts');
+
+    const displayNetWorth = document.getElementById('displayNetWorth');
+    const gaugePctText = document.getElementById('gaugePctText');
+    const gaugeSubText = document.getElementById('gaugeSubText');
+    const gaugeCircle = document.getElementById('gaugeCircle');
+
+    const realityBox = document.getElementById('realityBox');
+    const realityBadge = document.getElementById('realityBadge');
+    const realityHeadline = document.getElementById('realityHeadline');
+    const realityDesc = document.getElementById('realityDesc');
+
+    const tier1Val = document.getElementById('tier1Val');
+    const tier5Val = document.getElementById('tier5Val');
+    const tier10Val = document.getElementById('tier10Val');
+    const tier25Val = document.getElementById('tier25Val');
+    const tier50Val = document.getElementById('tier50Val');
+
+    const pyramidRows = {
+      1: document.getElementById('rowTier1'),
+      5: document.getElementById('rowTier5'),
+      10: document.getElementById('rowTier10'),
+      25: document.getElementById('rowTier25'),
+      50: document.getElementById('rowTier50'),
+      100: document.getElementById('rowTierBottom')
+    };
+
+    const btnShareWhatsApp = document.getElementById('btnShareWhatsApp');
+    const btnShareLinkedIn = document.getElementById('btnShareLinkedIn');
+    const btnDownloadCard = document.getElementById('btnDownloadCard');
+
+    let currentCalculatedPercentile = 12;
+    let currentCalculatedNetWorth = 153000;
+
+    // Formatting helpers
+    function formatCurrency(val, curr) {
+      if (curr === 'US') {
+        if (val >= 1000000) return '$' + (val / 1000000).toFixed(val % 1000000 === 0 ? 0 : 1) + 'M';
+        if (val >= 1000) return '$' + (val / 1000).toFixed(0) + 'k';
+        return '$' + Math.round(val).toLocaleString('en-US');
+      } else {
+        if (val >= 10000000) return '₹' + (val / 10000000).toFixed(val % 10000000 === 0 ? 0 : 1) + ' Cr';
+        if (val >= 100000) return '₹' + (val / 100000).toFixed(val % 100000 === 0 ? 0 : 1) + ' Lakh';
+        if (val >= 1000) return '₹' + (val / 1000).toFixed(0) + 'k';
+        return '₹' + Math.round(val).toLocaleString('en-IN');
+      }
+    }
+
+    function formatNumberFull(val, curr) {
+      if (curr === 'US') {
+        return '$' + Math.round(val).toLocaleString('en-US');
+      } else {
+        return '₹' + Math.round(val).toLocaleString('en-IN');
+      }
+    }
+
+    // Switch Country
+    function setCountry(c) {
+      country = c;
+      if (country === 'US') {
+        btnUS.classList.add('active');
+        btnIN.classList.remove('active');
+        // Sliders range update for US
+        sliderIncome.min = 1000;
+        sliderIncome.max = 50000;
+        sliderIncome.step = 500;
+        sliderIncome.value = 6500;
+
+        sliderSavings.min = 0;
+        sliderSavings.max = 1000000;
+        sliderSavings.step = 5000;
+        sliderSavings.value = 45000;
+
+        inputHomeValue.value = 380000;
+        inputMortgageBalance.value = 260000;
+        inputMonthlyRent.value = 1800;
+        inputDebts.value = 12000;
+
+        document.getElementById('incomeMinTick').textContent = '$1k';
+        document.getElementById('incomeMidTick').textContent = '$25k';
+        document.getElementById('incomeMaxTick').textContent = '$50k+';
+
+        document.getElementById('savingsMinTick').textContent = '$0';
+        document.getElementById('savingsMidTick').textContent = '$250k';
+        document.getElementById('savingsMaxTick').textContent = '$1M+';
+      } else {
+        btnIN.classList.add('active');
+        btnUS.classList.remove('active');
+        // Sliders range update for India (INR)
+        sliderIncome.min = 25000;
+        sliderIncome.max = 1500000;
+        sliderIncome.step = 25000;
+        sliderIncome.value = 95000;
+
+        sliderSavings.min = 0;
+        sliderSavings.max = 20000000;
+        sliderSavings.step = 50000;
+        sliderSavings.value = 1200000;
+
+        inputHomeValue.value = 7500000;
+        inputMortgageBalance.value = 4500000;
+        inputMonthlyRent.value = 28000;
+        inputDebts.value = 350000;
+
+        document.getElementById('incomeMinTick').textContent = '₹25k';
+        document.getElementById('incomeMidTick').textContent = '₹5 Lakh';
+        document.getElementById('incomeMaxTick').textContent = '₹15 Lakh+';
+
+        document.getElementById('savingsMinTick').textContent = '₹0';
+        document.getElementById('savingsMidTick').textContent = '₹1 Crore';
+        document.getElementById('savingsMaxTick').textContent = '₹2 Crore+';
+      }
+      recalculate();
+    }
+
+    btnUS.addEventListener('click', () => setCountry('US'));
+    btnIN.addEventListener('click', () => setCountry('IN'));
+
+    // Avatar selector
+    avatarBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        avatarBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentAvatar = btn.getAttribute('data-avatar');
+        avatarClimber.textContent = currentAvatar;
+        recalculate();
+      });
+    });
+
+    // Housing toggle
+    btnOwnHome.addEventListener('click', () => {
+      housingType = 'own';
+      btnOwnHome.classList.add('active');
+      btnRentHome.classList.remove('active');
+      homeownerFields.style.display = 'grid';
+      renterFields.style.display = 'none';
+      recalculate();
+    });
+
+    btnRentHome.addEventListener('click', () => {
+      housingType = 'rent';
+      btnRentHome.classList.add('active');
+      btnOwnHome.classList.remove('active');
+      homeownerFields.style.display = 'none';
+      renterFields.style.display = 'grid';
+      recalculate();
+    });
+
+    // Event listeners for inputs
+    [sliderAge, sliderIncome, sliderSavings, inputHomeValue, inputMortgageBalance, inputMonthlyRent, inputDebts].forEach(el => {
+      el.addEventListener('input', recalculate);
+    });
+
+    // Main Calculation
+    function recalculate() {
+      const age = parseInt(sliderAge.value, 10);
+      const income = parseFloat(sliderIncome.value) || 0;
+      const savings = parseFloat(sliderSavings.value) || 0;
+      const debts = parseFloat(inputDebts.value) || 0;
+
+      let homeEquity = 0;
+      if (housingType === 'own') {
+        const homeVal = parseFloat(inputHomeValue.value) || 0;
+        const mortgage = parseFloat(inputMortgageBalance.value) || 0;
+        homeEquity = Math.max(0, homeVal - mortgage);
+      }
+
+      const totalNetWorth = Math.max(0, (savings + homeEquity) - debts);
+      currentCalculatedNetWorth = totalNetWorth;
+
+      // Update Slider labels
+      valAge.textContent = `${age} Years`;
+      valIncome.textContent = `${formatNumberFull(income, country)} / mo`;
+      valSavings.textContent = formatNumberFull(savings, country);
+      displayNetWorth.textContent = formatNumberFull(totalNetWorth, country);
+
+      // Get benchmark set based on age & country
+      let benchmarks;
+      let ageBracketName = '';
+      if (country === 'US') {
+        if (age < 35) { benchmarks = BENCHMARKS_US.under35; ageBracketName = 'Under 35'; }
+        else if (age <= 44) { benchmarks = BENCHMARKS_US.age35_44; ageBracketName = 'Ages 35–44'; }
+        else if (age <= 54) { benchmarks = BENCHMARKS_US.age45_54; ageBracketName = 'Ages 45–54'; }
+        else if (age <= 64) { benchmarks = BENCHMARKS_US.age55_64; ageBracketName = 'Ages 55–64'; }
+        else { benchmarks = BENCHMARKS_US.over65; ageBracketName = 'Ages 65+'; }
+      } else {
+        if (age < 30) { benchmarks = BENCHMARKS_IN.under30; ageBracketName = 'Under 30'; }
+        else if (age <= 39) { benchmarks = BENCHMARKS_IN.age30_39; ageBracketName = 'Ages 30–39'; }
+        else if (age <= 49) { benchmarks = BENCHMARKS_IN.age40_49; ageBracketName = 'Ages 40–49'; }
+        else { benchmarks = BENCHMARKS_IN.over50; ageBracketName = 'Ages 50+'; }
+      }
+
+      // Update Pyramid Tier threshold labels
+      tier1Val.textContent = formatCurrency(benchmarks.p99, country) + '+';
+      tier5Val.textContent = formatCurrency(benchmarks.p95, country) + '+';
+      tier10Val.textContent = formatCurrency(benchmarks.p90, country) + '+';
+      tier25Val.textContent = formatCurrency(benchmarks.p75, country) + '+';
+      tier50Val.textContent = formatCurrency(benchmarks.p50, country) + '+';
+
+      // Estimate exact percentile via piecewise log interpolation
+      let percentile = 50; // default
+      if (totalNetWorth >= benchmarks.p99) {
+        percentile = Math.max(0.1, 1 - 0.9 * (totalNetWorth - benchmarks.p99) / (benchmarks.p99 * 2));
+      } else if (totalNetWorth >= benchmarks.p95) {
+        percentile = 1 + 4 * (1 - (totalNetWorth - benchmarks.p95) / (benchmarks.p99 - benchmarks.p95));
+      } else if (totalNetWorth >= benchmarks.p90) {
+        percentile = 5 + 5 * (1 - (totalNetWorth - benchmarks.p90) / (benchmarks.p95 - benchmarks.p90));
+      } else if (totalNetWorth >= benchmarks.p75) {
+        percentile = 10 + 15 * (1 - (totalNetWorth - benchmarks.p75) / (benchmarks.p90 - benchmarks.p75));
+      } else if (totalNetWorth >= benchmarks.p50) {
+        percentile = 25 + 25 * (1 - (totalNetWorth - benchmarks.p50) / (benchmarks.p75 - benchmarks.p50));
+      } else {
+        percentile = 50 + 50 * (1 - Math.max(0, totalNetWorth) / benchmarks.p50);
+      }
+
+      percentile = Math.min(99.9, Math.max(0.1, percentile));
+      currentCalculatedPercentile = percentile;
+
+      // Update Gauge Meter (circumference 314)
+      // Top 1% = offset close to 0; Bottom 100% = offset 314
+      // Gauge shows top X%
+      const gaugePercent = Math.max(0, Math.min(100, 100 - percentile)); // 0% to 100% score
+      const strokeOffset = 314 - (gaugePercent / 100) * 157; // semi-circle
+      gaugeCircle.style.strokeDashoffset = strokeOffset;
+
+      gaugePctText.textContent = percentile <= 1.0 ? 'Top 1%!' : `Top ${percentile.toFixed(1)}%`;
+      gaugeSubText.textContent = `In ${country === 'US' ? 'United States' : 'India'} (${ageBracketName})`;
+
+      // Update Pyramid Tier Highlights & Avatar Climber Position
+      Object.values(pyramidRows).forEach(r => r.classList.remove('active-tier'));
+      let activeTierRow;
+      let climberTopOffset = 0;
+
+      if (percentile <= 1.5) {
+        activeTierRow = pyramidRows[1];
+        climberTopOffset = 6;
+      } else if (percentile <= 6.0) {
+        activeTierRow = pyramidRows[5];
+        climberTopOffset = 48;
+      } else if (percentile <= 12.0) {
+        activeTierRow = pyramidRows[10];
+        climberTopOffset = 90;
+      } else if (percentile <= 28.0) {
+        activeTierRow = pyramidRows[25];
+        climberTopOffset = 132;
+      } else if (percentile <= 55.0) {
+        activeTierRow = pyramidRows[50];
+        climberTopOffset = 174;
+      } else {
+        activeTierRow = pyramidRows[100];
+        climberTopOffset = 216;
+      }
+
+      activeTierRow.classList.add('active-tier');
+      avatarClimber.style.top = `${climberTopOffset}px`;
+
+      // Update Reality Check Box with emotional hooks
+      realityBox.className = 'reality-box';
+      const outperforming = (100 - percentile).toFixed(1);
+
+      if (percentile <= 3.0) {
+        realityBox.classList.add('elite');
+        realityBadge.textContent = '👑 ELITE 1% TITAN STATUS';
+        realityHeadline.textContent = `Bragging Rights Unlocked! You are in the Top ${percentile.toFixed(1)}%!`;
+        realityDesc.textContent = `Incredible! Your net worth of ${formatNumberFull(totalNetWorth, country)} puts you in the rarest financial tier. You outperform ${outperforming}% of individuals in your age bracket.`;
+      } else if (percentile <= 15.0) {
+        realityBox.classList.add('high');
+        realityBadge.textContent = '🏆 HIGH ACHIEVER TIER';
+        realityHeadline.textContent = `Top ${percentile.toFixed(1)}%: Outperforming ${outperforming}% of Peers!`;
+        realityDesc.textContent = `Solid wealth accumulation! With ${formatNumberFull(totalNetWorth, country)}, you are firmly in the upper affluence bracket. To break into the Top 5%, you need ${formatCurrency(benchmarks.p95, country)}.`;
+      } else if (percentile <= 50.0) {
+        realityBox.classList.add('mid');
+        realityBadge.textContent = '⚡ ABOVE MEDIAN CONTENDER';
+        realityHeadline.textContent = `Top ${percentile.toFixed(1)}%: Ahead of the National Average!`;
+        realityDesc.textContent = `You are beating the median of your age group. Converting rent into home equity and cutting high-interest debts can elevate you to the Top 10% benchmark (${formatCurrency(benchmarks.p90, country)}).`;
+      } else {
+        realityBox.classList.add('building');
+        realityBadge.textContent = '🌱 FOUNDATION PHASE';
+        realityHeadline.textContent = `Reality Check: Currently in Base 50%`;
+        realityDesc.textContent = `You are in the wealth accumulation phase. Every dollar/rupee directed into compounding equities and equity-building property moves you rapidly up this pyramid.`;
+      }
+    }
+
+    // Social Sharing Functionality
+    btnShareWhatsApp.addEventListener('click', () => {
+      const countryName = country === 'US' ? 'United States' : 'India';
+      const text = encodeURIComponent(
+        `🔥 Reality Check: I just checked my wealth percentile on RealRefin!\n\n` +
+        `I am ranked in the *TOP ${currentCalculatedPercentile.toFixed(1)}%* in my age group (${countryName}) with an animated wealth pyramid.\n\n` +
+        `Where do you rank? Test your standing here 👉 https://realrefin.com/wealth-percentile-calculator`
+      );
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+    });
+
+    btnShareLinkedIn.addEventListener('click', () => {
+      const countryName = country === 'US' ? 'United States' : 'India';
+      const flexSnippet = 
+        `Financial reality check: Tested where my net worth ranks against national benchmarks on RealRefin.\n\n` +
+        `Result: Top ${currentCalculatedPercentile.toFixed(1)}% in my age bracket (${countryName}).\n\n` +
+        `Interesting tool that benchmarks wealth, savings, and home equity: https://realrefin.com/wealth-percentile-calculator`;
+      
+      navigator.clipboard.writeText(flexSnippet).then(() => {
+        const originalText = btnShareLinkedIn.innerHTML;
+        btnShareLinkedIn.innerHTML = '<span>✅</span> Post Snippet Copied to Clipboard!';
+        setTimeout(() => { btnShareLinkedIn.innerHTML = originalText; }, 3000);
+      });
+    });
+
+    // Instant PNG Card Generator via HTML5 Canvas
+    btnDownloadCard.addEventListener('click', () => {
+      const canvas = document.getElementById('shareCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Background Gradient
+      const grad = ctx.createLinearGradient(0, 0, 800, 600);
+      grad.addColorStop(0, '#090d16');
+      grad.addColorStop(0.5, '#1e1b4b');
+      grad.addColorStop(1, '#0f172a');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 800, 600);
+
+      // Card Border & Glow
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(20, 20, 760, 560);
+
+      // Brand Logo / Header
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 30px sans-serif';
+      ctx.fillText('RealRefin', 50, 75);
+      ctx.fillStyle = '#10b981';
+      ctx.fillText('.com', 185, 75);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '600 16px sans-serif';
+      ctx.fillText('THE 1% WEALTH REALITY CHECK', 50, 105);
+
+      // Avatar
+      ctx.font = '65px sans-serif';
+      ctx.fillText(currentAvatar, 50, 200);
+
+      // Percentile Hero Text
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 22px sans-serif';
+      ctx.fillText('OFFICIAL WEALTH RANKING', 140, 160);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 68px sans-serif';
+      const pctDisplay = currentCalculatedPercentile <= 1.0 ? 'TOP 1%' : `TOP ${currentCalculatedPercentile.toFixed(1)}%`;
+      ctx.fillText(pctDisplay, 140, 225);
+
+      // Key details
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '20px sans-serif';
+      const age = sliderAge.value;
+      const countryName = country === 'US' ? 'United States' : 'India';
+      ctx.fillText(`Age Bracket: ${age} Years  •  Economy: ${countryName}`, 50, 290);
+      ctx.fillText(`Calculated Net Worth: ${formatNumberFull(currentCalculatedNetWorth, country)}`, 50, 325);
+
+      // Outperforming line
+      const outperf = (100 - currentCalculatedPercentile).toFixed(1);
+      ctx.fillStyle = '#34d399';
+      ctx.font = 'bold 24px sans-serif';
+      ctx.fillText(`Outperforming ${outperf}% of Peers Nationwide`, 50, 385);
+
+      // Decorative divider
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(50, 420);
+      ctx.lineTo(750, 420);
+      ctx.stroke();
+
+      // Footer Call to Action
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 20px sans-serif';
+      ctx.fillText('Find out where your net worth ranks:', 50, 470);
+      ctx.fillStyle = '#f59e0b';
+      ctx.font = 'bold 22px sans-serif';
+      ctx.fillText('https://realrefin.com/wealth-percentile-calculator', 50, 510);
+
+      // Trigger download
+      const link = document.createElement('a');
+      link.download = `RealRefin-Wealth-Rank-Top-${currentCalculatedPercentile.toFixed(0)}pct.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+
+    // Accordion Toggle for FAQs
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const ans = item.querySelector('.faq-answer');
+        const span = q.querySelector('span');
+        if (ans.style.display === 'none') {
+          ans.style.display = 'block';
+          span.textContent = '-';
+        } else {
+          ans.style.display = 'none';
+          span.textContent = '+';
+        }
+      });
+    });
+
+    // Initialize
+    recalculate();
+
+  })();
+  </script>
+</body>
+</html>
