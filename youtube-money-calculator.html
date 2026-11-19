@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Money Calculator | YouTube Video Money Calculator (2026)</title>
+  <meta name="description" content="Free YouTube Money Calculator &amp; YouTube Video Money Calculator. Estimate your daily, monthly, and yearly creator earnings from video views, AdSense RPM, and sponsorships across US ($) and India (₹).">
+  <meta name="keywords" content="youtube money calculator, youtube video money calculator, youtube earnings calculator, youtube view money calculator, how much youtube pays for views, youtube channel revenue calculator, youtube shorts money calculator, creator earnings calculator">
+  <link rel="canonical" href="https://realrefin.com/youtube-money-calculator">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="YouTube Money Calculator | YouTube Video Money Calculator">
+  <meta property="og:description" content="Calculate estimated YouTube earnings based on views, niche RPM, and sponsorships. Supports long-form videos and YouTube Shorts in USD and INR.">
+  <meta property="og:url" content="https://realrefin.com/youtube-money-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YouTube Money Calculator &amp; Video Earnings Estimator">
+  <meta name="twitter:description" content="Free interactive YouTube video money calculator. Calculate AdSense RPM, brand deals, and take-home creator earnings.">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- KaTeX for formula rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+  <!-- Structured Data: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://realrefin.com/youtube-money-calculator#app",
+        "name": "YouTube Video Money Calculator & Earnings Estimator",
+        "url": "https://realrefin.com/youtube-money-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires modern JavaScript-enabled web browser",
+        "description": "Free interactive YouTube money calculator and YouTube video money calculator. Accurately estimate daily, monthly, and annual creator revenue using category-specific CPM/RPM benchmarks, YouTube Shorts analytics, brand sponsorships, and geography multipliers across the US and India.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://realrefin.com/youtube-money-calculator#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://realrefin.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Income & Career Planning",
+            "item": "https://realrefin.com/#income-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "YouTube Money Calculator",
+            "item": "https://realrefin.com/youtube-money-calculator"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://realrefin.com/youtube-money-calculator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this YouTube money calculator calculate video earnings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The YouTube video money calculator uses the creator industry metric RPM (Revenue Per Mille), which measures estimated earnings per 1,000 views after YouTube's 45% revenue cut. The formula is: Estimated Ad Revenue = (Daily or Monthly Views / 1,000) × Estimated RPM. It also calculates brand sponsorship and affiliate estimates based on channel category and viewership size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much money does YouTube pay for 1,000 views?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the United States, YouTube generally pays between $2.00 and $12.00 per 1,000 views for long-form content, with high-paying niches like Finance and Real Estate reaching $15.00 to $30.00 RPM. In India, long-form RPM typically ranges between ₹40 and ₹250 ($0.50 to $3.00) per 1,000 views due to local advertiser pricing. YouTube Shorts earn significantly less, averaging $0.03 to $0.08 (₹2 to ₹6) per 1,000 views globally."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between CPM and RPM on YouTube?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CPM (Cost Per Mille) is the gross cost an advertiser pays YouTube for 1,000 ad impressions before YouTube takes its 45% platform fee. RPM (Revenue Per Mille) is the net revenue the creator actually pockets per 1,000 total video views, encompassing ad revenue, YouTube Premium shares, channel memberships, and Super Chats."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much can you make from 100,000 views on YouTube?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For 100,000 long-form video views with a US audience, a creator earns approximately $400 to $1,500 in AdSense, with personal finance and tech channels making up to $2,500. In India, 100,000 views generate approximately ₹8,000 to ₹35,000. When combined with brand sponsorships, a video with 100,000 views can generate an additional $1,000 to $3,500 (₹50,000 to ₹1,50,000)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do full-time YouTubers qualify for a mortgage or home loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Full-time YouTubers and digital content creators are classified as self-employed independent contractors (1099 in the US or sole proprietors in India). Lenders require 2 years of tax returns (Schedule C or ITR-3/ITR-4) or allow non-QM Bank Statement Loans that evaluate average monthly deposits across 12 to 24 months of business bank statements rather than W-2 pay stubs."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0f172a;
+      --secondary-navy: #1e293b;
+      --accent-red: #ff0000;
+      --accent-red-dark: #cc0000;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-indigo: #6366f1;
+      --accent-indigo-dark: #4338ca;
+      --accent-gold: #f59e0b;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.12);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAVIGATION */
+    .rr-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .rr-nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rr-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--primary-navy);
+      letter-spacing: -0.02em;
+    }
+    .rr-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+    .rr-logo span {
+      color: var(--accent-emerald);
+    }
+    .rr-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+    .rr-nav-links a {
+      text-decoration: none;
+      color: var(--secondary-navy);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .rr-nav-links a:hover {
+      color: var(--accent-indigo);
+    }
+    .btn-nav-primary {
+      background: var(--primary-navy);
+      color: #ffffff !important;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600 !important;
+      transition: background 0.15s;
+    }
+    .btn-nav-primary:hover {
+      background: var(--accent-indigo) !important;
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+      background: linear-gradient(135deg, #090d16 0%, #1e1b4b 55%, #0f172a 100%);
+      color: #ffffff;
+      padding: 3.5rem 1.5rem 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(255, 0, 0, 0.22), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fca5a5;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .hero-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-banner h1 span.gradient-text {
+      background: linear-gradient(90deg, #ff4d4d 0%, #f59e0b 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-banner p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* MAIN CONTAINER */
+    .main-wrap {
+      max-width: 1280px;
+      margin: -2rem auto 4rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* GRID LAYOUT */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .card-header {
+      background: #ffffff;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .card-header h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    /* CURRENCY TOGGLE */
+    .currency-switch {
+      display: flex;
+      background: #f1f5f9;
+      border-radius: var(--radius-sm);
+      padding: 3px;
+      gap: 4px;
+    }
+    .btn-currency {
+      border: none;
+      background: transparent;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+    .btn-currency.active {
+      background: #ffffff;
+      color: var(--primary-navy);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    /* NICHE PRESETS */
+    .niche-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
+    }
+    .btn-niche {
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .btn-niche:hover {
+      border-color: var(--accent-red);
+      background: #fef2f2;
+    }
+    .btn-niche.active {
+      border-color: var(--accent-red);
+      background: #fef2f2;
+      color: var(--accent-red-dark);
+      box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.15);
+    }
+    .btn-niche small {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* INPUTS & SLIDERS */
+    .input-group {
+      margin-bottom: 1.35rem;
+    }
+    .input-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+    .input-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .val-display {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-red-dark);
+      font-feature-settings: "tnum";
+    }
+    .range-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      cursor: pointer;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(255, 0, 0, 0.4);
+      transition: transform 0.1s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .text-input-field {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      background: #ffffff;
+      outline: none;
+    }
+    .text-input-field:focus {
+      border-color: var(--accent-red);
+      box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.12);
+    }
+
+    /* RIGHT COLUMN: REVENUE HERO & ESTIMATE CARDS */
+    .results-stage {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* REVENUE HERO BANNER */
+    .revenue-hero-card {
+      background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #dc2626 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .revenue-hero-card::before {
+      content: "";
+      position: absolute;
+      right: -25px;
+      top: -25px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .revenue-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fecaca;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+    .revenue-amount {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.05;
+      font-feature-settings: "tnum";
+      letter-spacing: -0.02em;
+    }
+    .revenue-subtext {
+      font-size: 0.9rem;
+      color: #fee2e2;
+      margin-top: 0.4rem;
+      font-weight: 600;
+    }
+
+    /* STATS TRIPLET */
+    .earnings-triplet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .triplet-box {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .triplet-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #fecaca;
+      font-weight: 700;
+    }
+    .triplet-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-top: 0.15rem;
+      color: #ffffff;
+    }
+
+    /* REVENUE STREAM BREAKDOWN */
+    .breakdown-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 1.5rem;
+    }
+    .breakdown-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .stream-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.9rem;
+    }
+    .stream-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: var(--secondary-navy);
+    }
+    .stream-amount {
+      font-weight: 800;
+      font-feature-settings: "tnum";
+      color: var(--primary-navy);
+    }
+    .stream-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 0.25rem;
+      border-top: 2px solid var(--border-color);
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* CREATOR MILESTONE BADGE */
+    .milestone-badge-box {
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .milestone-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    .milestone-desc {
+      font-size: 0.825rem;
+      line-height: 1.45;
+      color: #14532d;
+    }
+
+    /* ACTION BUTTONS */
+    .btn-action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .btn-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+    }
+    .btn-whatsapp:hover {
+      background: #1eb956;
+      transform: translateY(-2px);
+    }
+    .btn-copy {
+      background: var(--primary-navy);
+      color: #ffffff;
+    }
+    .btn-copy:hover {
+      background: var(--accent-indigo);
+      transform: translateY(-2px);
+    }
+
+    /* STRATEGIC REALREFIN CREATOR MORTGAGE BRIDGE */
+    .creator-bridge {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      color: #ffffff;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .creator-bridge h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .creator-bridge p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    .bridge-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+    .bridge-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.2s;
+    }
+    .bridge-card:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+    .bridge-card .title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bridge-card .desc {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+
+    /* EDITORIAL SECTION */
+    .editorial-section {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .editorial-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .editorial-section h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      margin: 1.5rem 0 0.75rem;
+    }
+    .editorial-section p {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    .editorial-section ul {
+      margin: 0 0 1.25rem 1.5rem;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+    .editorial-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* TABLES */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    .data-table th {
+      background: #f1f5f9;
+      color: var(--primary-navy);
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+      white-space: nowrap;
+    }
+    .data-table tr:hover {
+      background: #f8fafc;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .faq-item {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #f8fafc;
+    }
+    .faq-question {
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-answer {
+      padding: 0 1.25rem 1rem;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* EMBED CARD */
+    .embed-card {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 2rem;
+    }
+    .embed-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.4rem;
+    }
+    .embed-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .embed-textarea {
+      width: 100%;
+      height: 65px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem;
+      resize: none;
+      color: #334155;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #090d16;
+      color: #94a3b8;
+      padding: 4rem 1.5rem 2rem;
+      border-top: 1px solid #1e293b;
+      margin-top: 4rem;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #64748b;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-col a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: #34d399;
+    }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-banner h1 {
+        font-size: 1.95rem;
+      }
+      .earnings-triplet {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <nav class="rr-nav">
+    <div class="rr-nav-inner">
+      <a href="/" class="rr-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#0F172A"/>
+          <path d="M7 23V9L15 16L7 23Z" fill="#10B981"/>
+          <path d="M15 9H25V13H15V9Z" fill="#FFFFFF"/>
+          <path d="M15 15H22V19H15V15Z" fill="#FFFFFF" fill-opacity="0.8"/>
+          <path d="M15 21H19V25H15V21Z" fill="#10B981"/>
+        </svg>
+        Real<span>Refin</span>
+      </a>
+      <ul class="rr-nav-links">
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/in-hand-salary-calculator">In Hand Salary</a></li>
+        <li><a href="/wealth-percentile-calculator">Wealth Percentile</a></li>
+        <li><a href="/bank-statement-loan-calculator">Bank Statement Loans</a></li>
+        <li><a href="/" class="btn-nav-primary">Explore 50+ Tools</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <header class="hero-banner">
+    <div class="hero-inner">
+      <div class="badge-pill">🎬 2026 YouTube Creator RPM &amp; Video Revenue Engine</div>
+      <h1>YouTube Money <span class="gradient-text">Calculator</span></h1>
+      <p>
+        Use this interactive <strong>youtube video money calculator</strong> to estimate your AdSense RPM, brand sponsorships, and total creator earnings from daily and monthly views.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="main-wrap">
+    <div class="calc-grid">
+
+      <!-- LEFT COLUMN: CREATOR INPUTS -->
+      <div class="card">
+        <div class="card-header">
+          <h2><span>🎥</span> 1. Set Video Views &amp; Niche</h2>
+          <div class="currency-switch">
+            <button type="button" class="btn-currency active" id="btnUSD" data-currency="USD">
+              <span>🇺🇸</span> USD ($)
+            </button>
+            <button type="button" class="btn-currency" id="btnINR" data-currency="INR">
+              <span>🇮🇳</span> INR (₹)
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <!-- CHANNEL NICHE SELECTOR -->
+          <label style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-navy); margin-bottom: 0.4rem; display: block;">
+            Select Channel Content Niche:
+          </label>
+          <div class="niche-grid">
+            <button type="button" class="btn-niche active" data-rpm-us="14.0" data-rpm-in="450" data-name="Finance & Real Estate">
+              <span>💰 Finance &amp; Real Estate</span>
+              <small>Top CPM ($14 / ₹450)</small>
+            </button>
+            <button type="button" class="btn-niche" data-rpm-us="8.5" data-rpm-in="280" data-name="Tech & Software">
+              <span>💻 Tech, AI &amp; Gadgets</span>
+              <small>High CPM ($8.5 / ₹280)</small>
+            </button>
+            <button type="button" class="btn-niche" data-rpm-us="6.0" data-rpm-in="180" data-name="Business & Education">
+              <span>📚 Business &amp; How-To</span>
+              <small>Mid CPM ($6.0 / ₹180)</small>
+            </button>
+            <button type="button" class="btn-niche" data-rpm-us="2.5" data-rpm-in="80" data-name="Gaming & Esports">
+              <span>🎮 Gaming &amp; Streaming</span>
+              <small>Std CPM ($2.5 / ₹80)</small>
+            </button>
+            <button type="button" class="btn-niche" data-rpm-us="2.0" data-rpm-in="60" data-name="Vlogs & Entertainment">
+              <span>🎭 Entertainment &amp; Vlogs</span>
+              <small>Volume CPM ($2.0 / ₹60)</small>
+            </button>
+            <button type="button" class="btn-niche" data-rpm-us="0.06" data-rpm-in="2.5" data-name="YouTube Shorts">
+              <span>📱 YouTube Shorts</span>
+              <small>Shorts Pool ($0.06 / ₹2.5)</small>
+            </button>
+          </div>
+
+          <!-- DAILY VIDEO VIEWS SLIDER -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="sliderDailyViews">
+                <span>👁️</span> Daily Video Views:
+              </label>
+              <span class="val-display" id="valDailyViews">25,000 Views / day</span>
+            </div>
+            <div class="range-wrap">
+              <input type="range" id="sliderDailyViews" min="500" max="1000000" value="25000" step="500">
+              <div class="slider-ticks">
+                <span>500</span>
+                <span>50k</span>
+                <span>250k</span>
+                <span>1M+ Views</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DIRECT NUMERIC INPUT FOR VIEWS -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="inputCustomMonthlyViews">
+                <span>🔢</span> Or Enter Total Monthly Video Views:
+              </label>
+              <input type="number" id="inputCustomMonthlyViews" class="text-input-field" style="width: 170px;" value="750000" step="10000">
+            </div>
+          </div>
+
+          <!-- CUSTOM RPM TUNER SLIDER -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label" for="sliderRPM">
+                <span>📈</span> Estimated Creator RPM (Per 1,000 Views):
+              </label>
+              <span class="val-display" id="valRPM" style="color: var(--accent-emerald-dark);">$14.00</span>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.4rem;">
+              RPM is what you take home per 1,000 views after YouTube's 45% revenue cut.
+            </p>
+            <div class="range-wrap">
+              <input type="range" id="sliderRPM" min="0.1" max="30" value="14" step="0.1">
+              <div class="slider-ticks">
+                <span id="rpmMinTick">$0.10</span>
+                <span id="rpmMidTick">$15.00</span>
+                <span id="rpmMaxTick">$30.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BRAND SPONSORSHIP TOGGLE -->
+          <div class="input-group" style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+            <div class="input-label-row" style="margin-bottom: 0.5rem;">
+              <label class="input-label" for="checkIncludeSponsorships">
+                <input type="checkbox" id="checkIncludeSponsorships" checked style="margin-right: 0.4rem;">
+                Include Brand Sponsorship Estimates
+              </label>
+              <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-indigo);">2x–4x Multiplier</span>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">
+              In 2026, brand sponsorships and dedicated integrations account for over 60% of top full-time creator revenue.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: EARNINGS SHOWCASE & REVENUE STREAMS -->
+      <div class="results-stage">
+
+        <!-- REVENUE HERO CARD -->
+        <div class="revenue-hero-card">
+          <div class="revenue-label">Estimated Monthly Creator Revenue</div>
+          <div class="revenue-amount" id="displayMonthlyRevenue">$10,500</div>
+          <div class="revenue-subtext" id="displaySubtext">
+            Based on 750,000 monthly views in Finance &amp; Real Estate
+          </div>
+
+          <!-- TRIPLET STATS -->
+          <div class="earnings-triplet">
+            <div class="triplet-box">
+              <div class="triplet-label">Daily Earnings</div>
+              <div class="triplet-val" id="statDailyEarnings">$350</div>
+            </div>
+            <div class="triplet-box">
+              <div class="triplet-label">Monthly AdSense</div>
+              <div class="triplet-val" id="statMonthlyAdSense">$10,500</div>
+            </div>
+            <div class="triplet-box">
+              <div class="triplet-label">Projected Yearly</div>
+              <div class="triplet-val" id="statYearlyEarnings">$126,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVENUE STREAMS BREAKDOWN -->
+        <div class="breakdown-card">
+          <h3><span>📊</span> Detailed Monthly Revenue Streams</h3>
+
+          <div class="stream-row">
+            <div class="stream-info">
+              <span>📺</span> YouTube AdSense (55% Share)
+            </div>
+            <div class="stream-amount" id="streamAdSense">$10,500</div>
+          </div>
+
+          <div class="stream-row" id="rowSponsorship">
+            <div class="stream-info">
+              <span>🤝</span> Brand Deals &amp; Integrations
+            </div>
+            <div class="stream-amount" id="streamSponsorship">$4,500</div>
+          </div>
+
+          <div class="stream-row">
+            <div class="stream-info">
+              <span>🔗</span> Affiliate &amp; Product Sales (~10%)
+            </div>
+            <div class="stream-amount" id="streamAffiliate">$1,500</div>
+          </div>
+
+          <div class="stream-total-row">
+            <span>Total Monthly Creator Take-Home</span>
+            <span id="streamTotal">$16,500</span>
+          </div>
+        </div>
+
+        <!-- CREATOR MILESTONE BADGE -->
+        <div class="milestone-badge-box" id="milestoneBox">
+          <span style="font-size: 1.4rem;">👑</span>
+          <div>
+            <div class="milestone-title" id="milestoneTitle">Full-Time Creator Elite Status</div>
+            <div class="milestone-desc" id="milestoneDesc">
+              With projected earnings over $10,000/month, your channel ranks in the top 3% of monetized YouTube creators worldwide!
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="btn-action-row">
+          <button type="button" class="btn-share btn-whatsapp" id="btnShareWhatsApp">
+            <span>💬</span> Share Estimate on WhatsApp
+          </button>
+          <button type="button" class="btn-share btn-copy" id="btnCopyStats">
+            <span>📋</span> Copy Creator Summary
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STRATEGIC REALREFIN CREATOR MORTGAGE BRIDGE -->
+    <div class="creator-bridge">
+      <h3><span>🏡</span> Qualify for Real Estate Loans as a Full-Time Creator</h3>
+      <p>
+        Full-time YouTubers and digital creators earn substantial income, but traditional banks often reject them without W-2 pay stubs. Discover how creators buy homes using specialized Non-QM and Bank Statement loans:
+      </p>
+      <div class="bridge-cards">
+        <a href="/bank-statement-loan-calculator" class="bridge-card">
+          <div class="title">Bank Statement Loan Calculator <span>→</span></div>
+          <div class="desc">Qualify for a home loan using 12–24 months of AdSense bank deposits.</div>
+        </a>
+        <a href="/home-affordability-calculator" class="bridge-card">
+          <div class="title">Home Affordability (28/36 Rule) <span>→</span></div>
+          <div class="desc">Calculate how much house your creator income can purchase.</div>
+        </a>
+        <a href="/calculate-debt-to-income-ratio-for-mortgage" class="bridge-card">
+          <div class="title">Debt-to-Income (DTI) Analyzer <span>→</span></div>
+          <div class="desc">Ensure your business and personal debts meet institutional guidelines.</div>
+        </a>
+        <a href="/wealth-percentile-calculator" class="bridge-card">
+          <div class="title">Wealth Percentile by Age <span>→</span></div>
+          <div class="desc">Benchmark your creator net worth against national benchmarks.</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- EDITORIAL SECTION -->
+    <article class="editorial-section">
+      <h2>How Does the YouTube Money Calculator Work?</h2>
+      <p>
+        Our <strong>youtube money calculator</strong> provides realistic, data-backed revenue projections for video creators, digital publishers, and agency managers. Rather than using outdated generic vanity metrics, this <strong>youtube video money calculator</strong> segments your views by specific content categories, geographic RPM averages, and multi-stream creator monetizations.
+      </p>
+      <p>
+        Whether you are evaluating a single viral video or projecting annual channel operations across the United States and India, understanding the mechanics of CPM (Cost Per Mille) and RPM (Revenue Per Mille) is critical to building a sustainable digital media business.
+      </p>
+
+      <h3>The Mathematical YouTube Video Money Formula</h3>
+      <p>
+        AdSense revenue is calculated after applying YouTube's mandatory platform split (45% retained by Google, 55% distributed to the video creator):
+      </p>
+      $$\text{Estimated YouTube AdSense Earnings} = \left(\frac{\text{Total Video Views}}{1,000}\right) \times \text{RPM}$$
+      <p>
+        Total creator earnings include secondary high-margin monetization channels:
+      </p>
+      $$\text{Total Creator Income} = \text{AdSense Net Revenue} + \text{Sponsorship Integrations} + \text{Affiliate Commissions} + \text{Digital Merch}$$
+
+      <h3>2026 YouTube Category RPM Benchmarks (US vs India)</h3>
+      <p>
+        Advertiser demand dictates what you earn per 1,000 views. High-intent commercial niches (investing, mortgages, B2B software) command dramatically higher RPMs than general comedy or gaming content:
+      </p>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Content Niche</th>
+              <th>US RPM ($ / 1k Views)</th>
+              <th>India RPM (₹ / 1k Views)</th>
+              <th>Sponsorship Potential per 100k Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Finance, Real Estate &amp; Investing</strong></td>
+              <td>$12.00 – $28.00</td>
+              <td>₹350 – ₹950</td>
+              <td>$2,500 – $6,000 (₹1,50,000+)</td>
+            </tr>
+            <tr>
+              <td><strong>Tech, AI Tools &amp; Hardware</strong></td>
+              <td>$7.00 – $15.00</td>
+              <td>₹220 – ₹550</td>
+              <td>$1,500 – $4,000 (₹1,00,000+)</td>
+            </tr>
+            <tr>
+              <td><strong>Business, Marketing &amp; Career</strong></td>
+              <td>$5.50 – $12.00</td>
+              <td>₹160 – ₹420</td>
+              <td>$1,200 – $3,500 (₹75,000+)</td>
+            </tr>
+            <tr>
+              <td><strong>Health, Fitness &amp; Nutrition</strong></td>
+              <td>$4.00 – $8.50</td>
+              <td>₹120 – ₹280</td>
+              <td>$800 – $2,500 (₹50,000+)</td>
+            </tr>
+            <tr>
+              <td><strong>Gaming &amp; Live Streaming</strong></td>
+              <td>$1.80 – $4.00</td>
+              <td>₹60 – ₹160</td>
+              <td>$500 – $1,500 (₹35,000+)</td>
+            </tr>
+            <tr>
+              <td><strong>Comedy, Entertainment &amp; Vlogs</strong></td>
+              <td>$1.20 – $3.20</td>
+              <td>₹40 – ₹120</td>
+              <td>$400 – $1,200 (₹30,000+)</td>
+            </tr>
+            <tr>
+              <td><strong>YouTube Shorts (All Niches)</strong></td>
+              <td>$0.03 – $0.09</td>
+              <td>₹1.50 – ₹5.00</td>
+              <td>$150 – $500 (Brand shoutout)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FREQUENTLY ASKED QUESTIONS -->
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">How does this YouTube video money calculator calculate revenue? <span>+</span></div>
+          <div class="faq-answer">
+            The YouTube video money calculator uses RPM (Revenue Per Mille) to compute what creators actually receive after YouTube's 45% revenue cut. The formula is: (Video Views ÷ 1,000) × RPM. It also calculates optional brand sponsorship values based on industry benchmarks.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much money does YouTube pay for 1,000 views? <span>+</span></div>
+          <div class="faq-answer">
+            In the US, long-form videos pay between $2.00 and $12.00 per 1,000 views on average, with finance and real estate reaching $15.00 to $30.00 RPM. In India, RPM ranges from ₹40 to ₹250 ($0.50 to $3.00) per 1,000 views due to local advertising rates. YouTube Shorts earn significantly less ($0.03 to $0.08 per 1,000 views).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the difference between CPM and RPM? <span>+</span></div>
+          <div class="faq-answer">
+            CPM (Cost Per Mille) is the gross price an advertiser pays to YouTube for 1,000 ad impressions before YouTube takes its 45% platform fee. RPM (Revenue Per Mille) is the net earnings the creator actually takes home per 1,000 total video views, including ad share, channel memberships, and YouTube Premium royalties.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much money can you make from 100,000 views on YouTube? <span>+</span></div>
+          <div class="faq-answer">
+            For a US audience, 100,000 long-form views typically yield $400 to $1,500 in Google AdSense (up to $2,500 in finance/tech). In India, 100,000 views generate ₹8,000 to ₹35,000. When combined with brand sponsorships, a single video with 100,000 views can earn an additional $1,000 to $3,500 (₹50,000 to ₹1,50,000).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do full-time YouTubers qualify for a home loan or mortgage? <span>+</span></div>
+          <div class="faq-answer">
+            Because YouTubers receive 1099 or business income without regular W-2 pay stubs, traditional bank underwriting can be difficult. Creators qualify by providing 2 years of business tax returns or using Bank Statement Loans, which evaluate 12 to 24 months of average monthly bank deposits to establish borrowing capacity.
+          </div>
+        </div>
+      </div>
+
+      <!-- EMBED CODE -->
+      <div class="embed-card">
+        <h4>Embed This YouTube Money Calculator on Your Website</h4>
+        <p>Integrate this interactive YouTube video money calculator on your blog or creator portal:</p>
+        <textarea class="embed-textarea" readonly>&lt;iframe src="https://realrefin.com/youtube-money-calculator" width="100%" height="700" frameborder="0" style="border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:12px;text-align:right;"&gt;Powered by &lt;a href="https://realrefin.com/youtube-money-calculator" rel="nofollow noopener" target="_blank"&gt;RealRefin YouTube Money Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- GLOBAL SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>RealRefin</h3>
+        <p>
+          High-precision financial, real estate, and compensation modeling tools designed for professionals, digital creators, homeowners, and real estate investors.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Creator &amp; Income</h4>
+        <ul>
+          <li><a href="/youtube-money-calculator">YouTube Money Calculator</a></li>
+          <li><a href="/in-hand-salary-calculator">In Hand Salary Calculator</a></li>
+          <li><a href="/wealth-percentile-calculator">Wealth Percentile Calculator</a></li>
+          <li><a href="/bank-statement-loan-calculator">Bank Statement Loans</a></li>
+          <li><a href="/calculate-debt-to-income-ratio-for-mortgage">Debt-to-Income (DTI)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mortgage &amp; Equity</h4>
+        <ul>
+          <li><a href="/cash-out-refinance-vs-heloc-calculator">Cash-Out Refi vs HELOC</a></li>
+          <li><a href="/mortgage-refinance-calculator">Mortgage Refinance (Excel)</a></li>
+          <li><a href="/mortgage-payoff-vs-investing-calculator">Payoff vs Investing</a></li>
+          <li><a href="/pmi-removal-calculator">PMI Removal Calculator</a></li>
+          <li><a href="/home-affordability-calculator">Home Affordability (28/36)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Real Estate &amp; Rental</h4>
+        <ul>
+          <li><a href="/rent-vs-buy-calculator">Rent vs Buy Modeler</a></li>
+          <li><a href="/dscr-calculator">DSCR Loan Calculator</a></li>
+          <li><a href="/brrrr-calculator">BRRRR Method Modeler</a></li>
+          <li><a href="/rental-yield-calculator">Rental Yield &amp; Cap Rate</a></li>
+          <li><a href="/airbnb-profit-calculator">Airbnb Profit Model</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 RealRefin.com. All rights reserved. Calculations are estimates for educational and creator planning purposes.
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+  (function() {
+    'use strict';
+
+    let currentCurrency = 'USD'; // 'USD' or 'INR'
+    let currentNicheName = 'Finance & Real Estate';
+
+    // DOM Elements
+    const btnUSD = document.getElementById('btnUSD');
+    const btnINR = document.getElementById('btnINR');
+    const nicheBtns = document.querySelectorAll('.btn-niche');
+
+    const sliderDailyViews = document.getElementById('sliderDailyViews');
+    const valDailyViews = document.getElementById('valDailyViews');
+    const inputCustomMonthlyViews = document.getElementById('inputCustomMonthlyViews');
+
+    const sliderRPM = document.getElementById('sliderRPM');
+    const valRPM = document.getElementById('valRPM');
+    const rpmMinTick = document.getElementById('rpmMinTick');
+    const rpmMidTick = document.getElementById('rpmMidTick');
+    const rpmMaxTick = document.getElementById('rpmMaxTick');
+
+    const checkIncludeSponsorships = document.getElementById('checkIncludeSponsorships');
+
+    const displayMonthlyRevenue = document.getElementById('displayMonthlyRevenue');
+    const displaySubtext = document.getElementById('displaySubtext');
+    const statDailyEarnings = document.getElementById('statDailyEarnings');
+    const statMonthlyAdSense = document.getElementById('statMonthlyAdSense');
+    const statYearlyEarnings = document.getElementById('statYearlyEarnings');
+
+    const streamAdSense = document.getElementById('streamAdSense');
+    const streamSponsorship = document.getElementById('streamSponsorship');
+    const streamAffiliate = document.getElementById('streamAffiliate');
+    const streamTotal = document.getElementById('streamTotal');
+    const rowSponsorship = document.getElementById('rowSponsorship');
+
+    const milestoneTitle = document.getElementById('milestoneTitle');
+    const milestoneDesc = document.getElementById('milestoneDesc');
+    const btnShareWhatsApp = document.getElementById('btnShareWhatsApp');
+    const btnCopyStats = document.getElementById('btnCopyStats');
+
+    // Formatting Helpers
+    function fmtMoney(amount, curr) {
+      if (curr === 'USD') {
+        if (amount >= 1000000) return '$' + (amount / 1000000).toFixed(2) + 'M';
+        return '$' + Math.round(amount).toLocaleString('en-US');
+      } else {
+        if (amount >= 10000000) return '₹' + (amount / 10000000).toFixed(2) + ' Cr';
+        if (amount >= 100000) return '₹' + (amount / 100000).toFixed(2) + ' Lakh';
+        return '₹' + Math.round(amount).toLocaleString('en-IN');
+      }
+    }
+
+    function fmtRPMDisplay(rpm, curr) {
+      if (curr === 'USD') {
+        return '$' + Number(rpm).toFixed(2);
+      } else {
+        return '₹' + Number(rpm).toFixed(1);
+      }
+    }
+
+    // Currency Switcher
+    function setCurrency(curr) {
+      currentCurrency = curr;
+      if (curr === 'USD') {
+        btnUSD.classList.add('active');
+        btnINR.classList.remove('active');
+        sliderRPM.min = 0.05;
+        sliderRPM.max = 30.0;
+        sliderRPM.step = 0.1;
+        rpmMinTick.textContent = '$0.05';
+        rpmMidTick.textContent = '$15.00';
+        rpmMaxTick.textContent = '$30.00';
+      } else {
+        btnINR.classList.add('active');
+        btnUSD.classList.remove('active');
+        sliderRPM.min = 1.0;
+        sliderRPM.max = 1200.0;
+        sliderRPM.step = 1.0;
+        rpmMinTick.textContent = '₹1.0';
+        rpmMidTick.textContent = '₹600';
+        rpmMaxTick.textContent = '₹1,200';
+      }
+
+      // Update active niche default RPM
+      const activeBtn = document.querySelector('.btn-niche.active');
+      if (activeBtn) {
+        const defaultRpm = currentCurrency === 'USD' ? activeBtn.getAttribute('data-rpm-us') : activeBtn.getAttribute('data-rpm-in');
+        sliderRPM.value = defaultRpm;
+      }
+      calculateEarnings();
+    }
+
+    btnUSD.addEventListener('click', () => setCurrency('USD'));
+    btnINR.addEventListener('click', () => setCurrency('INR'));
+
+    // Niche Selector
+    nicheBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        nicheBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentNicheName = btn.getAttribute('data-name');
+        const defaultRpm = currentCurrency === 'USD' ? btn.getAttribute('data-rpm-us') : btn.getAttribute('data-rpm-in');
+        sliderRPM.value = defaultRpm;
+        calculateEarnings();
+      });
+    });
+
+    // Inputs Sync
+    sliderDailyViews.addEventListener('input', () => {
+      const daily = parseInt(sliderDailyViews.value, 10);
+      inputCustomMonthlyViews.value = daily * 30;
+      calculateEarnings();
+    });
+
+    inputCustomMonthlyViews.addEventListener('input', () => {
+      const monthly = parseInt(inputCustomMonthlyViews.value, 10) || 0;
+      sliderDailyViews.value = Math.round(monthly / 30);
+      calculateEarnings();
+    });
+
+    sliderRPM.addEventListener('input', calculateEarnings);
+    checkIncludeSponsorships.addEventListener('change', calculateEarnings);
+
+    // Main Calculator
+    function calculateEarnings() {
+      const monthlyViews = parseInt(inputCustomMonthlyViews.value, 10) || 0;
+      const dailyViews = Math.round(monthlyViews / 30);
+      const rpm = parseFloat(sliderRPM.value) || 0;
+      const includeSponsors = checkIncludeSponsorships.checked;
+
+      // Update UI labels
+      valDailyViews.textContent = `${dailyViews.toLocaleString('en-US')} Views / day`;
+      valRPM.textContent = fmtRPMDisplay(rpm, currentCurrency);
+
+      // AdSense Calculation
+      const monthlyAdSense = (monthlyViews / 1000) * rpm;
+      const dailyAdSense = monthlyAdSense / 30;
+
+      // Sponsorship Estimates
+      let monthlySponsorship = 0;
+      if (includeSponsors) {
+        // Industry formula: High CPM niches earn 35%-60% of AdSense in brand integrations per month for established channels
+        if (monthlyViews >= 50000) {
+          monthlySponsorship = monthlyAdSense * 0.45;
+        } else if (monthlyViews >= 10000) {
+          monthlySponsorship = monthlyAdSense * 0.25;
+        }
+      }
+
+      // Affiliate & Product Sales (~12% of total AdSense for long-form)
+      const monthlyAffiliate = monthlyViews >= 15000 ? monthlyAdSense * 0.12 : 0;
+
+      const totalMonthlyEarnings = monthlyAdSense + monthlySponsorship + monthlyAffiliate;
+      const totalDailyEarnings = totalMonthlyEarnings / 30;
+      const totalYearlyEarnings = totalMonthlyEarnings * 12;
+
+      // Update Main Displays
+      displayMonthlyRevenue.textContent = fmtMoney(totalMonthlyEarnings, currentCurrency);
+      displaySubtext.textContent = `Based on ${monthlyViews.toLocaleString('en-US')} monthly views in ${currentNicheName}`;
+
+      statDailyEarnings.textContent = fmtMoney(totalDailyEarnings, currentCurrency);
+      statMonthlyAdSense.textContent = fmtMoney(monthlyAdSense, currentCurrency);
+      statYearlyEarnings.textContent = fmtMoney(totalYearlyEarnings, currentCurrency);
+
+      // Stream Breakup
+      streamAdSense.textContent = fmtMoney(monthlyAdSense, currentCurrency);
+      if (includeSponsors && monthlySponsorship > 0) {
+        rowSponsorship.style.display = 'flex';
+        streamSponsorship.textContent = fmtMoney(monthlySponsorship, currentCurrency);
+      } else {
+        rowSponsorship.style.display = includeSponsors ? 'flex' : 'none';
+        streamSponsorship.textContent = fmtMoney(0, currentCurrency);
+      }
+      streamAffiliate.textContent = fmtMoney(monthlyAffiliate, currentCurrency);
+      streamTotal.textContent = fmtMoney(totalMonthlyEarnings, currentCurrency);
+
+      // Milestone Badges
+      const monthlyUSD = currentCurrency === 'USD' ? totalMonthlyEarnings : (totalMonthlyEarnings / 86);
+      if (monthlyUSD >= 10000) {
+        milestoneTitle.textContent = '👑 Full-Time Creator Elite Status';
+        milestoneDesc.textContent = `Earning over $10,000 / ₹8.5 Lakhs monthly places you in the top 3% of monetized YouTube creators worldwide!`;
+      } else if (monthlyUSD >= 3000) {
+        milestoneTitle.textContent = '🚀 Professional Full-Time YouTuber';
+        milestoneDesc.textContent = `Your channel generates a full-time living that outperforms the average corporate salary in most markets!`;
+      } else if (monthlyUSD >= 500) {
+        milestoneTitle.textContent = '⚡ Profitable Side Hustle Earner';
+        milestoneDesc.textContent = `Great momentum! With steady uploads and 1–2 sponsorships, you are well on your way to full-time revenue.`;
+      } else {
+        milestoneTitle.textContent = '🌱 Growing Channel Stage';
+        milestoneDesc.textContent = `Focus on building view consistency and high-retention content to cross the 50,000 monthly view threshold.`;
+      }
+
+      // WhatsApp Share
+      btnShareWhatsApp.onclick = () => {
+        const text = encodeURIComponent(
+          `🎬 YouTube Video Money Calculator Estimate:\n\n` +
+          `• Monthly Views: ${monthlyViews.toLocaleString('en-US')}\n` +
+          `• Niche: ${currentNicheName}\n` +
+          `• Estimated Monthly Revenue: *${fmtMoney(totalMonthlyEarnings, currentCurrency)}*\n` +
+          `• Estimated Yearly Revenue: *${fmtMoney(totalYearlyEarnings, currentCurrency)}*\n\n` +
+          `Calculate your YouTube channel earnings 👉 https://realrefin.com/youtube-money-calculator`
+        );
+        window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+      };
+
+      // Copy Stats
+      btnCopyStats.onclick = () => {
+        const snippet = 
+          `YouTube Channel Earnings Estimate:\n` +
+          `Monthly Views: ${monthlyViews.toLocaleString('en-US')}\n` +
+          `Content Niche: ${currentNicheName}\n` +
+          `RPM: ${fmtRPMDisplay(rpm, currentCurrency)}\n` +
+          `Estimated Monthly Revenue: ${fmtMoney(totalMonthlyEarnings, currentCurrency)}\n` +
+          `Yearly Revenue: ${fmtMoney(totalYearlyEarnings, currentCurrency)}\n` +
+          `Calculated on https://realrefin.com/youtube-money-calculator`;
+
+        navigator.clipboard.writeText(snippet).then(() => {
+          const orig = btnCopyStats.innerHTML;
+          btnCopyStats.innerHTML = '<span>✅</span> Copied to Clipboard!';
+          setTimeout(() => { btnCopyStats.innerHTML = orig; }, 3000);
+        });
+      };
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const ans = item.querySelector('.faq-answer');
+        const span = q.querySelector('span');
+        if (ans.style.display === 'none') {
+          ans.style.display = 'block';
+          span.textContent = '-';
+        } else {
+          ans.style.display = 'none';
+          span.textContent = '+';
+        }
+      });
+    });
+
+    // Initial run
+    calculateEarnings();
+
+  })();
+  </script>
+</body>
+</html>
