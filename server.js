@@ -350,6 +350,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/in-hand-salary-calculator</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/wealth-percentile-calculator</loc>
     <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
