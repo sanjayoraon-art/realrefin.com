@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cayo Perico Heist Payout Calculator – GTA Online (2026)</title>
+  <meta name="description" content="Calculate your exact GTA Online Cayo Perico heist payout. Choose primary loot, secondary bags, difficulty, player count and heist cut to see your exact take-home cash after Pavel's fee.">
+  <meta name="keywords" content="cayo perico payout calculator, cayo perico heist payout, gta online heist calculator, gta 5 heist payout, cayo perico loot, gta online money calculator, gta heist cut calculator, gta online best heist, gta cayo perico solo payout">
+  <link rel="canonical" href="https://realrefin.com/cayo-perico-payout-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cayo Perico Heist Payout Calculator – GTA Online">
+  <meta property="og:description" content="Instantly calculate your GTA Online Cayo Perico heist payout. Choose loot, difficulty, player count and cut split.">
+  <meta property="og:url" content="https://realrefin.com/cayo-perico-payout-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e17">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebApplication","@id":"https://realrefin.com/cayo-perico-payout-calculator#app","name":"Cayo Perico Heist Payout Calculator","url":"https://realrefin.com/cayo-perico-payout-calculator","applicationCategory":"GameApplication","operatingSystem":"All","description":"GTA Online Cayo Perico heist payout calculator. Select primary loot, secondary loot, difficulty, player count, and cut to calculate take-home cash after Pavel's fee.","offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD"}},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://realrefin.com/"},{"@type":"ListItem","position":2,"name":"Gaming Tools","item":"https://realrefin.com/"},{"@type":"ListItem","position":3,"name":"Cayo Perico Payout Calculator","item":"https://realrefin.com/cayo-perico-payout-calculator"}]},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is the maximum Cayo Perico heist payout in GTA Online?","acceptedAnswer":{"@type":"Answer","text":"The maximum Cayo Perico heist payout on Hard difficulty with Pink Diamond as primary loot and Gold secondary is approximately $2,044,000 net take-home after Pavel's flat $50,000 fee. During Panther Statue event weeks, payouts can reach ~$2,350,000+."}},
+        {"@type":"Question","name":"What is the best primary loot for Cayo Perico?","acceptedAnswer":{"@type":"Answer","text":"The Panther Statue (event only, ~$1,900,000 Hard) is the highest-value loot overall. For regular rotations, the Pink Diamond (~$1,430,000 Hard) is the best primary loot. After that, Bearer Bonds (~$1,100,000), Sapphire Necklace (~$1,000,000), and Ruby Necklace (~$900,000) are the best choices."}},
+        {"@type":"Question","name":"What is the best secondary loot for Cayo Perico heist?","acceptedAnswer":{"@type":"Answer","text":"Gold is the best secondary loot worth $332,184 per crate on Hard difficulty. It has the highest GTA$ value per unit. Up to 2 gold crates can be collected inside the compound."}},
+        {"@type":"Question","name":"How much does Pavel take from the Cayo Perico heist?","acceptedAnswer":{"@type":"Answer","text":"Pavel takes a flat fee of $50,000 from every Cayo Perico payout regardless of total loot value or difficulty."}},
+        {"@type":"Question","name":"What is the best GTA Online heist for money per hour?","acceptedAnswer":{"@type":"Answer","text":"The Cayo Perico Heist solo offers the best money per hour at approximately $600,000 to $900,000 per hour on Hard difficulty with Gold secondary loot in an optimised 15–25 minute run."}}
+      ]}
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #080c14; --card: #111827; --card2: #1a2540;
+      --teal: #14b8a6; --lime: #84cc16; --gold: #f59e0b;
+      --red: #ef4444; --cyan: #06b6d4;
+      --txt: #f1f5f9; --muted: #94a3b8; --dim: #64748b;
+      --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font);background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+    .rr-nav{background:rgba(8,12,20,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(20,184,166,.2);position:sticky;top:0;z-index:1000}
+    .nav-in{max-width:1240px;margin:0 auto;padding:.85rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:800;font-size:1.3rem;color:#fff;letter-spacing:-.02em}
+    .logo svg{width:32px;height:32px}
+    .logo span{color:var(--teal)}
+    .nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--teal)}
+    .btn-cta{background:linear-gradient(135deg,var(--teal),#0d9488);color:#fff!important;padding:.45rem 1rem;border-radius:8px;font-weight:700!important;box-shadow:0 0 14px rgba(20,184,166,.35)}
+
+    .hero{background:radial-gradient(circle at 50% 20%,#0d2b2a 0%,#0b1525 55%,var(--bg) 100%);padding:3.5rem 1.5rem 2.5rem;text-align:center;border-bottom:1px solid rgba(20,184,166,.15)}
+    .pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.4);color:#5eead4;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.3rem .9rem;border-radius:9999px;margin-bottom:1.2rem}
+    h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem;background:linear-gradient(135deg,#fff 40%,var(--teal) 85%,var(--lime) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero-sub{max-width:800px;margin:0 auto 2rem;color:var(--muted);font-size:1.08rem}
+    .snip{max-width:900px;margin:0 auto;background:rgba(17,24,39,.9);border:1px solid rgba(20,184,166,.3);border-left:4px solid var(--teal);border-radius:12px;padding:1.2rem 1.5rem;text-align:left;display:flex;gap:1rem;align-items:flex-start}
+    .snip .si{font-size:1.7rem;line-height:1}
+    .snip h3{font-size:.88rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem}
+    .snip p{font-size:.93rem;color:#cbd5e1;margin:0;line-height:1.6}
+
+    .wrap{max-width:1240px;margin:2rem auto 4rem;padding:0 1.5rem}
+    .tool-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.75rem;margin-bottom:2.5rem}
+    @media(max-width:960px){.tool-grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:2rem;box-shadow:0 15px 35px rgba(0,0,0,.4)}
+    .card-ttl{font-size:1.2rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.07)}
+
+    .slabel{display:block;font-size:.8rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem;margin-top:1.4rem}
+    .slabel:first-of-type{margin-top:0}
+
+    .diff-row{display:flex;gap:.6rem;margin-bottom:1rem}
+    .btn-diff{flex:1;background:var(--bg);border:1px solid rgba(255,255,255,.1);color:var(--muted);font-weight:700;font-size:.85rem;padding:.6rem;border-radius:8px;cursor:pointer;transition:all .2s}
+    .btn-diff.active{background:var(--teal);color:#032a28;border-color:var(--teal);box-shadow:0 0 12px rgba(20,184,166,.4)}
+
+    .loot-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1rem}
+    @media(max-width:500px){.loot-grid{grid-template-columns:1fr}}
+    .loot-card{background:var(--card2);border:2px solid transparent;border-radius:12px;padding:.9rem 1rem;cursor:pointer;transition:all .2s}
+    .loot-card:hover{border-color:rgba(20,184,166,.4)}
+    .loot-card.selected{border-color:var(--teal);background:rgba(20,184,166,.08);box-shadow:0 0 15px rgba(20,184,166,.2)}
+    .ln{font-size:.92rem;font-weight:800;color:#fff}
+    .lv{font-size:.8rem;color:var(--gold);font-weight:700}
+    .lnote{font-size:.72rem;color:var(--dim);margin-top:2px}
+
+    .sec-list{background:var(--bg);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem;margin-bottom:1rem}
+    .sec-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .sec-row:last-child{border-bottom:none;padding-bottom:0}
+    .sec-row:first-child{padding-top:0}
+    .sec-lbl{display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:#e2e8f0;cursor:pointer}
+    .sec-lbl input{width:16px;height:16px;accent-color:var(--teal);cursor:pointer}
+    .sec-amt{font-size:.82rem;font-weight:700;color:var(--gold)}
+
+    .slider-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+    .slider-val{font-size:1.1rem;font-weight:800;color:var(--teal)}
+    input[type=range]{width:100%;accent-color:var(--teal);height:4px}
+    .num-in{width:100%;background:var(--bg);border:1px solid rgba(255,255,255,.12);color:#fff;padding:.75rem 1rem;border-radius:8px;font-size:.95rem;outline:none;margin-bottom:.5rem}
+    .num-in:focus{border-color:var(--teal);box-shadow:0 0 10px rgba(20,184,166,.3)}
+
+    .res-card{background:linear-gradient(160deg,#152b2a 0%,#101827 100%);border:1px solid rgba(20,184,166,.3);position:relative;overflow:hidden}
+    .res-card::before{content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(20,184,166,.3) 0%,transparent 70%);pointer-events:none}
+    .p-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:.4rem}
+    .p-amt{font-size:2.9rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.4rem;letter-spacing:-.02em}
+    .p-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.75rem}
+
+    .bk-list{list-style:none;border-top:1px solid rgba(255,255,255,.08);padding-top:1rem;margin-bottom:1.75rem}
+    .brow{display:flex;justify-content:space-between;font-size:.88rem;padding:.45rem 0;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+    .brow:last-child{border-bottom:none}
+    .brow span:last-child{font-weight:700;color:#e2e8f0}
+    .brow.tot{color:#fff;font-weight:800;border-top:1px dashed rgba(255,255,255,.15);margin-top:.5rem;padding-top:.75rem}
+    .brow.tot span:last-child{color:var(--teal);font-size:1rem}
+    .brow.neg span:last-child{color:var(--red)}
+
+    .eff-box{background:rgba(132,204,22,.08);border:1px solid rgba(132,204,22,.25);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1.75rem}
+    .eff-ttl{font-size:.82rem;font-weight:700;color:var(--lime);text-transform:uppercase;margin-bottom:.3rem}
+    .eff-val{font-size:1.3rem;font-weight:900;color:#fff}
+    .eff-sub{font-size:.8rem;color:var(--muted)}
+
+    .btn-wa{width:100%;background:linear-gradient(135deg,var(--teal),#0d9488);border:none;color:#fff;font-weight:800;font-size:1rem;padding:.95rem;border-radius:8px;cursor:pointer;box-shadow:0 0 20px rgba(20,184,166,.35);transition:all .2s;margin-bottom:.6rem;display:flex;justify-content:center;align-items:center;gap:.5rem}
+    .btn-wa:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(20,184,166,.6)}
+    .btn-copy{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#fff;font-size:.88rem;font-weight:600;padding:.75rem;border-radius:8px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:.5rem;transition:background .2s}
+    .btn-copy:hover{background:rgba(255,255,255,.1)}
+
+    .sec-ttl{font-size:1.75rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.75rem;color:#fff}
+    .sec-sub{color:var(--muted);margin-bottom:1.75rem}
+    .tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid rgba(255,255,255,.1);margin-bottom:3.5rem}
+    table{width:100%;border-collapse:collapse;font-size:.93rem}
+    th{background:var(--card2);color:var(--teal);font-weight:800;padding:1rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.1);text-transform:uppercase;font-size:.78rem;letter-spacing:.05em;text-align:left}
+    td{padding:.9rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.05);color:#e2e8f0}
+    tr:last-child td{border-bottom:none}
+    tr:hover td{background:rgba(255,255,255,.02)}
+    .best{display:inline-block;background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.4);color:var(--teal);font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:9999px;margin-left:.4rem}
+
+    .art{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:3rem 2.5rem;margin-bottom:3.5rem}
+    @media(max-width:768px){.art{padding:2rem 1.5rem}}
+    .art h2{font-size:1.7rem;font-weight:900;color:#fff;margin-top:2rem;margin-bottom:1rem;letter-spacing:-.02em}
+    .art h2:first-child{margin-top:0}
+    .art h3{font-size:1.2rem;font-weight:800;color:var(--teal);margin-top:1.5rem;margin-bottom:.65rem}
+    .art p{color:#cbd5e1;font-size:1rem;line-height:1.75;margin-bottom:1.2rem}
+    .art ul,.art ol{margin-left:1.5rem;margin-bottom:1.5rem;color:#cbd5e1}
+    .art li{margin-bottom:.5rem;line-height:1.6}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
+    .faq-q{padding:1.2rem 0;font-size:1.05rem;font-weight:700;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:color .2s}
+    .faq-q:hover{color:var(--teal)}
+    .faq-tog{font-size:1.3rem;color:var(--teal);line-height:1}
+    .faq-ans{display:none;padding-bottom:1.2rem;color:var(--muted);font-size:.96rem;line-height:1.7}
+
+    .toast{position:fixed;bottom:24px;right:24px;background:var(--teal);color:#032a28;padding:12px 20px;border-radius:8px;font-weight:800;font-size:.88rem;box-shadow:0 10px 25px rgba(0,0,0,.5);transform:translateY(100px);opacity:0;transition:all .3s cubic-bezier(.16,1,.3,1);z-index:3000}
+    .toast.show{transform:translateY(0);opacity:1}
+
+    .rr-footer{background:#040609;border-top:1px solid rgba(255,255,255,.07);padding:3rem 1.5rem 2rem}
+    .foot-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+    @media(max-width:768px){.foot-in{grid-template-columns:1fr}}
+    .foot-brand h4{color:#fff;font-size:1.1rem;margin-bottom:.6rem}
+    .foot-brand p{color:var(--dim);font-size:.85rem;max-width:340px;line-height:1.6}
+    .foot-col h5{color:#fff;font-size:.9rem;margin-bottom:.9rem;text-transform:uppercase;letter-spacing:.05em}
+    .foot-col ul{list-style:none}
+    .foot-col li{margin-bottom:.55rem}
+    .foot-col a{color:var(--dim);text-decoration:none;font-size:.85rem;transition:color .2s}
+    .foot-col a:hover{color:var(--teal)}
+    .foot-btm{max-width:1240px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.78rem;color:var(--dim)}
+  </style>
+</head>
+<body>
+
+<nav class="rr-nav">
+  <div class="nav-in">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#14B8A6" fill-opacity="0.2"/><path d="M20 8L30 14V26L20 32L10 26V14L20 8Z" stroke="#14B8A6" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="20" r="4" fill="#84CC16"/></svg>
+      Real<span>Refin</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+      <li><a href="#heist-compare">All Heists</a></li>
+      <li><a href="/gta-5-cheat-codes">GTA 5 Cheats</a></li>
+      <li><a href="/fastest-cars-in-gta-5">Fastest Cars</a></li>
+      <li><a href="/gta-6-pre-order" class="btn-cta">GTA 6 Pre-Order</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="pill"><span>💰</span> Live GTA Online Economy Data</div>
+  <h1>Cayo Perico Heist Payout Calculator</h1>
+  <p class="hero-sub">Calculate your exact GTA Online Cayo Perico payout — choose primary loot, secondary bags, difficulty, player count, and heist cut to see your real take-home cash after Pavel's fee.</p>
+  <div class="snip">
+    <span class="si">⚡</span>
+    <div>
+      <h3>Fast Facts: Max Cayo Perico Payout</h3>
+      <p><strong>Max Solo Payout (Hard):</strong> Pink Diamond primary (~$1,430,000) + Gold secondary (~$664,000) − Pavel's $50,000 fee = <strong>~$2,044,000 net take-home.</strong> Best secondary: <strong>Gold ($332,184 per crate).</strong> Average optimised run: <strong>15–25 minutes.</strong></p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="calculator">
+  <div class="tool-grid">
+
+    <!-- INPUTS -->
+    <section class="card">
+      <h2 class="card-ttl"><span>🗺️</span> Configure Your Heist Run</h2>
+
+      <span class="slabel">1. Heist Difficulty</span>
+      <div class="diff-row" id="diffRow">
+        <button class="btn-diff" data-diff="normal">Normal</button>
+        <button class="btn-diff active" data-diff="hard">Hard (+10%)</button>
+      </div>
+
+      <span class="slabel">2. Primary Loot (Compound Safe)</span>
+      <div class="loot-grid" id="primaryGrid"></div>
+
+      <span class="slabel">3. Secondary Loot Bags (Select all you grabbed)</span>
+      <div class="sec-list" id="secList"></div>
+
+      <span class="slabel">4. Number of Players</span>
+      <div style="margin-bottom:1rem">
+        <div class="slider-row">
+          <span style="font-size:.85rem;color:var(--muted)">Players</span>
+          <span class="slider-val" id="pCountVal">1 (Solo)</span>
+        </div>
+        <input type="range" id="pSlider" min="1" max="4" value="1" step="1">
+        <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--dim);margin-top:4px">
+          <span>1 Solo</span><span>2</span><span>3</span><span>4</span>
+        </div>
+      </div>
+
+      <span class="slabel">5. Your Heist Leader Cut (%)</span>
+      <input type="number" id="cutIn" class="num-in" value="85" min="15" max="100" step="5">
+      <p style="font-size:.78rem;color:var(--dim);margin-top:-.3rem">Enter your cut % as leader. Remaining split equally among crew.</p>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="card res-card">
+      <div class="p-label">Your Total Payout (Take-Home)</div>
+      <div class="p-amt" id="dPayout">$2,044,000</div>
+      <div class="p-sub" id="dSub">Hard difficulty · 1 Player · Pink Diamond + Gold</div>
+
+      <ul class="bk-list">
+        <li class="brow"><span>Primary Loot (Hard):</span><span id="rPrimary">$1,430,000</span></li>
+        <li class="brow"><span>Secondary Loot:</span><span id="rSecondary">$664,000</span></li>
+        <li class="brow"><span>Difficulty Bonus:</span><span id="rDiff">Included</span></li>
+        <li class="brow neg"><span>Pavel's Cut (Flat Fee):</span><span id="rPavel">−$50,000</span></li>
+        <li class="brow tot"><span>🏆 Your Net Take-Home:</span><span id="rNet">$2,044,000</span></li>
+      </ul>
+
+      <div class="eff-box">
+        <div class="eff-ttl">⏱ Estimated Cash Per Hour</div>
+        <div class="eff-val" id="effHr">$6,132,000 / hr</div>
+        <div class="eff-sub" id="effNote">Based on optimised ~20-min solo run. Excludes prep missions.</div>
+      </div>
+
+      <button class="btn-wa" id="btnWA">📱 Share Payout on WhatsApp</button>
+      <button class="btn-copy" id="btnCopy">📋 Copy Payout Breakdown</button>
+    </section>
+  </div>
+
+  <!-- HEIST COMPARISON TABLE -->
+  <section id="heist-compare">
+    <h2 class="sec-ttl">📊 GTA Online Heist Payout Comparison</h2>
+    <p class="sec-sub">All payouts shown at Hard difficulty maximum. Cayo Perico is the best heist for money-per-hour in GTA Online.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Heist</th><th>Max Payout (Hard)</th><th>Solo?</th><th>Min Players</th><th>Avg Run Time</th><th>$/Hour (Est.)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>#1</strong></td><td><strong>Cayo Perico Heist</strong><span class="best">👑 Best</span></td><td>~$2,044,000</td><td>✅ Yes</td><td>1</td><td>15–25 min</td><td style="color:#14b8a6;font-weight:800">~$600K–$900K</td></tr>
+          <tr><td><strong>#2</strong></td><td><strong>Diamond Casino Heist</strong></td><td>~$3,619,000 (Diamonds)</td><td>❌ No</td><td>2</td><td>25–45 min</td><td style="color:#84cc16;font-weight:800">~$400K–$700K</td></tr>
+          <tr><td><strong>#3</strong></td><td><strong>Doomsday Heist (Act III)</strong></td><td>~$1,500,000</td><td>❌ No</td><td>2</td><td>30–60 min</td><td>~$250K–$350K</td></tr>
+          <tr><td><strong>#4</strong></td><td><strong>Pacific Standard</strong></td><td>~$1,250,000</td><td>❌ No</td><td>4</td><td>20–35 min</td><td>~$200K–$300K</td></tr>
+          <tr><td><strong>#5</strong></td><td><strong>The Prison Break</strong></td><td>~$500,000</td><td>❌ No</td><td>4</td><td>20–30 min</td><td>~$100K–$150K</td></tr>
+          <tr><td><strong>#6</strong></td><td><strong>The Humane Labs Raid</strong></td><td>~$675,000</td><td>❌ No</td><td>4</td><td>25–40 min</td><td>~$100K–$160K</td></tr>
+          <tr><td><strong>#7</strong></td><td><strong>The Fleeca Job</strong></td><td>~$143,750</td><td>❌ No</td><td>2</td><td>10–15 min</td><td>~$57K–$86K</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- EDITORIAL GUIDE -->
+  <article class="art">
+    <h2>Cayo Perico Heist Guide: Maximize Every Run</h2>
+    <p>The Cayo Perico Heist, introduced in GTA Online's December 2020 update, changed everything by allowing <strong>solo play</strong> and delivering consistently high payouts in just 15–25 minutes per run.</p>
+
+    <h3>Primary Loot Ranking (Best to Worst)</h3>
+    <ul>
+      <li><strong>Panther Statue (Event Only):</strong> Up to ~$1,900,000 on Hard. Spawns only during limited-time Rockstar events.</li>
+      <li><strong>Pink Diamond:</strong> ~$1,430,000 on Hard. Best regularly-rotating primary loot.</li>
+      <li><strong>Bearer Bonds:</strong> ~$1,100,000 on Hard. Second-best standard rotation.</li>
+      <li><strong>Sapphire Necklace:</strong> ~$1,000,000 on Hard.</li>
+      <li><strong>Ruby Necklace / Tequila:</strong> ~$900,000 on Hard.</li>
+      <li><strong>Artwork / Weed / Cash:</strong> Lowest value. Avoid if possible.</li>
+    </ul>
+
+    <h3>How to Maximize Your Cayo Perico Payout</h3>
+    <ol>
+      <li><strong>Always choose Hard difficulty</strong> — the 10% bonus adds up to ~$150,000 extra per run.</li>
+      <li><strong>Scout the Island thoroughly</strong> — mark all secondary loot locations (especially Gold crates inside the compound).</li>
+      <li><strong>Prioritise Gold as secondary loot</strong> — highest GTA$ per unit at $332,184 per crate on Hard.</li>
+      <li><strong>Use the Drainage Tunnel approach</strong> — fastest and most reliable solo entry.</li>
+      <li><strong>Go solo (1 player)</strong> unless you have a very coordinated crew.</li>
+      <li><strong>Play during Rockstar Event Weeks</strong> — Panther Statue spawns and 2× GTA$ events can double effective hourly income.</li>
+    </ol>
+
+    <h3>Pavel's Cut: How Much Does He Take?</h3>
+    <p>Pavel charges a fixed flat fee of <strong>$50,000</strong> from every Cayo Perico payout — unlike the original heists where Lester takes a percentage cut.</p>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div>
+      <div class="faq-item"><div class="faq-q"><span>What is the max Cayo Perico payout in GTA Online?</span><span class="faq-tog">+</span></div><div class="faq-ans">The maximum standard payout is approximately $2,044,000 (Hard, Pink Diamond primary, Gold secondary, solo). During Panther Statue event weeks, payouts can reach ~$2,350,000+.</div></div>
+      <div class="faq-item"><div class="faq-q"><span>Is Cayo Perico still the best heist in 2026?</span><span class="faq-tog">+</span></div><div class="faq-ans">Yes. Despite Rockstar's cooldown nerfs, Cayo Perico remains the #1 most efficient money-making heist in GTA Online thanks to solo capability, ~20-minute completion, and high base payout.</div></div>
+      <div class="faq-item"><div class="faq-q"><span>How long is the Cayo Perico cooldown between runs?</span><span class="faq-tog">+</span></div><div class="faq-ans">Following Rockstar's cooldown patch, there is a 3-hour (180-minute) cooldown between consecutive Cayo Perico finale attempts on the same character. You can switch to an alternate character slot while your primary cooldown resets.</div></div>
+      <div class="faq-item"><div class="faq-q"><span>How many players is best for Cayo Perico?</span><span class="faq-tog">+</span></div><div class="faq-ans">Solo (1 player) is best for maximum take-home cash per run. With 2+ players, total gross increases slightly but must be split, reducing individual earnings. Only group play is recommended for helping friends with first-time bonuses.</div></div>
+    </div>
+  </article>
+</main>
+
+<div class="toast" id="toast">Copied!</div>
+
+<footer class="rr-footer">
+  <div class="foot-in">
+    <div class="foot-brand"><h4>RealRefin.com</h4><p>Interactive calculators, gaming databases, and financial analytics to help you make smarter decisions.</p></div>
+    <div class="foot-col"><h5>Gaming Tools</h5><ul>
+      <li><a href="/gta-5-cheat-codes">GTA 5 Cheat Codes</a></li>
+      <li><a href="/fastest-cars-in-gta-5">Fastest Cars in GTA 5</a></li>
+      <li><a href="/gta-6-pre-order">GTA 6 Pre-Order Tracker</a></li>
+      <li><a href="/youtube-money-calculator">YouTube Money Tool</a></li>
+    </ul></div>
+    <div class="foot-col"><h5>Legal</h5><ul>
+      <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <li><a href="/terms-of-service">Terms of Service</a></li>
+      <li><a href="/disclaimer">Disclaimer</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul></div>
+  </div>
+  <div class="foot-btm">&copy; 2026 RealRefin.com. Grand Theft Auto and GTA Online are trademarks of Take-Two Interactive Software, Inc. and Rockstar Games. For entertainment reference only.</div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  const PRIMARY = [
+    {id:'panther', name:'Panther Statue', vH:1900000, vN:1727273, note:'Event Only 🌟'},
+    {id:'diamond', name:'Pink Diamond',   vH:1430000, vN:1300000, note:'Best Regular Loot', def:true},
+    {id:'bonds',   name:'Bearer Bonds',   vH:1100000, vN:1000000, note:'2nd Best Regular'},
+    {id:'sapphire',name:'Sapphire Necklace',vH:1000000,vN:909090, note:''},
+    {id:'ruby',    name:'Ruby Necklace',  vH:900000,  vN:818182,  note:''},
+    {id:'tequila', name:'Tequila',        vH:900000,  vN:818182,  note:'Easiest to reach'},
+    {id:'artwork', name:'Artwork',        vH:625000,  vN:568182,  note:''},
+    {id:'weed',    name:'Weed',           vH:400000,  vN:363636,  note:'Low Value'},
+    {id:'cash',    name:'Cash',           vH:300000,  vN:272727,  note:'Lowest Value'},
+  ];
+
+  const SECONDARY = [
+    {id:'gold',     name:'Gold (per crate)',    vH:332184, vN:302000},
+    {id:'cocaine',  name:'Cocaine (per bag)',   vH:220095, vN:200086},
+    {id:'painting', name:'Painting (per unit)', vH:189500, vN:172272},
+    {id:'weedS',    name:'Weed (per bag)',      vH:147870, vN:134427},
+    {id:'cash2',    name:'Cash (per bag)',      vH:88000,  vN:80000},
+  ];
+
+  const PAVEL = 50000, AVG_MIN = 20;
+  let diff='hard', selPrim='diamond', players=1, cut=85;
+
+  const toast=document.getElementById('toast');
+  function showToast(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2800)}
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+
+  // Build primary loot grid
+  const pg=document.getElementById('primaryGrid');
+  PRIMARY.forEach(l=>{
+    const c=document.createElement('div');
+    c.className='loot-card'+(l.def?' selected':'');
+    c.dataset.id=l.id;
+    c.innerHTML=`<div class="ln">${l.name}</div><div class="lv" id="lv-${l.id}">${fmt(l.vH)} (Hard)</div>${l.note?`<div class="lnote">${l.note}</div>`:''}`;
+    c.addEventListener('click',()=>{
+      document.querySelectorAll('.loot-card').forEach(x=>x.classList.remove('selected'));
+      c.classList.add('selected'); selPrim=l.id; calc();
+    });
+    pg.appendChild(c);
+  });
+
+  // Build secondary list
+  const sl=document.getElementById('secList');
+  SECONDARY.forEach(l=>{
+    const r=document.createElement('div');
+    r.className='sec-row';
+    r.innerHTML=`<label class="sec-lbl"><input type="checkbox" class="sec-chk" data-id="${l.id}" ${l.id==='gold'?'checked':''}>${l.name}</label><span class="sec-amt" id="sv-${l.id}">${fmt(l.vH)}</span>`;
+    sl.appendChild(r);
+  });
+
+  // Difficulty
+  document.querySelectorAll('.btn-diff').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.btn-diff').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); diff=b.dataset.diff;
+    PRIMARY.forEach(l=>{const el=document.getElementById('lv-'+l.id);if(el)el.textContent=fmt(diff==='hard'?l.vH:l.vN)+' ('+(diff==='hard'?'Hard':'Normal')+')'});
+    SECONDARY.forEach(l=>{const el=document.getElementById('sv-'+l.id);if(el)el.textContent=fmt(diff==='hard'?l.vH:l.vN)});
+    calc();
+  }));
+
+  // Player slider
+  const ps=document.getElementById('pSlider'),pv=document.getElementById('pCountVal');
+  ps.addEventListener('input',()=>{players=parseInt(ps.value);pv.textContent=players===1?'1 (Solo)':players+' Players';calc()});
+
+  // Cut input
+  const ci=document.getElementById('cutIn');
+  ci.addEventListener('input',()=>{cut=Math.min(100,Math.max(15,parseFloat(ci.value)||85));calc()});
+
+  function calc(){
+    const pl=PRIMARY.find(l=>l.id===selPrim);
+    const pv2=diff==='hard'?pl.vH:pl.vN;
+    let sv=0;
+    document.querySelectorAll('.sec-chk:checked').forEach(chk=>{
+      const l=SECONDARY.find(x=>x.id===chk.dataset.id);
+      if(l)sv+=diff==='hard'?l.vH:l.vN;
+    });
+    const gross=pv2+sv;
+    const afterP=gross-PAVEL;
+    const net=players===1?afterP:afterP*(cut/100);
+    const crew=players>1?afterP*((100-cut)/100)/(players-1):0;
+    const perHr=(net/AVG_MIN)*60;
+
+    document.getElementById('dPayout').textContent=fmt(net);
+    document.getElementById('dSub').textContent=`${diff==='hard'?'Hard':'Normal'} · ${players===1?'Solo':players+' Players'} · ${pl.name}`;
+    document.getElementById('rPrimary').textContent=fmt(pv2);
+    document.getElementById('rSecondary').textContent=sv>0?fmt(sv):'$0';
+    document.getElementById('rDiff').textContent=diff==='hard'?'+10% Applied':'Normal Rate';
+    document.getElementById('rPavel').textContent='−'+fmt(PAVEL);
+    document.getElementById('rNet').textContent=fmt(net);
+    document.getElementById('effHr').textContent=fmt(perHr)+' / hr';
+    document.getElementById('effNote').textContent=`Based on ~${AVG_MIN}-min ${players===1?'solo':'crew'} run.`+(players>1&&crew>0?` Each crew member: ${fmt(crew)}.`:'');
+
+    document.getElementById('btnWA').onclick=()=>{
+      const t=encodeURIComponent(`🏝️ My GTA Online Cayo Perico Payout:\n• ${pl.name}: ${fmt(pv2)}\n• Secondary: ${fmt(sv)}\n• My Take-Home: *${fmt(net)}*\n• Per Hour: *${fmt(perHr)}/hr*\n\nhttps://realrefin.com/cayo-perico-payout-calculator`);
+      window.open(`https://api.whatsapp.com/send?text=${t}`,'_blank');
+    };
+    document.getElementById('btnCopy').onclick=()=>{
+      navigator.clipboard.writeText(`GTA Online Cayo Perico Heist Payout:\nPrimary: ${pl.name} → ${fmt(pv2)}\nSecondary: ${fmt(sv)}\nNet Take-Home: ${fmt(net)}\nPer Hour: ${fmt(perHr)}/hr\nhttps://realrefin.com/cayo-perico-payout-calculator`).then(()=>showToast('📋 Payout breakdown copied!'));
+    };
+  }
+
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const a=q.nextElementSibling,t=q.querySelector('.faq-tog'),o=a.style.display==='block';
+      document.querySelectorAll('.faq-ans').forEach(x=>x.style.display='none');
+      document.querySelectorAll('.faq-tog').forEach(x=>x.textContent='+');
+      if(!o){a.style.display='block';t.textContent='−';}
+    });
+  });
+
+  calc();
+})();
+</script>
+</body>
+</html>
