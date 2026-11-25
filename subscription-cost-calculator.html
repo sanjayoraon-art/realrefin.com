@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Cost Calculator &amp; 10-Year Opportunity Cost (2026) | RealRefin</title>
+  <meta name="description" content="Free subscription cost calculator to audit your monthly and annual recurring expenses. Calculate how much your subscriptions cost over 10–30 years if invested in the S&amp;P 500 or index funds.">
+  <meta name="keywords" content="subscription cost calculator, monthly subscription cost calculator, subscription tracker calculator, recurring expense calculator, wasted money opportunity cost calculator, 10 year investment opportunity cost calculator">
+  <link rel="canonical" href="https://realrefin.com/subscription-cost-calculator">
+  <meta property="og:title" content="Subscription Cost Calculator &amp; Wealth Opportunity Engine | RealRefin">
+  <meta property="og:description" content="Audit every recurring subscription, calculate your true annual burn, and see what that money becomes over 10–30 years if invested.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/subscription-cost-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Subscription Cost & Opportunity Cost Calculator",
+        "url": "https://realrefin.com/subscription-cost-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free subscription cost calculator to calculate monthly, annual, and 10-to-30-year compounded investment opportunity cost of recurring subscriptions."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does a subscription cost calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A subscription cost calculator sums all your recurring monthly and annual memberships—such as streaming, AI tools, cloud storage, gym, and software—into a single monthly and yearly total, then models the compounded opportunity cost if that cash were invested instead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does the average person spend on subscriptions per month?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Recent consumer surveys show the average US household spends between $130 and $219 per month ($1,560 to $2,628 per year) on recurring digital, streaming, software, and lifestyle subscriptions—often underestimating the real total by 2x."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 10-year opportunity cost of $150/month in subscriptions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If $150 per month is invested at an average 10% annual return compounded monthly, it grows to approximately $30,727 in 10 years, $113,905 in 20 years, and $339,073 in 30 years."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0b1120;
+      --secondary-navy: #162033;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --accent-rose: #e11d48;
+      --accent-rose-light: #fff1f2;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+    .rr-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rr-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo span { color: var(--accent-emerald); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--accent-emerald-dark); }
+    .btn-nav-back {
+      background: var(--primary-navy);
+      color: #fff !important;
+      padding: 0.48rem 0.95rem;
+      border-radius: 9px;
+      font-weight: 700 !important;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.32rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 span { color: #34d399; }
+    .page-hero p { color: #cbd5e1; font-size: 0.98rem; max-width: 780px; }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .calc-grid > * { min-width: 0; max-width: 100%; }
+    @media (max-width: 920px) {
+      .calc-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 480px) {
+      .card { padding: 1.1rem; }
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .toggle-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .pill-btn {
+      padding: 0.42rem 0.82rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      color: #475569;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover { border-color: #94a3b8; color: var(--primary-navy); }
+    .pill-btn.active { background: var(--primary-navy); color: #ffffff; border-color: var(--primary-navy); }
+
+    .section-sub-label {
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-emerald-dark);
+      margin: 1.1rem 0 0.6rem;
+    }
+
+    /* Quick Preset Chips */
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+    .preset-chip {
+      padding: 0.36rem 0.72rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px dashed #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .preset-chip:hover {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Add Custom Subscription Form */
+    .add-sub-row {
+      display: grid;
+      grid-template-columns: 1.4fr 0.85fr 0.85fr auto;
+      gap: 0.55rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 640px) {
+      .add-sub-row { grid-template-columns: 1fr 1fr; }
+      .add-sub-row input[type="text"] { grid-column: 1 / -1; }
+      .add-sub-row button { grid-column: 1 / -1; }
+    }
+    .add-sub-row input, .add-sub-row select {
+      height: 42px;
+      padding: 0 0.75rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      font-family: inherit;
+      background: #ffffff;
+    }
+    .add-sub-row input:focus, .add-sub-row select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+    }
+    .btn-add {
+      height: 42px;
+      padding: 0 1rem;
+      border-radius: 10px;
+      border: none;
+      background: var(--accent-emerald);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.86rem;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+    .btn-add:hover { background: var(--accent-emerald-dark); }
+
+    /* Subscription Items List */
+    .sub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 0.2rem;
+    }
+    .sub-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      transition: opacity 0.15s ease;
+    }
+    .sub-item.cut {
+      opacity: 0.55;
+      background: #fff1f2;
+      border-color: #fecdd3;
+    }
+    .sub-item.cut .sub-name { text-decoration: line-through; }
+    .sub-left { display: flex; align-items: center; gap: 0.7rem; min-width: 0; }
+    .sub-left input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent-emerald); flex-shrink: 0; cursor: pointer; }
+    .sub-name { font-size: 0.9rem; font-weight: 700; color: var(--primary-navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sub-cat { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
+    .sub-right { display: flex; align-items: center; gap: 0.65rem; flex-shrink: 0; }
+    .sub-price { font-family: var(--font-mono); font-size: 0.88rem; font-weight: 700; color: var(--primary-navy); }
+    .btn-del {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 0.15rem 0.35rem;
+      border-radius: 6px;
+    }
+    .btn-del:hover { color: var(--accent-rose); background: #ffe4e6; }
+
+    /* Investment Controls */
+    .inv-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+    @media (max-width: 520px) { .inv-controls { grid-template-columns: 1fr; } }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.35rem;
+    }
+    .field input[type="range"] { width: 100%; accent-color: var(--accent-emerald); }
+
+    /* Results Panel */
+    .results-sticky { position: sticky; top: 82px; }
+    .burn-hero-box {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 1.45rem;
+      margin-bottom: 1.1rem;
+    }
+    .burn-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #94a3b8; }
+    .burn-value {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      font-weight: 700;
+      color: #34d399;
+      line-height: 1.15;
+      margin: 0.25rem 0 0.6rem;
+    }
+    .burn-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .opp-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.1rem;
+    }
+    .opp-box small {
+      display: block;
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #92400e;
+      letter-spacing: 0.04em;
+    }
+    .opp-val {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #b45309;
+      margin: 0.15rem 0;
+    }
+    .opp-note { font-size: 0.8rem; color: #78350f; }
+
+    .cut-savings-box {
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Category Bars */
+    .cat-bars { margin-bottom: 1.15rem; }
+    .cat-bar-row { margin-bottom: 0.6rem; }
+    .cat-bar-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.22rem;
+    }
+    .cat-track { height: 7px; background: #e2e8f0; border-radius: 50px; overflow: hidden; }
+    .cat-fill { height: 100%; background: var(--accent-emerald); border-radius: 50px; transition: width 0.25s ease; }
+
+    .action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .btn-action {
+      padding: 0.72rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .btn-copy { background: var(--primary-navy); color: #ffffff; }
+    .btn-copy:hover { background: var(--accent-emerald-dark); }
+    .btn-wa { background: #16a34a; color: #ffffff; }
+    .btn-wa:hover { background: #15803d; }
+    .btn-print { grid-column: 1 / -1; background: #f1f5f9; color: var(--primary-navy); border: 1px solid var(--border-color); }
+
+    /* Guide & Embed */
+    .guide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 0.75rem; }
+    .guide-card h3 { font-size: 1.08rem; font-weight: 800; color: var(--primary-navy); margin: 1.3rem 0 0.5rem; }
+    .guide-card p, .guide-card li { color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .guide-card ul { padding-left: 1.25rem; }
+    .formula-box {
+      font-family: var(--font-mono);
+      background: #0b1120;
+      color: #6ee7b7;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.86rem;
+      margin: 0.9rem 0 1.2rem;
+      overflow-x: auto;
+    }
+    .embed-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.35rem;
+      margin-top: 1.5rem;
+    }
+    .embed-box textarea {
+      width: 100%;
+      height: 78px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin: 0.6rem 0;
+      resize: none;
+      background: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: #ffffff;
+    }
+    footer a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    @media print {
+      .rr-nav-wrap, .action-row, .embed-box, footer { display: none !important; }
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-nav-wrap">
+    <header class="rr-nav">
+      <a href="/" class="rr-logo">
+        <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 7px;">
+        Real<span>Refin</span>.com
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">All 79+ Calculators</a></li>
+        <li><a href="/influencer-rate-calculator">Influencer Rate</a></li>
+        <li><a href="/wealth-percentile-calculator">Wealth Percentile</a></li>
+        <li><a href="/in-hand-salary-calculator">In-Hand Salary</a></li>
+        <li><a href="/" class="btn-nav-back">← Back to Directory</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <main class="container">
+    <section class="page-hero">
+      <div class="hero-pill">💳 2026 Recurring Expense Audit • Wealth Opportunity Engine</div>
+      <h1>Subscription Cost Calculator &amp; <span>10-Year Opportunity</span> Audit</h1>
+      <p>
+        Add or toggle your streaming, AI tools, SaaS, cloud, and lifestyle memberships to see your true monthly &amp; annual subscription cost—plus how much wealth you could build by investing canceled subscriptions in index funds.
+      </p>
+    </section>
+
+    <section class="calc-grid" aria-label="Subscription Cost Calculator">
+      <!-- LEFT: SUBSCRIPTION BUILDER -->
+      <div class="card">
+        <div class="card-title">
+          <span>🧾 Your Recurring Subscriptions</span>
+          <div class="toggle-row">
+            <button type="button" class="pill-btn active" data-curr="USD">USD $</button>
+            <button type="button" class="pill-btn" data-curr="INR">INR ₹</button>
+            <button type="button" class="pill-btn" data-curr="GBP">GBP £</button>
+          </div>
+        </div>
+
+        <div class="section-sub-label">Quick-Add Popular Subscriptions</div>
+        <div class="preset-chips" id="presetChips">
+          <button type="button" class="preset-chip" data-name="ChatGPT / AI Tools" data-price="20" data-cat="AI &amp; SaaS">+ AI Tools ($20)</button>
+          <button type="button" class="preset-chip" data-name="Netflix" data-price="15.49" data-cat="Streaming">+ Netflix ($15.49)</button>
+          <button type="button" class="preset-chip" data-name="Spotify / Music" data-price="11.99" data-cat="Streaming">+ Spotify ($11.99)</button>
+          <button type="button" class="preset-chip" data-name="Amazon Prime" data-price="14.99" data-cat="Shopping">+ Prime ($14.99)</button>
+          <button type="button" class="preset-chip" data-name="Gym Membership" data-price="45" data-cat="Fitness">+ Gym ($45)</button>
+          <button type="button" class="preset-chip" data-name="Cloud Storage" data-price="9.99" data-cat="Cloud">+ Cloud ($9.99)</button>
+        </div>
+
+        <div class="section-sub-label">Add Custom Subscription</div>
+        <div class="add-sub-row">
+          <input type="text" id="newSubName" placeholder="e.g. Adobe CC, YouTube Premium">
+          <input type="number" id="newSubPrice" placeholder="Price" min="0" step="0.01">
+          <select id="newSubCycle">
+            <option value="monthly">/ Month</option>
+            <option value="annual">/ Year</option>
+          </select>
+          <button type="button" class="btn-add" id="addSubBtn">+ Add</button>
+        </div>
+
+        <div class="section-sub-label">Active Audit List (Uncheck to Simulate Canceling)</div>
+        <div class="sub-list" id="subList"></div>
+
+        <div class="inv-controls">
+          <div class="field">
+            <label for="returnRate">Expected Return: <span id="returnRateLabel">10%</span></label>
+            <input type="range" id="returnRate" min="4" max="15" step="0.5" value="10">
+          </div>
+          <div class="field">
+            <label for="yearsHorizon">Horizon: <span id="yearsHorizonLabel">10 Years</span></label>
+            <input type="range" id="yearsHorizon" min="5" max="30" step="5" value="10">
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE RESULTS -->
+      <div class="card results-sticky">
+        <div class="card-title">
+          <span>📊 Subscription Burn &amp; Savings</span>
+          <span id="activeCountTag" style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">5 ACTIVE</span>
+        </div>
+
+        <div class="burn-hero-box">
+          <div class="burn-label">Active Monthly Subscription Cost</div>
+          <div class="burn-value" id="monthlyTotalOut">$107.47</div>
+          <div class="burn-sub">
+            <span>Annual Burn: <strong id="annualTotalOut" style="color:#fff;">$1,289.64</strong></span>
+            <span>Daily Cost: <strong id="dailyTotalOut" style="color:#fff;">$3.53/day</strong></span>
+          </div>
+        </div>
+
+        <div class="opp-box">
+          <small id="oppHeadingOut">10-Year Investment Opportunity Cost (10% Return)</small>
+          <div class="opp-val" id="oppTotalOut">$22,015</div>
+          <div class="opp-note">What your active subscriptions could grow to if invested monthly instead.</div>
+        </div>
+
+        <div class="cut-savings-box">
+          <span>✂️ Annual Savings from Unchecked Cuts:</span>
+          <span id="cutSavingsOut" style="font-family:var(--font-mono);">$0.00/yr</span>
+        </div>
+
+        <div class="section-sub-label" style="margin-top:0;">Spend by Category</div>
+        <div class="cat-bars" id="catBars"></div>
+
+        <div class="action-row">
+          <button type="button" class="btn-action btn-copy" id="copyAuditBtn">📋 Copy Audit Summary</button>
+          <button type="button" class="btn-action btn-wa" id="waShareBtn">💬 Share WhatsApp</button>
+          <button type="button" class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save Audit PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card">
+      <h2>How to Use This Subscription Cost Calculator to Stop Invisible Money Leaks</h2>
+      <p>
+        Most people underestimate their recurring digital spending by 50% or more because small monthly charges ($9.99 cloud storage, $15.49 streaming, $20 AI subscriptions) feel painless in isolation. Using a dedicated <strong>subscription cost calculator</strong> exposes your true annual burn and shows the long-term wealth impact of every unused membership.
+      </p>
+
+      <h3>Compounded Opportunity Cost Formula</h3>
+      <div class="formula-box">
+        Future Value = Monthly Spend × [ ((1 + r/12)^(12 × Years) − 1) / (r/12) ]
+      </div>
+      <ul>
+        <li><strong>Audit &amp; Trim Quarterly:</strong> Uncheck subscriptions you haven't used in the past 30 days to see instant annual savings.</li>
+        <li><strong>Switch Annual Plans Only for Keepers:</strong> Paying annually for tools you genuinely use every week typically saves 15%–20%.</li>
+        <li><strong>Automate the Difference:</strong> Transfer the exact dollar amount of canceled subscriptions into an automated brokerage or high-yield savings account.</li>
+      </ul>
+
+      <div class="embed-box">
+        <strong style="color:var(--primary-navy);font-size:0.92rem;">🔗 Embed This Subscription Cost Calculator on Your Site</strong>
+        <textarea readonly id="embedCodeBox">&lt;iframe src="https://realrefin.com/subscription-cost-calculator" width="100%" height="780" style="border:1px solid #e2e8f0;border-radius:12px;" loading="lazy"&gt;&lt;/iframe&gt;&lt;p style="font-size:12px;"&gt;Powered by &lt;a href="https://realrefin.com/subscription-cost-calculator" rel="nofollow noopener"&gt;RealRefin Subscription Cost Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+        <button type="button" class="pill-btn" id="copyEmbedBtn">Copy Embed Code</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">RealRefin.com</a> &bull; Free Personal Finance &amp; Investment Calculators &bull; <a href="/privacy-policy">Privacy Policy</a> &bull; <a href="/disclaimer">Disclaimer</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    const CURR = {
+      USD: { symbol: '$', rate: 1 },
+      INR: { symbol: '₹', rate: 84 },
+      GBP: { symbol: '£', rate: 0.79 }
+    };
+
+    let activeCurr = 'USD';
+    let subs = [
+      { id: 1, name: 'Netflix Standard', priceUsd: 15.49, cat: 'Streaming', active: true },
+      { id: 2, name: 'Spotify / Music',  priceUsd: 11.99, cat: 'Streaming', active: true },
+      { id: 3, name: 'ChatGPT / AI Tools', priceUsd: 20.00, cat: 'AI & SaaS', active: true },
+      { id: 4, name: 'Amazon Prime',     priceUsd: 14.99, cat: 'Shopping',  active: true },
+      { id: 5, name: 'Gym Membership',   priceUsd: 45.00, cat: 'Fitness',   active: true }
+    ];
+    let nextId = 6;
+
+    const el = id => document.getElementById(id);
+
+    function fmt(usdAmount, decimals = 2) {
+      const c = CURR[activeCurr];
+      const val = usdAmount * c.rate;
+      return c.symbol + val.toLocaleString('en-US', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    }
+
+    function futureValue(monthlyUsd, annualRatePct, years) {
+      const r = (annualRatePct / 100) / 12;
+      const n = years * 12;
+      if (r === 0) return monthlyUsd * n;
+      return monthlyUsd * ((Math.pow(1 + r, n) - 1) / r);
+    }
+
+    function renderList() {
+      const container = el('subList');
+      container.innerHTML = '';
+
+      subs.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'sub-item' + (item.active ? '' : ' cut');
+        row.innerHTML = `
+          <div class="sub-left">
+            <input type="checkbox" ${item.active ? 'checked' : ''} aria-label="Toggle ${item.name}">
+            <div style="min-width:0;">
+              <div class="sub-name"></div>
+              <div class="sub-cat"></div>
+            </div>
+          </div>
+          <div class="sub-right">
+            <span class="sub-price">${fmt(item.priceUsd)}/mo</span>
+            <button type="button" class="btn-del" aria-label="Remove">&times;</button>
+          </div>
+        `;
+        row.querySelector('.sub-name').textContent = item.name;
+        row.querySelector('.sub-cat').textContent = item.cat + (item.active ? '' : ' • Canceled');
+
+        row.querySelector('input[type="checkbox"]').addEventListener('change', function() {
+          item.active = this.checked;
+          renderAll();
+        });
+        row.querySelector('.btn-del').addEventListener('click', function() {
+          subs = subs.filter(s => s.id !== item.id);
+          renderAll();
+        });
+        container.appendChild(row);
+      });
+    }
+
+    function renderResults() {
+      const ratePct = parseFloat(el('returnRate').value) || 10;
+      const years   = parseInt(el('yearsHorizon').value, 10) || 10;
+
+      el('returnRateLabel').textContent = ratePct + '%';
+      el('yearsHorizonLabel').textContent = years + ' Years';
+
+      let activeMonthly = 0;
+      let cutMonthly = 0;
+      let activeCount = 0;
+      const catTotals = {};
+
+      subs.forEach(s => {
+        if (s.active) {
+          activeMonthly += s.priceUsd;
+          activeCount++;
+          catTotals[s.cat] = (catTotals[s.cat] || 0) + s.priceUsd;
+        } else {
+          cutMonthly += s.priceUsd;
+        }
+      });
+
+      const oppUsd = futureValue(activeMonthly, ratePct, years);
+
+      el('activeCountTag').textContent = activeCount + ' ACTIVE';
+      el('monthlyTotalOut').textContent = fmt(activeMonthly);
+      el('annualTotalOut').textContent  = fmt(activeMonthly * 12);
+      el('dailyTotalOut').textContent   = fmt(activeMonthly / 30.44) + '/day';
+      el('oppHeadingOut').textContent   = `${years}-Year Investment Opportunity Cost (${ratePct}% Return)`;
+      el('oppTotalOut').textContent     = fmt(oppUsd, 0);
+      el('cutSavingsOut').textContent   = fmt(cutMonthly * 12) + '/yr';
+
+      const barsEl = el('catBars');
+      barsEl.innerHTML = '';
+      const sortedCats = Object.entries(catTotals).sort((a, b) => b[1] - a[1]);
+      if (sortedCats.length === 0) {
+        barsEl.innerHTML = '<div style="font-size:0.82rem;color:#64748b;">No active subscriptions selected.</div>';
+      } else {
+        sortedCats.forEach(([cat, val]) => {
+          const pct = activeMonthly > 0 ? Math.round((val / activeMonthly) * 100) : 0;
+          const div = document.createElement('div');
+          div.className = 'cat-bar-row';
+          div.innerHTML = `
+            <div class="cat-bar-head"><span>${cat} (${pct}%)</span><span>${fmt(val)}/mo</span></div>
+            <div class="cat-track"><div class="cat-fill" style="width:${pct}%"></div></div>
+          `;
+          barsEl.appendChild(div);
+        });
+      }
+    }
+
+    function renderAll() {
+      renderList();
+      renderResults();
+    }
+
+    document.querySelectorAll('[data-curr]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-curr]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeCurr = this.getAttribute('data-curr');
+        renderAll();
+      });
+    });
+
+    document.querySelectorAll('.preset-chip').forEach(chip => {
+      chip.addEventListener('click', function() {
+        const name = this.getAttribute('data-name');
+        const priceUsd = parseFloat(this.getAttribute('data-price')) || 10;
+        const cat = this.getAttribute('data-cat') || 'Other';
+        subs.unshift({ id: nextId++, name, priceUsd, cat, active: true });
+        renderAll();
+      });
+    });
+
+    el('addSubBtn').addEventListener('click', function() {
+      const name = (el('newSubName').value || '').trim();
+      const rawPrice = parseFloat(el('newSubPrice').value);
+      const cycle = el('newSubCycle').value;
+      if (!name || isNaN(rawPrice) || rawPrice <= 0) return;
+
+      const monthlyLocal = cycle === 'annual' ? rawPrice / 12 : rawPrice;
+      const monthlyUsd = monthlyLocal / CURR[activeCurr].rate;
+      subs.unshift({ id: nextId++, name, priceUsd: monthlyUsd, cat: 'Custom', active: true });
+      el('newSubName').value = '';
+      el('newSubPrice').value = '';
+      renderAll();
+    });
+
+    el('returnRate').addEventListener('input', renderResults);
+    el('yearsHorizon').addEventListener('input', renderResults);
+
+    el('copyAuditBtn').addEventListener('click', function() {
+      const text = `My Subscription Cost Audit:\n` +
+        `• Monthly Spend: ${el('monthlyTotalOut').textContent}\n` +
+        `• Annual Burn: ${el('annualTotalOut').textContent}\n` +
+        `• ${el('yearsHorizon').value}-Year Opportunity Cost: ${el('oppTotalOut').textContent}\n` +
+        `• Annual Savings from Cuts: ${el('cutSavingsOut').textContent}\n` +
+        `Audit yours: https://realrefin.com/subscription-cost-calculator`;
+      navigator.clipboard.writeText(text).then(() => {
+        this.textContent = '✅ Summary Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy Audit Summary'; }, 2000);
+      });
+    });
+
+    el('waShareBtn').addEventListener('click', function() {
+      const msg = `I just audited my subscriptions: ${el('monthlyTotalOut').textContent}/mo (${el('annualTotalOut').textContent}/yr) — a ${el('oppTotalOut').textContent} opportunity cost! Audit yours: https://realrefin.com/subscription-cost-calculator`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    el('copyEmbedBtn').addEventListener('click', function() {
+      const box = el('embedCodeBox');
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        this.textContent = '✅ Embed Code Copied!';
+        setTimeout(() => { this.textContent = 'Copy Embed Code'; }, 2000);
+      });
+    });
+
+    renderAll();
+  });
+  </script>
+</body>
+</html>

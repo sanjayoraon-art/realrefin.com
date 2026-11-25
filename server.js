@@ -218,6 +218,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://realrefin.com/ev-vs-gas-cost-calculator</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://realrefin.com/cayo-perico-payout-calculator</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -226,6 +232,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   <url>
     <loc>https://realrefin.com/fastest-cars-in-gta-5</loc>
     <lastmod>2026-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/influencer-rate-calculator</loc>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -436,6 +448,12 @@ const SITEMAP_XML = `<?xml version="1.0" encoding="UTF-8"?>
   <url>
     <loc>https://realrefin.com/spray-foam-insulation-cost-calculator</loc>
     <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://realrefin.com/subscription-cost-calculator</loc>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

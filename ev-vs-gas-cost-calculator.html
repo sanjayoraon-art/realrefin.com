@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV vs Gas Cost Calculator | Charging, Cost Per Mile &amp; 5-Year TCO (2026)</title>
+  <meta name="description" content="Free gas vs EV cost calculator. Compare EV charging vs gas cost, exact EV cost per mile vs gas, maintenance savings, tax credits, and 5-to-10 year total cost of ownership.">
+  <meta name="keywords" content="gas vs ev cost calculator, ev charging vs gas cost calculator, ev cost per mile vs gas calculator, ev car vs gas car cost calculator, electric car vs gas savings calculator, ev break even calculator">
+  <link rel="canonical" href="https://realrefin.com/ev-vs-gas-cost-calculator">
+  <meta property="og:title" content="EV vs Gas Cost Calculator &amp; Cost Per Mile Engine | RealRefin">
+  <meta property="og:description" content="Compare EV charging vs gas cost, cost per mile, maintenance, and 5-to-10 year total cost of ownership in USD, INR, and GBP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/ev-vs-gas-cost-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "EV vs Gas Cost Calculator & Cost Per Mile Engine",
+        "url": "https://realrefin.com/ev-vs-gas-cost-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Compare EV charging vs gas cost, EV cost per mile vs gas, maintenance savings, and multi-year total cost of ownership."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you calculate EV cost per mile vs gas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EV cost per mile equals your electricity rate ($/kWh) divided by EV efficiency (miles/kWh). For example, $0.16/kWh divided by 3.5 miles/kWh equals $0.046 per mile. Gas cost per mile equals gas price ($/gallon) divided by MPG—for example, $3.45/gal divided by 28 MPG equals $0.123 per mile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much cheaper is EV charging vs gas per year?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For a driver covering 12,000 miles per year, home EV charging typically costs $550–$700 per year compared to $1,400–$1,800 for a 28 MPG gas car—saving $800 to $1,100 annually on fuel alone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take for an EV to break even vs a gas car?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When factoring in federal/state EV tax credits, fuel savings, and lower routine maintenance (no oil changes or timing belts), most EVs break even against an equivalent gas car within 2 to 5 years."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0b1120;
+      --secondary-navy: #162033;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --accent-amber: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+    .rr-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rr-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo span { color: var(--accent-emerald); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--accent-emerald-dark); }
+    .btn-nav-back {
+      background: var(--primary-navy);
+      color: #fff !important;
+      padding: 0.48rem 0.95rem;
+      border-radius: 9px;
+      font-weight: 700 !important;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.32rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 span { color: #34d399; }
+    .page-hero p { color: #cbd5e1; font-size: 0.98rem; max-width: 790px; }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .calc-grid > * { min-width: 0; max-width: 100%; }
+    @media (max-width: 920px) {
+      .calc-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 480px) {
+      .card { padding: 1.1rem; }
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .toggle-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .pill-btn {
+      padding: 0.42rem 0.82rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      color: #475569;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover { border-color: #94a3b8; color: var(--primary-navy); }
+    .pill-btn.active { background: var(--primary-navy); color: #ffffff; border-color: var(--primary-navy); }
+
+    .section-sub-label {
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-emerald-dark);
+      margin: 1.15rem 0 0.65rem;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    @media (max-width: 520px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+    .field { margin-bottom: 0.85rem; }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.32rem;
+    }
+    .field input, .field select {
+      width: 100%;
+      height: 43px;
+      padding: 0 0.85rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Results Panel */
+    .results-sticky { position: sticky; top: 82px; }
+    .savings-hero-box {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 1.45rem;
+      margin-bottom: 1.1rem;
+    }
+    .savings-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #94a3b8; }
+    .savings-value {
+      font-family: var(--font-mono);
+      font-size: clamp(1.9rem, 4vw, 2.55rem);
+      font-weight: 700;
+      color: #34d399;
+      line-height: 1.15;
+      margin: 0.25rem 0 0.6rem;
+    }
+    .savings-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Cost Per Mile Side-by-Side */
+    .cpm-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.1rem;
+    }
+    @media (max-width: 440px) { .cpm-split { grid-template-columns: 1fr; } }
+    .cpm-card {
+      border-radius: 14px;
+      padding: 0.95rem 1rem;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+    }
+    .cpm-card.ev { background: var(--accent-emerald-light); border-color: var(--accent-emerald-border); }
+    .cpm-card small { display: block; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); }
+    .cpm-card.ev small { color: var(--accent-emerald-dark); }
+    .cpm-card .cpm-num { font-family: var(--font-mono); font-size: 1.45rem; font-weight: 700; color: var(--primary-navy); margin: 0.15rem 0; }
+    .cpm-card .cpm-sub { font-size: 0.78rem; color: #475569; font-weight: 600; }
+
+    /* Comparison Table */
+    .tco-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-bottom: 1.15rem;
+    }
+    .tco-table th {
+      text-align: left;
+      padding: 0.55rem 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+    .tco-table th:not(:first-child), .tco-table td:not(:first-child) { text-align: right; }
+    .tco-table td {
+      padding: 0.62rem 0.5rem;
+      border-bottom: 1px solid #f1f5f9;
+      font-weight: 600;
+    }
+    .tco-table td:not(:first-child) { font-family: var(--font-mono); }
+    .tco-table tr.total-row td {
+      border-top: 2px solid var(--border-color);
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .btn-action {
+      padding: 0.72rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .btn-copy { background: var(--primary-navy); color: #ffffff; }
+    .btn-copy:hover { background: var(--accent-emerald-dark); }
+    .btn-wa { background: #16a34a; color: #ffffff; }
+    .btn-wa:hover { background: #15803d; }
+    .btn-print { grid-column: 1 / -1; background: #f1f5f9; color: var(--primary-navy); border: 1px solid var(--border-color); }
+
+    /* Guide & Embed */
+    .guide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 0.75rem; }
+    .guide-card h3 { font-size: 1.08rem; font-weight: 800; color: var(--primary-navy); margin: 1.3rem 0 0.5rem; }
+    .guide-card p, .guide-card li { color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .guide-card ul { padding-left: 1.25rem; }
+    .formula-box {
+      font-family: var(--font-mono);
+      background: #0b1120;
+      color: #6ee7b7;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.86rem;
+      margin: 0.9rem 0 1.2rem;
+      overflow-x: auto;
+    }
+    .embed-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.35rem;
+      margin-top: 1.5rem;
+    }
+    .embed-box textarea {
+      width: 100%;
+      height: 78px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin: 0.6rem 0;
+      resize: none;
+      background: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: #ffffff;
+    }
+    footer a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    @media print {
+      .rr-nav-wrap, .action-row, .embed-box, footer { display: none !important; }
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-nav-wrap">
+    <header class="rr-nav">
+      <a href="/" class="rr-logo">
+        <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 7px;">
+        Real<span>Refin</span>.com
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">All 80+ Calculators</a></li>
+        <li><a href="/detail-car-payment-calculator-formulas">Car Loan Formulas</a></li>
+        <li><a href="/subscription-cost-calculator">Subscription Cost</a></li>
+        <li><a href="/influencer-rate-calculator">Influencer Rate</a></li>
+        <li><a href="/" class="btn-nav-back">← Back to Directory</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <main class="container">
+    <section class="page-hero">
+      <div class="hero-pill">⚡ 2026 Auto Economics • Charging vs. Fuel &amp; Cost Per Mile</div>
+      <h1>Gas vs. EV Cost Calculator &amp; <span>Cost Per Mile</span> Engine</h1>
+      <p>
+        Compare EV charging vs. gas cost, exact EV cost per mile vs. gas, routine maintenance, federal/state tax incentives, and multi-year total cost of ownership across the US, India, and UK.
+      </p>
+    </section>
+
+    <section class="calc-grid" aria-label="Gas vs EV Cost Calculator">
+      <!-- LEFT: INPUTS -->
+      <div class="card">
+        <div class="card-title">
+          <span>🚗 Driving &amp; Vehicle Inputs</span>
+          <div class="toggle-row">
+            <button type="button" class="pill-btn active" data-region="US">🇺🇸 US ($/mi)</button>
+            <button type="button" class="pill-btn" data-region="IN">🇮🇳 India (₹/km)</button>
+            <button type="button" class="pill-btn" data-region="UK">🇬🇧 UK (£/mi)</button>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="annualDist"><span id="distLabel">Annual Miles Driven</span></label>
+            <input type="number" id="annualDist" value="12000" min="500" step="500">
+          </div>
+          <div class="field">
+            <label for="years">Ownership Horizon</label>
+            <select id="years">
+              <option value="3">3 Years</option>
+              <option value="5" selected>5 Years</option>
+              <option value="8">8 Years</option>
+              <option value="10">10 Years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-sub-label">⚡ Electric Vehicle (EV) Parameters</div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="evPrice">EV Purchase Price</label>
+            <input type="number" id="evPrice" value="42000" min="0" step="500">
+          </div>
+          <div class="field">
+            <label for="evCredit">EV Tax Credit / Subsidy</label>
+            <input type="number" id="evCredit" value="7500" min="0" step="250">
+          </div>
+          <div class="field">
+            <label for="elecRate"><span id="elecLabel">Home Electricity ($/kWh)</span></label>
+            <input type="number" id="elecRate" value="0.16" min="0" step="0.01">
+          </div>
+          <div class="field">
+            <label for="evEff"><span id="evEffLabel">EV Efficiency (mi/kWh)</span></label>
+            <input type="number" id="evEff" value="3.5" min="0.5" step="0.1">
+          </div>
+          <div class="field">
+            <label for="fastPct">Public Fast-Charge Share (%)</label>
+            <input type="number" id="fastPct" value="15" min="0" max="100" step="5">
+          </div>
+          <div class="field">
+            <label for="evMaint">EV Annual Maintenance</label>
+            <input type="number" id="evMaint" value="450" min="0" step="50">
+          </div>
+        </div>
+
+        <div class="section-sub-label">⛽ Gas / Petrol Vehicle Parameters</div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="gasPriceCar">Gas Car Purchase Price</label>
+            <input type="number" id="gasPriceCar" value="35000" min="0" step="500">
+          </div>
+          <div class="field">
+            <label for="fuelPrice"><span id="fuelLabel">Gas Price ($/gallon)</span></label>
+            <input type="number" id="fuelPrice" value="3.45" min="0" step="0.05">
+          </div>
+          <div class="field">
+            <label for="gasEff"><span id="gasEffLabel">Fuel Economy (MPG)</span></label>
+            <input type="number" id="gasEff" value="28" min="1" step="1">
+          </div>
+          <div class="field">
+            <label for="gasMaint">Gas Annual Maintenance</label>
+            <input type="number" id="gasMaint" value="1100" min="0" step="50">
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE RESULTS -->
+      <div class="card results-sticky">
+        <div class="card-title">
+          <span>📊 EV vs. Gas Savings Breakdown</span>
+          <span id="winnerTag" style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">EV WINS</span>
+        </div>
+
+        <div class="savings-hero-box">
+          <div class="savings-label" id="horizonLabel">5-Year Net Savings (EV vs. Gas)</div>
+          <div class="savings-value" id="netSavingsOut">$7,620</div>
+          <div class="savings-sub">
+            <span>Fuel Savings/Yr: <strong id="annualFuelSaveOut" style="color:#fff;">$874</strong></span>
+            <span>Break-Even: <strong id="breakevenOut" style="color:#fff;">Immediate</strong></span>
+          </div>
+        </div>
+
+        <div class="cpm-split">
+          <div class="cpm-card ev">
+            <small id="evCpmTitle">⚡ EV Cost Per Mile</small>
+            <div class="cpm-num" id="evCpmOut">$0.053</div>
+            <div class="cpm-sub" id="evAnnualFuelOut">$633 / yr charging</div>
+          </div>
+          <div class="cpm-card">
+            <small id="gasCpmTitle">⛽ Gas Cost Per Mile</small>
+            <div class="cpm-num" id="gasCpmOut">$0.123</div>
+            <div class="cpm-sub" id="gasAnnualFuelOut">$1,479 / yr fuel</div>
+          </div>
+        </div>
+
+        <table class="tco-table" aria-label="Total Cost of Ownership Comparison">
+          <thead>
+            <tr>
+              <th>Cost Component</th>
+              <th>Electric (EV)</th>
+              <th>Gas Car</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Net Purchase Price (After Credit)</td>
+              <td id="tcoEvPrice">$34,500</td>
+              <td id="tcoGasPrice">$35,000</td>
+            </tr>
+            <tr>
+              <td id="tcoFuelLabel">5-Yr Charging vs. Gas</td>
+              <td id="tcoEvFuel">$3,163</td>
+              <td id="tcoGasFuel">$7,393</td>
+            </tr>
+            <tr>
+              <td id="tcoMaintLabel">5-Yr Maintenance</td>
+              <td id="tcoEvMaint">$2,250</td>
+              <td id="tcoGasMaint">$5,500</td>
+            </tr>
+            <tr class="total-row">
+              <td>Total Cost of Ownership</td>
+              <td id="tcoEvTotal" style="color:var(--accent-emerald-dark);">$39,913</td>
+              <td id="tcoGasTotal">$47,893</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="action-row">
+          <button type="button" class="btn-action btn-copy" id="copyResultBtn">📋 Copy Comparison</button>
+          <button type="button" class="btn-action btn-wa" id="waShareBtn">💬 Share WhatsApp</button>
+          <button type="button" class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card">
+      <h2>EV Charging vs. Gas Cost &amp; Cost Per Mile Explained</h2>
+      <p>
+        When shopping for a vehicle, sticker price alone hides the true 5-year cost. Our <strong>gas vs EV cost calculator</strong> models both your upfront net purchase price (after EV tax credits or subsidies) and your ongoing operating costs—specifically <strong>EV cost per mile vs gas</strong> and annual maintenance.
+      </p>
+
+      <h3>EV Cost Per Mile vs. Gas Cost Per Mile Formula</h3>
+      <div class="formula-box">
+        EV Cost/Mile = Blended Electricity Rate ($/kWh) ÷ EV Efficiency (mi/kWh)<br>
+        Gas Cost/Mile = Gas Price ($/gal) ÷ Vehicle MPG
+      </div>
+      <ul>
+        <li><strong>Home Charging Advantage:</strong> Charging overnight at residential utility rates ($0.12–$0.18/kWh) typically delivers an EV cost per mile that is 55%–70% lower than gasoline.</li>
+        <li><strong>Public Fast Charging Impact:</strong> DC fast chargers cost 2x–3x more than home electricity; use the <em>Public Fast-Charge Share (%)</em> input above to model road trips or apartment living.</li>
+        <li><strong>Maintenance Savings:</strong> EVs eliminate oil changes, spark plugs, transmission fluid, and reduce brake pad wear through regenerative braking.</li>
+      </ul>
+
+      <div class="embed-box">
+        <strong style="color:var(--primary-navy);font-size:0.92rem;">🔗 Embed This Gas vs. EV Cost Calculator on Your Site</strong>
+        <textarea readonly id="embedCodeBox">&lt;iframe src="https://realrefin.com/ev-vs-gas-cost-calculator" width="100%" height="780" style="border:1px solid #e2e8f0;border-radius:12px;" loading="lazy"&gt;&lt;/iframe&gt;&lt;p style="font-size:12px;"&gt;Powered by &lt;a href="https://realrefin.com/ev-vs-gas-cost-calculator" rel="nofollow noopener"&gt;RealRefin EV vs Gas Cost Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+        <button type="button" class="pill-btn" id="copyEmbedBtn">Copy Embed Code</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">RealRefin.com</a> &bull; Free Auto &amp; Financial Modeling Engines &bull; <a href="/privacy-policy">Privacy Policy</a> &bull; <a href="/disclaimer">Disclaimer</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    const REGIONS = {
+      US: {
+        symbol: '$', distUnit: 'Mile', distLabel: 'Annual Miles Driven',
+        elecLabel: 'Home Electricity ($/kWh)', evEffLabel: 'EV Efficiency (mi/kWh)',
+        fuelLabel: 'Gas Price ($/gallon)', gasEffLabel: 'Fuel Economy (MPG)',
+        defaults: { annualDist: 12000, evPrice: 42000, evCredit: 7500, elecRate: 0.16, evEff: 3.5, fastPct: 15, evMaint: 450, gasPriceCar: 35000, fuelPrice: 3.45, gasEff: 28, gasMaint: 1100 }
+      },
+      IN: {
+        symbol: '₹', distUnit: 'Km', distLabel: 'Annual Km Driven',
+        elecLabel: 'Home Electricity (₹/kWh)', evEffLabel: 'EV Efficiency (km/kWh)',
+        fuelLabel: 'Petrol Price (₹/Litre)', gasEffLabel: 'Fuel Economy (km/L)',
+        defaults: { annualDist: 15000, evPrice: 1650000, evCredit: 100000, elecRate: 8, evEff: 6.5, fastPct: 15, evMaint: 6000, gasPriceCar: 1350000, fuelPrice: 104, gasEff: 16, gasMaint: 18000 }
+      },
+      UK: {
+        symbol: '£', distUnit: 'Mile', distLabel: 'Annual Miles Driven',
+        elecLabel: 'Home Electricity (£/kWh)', evEffLabel: 'EV Efficiency (mi/kWh)',
+        fuelLabel: 'Petrol Price (£/Litre)', gasEffLabel: 'Fuel Economy (MPG UK)',
+        defaults: { annualDist: 10000, evPrice: 38000, evCredit: 0, elecRate: 0.24, evEff: 3.6, fastPct: 20, evMaint: 350, gasPriceCar: 31000, fuelPrice: 1.42, gasEff: 42, gasMaint: 850 }
+      }
+    };
+
+    let activeRegion = 'US';
+    const el = id => document.getElementById(id);
+
+    function fmt(val, dec = 0) {
+      const sym = REGIONS[activeRegion].symbol;
+      const sign = val < 0 ? '-' : '';
+      return sign + sym + Math.abs(val).toLocaleString('en-US', {
+        minimumFractionDigits: dec,
+        maximumFractionDigits: dec
+      });
+    }
+
+    function applyRegionDefaults(regKey) {
+      const r = REGIONS[regKey];
+      el('distLabel').textContent = r.distLabel;
+      el('elecLabel').textContent = r.elecLabel;
+      el('evEffLabel').textContent = r.evEffLabel;
+      el('fuelLabel').textContent = r.fuelLabel;
+      el('gasEffLabel').textContent = r.gasEffLabel;
+      el('evCpmTitle').textContent = `⚡ EV Cost Per ${r.distUnit}`;
+      el('gasCpmTitle').textContent = `⛽ Gas Cost Per ${r.distUnit}`;
+
+      Object.entries(r.defaults).forEach(([k, v]) => {
+        if (el(k)) el(k).value = v;
+      });
+      calculate();
+    }
+
+    function calculate() {
+      const dist        = Math.max(100, parseFloat(el('annualDist').value) || 0);
+      const years       = parseInt(el('years').value, 10) || 5;
+      const evPrice     = Math.max(0, parseFloat(el('evPrice').value) || 0);
+      const evCredit    = Math.max(0, parseFloat(el('evCredit').value) || 0);
+      const elecRate    = Math.max(0, parseFloat(el('elecRate').value) || 0);
+      const evEff       = Math.max(0.2, parseFloat(el('evEff').value) || 3.5);
+      const fastPct     = Math.min(100, Math.max(0, parseFloat(el('fastPct').value) || 0)) / 100;
+      const evMaint     = Math.max(0, parseFloat(el('evMaint').value) || 0);
+      const gasPriceCar = Math.max(0, parseFloat(el('gasPriceCar').value) || 0);
+      const fuelPrice   = Math.max(0, parseFloat(el('fuelPrice').value) || 0);
+      const gasEff      = Math.max(1, parseFloat(el('gasEff').value) || 25);
+      const gasMaint    = Math.max(0, parseFloat(el('gasMaint').value) || 0);
+
+      // Fast charging typically ~2.4x home electricity rate
+      const blendedElecRate = elecRate * (1 - fastPct) + (elecRate * 2.4) * fastPct;
+      const evCostPerDist = blendedElecRate / evEff;
+
+      // UK uses £/Litre with MPG (4.546 L per UK gallon)
+      const effectiveFuelPerUnitDist = (activeRegion === 'UK')
+        ? (fuelPrice * 4.54609) / gasEff
+        : fuelPrice / gasEff;
+
+      const evAnnualFuel  = dist * evCostPerDist;
+      const gasAnnualFuel = dist * effectiveFuelPerUnitDist;
+      const annualFuelSave = gasAnnualFuel - evAnnualFuel;
+      const annualMaintSave = gasMaint - evMaint;
+      const totalAnnualOpSave = annualFuelSave + annualMaintSave;
+
+      const netEvPurchase = Math.max(0, evPrice - evCredit);
+      const upfrontDiff   = netEvPurchase - gasPriceCar;
+
+      const evTotalTco  = netEvPurchase + (evAnnualFuel + evMaint) * years;
+      const gasTotalTco = gasPriceCar + (gasAnnualFuel + gasMaint) * years;
+      const netSavings  = gasTotalTco - evTotalTco;
+
+      let breakevenText = 'Never';
+      if (upfrontDiff <= 0 && totalAnnualOpSave >= 0) {
+        breakevenText = 'Immediate (Day 1)';
+      } else if (totalAnnualOpSave > 0) {
+        const beYears = upfrontDiff / totalAnnualOpSave;
+        breakevenText = beYears <= 25 ? beYears.toFixed(1) + ' Years' : '> 25 Years';
+      }
+
+      const cpmDecimals = activeRegion === 'IN' ? 2 : 3;
+      el('horizonLabel').textContent = `${years}-Year Net Savings (EV vs. Gas)`;
+      el('netSavingsOut').textContent = fmt(netSavings);
+      el('netSavingsOut').style.color = netSavings >= 0 ? '#34d399' : '#fb7185';
+      el('winnerTag').textContent = netSavings >= 0 ? '⚡ EV WINS' : '⛽ GAS WINS';
+
+      el('annualFuelSaveOut').textContent = fmt(annualFuelSave);
+      el('breakevenOut').textContent = breakevenText;
+
+      el('evCpmOut').textContent  = fmt(evCostPerDist, cpmDecimals);
+      el('gasCpmOut').textContent = fmt(effectiveFuelPerUnitDist, cpmDecimals);
+      el('evAnnualFuelOut').textContent  = `${fmt(evAnnualFuel)} / yr charging`;
+      el('gasAnnualFuelOut').textContent = `${fmt(gasAnnualFuel)} / yr fuel`;
+
+      el('tcoFuelLabel').textContent  = `${years}-Yr Charging vs. Gas`;
+      el('tcoMaintLabel').textContent = `${years}-Yr Maintenance`;
+      el('tcoEvPrice').textContent  = fmt(netEvPurchase);
+      el('tcoGasPrice').textContent = fmt(gasPriceCar);
+      el('tcoEvFuel').textContent   = fmt(evAnnualFuel * years);
+      el('tcoGasFuel').textContent  = fmt(gasAnnualFuel * years);
+      el('tcoEvMaint').textContent  = fmt(evMaint * years);
+      el('tcoGasMaint').textContent = fmt(gasMaint * years);
+      el('tcoEvTotal').textContent  = fmt(evTotalTco);
+      el('tcoGasTotal').textContent = fmt(gasTotalTco);
+    }
+
+    document.querySelectorAll('[data-region]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-region]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeRegion = this.getAttribute('data-region');
+        applyRegionDefaults(activeRegion);
+      });
+    });
+
+    ['annualDist','years','evPrice','evCredit','elecRate','evEff','fastPct','evMaint','gasPriceCar','fuelPrice','gasEff','gasMaint']
+      .forEach(id => {
+        el(id).addEventListener('input', calculate);
+        el(id).addEventListener('change', calculate);
+      });
+
+    el('copyResultBtn').addEventListener('click', function() {
+      const text = `EV vs. Gas Cost Comparison (${el('years').value}-Year TCO):\n` +
+        `• EV Cost/${REGIONS[activeRegion].distUnit}: ${el('evCpmOut').textContent} vs. Gas: ${el('gasCpmOut').textContent}\n` +
+        `• Net ${el('years').value}-Yr Savings: ${el('netSavingsOut').textContent} (Break-Even: ${el('breakevenOut').textContent})\n` +
+        `Calculate yours: https://realrefin.com/ev-vs-gas-cost-calculator`;
+      navigator.clipboard.writeText(text).then(() => {
+        this.textContent = '✅ Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy Comparison'; }, 2000);
+      });
+    });
+
+    el('waShareBtn').addEventListener('click', function() {
+      const msg = `EV vs Gas Comparison: EV saves ${el('netSavingsOut').textContent} over ${el('years').value} yrs (${el('evCpmOut').textContent} vs ${el('gasCpmOut').textContent} per ${REGIONS[activeRegion].distUnit.toLowerCase()}). Check yours: https://realrefin.com/ev-vs-gas-cost-calculator`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    el('copyEmbedBtn').addEventListener('click', function() {
+      const box = el('embedCodeBox');
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        this.textContent = '✅ Embed Code Copied!';
+        setTimeout(() => { this.textContent = 'Copy Embed Code'; }, 2000);
+      });
+    });
+
+    calculate();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influencer Rate Calculator &amp; Engagement Rate Engine (2026) | RealRefin</title>
+  <meta name="description" content="Free influencer rate calculator and engagement rate calculator for Instagram, YouTube, TikTok, and UGC creators. Calculate influencer engagement rate, brand deal pricing, CPM, and usage rights in seconds.">
+  <meta name="keywords" content="influencer rate calculator, influencer rates calculator, calculate influencer engagement rate, sponsorship rate calculator, brand deal pricing calculator, instagram engagement rate calculator, youtube sponsorship calculator, ugc rate calculator">
+  <link rel="canonical" href="https://realrefin.com/influencer-rate-calculator">
+  <meta property="og:title" content="Influencer Rate Calculator &amp; Engagement Rate Engine | RealRefin">
+  <meta property="og:description" content="Calculate your exact influencer engagement rate and fair market sponsorship rates for Instagram, YouTube, TikTok, and UGC deals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/influencer-rate-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Influencer Rate & Engagement Rate Calculator",
+        "url": "https://realrefin.com/influencer-rate-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free influencer rate calculator to calculate influencer engagement rate and fair market sponsorship pricing across Instagram, YouTube, TikTok, and UGC."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you calculate influencer engagement rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate influencer engagement rate, divide total average engagements (likes + comments + shares/saves) per post by total followers, then multiply by 100. An engagement rate above 3% on Instagram or 5% on TikTok is generally considered strong."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much should an influencer charge per sponsored post?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A common baseline in an influencer rates calculator is $10 to $25 per 1,000 followers (or $15 to $45 CPM on views), adjusted upward for high engagement rates, high-value niches like Finance or SaaS, paid ad usage rights, and category exclusivity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much extra should I charge for paid ad usage rights and whitelisting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Industry standard is +30% of the base fee for 30 days of paid usage rights or whitelisting, +60% for 90 days, and +100% or more for perpetual/unlimited buyout rights."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this influencer rate calculator support Indian Rupees (INR) and USD?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can switch seamlessly between USD ($), INR (₹), and GBP (£) with localized regional CPM benchmarks."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0b1120;
+      --secondary-navy: #162033;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --accent-indigo: #4f46e5;
+      --accent-indigo-light: #eef2ff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky Navbar */
+    .rr-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+    .rr-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rr-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo span { color: var(--accent-emerald); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--accent-emerald-dark); }
+    .btn-nav-back {
+      background: var(--primary-navy);
+      color: #fff !important;
+      padding: 0.48rem 0.95rem;
+      border-radius: 9px;
+      font-weight: 700 !important;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    /* Hero Header */
+    .page-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem 2.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid var(--accent-emerald);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.32rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 {
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 span { color: #34d399; }
+    .page-hero p {
+      color: #cbd5e1;
+      font-size: 0.98rem;
+      max-width: 780px;
+    }
+
+    /* Main Calculator Grid */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .calc-grid > * { min-width: 0; max-width: 100%; }
+    @media (max-width: 920px) {
+      .calc-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .card { padding: 1.1rem; }
+      .eng-box { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .kpi-mini-grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.65rem;
+      box-shadow: var(--shadow-md);
+    }
+    .card-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    /* Currency & Platform Pills */
+    .toggle-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.2rem;
+    }
+    .pill-btn {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      color: #475569;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover { border-color: #94a3b8; color: var(--primary-navy); }
+    .pill-btn.active {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border-color: var(--primary-navy);
+    }
+
+    .form-section-label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-emerald-dark);
+      margin: 1.25rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    @media (max-width: 520px) {
+      .form-grid-2 { grid-template-columns: 1fr; }
+    }
+    .field { margin-bottom: 0.9rem; }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.35rem;
+    }
+    .field input, .field select {
+      width: 100%;
+      height: 44px;
+      padding: 0 0.85rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      font-family: inherit;
+      transition: border-color 0.15s ease;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-top: 0.5rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+    }
+    .check-row input { width: 17px; height: 17px; accent-color: var(--accent-emerald); }
+
+    /* Live Results Panel */
+    .results-sticky { position: sticky; top: 82px; }
+    .rate-hero-box {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.15rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .rate-hero-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #94a3b8;
+      margin-bottom: 0.3rem;
+    }
+    .rate-hero-value {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      font-weight: 700;
+      color: #34d399;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+    }
+    .rate-range-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.7rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Engagement Rate Gauge Box */
+    .eng-box {
+      background: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      border-radius: 14px;
+      padding: 1.05rem 1.15rem;
+      margin-bottom: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .eng-box strong {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-emerald-dark);
+    }
+    .eng-score {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+    .eng-tier-pill {
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 0.32rem 0.75rem;
+      border-radius: 50px;
+      background: #ffffff;
+      color: var(--accent-emerald-dark);
+      border: 1px solid var(--accent-emerald-border);
+      white-space: nowrap;
+    }
+
+    /* Metrics Mini Grid */
+    .kpi-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.15rem;
+    }
+    .kpi-mini {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.75rem 0.8rem;
+      text-align: center;
+    }
+    .kpi-mini small {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .kpi-mini span {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+    }
+
+    /* Package Table */
+    .pkg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 1.15rem;
+    }
+    .pkg-table th {
+      text-align: left;
+      padding: 0.55rem 0.6rem;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+    }
+    .pkg-table td {
+      padding: 0.65rem 0.6rem;
+      border-bottom: 1px solid #f1f5f9;
+      font-weight: 600;
+    }
+    .pkg-table td:last-child {
+      text-align: right;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--accent-emerald-dark);
+    }
+
+    /* Action Buttons */
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+    .btn-action {
+      padding: 0.72rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+    .btn-copy { background: var(--primary-navy); color: #ffffff; }
+    .btn-copy:hover { background: var(--accent-emerald-dark); }
+    .btn-wa { background: #16a34a; color: #ffffff; }
+    .btn-wa:hover { background: #15803d; }
+    .btn-print {
+      grid-column: 1 / -1;
+      background: #f1f5f9;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+    }
+    .btn-print:hover { background: #e2e8f0; }
+
+    /* SEO Guide & FAQ */
+    .guide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 0.75rem;
+    }
+    .guide-card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin: 1.35rem 0 0.5rem;
+    }
+    .guide-card p, .guide-card li {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 0.65rem;
+    }
+    .guide-card ul { padding-left: 1.25rem; }
+    .formula-box {
+      font-family: var(--font-mono);
+      background: #0b1120;
+      color: #6ee7b7;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      margin: 0.9rem 0 1.2rem;
+      overflow-x: auto;
+    }
+
+    .bench-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    .bench-table th {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 0.8rem 1rem;
+      text-align: left;
+    }
+    .bench-table td {
+      padding: 0.78rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+    .bench-table tr:nth-child(even) td { background: #f8fafc; }
+
+    /* Embed Box */
+    .embed-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.35rem;
+      margin-top: 1.5rem;
+    }
+    .embed-box textarea {
+      width: 100%;
+      height: 78px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin: 0.6rem 0;
+      resize: none;
+      background: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      background: #ffffff;
+    }
+    footer a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+
+    @media print {
+      .rr-nav-wrap, .action-row, .embed-box, footer { display: none !important; }
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-nav-wrap">
+    <header class="rr-nav">
+      <a href="/" class="rr-logo">
+        <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 7px;">
+        Real<span>Refin</span>.com
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">All 78+ Calculators</a></li>
+        <li><a href="/youtube-money-calculator">YouTube Money</a></li>
+        <li><a href="/wealth-percentile-calculator">Wealth Percentile</a></li>
+        <li><a href="/in-hand-salary-calculator">In-Hand Salary</a></li>
+        <li><a href="/" class="btn-nav-back">← Back to Directory</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <main class="container">
+    <section class="page-hero">
+      <div class="hero-pill">📣 2026 Creator Economy • Engagement &amp; Sponsorship Engine</div>
+      <h1>Influencer Rate Calculator &amp; <span>Engagement Rate</span> Engine</h1>
+      <p>
+        Calculate influencer engagement rate from likes, comments, and shares, then instantly generate fair market sponsorship rates for Instagram, YouTube, TikTok, and UGC brand deals—complete with usage rights, exclusivity, and a 1-click pitch quote.
+      </p>
+    </section>
+
+    <section class="calc-grid" aria-label="Influencer Rate & Engagement Calculator">
+      <!-- LEFT: INPUTS -->
+      <div class="card">
+        <div class="card-title">
+          <span>🎛️ Creator Metrics &amp; Deal Scope</span>
+          <div class="toggle-row" style="margin:0;">
+            <button type="button" class="pill-btn active" data-curr="USD">USD $</button>
+            <button type="button" class="pill-btn" data-curr="INR">INR ₹</button>
+            <button type="button" class="pill-btn" data-curr="GBP">GBP £</button>
+          </div>
+        </div>
+
+        <div class="form-section-label">1. Select Platform &amp; Deliverable</div>
+        <div class="toggle-row" id="platformGroup">
+          <button type="button" class="pill-btn active" data-plat="ig_reel">📸 IG Reel</button>
+          <button type="button" class="pill-btn" data-plat="ig_post">🖼️ IG Post</button>
+          <button type="button" class="pill-btn" data-plat="yt_integ">🎥 YT Integration</button>
+          <button type="button" class="pill-btn" data-plat="yt_ded">🎬 YT Dedicated</button>
+          <button type="button" class="pill-btn" data-plat="tiktok">🎵 TikTok</button>
+          <button type="button" class="pill-btn" data-plat="ugc">📦 UGC Only</button>
+        </div>
+
+        <div class="form-section-label">2. Calculate Influencer Engagement Rate</div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="followers">Followers / Subscribers</label>
+            <input type="number" id="followers" value="50000" min="100" step="500">
+          </div>
+          <div class="field">
+            <label for="avgViews">Avg Views per Post</label>
+            <input type="number" id="avgViews" value="18000" min="0" step="500">
+          </div>
+          <div class="field">
+            <label for="avgLikes">Avg Likes per Post</label>
+            <input type="number" id="avgLikes" value="1650" min="0" step="10">
+          </div>
+          <div class="field">
+            <label for="avgComments">Avg Comments</label>
+            <input type="number" id="avgComments" value="95" min="0" step="5">
+          </div>
+          <div class="field">
+            <label for="avgShares">Avg Shares / Saves</label>
+            <input type="number" id="avgShares" value="210" min="0" step="5">
+          </div>
+          <div class="field">
+            <label for="customEng">Override Engagement % <small style="color:#64748b;font-weight:500;">(Optional)</small></label>
+            <input type="number" id="customEng" placeholder="Auto-calculated" min="0" max="100" step="0.1">
+          </div>
+        </div>
+
+        <div class="form-section-label">3. Niche, Usage Rights &amp; Exclusivity</div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="niche">Content Niche</label>
+            <select id="niche">
+              <option value="1.45">Finance, Investing &amp; B2B SaaS (+45%)</option>
+              <option value="1.30">Tech, AI &amp; Software (+30%)</option>
+              <option value="1.15">Beauty, Skincare &amp; Fashion (+15%)</option>
+              <option value="1.10">Fitness, Health &amp; Nutrition (+10%)</option>
+              <option value="1.00" selected>Lifestyle, Travel &amp; Food (1.0x)</option>
+              <option value="0.90">Gaming, Memes &amp; Entertainment (0.9x)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="usageRights">Paid Ad Usage / Whitelisting</label>
+            <select id="usageRights">
+              <option value="0" selected>Organic Only (0%)</option>
+              <option value="0.30">30-Day Paid Usage (+30%)</option>
+              <option value="0.60">90-Day Paid Usage (+60%)</option>
+              <option value="1.00">Perpetual / Buyout (+100%)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="exclusivity">Category Exclusivity</label>
+            <select id="exclusivity">
+              <option value="0" selected>None (0%)</option>
+              <option value="0.25">30-Day Exclusivity (+25%)</option>
+              <option value="0.50">90-Day Exclusivity (+50%)</option>
+            </select>
+          </div>
+          <div class="field" style="display:flex;align-items:flex-end;padding-bottom:0.45rem;">
+            <label class="check-row">
+              <input type="checkbox" id="rushFee">
+              Rush Turnaround &lt; 72 hrs (+20%)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE RESULTS -->
+      <div class="card results-sticky">
+        <div class="card-title">
+          <span>💎 Fair Market Rate &amp; Quote</span>
+          <span id="creatorTierTag" style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">MICRO / MID-TIER</span>
+        </div>
+
+        <div class="rate-hero-box">
+          <div class="rate-hero-label">Recommended Brand Deal Rate</div>
+          <div class="rate-hero-value" id="fairRateOut">$1,450</div>
+          <div class="rate-range-sub">
+            <span>Floor (Min): <strong id="minRateOut" style="color:#fff;">$1,120</strong></span>
+            <span>Anchor (Premium): <strong id="maxRateOut" style="color:#fff;">$1,885</strong></span>
+          </div>
+        </div>
+
+        <div class="eng-box">
+          <div>
+            <strong>Engagement Rate</strong>
+            <div class="eng-score" id="engRateOut">3.91%</div>
+          </div>
+          <span class="eng-tier-pill" id="engTierOut">🔥 High Engagement</span>
+        </div>
+
+        <div class="kpi-mini-grid">
+          <div class="kpi-mini">
+            <small>Effective CPM</small>
+            <span id="cpmOut">$80.56</span>
+          </div>
+          <div class="kpi-mini">
+            <small>Eng. Multiplier</small>
+            <span id="engMultOut">1.25x</span>
+          </div>
+          <div class="kpi-mini">
+            <small>Add-On Uplift</small>
+            <span id="addonOut">+0%</span>
+          </div>
+        </div>
+
+        <table class="pkg-table" aria-label="Package Pricing Breakdown">
+          <thead>
+            <tr>
+              <th>Deliverable Package</th>
+              <th>Suggested Quote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single Deliverable (Base + Rights)</td>
+              <td id="pkgSingleOut">$1,450</td>
+            </tr>
+            <tr>
+              <td>3-Post Campaign Bundle (10% Off)</td>
+              <td id="pkgBundleOut">$3,915</td>
+            </tr>
+            <tr>
+              <td>Monthly Retainer (4 Deliverables)</td>
+              <td id="pkgRetainerOut">$4,930</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="action-row">
+          <button type="button" class="btn-action btn-copy" id="copyQuoteBtn">📋 Copy Brand Pitch</button>
+          <button type="button" class="btn-action btn-wa" id="waShareBtn">💬 Share WhatsApp</button>
+          <button type="button" class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save Rate Card PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO GUIDE & BENCHMARKS -->
+    <section class="guide-card">
+      <h2>How to Calculate Influencer Engagement Rate &amp; Sponsorship Rates</h2>
+      <p>
+        Whether you are a creator pitching brands or a marketing agency auditing creator ROI, knowing how to <strong>calculate influencer engagement rate</strong> accurately is the foundation of fair sponsorship pricing. Brands no longer pay for follower count alone—they pay for active attention, niche buyer intent, and paid-ad usage rights.
+      </p>
+
+      <h3>1. The Standard Influencer Engagement Rate Formula</h3>
+      <div class="formula-box">
+        Engagement Rate (%) = ((Avg Likes + Avg Comments + Avg Shares/Saves) / Total Followers) × 100
+      </div>
+      <ul>
+        <li><strong>Under 1.0% (Below Average):</strong> Standard for massive celebrity accounts, or an indicator of dormant followers.</li>
+        <li><strong>1.0% – 3.0% (Solid / Average):</strong> Healthy baseline for mid-tier and macro creators on Instagram and YouTube.</li>
+        <li><strong>3.0% – 6.0% (High Engagement):</strong> Strong community trust; commands a 1.2x–1.35x premium in our <strong>influencer rate calculator</strong>.</li>
+        <li><strong>6.0%+ (Viral / Top 5%):</strong> High-velocity organic reach (common for Nano creators and viral TikTok/Reels accounts).</li>
+      </ul>
+
+      <h3>2. 2026 Influencer Rates Calculator Benchmarks (USD Baseline)</h3>
+      <div style="overflow-x:auto;">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th>Creator Tier</th>
+              <th>Follower Range</th>
+              <th>Typical IG Reel / TikTok</th>
+              <th>Typical YouTube Integration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nano</strong></td>
+              <td>1,000 – 10,000</td>
+              <td>$100 – $350</td>
+              <td>$150 – $500</td>
+            </tr>
+            <tr>
+              <td><strong>Micro</strong></td>
+              <td>10,000 – 50,000</td>
+              <td>$350 – $1,500</td>
+              <td>$500 – $2,200</td>
+            </tr>
+            <tr>
+              <td><strong>Mid-Tier</strong></td>
+              <td>50,000 – 250,000</td>
+              <td>$1,500 – $4,800</td>
+              <td>$2,200 – $7,500</td>
+            </tr>
+            <tr>
+              <td><strong>Macro</strong></td>
+              <td>250,000 – 1,000,000</td>
+              <td>$4,800 – $12,000+</td>
+              <td>$7,500 – $20,000+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Never Give Away Usage Rights &amp; Exclusivity for Free</h3>
+      <p>
+        Many creators undercharge because they quote a single flat fee that accidentally includes <strong>paid ad whitelisting</strong> or <strong>90-day category exclusivity</strong>. In any professional <strong>influencer rates calculator</strong>, organic posting is only the base fee—if a brand runs paid Meta/TikTok ads using your video or blocks you from working with competitors, add +25% to +100% on top of your base rate.
+      </p>
+
+      <div class="embed-box">
+        <strong style="color:var(--primary-navy);font-size:0.92rem;">🔗 Embed This Influencer Rate Calculator on Your Blog or Media Kit</strong>
+        <textarea readonly id="embedCodeBox">&lt;iframe src="https://realrefin.com/influencer-rate-calculator" width="100%" height="780" style="border:1px solid #e2e8f0;border-radius:12px;" loading="lazy"&gt;&lt;/iframe&gt;&lt;p style="font-size:12px;"&gt;Powered by &lt;a href="https://realrefin.com/influencer-rate-calculator" rel="nofollow noopener"&gt;RealRefin Influencer Rate Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+        <button type="button" class="pill-btn" id="copyEmbedBtn">Copy Embed Code</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">RealRefin.com</a> &bull; Free Creator &amp; Financial Modeling Engines &bull; <a href="/privacy-policy">Privacy Policy</a> &bull; <a href="/disclaimer">Disclaimer</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    const CURRENCY_CONFIG = {
+      USD: { symbol: '$', mult: 1.0 },
+      INR: { symbol: '₹', mult: 18.5 }, // Localized Indian creator market CPM scaling vs USD
+      GBP: { symbol: '£', mult: 0.82 }
+    };
+
+    const PLATFORM_CONFIG = {
+      ig_reel:  { label: 'Instagram Reel',       basePer1k: 22, viewCpm: 32 },
+      ig_post:  { label: 'Instagram Post',       basePer1k: 16, viewCpm: 24 },
+      yt_integ: { label: 'YouTube Integration',  basePer1k: 28, viewCpm: 42 },
+      yt_ded:   { label: 'YouTube Dedicated',    basePer1k: 45, viewCpm: 65 },
+      tiktok:   { label: 'TikTok Video',         basePer1k: 18, viewCpm: 26 },
+      ugc:      { label: 'UGC Asset (No Post)',  basePer1k: 12, viewCpm: 20 }
+    };
+
+    let activeCurrency = 'USD';
+    let activePlatform = 'ig_reel';
+
+    const el = id => document.getElementById(id);
+
+    function formatMoney(val) {
+      const cfg = CURRENCY_CONFIG[activeCurrency];
+      const rounded = Math.round(val / 5) * 5;
+      return cfg.symbol + rounded.toLocaleString('en-US');
+    }
+
+    function getCreatorTier(f) {
+      if (f < 10000) return 'NANO CREATOR';
+      if (f < 50000) return 'MICRO CREATOR';
+      if (f < 250000) return 'MID-TIER CREATOR';
+      if (f < 1000000) return 'MACRO CREATOR';
+      return 'MEGA / CELEBRITY';
+    }
+
+    function getEngBenchmark(eng) {
+      if (eng < 1.0) return { label: '📉 Below Average', mult: 0.85 };
+      if (eng < 3.0) return { label: '✅ Solid / Average', mult: 1.00 };
+      if (eng < 6.0) return { label: '🔥 High Engagement', mult: 1.25 };
+      return { label: '🚀 Viral Top 5%', mult: 1.45 };
+    }
+
+    function calculate() {
+      const followers = Math.max(100, parseFloat(el('followers').value) || 0);
+      const avgViews  = Math.max(0, parseFloat(el('avgViews').value) || 0);
+      const likes     = Math.max(0, parseFloat(el('avgLikes').value) || 0);
+      const comments  = Math.max(0, parseFloat(el('avgComments').value) || 0);
+      const shares    = Math.max(0, parseFloat(el('avgShares').value) || 0);
+      const customEng = parseFloat(el('customEng').value);
+
+      const calcEng = ((likes + comments + shares) / followers) * 100;
+      const engRate = (!isNaN(customEng) && customEng > 0) ? customEng : calcEng;
+
+      const engInfo = getEngBenchmark(engRate);
+      const nicheMult = parseFloat(el('niche').value) || 1.0;
+      const usageAdd  = parseFloat(el('usageRights').value) || 0;
+      const exclAdd   = parseFloat(el('exclusivity').value) || 0;
+      const rushAdd   = el('rushFee').checked ? 0.20 : 0;
+
+      const plat = PLATFORM_CONFIG[activePlatform];
+      const curr = CURRENCY_CONFIG[activeCurrency];
+
+      // Diminishing follower curve (log-adjusted so 1M followers doesn't scale linearly to unrealistic numbers)
+      const effectiveK = Math.pow(followers / 1000, 0.86);
+      const followerBase = effectiveK * plat.basePer1k;
+      const viewBase = avgViews > 0 ? (avgViews / 1000) * plat.viewCpm : followerBase;
+      const blendedBase = (activePlatform === 'ugc')
+        ? Math.max(175, followerBase * 0.65)
+        : (followerBase * 0.55 + viewBase * 0.45);
+
+      const totalAddonPct = usageAdd + exclAdd + rushAdd;
+      const fairUsd = blendedBase * engInfo.mult * nicheMult * (1 + totalAddonPct);
+      const fairLocal = Math.max(50 * curr.mult, fairUsd * curr.mult);
+
+      const minLocal = fairLocal * 0.78;
+      const maxLocal = fairLocal * 1.30;
+
+      const cpmDenominator = avgViews > 0 ? (avgViews / 1000) : (followers / 1000);
+      const cpm = cpmDenominator > 0 ? (fairLocal / cpmDenominator) : 0;
+
+      el('creatorTierTag').textContent = getCreatorTier(followers);
+      el('engRateOut').textContent = engRate.toFixed(2) + '%';
+      el('engTierOut').textContent = engInfo.label;
+      el('fairRateOut').textContent = formatMoney(fairLocal);
+      el('minRateOut').textContent  = formatMoney(minLocal);
+      el('maxRateOut').textContent  = formatMoney(maxLocal);
+      el('cpmOut').textContent      = CURRENCY_CONFIG[activeCurrency].symbol + cpm.toFixed(2);
+      el('engMultOut').textContent  = engInfo.mult.toFixed(2) + 'x';
+      el('addonOut').textContent    = '+' + Math.round(totalAddonPct * 100) + '%';
+
+      el('pkgSingleOut').textContent   = formatMoney(fairLocal);
+      el('pkgBundleOut').textContent   = formatMoney(fairLocal * 3 * 0.90);
+      el('pkgRetainerOut').textContent = formatMoney(fairLocal * 4 * 0.85);
+    }
+
+    document.querySelectorAll('[data-curr]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-curr]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeCurrency = this.getAttribute('data-curr');
+        calculate();
+      });
+    });
+
+    document.querySelectorAll('[data-plat]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-plat]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activePlatform = this.getAttribute('data-plat');
+        calculate();
+      });
+    });
+
+    ['followers','avgViews','avgLikes','avgComments','avgShares','customEng','niche','usageRights','exclusivity','rushFee']
+      .forEach(id => {
+        el(id).addEventListener('input', calculate);
+        el(id).addEventListener('change', calculate);
+      });
+
+    el('copyQuoteBtn').addEventListener('click', function() {
+      const platName = PLATFORM_CONFIG[activePlatform].label;
+      const text = `Brand Partnership Quote (${platName})\n` +
+        `• Audience: ${Number(el('followers').value).toLocaleString()} followers (${el('engRateOut').textContent} Engagement Rate)\n` +
+        `• Single Deliverable Rate: ${el('pkgSingleOut').textContent}\n` +
+        `• 3-Post Bundle (10% Off): ${el('pkgBundleOut').textContent}\n` +
+        `• Monthly Retainer (4 Posts): ${el('pkgRetainerOut').textContent}\n` +
+        `Calculated via https://realrefin.com/influencer-rate-calculator`;
+      navigator.clipboard.writeText(text).then(() => {
+        this.textContent = '✅ Pitch Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy Brand Pitch'; }, 2000);
+      });
+    });
+
+    el('waShareBtn').addEventListener('click', function() {
+      const platName = PLATFORM_CONFIG[activePlatform].label;
+      const msg = `My ${platName} Sponsorship Rate: ${el('fairRateOut').textContent} (${el('engRateOut').textContent} engagement). Calculate yours: https://realrefin.com/influencer-rate-calculator`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    el('copyEmbedBtn').addEventListener('click', function() {
+      const box = el('embedCodeBox');
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        this.textContent = '✅ Embed Code Copied!';
+        setTimeout(() => { this.textContent = 'Copy Embed Code'; }, 2000);
+      });
+    });
+
+    calculate();
+  });
+  </script>
+</body>
+</html>
