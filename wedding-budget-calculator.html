@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Budget Calculator &amp; Wedding Floral Budget Planner (Free 2026) | RealRefin</title>
+  <meta name="description" content="Free wedding budget calculator with an interactive wedding flower budget calculator. Plan total wedding costs, cost per guest, monthly savings needed, and floral arrangements in USD, INR, and GBP.">
+  <meta name="keywords" content="wedding budget calculator, wedding flower budget calculator, wedding floral budget calculator, wedding budget calculator free, wedding cost per guest calculator">
+  <link rel="canonical" href="https://realrefin.com/wedding-budget-calculator">
+  <meta property="og:title" content="Free Wedding Budget &amp; Floral Budget Calculator | RealRefin">
+  <meta property="og:description" content="Plan your complete wedding budget, cost per guest, monthly savings goal, and wedding flower budget in seconds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/wedding-budget-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Free Wedding Budget & Floral Budget Calculator",
+        "url": "https://realrefin.com/wedding-budget-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free wedding budget calculator with built-in wedding flower and floral budget estimator, cost per guest breakdown, and monthly savings planner."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much should I allocate for a wedding flower budget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most couples allocate 8% to 12% of their total wedding budget to flowers and floral decor. On a $30,000 wedding, a typical wedding floral budget ranges from $2,400 to $3,600 covering bouquets, ceremony arch, and reception centerpieces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the biggest expense in a wedding budget calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Venue, catering, and bar typically account for 45% to 50% of the total wedding budget because these costs scale directly with your guest count."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this wedding budget calculator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% free with no signup or paywall. All calculations run privately in your browser and can be printed as PDF or copied."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0b1120;
+      --secondary-navy: #162033;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --accent-rose: #e11d48;
+      --accent-rose-light: #fff1f2;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+    .rr-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rr-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo span { color: var(--accent-emerald); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a { color: #475569; text-decoration: none; font-size: 0.88rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent-emerald-dark); }
+    .btn-nav-back { background: var(--primary-navy); color: #fff !important; padding: 0.48rem 0.95rem; border-radius: 9px; font-weight: 700 !important; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.32rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 { font-size: clamp(1.65rem, 3vw, 2.35rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.18; margin-bottom: 0.65rem; }
+    .page-hero h1 span { color: #34d399; }
+    .page-hero p { color: #cbd5e1; font-size: 0.98rem; max-width: 790px; }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .calc-grid > * { min-width: 0; max-width: 100%; }
+    @media (max-width: 920px) { .calc-grid { grid-template-columns: minmax(0, 1fr); } }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 480px) { .card { padding: 1.1rem; } }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .toggle-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .pill-btn {
+      padding: 0.42rem 0.82rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      color: #475569;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover { border-color: #94a3b8; color: var(--primary-navy); }
+    .pill-btn.active { background: var(--primary-navy); color: #ffffff; border-color: var(--primary-navy); }
+
+    .section-sub-label {
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-emerald-dark);
+      margin: 1.15rem 0 0.65rem;
+    }
+
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    @media (max-width: 520px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+    .field { margin-bottom: 0.85rem; }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.32rem;
+    }
+    .field input, .field select {
+      width: 100%;
+      height: 43px;
+      padding: 0 0.85rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+    .field input[type="range"] { height: auto; padding: 0; border: none; accent-color: var(--accent-emerald); }
+
+    /* Dedicated Floral Card */
+    .floral-panel {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-radius: 14px;
+      padding: 1.05rem;
+      margin: 0.85rem 0 1.1rem;
+    }
+    .floral-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #9f1239;
+    }
+
+    /* Results Panel */
+    .results-sticky { position: sticky; top: 82px; }
+    .budget-hero-box {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 1.45rem;
+      margin-bottom: 1.1rem;
+    }
+    .budget-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #94a3b8; }
+    .budget-value {
+      font-family: var(--font-mono);
+      font-size: clamp(1.95rem, 4vw, 2.55rem);
+      font-weight: 700;
+      color: #34d399;
+      line-height: 1.15;
+      margin: 0.25rem 0 0.6rem;
+    }
+    .budget-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .kpi-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+    @media (max-width: 440px) { .kpi-mini-grid { grid-template-columns: 1fr; } }
+    .kpi-mini {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.75rem 0.7rem;
+      text-align: center;
+    }
+    .kpi-mini small { display: block; font-size: 0.69rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+    .kpi-mini span { font-family: var(--font-mono); font-size: 0.98rem; font-weight: 700; color: var(--primary-navy); }
+
+    .cat-bars { margin-bottom: 1.15rem; }
+    .cat-bar-row { margin-bottom: 0.55rem; }
+    .cat-bar-head { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.2rem; }
+    .cat-track { height: 7px; background: #e2e8f0; border-radius: 50px; overflow: hidden; }
+    .cat-fill { height: 100%; background: var(--accent-emerald); border-radius: 50px; transition: width 0.25s ease; }
+
+    .action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .btn-action {
+      padding: 0.72rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .btn-copy { background: var(--primary-navy); color: #ffffff; }
+    .btn-copy:hover { background: var(--accent-emerald-dark); }
+    .btn-wa { background: #16a34a; color: #ffffff; }
+    .btn-wa:hover { background: #15803d; }
+    .btn-print { grid-column: 1 / -1; background: #f1f5f9; color: var(--primary-navy); border: 1px solid var(--border-color); }
+
+    .guide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 0.75rem; }
+    .guide-card h3 { font-size: 1.08rem; font-weight: 800; color: var(--primary-navy); margin: 1.3rem 0 0.5rem; }
+    .guide-card p, .guide-card li { color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .guide-card ul { padding-left: 1.25rem; }
+    .bench-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.4rem; font-size: 0.9rem; }
+    .bench-table th { background: var(--primary-navy); color: #ffffff; padding: 0.8rem 1rem; text-align: left; }
+    .bench-table td { padding: 0.78rem 1rem; border-bottom: 1px solid var(--border-color); color: #334155; }
+    .bench-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .embed-box { background: #f8fafc; border: 1px solid var(--border-color); border-radius: 14px; padding: 1.35rem; margin-top: 1.5rem; }
+    .embed-box textarea {
+      width: 100%;
+      height: 78px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin: 0.6rem 0;
+      resize: none;
+      background: #ffffff;
+    }
+    footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; background: #ffffff; }
+    footer a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    @media print {
+      .rr-nav-wrap, .action-row, .embed-box, footer { display: none !important; }
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-nav-wrap">
+    <header class="rr-nav">
+      <a href="/" class="rr-logo">
+        <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 7px;">
+        Real<span>Refin</span>.com
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">All 81+ Calculators</a></li>
+        <li><a href="/subscription-cost-calculator">Subscription Cost</a></li>
+        <li><a href="/ev-vs-gas-cost-calculator">EV vs. Gas</a></li>
+        <li><a href="/influencer-rate-calculator">Influencer Rate</a></li>
+        <li><a href="/" class="btn-nav-back">← Back to Directory</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <main class="container">
+    <section class="page-hero">
+      <div class="hero-pill">💐 Free 2026 Wedding Planner • Budget, Guest Cost &amp; Floral Engine</div>
+      <h1>Free Wedding Budget Calculator &amp; <span>Wedding Floral</span> Planner</h1>
+      <p>
+        Plan your complete wedding budget by guest count, itemize your wedding flower budget (bouquets, arch, centerpieces), and calculate exact monthly savings needed until your big day—100% free.
+      </p>
+    </section>
+
+    <section class="calc-grid" aria-label="Wedding Budget Calculator">
+      <!-- LEFT: INPUTS -->
+      <div class="card">
+        <div class="card-title">
+          <span>💍 Wedding Scope &amp; Categories</span>
+          <div class="toggle-row">
+            <button type="button" class="pill-btn active" data-curr="USD">USD $</button>
+            <button type="button" class="pill-btn" data-curr="INR">INR ₹</button>
+            <button type="button" class="pill-btn" data-curr="GBP">GBP £</button>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="targetBudget">Target Total Budget</label>
+            <input type="number" id="targetBudget" value="30000" min="500" step="500">
+          </div>
+          <div class="field">
+            <label for="guestCount">Guest Count: <span id="guestCountLabel">120</span></label>
+            <input type="range" id="guestCount" min="20" max="500" step="5" value="120">
+          </div>
+          <div class="field">
+            <label for="monthsLeft">Months Until Wedding</label>
+            <input type="number" id="monthsLeft" value="12" min="1" max="60" step="1">
+          </div>
+          <div class="field">
+            <label for="savedSoFar">Already Saved</label>
+            <input type="number" id="savedSoFar" value="6000" min="0" step="250">
+          </div>
+        </div>
+
+        <div class="section-sub-label">🍽️ Venue, Catering &amp; Guest-Scaled Costs</div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="venueCost">Venue Rental</label>
+            <input type="number" id="venueCost" value="6000" min="0" step="250">
+          </div>
+          <div class="field">
+            <label for="cateringPerGuest">Catering &amp; Bar (Per Guest)</label>
+            <input type="number" id="cateringPerGuest" value="85" min="0" step="5">
+          </div>
+        </div>
+
+        <!-- Dedicated Wedding Flower & Floral Budget Calculator -->
+        <div class="floral-panel">
+          <div class="floral-panel-head">
+            <span>💐 Wedding Flower &amp; Floral Budget Calculator</span>
+            <span id="floralSubtotalTag" style="font-family:var(--font-mono);">$2,850</span>
+          </div>
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="bridalBouquets">Bridal &amp; Party Bouquets</label>
+              <input type="number" id="bridalBouquets" value="650" min="0" step="50">
+            </div>
+            <div class="field">
+              <label for="ceremonyFloral">Ceremony Arch / Mandap Florals</label>
+              <input type="number" id="ceremonyFloral" value="900" min="0" step="50">
+            </div>
+            <div class="field">
+              <label for="centerpieces">Reception Centerpieces (Total)</label>
+              <input type="number" id="centerpieces" value="1050" min="0" step="50">
+            </div>
+            <div class="field">
+              <label for="floralMisc">Boutonnieres, Petals &amp; Setup</label>
+              <input type="number" id="floralMisc" value="250" min="0" step="25">
+            </div>
+          </div>
+        </div>
+
+        <div class="section-sub-label">📸 Other Core Wedding Categories</div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="photoVideo">Photography &amp; Video</label>
+            <input type="number" id="photoVideo" value="3800" min="0" step="100">
+          </div>
+          <div class="field">
+            <label for="attireBeauty">Attire, Hair &amp; Makeup</label>
+            <input type="number" id="attireBeauty" value="2400" min="0" step="100">
+          </div>
+          <div class="field">
+            <label for="musicDj">Music, DJ &amp; Lighting</label>
+            <input type="number" id="musicDj" value="1800" min="0" step="100">
+          </div>
+          <div class="field">
+            <label for="miscCost">Invites, Rings &amp; Contingency</label>
+            <input type="number" id="miscCost" value="2200" min="0" step="100">
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE RESULTS -->
+      <div class="card results-sticky">
+        <div class="card-title">
+          <span>📋 Live Wedding Budget Summary</span>
+          <span id="budgetStatusTag" style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">ON BUDGET</span>
+        </div>
+
+        <div class="budget-hero-box">
+          <div class="budget-label">Estimated Total Wedding Cost</div>
+          <div class="budget-value" id="totalCostOut">$29,250</div>
+          <div class="budget-sub">
+            <span>Target: <strong id="targetOut" style="color:#fff;">$30,000</strong></span>
+            <span id="diffOut">+$750 Under Budget</span>
+          </div>
+        </div>
+
+        <div class="kpi-mini-grid">
+          <div class="kpi-mini">
+            <small>Cost Per Guest</small>
+            <span id="perGuestOut">$244</span>
+          </div>
+          <div class="kpi-mini">
+            <small>Save / Month</small>
+            <span id="monthlySaveOut">$1,938</span>
+          </div>
+          <div class="kpi-mini">
+            <small>Floral Share</small>
+            <span id="floralShareOut">9.7%</span>
+          </div>
+        </div>
+
+        <div class="section-sub-label" style="margin-top:0;">Category Allocation Breakdown</div>
+        <div class="cat-bars" id="catBars"></div>
+
+        <div class="action-row">
+          <button type="button" class="btn-action btn-copy" id="copyPlanBtn">📋 Copy Budget Plan</button>
+          <button type="button" class="btn-action btn-wa" id="waShareBtn">💬 Share WhatsApp</button>
+          <button type="button" class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card">
+      <h2>Wedding Budget Calculator &amp; Wedding Flower Budget Guide</h2>
+      <p>
+        Planning a wedding without a clear breakdown leads to unexpected overruns—especially in catering and floral decor. Our <strong>free wedding budget calculator</strong> combines a guest-scaled reception estimator with a built-in <strong>wedding flower budget calculator</strong> so you can control every dollar before signing vendor contracts.
+      </p>
+
+      <h3>Standard Wedding Floral Budget &amp; Category Benchmarks</h3>
+      <div style="overflow-x:auto;">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th>Wedding Category</th>
+              <th>Recommended Share</th>
+              <th>$30,000 Wedding Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Venue, Catering &amp; Bar</strong></td>
+              <td>45% – 50%</td>
+              <td>$13,500 – $15,000</td>
+            </tr>
+            <tr>
+              <td><strong>Photography &amp; Videography</strong></td>
+              <td>10% – 15%</td>
+              <td>$3,000 – $4,500</td>
+            </tr>
+            <tr>
+              <td><strong>Wedding Flowers &amp; Floral Decor</strong></td>
+              <td>8% – 12%</td>
+              <td>$2,400 – $3,600</td>
+            </tr>
+            <tr>
+              <td><strong>Attire, Hair &amp; Makeup</strong></td>
+              <td>7% – 10%</td>
+              <td>$2,100 – $3,000</td>
+            </tr>
+            <tr>
+              <td><strong>Music, DJ &amp; Entertainment</strong></td>
+              <td>6% – 8%</td>
+              <td>$1,800 – $2,400</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="embed-box">
+        <strong style="color:var(--primary-navy);font-size:0.92rem;">🔗 Embed This Free Wedding Budget Calculator on Your Site</strong>
+        <textarea readonly id="embedCodeBox">&lt;iframe src="https://realrefin.com/wedding-budget-calculator" width="100%" height="780" style="border:1px solid #e2e8f0;border-radius:12px;" loading="lazy"&gt;&lt;/iframe&gt;&lt;p style="font-size:12px;"&gt;Powered by &lt;a href="https://realrefin.com/wedding-budget-calculator" rel="nofollow noopener"&gt;RealRefin Wedding Budget Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+        <button type="button" class="pill-btn" id="copyEmbedBtn">Copy Embed Code</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">RealRefin.com</a> &bull; Free Personal Finance &amp; Planning Calculators &bull; <a href="/privacy-policy">Privacy Policy</a> &bull; <a href="/disclaimer">Disclaimer</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    const CURR = {
+      USD: { symbol: '$', defaults: { targetBudget: 30000, savedSoFar: 6000, venueCost: 6000, cateringPerGuest: 85, bridalBouquets: 650, ceremonyFloral: 900, centerpieces: 1050, floralMisc: 250, photoVideo: 3800, attireBeauty: 2400, musicDj: 1800, miscCost: 2200 } },
+      INR: { symbol: '₹', defaults: { targetBudget: 1500000, savedSoFar: 300000, venueCost: 350000, cateringPerGuest: 2200, bridalBouquets: 25000, ceremonyFloral: 85000, centerpieces: 45000, floralMisc: 15000, photoVideo: 150000, attireBeauty: 180000, musicDj: 80000, miscCost: 280000 } },
+      GBP: { symbol: '£', defaults: { targetBudget: 24000, savedSoFar: 5000, venueCost: 5000, cateringPerGuest: 70, bridalBouquets: 500, ceremonyFloral: 750, centerpieces: 850, floralMisc: 200, photoVideo: 3000, attireBeauty: 2000, musicDj: 1400, miscCost: 1800 } }
+    };
+
+    let activeCurr = 'USD';
+    const el = id => document.getElementById(id);
+    const val = id => Math.max(0, parseFloat(el(id).value) || 0);
+
+    function fmt(n) {
+      return CURR[activeCurr].symbol + Math.round(n).toLocaleString('en-US');
+    }
+
+    function calculate() {
+      const target  = val('targetBudget');
+      const guests  = Math.max(1, parseInt(el('guestCount').value, 10) || 120);
+      const months  = Math.max(1, parseInt(el('monthsLeft').value, 10) || 12);
+      const saved   = val('savedSoFar');
+
+      el('guestCountLabel').textContent = guests;
+
+      const venueCatering = val('venueCost') + (guests * val('cateringPerGuest'));
+      const floralTotal   = val('bridalBouquets') + val('ceremonyFloral') + val('centerpieces') + val('floralMisc');
+      const photoVideo    = val('photoVideo');
+      const attireBeauty  = val('attireBeauty');
+      const musicDj       = val('musicDj');
+      const miscCost      = val('miscCost');
+
+      const totalCost = venueCatering + floralTotal + photoVideo + attireBeauty + musicDj + miscCost;
+      const diff = target - totalCost;
+      const perGuest = totalCost / guests;
+      const remaining = Math.max(0, totalCost - saved);
+      const monthlySave = remaining / months;
+      const floralPct = totalCost > 0 ? (floralTotal / totalCost) * 100 : 0;
+
+      el('floralSubtotalTag').textContent = fmt(floralTotal);
+      el('totalCostOut').textContent = fmt(totalCost);
+      el('totalCostOut').style.color = diff >= 0 ? '#34d399' : '#fb7185';
+      el('targetOut').textContent = fmt(target);
+      el('diffOut').textContent = diff >= 0 ? `${fmt(diff)} Under Budget` : `${fmt(Math.abs(diff))} Over Budget`;
+      el('budgetStatusTag').textContent = diff >= 0 ? '✅ ON BUDGET' : '⚠️ OVER BUDGET';
+      el('budgetStatusTag').style.color = diff >= 0 ? 'var(--accent-emerald-dark)' : '#e11d48';
+
+      el('perGuestOut').textContent = fmt(perGuest);
+      el('monthlySaveOut').textContent = fmt(monthlySave);
+      el('floralShareOut').textContent = floralPct.toFixed(1) + '%';
+
+      const cats = [
+        { name: 'Venue & Catering', amount: venueCatering },
+        { name: 'Flowers & Floral Decor', amount: floralTotal },
+        { name: 'Photo & Video', amount: photoVideo },
+        { name: 'Attire & Beauty', amount: attireBeauty },
+        { name: 'Music & DJ', amount: musicDj },
+        { name: 'Rings, Invites & Buffer', amount: miscCost }
+      ];
+
+      const barsEl = el('catBars');
+      barsEl.innerHTML = '';
+      cats.forEach(c => {
+        const pct = totalCost > 0 ? Math.round((c.amount / totalCost) * 100) : 0;
+        const row = document.createElement('div');
+        row.className = 'cat-bar-row';
+        row.innerHTML = `
+          <div class="cat-bar-head"><span>${c.name} (${pct}%)</span><span>${fmt(c.amount)}</span></div>
+          <div class="cat-track"><div class="cat-fill" style="width:${pct}%"></div></div>
+        `;
+        barsEl.appendChild(row);
+      });
+    }
+
+    document.querySelectorAll('[data-curr]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-curr]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeCurr = this.getAttribute('data-curr');
+        Object.entries(CURR[activeCurr].defaults).forEach(([k, v]) => {
+          if (el(k)) el(k).value = v;
+        });
+        calculate();
+      });
+    });
+
+    ['targetBudget','guestCount','monthsLeft','savedSoFar','venueCost','cateringPerGuest','bridalBouquets','ceremonyFloral','centerpieces','floralMisc','photoVideo','attireBeauty','musicDj','miscCost']
+      .forEach(id => {
+        el(id).addEventListener('input', calculate);
+        el(id).addEventListener('change', calculate);
+      });
+
+    el('copyPlanBtn').addEventListener('click', function() {
+      const text = `Wedding Budget Plan (${el('guestCount').value} Guests):\n` +
+        `• Estimated Total: ${el('totalCostOut').textContent} (Target: ${el('targetOut').textContent})\n` +
+        `• Cost Per Guest: ${el('perGuestOut').textContent}\n` +
+        `• Wedding Floral Budget: ${el('floralSubtotalTag').textContent} (${el('floralShareOut').textContent})\n` +
+        `• Monthly Savings Needed: ${el('monthlySaveOut').textContent}/mo\n` +
+        `Plan yours free: https://realrefin.com/wedding-budget-calculator`;
+      navigator.clipboard.writeText(text).then(() => {
+        this.textContent = '✅ Plan Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy Budget Plan'; }, 2000);
+      });
+    });
+
+    el('waShareBtn').addEventListener('click', function() {
+      const msg = `Our Wedding Budget Estimate (${el('guestCount').value} guests): ${el('totalCostOut').textContent} (${el('perGuestOut').textContent}/guest, Floral: ${el('floralSubtotalTag').textContent}). Plan yours: https://realrefin.com/wedding-budget-calculator`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    el('copyEmbedBtn').addEventListener('click', function() {
+      const box = el('embedCodeBox');
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        this.textContent = '✅ Embed Code Copied!';
+        setTimeout(() => { this.textContent = 'Copy Embed Code'; }, 2000);
+      });
+    });
+
+    calculate();
+  });
+  </script>
+</body>
+</html>

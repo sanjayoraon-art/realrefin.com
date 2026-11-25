@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1099 Tax Calculator 2026 | Self-Employment &amp; Quarterly Estimated Tax | RealRefin</title>
+  <meta name="description" content="Free 2026 1099 tax calculator for independent contractors, freelancers, and gig workers. Calculate 15.3% self-employment tax, federal &amp; state income tax, QBI deduction, and IRS Form 1040-ES quarterly payments.">
+  <meta name="keywords" content="1099 tax calculator, 1099 tax calculator 2026, self employment tax calculator, quarterly estimated tax calculator, independent contractor tax calculator, freelance tax calculator, 1099 nec tax calculator">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://realrefin.com/1099-tax-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta property="og:title" content="1099 Tax Calculator 2026 &amp; Quarterly Tax Estimator | RealRefin">
+  <meta property="og:description" content="Calculate your 2026 1099 self-employment tax (15.3%), federal &amp; state taxes, QBI 20% deduction, and exact quarterly IRS Form 1040-ES payments.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/1099-tax-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "2026 1099 Tax Calculator & Quarterly Estimated Tax Engine",
+        "url": "https://realrefin.com/1099-tax-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free 1099 tax calculator for independent contractors and freelancers. Computes 15.3% self-employment tax, 20% QBI deduction, federal brackets, state tax, and quarterly Form 1040-ES payments."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://realrefin.com/" },
+          { "@type": "ListItem", "position": 2, "name": "1099 Tax Calculator", "item": "https://realrefin.com/1099-tax-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much should I set aside for 1099 taxes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most 1099 independent contractors set aside 25% to 30% of their net profit (gross 1099 income minus business deductions) to cover the 15.3% self-employment tax plus federal and state income taxes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the 15.3% 1099 self-employment tax calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The IRS applies the 15.3% self-employment tax (12.4% Social Security + 2.9% Medicare) to 92.35% of your net Schedule C business profit. You can also deduct half (50%) of your self-employment tax from your adjusted gross income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When are 2026 quarterly estimated 1099 taxes due?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "IRS Form 1040-ES quarterly estimated tax payments are generally due on April 15 (Q1), June 15 (Q2), September 15 (Q3), and January 15 of the following year (Q4)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 20% QBI deduction for 1099 contractors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under Section 199A, eligible sole proprietors, LLCs, and 1099 contractors can deduct up to 20% of their qualified business income (QBI) from federal taxable income, significantly lowering their effective tax rate."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0b1120;
+      --secondary-navy: #162033;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+    .rr-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rr-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo span { color: var(--accent-emerald); }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: #475569; text-decoration: none; font-size: 0.88rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent-emerald-dark); }
+    .btn-nav-back { background: var(--primary-navy); color: #fff !important; padding: 0.48rem 0.95rem; border-radius: 9px; font-weight: 700 !important; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    .breadcrumbs { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.32rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 { font-size: clamp(1.65rem, 3vw, 2.35rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.18; margin-bottom: 0.65rem; }
+    .page-hero h1 span { color: #34d399; }
+    .page-hero p { color: #cbd5e1; font-size: 0.98rem; max-width: 790px; }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .calc-grid > * { min-width: 0; max-width: 100%; }
+    @media (max-width: 920px) { .calc-grid { grid-template-columns: minmax(0, 1fr); } }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 480px) { .card { padding: 1.1rem; } }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    @media (max-width: 520px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+    .field { margin-bottom: 0.9rem; }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.34rem;
+    }
+    .field input, .field select {
+      width: 100%;
+      height: 44px;
+      padding: 0 0.85rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-top: 0.4rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+    }
+    .check-row input { width: 17px; height: 17px; accent-color: var(--accent-emerald); }
+
+    /* Results */
+    .results-sticky { position: sticky; top: 82px; }
+    .tax-hero-box {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 1.45rem;
+      margin-bottom: 1.1rem;
+    }
+    .tax-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #94a3b8; }
+    .tax-value {
+      font-family: var(--font-mono);
+      font-size: clamp(1.95rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: #34d399;
+      line-height: 1.15;
+      margin: 0.25rem 0 0.6rem;
+    }
+    .tax-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .kpi-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+    @media (max-width: 440px) { .kpi-mini-grid { grid-template-columns: 1fr; } }
+    .kpi-mini {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.75rem 0.65rem;
+      text-align: center;
+    }
+    .kpi-mini small { display: block; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+    .kpi-mini span { font-family: var(--font-mono); font-size: 0.98rem; font-weight: 700; color: var(--primary-navy); }
+
+    .tax-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 1.15rem;
+    }
+    .tax-table th {
+      text-align: left;
+      padding: 0.55rem 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.73rem;
+      text-transform: uppercase;
+    }
+    .tax-table td { padding: 0.62rem 0.5rem; border-bottom: 1px solid #f1f5f9; font-weight: 600; }
+    .tax-table td:last-child { text-align: right; font-family: var(--font-mono); font-weight: 700; color: var(--primary-navy); }
+    .tax-table tr.highlight td:last-child { color: var(--accent-emerald-dark); }
+
+    .action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .btn-action {
+      padding: 0.72rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .btn-copy { background: var(--primary-navy); color: #ffffff; }
+    .btn-copy:hover { background: var(--accent-emerald-dark); }
+    .btn-wa { background: #16a34a; color: #ffffff; }
+    .btn-wa:hover { background: #15803d; }
+    .btn-print { grid-column: 1 / -1; background: #f1f5f9; color: var(--primary-navy); border: 1px solid var(--border-color); }
+
+    /* Guide, FAQ & Links */
+    .guide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 0.75rem; }
+    .guide-card h3 { font-size: 1.08rem; font-weight: 800; color: var(--primary-navy); margin: 1.35rem 0 0.5rem; }
+    .guide-card p, .guide-card li { color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .guide-card ul { padding-left: 1.25rem; }
+    .formula-box {
+      font-family: var(--font-mono);
+      background: #0b1120;
+      color: #6ee7b7;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.86rem;
+      margin: 0.9rem 0 1.2rem;
+      overflow-x: auto;
+    }
+    .bench-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.4rem; font-size: 0.9rem; }
+    .bench-table th { background: var(--primary-navy); color: #ffffff; padding: 0.8rem 1rem; text-align: left; }
+    .bench-table td { padding: 0.78rem 1rem; border-bottom: 1px solid var(--border-color); color: #334155; }
+    .bench-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .faq-list { margin-top: 1rem; }
+    .faq-item { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 0.65rem; overflow: hidden; }
+    .faq-q { width: 100%; background: #f8fafc; border: none; padding: 1rem 1.15rem; text-align: left; font-size: 0.95rem; font-weight: 700; color: var(--primary-navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; font-family: inherit; }
+    .faq-a { display: none; padding: 0.85rem 1.15rem 1.05rem; font-size: 0.92rem; color: #475569; background: #ffffff; border-top: 1px solid #f1f5f9; }
+    .faq-item.open .faq-a { display: block; }
+
+    .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 1.25rem; }
+    .related-link-card { display: block; padding: 0.85rem 1rem; background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; text-decoration: none; color: var(--primary-navy); font-weight: 700; font-size: 0.88rem; }
+    .related-link-card:hover { border-color: var(--accent-emerald); color: var(--accent-emerald-dark); }
+
+    .pill-btn { padding: 0.42rem 0.82rem; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--border-color); background: #ffffff; color: #334155; border-radius: 50px; cursor: pointer; font-family: inherit; }
+    .embed-box { background: #f8fafc; border: 1px solid var(--border-color); border-radius: 14px; padding: 1.35rem; margin-top: 1.5rem; }
+    .embed-box textarea {
+      width: 100%;
+      height: 78px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin: 0.6rem 0;
+      resize: none;
+      background: #ffffff;
+    }
+    footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; background: #ffffff; }
+    footer a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    @media print {
+      .rr-nav-wrap, .breadcrumbs, .action-row, .embed-box, footer { display: none !important; }
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-nav-wrap">
+    <header class="rr-nav">
+      <a href="/" class="rr-logo">
+        <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 7px;">
+        Real<span>Refin</span>.com
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">All 83+ Calculators</a></li>
+        <li><a href="/age-calculator">Age Calculator</a></li>
+        <li><a href="/subscription-cost-calculator">Subscription Cost</a></li>
+        <li><a href="/influencer-rate-calculator">Influencer Rate</a></li>
+        <li><a href="/" class="btn-nav-back">← Back to Directory</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <main class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/#suite-refinance">Refinance &amp; Tax Tools</a> <span>›</span>
+      <span>1099 Tax Calculator (2026)</span>
+    </nav>
+
+    <section class="page-hero">
+      <div class="hero-pill">🧾 2026 IRS Form 1040-ES • Self-Employment &amp; QBI Engine</div>
+      <h1>2026 <span>1099 Tax Calculator</span> &amp; Quarterly Tax Estimator</h1>
+      <p>
+        Calculate your 2026 1099-NEC self-employment tax (15.3%), federal &amp; state income taxes, 20% Section 199A QBI deduction, and exact IRS quarterly estimated payments in seconds.
+      </p>
+    </section>
+
+    <section class="calc-grid" aria-label="1099 Tax Calculator">
+      <!-- LEFT: INPUTS -->
+      <div class="card">
+        <div class="card-title">
+          <span>💼 Contractor Income &amp; Write-Offs</span>
+          <span style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">TAX YEAR 2026</span>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="gross1099">Gross 1099 Income ($)</label>
+            <input type="number" id="gross1099" value="85000" min="0" step="1000">
+          </div>
+          <div class="field">
+            <label for="expenses">Business Write-Offs ($)</label>
+            <input type="number" id="expenses" value="12000" min="0" step="500">
+          </div>
+          <div class="field">
+            <label for="filingStatus">Filing Status</label>
+            <select id="filingStatus">
+              <option value="single" selected>Single</option>
+              <option value="mfj">Married Filing Jointly</option>
+              <option value="hoh">Head of Household</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="stateRate">State Income Tax Rate (%)</label>
+            <input type="number" id="stateRate" value="5.0" min="0" max="15" step="0.25">
+          </div>
+          <div class="field">
+            <label for="w2Income">Other W-2 Income ($)</label>
+            <input type="number" id="w2Income" value="0" min="0" step="1000">
+          </div>
+          <div class="field">
+            <label for="solo401k">Solo 401(k) / SEP IRA ($)</label>
+            <input type="number" id="solo401k" value="0" min="0" step="500">
+          </div>
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" id="applyQbi" checked>
+          Apply 20% Section 199A QBI Deduction (Eligible 1099 / Sole Prop)
+        </label>
+      </div>
+
+      <!-- RIGHT: LIVE RESULTS -->
+      <div class="card results-sticky">
+        <div class="card-title">
+          <span>📊 Estimated 2026 Tax Liability</span>
+          <span id="setAsideTag" style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">SET ASIDE: --%</span>
+        </div>
+
+        <div class="tax-hero-box">
+          <div class="tax-label">Quarterly Estimated Payment (IRS Form 1040-ES)</div>
+          <div class="tax-value" id="quarterlyOut">$4,295</div>
+          <div class="tax-sub">
+            <span>Total Annual Tax: <strong id="totalTaxOut" style="color:#fff;">$17,181</strong></span>
+            <span>Effective Rate: <strong id="effRateOut" style="color:#fff;">23.5%</strong></span>
+          </div>
+        </div>
+
+        <div class="kpi-mini-grid">
+          <div class="kpi-mini">
+            <small>Net Profit</small>
+            <span id="netProfitOut">$73,000</span>
+          </div>
+          <div class="kpi-mini">
+            <small>After-Tax Net</small>
+            <span id="takeHomeOut">$55,819</span>
+          </div>
+          <div class="kpi-mini">
+            <small>QBI Deduction</small>
+            <span id="qbiOut">$13,569</span>
+          </div>
+        </div>
+
+        <table class="tax-table" aria-label="1099 Tax Breakdown">
+          <thead>
+            <tr>
+              <th>Tax Component</th>
+              <th>Estimated Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Self-Employment Tax (15.3% on 92.35%)</td>
+              <td id="seTaxOut">$10,315</td>
+            </tr>
+            <tr>
+              <td>Federal Income Tax (After Std &amp; QBI)</td>
+              <td id="fedTaxOut">$4,625</td>
+            </tr>
+            <tr>
+              <td>State Income Tax</td>
+              <td id="stateTaxOut">$2,241</td>
+            </tr>
+            <tr class="highlight">
+              <td>Half SE Tax Deduction (50% Adjustment)</td>
+              <td id="seDedOut">-$5,158</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="action-row">
+          <button type="button" class="btn-action btn-copy" id="copyTaxBtn">📋 Copy Tax Summary</button>
+          <button type="button" class="btn-action btn-wa" id="waShareBtn">💬 Share WhatsApp</button>
+          <button type="button" class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card">
+      <h2>How Our 2026 1099 Tax Calculator Works</h2>
+      <p>
+        Unlike W-2 employees whose employers split payroll taxes, 1099-NEC independent contractors, freelancers, and gig workers (Uber, DoorDash, consultants) are responsible for both the employer and employee portions of Social Security and Medicare—known as the <strong>15.3% self-employment tax</strong>. Our <strong>1099 tax calculator</strong> computes your exact net Schedule C profit, applies the IRS 92.35% SE multiplier, deducts half of your SE tax, applies the 20% Section 199A QBI deduction, and divides your annual liability into quarterly Form 1040-ES payments.
+      </p>
+
+      <h3>Self-Employment Tax Formula (Schedule SE)</h3>
+      <div class="formula-box">
+        Net Profit = Gross 1099 Income − Business Deductions<br>
+        SE Taxable Base = Net Profit × 0.9235<br>
+        Self-Employment Tax = (12.4% Social Security up to Wage Base) + (2.9% Medicare)
+      </div>
+
+      <h3>2026 IRS Quarterly Estimated Tax Deadlines (Form 1040-ES)</h3>
+      <div style="overflow-x:auto;">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th>Quarter</th>
+              <th>Income Period</th>
+              <th>IRS Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Q1</strong></td><td>January 1 – March 31</td><td>April 15, 2026</td></tr>
+            <tr><td><strong>Q2</strong></td><td>April 1 – May 31</td><td>June 15, 2026</td></tr>
+            <tr><td><strong>Q3</strong></td><td>June 1 – August 31</td><td>September 15, 2026</td></tr>
+            <tr><td><strong>Q4</strong></td><td>September 1 – December 31</td><td>January 15, 2027</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button type="button" class="faq-q"><span>How much should I set aside for 1099 taxes?</span><span>+</span></button>
+          <div class="faq-a">Most 1099 contractors set aside <strong>25% to 30%</strong> of their net profit to cover the 15.3% self-employment tax plus federal and state income taxes. Use the <em>SET ASIDE</em> percentage badge above for your exact income level.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><span>How is the 15.3% 1099 self-employment tax calculated?</span><span>+</span></button>
+          <div class="faq-a">The IRS applies 15.3% (12.4% Social Security + 2.9% Medicare) to <strong>92.35%</strong> of your net Schedule C business profit, and allows you to deduct 50% of that SE tax from your adjusted gross income.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><span>What common write-offs lower my 1099 tax bill?</span><span>+</span></button>
+          <div class="faq-a">Standard Schedule C deductions include business mileage, home office expenses, laptops/software, client travel, health insurance premiums, and Solo 401(k) or SEP IRA retirement contributions.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><span>What is the 20% QBI deduction for 1099 contractors?</span><span>+</span></button>
+          <div class="faq-a">Under Section 199A, eligible freelancers and sole proprietors can deduct up to 20% of qualified business income from federal taxable income, reducing their effective federal tax bill.</div>
+        </div>
+      </div>
+
+      <h3>Explore More RealRefin Financial Calculators</h3>
+      <div class="related-links">
+        <a href="/business-loan-payment-calculator" class="related-link-card">💼 Business Loan Payment Calculator →</a>
+        <a href="/bank-statement-loan-calculator" class="related-link-card">🏦 Bank Statement Loan (1099 / Non-QM) →</a>
+        <a href="/subscription-cost-calculator" class="related-link-card">💳 Subscription Cost Calculator →</a>
+        <a href="/influencer-rate-calculator" class="related-link-card">📣 Influencer Rate Calculator →</a>
+      </div>
+
+      <div class="embed-box">
+        <strong style="color:var(--primary-navy);font-size:0.92rem;">🔗 Embed This 2026 1099 Tax Calculator on Your Site</strong>
+        <textarea readonly id="embedCodeBox">&lt;iframe src="https://realrefin.com/1099-tax-calculator" width="100%" height="760" style="border:1px solid #e2e8f0;border-radius:12px;" loading="lazy"&gt;&lt;/iframe&gt;&lt;p style="font-size:12px;"&gt;Powered by &lt;a href="https://realrefin.com/1099-tax-calculator" rel="nofollow noopener"&gt;RealRefin 1099 Tax Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+        <button type="button" class="pill-btn" id="copyEmbedBtn">Copy Embed Code</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">RealRefin.com</a> &bull; Educational Tax &amp; Financial Modeling Tools (Not CPA/Legal Advice) &bull; <a href="/privacy-policy">Privacy Policy</a> &bull; <a href="/disclaimer">Disclaimer</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    // 2026 IRS Federal Brackets & Standard Deductions (Baseline)
+    const STD_DEDUCTION = { single: 15000, mfj: 30000, hoh: 22500 };
+    const BRACKETS = {
+      single: [
+        [11925, 0.10], [48475, 0.12], [103350, 0.22], [197300, 0.24],
+        [250525, 0.32], [626350, 0.35], [Infinity, 0.37]
+      ],
+      mfj: [
+        [23850, 0.10], [96950, 0.12], [206700, 0.22], [394600, 0.24],
+        [501050, 0.32], [751600, 0.35], [Infinity, 0.37]
+      ],
+      hoh: [
+        [17000, 0.10], [64850, 0.12], [103350, 0.22], [197300, 0.24],
+        [250500, 0.32], [626350, 0.35], [Infinity, 0.37]
+      ]
+    };
+    const SS_WAGE_BASE = 176100;
+    const ADD_MED_THRESHOLD = { single: 200000, mfj: 250000, hoh: 200000 };
+
+    const el = id => document.getElementById(id);
+    const num = id => Math.max(0, parseFloat(el(id).value) || 0);
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+    function calcProgressiveTax(taxable, brackets) {
+      if (taxable <= 0) return 0;
+      let tax = 0, prev = 0;
+      for (const [limit, rate] of brackets) {
+        if (taxable <= prev) break;
+        const slice = Math.min(taxable, limit) - prev;
+        tax += slice * rate;
+        prev = limit;
+      }
+      return tax;
+    }
+
+    function calculate() {
+      const gross1099 = num('gross1099');
+      const expenses  = num('expenses');
+      const status    = el('filingStatus').value;
+      const stateRate = Math.min(20, num('stateRate')) / 100;
+      const w2Income  = num('w2Income');
+      const solo401k  = num('solo401k');
+      const useQbi    = el('applyQbi').checked;
+
+      const netProfit = Math.max(0, gross1099 - expenses);
+      const seBase    = netProfit * 0.9235;
+
+      // Social Security 12.4% up to wage base minus W2
+      const ssRoom    = Math.max(0, SS_WAGE_BASE - w2Income);
+      const ssTax     = Math.min(seBase, ssRoom) * 0.124;
+      const medTax    = seBase * 0.029;
+      const addMedBase = Math.max(0, (seBase + w2Income) - ADD_MED_THRESHOLD[status]);
+      const addMedTax = Math.min(seBase, addMedBase) * 0.009;
+
+      const seTax     = ssTax + medTax + addMedTax;
+      const halfSeDed = seTax * 0.5;
+
+      const agi = Math.max(0, netProfit + w2Income - halfSeDed - solo401k);
+      const stdDed = STD_DEDUCTION[status];
+      const taxableBeforeQbi = Math.max(0, agi - stdDed);
+
+      const qbiBase = Math.max(0, netProfit - halfSeDed - solo401k);
+      const qbiDed  = useQbi ? Math.min(qbiBase * 0.20, taxableBeforeQbi * 0.20) : 0;
+
+      const fedTaxable = Math.max(0, taxableBeforeQbi - qbiDed);
+      const fedTaxTotal = calcProgressiveTax(fedTaxable, BRACKETS[status]);
+
+      // Marginal/attributable federal tax on 1099 portion when W2 exists
+      const w2TaxableOnly = Math.max(0, w2Income - stdDed);
+      const fedTaxOn1099  = Math.max(0, fedTaxTotal - calcProgressiveTax(w2TaxableOnly, BRACKETS[status]));
+
+      const stateTax = Math.max(0, (netProfit - halfSeDed - solo401k) * stateRate);
+      const totalTax = seTax + fedTaxOn1099 + stateTax;
+      const quarterly = totalTax / 4;
+
+      const effRate = netProfit > 0 ? (totalTax / netProfit) * 100 : 0;
+      const setAsidePct = gross1099 > 0 ? (totalTax / gross1099) * 100 : 0;
+      const takeHome = Math.max(0, netProfit - totalTax);
+
+      el('quarterlyOut').textContent = fmt(quarterly);
+      el('totalTaxOut').textContent  = fmt(totalTax);
+      el('effRateOut').textContent   = effRate.toFixed(1) + '%';
+      el('setAsideTag').textContent  = `SET ASIDE: ${setAsidePct.toFixed(1)}%`;
+
+      el('netProfitOut').textContent = fmt(netProfit);
+      el('takeHomeOut').textContent  = fmt(takeHome);
+      el('qbiOut').textContent       = fmt(qbiDed);
+
+      el('seTaxOut').textContent     = fmt(seTax);
+      el('fedTaxOut').textContent    = fmt(fedTaxOn1099);
+      el('stateTaxOut').textContent  = fmt(stateTax);
+      el('seDedOut').textContent     = '-' + fmt(halfSeDed);
+    }
+
+    ['gross1099','expenses','filingStatus','stateRate','w2Income','solo401k','applyQbi']
+      .forEach(id => {
+        el(id).addEventListener('input', calculate);
+        el(id).addEventListener('change', calculate);
+      });
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    el('copyTaxBtn').addEventListener('click', function() {
+      const text = `2026 1099 Tax Estimate:\n` +
+        `• Net Profit: ${el('netProfitOut').textContent}\n` +
+        `• Quarterly 1040-ES Payment: ${el('quarterlyOut').textContent}\n` +
+        `• Total Annual Tax: ${el('totalTaxOut').textContent} (${el('effRateOut').textContent} effective)\n` +
+        `Calculated via https://realrefin.com/1099-tax-calculator`;
+      navigator.clipboard.writeText(text).then(() => {
+        this.textContent = '✅ Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy Tax Summary'; }, 2000);
+      });
+    });
+
+    el('waShareBtn').addEventListener('click', function() {
+      const msg = `My 2026 1099 Tax Estimate: ${el('quarterlyOut').textContent}/quarter (${el('totalTaxOut').textContent}/yr). Check yours: https://realrefin.com/1099-tax-calculator`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    el('copyEmbedBtn').addEventListener('click', function() {
+      const box = el('embedCodeBox');
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        this.textContent = '✅ Embed Code Copied!';
+        setTimeout(() => { this.textContent = 'Copy Embed Code'; }, 2000);
+      });
+    });
+
+    calculate();
+  });
+  </script>
+</body>
+</html>
