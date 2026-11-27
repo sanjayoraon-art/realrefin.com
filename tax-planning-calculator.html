@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Planning Calculator &amp; 2026 Tax Saving Strategy Engine | RealRefin</title>
+  <meta name="description" content="Free 2026 tax planning calculator and tax-saving strategy engine. Compare baseline tax vs optimized tax planning using 401(k), HSA, IRA, tax-loss harvesting, and India 80C/80D/NPS deductions.">
+  <meta name="keywords" content="tax planning, tax planning calculator, tax planning strategies 2026, personal tax planning, income tax planning calculator, year end tax planning, tax saving calculator">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://realrefin.com/tax-planning-calculator">
+  <meta property="og:site_name" content="RealRefin">
+  <meta property="og:title" content="Tax Planning Calculator &amp; 2026 Tax Saving Strategy Engine | RealRefin">
+  <meta property="og:description" content="Simulate your 2026 tax savings with retirement contributions, HSA, tax-loss harvesting, and regime optimization.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://realrefin.com/tax-planning-calculator">
+  <meta property="og:image" content="https://realrefin.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://realrefin.com/og-image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#10b981">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "2026 Tax Planning Calculator & Strategy Engine",
+        "url": "https://realrefin.com/tax-planning-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Interactive tax planning calculator to model legal tax reductions via 401(k), HSA, IRA, tax-loss harvesting, and Section 80C/80D/NPS deductions."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://realrefin.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Tax Planning Calculator", "item": "https://realrefin.com/tax-planning-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is tax planning and why is it important?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tax planning is the proactive analysis of your income, investments, and deductions to legally minimize your tax liability. Effective tax planning—such as maxing pre-tax retirement accounts, HSAs, and tax-loss harvesting—can save thousands of dollars every year."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the best tax planning strategies for high earners in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Top strategies include maximizing 401(k) or Solo 401(k) deferrals, contributing to a triple-tax-advantaged Health Savings Account (HSA), harvesting capital losses up to $3,000 against ordinary income, and utilizing backdoor Roth conversions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When should I do annual tax planning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The best time for tax planning is throughout the year and before December 31 (US) or March 31 (India), because most deductions—including 401(k) deferrals, charitable gifts, and capital loss harvesting—must be completed before the tax year closes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-navy: #0b1120;
+      --secondary-navy: #162033;
+      --accent-emerald: #10b981;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rr-nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+    .rr-nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .rr-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    .rr-logo span { color: var(--accent-emerald); }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: #475569; text-decoration: none; font-size: 0.88rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent-emerald-dark); }
+    .btn-nav-back { background: var(--primary-navy); color: #fff !important; padding: 0.48rem 0.95rem; border-radius: 9px; font-weight: 700 !important; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    .breadcrumbs { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .page-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      border-bottom: 4px solid var(--accent-emerald);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.32rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.9rem;
+    }
+    .page-hero h1 { font-size: clamp(1.65rem, 3vw, 2.35rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.18; margin-bottom: 0.65rem; }
+    .page-hero h1 span { color: #34d399; }
+    .page-hero p { color: #cbd5e1; font-size: 0.98rem; max-width: 790px; }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .calc-grid > * { min-width: 0; max-width: 100%; }
+    @media (max-width: 920px) { .calc-grid { grid-template-columns: minmax(0, 1fr); } }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 480px) { .card { padding: 1.1rem; } }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .toggle-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .pill-btn {
+      padding: 0.42rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--border-color);
+      background: #f8fafc;
+      color: #475569;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover { border-color: #94a3b8; color: var(--primary-navy); }
+    .pill-btn.active { background: var(--primary-navy); color: #ffffff; border-color: var(--primary-navy); }
+
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    @media (max-width: 520px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+    .field { margin-bottom: 0.9rem; }
+    .field label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.34rem;
+    }
+    .field input, .field select {
+      width: 100%;
+      height: 44px;
+      padding: 0 0.85rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #ffffff;
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Results */
+    .results-sticky { position: sticky; top: 82px; }
+    .save-hero-box {
+      background: linear-gradient(135deg, #0b1120 0%, #162033 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 1.45rem;
+      margin-bottom: 1.1rem;
+    }
+    .save-label { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #94a3b8; }
+    .save-value {
+      font-family: var(--font-mono);
+      font-size: clamp(1.95rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: #34d399;
+      line-height: 1.15;
+      margin: 0.25rem 0 0.6rem;
+    }
+    .save-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .kpi-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+    @media (max-width: 440px) { .kpi-mini-grid { grid-template-columns: 1fr; } }
+    .kpi-mini {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.75rem 0.65rem;
+      text-align: center;
+    }
+    .kpi-mini small { display: block; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+    .kpi-mini span { font-family: var(--font-mono); font-size: 0.98rem; font-weight: 700; color: var(--primary-navy); }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 1.15rem;
+    }
+    .comp-table th {
+      text-align: left;
+      padding: 0.55rem 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.73rem;
+      text-transform: uppercase;
+    }
+    .comp-table td { padding: 0.62rem 0.5rem; border-bottom: 1px solid #f1f5f9; font-weight: 600; }
+    .comp-table td:last-child { text-align: right; font-family: var(--font-mono); font-weight: 700; color: var(--primary-navy); }
+
+    .action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .btn-action {
+      padding: 0.72rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .btn-copy { background: var(--primary-navy); color: #ffffff; }
+    .btn-copy:hover { background: var(--accent-emerald-dark); }
+    .btn-wa { background: #16a34a; color: #ffffff; }
+    .btn-wa:hover { background: #15803d; }
+    .btn-print { grid-column: 1 / -1; background: #f1f5f9; color: var(--primary-navy); border: 1px solid var(--border-color); }
+
+    .guide-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .guide-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 0.75rem; }
+    .guide-card h3 { font-size: 1.08rem; font-weight: 800; color: var(--primary-navy); margin: 1.35rem 0 0.5rem; }
+    .guide-card p, .guide-card li { color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .guide-card ul { padding-left: 1.25rem; }
+
+    .faq-list { margin-top: 1rem; }
+    .faq-item { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 0.65rem; overflow: hidden; }
+    .faq-q { width: 100%; background: #f8fafc; border: none; padding: 1rem 1.15rem; text-align: left; font-size: 0.95rem; font-weight: 700; color: var(--primary-navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; font-family: inherit; }
+    .faq-a { display: none; padding: 0.85rem 1.15rem 1.05rem; font-size: 0.92rem; color: #475569; background: #ffffff; border-top: 1px solid #f1f5f9; }
+    .faq-item.open .faq-a { display: block; }
+
+    .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 1.25rem; }
+    .related-link-card { display: block; padding: 0.85rem 1rem; background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; text-decoration: none; color: var(--primary-navy); font-weight: 700; font-size: 0.88rem; }
+    .related-link-card:hover { border-color: var(--accent-emerald); color: var(--accent-emerald-dark); }
+
+    .embed-box { background: #f8fafc; border: 1px solid var(--border-color); border-radius: 14px; padding: 1.35rem; margin-top: 1.5rem; }
+    .embed-box textarea {
+      width: 100%;
+      height: 78px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin: 0.6rem 0;
+      resize: none;
+      background: #ffffff;
+    }
+    footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; background: #ffffff; }
+    footer a { color: var(--accent-emerald-dark); text-decoration: none; font-weight: 600; }
+    @media print {
+      .rr-nav-wrap, .breadcrumbs, .action-row, .embed-box, footer { display: none !important; }
+      .calc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rr-nav-wrap">
+    <header class="rr-nav">
+      <a href="/" class="rr-logo">
+        <img src="/favicon.svg" alt="RealRefin Logo" width="30" height="30" style="border-radius: 7px;">
+        Real<span>Refin</span>.com
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">All 85+ Calculators</a></li>
+        <li><a href="/1099-tax-calculator">1099 Tax</a></li>
+        <li><a href="/1031-exchange-tax-calculator">1031 Exchange</a></li>
+        <li><a href="/in-hand-salary-calculator">In-Hand Salary</a></li>
+        <li><a href="/" class="btn-nav-back">← Back to Directory</a></li>
+      </ul>
+    </header>
+  </div>
+
+  <main class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/#suite-refinance">Refinance &amp; Tax Planning</a> <span>›</span>
+      <span>Tax Planning Calculator (2026)</span>
+    </nav>
+
+    <section class="page-hero">
+      <div class="hero-pill">🛡️ Proactive Tax Planning • US 2026 &amp; India FY 2025–26</div>
+      <h1>2026 <span>Tax Planning</span> Calculator &amp; Tax-Saving Strategy Engine</h1>
+      <p>
+        Compare your baseline tax bill against an optimized tax planning strategy. Simulate 401(k), HSA, Traditional IRA, tax-loss harvesting, and India 80C/80D/NPS deductions—plus see the 10-year compounded wealth of your tax savings.
+      </p>
+    </section>
+
+    <section class="calc-grid" aria-label="Tax Planning Calculator">
+      <!-- LEFT: INPUTS -->
+      <div class="card">
+        <div class="card-title">
+          <span>📋 Income &amp; Tax-Saving Levers</span>
+          <div class="toggle-row">
+            <button type="button" class="pill-btn active" data-country="US">🇺🇸 US ($)</button>
+            <button type="button" class="pill-btn" data-country="IN">🇮🇳 India (₹)</button>
+          </div>
+        </div>
+
+        <!-- US Inputs -->
+        <div id="usFields">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="usIncome">Gross Annual Income ($)</label>
+              <input type="number" id="usIncome" value="140000" min="0" step="2500">
+            </div>
+            <div class="field">
+              <label for="usStatus">Filing Status</label>
+              <select id="usStatus">
+                <option value="single" selected>Single ($15,000 Std Ded)</option>
+                <option value="mfj">Married Jointly ($30,000 Std Ded)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="us401k">Pre-Tax 401(k) Contribution ($)</label>
+              <input type="number" id="us401k" value="18000" min="0" max="69000" step="500">
+            </div>
+            <div class="field">
+              <label for="usHsa">HSA Contribution ($)</label>
+              <input type="number" id="usHsa" value="4300" min="0" max="8550" step="100">
+            </div>
+            <div class="field">
+              <label for="usIra">Deductible Trad. IRA ($)</label>
+              <input type="number" id="usIra" value="0" min="0" max="8000" step="500">
+            </div>
+            <div class="field">
+              <label for="usLossHarv">Tax-Loss Harvesting ($)</label>
+              <input type="number" id="usLossHarv" value="3000" min="0" max="3000" step="500">
+            </div>
+          </div>
+          <div class="field">
+            <label for="usStateRate">State Income Tax Rate (%)</label>
+            <input type="number" id="usStateRate" value="5.0" min="0" max="14" step="0.25">
+          </div>
+        </div>
+
+        <!-- India Inputs -->
+        <div id="inFields" style="display:none;">
+          <div class="form-grid-2">
+            <div class="field">
+              <label for="inIncome">Annual Gross Income (₹)</label>
+              <input type="number" id="inIncome" value="1800000" min="0" step="50000">
+            </div>
+            <div class="field">
+              <label for="in80c">Section 80C (PPF/ELSS, max ₹1.5L)</label>
+              <input type="number" id="in80c" value="150000" min="0" max="150000" step="10000">
+            </div>
+            <div class="field">
+              <label for="inNps">Section 80CCD(1B) NPS (max ₹50k)</label>
+              <input type="number" id="inNps" value="50000" min="0" max="50000" step="5000">
+            </div>
+            <div class="field">
+              <label for="in80d">Section 80D Health Ins. (₹)</label>
+              <input type="number" id="in80d" value="50000" min="0" max="100000" step="5000">
+            </div>
+            <div class="field">
+              <label for="inHomeInt">Home Loan Int. Sec 24b (max ₹2L)</label>
+              <input type="number" id="inHomeInt" value="200000" min="0" max="200000" step="10000">
+            </div>
+            <div class="field">
+              <label for="inHra">HRA / LTA Exemption (₹)</label>
+              <input type="number" id="inHra" value="120000" min="0" step="10000">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE RESULTS -->
+      <div class="card results-sticky">
+        <div class="card-title">
+          <span>💎 Tax Planning Impact</span>
+          <span id="strategyBadge" style="font-size:0.75rem;color:var(--accent-emerald-dark);font-family:var(--font-mono);">OPTIMIZED</span>
+        </div>
+
+        <div class="save-hero-box">
+          <div class="save-label">Annual Tax Saved via Tax Planning</div>
+          <div class="save-value" id="taxSavedOut">$7,337</div>
+          <div class="save-sub">
+            <span>10-Yr Invested Value (8%): <strong id="tenYrOut" style="color:#fff;">$106,288</strong></span>
+            <span id="effDropOut">Rate: 21.8% → 16.5%</span>
+          </div>
+        </div>
+
+        <div class="kpi-mini-grid">
+          <div class="kpi-mini">
+            <small id="kpi1Label">Baseline Tax</small>
+            <span id="baseTaxOut">$30,455</span>
+          </div>
+          <div class="kpi-mini">
+            <small id="kpi2Label">Optimized Tax</small>
+            <span id="optTaxOut" style="color:var(--accent-emerald-dark);">$23,118</span>
+          </div>
+          <div class="kpi-mini">
+            <small id="kpi3Label">Total Deductions</small>
+            <span id="totalDedOut">$25,300</span>
+          </div>
+        </div>
+
+        <table class="comp-table" aria-label="Tax Planning Comparison">
+          <thead>
+            <tr>
+              <th>Planning Metric</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="row1Label">Baseline Taxable Income</td>
+              <td id="row1Val">$125,000</td>
+            </tr>
+            <tr>
+              <td id="row2Label">Optimized Taxable Income</td>
+              <td id="row2Val">$99,700</td>
+            </tr>
+            <tr>
+              <td id="row3Label">Monthly Cash-Flow Tax Savings</td>
+              <td id="row3Val">$611 / mo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="action-row">
+          <button type="button" class="btn-action btn-copy" id="copyPlanBtn">📋 Copy Tax Plan</button>
+          <button type="button" class="btn-action btn-wa" id="waShareBtn">💬 Share WhatsApp</button>
+          <button type="button" class="btn-action btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card">
+      <h2>2026 Tax Planning Strategies: How to Legally Lower Your Tax Bill</h2>
+      <p>
+        Proactive <strong>tax planning</strong> is the difference between overpaying the government in April and compounding those savings into long-term wealth. Whether you are a salaried professional, business owner, or investor, structuring your income around pre-tax accounts and allowable deductions lowers both your current marginal bracket and lifetime tax drag.
+      </p>
+
+      <h3>7 High-Impact Tax Planning Levers</h3>
+      <ul>
+        <li><strong>Maximize Pre-Tax Retirement Accounts:</strong> Contributing to a 401(k) or Solo 401(k) in the US—or NPS 80CCD(1B) and EPF in India—reduces taxable income dollar-for-dollar at your highest marginal bracket.</li>
+        <li><strong>Health Savings Account (HSA) Triple Tax Advantage:</strong> Contributions are tax-deductible, growth is tax-free, and qualified medical withdrawals are tax-free.</li>
+        <li><strong>Tax-Loss Harvesting:</strong> Selling losing positions in a taxable brokerage account offsets capital gains and up to $3,000 of ordinary income per year.</li>
+        <li><strong>Charitable Bunching &amp; Donor-Advised Funds:</strong> Combine 2–3 years of charitable donations into one tax year to exceed the standard deduction threshold.</li>
+        <li><strong>Section 80C, 80D &amp; Regime Optimization (India):</strong> Compare the New Tax Regime vs. Old Tax Regime after factoring in ELSS, PPF, health insurance, and home loan interest.</li>
+      </ul>
+
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button type="button" class="faq-q"><span>What is tax planning and why is it important?</span><span>+</span></button>
+          <div class="faq-a">Tax planning is the proactive arrangement of your income, retirement contributions, and investments to legally minimize taxes. Even saving $5,000/year in taxes and investing it at 8% creates over $72,000 in extra wealth in 10 years.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><span>What are the best tax planning strategies for high earners?</span><span>+</span></button>
+          <div class="faq-a">Max out 401(k) deferrals, fund an HSA, harvest investment losses ($3,000 ordinary income offset), and evaluate Backdoor Roth or 1031 real estate exchanges.</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q"><span>When is the deadline for annual tax planning?</span><span>+</span></button>
+          <div class="faq-a">Most tax-planning actions—such as 401(k) payroll deferrals, charitable gifts, and tax-loss harvesting—must be completed by <strong>December 31</strong> in the US (or <strong>March 31</strong> in India).</div>
+        </div>
+      </div>
+
+      <h3>Explore More Tax &amp; Wealth Calculators</h3>
+      <div class="related-links">
+        <a href="/1099-tax-calculator" class="related-link-card">🧾 2026 1099 Tax Calculator →</a>
+        <a href="/1031-exchange-tax-calculator" class="related-link-card">🏛️ 1031 Exchange Tax Deferral →</a>
+        <a href="/real-estate-capital-gains-tax-calculator" class="related-link-card">📊 Capital Gains Tax Calculator →</a>
+        <a href="/in-hand-salary-calculator" class="related-link-card">💼 In-Hand Salary Calculator India →</a>
+      </div>
+
+      <div class="embed-box">
+        <strong style="color:var(--primary-navy);font-size:0.92rem;">🔗 Embed This Tax Planning Calculator on Your Site</strong>
+        <textarea readonly id="embedCodeBox">&lt;iframe src="https://realrefin.com/tax-planning-calculator" width="100%" height="760" style="border:1px solid #e2e8f0;border-radius:12px;" loading="lazy"&gt;&lt;/iframe&gt;&lt;p style="font-size:12px;"&gt;Powered by &lt;a href="https://realrefin.com/tax-planning-calculator" rel="nofollow noopener"&gt;RealRefin Tax Planning Calculator&lt;/a&gt;&lt;/p&gt;</textarea>
+        <button type="button" class="pill-btn" id="copyEmbedBtn">Copy Embed Code</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">RealRefin.com</a> &bull; Educational Tax Planning &amp; Financial Tools &bull; <a href="/privacy-policy">Privacy Policy</a> &bull; <a href="/disclaimer">Disclaimer</a></p>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    let country = 'US';
+    const el = id => document.getElementById(id);
+    const num = id => Math.max(0, parseFloat(el(id).value) || 0);
+
+    const US_STD = { single: 15000, mfj: 30000 };
+    const US_BRACKETS = {
+      single: [[11925, 0.10], [48475, 0.12], [103350, 0.22], [197300, 0.24], [250525, 0.32], [626350, 0.35], [Infinity, 0.37]],
+      mfj:    [[23850, 0.10], [96950, 0.12], [206700, 0.22], [394600, 0.24], [501050, 0.32], [751600, 0.35], [Infinity, 0.37]]
+    };
+
+    function calcBrackets(taxable, brackets) {
+      if (taxable <= 0) return 0;
+      let tax = 0, prev = 0;
+      for (const [lim, rate] of brackets) {
+        if (taxable <= prev) break;
+        tax += (Math.min(taxable, lim) - prev) * rate;
+        prev = lim;
+      }
+      return tax;
+    }
+
+    function fmt(n) {
+      const sym = country === 'US' ? '$' : '₹';
+      return sym + Math.round(n).toLocaleString(country === 'US' ? 'en-US' : 'en-IN');
+    }
+
+    function fv10yr(annualSave) {
+      const r = 0.08;
+      return annualSave * ((Math.pow(1 + r, 10) - 1) / r);
+    }
+
+    function calculate() {
+      if (country === 'US') {
+        const income = num('usIncome');
+        const status = el('usStatus').value;
+        const std = US_STD[status];
+        const stateRate = Math.min(15, num('usStateRate')) / 100;
+        const totalDed = num('us401k') + num('usHsa') + num('usIra') + num('usLossHarv');
+
+        const baseTaxable = Math.max(0, income - std);
+        const optTaxable  = Math.max(0, income - std - totalDed);
+
+        const baseTax = calcBrackets(baseTaxable, US_BRACKETS[status]) + baseTaxable * stateRate;
+        const optTax  = calcBrackets(optTaxable, US_BRACKETS[status]) + optTaxable * stateRate;
+        const saved   = Math.max(0, baseTax - optTax);
+
+        const baseEff = income > 0 ? (baseTax / income) * 100 : 0;
+        const optEff  = income > 0 ? (optTax / income) * 100 : 0;
+
+        el('strategyBadge').textContent = 'US 2026 OPTIMIZED';
+        el('taxSavedOut').textContent = fmt(saved);
+        el('tenYrOut').textContent = fmt(fv10yr(saved));
+        el('effDropOut').textContent = `Rate: ${baseEff.toFixed(1)}% → ${optEff.toFixed(1)}%`;
+
+        el('kpi1Label').textContent = 'Baseline Tax';
+        el('kpi2Label').textContent = 'Optimized Tax';
+        el('kpi3Label').textContent = 'Plan Deductions';
+        el('baseTaxOut').textContent = fmt(baseTax);
+        el('optTaxOut').textContent = fmt(optTax);
+        el('totalDedOut').textContent = fmt(totalDed);
+
+        el('row1Label').textContent = 'Baseline Taxable Income';
+        el('row2Label').textContent = 'Optimized Taxable Income';
+        el('row3Label').textContent = 'Monthly Cash-Flow Savings';
+        el('row1Val').textContent = fmt(baseTaxable);
+        el('row2Val').textContent = fmt(optTaxable);
+        el('row3Val').textContent = fmt(saved / 12) + ' / mo';
+      } else {
+        // India FY 2025-26 New vs Old Regime Planning
+        const income = num('inIncome');
+        const totalDed = num('in80c') + num('inNps') + num('in80d') + num('inHomeInt') + num('inHra');
+
+        // New Regime (Std Ded 75,000, FY25-26 slabs with 87A rebate up to 12L)
+        const newTaxable = Math.max(0, income - 75000);
+        let newTax = calcBrackets(newTaxable, [
+          [400000, 0], [800000, 0.05], [1200000, 0.10], [1600000, 0.15],
+          [2000000, 0.20], [2400000, 0.25], [Infinity, 0.30]
+        ]);
+        if (newTaxable <= 1200000) newTax = 0;
+        newTax *= 1.04;
+
+        // Old Regime (Std Ded 50,000 + Planning Deductions)
+        const oldTaxableBase = Math.max(0, income - 50000);
+        const oldTaxableOpt  = Math.max(0, income - 50000 - totalDed);
+        const oldSlabs = [[250000, 0], [500000, 0.05], [1000000, 0.20], [Infinity, 0.30]];
+
+        let oldBaseTax = calcBrackets(oldTaxableBase, oldSlabs) * 1.04;
+        let oldOptTax  = calcBrackets(oldTaxableOpt, oldSlabs);
+        if (oldTaxableOpt <= 500000) oldOptTax = 0;
+        oldOptTax *= 1.04;
+
+        const bestTax = Math.min(newTax, oldOptTax);
+        const saved   = Math.max(0, oldBaseTax - bestTax);
+        const recRegime = oldOptTax <= newTax ? 'OLD REGIME WINS' : 'NEW REGIME WINS';
+
+        el('strategyBadge').textContent = recRegime;
+        el('taxSavedOut').textContent = fmt(saved);
+        el('tenYrOut').textContent = fmt(fv10yr(saved));
+        el('effDropOut').textContent = `Best: ${fmt(bestTax)}/yr`;
+
+        el('kpi1Label').textContent = 'New Regime';
+        el('kpi2Label').textContent = 'Old (Planned)';
+        el('kpi3Label').textContent = '80C/NPS/HRA';
+        el('baseTaxOut').textContent = fmt(newTax);
+        el('optTaxOut').textContent = fmt(oldOptTax);
+        el('totalDedOut').textContent = fmt(totalDed);
+
+        el('row1Label').textContent = 'No-Planning Old Regime Tax';
+        el('row2Label').textContent = 'Optimized Taxable (Old)';
+        el('row3Label').textContent = 'Monthly Tax Saved';
+        el('row1Val').textContent = fmt(oldBaseTax);
+        el('row2Val').textContent = fmt(oldTaxableOpt);
+        el('row3Val').textContent = fmt(saved / 12) + ' / mo';
+      }
+    }
+
+    document.querySelectorAll('[data-country]').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-country]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        country = this.getAttribute('data-country');
+        el('usFields').style.display = country === 'US' ? 'block' : 'none';
+        el('inFields').style.display = country === 'IN' ? 'block' : 'none';
+        calculate();
+      });
+    });
+
+    ['usIncome','usStatus','us401k','usHsa','usIra','usLossHarv','usStateRate','inIncome','in80c','inNps','in80d','inHomeInt','inHra']
+      .forEach(id => {
+        el(id).addEventListener('input', calculate);
+        el(id).addEventListener('change', calculate);
+      });
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    el('copyPlanBtn').addEventListener('click', function() {
+      const text = `2026 Tax Planning Summary (${country}):\n• Annual Tax Saved: ${el('taxSavedOut').textContent}\n• 10-Yr Invested Value: ${el('tenYrOut').textContent}\nCalculate yours: https://realrefin.com/tax-planning-calculator`;
+      navigator.clipboard.writeText(text).then(() => {
+        this.textContent = '✅ Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy Tax Plan'; }, 2000);
+      });
+    });
+
+    el('waShareBtn').addEventListener('click', function() {
+      const msg = `2026 Tax Planning Savings: ${el('taxSavedOut').textContent}/year (${el('tenYrOut').textContent} in 10 yrs). Plan yours: https://realrefin.com/tax-planning-calculator`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+
+    el('copyEmbedBtn').addEventListener('click', function() {
+      const box = el('embedCodeBox');
+      box.select();
+      navigator.clipboard.writeText(box.value).then(() => {
+        this.textContent = '✅ Embed Code Copied!';
+        setTimeout(() => { this.textContent = 'Copy Embed Code'; }, 2000);
+      });
+    });
+
+    calculate();
+  });
+  </script>
+</body>
+</html>
